@@ -1,0 +1,99 @@
+---
+import PricingCard from '@components/pricing.astro'
+
+const pricing = [
+	{
+		name: 'Coffee Cup',
+		price: '99 AED',
+		popular: false,
+		features: [
+			'1 QR',
+			'1 Branch',
+			'3 Translation Languages',
+			'Unlimited Meals',
+			'Unlimited Menus',
+			'1 million Scans /per month'
+		],
+		button: {
+			text: 'Get Started',
+			link: '/'
+		},
+		icon: 'coffeecup'
+	},
+	{
+		name: 'Dine Smart',
+		price: '299 AED',
+		popular: false,
+		features: [
+			'30 QR Codes',
+			'1 Branch',
+			'3 Translation Languages',
+			'Unlimited Meals',
+			'Unlimited Menus',
+			'Unlimited Scans*',
+			'Kitchen Dashboard',
+			'Waiter/ess Dashboard',
+			'Anayltics Dashboard'
+		],
+		button: {
+			text: 'Get Started',
+			link: '/'
+		},
+		icon: 'dinesmart'
+	},
+	{
+		name: 'Foodify',
+		price: '499 AED',
+		popular: true,
+		features: [
+			'40 QR Codes / Per Branch',
+			'3 Branch',
+			'5 Translation Languages',
+			'Unlimited Meals',
+			'Unlimited Menus',
+			'Unlimited Scans*',
+			'Kitchen Dashboard',
+			'Waiter/ess Dashboard',
+			'Anayltics Dashboard'
+		],
+		button: {
+			text: 'Get Started',
+			link: '/'
+		},
+		icon: 'foodify'
+	},
+	{
+		name: 'Menu Master',
+		price: '799 AED',
+		popular: false,
+		features: [
+			'50 QR Codes / Per Branch',
+			'5 Branch',
+			'8 Translation Languages',
+			'Unlimited Meals',
+			'Unlimited Menus',
+			'Unlimited Scans*',
+			'Kitchen Dashboard',
+			'Waiter/ess Dashboard',
+			'Anayltics Dashboard'
+		],
+		button: {
+			text: 'Get Started',
+			link: '/'
+		},
+		icon: 'menumaster'
+	}
+]
+---
+
+<div class="mt-36">
+	<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">A Package for every need</h2>
+	<p class="mt-4 text-lg text-slate-600">
+		Astro Menu offers a varaity of packages that covers all business sizes, starting from a small
+		cafe with 15 tables to a franchise of 5+ branches.
+	</p>
+</div>
+
+<div class="mx-auto mt-12 grid max-w-screen-2xl gap-5 md:grid-cols-4">
+	{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
+</div>
