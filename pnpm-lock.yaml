@@ -65,6 +65,13 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
+    devDependencies:
+      tailwindcss-animated:
+        specifier: ^1.0.1
+        version: 1.0.1(tailwindcss@3.4.3)
+      tailwindcss-intersect:
+        specifier: ^1.0.5
+        version: 1.0.5(tailwindcss@3.4.3)
 
 packages:
 
@@ -2538,6 +2545,16 @@ packages:
     resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  tailwindcss-animated@1.0.1:
+    resolution: {integrity: sha512-u5wusj89ZwP8I+s8WZlaAd7aZTWBN/XEG6QgMKpkIKmAf3xP1A6WYf7oYIKmGaB10UAQaSqWopi/i1ozzZEs8Q==}
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
+
+  tailwindcss-intersect@1.0.5:
+    resolution: {integrity: sha512-2Ac6TEKg/sJ3RXi0DKR80ZCwk+NHtkoKyWVQN6wDe4xD5rwn1lZsKKxdq2sMFOUAOFoMjCLA7ADUyQPLRtHzQg==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0'
 
   tailwindcss@3.4.3:
     resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
@@ -5853,6 +5870,14 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.0.1
+
+  tailwindcss-animated@1.0.1(tailwindcss@3.4.3):
+    dependencies:
+      tailwindcss: 3.4.3
+
+  tailwindcss-intersect@1.0.5(tailwindcss@3.4.3):
+    dependencies:
+      tailwindcss: 3.4.3
 
   tailwindcss@3.4.3:
     dependencies:

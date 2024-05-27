@@ -42,10 +42,21 @@ const features = [
 ]
 ---
 
-<script>
-	console.log('Hussam')
-</script>
+<!-- <script>
+	let options = {
+		root: document.querySelector('html'),
+		rootMargin: '0px',
+		threshold: 1.0
+	}
+	let observer = new IntersectionObserver((value) => {
+		console.log(value)
+	}, options)
 
+	let target = document.querySelector('.testAnimate')
+
+	observer.observe(target)
+	console.log(observer)
+</script> -->
 <div class="mt-16 md:mt-0">
 	<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
 		Everything you need to build your menu
@@ -73,5 +84,9 @@ const features = [
 </div>
 
 <div class="mt-8 flex justify-center">
-	<Button>Check out the full features list</Button>
+	<Button
+		size="lg"
+		class="animate-wiggle animate-duration-700 animate-delay-500 animate-infinite"
+		id="testAnimate">Check out the full features list</Button
+	>
 </div>
