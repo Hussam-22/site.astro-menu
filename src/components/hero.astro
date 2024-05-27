@@ -1,52 +1,61 @@
 ---
-import { Picture } from "astro:assets";
+import { Picture } from 'astro:assets'
 // import heroImage from "assets/hero.png";
-import heroImage from "assets/hero-2.jpeg";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+import heroImage from 'assets/hero-2.jpeg'
+import Link from '@components/ui/link.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-8 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-5xl leading-tight lg:leading-tight  lg:text-6xl xl:leading-tight  xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Ditch your <span class="bg-yellow-400 px-2 border-b-4 border-black rounded-2xl">primitive</span> menu <wbr /> and joing the <span class="bg-rose-400 text-white px-2 border-b-4 border-black rounded-2xl">digital</span> world
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      AstroMenu is a modern and responsive QR menu for restaurants, it offers a simple and easy way to showcase your menu to your customers. with minimum efforts, transform your print boring menu to digital QR menu.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+<main class="grid place-items-center pb-8 pt-8 md:pb-24 md:pt-12 lg:grid-cols-2">
+	<div class="hidden py-6 md:order-1 md:block">
+		<Picture
+			src={heroImage}
+			alt="Astronaut in the air"
+			widths={[200, 400, 600]}
+			sizes="(max-width: 800px) 100vw, 620px"
+			loading="eager"
+			format="avif"
+		/>
+	</div>
+	<div>
+		<h1
+			class="text-5xl font-bold leading-tight lg:text-6xl lg:leading-tight lg:tracking-tight xl:text-7xl xl:leading-tight xl:tracking-tighter"
+		>
+			Ditch your <span class="rounded-2xl border-b-4 border-black bg-yellow-400 px-2"
+				>primitive</span
+			> menu <wbr />
+			<br />join the <span class="rounded-2xl border-b-4 border-black bg-rose-400 px-2 text-white"
+				>digital</span
+			> world
+		</h1>
+		<p class="mt-4 max-w-xl text-lg text-slate-600">
+			AstroMenu is a modern and responsive QR menu for restaurants, it offers a simple and easy way
+			to showcase your menu to your customers. with minimum efforts, transform your print boring
+			menu to digital QR menu.
+		</p>
+		<div class="mt-6 flex flex-col gap-3 sm:flex-row">
+			<Link
+				href="#"
+				href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+				target="_blank"
+				class="flex items-center justify-center gap-1"
+				rel="noopener"
+			>
+				<Icon class="h-5 w-5 text-white" name="bx:bxs-cloud-download" />
 
-         Get Started Now
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         1 Month Free
-      </Link>
-    </div>
-  </div>
+				Get Started Now
+			</Link>
+			<Link
+				size="lg"
+				style="outline"
+				rel="noopener"
+				href="https://github.com/surjithctly/astroship"
+				class="flex items-center justify-center gap-1"
+				target="_blank"
+			>
+				<Icon class="h-4 w-4 text-black" name="bx:bxl-github" />
+				1 Month Free
+			</Link>
+		</div>
+	</div>
 </main>

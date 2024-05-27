@@ -1,10 +1,10 @@
 ---
-import PricingCard from '@components/pricing.astro'
+import PricingCard from '@components/pricing-card.astro'
 
 const pricing = [
 	{
 		name: 'Coffee Cup',
-		price: '99 AED',
+		price: '99$/m',
 		popular: false,
 		features: [
 			'1 QR',
@@ -18,11 +18,13 @@ const pricing = [
 			text: 'Get Started',
 			link: '/'
 		},
-		icon: 'coffeecup'
+		icon: 'coffeecup',
+		description:
+			'Ideal for small businesses like cafes or coffee shops with up to 15 tables. This plan offers basic digital menu features to streamline your operations and enhance customer experience.'
 	},
 	{
 		name: 'Dine Smart',
-		price: '299 AED',
+		price: '299$/m',
 		popular: false,
 		features: [
 			'30 QR Codes',
@@ -39,11 +41,13 @@ const pricing = [
 			text: 'Get Started',
 			link: '/'
 		},
-		icon: 'dinesmart'
+		icon: 'dinesmart',
+		description:
+			'Designed for medium-sized restaurants with a capacity of up to 30 tables. The Growth Package provides additional customization options and analytics tools to help you optimize your menu and better understand your customers preferences.'
 	},
 	{
 		name: 'Foodify',
-		price: '499 AED',
+		price: '499$/m',
 		popular: true,
 		features: [
 			'40 QR Codes / Per Branch',
@@ -60,11 +64,13 @@ const pricing = [
 			text: 'Get Started',
 			link: '/'
 		},
-		icon: 'foodify'
+		icon: 'foodify',
+		description:
+			'Designed for upscale restaurants and fine dining establishments with a capacity of up to 40 tables per branch, providing a galaxy of features to delight both chefs and patrons'
 	},
 	{
 		name: 'Menu Master',
-		price: '799 AED',
+		price: '799$/m',
 		popular: false,
 		features: [
 			'50 QR Codes / Per Branch',
@@ -81,7 +87,9 @@ const pricing = [
 			text: 'Get Started',
 			link: '/'
 		},
-		icon: 'menumaster'
+		icon: 'menumaster',
+		description:
+			'An elite package for restaurant chains and franchises with a capacity of up to 50 tables per branch, offering a constellation of tools to manage multiple locations with ease and precision.'
 	}
 ]
 ---

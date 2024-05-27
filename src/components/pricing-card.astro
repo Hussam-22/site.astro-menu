@@ -1,0 +1,62 @@
+---
+import { Tick } from '@components/ui/icons'
+import Link from '@components/ui/link.astro'
+import { Icon } from 'astro-iconify'
+
+const { plan } = Astro.props
+---
+
+<div
+	class={`flex justify-between flex-col w-full order-first lg:order-none border-4 ${plan.popular ? 'border-rose-400' : 'border-[#D8DEE9]'}  border-opacity-80 py-5 px-6 rounded-md`}
+>
+	<div>
+		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
+			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
+				<img src=`/src/assets/plans/${plan.icon}.svg` alt="coffee" class="mx-auto h-10 w-10" />
+				<p class="text-md whitespace-nowrap font-bold xl:text-2xl">
+					{plan.name}
+				</p>
+			</div>
+			<p class="text-1xl md:text-1xl text-black">
+				{plan.price}
+			</p>
+		</div>
+		<p class="text-sm">{plan.description}</p>
+	</div>
+	<div class="mt-2 flex justify-end">
+		{
+			plan.popular && (
+				<div class="rounded-lg border-2 border-rose-300 bg-rose-200 px-2 py-1 text-xs font-semibold uppercase">
+					<p>most popular</p>
+				</div>
+			)
+		}
+		<!-- {
+        plan.price.original && (
+          <p class="mt-1 text-xl font-medium text-gray-400 line-through md:text-2xl">
+            {plan.price.original}
+          </p>
+        )
+      } -->
+	</div>
+	<ul class="mt-8 grid gap-y-4 text-left">
+		{
+			plan.features.map((item) => (
+				<li class="flex items-start gap-3 text-gray-800">
+					<Icon class="h-6 w-6 " name="icon-park-solid:check-one" />
+					<span>{item}</span>
+				</li>
+			))
+		}
+	</ul>
+	<div class="mt-8 flex">
+		<Link
+			href={plan.button.link || '#'}
+			block
+			style={plan.popular ? 'primary' : 'outline'}
+			class={plan.popular ? 'bg-rose-500' : 'bg-white'}
+		>
+			{plan.button.text || 'Get Started'}
+		</Link>
+	</div>
+</div>
