@@ -1,43 +1,43 @@
 ---
 // @ts-ignore
-import { Icon } from 'astro-icon/components'
+import Button from '@components/ui/button.astro'
 
 const features = [
 	{
-		title: 'Bring Your Own Framework',
+		title: 'Dynamic QR Code Menu',
 		description:
-			"Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-		icon: 'bx:bxs-briefcase'
+			"Create a dynamic QR code menu for your restaurant, or cafe, Update your menu in real-time and let your customers scan the QR code to view it. It's that simple!",
+		icon: 'qr-code'
 	},
 	{
-		title: '100% Static HTML, No JS',
+		title: 'Self Order',
 		description:
-			'Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.',
-		icon: 'bx:bxs-window-alt'
+			'Allow your customers to take their orders themselves select portions and add notes to their orders. This will help you reduce the number of waiters you need, and increase the speed of service',
+		icon: 'self-order'
 	},
 	{
-		title: 'On-Demand Components',
+		title: 'Waiter(ess)/Kitchen Dashboard',
 		description:
-			'Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ',
-		icon: 'bx:bxs-data'
+			'Get a dashboard for your waiters to manage orders, and a dashboard for your kitchen to manage the orders and notify the waiter when the order is ready.',
+		icon: 'waiter'
 	},
 	{
-		title: 'Broad Integration',
+		title: 'Analytics',
 		description:
-			'Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.',
-		icon: 'bx:bxs-bot'
+			'Get insights on your customers, and orders. Know what your customers like, and what they do not like. Improve your menu based on the data you get.',
+		icon: 'analytics'
 	},
 	{
-		title: 'SEO Enabled',
+		title: 'Auto Translation',
 		description:
-			'Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!',
-		icon: 'bx:bxs-file-find'
+			'Dont let the language be a barrier between you and your customers. Astro Menu will automatically translate your menu to your most frequent customers languages, and you can always add more languages.',
+		icon: 'translate'
 	},
 	{
-		title: 'Community',
+		title: 'Simple and Fast Menu',
 		description:
-			'Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.',
-		icon: 'bx:bxs-user'
+			'With Astro Menu, you can create a simple and fast menu for your restaurant. It is easy to use and fast to load., dont overload customer with larg pdf files or images that takes forver to load.',
+		icon: 'fast'
 	}
 ]
 ---
@@ -59,15 +59,19 @@ const features = [
 <div class="mt-16 grid gap-16 sm:grid-cols-2 md:grid-cols-3">
 	{
 		features.map((item) => (
-			<div class="flex items-start gap-4">
-				<div class="mt-1 h-8 w-8  shrink-0 rounded-full bg-black p-2">
-					<Icon class="text-white" name={item.icon} />
+			<div class="flex items-center gap-4">
+				<div class="mt-1 h-24 w-24  shrink-0 rounded-full p-2">
+					<img src={`src/assets/icons/${item.icon}.svg`} />
 				</div>
 				<div>
-					<h3 class="text-lg font-semibold">{item.title}</h3>{' '}
-					<p class="mt-2 leading-relaxed text-slate-500">{item.description}</p>
+					<h3 class="text-lg font-semibold">{item.title}</h3>
+					<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
 				</div>
 			</div>
 		))
 	}
+</div>
+
+<div class="mt-8 flex justify-center">
+	<Button>Check out the full features list</Button>
 </div>

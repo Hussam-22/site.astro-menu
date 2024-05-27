@@ -10,16 +10,16 @@ const { plan } = Astro.props
 	class={`flex justify-between flex-col w-full order-first lg:order-none border-4 ${plan.popular ? 'border-rose-400' : 'border-[#D8DEE9]'}  border-opacity-80 py-5 px-6 rounded-md`}
 >
 	<div>
+		<p class="text-2xl text-green-600 font-bold text-right">
+			{plan.price}
+		</p>
 		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
 			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
 				<img src=`/src/assets/plans/${plan.icon}.svg` alt="coffee" class="mx-auto h-10 w-10" />
-				<p class="text-md whitespace-nowrap font-bold xl:text-2xl">
+				<p class="text-lg whitespace-nowrap font-bold xl:text-2xl">
 					{plan.name}
 				</p>
 			</div>
-			<p class="text-1xl md:text-1xl text-black">
-				{plan.price}
-			</p>
 		</div>
 		<p class="text-sm">{plan.description}</p>
 	</div>

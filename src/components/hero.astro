@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets'
 // import heroImage from "assets/hero.png";
-import heroImage from 'assets/hero-2.jpeg'
+import heroImage from 'assets/hero-2.svg'
 import Link from '@components/ui/link.astro'
 import { Icon } from 'astro-icon/components'
 ---
@@ -19,19 +19,17 @@ import { Icon } from 'astro-icon/components'
 	</div>
 	<div>
 		<h1
-			class="text-5xl font-bold leading-tight lg:text-6xl lg:leading-tight lg:tracking-tight xl:text-7xl xl:leading-tight xl:tracking-tighter"
+			class="text-5xl font-bold leading-snug lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter"
 		>
-			Ditch your <span class="rounded-2xl border-b-4 border-black bg-yellow-400 px-2"
+			Ditch your <span class="rounded-2xl border-b-4 border-black bg-black text-white px-2"
 				>primitive</span
 			> menu <wbr />
-			<br />join the <span class="rounded-2xl border-b-4 border-black bg-rose-400 px-2 text-white"
-				>digital</span
-			> world
+			join the <span class="rounded-2xl bg-rose-400 px-2 text-white">Digital</span> world
 		</h1>
 		<p class="mt-4 max-w-xl text-lg text-slate-600">
 			AstroMenu is a modern and responsive QR menu for restaurants, it offers a simple and easy way
-			to showcase your menu to your customers. with minimum efforts, transform your print boring
-			menu to digital QR menu.
+			to showcase your menu to your customers. with minimum efforts, transform your print menu to
+			digital QR menu and increase your turnover.
 		</p>
 		<div class="mt-6 flex flex-col gap-3 sm:flex-row">
 			<Link
