@@ -1,27 +1,52 @@
 ---
 import { Icon } from 'astro-iconify'
+import Button from '@components/ui/button.astro'
 
 const FAQs = [
 	{
-		question: 'What is Material Tailwind?',
+		question: 'Can I try Astro Menu before I buy?',
 		answer:
-			"111 We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+			'Yes, you can try Astro Menu for free for 1 Month. simply create an account and start using Astro Menu right away.'
 	},
 	{
-		question: 'How to use Material Tailwind?',
+		question: 'Which plan is in the free trial?',
 		answer:
-			"222 We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+			'The free trial comes with "Dine Smart" plan. You can switch to any plan at any time during the trial period.'
 	},
 	{
-		question: 'What can I do with Material Tailwind?',
+		question: 'What is Waiter(ess) and Kitchen dashboard?',
 		answer:
-			"333 We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+			'Waiter(ess) dashboard is a web-based application that allows your staff to manage orders and send them to kitchen. Kitchen dashboard is a web-based application that allows your kitchen staff to receive orders from waiter(ess) and prepare meals and notify waiter(ess) once they are ready. Both applications are included in all plans. except for "Coffee Cup" plan.'
+	},
+	{
+		question: 'What is QR Code and how it works?',
+		answer:
+			'Each plan comes with a set number of QR codes per branch, each QR code is unique and can be printed and placed on tables , this allows each table to have its own order and statistics, waiter(ess) take orders from customers and manage each table order separately'
+	},
+	{
+		question: 'What is self-order?',
+		answer:
+			'Self-order allows customers to place orders directly from their phones without the need for a waiter(ess) to attend the table, allowing customers to order at their own pace and convenience, and improve the table turnover rate.'
+	},
+	{
+		question: 'Can customers pay directly from the menu?',
+		answer:
+			'No, Astro Menu is a QR Menu that allows customers to view your menu and place orders. Payments are made directly to you.'
+	},
+	{
+		question: 'Can I share multiple business profiles with one account?',
+		answer: `We don't recommend sharing your account with multiple businesses, each business should have its own account to manage orders and statistics separately, and have a unique meals set to your restaurant, You can create multiple branches under the same account to manage multiple locations of the same business.`
+	},
+	{
+		question: 'Do I need to install any software to use Astro Menu?',
+		answer:
+			"Astro Menu is a web-based application. You don't need to install any software to use it. You can access it from any device with a web browser."
 	}
 ]
 ---
 
-<section class="mt-32">
-	<div class="mb-16">
+<section class="mt-32 bg-gray-100 rounded shadow-md p-10">
+	<div class="mb-16 intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Frequently asked questions</h2>
 		<p class="mt-4 text-lg text-slate-600">
 			Astro Menu comes batteries included. It not just another QR Menu, it comes with Waiter(ess)
@@ -34,17 +59,17 @@ const FAQs = [
 			<div class="relative mb-3">
 				<h6 class="mb-0">
 					<button
-						class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
+						class="relative flex items-center w-full font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500 bg-white rounded-md p-4"
 						data-collapse-target={`collapse-${index}`}
 					>
 						<span>{faq.question}</span>
 						<Icon
 							name="tabler:plus"
-							class="absolute right-0 pt-1 text-xs group-open:opacity-0 w-8 h-8"
+							class="absolute right-5 text-xs group-open:opacity-0 w-8 h-8"
 						/>
 						<Icon
 							name="tabler:minus"
-							class="absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100 w-8 h-8"
+							class="absolute right-5 text-xs opacity-0 group-open:opacity-100 w-8 h-8"
 						/>
 					</button>
 				</h6>
@@ -57,4 +82,12 @@ const FAQs = [
 			</div>
 		))
 	}
+
+	<div class="mt-14 flex justify-center item-center flex-col gap-2">
+		<h2 class="text-3xl font-bold self-center">Need more help ?</h2>
+		<p class="self-center text-gray-400">
+			Send us an email with more details about your specific needs.
+		</p>
+		<Button class="self-center">Submit a Request</Button>
+	</div>
 </section>

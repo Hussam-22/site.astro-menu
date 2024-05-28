@@ -1,23 +1,13 @@
 ---
-import { Tick } from '@components/ui/icons'
 import Link from '@components/ui/link.astro'
-import { Icon } from 'astro-iconify'
 
-const { plan } = Astro.props
+const { plan, index } = Astro.props
+console.log(index * 100)
 ---
 
 <div
-	class={`flex justify-between flex-col w-full order-first lg:order-none border-2 ${plan.popular ? 'border-rose-400' : 'border-[#f1f1f1]'}  border-opacity-80 py-5 px-6 rounded-md`}
+	class={`intersect:animate-fade-left flex justify-between flex-col w-full order-first lg:order-none border-2 ${plan.popular ? 'border-rose-400' : 'border-[#f1f1f1]'}  border-opacity-80 py-5 px-6 rounded-md`}
 >
-	<!-- <div class="mt-2 flex justify-end">
-		{
-			plan.popular && (
-				<div class="rounded-lg border-2 border-rose-300 bg-rose-200 px-2 py-1 text-xs font-semibold uppercase">
-					<p>most popular</p>
-				</div>
-			)
-		}
-	</div> -->
 	<div>
 		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
 			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
@@ -35,7 +25,7 @@ const { plan } = Astro.props
 				)
 			}
 		</div>
-		<p class="text-sm h-32">{plan.description}</p>
+		<p class="text-sm h-36">{plan.description}</p>
 		<p class="text-5xl text-black font-bold text-center py-2">
 			{plan.price}
 			<span class="text-sm text-gray-400">/month</span>
