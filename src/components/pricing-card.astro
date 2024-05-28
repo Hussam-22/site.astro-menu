@@ -7,23 +7,9 @@ const { plan } = Astro.props
 ---
 
 <div
-	class={`flex justify-between flex-col w-full order-first lg:order-none border-4 ${plan.popular ? 'border-rose-400' : 'border-[#D8DEE9]'}  border-opacity-80 py-5 px-6 rounded-md`}
+	class={`flex justify-between flex-col w-full order-first lg:order-none border-2 ${plan.popular ? 'border-rose-400' : 'border-[#f1f1f1]'}  border-opacity-80 py-5 px-6 rounded-md`}
 >
-	<div>
-		<p class="text-2xl text-green-600 font-bold text-right">
-			{plan.price}
-		</p>
-		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
-			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
-				<img src=`/assets/plans/${plan.icon}.svg` alt="coffee" class="mx-auto h-10 w-10" />
-				<p class="text-lg whitespace-nowrap font-bold xl:text-2xl">
-					{plan.name}
-				</p>
-			</div>
-		</div>
-		<p class="text-sm">{plan.description}</p>
-	</div>
-	<div class="mt-2 flex justify-end">
+	<!-- <div class="mt-2 flex justify-end">
 		{
 			plan.popular && (
 				<div class="rounded-lg border-2 border-rose-300 bg-rose-200 px-2 py-1 text-xs font-semibold uppercase">
@@ -31,20 +17,48 @@ const { plan } = Astro.props
 				</div>
 			)
 		}
-		<!-- {
-        plan.price.original && (
-          <p class="mt-1 text-xl font-medium text-gray-400 line-through md:text-2xl">
-            {plan.price.original}
-          </p>
-        )
-      } -->
+	</div> -->
+	<div>
+		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
+			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
+				<img src=`/assets/plans/${plan.icon}.svg` alt="coffee" class="mx-auto h-10 w-10" />
+				<p class="text-lg whitespace-nowrap font-bold xl:text-2xl">
+					{plan.name}
+				</p>
+			</div>
+
+			{
+				plan.popular && (
+					<div class="rounded-lg  bg-rose-200 px-2 py-1 text-xs  uppercase">
+						<p>most popular</p>
+					</div>
+				)
+			}
+		</div>
+		<p class="text-sm h-32">{plan.description}</p>
+		<p class="text-5xl text-black font-bold text-center py-2">
+			{plan.price}
+			<span class="text-sm text-gray-400">/month</span>
+		</p>
 	</div>
-	<ul class="mt-8 grid gap-y-4 text-left">
+
+	<ul class="mt-8 grid gap-y-2 text-left">
 		{
-			plan.features.map((item) => (
+			plan.features.map((item, index) => (
 				<li class="flex items-start gap-3 text-gray-800">
-					<Icon class="h-6 w-6 " name="icon-park-solid:check-one" />
-					<span>{item}</span>
+					<svg
+						class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					<span class={index <= 2 ? 'font-bold' : 'font-thin'}>{item}</span>
 				</li>
 			))
 		}
