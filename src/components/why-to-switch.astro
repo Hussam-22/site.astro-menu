@@ -24,7 +24,7 @@ const REASONS = [
 	},
 	{
 		title: 'No more waiting for the waiter',
-		description: 'Customers can place orders from their phones, no need to wait for a waiter.',
+		description: 'Customers dont have to wait for the menu or the waiter to take their order.',
 		icon: 'no-waiting'
 	},
 	{
@@ -34,7 +34,7 @@ const REASONS = [
 	},
 	{
 		title: 'The eye eats first',
-		description: 'The eye eats first, show images of your menu items to entice customers.',
+		description: 'show images of your menu items to entice customers.',
 		icon: 'eye-eats-first'
 	},
 	{
@@ -45,7 +45,7 @@ const REASONS = [
 	},
 	{
 		title: 'No more paper waste',
-		description: 'No more paper waste, save the environment by using digital menu.',
+		description: 'Save the environment by using digital menu.',
 		icon: 'no-paper-waste'
 	},
 	{
@@ -69,15 +69,17 @@ const REASONS = [
 			Why you should switch to a QR Menu
 		</h2>
 		<p class="mt-4 text-lg text-slate-600">
-			Here are some reasons why you should switch from print menu to QR menu.
+			Here are some reasons why you should switch from print menu to <span class="text-rose-400"
+				>Astro Menu</span
+			>.
 		</p>
 	</div>
 
-	<div class="mt-16 grid gap-10 sm:grid-cols-2">
+	<div class="mt-16 grid gap-4 sm:grid-cols-2">
 		{
 			REASONS.map((item, index) => (
 				<div
-					class="flex flex-col intersect:animate-fade-down intersect-once"
+					class="flex flex-row intersect:animate-fade-down intersect-once border-2 p-4 rounded-md gap-4 items-center border-gray-100"
 					style={`animation-delay: ${index * 25}ms`}
 				>
 					<img
@@ -85,8 +87,10 @@ const REASONS = [
 						alt="icon"
 						class="w-12 h-12 mb-4"
 					/>
-					<h3 class="text-xl font-semibold">{item.title}</h3>
-					<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
+					<div>
+						<h3 class="text-xl font-semibold">{item.title}</h3>
+						<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
+					</div>
 				</div>
 			))
 		}
