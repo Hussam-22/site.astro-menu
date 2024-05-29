@@ -45,7 +45,7 @@ const FAQs = [
 ]
 ---
 
-<section class="mt-32 bg-gray-100 rounded p-10">
+<section class="mt-32 bg-gray-100 rounded p-4 sm:p-10">
 	<div class="mb-16 intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Frequently asked questions</h2>
 		<p class="mt-4 text-lg text-slate-600">
@@ -63,7 +63,7 @@ const FAQs = [
 						class="relative flex items-center w-full font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500 bg-white rounded-md p-4"
 						data-collapse-target={`collapse-${index}`}
 					>
-						<span>{faq.question}</span>
+						<span class="mr-10">{faq.question}</span>
 						<Icon
 							name="tabler:plus"
 							class="absolute right-5 text-xs group-open:opacity-0 w-8 h-8"

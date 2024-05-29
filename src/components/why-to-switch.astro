@@ -40,7 +40,7 @@ const REASONS = [
 	{
 		title: 'Get useful insights',
 		description:
-			'Get useful insights on your customers, Most ordered meal, your total earning, and more.',
+			'Get useful insights on your orders status, Most ordered meal, your total earning, and more.',
 		icon: 'useful-insights'
 	},
 	{
@@ -79,7 +79,7 @@ const REASONS = [
 		{
 			REASONS.map((item, index) => (
 				<div
-					class="flex flex-row intersect:animate-fade-down intersect-once border-2 p-4 rounded-md gap-4 items-center border-gray-100"
+					class="flex flex-col sm:flex-row  intersect:animate-fade-down intersect-once border-2 p-4 rounded-md sm:gap-4 sm:items-center border-gray-100"
 					style={`animation-delay: ${index * 25}ms`}
 				>
 					<img
