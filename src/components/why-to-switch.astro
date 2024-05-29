@@ -1,0 +1,94 @@
+---
+// @ts-ignore
+import Button from '@components/ui/button.astro'
+
+const REASONS = [
+	// why you should switch from print menu to QR menu ?
+	{
+		title: 'Easy updates',
+		description:
+			'No more re-printing of menu, you can now update your menu with a click of a button.',
+		icon: 'easy-update'
+	},
+	{
+		title: 'Filter meals',
+		description:
+			'Customers can filter meals based on their dietary restrictions or preferences, e.g. vegan, gluten-free, etc, get them to place orders faster.',
+		icon: 'filter-meals'
+	},
+
+	{
+		title: 'Increase table turnover',
+		description: 'Customers can place orders from their phones, which means faster table turnover.',
+		icon: 'table-turnover'
+	},
+	{
+		title: 'No more waiting for the waiter',
+		description: 'Customers can place orders from their phones, no need to wait for a waiter.',
+		icon: 'no-waiting'
+	},
+	{
+		title: 'No need for multiple menus with different languages',
+		description: 'Customers can view the menu in their preferred language.',
+		icon: 'multi-language'
+	},
+	{
+		title: 'The eye eats first',
+		description: 'The eye eats first, show images of your menu items to entice customers.',
+		icon: 'eye-eats-first'
+	},
+	{
+		title: 'Get useful insights',
+		description:
+			'Get useful insights on your customers, Most ordered meal, your total earning, and more.',
+		icon: 'useful-insights'
+	},
+	{
+		title: 'No more paper waste',
+		description: 'No more paper waste, save the environment by using digital menu.',
+		icon: 'no-paper-waste'
+	},
+	{
+		title: 'Share QR code/Link on social media',
+		description:
+			'Share your QR code on social media to attract more customers, with always up-to-date menu.',
+		icon: 'share-on-social-media'
+	},
+	{
+		title: 'Hygiene and Safety',
+		description:
+			'QR menus eliminate the need for shared physical menus, reducing the risk of spreading germs and viruses',
+		icon: 'hygiene-and-safety'
+	}
+]
+---
+
+<section class="pt-32 md:mt-0">
+	<div class="intersect:animate-fade-right intersect-once">
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+			Why you should switch to a QR Menu
+		</h2>
+		<p class="mt-4 text-lg text-slate-600">
+			Here are some reasons why you should switch from print menu to QR menu.
+		</p>
+	</div>
+
+	<div class="mt-16 grid gap-10 sm:grid-cols-2">
+		{
+			REASONS.map((item, index) => (
+				<div
+					class="flex flex-col intersect:animate-fade-down intersect-once"
+					style={`animation-delay: ${index * 25}ms`}
+				>
+					<img
+						src={`/assets/icons/why-to-switch/${item.icon}.svg`}
+						alt="icon"
+						class="w-12 h-12 mb-4"
+					/>
+					<h3 class="text-xl font-semibold">{item.title}</h3>
+					<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
+				</div>
+			))
+		}
+	</div>
+</section>

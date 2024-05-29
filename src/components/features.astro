@@ -57,34 +57,36 @@ const features = [
 	observer.observe(target)
 	console.log(observer)
 </script> -->
-<div class="mt-16 md:mt-0">
-	<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-		Everything you need to build your menu
-	</h2>
-	<p class="mt-4 text-lg text-slate-600">
-		Astro Menu comes batteries included. It not just another QR Menu, it comes with Waiter(ess)
-		dashboar and Kitchen dashboard to help you be in full control of customers orders.
-	</p>
-</div>
+<section class="mt-16 md:mt-0">
+	<div>
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+			Everything you need to build your menu
+		</h2>
+		<p class="mt-4 text-lg text-slate-600">
+			Astro Menu comes batteries included. It not just another QR Menu, it comes with Waiter(ess)
+			dashboar and Kitchen dashboard to help you be in full control of customers orders.
+		</p>
+	</div>
 
-<div class="mt-16 grid gap-16 sm:grid-cols-2 lg:grid-cols-3">
-	{
-		features.map((item) => (
-			<div class="flex items-center gap-4">
-				<div class="mt-1 h-24 w-24  shrink-0 rounded-full p-2">
-					<img src={`/assets/icons/${item.icon}.svg`} />
+	<div class="mt-16 grid gap-16 sm:grid-cols-2 lg:grid-cols-3">
+		{
+			features.map((item) => (
+				<div class="flex items-center gap-4">
+					<div class="mt-1 h-24 w-24  shrink-0 rounded-full p-2">
+						<img src={`/assets/icons/${item.icon}.svg`} />
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold">{item.title}</h3>
+						<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
+					</div>
 				</div>
-				<div>
-					<h3 class="text-lg font-semibold">{item.title}</h3>
-					<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
-				</div>
-			</div>
-		))
-	}
-</div>
+			))
+		}
+	</div>
 
-<div class="mt-8 flex justify-center">
-	<Button size="lg" class="intersect:animate-wiggle" id="testAnimate"
-		>Check out the full features list</Button
-	>
-</div>
+	<div class="mt-8 flex justify-center">
+		<Button size="lg" class="intersect:animate-wiggle" id="testAnimate"
+			>Check out the full features list</Button
+		>
+	</div>
+</section>

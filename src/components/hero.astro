@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets'
 // import heroImage from "assets/hero.png";
-import heroImage from 'assets/hero-2.svg'
+import heroImage from 'assets/hero.svg'
 import Link from '@components/ui/link.astro'
 import { Icon } from 'astro-icon/components'
 ---
@@ -19,41 +19,26 @@ import { Icon } from 'astro-icon/components'
 	</div>
 	<div>
 		<h1
-			class="text-5xl font-bold leading-snug lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter intersect:animate-fade-left"
+			class="text-5xl font-bold leading-snug lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter intersect:animate-fade-left intersect-once"
 		>
-			Ditch your <span class="rounded-2xl border-b-4 border-black bg-black text-white px-2"
-				>primitive</span
-			> menu <wbr />
-			join the <span class="rounded-2xl bg-rose-400 px-2 text-white">Digital</span> world
+			Ditch the <span class="rounded-2xl border-b-4 border-black bg-black text-white px-2"
+				>Print Menu</span
+			><br />
+			Get <span class="rounded-2xl bg-rose-400 px-2 text-white">Astro Menu</span>
+			<img src="assets/astro-logo.svg" class="w-16 h-16 inline-block" />
 		</h1>
-		<p class="mt-4 max-w-xl text-lg text-slate-600 intersect:animate-fade-right">
+		<p class="mt-4 max-w-xl text-lg intersect:animate-fade-right intersect-once">
 			AstroMenu is a modern and responsive QR menu for restaurants, it offers a simple and easy way
 			to showcase your menu to your customers. with minimum efforts, transform your print menu to
 			digital QR menu and increase your turnover.
 		</p>
-		<div class="mt-6 flex flex-col gap-3 sm:flex-row">
-			<Link
-				href="#"
-				href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-				target="_blank"
-				class="flex items-center justify-center gap-1"
-				rel="noopener"
-			>
-				<Icon class="h-5 w-5 text-white" name="bx:bxs-cloud-download" />
+		<div class="mt-6 flex flex-col gap-3 sm:flex-row items-center">
+			<Link href="#" target="_blank" class="flex items-center justify-center gap-1" rel="noopener">
+				<img src="assets/astro-logo.svg" class="w-7 h-7 inline-block" />
 
-				Get Started Now
+				Get Started for Free
 			</Link>
-			<Link
-				size="lg"
-				style="outline"
-				rel="noopener"
-				href="https://github.com/surjithctly/astroship"
-				class="flex items-center justify-center gap-1"
-				target="_blank"
-			>
-				<Icon class="h-4 w-4 text-black" name="bx:bxl-github" />
-				1 Month Free
-			</Link>
+			<p>1 Month free, no credit card required</p>
 		</div>
 	</div>
 </main>
