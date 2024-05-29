@@ -40,13 +40,17 @@ const menuitems = [
 ---
 
 <script>
+	// const toggleDarkMode = (e) => {
+	// 	e.preventDefault()
+	// 	const html = document.querySelector('html')
+	// 	console.log(html?.classList)
+	// 	html?.classList.toggle('dark')
+	// 	localStorage.setItem('dark', e.checked ? 'true' : 'false')
+	// 	e.checked = !e.checked
+	// }
 	const toggleDarkMode = (e) => {
 		e.preventDefault()
-		const html = document.querySelector('html')
-		console.log(html?.classList)
-		html?.classList.toggle('dark')
-		localStorage.setItem('dark', e.checked ? 'true' : 'false')
-		e.checked = !e.checked
+		document.documentElement.classList.toggle('dark')
 	}
 
 	const toggleModeBtn = document.querySelector('#toggleModeBtn')

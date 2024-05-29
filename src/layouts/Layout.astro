@@ -51,12 +51,18 @@ const makeTitle = title
 				}
 			}}
 		/>
+		<!-- <script>
+			check local storage for "dark" key for dark mode preference
+			const html = document.querySelector('html')
+			localStorage.getItem('dark') === 'true'
+				? html.classList.add('dark')
+				: html.classList.remove('dark')
+		</script> -->
 		<script>
-			// check local storage for "dark" key for dark mode preference
-			// const html = document.querySelector('html')
-			// localStorage.getItem('dark') === 'true'
-			// 	? html.classList.add('dark')
-			// 	: html.classList.remove('dark')
+			// Script to toggle dark mode class
+			const toggleDarkMode = () => {
+				document.documentElement.classList.toggle('dark')
+			}
 		</script>
 	</head>
 	<body class="dark:bg-black">

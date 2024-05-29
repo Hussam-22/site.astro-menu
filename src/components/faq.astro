@@ -45,47 +45,49 @@ const FAQs = [
 ]
 ---
 
-<section class="mt-32 bg-gray-100 rounded p-4 sm:p-10">
-	<div class="mb-16 intersect:animate-fade-right">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Frequently asked questions</h2>
-		<p class="mt-4 text-lg text-slate-600">
-			Here are some questions and answers to help you understand <span class="text-rose-400"
-				>Astro Menu</span
-			> better.
-		</p>
+<section>
+	<div class="mt-32 rounded bg-gray-100 p-4 sm:p-10">
+		<div class="intersect-once mb-16 intersect:animate-fade-right">
+			<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Frequently asked questions</h2>
+			<p class="mt-4 text-lg text-slate-600">
+				Here are some questions and answers to help you understand <span class="text-rose-400"
+					>Astro Menu</span
+				> better.
+			</p>
+		</div>
+
+		{
+			FAQs.map((faq, index) => (
+				<div class="relative mb-3">
+					<h6 class="mb-0">
+						<button
+							class="rounded-t-1 text-dark-500 group relative flex w-full cursor-pointer items-center rounded-md border-b border-solid border-slate-100 bg-white p-4 text-left font-semibold text-slate-700 transition-all ease-in"
+							data-collapse-target={`collapse-${index}`}
+						>
+							<span class="mr-10">{faq.question}</span>
+							<Icon
+								name="tabler:plus"
+								class="absolute right-5 h-8 w-8 text-xs group-open:opacity-0"
+							/>
+							<Icon
+								name="tabler:minus"
+								class="absolute right-5 h-8 w-8 text-xs opacity-0 group-open:opacity-100"
+							/>
+						</button>
+					</h6>
+					<div
+						data-collapse={`collapse-${index}`}
+						class="h-0 overflow-hidden transition-all duration-700 ease-in-out"
+					>
+						<div class="text-blue-gray-500/80 p-4 text-sm leading-normal">{faq.answer}</div>
+					</div>
+				</div>
+			))
+		}
 	</div>
 
-	{
-		FAQs.map((faq, index) => (
-			<div class="relative mb-3">
-				<h6 class="mb-0">
-					<button
-						class="relative flex items-center w-full font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500 bg-white rounded-md p-4"
-						data-collapse-target={`collapse-${index}`}
-					>
-						<span class="mr-10">{faq.question}</span>
-						<Icon
-							name="tabler:plus"
-							class="absolute right-5 text-xs group-open:opacity-0 w-8 h-8"
-						/>
-						<Icon
-							name="tabler:minus"
-							class="absolute right-5 text-xs opacity-0 group-open:opacity-100 w-8 h-8"
-						/>
-					</button>
-				</h6>
-				<div
-					data-collapse={`collapse-${index}`}
-					class="h-0 overflow-hidden transition-all duration-700 ease-in-out"
-				>
-					<div class="p-4 text-sm leading-normal text-blue-gray-500/80">{faq.answer}</div>
-				</div>
-			</div>
-		))
-	}
-
-	<div class="mt-14 flex justify-center item-center flex-col gap-2">
-		<h2 class="text-3xl font-bold self-center">Need more help ?</h2>
+	<div class="item-center mt-14 flex flex-col justify-center gap-2">
+		<h2 class="self-center text-3xl font-bold">Need more help ?</h2>
 		<p class="self-center text-gray-400">
 			Send us an email with more details about your specific needs.
 		</p>
