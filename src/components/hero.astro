@@ -6,9 +6,9 @@ import Link from '@components/ui/link.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<main class="grid place-items-center pb-8 pt-8 md:pb-24 md:pt-12 lg:grid-cols-2">
+<main class="grid place-items-center pb-8 pt-8 md:grid-cols-2 md:pb-24 md:pt-12">
 	<div
-		class="hidden py-6 md:order-1 md:block intersect:animate-fade-right intersect:animate-duration-1000 intersect-once"
+		class="intersect-once hidden py-6 intersect:animate-fade-right intersect:animate-duration-1000 md:order-1 md:block"
 	>
 		<Picture
 			src={heroImage}
@@ -21,29 +21,32 @@ import { Icon } from 'astro-icon/components'
 	</div>
 	<div>
 		<h1
-			class="text-4xl font-bold leading-snug lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter intersect:animate-fade-left intersect-once dark:text-white"
+			class="intersect-once text-4xl font-bold leading-snug intersect:animate-fade-left lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter dark:text-white"
 		>
 			Say Goodby to <br />
 			<span
-				class="rounded-2xl border-b-4 border-black bg-black text-white px-2 dark:bg-white dark:text-black whitespace-nowrap"
+				class="whitespace-nowrap rounded-2xl border-b-4 border-black bg-black px-2 text-white dark:bg-white dark:text-black"
 				>Print Menus</span
 			><br />
-			Hello, <span class="rounded-2xl bg-rose-400 px-2 text-white whitespace-nowrap"
-				>Astro <img src="assets/astro-logo.svg" class="w-16 h-16 inline-block" /> Menu</span
+			Hello, <span class="whitespace-nowrap rounded-2xl bg-rose-400 px-2 text-white"
+				>Astro <img
+					src="assets/astro-logo.svg"
+					class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-32 lg:w-32"
+				/> Menu</span
 			>
 		</h1>
-		<p class="mt-4 max-w-xl text-lg intersect:animate-fade-right intersect-once dark:text-white">
+		<p class="intersect-once mt-4 max-w-xl text-lg intersect:animate-fade-right dark:text-white">
 			<span class="text-rose-400">Astro Menu</span> is a modern and responsive QR menu for restaurants,
 			it offers a simple and easy way to showcase your menu to your customers. with minimum efforts,
 			transform your print menu to digital QR menu and increase your turnover.
 		</p>
-		<div class="mt-6 flex flex-col gap-3 sm:flex-row items-center">
+		<div class="mt-6 flex flex-col items-center gap-3 sm:flex-row">
 			<Link href="#" target="_blank" class="flex items-center justify-center gap-1" rel="noopener">
-				<img src="assets/astro-logo.svg" class="w-7 h-7 inline-block" />
+				<img src="assets/astro-logo.svg" class="inline-block h-7 w-7" />
 
 				Get Started for Free
 			</Link>
-			<p class="text-rose-400 font-bold">1 Month free, no credit card required</p>
+			<p class="font-bold text-rose-400">1 Month free, no credit card required</p>
 		</div>
 	</div>
 </main>
