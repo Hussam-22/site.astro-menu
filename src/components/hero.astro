@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets'
 // import heroImage from "assets/hero.png";
-import heroImage from 'assets/hero.svg'
+import heroImage from 'assets/hero-2.svg'
 import Link from '@components/ui/link.astro'
 import { Icon } from 'astro-icon/components'
 ---
@@ -24,8 +24,9 @@ import { Icon } from 'astro-icon/components'
 			Say Goodby to <br />
 			<span class="rounded-2xl border-b-4 border-black bg-black text-white px-2">Print Menus</span
 			><br />
-			Hello, <span class="rounded-2xl bg-rose-400 px-2 text-white">Astro Menu</span>
-			<img src="assets/astro-logo.svg" class="w-16 h-16 inline-block" />
+			Hello, <span class="rounded-2xl bg-rose-400 px-2 text-white"
+				>Astro <img src="assets/astro-logo.svg" class="w-16 h-16 inline-block" /> Menu</span
+			>
 		</h1>
 		<p class="mt-4 max-w-xl text-lg intersect:animate-fade-right intersect-once">
 			<span class="text-rose-400">Astro Menu</span> is a modern and responsive QR menu for restaurants,
@@ -38,7 +39,7 @@ import { Icon } from 'astro-icon/components'
 
 				Get Started for Free
 			</Link>
-			<p>1 Month free, no credit card required</p>
+			<p class="text-rose-400 font-bold">1 Month free, no credit card required</p>
 		</div>
 	</div>
 </main>
