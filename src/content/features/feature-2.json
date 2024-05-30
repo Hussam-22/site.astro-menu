@@ -1,0 +1,22 @@
+{
+	"name": "Astroship",
+	"version": "1.0.0",
+	"description": "A futuristic spaceship game",
+	"features": [
+		{
+			"id": 1,
+			"title": "Multiplayer Mode",
+			"description": "Play with friends in real-time battles"
+		},
+		{
+			"id": 2,
+			"title": "Customizable Spaceships",
+			"description": "Upgrade and personalize your spaceship"
+		},
+		{
+			"id": 3,
+			"title": "Challenging Missions",
+			"description": "Complete exciting missions and earn rewards"
+		}
+	]
+}
