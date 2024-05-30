@@ -13,7 +13,8 @@ const features = [
 		title: 'Self Order',
 		description:
 			'Allow your customers to take their orders themselves select portions and add notes to their orders. This will help you reduce the number of waiters you need, and increase the speed of service',
-		icon: 'self-order'
+		icon: 'self-order',
+		video: 'self-order.mp4'
 	},
 	{
 		title: 'Waiter(ess)/Kitchen Dashboard',
@@ -38,6 +39,18 @@ const features = [
 		description:
 			'With Astro Menu, you can create a simple and fast menu for your restaurant. It is easy to use and fast to load., dont overload customer with larg pdf files or images that takes forver to load.',
 		icon: 'fast'
+	},
+	{
+		title: 'Minimum Clicks design in mind',
+		description:
+			'Astro-Menu was design with minimum clicks in mind, we want to make sure that your customers can order with the least number of clicks possible without overwhelming them with too many options.',
+		icon: 'min-clicks'
+	},
+	{
+		title: 'Wifi Password from the menu',
+		description:
+			'You can add your wifi password to the menu, so your customers can easily connect to your wifi without asking your staff for the password.',
+		icon: 'wifi'
 	}
 ]
 ---
@@ -70,26 +83,32 @@ const features = [
 		</p>
 	</div>
 
-	<div class="mt-16 grid gap-16 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="mt-16 grid gap-8 sm:grid-cols-2">
 		{
 			features.map((item, index) => (
 				<div
 					class="intersect-once flex items-center gap-4 intersect:animate-fade-down"
 					style={`animation-delay: ${index * 75}ms;`}
 				>
-					<div class="mt-1 h-24 w-24  shrink-0 rounded-full p-2">
-						<img src={`/assets/icons/${item.icon}.svg`} />
-					</div>
+					<img src={`/assets/icons/${item.icon}.svg`} class="h-16 w-16" />
 					<div>
-						<h3 class="text-lg font-semibold">{item.title}</h3>
-						<p class="mt-1 leading-relaxed text-slate-700">{item.description}</p>
+						<h3 class="text-xl font-semibold">{item.title}</h3>
+						<p class="mt-1 leading-relaxed text-gray-400">{item.description}</p>
+						<Button size="sm" class="mt-2">
+							Learn more
+						</Button>
 					</div>
 				</div>
+				// <video
+				// 		class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+				// 		autoplay
+				// 		loop
+				// 		muted
+				// 		playsinline
+				// 	>
+				// 		<source src={`/assets/features/${item.video}`} type="video/mp4" />
+				// 	</video>
 			))
 		}
-	</div>
-
-	<div class="mt-8 flex justify-center">
-		<Button size="lg" class="" id="testAnimate">Check out the full features list</Button>
 	</div>
 </section>

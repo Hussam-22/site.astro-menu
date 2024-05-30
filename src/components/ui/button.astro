@@ -1,6 +1,6 @@
 ---
 interface Props {
-	size?: 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg'
 	block?: boolean
 	style?: 'outline' | 'primary' | 'inverted'
 	class?: string
@@ -10,6 +10,7 @@ interface Props {
 const { size = 'md', style = 'primary', block, class: className, ...rest } = Astro.props
 
 const sizes = {
+	sm: 'px-4 py-1.5',
 	md: 'px-5 py-2.5',
 	lg: 'px-6 py-3'
 }
@@ -23,7 +24,7 @@ const styles = {
 <button
 	{...rest}
 	class:list={[
-		'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200',
+		'rounded text-center ring-gray-200 ring-offset-2 transition focus-visible:ring-2',
 		block && 'w-full',
 		sizes[size],
 		styles[style],
