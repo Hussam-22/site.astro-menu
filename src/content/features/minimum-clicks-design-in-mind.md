@@ -33,7 +33,16 @@ A streamlined ordering process means that customers spend less time browsing the
 
 <div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
 <!-- <img src='/public/assets/features/dynamic-qr-code-menu.png' alt='astro-menu-min-clicks' class='border-2 border-gray-200 rounded-lg w-96'> -->
-<video src='/public/assets/features/self-order.mp4' autoplay loop muted>
+<div class="mockup-phone">
+    <div class="camera"></div> 
+    <div class="display">
+        <div class="artboard artboard-demo phone-1">
+            <video src='/public/assets/features/wifi.mp4' autoplay loop muted class='' style="width: 100%; height: 100%;">
+            </video>
+        </div>
+    </div>
+</div>
+
 <div>
 <h2>Improved Operational Efficiency</h2>
 <p>

@@ -32,16 +32,16 @@ featuresEntries.sort(function (a, b) {
 								<div class="mockup-phone">
 									<div class="camera" />
 									<div class="display">
-										<div class="artboard artboard-demo phone-1">
+										<div class="artboard artboard-demo phone-1 bg-rose-200">
 											<Picture
 												src={featureEntry.data.image.src}
 												alt={featureEntry.data.image.alt}
-												sizes="(max-width: 400px) 100vw, 400px"
-												width={400}
-												height={200}
+												// sizes="(max-width: 400px) 100vw, 400px"
+												// width={400}
+												// height={200}
 												loading={index <= 2 ? 'eager' : 'lazy'}
 												decoding={index <= 2 ? 'sync' : 'async'}
-												class="rounded-md border-2 border-gray-200 bg-white"
+												class='h-screen w-screen'
 											/>
 										</div>
 									</div>
