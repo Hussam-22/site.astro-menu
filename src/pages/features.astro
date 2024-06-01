@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content'
+import { Picture } from 'astro:assets'
+import Layout from '@layouts/Layout.astro'
+import Container from '@components/container.astro'
+import Sectionhead from '@components/sectionhead.astro'
+import Button from '@components/ui/button.astro'
+
+// Filter blog entries with 'draft: false' & date before current date
+const featuresEntries = await getCollection('features', ({ data }) => {
+	return !data.draft && data.publishDate < new Date()
+})
+
+// Sort content entries by publication date
+featuresEntries.sort(function (a, b) {
+	return b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+})
+---
+
+<Layout title="Features">
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Astro-Menu Features</Fragment>
+			<Fragment slot="desc"> Learn more about Astro-Menu features and how to use them </Fragment>
+		</Sectionhead>
+		<main class="mt-16">
+			<ul class="mx-auto grid max-w-4xl gap-2">
+				{
+					featuresEntries.map((featureEntry, index) => (
+						<li>
+							<a href={`/features/${featureEntry.slug}`}>
+								<div class="grid items-center gap-2 md:grid-cols-2 md:gap-2">
+									<Picture
+										src={featureEntry.data.image.src}
+										alt={featureEntry.data.image.alt}
+										sizes="(max-width: 300px) 100vw, 300px"
+										width={300}
+										height={200}
+										loading={index <= 2 ? 'eager' : 'lazy'}
+										decoding={index <= 2 ? 'sync' : 'async'}
+										class="rounded-md border-2 border-gray-200 bg-white"
+									/>
+									<div>
+										<img src={`/assets/icons/${featureEntry.data.icon}.svg`} class="h-14 w-14" />
+
+										<h2 class="mt-1 text-3xl font-semibold leading-snug tracking-tight ">
+											{featureEntry.data.title}
+										</h2>
+										<p>{featureEntry.data.snippet}</p>
+
+										<div class="mt-3 flex gap-2">
+											<span class="text-gray-400">{featureEntry.data.author}</span>
+											<span class="text-gray-400">• </span>
+											<time
+												class="text-gray-400"
+												datetime={featureEntry.data.publishDate.toISOString()}
+											>
+												{featureEntry.data.publishDate.toDateString()}
+											</time>
+										</div>
+										<Button class="mt-2" size="sm">
+											Learn More
+										</Button>
+									</div>
+								</div>
+							</a>
+							<hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</Container>
+</Layout>

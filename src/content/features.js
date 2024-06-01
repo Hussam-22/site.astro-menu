@@ -31,9 +31,9 @@ export const FEATURES = [
 		icon: 'translate'
 	},
 	{
-		title: 'Simple and Fast Menu',
+		title: 'Astro-Speed Menu',
 		description:
-			'With Astro Menu, you can create a simple and fast menu for your restaurant. It is easy to use and fast to load., dont overload customer with larg pdf files or images that takes forver to load.',
+			'With Astro Menu, you can create a simple and fast menu for your restaurant. It is easy to use and fast to load., dont overload customer with large pdf files or images that takes forever to load.',
 		icon: 'fast'
 	},
 	{
