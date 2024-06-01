@@ -13,7 +13,7 @@ const featuresEntries = await getCollection('features', ({ data }) => {
 
 // Sort content entries by publication date
 featuresEntries.sort(function (a, b) {
-	return b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+	return a.data.order.valueOf() - b.data.order.valueOf()
 })
 ---
 
@@ -28,42 +28,44 @@ featuresEntries.sort(function (a, b) {
 				{
 					featuresEntries.map((featureEntry, index) => (
 						<li>
-							<a href={`/features/${featureEntry.slug}`}>
-								<div class="grid items-center gap-2 md:grid-cols-2 md:gap-2">
-									<Picture
-										src={featureEntry.data.image.src}
-										alt={featureEntry.data.image.alt}
-										sizes="(max-width: 300px) 100vw, 300px"
-										width={300}
-										height={200}
-										loading={index <= 2 ? 'eager' : 'lazy'}
-										decoding={index <= 2 ? 'sync' : 'async'}
-										class="rounded-md border-2 border-gray-200 bg-white"
-									/>
-									<div>
-										<img src={`/assets/icons/${featureEntry.data.icon}.svg`} class="h-14 w-14" />
+							<div class="grid items-center gap-2 md:grid-cols-2 md:gap-2">
+								<Picture
+									src={featureEntry.data.image.src}
+									alt={featureEntry.data.image.alt}
+									sizes="(max-width: 400px) 100vw, 400px"
+									width={400}
+									height={200}
+									loading={index <= 2 ? 'eager' : 'lazy'}
+									decoding={index <= 2 ? 'sync' : 'async'}
+									class="rounded-md border-2 border-gray-200 bg-white"
+								/>
+								<div>
+									<img src={`/assets/icons/${featureEntry.data.icon}.svg`} class="h-14 w-14" />
 
-										<h2 class="mt-1 text-3xl font-semibold leading-snug tracking-tight ">
-											{featureEntry.data.title}
-										</h2>
-										<p>{featureEntry.data.snippet}</p>
+									<h2 class="mt-1 text-3xl font-semibold leading-snug tracking-tight ">
+										{featureEntry.data.title}
+									</h2>
+									<p>{featureEntry.data.snippet}</p>
 
-										<div class="mt-3 flex gap-2">
-											<span class="text-gray-400">{featureEntry.data.author}</span>
-											<span class="text-gray-400">• </span>
-											<time
-												class="text-gray-400"
-												datetime={featureEntry.data.publishDate.toISOString()}
-											>
-												{featureEntry.data.publishDate.toDateString()}
-											</time>
-										</div>
-										<Button class="mt-2" size="sm">
-											Learn More
-										</Button>
+									<div class="mt-3 flex gap-2">
+										<span class="text-gray-400">{featureEntry.data.author}</span>
+										<span class="text-gray-400">• </span>
+										<time
+											class="text-gray-400"
+											datetime={featureEntry.data.publishDate.toISOString()}
+										>
+											{featureEntry.data.publishDate.toDateString()}
+										</time>
 									</div>
+									<Button
+										class="mt-2"
+										size="sm"
+										onclick={`location.href='/features/${featureEntry.slug}'`}
+									>
+										Learn More
+									</Button>
 								</div>
-							</a>
+							</div>
 							<hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
 						</li>
 					))

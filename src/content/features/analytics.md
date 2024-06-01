@@ -8,6 +8,7 @@ publishDate: '2022-11-08 11:39'
 category: 'Tutorials'
 author: 'Astro-Menu'
 tags: [webdev, tailwindcss, frontend]
+order: 5
 ---
 
 lorem some very long text, actually its very short

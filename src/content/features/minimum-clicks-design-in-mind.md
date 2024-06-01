@@ -8,6 +8,7 @@ publishDate: '2022-11-08 11:39'
 category: 'Tutorials'
 author: 'Astro-Menu'
 tags: [webdev, tailwindcss, frontend]
+order: 0
 ---
 
-lorem some very long text, actually its very short
+Astor Menu was designed to with minimum clicks on mind, our goal is to get the customers to their
