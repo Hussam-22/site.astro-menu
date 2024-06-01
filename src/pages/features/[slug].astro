@@ -22,7 +22,7 @@ const { Content } = await entry.render()
 
 <Layout title={entry.data.title}>
 	<Container>
-		<div class="mx-auto mt-14 max-w-3xl">
+		<div class="mx-auto my-14 max-w-5xl">
 			<span class="text-sm font-medium uppercase tracking-wider text-blue-400">
 				{entry.data.category}
 			</span>
@@ -44,7 +44,7 @@ const { Content } = await entry.render()
 			</div>
 		</div>
 
-		<div class="prose prose-lg mx-auto mt-6 max-w-3xl text-rose-400">
+		<div class="prose-md prose mx-auto mt-1 max-w-5xl">
 			<Content />
 		</div>
 		<div class="mt-8 text-center">
