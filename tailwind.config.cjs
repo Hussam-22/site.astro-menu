@@ -15,9 +15,13 @@ module.exports = {
 			}
 		}
 	},
+	daisyui: {
+		themes: ['business', 'cupcake']
+	},
 	plugins: [
 		require('@tailwindcss/typography'),
 		require('tailwindcss-animated'),
-		require('tailwindcss-intersect')
+		require('tailwindcss-intersect'),
+		require('daisyui')
 	]
 }

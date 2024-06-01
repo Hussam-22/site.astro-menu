@@ -32,7 +32,8 @@ By enabling diners to locate and order their meals quickly, Astro-Menu enhances 
 A streamlined ordering process means that customers spend less time browsing the menu and deciding what to order. This efficiency translates to quicker order placement and faster meal delivery. As a result, diners finish their meals sooner, allowing restaurants to serve more guests in the same amount of time. Higher table turnover rates can significantly boost a restaurant's revenue, especially during peak hours.
 
 <div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<img src='/public/assets/features/dynamic-qr-code-menu.png' alt='astro-menu-min-clicks' class='border-2 border-gray-200 rounded-lg w-96'>
+<!-- <img src='/public/assets/features/dynamic-qr-code-menu.png' alt='astro-menu-min-clicks' class='border-2 border-gray-200 rounded-lg w-96'> -->
+<video src='/public/assets/features/self-order.mp4' autoplay loop muted>
 <div>
 <h2>Improved Operational Efficiency</h2>
 <p>
