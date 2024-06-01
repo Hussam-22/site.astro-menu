@@ -20,8 +20,7 @@ const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<Debug answer={{ entry }} />
-
+<!-- <Debug answer={{ entry }} /> -->
 <Layout title={entry.data.title}>
 	<Container>
 		<div class="mx-auto mt-14 max-w-3xl">
@@ -51,7 +50,7 @@ const { Content } = await entry.render()
 		</div>
 		<div class="mt-8 text-center">
 			<a href="/blog" class="rounded-md bg-gray-100 px-5 py-3 transition hover:bg-gray-200"
-				>← Back to Blog</a
+				>← Back to Features</a
 			>
 		</div>
 	</Container>
