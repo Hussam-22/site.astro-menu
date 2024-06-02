@@ -37,8 +37,9 @@ A streamlined ordering process means that customers spend less time browsing the
     <div class="camera"></div> 
     <div class="display">
         <div class="artboard artboard-demo phone-1">
-            <video src='/public/assets/features/wifi.mp4' autoplay loop muted class='' style="width: 100%; height: 100%;">
-            </video>
+            <!-- <video src='/public/assets/features/wifi.mp4' autoplay loop muted class='' style="width: 100%; height: 100%;">
+            </video> -->
+            <img src='/public/assets/features/wifi.gif' />
         </div>
     </div>
 </div>
