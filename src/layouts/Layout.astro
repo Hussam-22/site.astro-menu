@@ -21,7 +21,7 @@ const makeTitle = title
 ---
 
 <!doctype html>
-<html lang="en" data-theme="cupcake">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -51,18 +51,10 @@ const makeTitle = title
 				}
 			}}
 		/>
-		<!-- <script>
-			check local storage for "dark" key for dark mode preference
-			const html = document.querySelector('html')
-			localStorage.getItem('dark') === 'true'
-				? html.classList.add('dark')
-				: html.classList.remove('dark')
-		</script> -->
-		<script>
-			// Script to toggle dark mode class
-			const toggleDarkMode = () => {
-				document.documentElement.classList.toggle('dark')
-			}
+		<script is:inline>
+			const localStorageTheme = localStorage.getItem('theme')
+			if (!localStorageTheme) localStorage.setItem('theme', 'cupcake')
+			document.querySelector('html').dataset.theme = localStorage.getItem('theme')
 		</script>
 	</head>
 	<body class="dark:bg-black">

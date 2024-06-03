@@ -1,6 +1,35 @@
+<script>
+	// const themeController = document.querySelector('.theme-controller')
+	// const localStorageTheme = localStorage.getItem('theme')
+	// if (!localStorageTheme) themeController.value = 'business'
+	// else themeController.value = localStorageTheme
+
+	// function toggleTheme() {
+	// 	localStorageTheme === 'business'
+	// 		? localStorage.setItem('theme', 'cupcake')
+	// 		: localStorage.setItem('theme', 'business')
+	// 	themeController.value = localStorage.getItem('theme')
+	// }
+
+	// themeController?.addEventListener('change', toggleTheme)
+
+	const themeController = document.querySelector('.theme-controller')
+	const localStorageTheme = localStorage.getItem('theme')
+	if (!localStorageTheme) themeController.value = 'business'
+	else themeController.value = localStorageTheme
+
+	function toggleTheme() {
+		themeController.value === 'business'
+			? localStorage.setItem('theme', 'cupcake')
+			: localStorage.setItem('theme', 'business')
+		themeController.value = localStorage.getItem('theme')
+	}
+
+	themeController?.addEventListener('change', toggleTheme)
+</script>
 <label class="swap swap-rotate ml-3">
 	<!-- this hidden checkbox controls the state -->
-	<input type="checkbox" class="theme-controller" value="business" />
+	<input type="checkbox" class="theme-controller" value="" />
 
 	<!-- sun icon -->
 	<svg class="swap-off h-8 w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
