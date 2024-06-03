@@ -11,10 +11,6 @@ tags: [webdev, tailwindcss, frontend]
 order: 6
 ---
 
-# Why Integrating WiFi Passwords in Astro-Menu is Important
-
-## Enhancing Customer Experience
-
 One of the key advantages of including the restaurant's WiFi password directly in the Astro-Menu is the significant enhancement to the overall customer experience. When customers scan the QR code to access the menu, they can immediately see the WiFi password without needing to ask a staff member. This seamless access to WiFi is especially important in today’s digital age where customers expect connectivity for various reasons:
 
 > <p class='text-primary'>Including the WiFi password in the Astro-Menu can significantly streamline restaurant operations and save valuable time for both customers and staff</p>
@@ -30,7 +26,7 @@ Many diners enjoy sharing their dining experiences in real-time. Easy access to 
 Customers who wish to work while they dine or relax with streaming services will appreciate hassle-free internet access.
 
 <div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<img src='/public/assets/features/wifi.png' alt='astro-menu-wifi' class='border-2 border-gray-200 rounded-lg w-96'>
+<img src='/public/assets/features/wifi.gif' alt='astro-menu-wifi' class='border-2 border-gray-200 rounded-lg w-96'>
 <div>
 <h2>Reduced Queries</h2>
 <p>
