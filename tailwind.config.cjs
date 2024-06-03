@@ -16,7 +16,16 @@ module.exports = {
 		}
 	},
 	daisyui: {
-		themes: ['business', 'cupcake']
+		themes: [
+			'business',
+			{
+				cupcake: {
+					...require('daisyui/src/theming/themes')['cupcake'],
+					'base-100': '#FFFFFF',
+					'base-content': '#000000'
+				}
+			}
+		]
 	},
 	plugins: [
 		require('@tailwindcss/typography'),

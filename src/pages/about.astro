@@ -20,7 +20,7 @@ const publishedTeamMembers = await getCollection('team', ({ data }) => {
 
 		<div class="mx-auto mt-16 flex max-w-4xl flex-col gap-3">
 			<h2 class="text-3xl font-bold text-gray-800">Empowering the world with Astro.</h2>
-			<p class="text-lg leading-relaxed text-slate-500">
+			<p class="text-lg leading-relaxed">
 				We're a multi-cultural team from around the world! We come from diverse backgrounds,
 				bringing different personalities, experiences and skills to the job. This is what makes our
 				team so special.
@@ -42,8 +42,8 @@ const publishedTeamMembers = await getCollection('team', ({ data }) => {
 						</div>
 
 						<div class="mt-4 text-center">
-							<h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-							<h3 class="text-sm text-slate-500">{teamMemberEntry.data.title}</h3>
+							<h2 class="text-lg">{teamMemberEntry.data.name}</h2>
+							<h3 class="text-sm">{teamMemberEntry.data.title}</h3>
 						</div>
 					</div>
 				))

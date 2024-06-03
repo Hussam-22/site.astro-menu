@@ -7,7 +7,7 @@ image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web 
 publishDate: '2024-06-01 11:39'
 category: 'Features'
 author: 'Astro-Menu'
-tags: [tables-turnover, minimum-clicks, qr-menu]
+tags: [minimum-clicks, tables-turnover, qr-menu]
 order: 0
 ---
 
@@ -37,14 +37,14 @@ A streamlined ordering process means that customers spend less time browsing the
     <div class="camera"></div> 
     <div class="display">
         <div class="artboard artboard-demo phone-1">
-            <!-- <video src='/public/assets/features/wifi.mp4' autoplay loop muted class='' style="width: 100%; height: 100%;">
-            </video> -->
-            <img src='/public/assets/features/wifi.gif' />
+            <video src='/public/assets/features/min-clicks.mp4' muted autoplay controls>
+            </video>
         </div>
     </div>
 </div>
 
 <div>
+
 <h2>Improved Operational Efficiency</h2>
 <p>
 Astro-Menu's efficient design reduces the need for waitstaff to spend excessive time answering menu-related questions or taking orders, allowing them to focus on delivering exceptional service and attending to other customer needs. This can lead to a smoother operation and better utilization of staff resources.
