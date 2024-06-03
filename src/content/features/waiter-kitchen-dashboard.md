@@ -18,7 +18,7 @@ The real-time updates provided by the dashboards enable the waitstaff to manage 
 
 Additionally, the system supports real-time updates, incorporating real-time inventory management into Astro-Menu’s Waiter(ess) and Kitchen Dashboards offers significant benefits for restaurant operations. When meals go out-of-stock, the system instantly updates the customer menus, preventing orders for unavailable items.
 
-> The integration of these dashboards can lead to shorter wait times for customers, a smoother dining experience, and improved overall satisfaction.
+> <p class='text-primary'>The integration of these dashboards can lead to shorter wait times for customers, a smoother dining experience, and improved overall satisfaction.</p>
 
 ---
 

@@ -21,7 +21,7 @@ One of the standout features of Astro-Menu is the ability to create multiple men
 
 Astro-Menu also supports the creation of different meal menus for each branch of a restaurant. For businesses with multiple locations, this feature is invaluable. Each branch can have a menu that caters to its unique customer base, regional tastes, or local specialties. This flexibility ensures that every customer, regardless of which branch they visit, enjoys a menu that is relevant and appealing.
 
-> Astro-Menu's dynamic menu capabilities provide restaurants with the tools to easily manage and customize their offerings. From creating and arranging sections to hiding and tailoring menus for specific tables or branches, Astro-Menu empowers restaurant owners to deliver a personalized and efficient dining experience.
+> <p class='text-primary'>Astro-Menu's dynamic menu capabilities provide restaurants with the tools to easily manage and customize their offerings. From creating and arranging sections to hiding and tailoring menus for specific tables or branches, Astro-Menu empowers restaurant owners to deliver a personalized and efficient dining experience.</p>
 
 ---
 

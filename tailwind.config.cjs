@@ -17,12 +17,20 @@ module.exports = {
 	},
 	daisyui: {
 		themes: [
-			'business',
 			{
 				cupcake: {
 					...require('daisyui/src/theming/themes')['cupcake'],
 					'base-100': '#FFFFFF',
-					'base-content': '#000000'
+					'base-content': '#000000',
+					primary: '#FB7185',
+					secondary: '#000000'
+				}
+			},
+			{
+				business: {
+					...require('daisyui/src/theming/themes')['business'],
+					primary: '#FB7185',
+					secondary: '#000000'
 				}
 			}
 		]

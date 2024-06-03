@@ -19,7 +19,7 @@ Additionally, Astro-Menu allows users to filter menu sections like "Burgers," "S
 
 By integrating these filtering options seamlessly into the menu interface, we ensure that diners can locate their desired meal quickly and efficiently, enhancing their overall dining experience. With Astro-Menu, finding your perfect meal is just a few clicks away.
 
-> Astro-Menu's design philosophy of minimizing clicks to help diners quickly find their desired meals offers significant benefits for restaurants, particularly in terms of improving table turnover rates and overall efficiency.
+> <p class='text-primary'>Astro-Menu's design philosophy of minimizing clicks to help diners quickly find their desired meals offers significant benefits for restaurants, particularly in terms of improving table turnover rates and overall efficiency.</p>
 
 ---
 

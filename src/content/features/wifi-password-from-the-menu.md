@@ -17,7 +17,7 @@ order: 6
 
 One of the key advantages of including the restaurant's WiFi password directly in the Astro-Menu is the significant enhancement to the overall customer experience. When customers scan the QR code to access the menu, they can immediately see the WiFi password without needing to ask a staff member. This seamless access to WiFi is especially important in today’s digital age where customers expect connectivity for various reasons:
 
-> Including the WiFi password in the Astro-Menu can significantly streamline restaurant operations and save valuable time for both customers and staff
+> <p class='text-primary'>Including the WiFi password in the Astro-Menu can significantly streamline restaurant operations and save valuable time for both customers and staff</p>
 
 ---
 

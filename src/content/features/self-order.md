@@ -13,7 +13,7 @@ order: 1
 
 Astro-Menu's "Self Order" feature revolutionizes the dining experience by empowering customers to place orders directly from their smartphones. No more waiting for a server—guests can browse the menu, customize their selections, and order at their own pace with just a few taps. This seamless, contactless ordering process enhances convenience, reduces wait times, and ensures order accuracy, providing a modern and efficient dining experience for all.
 
-> Incorporating the "Self Order" feature positions the restaurant as modern and innovative
+> <p class='text-primary'>Incorporating the "Self Order" feature positions the restaurant as modern and innovative</p>
 
 <hr />
 
@@ -21,7 +21,8 @@ Astro-Menu's "Self Order" feature revolutionizes the dining experience by empowe
 
 Customers can start ordering as soon as they are ready, without waiting for a waiter to attend their table. This reduces waiting time and enhances the dining experience.
 
-##Control and Customization:
+## Control and Customization:
+
 Diners have more control over their orders, allowing them to take their time and customize their selections to their liking. They can easily review menu items, add special instructions, and make modifications without feeling rushed.
 
 ## Contactless Service:
