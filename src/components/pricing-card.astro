@@ -5,37 +5,37 @@ const { plan, index } = Astro.props
 ---
 
 <div
-	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none border-2 ${plan.popular ? 'border-rose-400' : 'border-[#f1f1f1]'} border-opacity-80 py-5 px-6 rounded-md`}
+	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none border-2 ${plan.popular ? 'bg-rose-400 border-none text-white' : 'border-[#f1f1f1]'} border-opacity-80 py-5 px-6 rounded-md`}
 	style={`animation-delay: ${index * 0.25}s`}
 >
 	<div>
 		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
 			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
 				<img src={`/assets/plans/${plan.icon}.svg`} alt="coffee" class="mx-auto h-10 w-10" />
-				<p class="text-lg whitespace-nowrap font-bold xl:text-2xl">
+				<p class="whitespace-nowrap text-lg font-bold xl:text-2xl">
 					{plan.name}
 				</p>
 			</div>
 			{
 				plan.popular && (
-					<div class="rounded-lg bg-rose-200 px-2 py-1 text-xs uppercase">
+					<div class="rounded-lg bg-white px-2 py-1 text-xs uppercase text-secondary">
 						<p>most popular</p>
 					</div>
 				)
 			}
 		</div>
-		<p class="text-sm h-36">{plan.description}</p>
-		<p class="text-5xl text-black font-bold text-center py-2">
+		<p class="h-36 text-sm">{plan.description}</p>
+		<p class="py-2 text-center text-5xl font-bold">
 			{plan.price}
-			<span class="text-sm text-gray-400">/month</span>
+			<span class="text-sm">/month</span>
 		</p>
 	</div>
 	<ul class="mt-8 grid gap-y-2 text-left">
 		{
 			plan.features.map((item, featureIndex) => (
-				<li key={featureIndex} class="flex items-start gap-3 text-gray-800">
+				<li key={featureIndex} class="flex items-start gap-3">
 					<svg
-						class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+						class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
@@ -46,18 +46,20 @@ const { plan, index } = Astro.props
 							clipRule="evenodd"
 						/>
 					</svg>
-					<span class={featureIndex <= 2 ? 'font-bold' : 'font-thin'}>{item}</span>
+					<span
+						class:list={[
+							featureIndex <= 2 ? 'font-bold' : 'font-thin',
+							plan.popular && 'text-white'
+						]}
+					>
+						{item}
+					</span>
 				</li>
 			))
 		}
 	</ul>
 	<div class="mt-8 flex">
-		<Link
-			href={plan.button.link || '#'}
-			block
-			style={plan.popular ? 'primary' : 'outline'}
-			class={plan.popular ? 'bg-rose-500' : 'bg-white'}
-		>
+		<Link href={plan.button.link || '#'} block style="outline">
 			{plan.button.text || 'Get Started'}
 		</Link>
 	</div>

@@ -36,6 +36,7 @@ const featuresCollection = defineCollection({
 		draft: z.boolean(),
 		title: z.string(),
 		snippet: z.string(),
+		extraText: z.string().optional(),
 		icon: z.string(),
 		image: z.object({
 			src: z.string(),

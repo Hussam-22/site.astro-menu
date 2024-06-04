@@ -1,9 +1,8 @@
 ---
 draft: false
 title: 'Waiter(ess)/Kitchen Dashboard'
-snippet: By integrating the Waiter(ess) and Kitchen Dashboards, Astro-Menu ensures a seamless and efficient dining experience. These features enhance communication, reduce errors, and improve overall service quality, allowing restaurants to operate smoothly and provide exceptional customer satisfaction
-
-icon: 'min-clicks'
+snippet: By integrating the Waiter(ess) and Kitchen Dashboards, Astro-Menu ensures a seamless and efficient dining experience. These features enhance communication, reduce errors, and improve overall service quality, allowing restaurants to operate smoothly and provide exceptional customer satisfaction.
+icon: 'waiter'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2024-06-01 11:39'
 category: 'Features'
@@ -22,15 +21,15 @@ Additionally, the system supports real-time updates, incorporating real-time inv
 
 ---
 
-## Real-Time Order Updates:
+## Real-Time Order Updates
 
 Orders placed by customers through the Self Order feature are instantly relayed to both dashboards. Waitstaff and kitchen staff receive simultaneous updates, ensuring that everyone is on the same page.
 
-## Clear Order Prioritization:
+## Clear Order Prioritization
 
 The kitchen dashboard prioritizes orders based on preparation time and urgency. Waitstaff can see the order status in real time, allowing them to manage customer expectations effectively.
 
-## Reduced Miscommunication:
+## Reduced Miscommunication
 
 By centralizing all order information, the risk of miscommunication and errors is greatly reduced. Special requests and modifications are clearly visible to both waitstaff and kitchen staff, ensuring they are accurately addressed.
 
@@ -38,15 +37,15 @@ By centralizing all order information, the risk of miscommunication and errors i
 <img src='/public/assets/features/waiter-kitchen-dashboard.webp' class='rounded-md' />
 </div>
 
-## Faster Order Processing:
+## Faster Order Processing
 
 Orders are processed more quickly as they are sent directly to the kitchen without the need for a waiter to relay them manually. This speeds up the preparation and delivery of food.
 
-## Customer Dissatisfaction:
+## Customer Dissatisfaction
 
 Prevent customer dissatisfaction and potential anger. By avoiding situations where customers order out-of-stock items, the restaurant reduces the likelihood of negative experiences and complaints. This proactive approach to inventory management ensures a smoother, more enjoyable dining experience for all patrons.
 
-## Status Monitoring:
+## Status Monitoring
 
 The dashboard allows kitchen staff to update the status of each order, from preparation to completion, providing waitstaff with accurate information to relay to customers.
 

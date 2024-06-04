@@ -2,6 +2,7 @@
 draft: false
 title: 'Astro-Speed Menu'
 snippet: Experience near-instantaneous menu loading from the cloud, ensuring you spend less time waiting and more time enjoying your meal, dont overload customer with large pdf files or images that takes forever to load.
+extraText: Our cloud-based technology eliminates the need for downloads, unlike traditional PDF menus. This means you get immediate access to the menu without using up your device's storage space. Additionally, our optimized cloud solution requires significantly less bandwidth, making it ideal for customers with limited data plans or those in areas with slower internet connections. This efficiency not only improves user experience but also contributes to a more eco-friendly digital footprint.
 icon: 'fast'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
@@ -21,11 +22,11 @@ To ensure even faster load times, all images within the Astro-speed Menu are com
 
 ---
 
-## Real-Time Updates:
+## Real-Time Updates
 
 The cloud-based menu allows restaurants to update menu items, prices, and specials in real-time, ensuring that customers always have access to the most accurate information.
 
-## Enhanced Customer Experience:
+## Enhanced Customer Experience
 
 With fast loading times and easy navigation, customers can quickly find what they're looking for, leading to a more satisfying dining experience.
 
@@ -33,7 +34,7 @@ With fast loading times and easy navigation, customers can quickly find what the
 <div class='text-center'>
 <h2>Astro Menu</h2>
 <div class="mockup-phone">
-    <div class="camera"></div> 
+    <div class="camera"></div>
     <div class="display">
         <div class="artboard artboard-demo phone-1">
             <img src='/public/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
@@ -45,7 +46,7 @@ With fast loading times and easy navigation, customers can quickly find what the
 <div class='text-center'>
 <h2>Other Menus</h2>
 <div class="mockup-phone">
-    <div class="camera"></div> 
+    <div class="camera"></div>
     <div class="display">
         <div class="artboard artboard-demo phone-1">
             <img src='/public/assets/features/wifi.gif' alt='astro-menu-auto-translate-menu' />
@@ -55,11 +56,11 @@ With fast loading times and easy navigation, customers can quickly find what the
 </div>
 </div>
 
-## Reduced Wait Times:
+## Reduced Wait Times
 
 By streamlining the ordering process, a cloud-based fast menu can help reduce wait times for both customers and staff, improving overall efficiency.
 
-## Environmental Sustainability:
+## Environmental Sustainability
 
 Going digital with a cloud-based menu reduces the restaurant's environmental impact by reducing paper waste and energy consumption associated with printing.
 

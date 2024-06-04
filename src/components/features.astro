@@ -1,24 +1,18 @@
 ---
 // @ts-ignore
 import Button from '@components/ui/button.astro'
+import { Debug } from 'astro:components'
+import { getCollection } from 'astro:content'
 import { FEATURES } from 'content/features.js'
+import AstroSpeedCompare from './astro-speed-compare.astro'
+
+const featuresEntries = await getCollection('features', ({ data }) => {
+	return !data.draft && data.publishDate < new Date()
+})
+
+featuresEntries.sort((a, b) => a.data.order - b.data.order)
 ---
 
-<!-- <script>
-	let options = {
-		root: document.querySelector('html'),
-		rootMargin: '0px',
-		threshold: 1.0
-	}
-	let observer = new IntersectionObserver((value) => {
-		console.log(value)
-	}, options)
-
-	let target = document.querySelector('.testAnimate')
-
-	observer.observe(target)
-	console.log(observer)
-</script> -->
 <section class="mt-16 md:mt-0">
 	<div class="intersect-once intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
@@ -32,32 +26,34 @@ import { FEATURES } from 'content/features.js'
 		</p>
 	</div>
 
-	<div class="mt-16 grid gap-8 sm:grid-cols-2">
-		{
-			FEATURES.map((item, index) => (
-				<div
-					class="intersect-once flex items-center gap-4 intersect:animate-fade-down"
-					style={`animation-delay: ${index * 75}ms;`}
-				>
-					<img src={`/assets/icons/${item.icon}.svg`} class="h-16 w-16" />
-					<div>
-						<h3 class="text-xl font-semibold">{item.title}</h3>
-						<p class="mt-1 leading-relaxed">{item.description}</p>
-						<Button size="sm" class="mt-2">
-							Learn more
-						</Button>
-					</div>
-				</div>
-				// <video
-				// 		class="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-				// 		autoplay
-				// 		loop
-				// 		muted
-				// 		playsinline
-				// 	>
-				// 		<source src={`/assets/features/${item.video}`} type="video/mp4" />
-				// 	</video>
-			))
-		}
+	<div class="mt-8 flex flex-row gap-8">
+		<img src="/assets/landing-page/coffee-shop.svg" alt="Coffee Shop" class="w-1/2" />
+		<div class="flex flex-col gap-4">
+			<p>
+				Astro-Menu is designed to address common issues with traditional menus, aiding your
+				customers in finding what they desire swiftly, thereby preventing excessive menu exploration
+				and reducing table turnover. It lessens the workload on your waiting staff by streamlining
+				the order-taking process. Furthermore, it eliminates language barriers as customers can
+				browse the menu in their preferred language, place their order, and have it instantly appear
+				on the staff dashboard, eliminating the need for a common language. It also provides
+				customers with your restaurant's Wi-Fi password and offers you analytics on the most ordered
+				meals, total income, and more. In essence, Astro-Menu provides everything you need for a
+				smooth and efficient restaurant operation.
+			</p>
+			<p>
+				Astro-Menu goal is to offers you with everything that would make taking and serving orders
+				faster and easier for you and your customers.
+			</p>
+			<p>Here are some key features that Astro-Menu offers you:</p>
+
+			<div>
+				{featuresEntries.map((item, index) => <li>{item.data.title}</li>)}
+			</div>
+
+			<a href="/features" class="btn btn-secondary mt-4 self-start"> Full Features List </a>
+		</div>
 	</div>
+	<AstroSpeedCompare
+		feature={featuresEntries.find((feature) => feature.data.title === 'Astro-Speed Menu')}
+	/>
 </section>
