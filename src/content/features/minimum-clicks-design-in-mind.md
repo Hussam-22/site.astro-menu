@@ -1,7 +1,7 @@
 ---
 draft: false
-title: 'Minimum Clicks design in mind'
-snippet: Astro-Menu was design with minimum clicks in mind, we want to make sure that your customers can order with the least number of clicks possible without overwhelming them with too many options.
+title: 'Minimum Clicks'
+snippet: Astro-Menu was designed with a minimum clicks concept in mind, aiming to get customers to their desired meal in as few clicks as possible. To achieve this, we’ve implemented an intuitive filtering system that simplifies the browsing process, Customers can quickly filter meals based on meal types such as "beef," "chicken," "vegetarian," and more. With just a few clicks, diners can narrow down their options to their preferred ingredients, ensuring they find exactly what they’re craving without the need to scroll through unrelated items..
 icon: 'min-clicks'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2024-06-01 11:39'
@@ -34,7 +34,7 @@ A streamlined ordering process means that customers spend less time browsing the
 <div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
 <!-- <img src='/public/assets/features/dynamic-qr-code-menu.png' alt='astro-menu-min-clicks' class='border-2 border-gray-200 rounded-lg w-96'> -->
 <div class="mockup-phone">
-    <div class="camera"></div> 
+    <div class="camera"></div>
     <div class="display">
         <div class="artboard artboard-demo phone-1">
             <video src='/public/assets/features/min-clicks.mp4' muted autoplay controls>

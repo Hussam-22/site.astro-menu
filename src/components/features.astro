@@ -4,7 +4,6 @@ import Button from '@components/ui/button.astro'
 import { Debug } from 'astro:components'
 import { getCollection } from 'astro:content'
 import { FEATURES } from 'content/features.js'
-import AstroSpeedCompare from './astro-speed-compare.astro'
 
 const featuresEntries = await getCollection('features', ({ data }) => {
 	return !data.draft && data.publishDate < new Date()
@@ -53,7 +52,4 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 			<a href="/features" class="btn btn-secondary mt-4 self-start"> Full Features List </a>
 		</div>
 	</div>
-	<AstroSpeedCompare
-		feature={featuresEntries.find((feature) => feature.data.title === 'Astro-Speed Menu')}
-	/>
 </section>
