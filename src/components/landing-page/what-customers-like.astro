@@ -10,15 +10,8 @@ import PhoneMockup from '@components/ui/phone-mockup.astro'
 			sizes, starting from a small cafe with 15 tables to a franchise of 5 branches.
 		</p> -->
 	</div>
-	<div class="mx-auto mt-8 max-w-60">
-		<div class="diff h-[500px]">
-			<div class="diff-item-1">
-				<PhoneMockup imgSrc="/public/assets/images/astro-menu-phone.png" />
-			</div>
-			<div class="diff-item-2">
-				<PhoneMockup imgSrc="/public/assets/images/old-menu.png" />
-			</div>
-			<div class="diff-resizer"></div>
-		</div>
+	<div class="mt-10 flex flex-row items-center justify-center gap-10">
+		<PhoneMockup imgSrc="/public/assets/images/astro-menu-phone.png" text="Astro Menu" />
+		<PhoneMockup imgSrc="/public/assets/images/old-menu.png" text="Dull Menu" />
 	</div>
 </div>
