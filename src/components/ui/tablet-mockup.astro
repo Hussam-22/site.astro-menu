@@ -1,5 +1,5 @@
 ---
-const { className, imgSrc } = Astro.props
+const { className, imgSrc, text } = Astro.props
 ---
 
 <div class={className}>
@@ -13,5 +13,5 @@ const { className, imgSrc } = Astro.props
 			<img src={imgSrc} class="h-full w-full rounded-3xl object-cover" />
 		</div>
 	</div>
-	<h2 class="mt-2 text-center font-bold">Waiter Dashboard</h2>
+	<h2 class="mt-2 text-center font-bold">{text}</h2>
 </div>

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import PhoneMockup from './ui/phone-mockup.astro'
-import TabletMockup from './ui/tablet-mockup.astro'
+import PhoneMockup from '../ui/phone-mockup.astro'
+import TabletMockup from '../ui/tablet-mockup.astro'
 
 const featuresEntries = await getCollection('features', ({ data }) => {
 	return !data.draft && data.publishDate < new Date()
@@ -22,8 +22,13 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 			<PhoneMockup
 				className="absolute left-0 z-20 translate-y-12 transform"
 				imgSrc="/public/assets/images/astro-menu-phone.png"
+				text="Menu View"
 			/>
-			<TabletMockup className="absolute left-8 z-10" imgSrc="/public/assets/images/dashboard.png" />
+			<TabletMockup
+				className="absolute left-8 z-10"
+				imgSrc="/public/assets/images/dashboard.png"
+				text="Waiter Dashboard"
+			/>
 		</div>
 		<div class="flex w-[40%] grow-0 flex-col gap-4">
 			<p class="mt-4 text-lg">
@@ -42,13 +47,13 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 					featuresEntries.map((item, index) => (
 						<div class="flex flex-col items-center justify-center gap-1 rounded-lg bg-gray-100 p-3">
 							<img src={`/public/assets/icons/${item.data.icon}.svg`} class="h-8 w-8" />
-							<p class="text-md font-bold">{item.data.title}</p>
+							<p class="text-md text-center font-bold">{item.data.title}</p>
 						</div>
 					))
 				}
 			</div>
 
-			<a href="/features" class="btn-secondary btn mt-4 self-center"
+			<a href="/features" class="btn-secondary btn mt-4 self-start"
 				>Check Out the Full Features List</a
 			>
 		</div>

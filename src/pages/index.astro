@@ -1,23 +1,19 @@
 ---
 import Container from '@components/container.astro'
-import Cta from '@components/cta.astro'
-import Features from '@components/features.astro'
+import LandingEverythingYouNeed from '@components/landing-page/landing-everything-you-need.astro'
 import Hero from '@components/hero.astro'
 import Layout from '@layouts/Layout.astro'
 import Pricing from '@components/pricing-component.astro'
 import FAQ from '@components/faq.astro'
 import WhyToSwitch from '@components/why-to-switch.astro'
-import LandingPageFeaturesCards from '@components/landing-page-features-cards.astro'
 ---
 
 <Layout title="">
 	<Container>
 		<Hero />
-		<Features />
-		<LandingPageFeaturesCards />
+		<LandingEverythingYouNeed />
 		<WhyToSwitch />
 		<Pricing />
 		<FAQ />
-		<!-- <Cta /> -->
 	</Container>
 </Layout>
