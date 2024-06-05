@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Wifi Password from the menu'
+title: 'Wifi Password'
 snippet: You can add your wifi password to the menu, so your customers can easily connect to your wifi without asking your staff for the password.
 icon: 'wifi'
 image: { src: '/assets/features/wifi.png', alt: 'full stack web development' }

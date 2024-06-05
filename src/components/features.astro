@@ -1,9 +1,5 @@
 ---
-// @ts-ignore
-import Button from '@components/ui/button.astro'
-import { Debug } from 'astro:components'
 import { getCollection } from 'astro:content'
-import { FEATURES } from 'content/features.js'
 
 const featuresEntries = await getCollection('features', ({ data }) => {
 	return !data.draft && data.publishDate < new Date()
@@ -49,7 +45,7 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 				{featuresEntries.map((item, index) => <li>{item.data.title}</li>)}
 			</div>
 
-			<a href="/features" class="btn btn-secondary mt-4 self-start"> Full Features List </a>
+			<a href="/features" class="btn-secondary btn mt-4 self-start"> Full Features List </a>
 		</div>
 	</div>
 </section>

@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Waiter(ess)/Kitchen Dashboard'
+title: 'Staff Dashboard'
 snippet: By integrating the Waiter(ess) and Kitchen Dashboards, Astro-Menu ensures a seamless and efficient dining experience. These features enhance communication, reduce errors, and improve overall service quality, allowing restaurants to operate smoothly and provide exceptional customer satisfaction.
 icon: 'waiter'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }

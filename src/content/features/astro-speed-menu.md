@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Astro-Speed Menu'
+title: 'Astro-Speed'
 snippet: Experience near-instantaneous menu loading from the cloud, ensuring you spend less time waiting and more time enjoying your meal, dont overload customer with large pdf files or images that takes forever to load.
 extraText: Our cloud-based technology eliminates the need for downloads, unlike traditional PDF menus. This means you get immediate access to the menu without using up your device's storage space. Additionally, our optimized cloud solution requires significantly less bandwidth, making it ideal for customers with limited data plans or those in areas with slower internet connections. This efficiency not only improves user experience but also contributes to a more eco-friendly digital footprint.
 icon: 'fast'

@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Dynamic Menu with QR Codes'
+title: 'Dynamic Menu'
 snippet: Astro-Menu’s dynamic menu feature empowers restaurants to easily create and manage their menus, providing a customizable and efficient dining experience. With an intuitive interface, restaurant owners can effortlessly add and organize dishes, update sections, and ensure their menu is always current.
 icon: 'qr-code'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
