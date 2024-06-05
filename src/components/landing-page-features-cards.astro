@@ -12,12 +12,11 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 <div class="flex flex-col">
 	<LandingFeatureCard
 		feature={featuresEntries.find((feature) => feature.data.title === 'Astro-Speed')}
-		color="bg-blue-50"
+		color=""
 	/>
 	<LandingFeatureCard
 		feature={featuresEntries.find((feature) => feature.data.title === 'Minimum Clicks')}
-		color="bg-rose-50"
+		color=""
 		direction="flex-row-reverse"
 	/>
-	<a href="/features" class="btn-primary btn mt-8 self-center">Check out the full features list</a>
 </div>

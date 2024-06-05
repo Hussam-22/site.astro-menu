@@ -4,7 +4,7 @@ import { Debug } from 'astro:components'
 const { feature, color, direction = 'flex-row' } = Astro.props
 ---
 
-<div class:list={['mt-16 flex items-center gap-5 rounded-xl pl-10', color, direction]}>
+<div class:list={['flex items-center gap-5 rounded-xl pl-10', color, direction]}>
 	<div class="flex w-1/2 flex-col">
 		<img
 			src={`/assets/icons/${feature.data.icon}.svg`}
@@ -18,7 +18,7 @@ const { feature, color, direction = 'flex-row' } = Astro.props
 		<p class="mt-3 text-lg">
 			{feature.data.extraText}
 		</p>
-		<a class="btn btn-secondary mt-5 self-start" href={`/features/${feature.slug}`}
+		<a class="btn-secondary btn mt-5 self-start" href={`/features/${feature.slug}`}
 			>learn more about <span class="text-primary">{feature.data.title}</span> feature</a
 		>
 	</div>

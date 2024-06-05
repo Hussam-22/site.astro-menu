@@ -10,17 +10,11 @@ const featuresEntries = await getCollection('features', ({ data }) => {
 featuresEntries.sort((a, b) => a.data.order - b.data.order)
 ---
 
-<section class="mt-16 md:mt-0">
+<section class="mt-16 rounded-lg bg-gray-50 px-5 py-8 sm:mb-16 md:mt-0">
 	<div class="intersect-once intersect:animate-fade-right">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+		<h2 class="text-center text-4xl font-bold lg:text-5xl lg:tracking-tight">
 			Everything you need to build your menu
 		</h2>
-		<p class="mt-4 text-lg">
-			<span class="text-rose-400">Astro Menu</span> comes batteries included. It not just another QR
-			Menu, it comes with Waiter(ess) dashboard and Kitchen dashboard to help you be in full control
-			of customers orders, including many other features such as analytics, auto translation, meals filtering,
-			and more.
-		</p>
 	</div>
 
 	<div class="mt-8 flex flex-row gap-8">
@@ -32,16 +26,10 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 			<TabletMockup className="absolute left-8 z-10" imgSrc="/public/assets/images/dashboard.png" />
 		</div>
 		<div class="flex w-[40%] grow-0 flex-col gap-4">
-			<p>
-				Astro-Menu is designed to address common issues with traditional menus, aiding your
-				customers in finding what they desire swiftly, thereby preventing excessive menu exploration
-				and reducing table turnover. It lessens the workload on your waiting staff by streamlining
-				the order-taking process. Furthermore, it eliminates language barriers as customers can
-				browse the menu in their preferred language, place their order, and have it instantly appear
-				on the staff dashboard, eliminating the need for a common language. It also provides
-				customers with your restaurant's Wi-Fi password and offers you analytics on the most ordered
-				meals, total income, and more. In essence, Astro-Menu provides everything you need for a
-				smooth and efficient restaurant operation.
+			<p class="mt-4 text-lg">
+				<span class="text-rose-400">Astro Menu</span> comes batteries included. It not just another QR
+				Menu, it comes with Staff dashboard to help you be in full control of customers orders, including
+				many other features such as analytics, auto translation, meals filtering, and more.
 			</p>
 			<p>
 				Astro-Menu goal is to offers you with everything that would make taking and serving orders
@@ -49,11 +37,20 @@ featuresEntries.sort((a, b) => a.data.order - b.data.order)
 			</p>
 			<p>Here are some key features that Astro-Menu offers you:</p>
 
-			<div>
-				{featuresEntries.map((item, index) => <li>{item.data.title}</li>)}
+			<div class="grid grid-cols-3 gap-2">
+				{
+					featuresEntries.map((item, index) => (
+						<div class="flex flex-col items-center justify-center gap-1 rounded-lg bg-gray-100 p-3">
+							<img src={`/public/assets/icons/${item.data.icon}.svg`} class="h-8 w-8" />
+							<p class="text-md font-bold">{item.data.title}</p>
+						</div>
+					))
+				}
 			</div>
 
-			<a href="/features" class="btn-secondary btn mt-4 self-start"> Full Features List </a>
+			<a href="/features" class="btn-secondary btn mt-4 self-center"
+				>Check Out the Full Features List</a
+			>
 		</div>
 	</div>
 </section>
