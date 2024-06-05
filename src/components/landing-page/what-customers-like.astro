@@ -4,14 +4,39 @@ import PhoneMockup from '@components/ui/phone-mockup.astro'
 
 <div class="my-16 rounded-lg bg-gray-50 p-8">
 	<div class="intersect-once text-center intersect:animate-fade-right">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">What Customers like</h2>
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro Menu vs Other Menus</h2>
 		<!-- <p class="mt-4 text-lg">
 			<span class="text-rose-400">Astro Menu</span> offers a variety of packages that covers all business
 			sizes, starting from a small cafe with 15 tables to a franchise of 5 branches.
 		</p> -->
 	</div>
 	<div class="mt-10 flex flex-row items-center justify-center gap-10">
-		<PhoneMockup imgSrc="/public/assets/images/astro-menu-phone.png" text="Astro Menu" />
-		<PhoneMockup imgSrc="/public/assets/images/old-menu.png" text="Dull Menu" />
+		<div class="flex w-full flex-row items-center justify-between">
+			<div class="text-xl leading-9">
+				<p>Dynamic Meals</p>
+				<p>Mobile Friendly Design</p>
+				<p>Modern Look</p>
+				<p>All Meals with Image</p>
+				<p>Multi Language</p>
+				<p>Fast Loading Menu</p>
+				<p>Order Cart and Summary</p>
+				<p>Restaurant Information</p>
+			</div>
+			<PhoneMockup imgSrc="/public/assets/images/astro-menu-phone.png" text="Astro Menu" />
+		</div>
+		<div class="divider lg:divider-horizontal">VS</div>
+		<div class="flex w-full flex-row items-center justify-between">
+			<PhoneMockup imgSrc="/public/assets/images/old-menu.png" text="Dull Menu" />
+			<div class="text-xl">
+				<p>Static Meals</p>
+				<p>Not Mobile Friendly Design</p>
+				<p>Dull Look</p>
+				<p>Single Language</p>
+				<p>No Order Cart and Summary</p>
+				<p>Slow Loading Menu</p>
+				<p>Text Only Menu</p>
+				<p>Restaurant Information</p>
+			</div>
+		</div>
 	</div>
 </div>
