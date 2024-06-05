@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import LandingFeatureCard from './landing-feature-item.astro'
+import PhoneMockup from './ui/phone-mockup.astro'
 
 const featuresEntries = await getCollection('features', ({ data }) => {
 	return !data.draft && data.publishDate < new Date()
@@ -9,14 +10,28 @@ const featuresEntries = await getCollection('features', ({ data }) => {
 featuresEntries.sort((a, b) => a.data.order - b.data.order)
 ---
 
-<div class="flex flex-col">
+<div class="flex flex-col gap-10">
+	<div class="intersect-once intersect:animate-fade-right">
+		<h2 class="text-center text-4xl font-bold lg:text-5xl lg:tracking-tight">Key Features</h2>
+	</div>
 	<LandingFeatureCard
 		feature={featuresEntries.find((feature) => feature.data.title === 'Astro-Speed')}
-		color=""
-	/>
+	>
+		<div class="flex flex-row items-center justify-center gap-5">
+			<PhoneMockup imgSrc="/public/assets/features/wifi.gif" text="Other Menu" />
+			<PhoneMockup imgSrc="/public/assets/features/translation.gif" text="Astro Menu" />
+		</div>
+	</LandingFeatureCard>
+
 	<LandingFeatureCard
 		feature={featuresEntries.find((feature) => feature.data.title === 'Minimum Clicks')}
-		color=""
 		direction="flex-row-reverse"
-	/>
+	>
+		<div class="flex flex-row items-center justify-center gap-5">
+			<PhoneMockup
+				imgSrc="/public/assets/features/min-clicks.gif"
+				text="Filtering for Seafood Meals in Few Clicks"
+			/>
+		</div>
+	</LandingFeatureCard>
 </div>

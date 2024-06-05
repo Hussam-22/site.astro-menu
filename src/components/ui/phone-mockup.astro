@@ -1,5 +1,5 @@
 ---
-const { className, imgSrc } = Astro.props
+const { className, imgSrc, text } = Astro.props
 ---
 
 <div class={className}>
@@ -7,7 +7,7 @@ const { className, imgSrc } = Astro.props
 		<!-- Side Buttons -->
 		<div class="absolute top-20 h-12 w-2 rounded-xl bg-black" style="right: -3px;"></div>
 		<div class="absolute top-20 h-12 w-2 rounded-xl bg-black" style="left: -3px;"></div>
-		<div class="absolute top-40 h-12 w-2 rounded-xl bg-black" style="left: -3px;"></div>
+		<div class="absolute top-36 h-12 w-2 rounded-xl bg-black" style="left: -3px;"></div>
 
 		<!-- Top Button/Element -->
 		<div class="absolute left-0 right-0 top-3 z-50 ml-auto mr-auto h-4 w-4 rounded-full bg-black">
@@ -16,5 +16,5 @@ const { className, imgSrc } = Astro.props
 		<!-- Image -->
 		<img src={imgSrc} class="h-full w-full rounded-3xl object-contain" />
 	</div>
-	<h2 class="mt-2 text-center font-bold">Menu View</h2>
+	<h2 class="mt-2 w-52 text-center font-bold">{text}</h2>
 </div>

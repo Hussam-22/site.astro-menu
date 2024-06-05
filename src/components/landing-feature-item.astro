@@ -1,11 +1,19 @@
 ---
 import { Debug } from 'astro:components'
+import PhoneMockup from './ui/phone-mockup.astro'
 
-const { feature, color, direction = 'flex-row' } = Astro.props
+const { feature, direction = 'flex-row', imgComponent } = Astro.props
 ---
 
-<div class:list={['flex items-center gap-5 rounded-xl pl-10', color, direction]}>
-	<div class="flex w-1/2 flex-col">
+<div class:list={['my-2 flex items-center gap-5 rounded-lg bg-rose-50 py-10', direction]}>
+	<div
+		class:list={[
+			'flex w-1/2 flex-col ',
+			direction === 'flex-row-reverse'
+				? 'border-r-8 border-rose-400 pr-10'
+				: 'border-l-8 border-rose-400 pl-10'
+		]}
+	>
 		<img
 			src={`/assets/icons/${feature.data.icon}.svg`}
 			alt={feature.data.title}
@@ -22,32 +30,7 @@ const { feature, color, direction = 'flex-row' } = Astro.props
 			>learn more about <span class="text-primary">{feature.data.title}</span> feature</a
 		>
 	</div>
-	<div class="grid scale-75 grid-cols-2 items-center gap-5">
-		<div class="text-center">
-			<h2 class="mb-2 text-2xl font-bold text-primary">Astro Menu</h2>
-			<div class="mockup-phone">
-				<div class="camera"></div>
-				<div class="display">
-					<div class="artboard artboard-demo phone-1">
-						<img
-							src="/public/assets/features/translation.gif"
-							alt="astro-menu-auto-translate-menu"
-						/>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="text-center">
-			<h2 class="mb-2 text-2xl font-bold">Other Menus</h2>
-			<div class="mockup-phone">
-				<div class="camera"></div>
-				<div class="display">
-					<div class="artboard artboard-demo phone-1">
-						<img src="/public/assets/features/wifi.gif" alt="astro-menu-auto-translate-menu" />
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="flex w-1/2 flex-row items-center justify-evenly">
+		<slot />
 	</div>
 </div>
