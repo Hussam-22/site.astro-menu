@@ -1,41 +1,67 @@
 ---
 import PhoneMockup from '@components/ui/phone-mockup.astro'
+import CheckMark from '@components/ui/icons/check.astro'
+import CrossMark from '@components/ui/icons/cross.astro'
+
+const GOOD = [
+	'Dynamic Interactive Menu',
+	'Mobile Friendly Design',
+	'Modern Look',
+	'Multi Language',
+	'Order Cart and Summary',
+	'Fast Loading Menu',
+	'All Meals with Image',
+	'Restaurant Information'
+]
+
+const BAD = [
+	'Static Meals',
+	'Not Mobile Friendly Design',
+	'Dull Look',
+	'Single Language',
+	'No Order Cart and Summary',
+	'Slow Loading Menu',
+	'Text Only Menu',
+	'No Restaurant Information'
+]
 ---
 
 <div class="mb-16 mt-32 rounded-lg bg-gray-50 p-8">
 	<div class="intersect-once text-center intersect:animate-fade-right">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro Menu vs Other Menus</h2>
-		<!-- <p class="mt-4 text-lg">
-			<span class="text-rose-400">Astro Menu</span> offers a variety of packages that covers all business
-			sizes, starting from a small cafe with 15 tables to a franchise of 5 branches.
-		</p> -->
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+			<span class="text-primary">Astro Menu</span>
+			<span class="text-gray-300">vs</span> Other Menus
+		</h2>
+		<p class="mt-4 text-lg">
+			Why <span class="text-rose-400">Astro Menu</span> is the best choice for your restaurant
+		</p>
 	</div>
 	<div class="mt-10 flex flex-row items-center justify-center gap-10">
-		<div class="flex w-full flex-row items-center justify-between">
-			<div class="text-xl leading-9">
-				<p>Dynamic Meals</p>
-				<p>Mobile Friendly Design</p>
-				<p>Modern Look</p>
-				<p>All Meals with Image</p>
-				<p>Multi Language</p>
-				<p>Fast Loading Menu</p>
-				<p>Order Cart and Summary</p>
-				<p>Restaurant Information</p>
+		<div class="flex w-full flex-row items-center justify-around">
+			<div class="text-right text-xl">
+				{
+					GOOD.map((item) => (
+						<div class="flex items-center gap-2">
+							<CheckMark class="h-6 w-6" />
+							{item}
+						</div>
+					))
+				}
 			</div>
-			<PhoneMockup imgSrc="/public/assets/images/astro-menu-phone.png" text="Astro Menu" />
+			<PhoneMockup imgSrc="/public/assets/features/full-menu-review.gif" text="Astro Menu" />
 		</div>
 		<div class="divider lg:divider-horizontal">VS</div>
-		<div class="flex w-full flex-row items-center justify-between">
-			<PhoneMockup imgSrc="/public/assets/images/old-menu.png" text="Dull Menu" />
-			<div class="text-xl">
-				<p>Static Meals</p>
-				<p>Not Mobile Friendly Design</p>
-				<p>Dull Look</p>
-				<p>Single Language</p>
-				<p>No Order Cart and Summary</p>
-				<p>Slow Loading Menu</p>
-				<p>Text Only Menu</p>
-				<p>Restaurant Information</p>
+		<div class="flex w-full flex-row items-center justify-around">
+			<PhoneMockup imgSrc="/public/assets/images/old-menu.png" text="Other Menus" />
+			<div class="text-left text-xl">
+				{
+					BAD.map((item) => (
+						<div class="flex items-center gap-2">
+							<CrossMark class="h-4 w-4" />
+							{item}
+						</div>
+					))
+				}
 			</div>
 		</div>
 	</div>

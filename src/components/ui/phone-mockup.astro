@@ -16,5 +16,7 @@ const { className, imgSrc, text } = Astro.props
 		<!-- Image -->
 		<img src={imgSrc} class="h-full w-full rounded-3xl object-contain" />
 	</div>
-	<h2 class="mt-2 w-52 text-center font-bold">{text}</h2>
+	<h2 class:list={['mt-2 w-52 text-center font-bold', text.includes('Astro') && 'text-primary']}>
+		{text}
+	</h2>
 </div>
