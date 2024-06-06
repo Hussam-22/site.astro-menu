@@ -51,13 +51,8 @@ const makeTitle = title
 				}
 			}}
 		/>
-		<script is:inline>
-			const localStorageTheme = localStorage.getItem('theme')
-			if (!localStorageTheme) localStorage.setItem('theme', 'cupcake')
-			document.querySelector('html').dataset.theme = localStorage.getItem('theme')
-		</script>
 	</head>
-	<body class="dark:bg-black">
+	<body>
 		<Navbar />
 		<slot />
 		<Footer />

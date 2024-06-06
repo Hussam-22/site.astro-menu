@@ -1,5 +1,7 @@
 ---
 import Link from '@components/ui/link.astro'
+import CheckMark from '@components/ui/icons/check.astro'
+import CrossMark from '@components/ui/icons/cross.astro'
 
 const { plan, index } = Astro.props
 ---
@@ -18,7 +20,7 @@ const { plan, index } = Astro.props
 			</div>
 			{
 				plan.popular && (
-					<div class="rounded-lg bg-white px-2 py-1 text-xs uppercase text-secondary">
+					<div class="rounded-lg bg-white px-2 py-1 text-xs uppercase text-black">
 						<p>most popular</p>
 					</div>
 				)
@@ -33,26 +35,15 @@ const { plan, index } = Astro.props
 	<ul class="mt-8 grid gap-y-2 text-left">
 		{
 			plan.features.map((item, featureIndex) => (
-				<li key={featureIndex} class="flex items-start gap-3">
-					<svg
-						class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							fillRule="evenodd"
-							d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-							clipRule="evenodd"
-						/>
-					</svg>
+				<li class="flex items-center gap-3">
+					{item.startsWith('x') ? <CrossMark class="h-3 w-3" /> : <CheckMark class="h-4 w-4" />}
 					<span
 						class:list={[
 							featureIndex <= 2 ? 'font-bold' : 'font-thin',
 							plan.popular && 'text-white'
 						]}
 					>
-						{item}
+						{item.startsWith('x') ? item.slice(1) : item}
 					</span>
 				</li>
 			))
