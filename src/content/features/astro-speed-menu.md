@@ -37,7 +37,7 @@ With fast loading times and easy navigation, customers can quickly find what the
     <div class="camera"></div>
     <div class="display">
         <div class="artboard artboard-demo phone-1">
-            <img src='/public/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
+            <img src='/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
         </div>
     </div>
 </div>
@@ -49,7 +49,7 @@ With fast loading times and easy navigation, customers can quickly find what the
     <div class="camera"></div>
     <div class="display">
         <div class="artboard artboard-demo phone-1">
-            <img src='/public/assets/features/wifi.gif' alt='astro-menu-auto-translate-menu' />
+            <img src='/assets/features/wifi.gif' alt='astro-menu-auto-translate-menu' />
         </div>
     </div>
 </div>

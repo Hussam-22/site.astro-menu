@@ -30,7 +30,7 @@ With a digital menu, restaurants can track which dishes are frequently ordered b
 Digital menus enable restaurants to track the popularity of menu items in real-time. By identifying top-selling items and trends, restaurants can optimize their inventory management processes. For instance, if a particular dish consistently sells out quickly, the kitchen can adjust production levels accordingly to avoid stockouts or overordering of ingredients. Additionally, by monitoring inventory turnover rates for different items, restaurants can minimize waste and optimize stock levels, leading to cost savings and improved operational efficiency.
 
 <div class='flex justify-center'>
-<img src='/public/assets/features/analytics.png' class='rounded-md' />
+<img src='/assets/features/analytics.png' class='rounded-md' />
 </div>
 
 ## Data-driven Decision Making:

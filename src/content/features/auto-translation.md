@@ -30,7 +30,7 @@ Pre-translation ensures that the menu looks professional and consistent across a
     <div class="camera"></div> 
     <div class="display">
         <div class="artboard artboard-demo phone-1">
-            <img src='/public/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
+            <img src='/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
         </div>
     </div>
 </div>

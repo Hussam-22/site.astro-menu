@@ -34,7 +34,7 @@ The kitchen dashboard prioritizes orders based on preparation time and urgency. 
 By centralizing all order information, the risk of miscommunication and errors is greatly reduced. Special requests and modifications are clearly visible to both waitstaff and kitchen staff, ensuring they are accurately addressed.
 
 <div class='flex justify-center'>
-<img src='/public/assets/features/waiter-kitchen-dashboard.webp' class='rounded-md' />
+<img src='/assets/features/waiter-kitchen-dashboard.webp' class='rounded-md' />
 </div>
 
 ## Faster Order Processing

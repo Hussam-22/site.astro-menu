@@ -37,7 +37,7 @@ Astro-Menu also supports the creation of different meal menus for each branch of
 - Multiple Menus for Different Tables
 
 <div class='flex justify-center'>
-<video src='/public/assets/features/dynamic-menu.mp4' class='rounded-md border-4' autoplay controls muted />
+<video src='/assets/features/dynamic-menu.mp4' class='rounded-md border-4' autoplay controls muted />
 </div>
 
 ## Unique QR codes for each table, allowing for customized menus.

@@ -36,7 +36,7 @@ Implementing the "Self Order" feature can significantly streamline restaurant op
     <div class="camera"></div> 
     <div class="display">
         <div class="artboard artboard-demo phone-1">
-            <video src='/public/assets/features/self-order.mp4' muted autoplay controls>
+            <video src='/assets/features/self-order.mp4' muted autoplay controls>
             </video>
         </div>
     </div>
