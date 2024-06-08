@@ -42,9 +42,9 @@ const BAD = [
 			<div class="text-xl leading-7">
 				{
 					GOOD.map((item) => (
-						<div class="flex gap-2">
-							<CheckMark class="h-6 w-6" />
-							<p class="leading-9">{item}</p>
+						<div class="flex items-center gap-2">
+							<CheckMark class="h-4 w-4" />
+							<p class="text-md whitespace-nowrap leading-8">{item}</p>
 						</div>
 					))
 				}
@@ -65,7 +65,7 @@ const BAD = [
 					BAD.map((item) => (
 						<div class="flex items-center gap-2">
 							<CrossMark class="h-4 w-4" />
-							<p class="leading-9">{item}</p>
+							<p class="text-md whitespace-nowrap leading-8">{item}</p>
 						</div>
 					))
 				}
