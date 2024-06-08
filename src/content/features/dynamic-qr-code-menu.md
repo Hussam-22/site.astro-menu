@@ -5,7 +5,7 @@ snippet: Astro-Menu’s dynamic menu feature empowers restaurants to easily crea
 icon: 'qr-code'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
-category: 'Tutorials'
+category: 'Features'
 author: 'Astro-Menu'
 tags: [dynamic-menu, tables-turnover, qr-menu]
 order: 3
@@ -36,9 +36,9 @@ Astro-Menu also supports the creation of different meal menus for each branch of
 - Tailor sections for seasonal items, special promotions, or temporary changes.
 - Multiple Menus for Different Tables
 
-<div class='flex justify-center'>
-<video src='/assets/features/dynamic-menu.mp4' class='rounded-md border-4' autoplay controls muted />
-</div>
+<div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
+<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
+<div>
 
 ## Unique QR codes for each table, allowing for customized menus.
 
@@ -49,6 +49,9 @@ Astro-Menu also supports the creation of different meal menus for each branch of
 - Create distinct menus for each branch of a restaurant.
 - Cater to regional tastes and local specialties for a personalized experience.
 - Streamlines menu management across multiple locations.
+
+</div>
+</div>
 
 ---
 

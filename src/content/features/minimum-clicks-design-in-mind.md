@@ -10,7 +10,6 @@ author: 'Astro-Menu'
 tags: [minimum-clicks, tables-turnover, qr-menu]
 order: 0
 ---
-
 Astro-Menu was designed with a minimum clicks concept in mind, aiming to get customers to their desired meal in as few clicks as possible. To achieve this, we’ve implemented an intuitive filtering system that simplifies the browsing process.
 
 Customers can quickly filter meals based on meal types such as "beef," "chicken," "vegetarian," and more. With just a few clicks, diners can narrow down their options to their preferred ingredients, ensuring they find exactly what they’re craving without the need to scroll through unrelated items.
@@ -31,20 +30,11 @@ By enabling diners to locate and order their meals quickly, Astro-Menu enhances 
 
 A streamlined ordering process means that customers spend less time browsing the menu and deciding what to order. This efficiency translates to quicker order placement and faster meal delivery. As a result, diners finish their meals sooner, allowing restaurants to serve more guests in the same amount of time. Higher table turnover rates can significantly boost a restaurant's revenue, especially during peak hours.
 
-<div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<!-- <img src='/public/assets/features/dynamic-qr-code-menu.png' alt='astro-menu-min-clicks' class='border-2 border-gray-200 rounded-lg w-96'> -->
-<div class="mockup-phone">
-    <div class="camera"></div>
-    <div class="display">
-        <div class="artboard artboard-demo phone-1">
-            <video src='/assets/features/min-clicks.mp4' muted autoplay controls>
-            </video>
-        </div>
-    </div>
-</div>
+<div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
+
+<img src='/assets/features/min-clicks.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 
 <div>
-
 <h2>Improved Operational Efficiency</h2>
 <p>
 Astro-Menu's efficient design reduces the need for waitstaff to spend excessive time answering menu-related questions or taking orders, allowing them to focus on delivering exceptional service and attending to other customer needs. This can lead to a smoother operation and better utilization of staff resources.

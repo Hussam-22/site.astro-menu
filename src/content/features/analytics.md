@@ -5,7 +5,7 @@ snippet: designed to provide restaurant managers with invaluable insights into t
 icon: 'analytics'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
-category: 'Tutorials'
+category: 'Features'
 author: 'Astro-Menu'
 tags: [analytics, data-driven decisions, qr-menu]
 order: 5
@@ -30,7 +30,7 @@ With a digital menu, restaurants can track which dishes are frequently ordered b
 Digital menus enable restaurants to track the popularity of menu items in real-time. By identifying top-selling items and trends, restaurants can optimize their inventory management processes. For instance, if a particular dish consistently sells out quickly, the kitchen can adjust production levels accordingly to avoid stockouts or overordering of ingredients. Additionally, by monitoring inventory turnover rates for different items, restaurants can minimize waste and optimize stock levels, leading to cost savings and improved operational efficiency.
 
 <div class='flex justify-center'>
-<img src='/assets/features/analytics.png' class='rounded-md' />
+<img src='/assets/features/analytics.png' class='border-2 border-gray-800 rounded-lg' />
 </div>
 
 ## Data-driven Decision Making:

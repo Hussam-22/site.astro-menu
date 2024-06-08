@@ -5,7 +5,7 @@ snippet: You can add your wifi password to the menu, so your customers can easil
 icon: 'wifi'
 image: { src: '/assets/features/wifi.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
-category: 'Tutorials'
+category: 'Features'
 author: 'Astro-Menu'
 tags: [webdev, tailwindcss, frontend]
 order: 6
@@ -25,8 +25,8 @@ Many diners enjoy sharing their dining experiences in real-time. Easy access to 
 
 Customers who wish to work while they dine or relax with streaming services will appreciate hassle-free internet access.
 
-<div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<img src='/assets/features/wifi.gif' alt='astro-menu-wifi' class='border-2 border-gray-200 rounded-lg w-96'>
+<div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
+<img src='/assets/features/wifi.gif' alt='astro-menu-wifi' class='border-2 border-gray-800 rounded-lg w-96'>
 <div>
 <h2>Reduced Queries</h2>
 <p>

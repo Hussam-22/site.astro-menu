@@ -6,7 +6,7 @@ extraText: Our cloud-based technology eliminates the need for downloads, unlike 
 icon: 'fast'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
-category: 'Tutorials'
+category: 'Features'
 author: 'Astro-Menu'
 tags: [webdev, tailwindcss, frontend]
 order: 7
@@ -30,29 +30,15 @@ The cloud-based menu allows restaurants to update menu items, prices, and specia
 
 With fast loading times and easy navigation, customers can quickly find what they're looking for, leading to a more satisfying dining experience.
 
-<div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<div class='text-center'>
-<h2>Astro Menu</h2>
-<div class="mockup-phone">
-    <div class="camera"></div>
-    <div class="display">
-        <div class="artboard artboard-demo phone-1">
-            <img src='/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
-        </div>
-    </div>
-</div>
+<div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
+<div>
+<p>Astro-Menu</p>
+<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 </div>
 
-<div class='text-center'>
-<h2>Other Menus</h2>
-<div class="mockup-phone">
-    <div class="camera"></div>
-    <div class="display">
-        <div class="artboard artboard-demo phone-1">
-            <img src='/assets/features/wifi.gif' alt='astro-menu-auto-translate-menu' />
-        </div>
-    </div>
-</div>
+<div>
+<p>Other Menus</p>
+<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 </div>
 </div>
 

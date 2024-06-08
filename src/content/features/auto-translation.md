@@ -5,7 +5,7 @@ snippet: Dont let the language be a barrier between you and your customers. Astr
 icon: 'translate'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
-category: 'Tutorials'
+category: 'Features'
 author: 'Astro-Menu'
 tags: [auto-translation, tables-turnover, qr-menu]
 order: 4
@@ -25,16 +25,8 @@ Browser-based translation extensions often rely on third-party services and can 
 
 Pre-translation ensures that the menu looks professional and consistent across all devices and languages. Restaurant managers can review and edit translations to avoid errors, ensuring that the menu maintains its intended tone and style in every language. This consistency is crucial for maintaining the restaurant's brand image and providing a high-quality customer experience.
 
-<div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<div class="mockup-phone">
-    <div class="camera"></div> 
-    <div class="display">
-        <div class="artboard artboard-demo phone-1">
-            <img src='/assets/features/translation.gif' alt='astro-menu-auto-translate-menu' />
-        </div>
-    </div>
-</div>
-
+<div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
+<img src='/assets/features/translation.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 <div>
 
 ## Enhanced Accuracy and Customization

@@ -5,7 +5,7 @@ snippet: Allow your customers to take their orders themselves select portions an
 icon: 'self-order'
 image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
-category: 'Tutorials'
+category: 'Features'
 author: 'Astro-Menu'
 tags: [self-order, tables-turnover, qr-menu]
 order: 1
@@ -30,17 +30,8 @@ Diners have more control over their orders, allowing them to take their time and
 In a post-pandemic world, minimizing physical contact is crucial. The "Self Order" feature promotes a contactless dining experience, enhancing customer safety and comfort. 2. Streamlining Restaurant Operations
 Implementing the "Self Order" feature can significantly streamline restaurant operations and improve efficiency:
 
-<div class='sm:grid sm:grid-cols-2 gap-5 items-center'>
-<!-- <img src='/public/assets/features/dynamic-qr-code-menu.png' alt='astro-menu-min-clicks' class='border-2 border-gray-200 rounded-lg w-96'> -->
-<div class="mockup-phone">
-    <div class="camera"></div> 
-    <div class="display">
-        <div class="artboard artboard-demo phone-1">
-            <video src='/assets/features/self-order.mp4' muted autoplay controls>
-            </video>
-        </div>
-    </div>
-</div>
+<div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
+<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 
 <div>
 

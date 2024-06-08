@@ -8,9 +8,8 @@ publishDate: '2024-06-01 11:39'
 category: 'Features'
 author: 'Astro-Menu'
 tags: [minimum-clicks, tables-turnover, qr-menu]
-order: 0
+order: 2
 ---
-
 Integrating Waiter(ess) and Kitchen Dashboards into a restaurant with Astro-Menu can transform the way the establishment operates. These dashboards streamline communication and coordination between front-of-house and back-of-house staff, ensuring that everyone is on the same page. When a customer places an order through the Self Order feature, the details are instantly relayed to both the waitstaff and the kitchen, reducing the chances of miscommunication and errors.
 
 The real-time updates provided by the dashboards enable the waitstaff to manage customer expectations more effectively, as they can see the status of each order as it progresses. This transparency helps in delivering a better dining experience, as waitstaff can promptly address any issues or special requests.
@@ -18,7 +17,6 @@ The real-time updates provided by the dashboards enable the waitstaff to manage 
 Additionally, the system supports real-time updates, incorporating real-time inventory management into Astro-Menu’s Waiter(ess) and Kitchen Dashboards offers significant benefits for restaurant operations. When meals go out-of-stock, the system instantly updates the customer menus, preventing orders for unavailable items.
 
 > <p class='text-primary'>The integration of these dashboards can lead to shorter wait times for customers, a smoother dining experience, and improved overall satisfaction.</p>
-
 ---
 
 ## Real-Time Order Updates
@@ -34,7 +32,7 @@ The kitchen dashboard prioritizes orders based on preparation time and urgency. 
 By centralizing all order information, the risk of miscommunication and errors is greatly reduced. Special requests and modifications are clearly visible to both waitstaff and kitchen staff, ensuring they are accurately addressed.
 
 <div class='flex justify-center'>
-<img src='/assets/features/waiter-kitchen-dashboard.webp' class='rounded-md' />
+<img src='/assets/features/waiter-kitchen-dashboard.webp' class='rounded-md border-2 border-gray-800' />
 </div>
 
 ## Faster Order Processing
