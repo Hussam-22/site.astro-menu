@@ -50,7 +50,7 @@ const { plan, index } = Astro.props
 		}
 	</ul>
 	<div class="mt-8 flex">
-		<Link href={plan.button.link || '#'} block style="outline">
+		<Link href={plan.button.link || '#'} block style={plan.popular ? 'outline' : 'primary'}>
 			{plan.button.text || 'Get Started'}
 		</Link>
 	</div>
