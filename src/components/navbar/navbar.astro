@@ -42,7 +42,7 @@ const menuitems = [
 
 <Container>
 	<header
-		class="flex w-full flex-col items-center justify-between border-b-2 border-gray-100 py-4 sm:flex-row"
+		class="flex w-full flex-col items-center justify-between border-b-2 border-gray-100 py-3 sm:flex-row"
 	>
 		<Astronav>
 			<div class="flex w-full flex-row items-center justify-between sm:w-auto">
@@ -59,24 +59,26 @@ const menuitems = [
 			</div>
 
 			<MenuItems class="hidden w-full flex-row items-center justify-between sm:flex">
-				<ul class="mx-auto mt-3 flex flex-col gap-2 sm:mt-0 sm:flex-row sm:gap-8">
-					{
-						menuitems.map((item, index) => (
-							<>
-								{
-									<li>
-										<a href={item.path} class="flex items-center font-bold hover:text-rose-400 ">
-											<span>{item.title}</span>
-										</a>
-									</li>
-								}
-							</>
-						))
-					}
-				</ul>
+				<div class="mx-auto">
+					<ul class="flex flex-col gap-2 sm:mt-0 sm:flex-row sm:gap-8">
+						{
+							menuitems.map((item, index) => (
+								<>
+									{
+										<li>
+											<a href={item.path} class="font-bold hover:text-rose-400">
+												<span>{item.title}</span>
+											</a>
+										</li>
+									}
+								</>
+							))
+						}
+					</ul>
+				</div>
 				<div class="mt-2 flex w-max flex-row items-center gap-4 sm:mt-0">
-					<Link href="#" style="muted" block size="md" class="whitespace-nowrap">Log in</Link>
-					<Link href="#" size="md" block class="whitespace-nowrap">Sign up</Link>
+					<Link href="#" block size="md" class="whitespace-nowrap bg-black text-white">Log in</Link>
+					<Link href="#" size="md" block class="whitespace-nowrap">Get started for free</Link>
 				</div>
 			</MenuItems>
 		</Astronav>
