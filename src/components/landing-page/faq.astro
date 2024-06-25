@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-iconify'
 import { Image } from 'astro:assets'
 import FAQsIllustration from 'assets/faq.svg'
 
@@ -66,12 +65,12 @@ const FAQs = [
 								data-collapse-target={`collapse-${index}`}
 							>
 								<span class="mr-10">{faq.question}</span>
-								<Icon
-									name="tabler:plus"
+								<img
+									src="/assets/icons/plus.svg"
 									class="absolute right-5 h-6 w-6 text-xs group-open:opacity-0"
 								/>
-								<Icon
-									name="tabler:minus"
+								<img
+									src="/assets/icons/minus.svg"
 									class="absolute right-5 h-6 w-6 text-xs opacity-0 group-open:opacity-100"
 								/>
 							</button>
