@@ -2,6 +2,8 @@
 import PhoneMockup from '@components/ui/phone-mockup.astro'
 import CheckMark from '@components/ui/icons/check.astro'
 import CrossMark from '@components/ui/icons/cross.astro'
+import oldMenu from "assets/old-menu.png"
+import astroMenuFullReview from "assets/full-menu-review.gif"
 
 const GOOD = [
 	'Dynamic Interactive Menu',
@@ -49,7 +51,7 @@ const BAD = [
 					))
 				}
 			</div>
-			<PhoneMockup imgSrc="/assets/features/full-menu-review.gif" text="Astro Menu" />
+			<PhoneMockup imgSrc={astroMenuFullReview} text="Astro Menu" />
 		</div>
 
 		<div class="flex flex-row items-center justify-center lg:flex-col">
@@ -59,7 +61,7 @@ const BAD = [
 		</div>
 
 		<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-			<PhoneMockup imgSrc="/assets/images/old-menu.png" text="Other Menus" />
+			<PhoneMockup imgSrc={oldMenu} text="Other Menus" />
 			<div class="text-left text-xl">
 				{
 					BAD.map((item) => (

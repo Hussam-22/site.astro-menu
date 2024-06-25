@@ -7,7 +7,7 @@ const { plan, index } = Astro.props
 ---
 
 <div
-	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none border-2 ${plan.popular ? 'bg-rose-400 border-none text-white' : 'border-[#f1f1f1]'} border-opacity-80 py-5 px-6 rounded-md`}
+	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none  ${plan.popular ? 'border-rose-400 border-4' : 'border-[#f1f1f1] border-opacity-80 border-2'}  py-5 px-6 rounded-md`}
 	style={`animation-delay: ${index * 0.25}s`}
 >
 	<div>
@@ -20,7 +20,7 @@ const { plan, index } = Astro.props
 			</div>
 			{
 				plan.popular && (
-					<div class="rounded-lg bg-white px-2 py-1 text-xs uppercase text-black">
+					<div class="rounded-lg bg-rose-500 px-2 py-1 text-xs uppercase text-white">
 						<p>most popular</p>
 					</div>
 				)
@@ -40,7 +40,6 @@ const { plan, index } = Astro.props
 					<span
 						class:list={[
 							featureIndex <= 2 ? 'font-bold' : 'font-thin',
-							plan.popular && 'text-white'
 						]}
 					>
 						{item.startsWith('x') ? item.slice(1) : item}
@@ -50,7 +49,7 @@ const { plan, index } = Astro.props
 		}
 	</ul>
 	<div class="mt-8 flex">
-		<Link href={plan.button.link || '#'} block style={plan.popular ? 'outline' : 'primary'}>
+		<Link href={plan.button.link || '#'} block style='primary'>
 			{plan.button.text || 'Get Started'}
 		</Link>
 	</div>

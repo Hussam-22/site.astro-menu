@@ -1,9 +1,8 @@
 ---
-import { Picture } from 'astro:assets'
-// import heroImage from "assets/hero.png";
+import { Image, Picture } from 'astro:assets'
 import heroImage from 'assets/hero-2.svg'
 import Link from '@components/ui/link.astro'
-import { Icon } from 'astro-icon/components'
+import astroLogo from 'assets/astro-logo.svg'
 ---
 
 <main class="grid place-items-center pb-8 pt-8 md:grid-cols-2 md:pb-24 md:pt-12">
@@ -29,9 +28,9 @@ import { Icon } from 'astro-icon/components'
 				>Print Menus</span
 			><br />
 			Hello, <span class="whitespace-nowrap rounded-2xl bg-rose-400 px-2 text-white"
-				>Astro <img
-					src="assets/astro-logo.svg"
-					class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-32 lg:w-32"
+				>Astro <Image
+					src={astroLogo}
+					class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-32 lg:w-32" alt='astro logo' loading='eager'
 				/> Menu</span
 			>
 		</h1>

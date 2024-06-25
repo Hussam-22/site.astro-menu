@@ -2,6 +2,8 @@
 import Container from '@components/container.astro'
 import Link from '@components/ui/link.astro'
 import { Astronav, MenuItems, MenuIcon } from 'astro-navbar'
+import astroLogo from 'assets/astro-logo.svg'
+import { Image } from 'astro:assets'
 
 const menuitems = [
 	{ title: 'Home', path: '/' },
@@ -45,7 +47,7 @@ const menuitems = [
 		<Astronav>
 			<div class="flex w-full flex-row items-center justify-between sm:w-auto">
 				<div class="flex w-max flex-row items-center">
-					<img src="/assets/astro-logo.svg" alt="Astro Menu" class="h-8 w-8" />
+					<Image src={astroLogo} alt="Astro Menu" class="h-8 w-8" loading='eager' />
 					<a href="/" class="text-lg"
 						><span class="font-bold">Astro</span>-<span class="text-primary">Menu</span>
 					</a>

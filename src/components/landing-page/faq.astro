@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-iconify'
-import Button from '@components/ui/button.astro'
+import { Image } from 'astro:assets'
+import FAQsIllustration from 'assets/faq.svg'
 
 const FAQs = [
 	{
@@ -86,10 +87,11 @@ const FAQs = [
 				}
 			</div>
 
-			<img
-				src="/assets/images/faq.svg"
-				alt="faq image"
+			<Image
+				src={FAQsIllustration}
+				alt="faq"
 				class="intersect-once hidden h-3/4 intersect:animate-fade sm:inline"
+				loading='lazy'
 			/>
 		</div>
 	</div>

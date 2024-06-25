@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import astroQr from "assets/astro-menu-qr.svg";
 ---
 
 <section class="mx-5 max-w-screen-md sm:mx-auto">
@@ -16,10 +17,11 @@
 			</p>
 		</div>
 		<div class="flex w-full flex-col items-center justify-center gap-2">
-			<img
-				src="/assets/astro-menu-qr.svg"
+			<Image
+				src={astroQr}
 				alt="QR code for astro menu"
 				class="h-64 w-64 rounded-lg border-8 border-black"
+				loading="lazy"
 			/>
 			<a
 				href="https://admin-qr-menu.netlify.app/qr-menu/sZ8cqIq1ceNOPDAwDB18/MshogdkMdPPvzXCheljs/q5hmh0r4Zdyu8lu8gA1k"
