@@ -46,8 +46,7 @@ const FAQs = [
 ]
 ---
 
-<section class="">
-	<div class="mt-32">
+<section class="-mx-8 sm:mx-auto mt-32">
 		<div class="intersect-once text-center intersect:animate-fade-right">
 			<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Frequently asked questions</h2>
 			<p class="mt-4 text-lg">
@@ -57,11 +56,11 @@ const FAQs = [
 			</p>
 		</div>
 
-		<div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-2 sm:place-items-center">
+		<div class="mt-8 px-3 sm:grid sm:grid-cols-2 sm:place-items-center">
 			<div>
 				{
 					FAQs.map((faq, index) => (
-						<div class="relative mb-3 rounded-lg bg-gradient-to-r from-rose-100 to-white p-1">
+						<div class="relative mb-3 rounded-lg bg-gradient-to-r from-rose-50 to-white p-1">
 							<button
 								class="group relative flex w-full cursor-pointer items-center rounded-lg bg-white p-3 text-left font-semibold transition-all ease-in"
 								data-collapse-target={`collapse-${index}`}
@@ -94,5 +93,4 @@ const FAQs = [
 				loading='lazy'
 			/>
 		</div>
-	</div>
 </section>
