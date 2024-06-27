@@ -1,20 +1,21 @@
 ---
+import Container from '@components/container.astro'
 import PricingCard from '@components/landing-page/pricing-card.astro'
 import Button from '@components/ui/button.astro'
 
 const pricing = [
 	{
 		name: 'Coffee Cup',
-		price: '25$',
+		price: '75 AED',
 		popular: false,
 		features: [
-			'1 QR',
+			`1 "Menu View" QR Code`,
+			'xSelf-Ordering QR Codes',
 			'1 Branch',
 			'3 Translation Languages',
 			'Unlimited Meals',
 			'Unlimited Menus',
-			'1 million Scans /per month',
-			'xSelf-Ordering Menu',
+			'500,000 Scans /per month',
 			'xKitchen Dashboard',
 			'xWaiter/ess Dashboard',
 			'xUsage & Statistics'
@@ -27,37 +28,38 @@ const pricing = [
 		description:
 			'Ideal for small businesses like cafes or coffee shops with up to 15 tables. This plan offers basic digital menu features to streamline your operations and enhance customer experience.'
 	},
-	{
-		name: 'Dine Smart',
-		price: '80$',
-		popular: false,
-		features: [
-			'30 QR Codes',
-			'1 Branch',
-			'3 Translation Languages',
-			'Unlimited Meals',
-			'Unlimited Menus',
-			'Unlimited Scans*',
-			'Self-Ordering Menu',
-			'Kitchen Dashboard',
-			'Waiter/ess Dashboard',
-			'Usage & Statistics'
-		],
-		button: {
-			text: 'Get Started',
-			link: '/'
-		},
-		icon: 'dinesmart',
-		description:
-			'Designed for medium-sized restaurants with a capacity of up to 30 tables. The Growth Package provides additional customization options and analytics tools to help you optimize your menu and better understand your customers preferences.'
-	},
+	// {
+	// 	name: 'Dine Smart',
+	// 	price: '50$',
+	// 	popular: false,
+	// 	features: [
+	// 		'30 QR Codes',
+	// 		'1 Branch',
+	// 		'3 Translation Languages',
+	// 		'Unlimited Meals',
+	// 		'Unlimited Menus',
+	// 		'Unlimited Scans*',
+	// 		'Self-Ordering Menu',
+	// 		'Kitchen Dashboard',
+	// 		'Waiter/ess Dashboard',
+	// 		'Usage & Statistics'
+	// 	],
+	// 	button: {
+	// 		text: 'Get Started',
+	// 		link: '/'
+	// 	},
+	// 	icon: 'dinesmart',
+	// 	description:
+	// 		'Designed for medium-sized restaurants with a capacity of up to 30 tables. The Growth Package provides additional customization options and analytics tools to help you optimize your menu and better understand your customers preferences.'
+	// },
 	{
 		name: 'Foodify',
-		price: '135$',
+		price: '149 AED',
 		popular: true,
 		features: [
-			'40 QR Codes / Per Branch',
-			'2 Branch',
+			`1 "Menu View" QR Code`,
+			'25 Self-order QR Codes',
+			'1 Branch',
 			'5 Translation Languages',
 			'Unlimited Meals',
 			'Unlimited Menus',
@@ -77,11 +79,12 @@ const pricing = [
 	},
 	{
 		name: 'Menu Master',
-		price: '215$',
+		price: '199 AED',
 		popular: false,
 		features: [
-			'50 QR Codes / Per Branch',
-			'3 Branch',
+			`1 "Menu View" QR Code`,
+			'50 Self-order QR Codes / Per Branch',
+			'2 Branch',
 			'8 Translation Languages',
 			'Unlimited Meals',
 			'Unlimited Menus',
@@ -112,14 +115,16 @@ const pricing = [
 	</p>
 </div>
 
-<div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-	{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
-</div>
+<Container class="sm:max-w-screen-xl">
+	<div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+		{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
+	</div>
 
-<p class="mt-1 text-sm">
-	*Unlimited scans are subject to fair usage policy. For more information, please refer to our terms
-	of service.
-</p>
+	<p class="mt-1 text-sm">
+		*Unlimited scans are subject to fair usage policy. For more information, please refer to our
+		terms of service.
+	</p>
+</Container>
 
 <div
 	class="mt-10 flex flex-col items-center gap-4 rounded-lg bg-gray-100 p-5 text-center sm:flex-row sm:p-10 sm:text-left"
