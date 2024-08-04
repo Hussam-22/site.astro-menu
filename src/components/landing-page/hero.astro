@@ -1,11 +1,17 @@
 ---
 import { Image, Picture } from 'astro:assets'
-import heroImage from 'assets/hero-2.svg'
+import heroImage from 'assets/hero.png'
 import Link from '@components/ui/link.astro'
 import astroLogo from 'assets/astro-logo.svg'
 ---
 
-<main class="grid place-items-center pb-8 pt-8 md:grid-cols-2 md:pb-24 md:pt-12">
+<!-- <Image
+				src={astroLogo}
+				class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-32 lg:w-32"
+				alt="astro logo"
+				loading="eager"
+			/> -->
+<main class="grid place-items-center pb-8 pt-8 md:grid-cols-2 md:pb-24 md:pt-0">
 	<div
 		class="intersect-once hidden py-6 intersect:animate-fade-right intersect:animate-duration-1000 md:order-1 md:block"
 	>
@@ -19,20 +25,16 @@ import astroLogo from 'assets/astro-logo.svg'
 		/>
 	</div>
 	<div>
+		<Image
+			src={astroLogo}
+			class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-16 lg:w-16"
+			alt="astro logo"
+			loading="eager"
+		/>
 		<h1
-			class="intersect-once text-4xl font-bold leading-snug intersect:animate-fade-left lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter dark:text-white"
+			class="intersect-once lg:tracking-none text-4xl font-bold leading-snug intersect:animate-fade-left lg:text-6xl lg:leading-relaxed xl:text-7xl xl:leading-tight xl:tracking-tighter dark:text-white"
 		>
-			Say Goodby to <br />
-			<span
-				class="whitespace-nowrap rounded-2xl border-b-4 border-black bg-black px-2 text-white dark:bg-white dark:text-black"
-				>Print Menus</span
-			><br />
-			Hello, <span class="whitespace-nowrap rounded-2xl bg-rose-400 px-2 text-white"
-				>Astro <Image
-					src={astroLogo}
-					class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-32 lg:w-32" alt='astro logo' loading='eager'
-				/> Menu</span
-			>
+			Your Budget Menu Solution to run your Business
 		</h1>
 		<p class="intersect-once mt-4 max-w-xl text-lg intersect:animate-fade-right dark:text-white">
 			<span class="text-rose-400">Astro Menu</span> is a modern and responsive QR menu for restaurants,
