@@ -1,6 +1,6 @@
 ---
 import { Image, Picture } from 'astro:assets'
-import heroImage from 'assets/hero.png'
+import heroImage from 'assets/hero.svg'
 import Link from '@components/ui/link.astro'
 import astroLogo from 'assets/astro-logo.svg'
 ---
@@ -19,7 +19,7 @@ import astroLogo from 'assets/astro-logo.svg'
 			src={heroImage}
 			alt="Astronaut in the air"
 			widths={[200, 400, 600]}
-			sizes="(max-width: 800px) 100vw, 620px"
+			sizes="(max-width: 400px) 100vw, 620px"
 			loading="eager"
 			format="avif"
 		/>
@@ -36,17 +36,20 @@ import astroLogo from 'assets/astro-logo.svg'
 		>
 			Your Budget Menu Solution to run your Business
 		</h1>
-		<p class="intersect-once mt-4 max-w-xl text-lg intersect:animate-fade-right dark:text-white">
-			<span class="text-rose-400">Astro Menu</span> is a modern and responsive QR menu for restaurants,
-			it offers a simple and easy way to showcase your menu to your customers. with minimum efforts,
-			transform your print menu to digital QR menu and increase your turnover.
+		<p
+			class="intersect-once mt-4 max-w-xl text-lg leading-snug intersect:animate-fade-right dark:text-white"
+		>
+			<span class="font-bold">Astro Menu</span> is a modern and responsive QR menu solution for your
+			business, it offers a simple and easy way to showcase your menu to your customers, manage your
+			restaurant with powerful PoS and with minimum efforts, transform your print menu to digital QR
+			menu and increase your turnover.
 		</p>
 		<div class="mt-6 flex flex-col gap-3">
 			<Link href="#" target="_blank" rel="noopener" style="primary" class="self-start"
 				>Get Started
 			</Link>
 
-			<p class="self-start text-center text-gray-400">1 Month free, no credit card required</p>
+			<p class="self-start text-center text-black">1 Month free, no credit card required</p>
 		</div>
 	</div>
 </main>

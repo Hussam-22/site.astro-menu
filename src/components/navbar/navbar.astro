@@ -18,10 +18,10 @@ const menuitems = [
 		// 	{ title: '404 Page', path: '/404' }
 		// ]
 	},
-	// {
-	// 	title: 'Pricing',
-	// 	path: '/pricing'
-	// },
+	{
+		title: 'Pricing',
+		path: '/pricing'
+	},
 	// {
 	// 	title: 'About',
 	// 	path: '/about'
@@ -42,12 +42,13 @@ const menuitems = [
 ]
 ---
 
+<div class="h-2 bg-black"></div>
 <Container>
-	<header class="flex w-full flex-col items-center justify-between py-3 sm:flex-row">
+	<header class="mb-10 flex w-full flex-col items-center justify-between sm:flex-row">
 		<Astronav>
 			<div class="flex w-full flex-row items-center justify-between sm:w-auto">
 				<div class="flex w-max flex-row items-center">
-					<Image src={astroLogo} alt="Astro Menu" class="h-8 w-8" loading='eager' />
+					<Image src={astroLogo} alt="Astro Menu" class="h-8 w-8" loading="eager" />
 					<a href="/" class="text-lg"
 						><span class="font-bold">Astro</span>-<span class="text-primary">Menu</span>
 					</a>
@@ -58,15 +59,20 @@ const menuitems = [
 				</div>
 			</div>
 
-			<MenuItems class="hidden w-full flex-row items-center justify-between sm:flex mt-2 sm:mt-0 sm:border-none sm:bg-none border-b-2 p-4 bg-gradient-to-b from-white to-rose-100 border-b-rose-200 rounded-md">
+			<MenuItems
+				class="mt-2 hidden w-full flex-row items-center justify-between rounded-md border-b-2 border-b-rose-200 bg-gradient-to-b from-white to-rose-100 p-4 sm:mt-0 sm:flex sm:border-none sm:bg-none"
+			>
 				<div class="mx-auto">
-					<ul class="flex flex-col gap-2 sm:mt-0 sm:flex-row sm:gap-8">
+					<ul class="flex flex-col gap-1 sm:mt-0 sm:flex-row sm:gap-4">
 						{
 							menuitems.map((item, index) => (
 								<>
 									{
 										<li>
-											<a href={item.path} class="font-bold hover:text-rose-400">
+											<a
+												href={item.path}
+												class="p-2 font-medium hover:rounded-lg hover:bg-gray-100 hover:p-2"
+											>
 												<span>{item.title}</span>
 											</a>
 										</li>
@@ -76,9 +82,9 @@ const menuitems = [
 						}
 					</ul>
 				</div>
-				<div class="mt-2 flex w-max flex-col sm:flex-row items-center sm:gap-10 sm:mt-0">
+				<div class="mt-2 flex w-max flex-col items-center sm:mt-0 sm:flex-row sm:gap-10">
 					<!-- <Link href="#" block size="md" class="whitespace-nowrap bg-black text-white">Log in</Link> -->
-					<a href="#" class="flex flex-row items-center gap-1 whitespace-nowrap font-bold"
+					<a href="#" class="flex flex-row items-center gap-1 whitespace-nowrap font-medium"
 						>Log in <img src="/assets/icons/login.svg" alt="Login" class="h-8 w-8" /></a
 					>
 					<Link href="#" size="md" block class="whitespace-nowrap">Get started</Link>

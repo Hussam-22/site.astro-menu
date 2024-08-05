@@ -5,12 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: [
-					'Bricolage Grotesque Variable',
-					'Inter Variable',
-					'Inter',
-					...defaultTheme.fontFamily.sans
-				]
+				sans: ['"Jost Variable", sans-serif', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
