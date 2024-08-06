@@ -37,19 +37,13 @@ const { plan, index } = Astro.props
 			plan.features.map((item, featureIndex) => (
 				<li class="flex items-center gap-3">
 					{item.startsWith('x') ? <CrossMark class="h-3 w-3" /> : <CheckMark class="h-4 w-4" />}
-					<span
-						class:list={[
-							featureIndex <= 2 ? 'font-bold' : 'font-thin',
-						]}
-					>
-						{item.startsWith('x') ? item.slice(1) : item}
-					</span>
+					<span>{item.startsWith('x') ? item.slice(1) : item}</span>
 				</li>
 			))
 		}
 	</ul>
 	<div class="mt-8 flex">
-		<Link href={plan.button.link || '#'} block style='primary'>
+		<Link href={plan.button.link || '#'} block style="primary">
 			{plan.button.text || 'Get Started'}
 		</Link>
 	</div>
