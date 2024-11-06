@@ -1,18 +1,14 @@
 ---
-import { Image, Picture } from 'astro:assets'
-import heroImage from 'assets/hero-2.svg'
-import Link from '@components/ui/link.astro'
-import astroLogo from 'assets/astro-logo.svg'
-import CustomCard from '@components/custom-card.astro'
 import Button from '@components/ui/button.astro'
 import PhoneMockup from '@components/ui/phone-mockup.astro'
 import astroMenuPhone from 'assets/astro-menu-phone.png'
 import astroMenuDashboard from 'assets/dashboard.png'
 import TabletMockup from '@components/ui/tablet-mockup.astro'
+import SectionCard from '@components/ui/section-card.astro'
 ---
 
 <main class="mb-6">
-	<CustomCard bgColor="bg-white">
+	<SectionCard bgColor="bg-white">
 		<div class="start-0 flex items-center justify-end gap-4 pr-14 pt-4">
 			<div class="h-5 w-5 rounded-full bg-gray-400"></div>
 			<div class="h-5 w-5 rounded-full bg-primary"></div>
@@ -52,5 +48,5 @@ import TabletMockup from '@components/ui/tablet-mockup.astro'
 				</div>
 			</div>
 		</div>
-	</CustomCard>
+	</SectionCard>
 </main>
