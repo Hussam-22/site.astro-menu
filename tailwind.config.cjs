@@ -26,7 +26,8 @@ module.exports = {
 				business: {
 					...require('daisyui/src/theming/themes')['business'],
 					primary: '#123456',
-					'.text-primary': { color: '#ff0000' } // Customize the text-primary color here
+					'.text-primary': { color: '#e62a6f' },
+					'.rounded-xxl': { borderRadius: '8rem' }
 				}
 			},
 			'fantasy'
