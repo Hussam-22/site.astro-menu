@@ -5,12 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: [
-					'Bricolage Grotesque Variable',
-					'Inter Variable',
-					'Inter',
-					...defaultTheme.fontFamily.sans
-				]
+				sans: [`'Plus Jakarta Sans Variable', sans-serif`, ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
@@ -25,9 +20,13 @@ module.exports = {
 			{
 				business: {
 					...require('daisyui/src/theming/themes')['business'],
-					primary: '#123456',
-					'.text-primary': { color: '#e62a6f' },
-					'.rounded-xxl': { borderRadius: '8rem' }
+					primary: '#000000',
+					secondary: '#EC5766',
+					color: 'black',
+					'.text-primary': { color: '#000000' },
+					'.text-secondary': { color: '#EC5766' },
+					'.rounded-xxl': { borderRadius: '4rem' },
+					'font-weight': '300'
 				}
 			},
 			'fantasy'

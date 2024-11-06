@@ -4,16 +4,53 @@ import heroImage from 'assets/hero-2.svg'
 import Link from '@components/ui/link.astro'
 import astroLogo from 'assets/astro-logo.svg'
 import CustomCard from '@components/custom-card.astro'
+import Button from '@components/ui/button.astro'
+import PhoneMockup from '@components/ui/phone-mockup.astro'
+import astroMenuPhone from 'assets/astro-menu-phone.png'
+import astroMenuDashboard from 'assets/dashboard.png'
+import TabletMockup from '@components/ui/tablet-mockup.astro'
 ---
 
 <main class="mb-6">
-	<CustomCard bgColor="bg-white text-center">
-		<div class="p-14">
-			<h1 class="text-8xl font-bold uppercase text-black">
-				Run your food business the modern way, <span class="text-primary whitespace-nowrap"
-					>astro-menu way!!</span
+	<CustomCard bgColor="bg-white">
+		<div class="start-0 flex items-center justify-end gap-4 pr-14 pt-4">
+			<div class="h-5 w-5 rounded-full bg-gray-400"></div>
+			<div class="h-5 w-5 rounded-full bg-primary"></div>
+			<div class="h-5 w-5 rounded-full bg-secondary"></div>
+		</div>
+		<div class="flex flex-col items-center justify-center pb-16 text-center">
+			<div class="w-[75%]">
+				<div class="px-14 pb-7">
+					<h1 class="mb-6 text-6xl font-extrabold capitalize text-black" style="line-height: 2cm;">
+						Revolutionize Your Food Business with
+						<span class="whitespace-nowrap rounded-3xl bg-primary px-4 text-white"
+							>Astro-Menu
+						</span>
+					</h1>
+					<h2 class="my-4 text-4xl">Modern, Effortless, Deliciously Digital</h2>
+					<p class="mb-4">
+						Empower your restaurant with our cutting-edge QR menu and POS solution. Seamlessly
+						integrate ordering and kitchen management, all in one sleek, digital platform.
+					</p>
+					<div class="flex flex-row items-center justify-center gap-2 text-center">
+						<Button href="/signup" class="" class="bg-green-400 text-black"> Get Started</Button>
+						<Button href="/signup" class="" class="bg-cyan-400 text-black"> Features List</Button>
+					</div>
+				</div>
+			</div>
+
+			<div class="">
+				<div
+					class="invisible relative hidden items-center justify-center sm:flex md:visible md:mt-10"
 				>
-			</h1>
+					<PhoneMockup
+						className="absolute -bottom-10 left-10 z-10 lg:-bottom-10"
+						imgSrc={astroMenuPhone}
+						text="Menu View"
+					/>
+					<TabletMockup className="" imgSrc={astroMenuDashboard} text="waits Dashboard" />
+				</div>
+			</div>
 		</div>
 	</CustomCard>
 </main>
