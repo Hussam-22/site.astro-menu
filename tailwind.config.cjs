@@ -17,6 +17,19 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/typography'),
 		require('tailwindcss-animated'),
-		require('tailwindcss-intersect')
-	]
+		require('tailwindcss-intersect'),
+		require('daisyui')
+	],
+	daisyui: {
+		themes: [
+			{
+				business: {
+					...require('daisyui/src/theming/themes')['business'],
+					primary: '#123456',
+					'.text-primary': { color: '#ff0000' } // Customize the text-primary color here
+				}
+			},
+			'fantasy'
+		]
+	}
 }

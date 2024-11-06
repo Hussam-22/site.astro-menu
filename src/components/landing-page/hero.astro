@@ -3,48 +3,9 @@ import { Image, Picture } from 'astro:assets'
 import heroImage from 'assets/hero-2.svg'
 import Link from '@components/ui/link.astro'
 import astroLogo from 'assets/astro-logo.svg'
+import CustomCard from '@components/custom-card.astro'
 ---
 
-<main class="grid place-items-center pb-8 pt-8 md:grid-cols-2 md:pb-24 md:pt-12">
-	<div
-		class="intersect-once hidden py-6 intersect:animate-fade-right intersect:animate-duration-1000 md:order-1 md:block"
-	>
-		<Picture
-			src={heroImage}
-			alt="Astronaut in the air"
-			widths={[200, 400, 600]}
-			sizes="(max-width: 800px) 100vw, 620px"
-			loading="eager"
-			format="avif"
-		/>
-	</div>
-	<div>
-		<h1
-			class="intersect-once text-4xl font-bold leading-snug intersect:animate-fade-left lg:text-6xl lg:leading-relaxed lg:tracking-tight xl:text-7xl xl:leading-snug xl:tracking-tighter dark:text-white"
-		>
-			Say Goodby to <br />
-			<span
-				class="whitespace-nowrap rounded-2xl border-b-4 border-black bg-black px-2 text-white dark:bg-white dark:text-black"
-				>Print Menus</span
-			><br />
-			Hello, <span class="whitespace-nowrap rounded-2xl bg-rose-400 px-2 text-white"
-				>Astro <Image
-					src={astroLogo}
-					class="inline-block h-16 w-16 animate-bounce animate-delay-0 animate-duration-[2500ms] animate-infinite animate-ease-linear lg:h-32 lg:w-32" alt='astro logo' loading='eager'
-				/> Menu</span
-			>
-		</h1>
-		<p class="intersect-once mt-4 max-w-xl text-lg intersect:animate-fade-right dark:text-white">
-			<span class="text-rose-400">Astro Menu</span> is a modern and responsive QR menu for restaurants,
-			it offers a simple and easy way to showcase your menu to your customers. with minimum efforts,
-			transform your print menu to digital QR menu and increase your turnover.
-		</p>
-		<div class="mt-6 flex flex-col gap-3">
-			<Link href="#" target="_blank" rel="noopener" style="primary" class="self-start"
-				>Get Started
-			</Link>
-
-			<p class="self-start text-center text-gray-400">1 Month free, no credit card required</p>
-		</div>
-	</div>
+<main class="">
+	<CustomCard bgColor="bg-white">Hello Hussam</CustomCard>
 </main>
