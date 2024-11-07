@@ -14,22 +14,26 @@ const features = [
 		title: 'cloud POS, kitchen and admin dashboard',
 		description:
 			'No physical lock-down, no expensive hardware, no more maintenance, run your business on any device that have an internet and a browser, iPad, Tablet or Desktop, astro-menu is responsive and works on any device, anywhere, everything runs on the cloud !!',
-		bgColor: 'bg-cyan-400'
+		bgColor: 'bg-cyan-400',
+		imgSrc: 'assets/icons/cloud.svg'
 	},
 	{
 		title: 'Multi-Languages and Translation',
 		description: `no more language barrier, translate your menu to any language you want and let your customers choose their preferred language, don't miss out on any customer`,
-		bgColor: 'bg-green-400'
+		bgColor: 'bg-green-400',
+		imgSrc: 'assets/icons/translate.svg'
 	},
 	{
-		title: 'Multi-Languages and Translation',
-		description: `no more language barrier, translate your menu to any language you want and let your customers choose their preferred language, don't miss out on any customer`,
-		bgColor: 'bg-orange-400'
+		title: 'Self Order',
+		description: `Customers dont have to wait for a waiter to take their order, they can simply scan a QR code on their table and order directly from their phone, waiter will only need to confirm order and send it to the kitchen, this will save time and increase your sales`,
+		bgColor: 'bg-purple-400',
+		imgSrc: 'assets/icons/self-order.svg'
 	},
 	{
 		title: 'And many more features',
 		description: `Check out our features page to see all the features we offer, we are constantly adding new features to make your business run smoothly`,
-		bgColor: 'bg-white'
+		bgColor: 'bg-white',
+		imgSrc: 'assets/icons/features.svg'
 	}
 ]
 ---
@@ -52,7 +56,7 @@ const features = [
 				title={features[0].title}
 				description={features[0].description}
 				bgSVG={''}
-				imgSrc={heroSvg}
+				imgSrc={features[0].imgSrc}
 			/>
 			<FeatureCard
 				bgColor={features[3].bgColor}
@@ -61,6 +65,8 @@ const features = [
 				bgSVG={''}
 				btnText="See all features"
 				btnLink="/features"
+				height="100"
+				imgSrc={features[3].imgSrc}
 			/>
 		</div>
 		<div class="flex flex-col gap-8">
@@ -73,7 +79,7 @@ const features = [
 							title={feature.title}
 							description={feature.description}
 							bgSVG={''}
-							imgSrc={heroSvg}
+							imgSrc={feature.imgSrc}
 						/>
 					))
 			}

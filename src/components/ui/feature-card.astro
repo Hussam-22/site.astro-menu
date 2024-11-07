@@ -2,18 +2,29 @@
 import { Image } from 'astro:assets'
 import Button from './button.astro'
 
-const { bgColor, title, description, bgSVG, btnText, btnLink, imgSrc = '' } = Astro.props
+const {
+	bgColor,
+	title,
+	description,
+	bgSVG,
+	btnText,
+	btnLink,
+	imgSrc = '',
+	height = 500
+} = Astro.props
 ---
 
-<div class:list={['rounded-xxl w-full p-12 ', bgColor]}>
+<div
+	class:list={[`rounded-xxl relative min-h-[${height}px] w-full p-12`, bgColor]}
+	style={`background-image: url('${imgSrc}'); background-size: 275px 275px; background-repeat: no-repeat; background-position: 110% 110%;`}
+>
 	<div class="">
 		<h2 class="text-2xl font-extrabold capitalize text-black lg:text-5xl lg:tracking-tight">
 			{title}
 		</h2>
-		<p class="mt-4 text-lg text-black">
+		<p class="mt-4 text-xl text-black">
 			{description}
 		</p>
-		{imgSrc && <Image src={imgSrc} alt="Astro Menu Phone" class="h-64 w-64" loading="lazy" />}
 		{
 			btnText && btnLink && (
 				<Button styles="primary" href={btnLink} class="mt-4 text-white">
