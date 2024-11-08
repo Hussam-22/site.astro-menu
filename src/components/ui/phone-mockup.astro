@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from 'astro:assets'
 
 const { className, imgSrc, text } = Astro.props
 ---
@@ -16,9 +16,21 @@ const { className, imgSrc, text } = Astro.props
 		</div>
 
 		<!-- Image -->
-		<Image src={imgSrc} class="h-full w-full rounded-3xl object-contain" alt={text} loading='lazy' quality='max' />
+		<Image
+			src={imgSrc}
+			class="h-full w-full rounded-3xl object-contain"
+			alt={text || 'phone mockup'}
+			loading="lazy"
+			quality="max"
+		/>
 	</div>
-	<h2 class:list={['mt-2 w-52 text-center font-bold', text.includes('Astro') && 'text-primary']}>
-		{text}
-	</h2>
+	{
+		text && (
+			<h2
+				class:list={['mt-2 w-52 text-center font-bold', text.includes('Astro') && 'text-primary']}
+			>
+				{text}
+			</h2>
+		)
+	}
 </div>

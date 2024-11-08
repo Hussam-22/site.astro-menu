@@ -1,0 +1,90 @@
+---
+import PhoneMockup from '@components/ui/phone-mockup.astro'
+import astroMenuPhone from 'assets/astro-menu-phone.png'
+import astroMenuVideo from 'assets/menu-view.gif'
+
+/* Astro Frontmatter */
+---
+
+<style>
+	.tab-content {
+		display: none;
+	}
+	.tab-content.active {
+		display: block;
+	}
+</style>
+
+<script type="module" defer>
+	function showTab(tabId) {
+		console.log(tabId)
+		// Hide all tab contents
+		const contents = document.querySelectorAll('.tab-content')
+		contents.forEach((content) => content.classList.remove('active'))
+
+		// Show the selected tab content
+		const tabContent = document.getElementById(tabId)
+		if (tabContent) {
+			tabContent.classList.add('active')
+		}
+	}
+
+	// Attach event listeners to buttons to avoid inline `onclick` attributes
+	document.querySelectorAll('.tab-button').forEach((button) => {
+		button.addEventListener('click', () => {
+			const tabId = button.getAttribute('onclick').match(/'([^']+)'/)[1]
+			showTab(tabId)
+		})
+	})
+</script>
+
+<section class="pt-32 md:mt-0">
+	<div class="intersect-once text-center text-white intersect:animate-fade-right">
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro-Menu Concept</h2>
+		<p class="mt-4 text-lg">
+			Astro-Menu team believes in 3 main concepts that identify the core of our product.
+		</p>
+	</div>
+
+	<div class="mx-auto mt-6 w-full">
+		<div class="flex items-center justify-between gap-4">
+			<button
+				class="tab-button w-full border-b-2 border-purple-400 px-4 py-2 text-2xl font-bold text-purple-400"
+				onclick="showTab('tab1')">User-Friendly Design</button
+			>
+			<button
+				class="tab-button w-full border-b-2 border-cyan-400 px-4 py-2 text-2xl font-bold text-cyan-400"
+				onclick="showTab('tab2')">Universal Appeal</button
+			>
+			<button
+				class="tab-button w-full border-b-2 border-green-400 px-4 py-2 text-2xl font-bold text-green-400"
+				onclick="showTab('tab3')">Commission-Free</button
+			>
+		</div>
+
+		<div id="tab1" class="rounded-xxl active tab-content mt-4 min-h-[200px] bg-white p-8">
+			<div class="flex flex-row items-center gap-4">
+				<p class="w-8/12 text-lg">
+					Astro-Menu was crafted with seamless navigation at its core, ensuring your customers enjoy
+					a hassle-free browsing experience. Say goodbye to awkward side-scrolling and the
+					frustration of jumping between sections that disrupt the user experience. Astro-Menu's
+					intuitive, single-page layout presents your entire menu in an easy-to-view format. Despite
+					its simplicity, it boasts robust functionality, featuring a menu sections drawer and meal
+					type filters. These dynamic tools empower customers to glide smoothly through various
+					sections and find their preferred dishes effortlessly, enhancing satisfaction and boosting
+					engagement.
+				</p>
+				<PhoneMockup
+					className="flex w-4/12 flex-col items-center justify-center"
+					imgSrc={astroMenuVideo}
+				/>
+			</div>
+		</div>
+		<div id="tab2" class="rounded-xxl tab-content mt-4 min-h-[200px] bg-white p-8">
+			<p class="">Content for Tab 2</p>
+		</div>
+		<div id="tab3" class="rounded-xxl tab-content mt-4 min-h-[200px] bg-white p-8">
+			<p class="">Content for Tab 3</p>
+		</div>
+	</div>
+</section>
