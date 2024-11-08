@@ -5,57 +5,9 @@ import Button from '@components/ui/button.astro'
 
 const pricing = [
 	{
-		name: 'Coffee Cup',
-		price: '75 AED',
+		name: 'Social Hero',
+		price: '9$',
 		popular: false,
-		features: [
-			`1 "Menu View" QR Code`,
-			'xSelf-Ordering QR Codes',
-			'1 Branch',
-			'3 Translation Languages',
-			'Unlimited Meals',
-			'Unlimited Menus',
-			'500,000 Scans /per month',
-			'xKitchen Dashboard',
-			'xWaiter/ess Dashboard',
-			'xUsage & Statistics'
-		],
-		button: {
-			text: 'Get Started',
-			link: '/'
-		},
-		icon: 'coffeecup',
-		description:
-			'Ideal for small businesses like cafes or coffee shops with up to 15 tables. This plan offers basic digital menu features to streamline your operations and enhance customer experience.'
-	},
-	// {
-	// 	name: 'Dine Smart',
-	// 	price: '50$',
-	// 	popular: false,
-	// 	features: [
-	// 		'30 QR Codes',
-	// 		'1 Branch',
-	// 		'3 Translation Languages',
-	// 		'Unlimited Meals',
-	// 		'Unlimited Menus',
-	// 		'Unlimited Scans*',
-	// 		'Self-Ordering Menu',
-	// 		'Kitchen Dashboard',
-	// 		'Waiter/ess Dashboard',
-	// 		'Usage & Statistics'
-	// 	],
-	// 	button: {
-	// 		text: 'Get Started',
-	// 		link: '/'
-	// 	},
-	// 	icon: 'dinesmart',
-	// 	description:
-	// 		'Designed for medium-sized restaurants with a capacity of up to 30 tables. The Growth Package provides additional customization options and analytics tools to help you optimize your menu and better understand your customers preferences.'
-	// },
-	{
-		name: 'Foodify',
-		price: '149 AED',
-		popular: true,
 		features: [
 			`1 "Menu View" QR Code`,
 			'25 Self-order QR Codes',
@@ -78,8 +30,32 @@ const pricing = [
 			'Designed for upscale restaurants and fine dining establishments with a capacity of up to 40 tables per branch, providing a galaxy of features to delight both chefs and patrons'
 	},
 	{
+		name: 'Coffee Cup',
+		price: '29$',
+		popular: true,
+		features: [
+			`1 "Menu View" QR Code`,
+			'xSelf-Ordering QR Codes',
+			'1 Branch',
+			'3 Translation Languages',
+			'Unlimited Meals',
+			'Unlimited Menus',
+			'500,000 Scans /per month',
+			'xKitchen Dashboard',
+			'xWaiter/ess Dashboard',
+			'xUsage & Statistics'
+		],
+		button: {
+			text: 'Get Started',
+			link: '/'
+		},
+		icon: 'coffeecup',
+		description:
+			'Ideal for small businesses like cafes or coffee shops with up to 15 tables. This plan offers basic digital menu features to streamline your operations and enhance customer experience.'
+	},
+	{
 		name: 'Menu Master',
-		price: '199 AED',
+		price: '59$',
 		popular: false,
 		features: [
 			`1 "Menu View" QR Code`,
@@ -105,7 +81,7 @@ const pricing = [
 ]
 ---
 
-<div class="intersect-once mt-36 text-center intersect:animate-fade-right">
+<div class="intersect-once mt-36 text-center text-white intersect:animate-fade-right">
 	<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
 		A Package for every business size
 	</h2>

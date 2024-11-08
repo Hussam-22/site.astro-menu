@@ -7,7 +7,7 @@ const { plan, index } = Astro.props
 ---
 
 <div
-	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none  ${plan.popular ? 'border-rose-400 border-2' : 'border-[#f1f1f1] border-opacity-80 border-2'}  py-5 px-6 rounded-md`}
+	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none  ${plan.popular ? 'border-rose-400 border-4' : 'border-black border-opacity-80 border-2'}  p-8 rounded-md bg-white rounded-xxl`}
 	style={`animation-delay: ${index * 0.25}s`}
 >
 	<div>
@@ -34,7 +34,6 @@ const { plan, index } = Astro.props
 	</div>
 
 	<div class="group relative flex">
-		<span class="bg-red-400 px-2 py-1 text-white">Button</span>
 		<span
 			class="absolute left-1/2 m-4 mx-auto -translate-x-1/2 translate-y-full rounded-md bg-gray-800 p-3 text-sm
 		text-gray-100 opacity-0 transition-opacity group-hover:opacity-100 sm:p-3"
