@@ -5,14 +5,18 @@ import astroMenuPhone from 'assets/astro-menu-phone.png'
 import astroMenuDashboard from 'assets/dashboard.png'
 import TabletMockup from '@components/ui/tablet-mockup.astro'
 import SectionCard from '@components/ui/section-card.astro'
+import BurgerIcon from 'assets/icons/burger.svg'
+import CoffeeIcon from 'assets/icons/coffee.svg'
+import ForkIcon from 'assets/icons/fork.svg'
+import Image from 'astro/components/Image.astro'
 ---
 
 <main class="mb-6">
 	<SectionCard bgColor="bg-white">
-		<div class="start-0 flex items-center justify-end gap-4 pr-14 pt-4">
-			<div class="h-5 w-5 rounded-full bg-primary"></div>
-			<div class="h-5 w-5 rounded-full bg-secondary"></div>
-			<div class="h-5 w-5 rounded-full bg-stone-400"></div>
+		<div class="flex items-center justify-end gap-3 pr-10 pt-3">
+			<Image src={BurgerIcon} alt="Burger Icon" width="28" height="28" />
+			<Image src={ForkIcon} alt="Burger Icon" width="28" height="28" />
+			<Image src={CoffeeIcon} alt="Burger Icon" width="32" height="32" class="mb-1" />
 		</div>
 		<div class="flex flex-col items-center justify-center pb-16 text-center">
 			<div class="w-[75%]">
