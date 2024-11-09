@@ -24,13 +24,5 @@ const { className, imgSrc, text } = Astro.props
 			quality="max"
 		/>
 	</div>
-	{
-		text && (
-			<h2
-				class:list={['mt-2 w-52 text-center font-bold', text.includes('Astro') && 'text-primary']}
-			>
-				{text}
-			</h2>
-		)
-	}
+	{text && <h2 class:list={['mt-2 w-52 text-center font-bold']}>{text}</h2>}
 </div>

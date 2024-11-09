@@ -7,7 +7,7 @@ const { plan, index } = Astro.props
 ---
 
 <div
-	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none  ${plan.popular ? 'border-rose-400 border-4' : 'border-black border-opacity-80 border-2'}  p-8 rounded-md bg-white rounded-xxl`}
+	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none  ${plan.popular ? 'border-green-400 border-8' : 'border-black border-opacity-80 border-2'}  p-8 rounded-md bg-white rounded-xxl`}
 	style={`animation-delay: ${index * 0.25}s`}
 >
 	<div>
@@ -20,7 +20,7 @@ const { plan, index } = Astro.props
 			</div>
 			{
 				plan.popular && (
-					<div class="rounded-lg bg-rose-500 px-2 py-1 text-xs uppercase text-white">
+					<div class="rounded-lg bg-green-400 px-2 py-1 text-xs uppercase text-white">
 						<p>most popular</p>
 					</div>
 				)

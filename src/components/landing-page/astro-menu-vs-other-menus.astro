@@ -2,76 +2,79 @@
 import PhoneMockup from '@components/ui/phone-mockup.astro'
 import CheckMark from '@components/ui/icons/check.astro'
 import CrossMark from '@components/ui/icons/cross.astro'
-import oldMenu from "assets/old-menu.png"
-import astroMenuFullReview from "assets/full-menu-review.gif"
+import oldMenu from 'assets/old-menu.png'
+import astroMenuFullReview from 'assets/full-menu-review.gif'
+import SectionCard from '@components/ui/section-card.astro'
 
 const GOOD = [
 	'Dynamic Interactive Menu',
 	'Mobile Friendly Design',
-	'Modern Look',
 	'Multi Language',
 	'Order Cart and Summary',
+	'Show Wifi Password',
+	'Restaurant Landing Page',
+	'Social Links',
+	'QR Code Menu',
+	'Customizable Menu',
+	'Menu Navigation',
+	'Meals Filtering',
 	'Fast Loading Menu',
-	'All Meals with Image',
-	'Restaurant Information'
+	'Meals Status Live Update'
 ]
 
 const BAD = [
-	'Static Meals',
-	'Not Mobile Friendly Design',
-	'Dull Look',
-	'Single Language',
-	'No Order Cart and Summary',
-	'Slow Loading Menu',
-	'Text Only Menu',
-	'No Restaurant Information'
+	'Static and Unresponsive Menu',
+	'Non-Mobile Friendly Design',
+	'Unattractive Appearance',
+	'Single Language Support',
+	'No Order Cart or Summary',
+	'Slow Loading Times'
 ]
 ---
 
-<section class="mb-16 mt-32 rounded-lg bg-gray-50 p-8 -mx-8 sm:mx-auto">
-	<div class="intersect-once text-center intersect:animate-fade-right">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-			<span class="text-primary">Astro Menu</span>
-			vs Other Menus
-		</h2>
-		<p class="mt-4 text-lg">
-			Why <span class="text-rose-400">Astro Menu</span> is the best choice for your restaurant
-		</p>
-	</div>
+<SectionCard bgColor="bg-zinc-800">
+	<section class="-mx-8 rounded-lg p-8 text-white sm:mx-auto">
+		<div class="intersect-once text-center intersect:animate-fade-right">
+			<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro Menu vs Regular Menus</h2>
+			<p class="mt-4 text-lg">
+				Why <span class="text-rose-400">Astro Menu</span> is the best choice for your restaurant
+			</p>
+		</div>
 
-	<div class="mt-10 flex flex-col items-center justify-between gap-10 lg:flex-row">
-		<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-			<div class="text-xl leading-7">
-				{
-					GOOD.map((item) => (
-						<div class="flex items-center gap-2">
-							<CheckMark class="h-4 w-4" />
-							<p class="text-md whitespace-nowrap leading-8">{item}</p>
-						</div>
-					))
-				}
+		<div class="mt-10 flex flex-col items-center justify-between gap-10 lg:flex-row">
+			<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
+				<div class="text-xl leading-7">
+					{
+						GOOD.map((item) => (
+							<div class="flex items-center gap-2">
+								<CheckMark class="h-4 w-4" />
+								<p class="text-md whitespace-nowrap leading-8">{item}</p>
+							</div>
+						))
+					}
+				</div>
+				<PhoneMockup imgSrc={astroMenuFullReview} text="Astro Menu" />
 			</div>
-			<PhoneMockup imgSrc={astroMenuFullReview} text="Astro Menu" />
-		</div>
 
-		<div class="flex flex-row items-center justify-center lg:flex-col">
-			<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
-			<span class="px-2 text-lg font-medium lg:py-2">vs</span>
-			<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
-		</div>
+			<div class="flex flex-row items-center justify-center lg:flex-col">
+				<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
+				<span class="px-2 text-lg font-medium lg:py-2">vs</span>
+				<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
+			</div>
 
-		<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-			<PhoneMockup imgSrc={oldMenu} text="Other Menus" />
-			<div class="text-left text-xl">
-				{
-					BAD.map((item) => (
-						<div class="flex items-center gap-2">
-							<CrossMark class="h-4 w-4" />
-							<p class="text-md whitespace-nowrap leading-8">{item}</p>
-						</div>
-					))
-				}
+			<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
+				<PhoneMockup imgSrc={oldMenu} text="Other Menus" />
+				<div class="text-left text-xl">
+					{
+						BAD.map((item) => (
+							<div class="flex items-center gap-2">
+								<CrossMark class="h-4 w-4" />
+								<p class="text-md whitespace-nowrap leading-8">{item}</p>
+							</div>
+						))
+					}
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</SectionCard>
