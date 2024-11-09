@@ -1,62 +1,88 @@
 ---
 import { getCollection } from 'astro:content'
-import PhoneMockup from '../ui/phone-mockup.astro'
-import TabletMockup from '../ui/tablet-mockup.astro'
-import astroMenuPhone from 'assets/astro-menu-phone.png'
-import astroMenuDashboard from 'assets/dashboard.png'
+import FeatureCard from '@components/ui/feature-card.astro'
+import heroSvg from 'assets/hero.svg'
 
 const featuresEntries = await getCollection('features', ({ data }) => {
 	return !data.draft && data.publishDate < new Date()
 })
 
 featuresEntries.sort((a, b) => a.data.order - b.data.order)
+
+const features = [
+	{
+		title: 'cloud POS, kitchen and admin dashboard',
+		description:
+			'No physical lock-down, no expensive hardware, no more maintenance, run your business on any device that have an internet and a browser, iPad, Tablet or Desktop, astro-menu is responsive and works on any device, anywhere, everything runs on the cloud !!',
+		bgColor: 'bg-cyan-400',
+		imgSrc: 'assets/icons/cloud.svg'
+	},
+	{
+		title: 'Multi-Languages and Translation',
+		description: `no more language barrier, translate your menu to any language you want and let your customers choose their preferred language, don't miss out on any customer`,
+		bgColor: 'bg-green-400',
+		imgSrc: 'assets/icons/translate.svg'
+	},
+	{
+		title: 'Self Order',
+		description: `Customers dont have to wait for a waiter to take their order, they can simply scan a QR code on their table and order directly from their phone, waiter will only need to confirm order and send it to the kitchen, this will save time and increase your sales`,
+		bgColor: 'bg-purple-400',
+		imgSrc: 'assets/icons/self-order.svg'
+	},
+	{
+		title: 'And many more features',
+		description: `Check out our features page to see all the features we offer, we are constantly adding new features to make your business run smoothly`,
+		bgColor: 'bg-white',
+		imgSrc: 'assets/icons/features.svg'
+	}
+]
 ---
 
-<section class="mt-16 rounded-lg bg-gray-50 px-5 py-8 sm:mb-16 md:mt-0 -mx-8 sm:mx-auto">
+<section class="-mx-8 mt-16 rounded-lg px-5 py-8 sm:mx-auto sm:mb-16 md:mt-24">
 	<div class="intersect-once intersect:animate-fade-right">
-		<h2 class="text-center text-4xl font-bold lg:text-5xl lg:tracking-tight">
-			Everything you need to build your menu
+		<h2 class="text-center text-4xl font-bold text-white lg:text-5xl lg:tracking-tight">
+			Astro-Menu comes batteries included
 		</h2>
+		<p class="mt-4 text-center text-lg text-white">
+			<span class="text-rose-400">Astro Menu</span> is a cloud solution to run your food business, it
+			helps you showcase your food menu in an simple, eye-catching design that is easy to navigate.
+		</p>
 	</div>
 
-	<div class="mt-8 flex flex-col gap-8 lg:flex-row">
-		<div class="flex flex-col gap-4 pl-4 lg:w-[40%]">
-			<p class="mt-4 text-lg">
-				<span class="text-rose-400">Astro Menu</span> comes batteries included. It not just another QR
-				Menu, it comes with Staff dashboard to help you be in full control of customers orders, including
-				many other features such as analytics, auto translation, meals filtering, and more.
-			</p>
-			<p>
-				Astro-Menu goal is to offers you with everything that would make taking and serving orders
-				faster and easier for you and your customers.
-			</p>
-			<p>Here are some key features that Astro-Menu offers you:</p>
-
-			<div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
-				{
-					featuresEntries.map((item) => (
-						<div class="flex flex-col items-center justify-center gap-1 rounded-lg bg-white p-3">
-							<img src={`/assets/icons/${item.data.icon}.svg`} class="h-8 w-8" alt={item.data.title} />
-							<p class="text-md text-center font-bold">{item.data.title}</p>
-						</div>
-					))
-				}
-			</div>
-
-			<a
-				href="/features"
-				class="mt-4 self-center rounded-md bg-black p-2 text-white hover:bg-rose-500 sm:self-start"
-				>Learn more about each feature</a
-			>
-		</div>
-
-		<div class="invisible relative hidden items-center justify-center sm:flex md:visible md:mt-10">
-			<PhoneMockup
-				className="absolute -bottom-10 left-10 z-10 lg:-bottom-2"
-				imgSrc={astroMenuPhone}
-				text="Menu View"
+	<div class="mt-16 grid grid-cols-2 gap-6">
+		<div class="grid-row-2 grid gap-6">
+			<FeatureCard
+				bgColor={features[0].bgColor}
+				title={features[0].title}
+				description={features[0].description}
+				bgSVG={''}
+				imgSrc={features[0].imgSrc}
 			/>
-			<TabletMockup className="" imgSrc={astroMenuDashboard} text="Waiter Dashboard" />
+			<FeatureCard
+				bgColor={features[3].bgColor}
+				title={features[3].title}
+				description={features[3].description}
+				bgSVG={''}
+				btnText="See all features"
+				btnLink="/features"
+				height="200"
+				imgSrc={features[3].imgSrc}
+			/>
+		</div>
+		<div class="flex flex-col gap-8">
+			{
+				features
+					.slice(1, 3)
+					.map((feature) => (
+						<FeatureCard
+							bgColor={feature.bgColor}
+							title={feature.title}
+							description={feature.description}
+							bgSVG={''}
+							imgSrc={feature.imgSrc}
+						/>
+					))
+			}
 		</div>
 	</div>
 </section>

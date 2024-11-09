@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets'
+import Button from './button.astro'
+
+const { color, title, description, direction = 'flex-row', imgSrc } = Astro.props
+---
+
+<div class:list={['rounded-xxl flex h-80 items-center justify-between gap-4 bg-white', direction]}>
+	<div class="mx-auto w-8/12 flex-col px-6">
+		<h2 class:list={['text-2xl font-extrabold capitalize lg:text-5xl lg:tracking-tight', color]}>
+			{title}
+		</h2>
+		<p class="mt-4 text-xl text-black">
+			{description}
+		</p>
+	</div>
+	<div class="h-full w-4/12">
+		<Image
+			class="rounded-xxl h-full w-full object-cover"
+			src={imgSrc}
+			alt="Astro Menu Phone"
+			width={500}
+			height={500}
+		/>
+	</div>
+</div>

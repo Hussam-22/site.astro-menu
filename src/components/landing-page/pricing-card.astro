@@ -7,10 +7,10 @@ const { plan, index } = Astro.props
 ---
 
 <div
-	class={`intersect:animate-fade-left intersect-once flex justify-between flex-col w-full order-first lg:order-none  ${plan.popular ? 'border-rose-400 border-2' : 'border-[#f1f1f1] border-opacity-80 border-2'}  py-5 px-6 rounded-md`}
+	class={`intersect:animate-fade-left intersect-once w-full order-first lg:order-none ${plan.popular && 'bg-gradient-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
 	style={`animation-delay: ${index * 0.25}s`}
 >
-	<div>
+	<div class="rounded-xxl flex h-full flex-col justify-between bg-white p-6">
 		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
 			<div style="display:flex; flex-direction: row; align-items:center; gap:8px">
 				<img src={`/assets/plans/${plan.icon}.svg`} alt="coffee" class="mx-auto h-10 w-10" />
@@ -20,17 +20,18 @@ const { plan, index } = Astro.props
 			</div>
 			{
 				plan.popular && (
-					<div class="rounded-lg bg-rose-500 px-2 py-1 text-xs uppercase text-white">
+					<div class="rounded-lg bg-gradient-to-r from-purple-400 to-cyan-400 px-2 py-1 text-xs font-bold uppercase">
 						<p>most popular</p>
 					</div>
 				)
 			}
 		</div>
-		<p class="h-36 text-sm">{plan.description}</p>
+		<p class="h-28 text-sm">{plan.description}</p>
 		<p class="py-2 text-center text-5xl font-bold">
 			{plan.price}
 			<span class="text-sm">/month</span>
 		</p>
+<<<<<<< HEAD
 	</div>
 	<ul class="mt-8 grid gap-y-2 text-left">
 		{
@@ -46,5 +47,26 @@ const { plan, index } = Astro.props
 		<Link href={plan.button.link || '#'} block style="primary">
 			{plan.button.text || 'Get Started'}
 		</Link>
+=======
+
+		<div class="flex flex-grow flex-col">
+			<ul class="mt-8 grid flex-grow gap-y-0 text-left">
+				{
+					plan.features.map((item) => (
+						<li class="flex items-center gap-3">
+							{item.startsWith('x') ? <CrossMark class="h-3 w-3" /> : <CheckMark class="h-4 w-4" />}
+							<span>{item.startsWith('x') ? item.slice(1) : item}</span>
+						</li>
+					))
+				}
+			</ul>
+
+			<div class="mt-4 flex">
+				<Link href={plan.button.link || '#'} block style="primary">
+					{plan.button.text || 'Get Started'}
+				</Link>
+			</div>
+		</div>
+>>>>>>> staging
 	</div>
 </div>

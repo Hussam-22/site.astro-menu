@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+import Button from './button.astro'
+
+const {
+	bgColor,
+	title,
+	description,
+	bgSVG,
+	btnText,
+	btnLink,
+	imgSrc = '',
+	height = 500,
+	icon
+} = Astro.props
+---
+
+<div
+	class:list={[`rounded-xxl relative min-h-[${height}px] w-full p-12`, bgColor]}
+	style={`background-image: url('${imgSrc}'); background-size: 80% 80%; background-repeat: no-repeat; background-position: 200% 200%`}
+>
+	{icon && <Image src={icon} class="-ml-4 mb-1 h-32 w-32" alt={title} />}
+	<h2 class="text-2xl font-extrabold capitalize text-black lg:text-5xl lg:tracking-tight">
+		{title}
+	</h2>
+	<p class="mt-4 text-xl text-black">
+		{description}
+	</p>
+	{
+		btnText && btnLink && (
+			<Button styles="primary" href={btnLink} class="mt-4 text-white">
+				{btnText}
+			</Button>
+		)
+	}
+	{bgSVG}
+</div>

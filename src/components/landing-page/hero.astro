@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import { Image, Picture } from 'astro:assets'
 import heroImage from 'assets/hero.svg'
 import Link from '@components/ui/link.astro'
@@ -67,6 +68,60 @@ import astroLogo from 'assets/astro-logo.svg'
 			</Link>
 
 			<p class="self-start text-center text-black">1 Month free, no credit card required</p>
+=======
+import Button from '@components/ui/button.astro'
+import PhoneMockup from '@components/ui/phone-mockup.astro'
+import astroMenuPhone from 'assets/astro-menu-phone.png'
+import astroMenuDashboard from 'assets/dashboard.png'
+import TabletMockup from '@components/ui/tablet-mockup.astro'
+import SectionCard from '@components/ui/section-card.astro'
+import BurgerIcon from 'assets/icons/burger.svg'
+import CoffeeIcon from 'assets/icons/coffee.svg'
+import ForkIcon from 'assets/icons/fork.svg'
+import Image from 'astro/components/Image.astro'
+---
+
+<main class="mb-6">
+	<SectionCard bgColor="bg-white">
+		<div class="flex items-center justify-end gap-3 pr-10 pt-3">
+			<Image src={BurgerIcon} alt="Burger Icon" width="28" height="28" />
+			<Image src={ForkIcon} alt="Burger Icon" width="28" height="28" />
+			<Image src={CoffeeIcon} alt="Burger Icon" width="32" height="32" class="mb-1" />
 		</div>
-	</div>
+		<div class="flex flex-col items-center justify-center pb-16 text-center">
+			<div class="w-[75%]">
+				<div class="px-14 pb-7">
+					<h1 class="mb-6 text-6xl font-extrabold capitalize text-black" style="line-height: 2cm;">
+						Revolutionize Your Food Business with
+						<span class="whitespace-nowrap rounded-3xl bg-primary px-4 text-white"
+							>Astro-Menu
+						</span>
+					</h1>
+					<h2 class="my-4 text-4xl">Modern, Effortless, Deliciously Digital</h2>
+					<p class="mb-4">
+						Empower your restaurant with our cutting-edge QR menu and POS solution. Seamlessly
+						integrate ordering and kitchen management, all in one sleek, digital platform.
+					</p>
+					<div class="flex flex-row items-center justify-center gap-2 text-center">
+						<Button href="/signup" class="" class="bg-green-400 text-black"> Get Started</Button>
+						<Button href="/signup" class="" class="bg-cyan-400 text-black"> Features List</Button>
+					</div>
+				</div>
+			</div>
+
+			<div class="">
+				<div
+					class="invisible relative hidden items-center justify-center sm:flex md:visible md:mt-10"
+				>
+					<PhoneMockup
+						className="absolute -bottom-10 left-10 z-10 lg:-bottom-10"
+						imgSrc={astroMenuPhone}
+						text="Menu View"
+					/>
+					<TabletMockup className="" imgSrc={astroMenuDashboard} text="Waitstaff Dashboard" />
+				</div>
+			</div>
+>>>>>>> staging
+		</div>
+	</SectionCard>
 </main>

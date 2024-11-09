@@ -63,21 +63,23 @@ const REASONS = [
 ]
 ---
 
-<section class="pt-32 md:mt-0">
-	<div class="intersect-once text-center intersect:animate-fade-right">
+<section class="pt-16 md:mt-0">
+	<div class="intersect-once text-center text-white intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-			Why you should switch to Astro Menu
+			Why you should switch to digital QR menu anyway?
 		</h2>
 		<p class="mt-4 text-lg">
-			Here are some reasons why you should switch from print menu to Astro Menu.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus expedita sapiente nobis
+			illo, nesciunt id ex qui ad neque dolores nihil culpa porro necessitatibus repellendus tenetur
+			accusantium laboriosam a! Soluta?
 		</p>
 	</div>
 
-	<div class="mt-16 grid gap-4 sm:grid-cols-2">
+	<div class="mt-16 grid grid-cols-5 gap-4">
 		{
 			REASONS.map((item, index) => (
 				<div
-					class="intersect-once flex flex-col  rounded-md border-2 border-gray-100 p-4 intersect:animate-fade-down sm:flex-row sm:items-center sm:gap-4"
+					class="rounded-xxl flex flex-col bg-white p-8"
 					style={`animation-delay: ${index * 25}ms`}
 				>
 					<img src={`/assets/icons/why-to-switch/${item.icon}.svg`} alt="icon" class="h-12 w-12" />

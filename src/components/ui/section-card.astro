@@ -1,0 +1,7 @@
+---
+const { bgColor } = Astro.props
+---
+
+<section class:list={['rounded-xxl h-full w-full p-3 ', bgColor]}>
+	<slot />
+</section>

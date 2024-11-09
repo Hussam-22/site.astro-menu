@@ -1,9 +1,12 @@
 ---
+import Container from '@components/container.astro'
 import PricingCard from '@components/landing-page/pricing-card.astro'
 import Button from '@components/ui/button.astro'
+import SectionCard from '@components/ui/section-card.astro'
 
 const pricing = [
 	{
+<<<<<<< HEAD
 		name: 'Free Plan',
 		price: 'Free',
 		popular: false,
@@ -16,16 +19,32 @@ const pricing = [
 			'xKitchen Dashboard',
 			'xWaiter/ess Dashboard (PoS)',
 			'xAnalytics Dashboard (PoS)'
+=======
+		name: 'Social Hero',
+		price: '9$',
+		popular: false,
+		features: [
+			'1 Social Account',
+			`1 "Menu View" QR Code`,
+			'1 Translation Languages',
+			'25 Meals',
+			'Unlimited Menus',
+			'Cloud Admin Dashboard',
+			'2,000,000 Scans /per month',
+			'Business Home/landing page',
+			'Social Media Links'
+>>>>>>> staging
 		],
 		button: {
 			text: 'Get Started',
 			link: '/'
 		},
-		icon: 'coffeecup',
+		icon: 'foodify',
 		description:
-			'Ideal for small businesses like cafes or coffee shops with up to 15 tables. This plan offers basic digital menu features to streamline your operations and enhance customer experience.'
+			'Designed for upscale restaurants and fine dining establishments with a capacity of up to 40 tables per branch, providing a galaxy of features to delight both chefs and patrons'
 	},
 	{
+<<<<<<< HEAD
 		name: 'Social Hero',
 		price: '29 AED',
 		popular: false,
@@ -61,29 +80,70 @@ const pricing = [
 			'Analytics Dashboard',
 			'xKitchen Dashboard (PoS)',
 			'xWaiter/ess Dashboard (PoS)'
+=======
+		name: 'Coffee Cup',
+		price: '39$',
+		popular: true,
+		features: [
+			'1 Branch',
+			`1 "Menu View" QR Code`,
+			`25 "Table" QR Codes`,
+			'3 Translation Languages',
+			'50 Meals',
+			'Unlimited Menus',
+			'Unlimited Scans (Fair Usage Policy)',
+			'Unlimited Orders',
+			'Cloud POS/Waitstaff Dashboard',
+			'Cloud Kitchen Dashboard',
+			'Cloud Admin Dashboard',
+			'Analytics & Reports',
+			'Business Home/landing page',
+			'Social Media Links'
+>>>>>>> staging
 		],
 		button: {
 			text: 'Get Started',
 			link: '/'
 		},
-		icon: 'foodify',
+		icon: 'coffeecup',
 		description:
-			'Designed for upscale restaurants and fine dining establishments with a capacity of up to 40 tables per branch, providing a galaxy of features to delight both chefs and patrons'
+			'Ideal for small businesses like cafes or coffee shops with up to 15 tables. This plan offers basic digital menu features to streamline your operations and enhance customer experience.'
 	},
 	{
 		name: 'Menu Master',
+<<<<<<< HEAD
 		price: '199 AED',
 		popular: false,
 		features: [
 			'50 QR Codes(Link)',
 			'1 Locations',
+=======
+		price: '59$',
+		popular: false,
+		features: [
+			'1 Branch',
+			`1 "Menu View" QR Code`,
+			`50 "Table" QR Codes`,
+			'4 Translation Languages',
+>>>>>>> staging
 			'Unlimited Meals',
 			'5 Translation Languages',
 			'Unlimited Menus',
+<<<<<<< HEAD
 			'Unlimited Scans*',
 			'Analytics Dashboard',
 			'Kitchen Dashboard (PoS)',
 			'Waiter/ess Dashboard (PoS)'
+=======
+			'Unlimited Scans (Fair Usage Policy)',
+			'Unlimited Orders',
+			'Cloud POS/Waitstaff Dashboard',
+			'Cloud Kitchen Dashboard',
+			'Cloud Admin Dashboard',
+			'Analytics & Reports',
+			'Business Home/landing page',
+			'Social Media Links'
+>>>>>>> staging
 		],
 		button: {
 			text: 'Get Started',
@@ -96,31 +156,33 @@ const pricing = [
 ]
 ---
 
-<div class="intersect-once mt-36 text-center intersect:animate-fade-right">
-	<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-		A Package for every business size
-	</h2>
-	<p class="mt-4 text-lg">
-		<span class="text-rose-400">Astro Menu</span> offers a variety of packages that covers all business
-		sizes, starting from a small cafe with 15 tables to a franchise of 5 branches.
+<Container>
+	<div class="intersect-once mt-36 text-center text-white intersect:animate-fade-right">
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+			A Package for every business size
+		</h2>
+		<p class="mt-4 text-lg">
+			<span class="text-rose-400">Astro Menu</span> offers a variety of packages that covers all business
+			sizes, starting from a small cafe with 15 tables to a franchise of 5 branches.
+		</p>
+	</div>
+
+	<div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+		{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
+	</div>
+
+	<p class="mt-4 text-center text-sm text-white">
+		*Unlimited scans are subject to fair usage policy. For more information, please refer to our
+		terms of service.
 	</p>
-</div>
 
-<div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-	{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
-</div>
-
-<p class="mt-1 text-sm">
-	*Unlimited scans are subject to fair usage policy. For more information, please refer to our terms
-	of service.
-</p>
-
-<div
-	class="mt-10 flex flex-col items-center gap-4 rounded-lg bg-gray-100 p-5 text-center sm:flex-row sm:p-10 sm:text-left"
->
-	<p class="text-bold flex-grow text-xl font-bold">
-		Need a customized plan for your business, contact us and our sales team will get in touch with
-		you shortly
-	</p>
-	<Button class="whitespace-nowrap">Contact Sales</Button>
-</div>
+	<SectionCard bgColor="bg-gradient-to-r from-purple-400 to-cyan-400 mt-16">
+		<div class="flex flex-row items-center gap-4 p-4">
+			<p class="flex-grow px-6 font-sans text-xl font-semibold">
+				Need a customized plan for your business, contact us and our sales team will get in touch
+				with you.
+			</p>
+			<Button class="whitespace-nowrap text-white">Contact Sales</Button>
+		</div>
+	</SectionCard>
+</Container>

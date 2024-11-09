@@ -1,0 +1,62 @@
+---
+import ConceptCard from '@components/ui/concept-card.astro'
+import PhoneMockup from '@components/ui/phone-mockup.astro'
+import astroMenuPhone from 'assets/astro-menu-phone.png'
+
+const CONCEPTS = [
+	{
+		title: 'Simplicity',
+		description:
+			'simplicity is the key to success, we believe that the simpler the design the easier it is to use, thats why we have designed our product to be as simple as possible to use, no left and right scrolling, no jumping between menu sections, everything is just a click away in one single vertical menu',
+		color: 'text-[#dfc4ab]',
+		btnText: 'See all features',
+		btnLink: '/features',
+		imgSrc:
+			'https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	},
+	{
+		title: 'Affordability',
+		description:
+			'We believe that having a good product should not cost you an arm and a leg, thats why we have designed our product to be as affordable as possible, with a simple pricing model that is easy to understand and easy to use',
+		color: 'text-green-500',
+		btnText: 'See all features',
+		btnLink: '/features',
+		imgSrc:
+			'https://plus.unsplash.com/premium_photo-1680721444874-6b52aa31e26c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	},
+	{
+		title: 'No Commission',
+		description:
+			'We dont make money out of your success, we believe that our success is tied to your success, thats why we dont take commission on your orders, just a monthly subscription, thats why we dont offer a payment solution, we take care of the menu, you take care of the money',
+		color: 'text-blue-500',
+		btnText: 'See all features',
+		btnLink: '/features',
+		imgSrc:
+			'https://images.unsplash.com/photo-1726057403601-c099f03e7b3e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	}
+]
+---
+
+<section class="pt-32 md:mt-0">
+	<div class="intersect-once text-center text-white intersect:animate-fade-right">
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro-Menu Concept</h2>
+		<p class="mb-16 mt-4 text-lg">
+			Astro-Menu team believes in 3 main concepts that identify the core of our product.
+		</p>
+
+		<div class="flex flex-col gap-8">
+			{
+				CONCEPTS.map((concept, index) => (
+					<ConceptCard
+						class=""
+						title={concept.title}
+						description={concept.description}
+						color="text-black"
+						imgSrc={concept.imgSrc}
+						direction={index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>
