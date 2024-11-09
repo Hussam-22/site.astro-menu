@@ -9,17 +9,15 @@ const pricing = [
 		price: '9$',
 		popular: false,
 		features: [
+			'1 Social Account',
 			`1 "Menu View" QR Code`,
-			'25 Self-order QR Codes',
-			'1 Branch',
-			'5 Translation Languages',
-			'Unlimited Meals',
+			'1 Translation Languages',
+			'25 Meals',
 			'Unlimited Menus',
-			'Unlimited Scans*',
-			'Self-Ordering Menu',
-			'Kitchen Dashboard',
-			'Waiter/ess Dashboard',
-			'Usage & Statistics'
+			'Cloud Admin Dashboard',
+			'2,000,000 Scans /per month',
+			'Business Home/landing page',
+			'Social Media Links'
 		],
 		button: {
 			text: 'Get Started',
@@ -34,16 +32,20 @@ const pricing = [
 		price: '29$',
 		popular: true,
 		features: [
-			`1 "Menu View" QR Code`,
-			'xSelf-Ordering QR Codes',
 			'1 Branch',
+			`1 "Menu View" QR Code`,
+			`25 "Table" QR Codes`,
 			'3 Translation Languages',
-			'Unlimited Meals',
+			'50 Meals',
 			'Unlimited Menus',
-			'500,000 Scans /per month',
-			'xKitchen Dashboard',
-			'xWaiter/ess Dashboard',
-			'xUsage & Statistics'
+			'Unlimited Scans (Fair Usage Policy)',
+			'Unlimited Orders',
+			'Cloud POS/Waitstaff Dashboard',
+			'Cloud Kitchen Dashboard',
+			'Cloud Admin Dashboard',
+			'Analytics & Reports',
+			'Business Home/landing page',
+			'Social Media Links'
 		],
 		button: {
 			text: 'Get Started',
@@ -58,17 +60,20 @@ const pricing = [
 		price: '59$',
 		popular: false,
 		features: [
+			'1 Branch',
 			`1 "Menu View" QR Code`,
-			'50 Self-order QR Codes / Per Branch',
-			'2 Branch',
-			'8 Translation Languages',
+			`50 "Table" QR Codes`,
+			'4 Translation Languages',
 			'Unlimited Meals',
 			'Unlimited Menus',
-			'Unlimited Scans*',
-			'Self-Ordering Menu',
-			'Kitchen Dashboard',
-			'Waiter/ess Dashboard',
-			'Usage & Statistics'
+			'Unlimited Scans (Fair Usage Policy)',
+			'Unlimited Orders',
+			'Cloud POS/Waitstaff Dashboard',
+			'Cloud Kitchen Dashboard',
+			'Cloud Admin Dashboard',
+			'Analytics & Reports',
+			'Business Home/landing page',
+			'Social Media Links'
 		],
 		button: {
 			text: 'Get Started',
@@ -96,7 +101,7 @@ const pricing = [
 		{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
 	</div>
 
-	<p class="mt-1 text-sm">
+	<p class="mt-1 text-sm text-white">
 		*Unlimited scans are subject to fair usage policy. For more information, please refer to our
 		terms of service.
 	</p>

@@ -1,90 +1,62 @@
 ---
+import ConceptCard from '@components/ui/concept-card.astro'
 import PhoneMockup from '@components/ui/phone-mockup.astro'
 import astroMenuPhone from 'assets/astro-menu-phone.png'
-import astroMenuVideo from 'assets/menu-view.gif'
 
-/* Astro Frontmatter */
+const CONCEPTS = [
+	{
+		title: 'Simplicity',
+		description:
+			'simplicity is the key to success, we believe that the simpler the design the easier it is to use, thats why we have designed our product to be as simple as possible to use, no left and right scrolling, no jumping between menu sections, everything is just a click away in one single vertical menu',
+		color: 'text-[#dfc4ab]',
+		btnText: 'See all features',
+		btnLink: '/features',
+		imgSrc:
+			'https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	},
+	{
+		title: 'Affordability',
+		description:
+			'We believe that having a good product should not cost you an arm and a leg, thats why we have designed our product to be as affordable as possible, with a simple pricing model that is easy to understand and easy to use',
+		color: 'text-green-500',
+		btnText: 'See all features',
+		btnLink: '/features',
+		imgSrc:
+			'https://plus.unsplash.com/premium_photo-1680721444874-6b52aa31e26c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	},
+	{
+		title: 'No Commission',
+		description:
+			'We dont make money out of your success, we believe that our success is tied to your success, thats why we dont take commission on your orders, just a monthly subscription, thats why we dont offer a payment solution, we take care of the menu, you take care of the money',
+		color: 'text-blue-500',
+		btnText: 'See all features',
+		btnLink: '/features',
+		imgSrc:
+			'https://images.unsplash.com/photo-1726057403601-c099f03e7b3e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	}
+]
 ---
-
-<style>
-	.tab-content {
-		display: none;
-	}
-	.tab-content.active {
-		display: block;
-	}
-</style>
-
-<script type="module" defer>
-	function showTab(tabId) {
-		console.log(tabId)
-		// Hide all tab contents
-		const contents = document.querySelectorAll('.tab-content')
-		contents.forEach((content) => content.classList.remove('active'))
-
-		// Show the selected tab content
-		const tabContent = document.getElementById(tabId)
-		if (tabContent) {
-			tabContent.classList.add('active')
-		}
-	}
-
-	// Attach event listeners to buttons to avoid inline `onclick` attributes
-	document.querySelectorAll('.tab-button').forEach((button) => {
-		button.addEventListener('click', () => {
-			const tabId = button.getAttribute('onclick').match(/'([^']+)'/)[1]
-			showTab(tabId)
-		})
-	})
-</script>
 
 <section class="pt-32 md:mt-0">
 	<div class="intersect-once text-center text-white intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro-Menu Concept</h2>
-		<p class="mt-4 text-lg">
+		<p class="mb-16 mt-4 text-lg">
 			Astro-Menu team believes in 3 main concepts that identify the core of our product.
 		</p>
-	</div>
 
-	<div class="mx-auto mt-6 w-full">
-		<div class="flex items-center justify-between gap-4">
-			<button
-				class="tab-button w-full border-b-2 border-purple-400 px-4 py-2 text-2xl font-bold text-purple-400"
-				onclick="showTab('tab1')">User-Friendly Design</button
-			>
-			<button
-				class="tab-button w-full border-b-2 border-cyan-400 px-4 py-2 text-2xl font-bold text-cyan-400"
-				onclick="showTab('tab2')">Universal Appeal</button
-			>
-			<button
-				class="tab-button w-full border-b-2 border-green-400 px-4 py-2 text-2xl font-bold text-green-400"
-				onclick="showTab('tab3')">Commission-Free</button
-			>
-		</div>
-
-		<div id="tab1" class="rounded-xxl active tab-content mt-4 min-h-[200px] bg-white p-8">
-			<div class="flex flex-row items-center gap-4">
-				<p class="w-8/12 text-lg">
-					Astro-Menu was crafted with seamless navigation at its core, ensuring your customers enjoy
-					a hassle-free browsing experience. Say goodbye to awkward side-scrolling and the
-					frustration of jumping between sections that disrupt the user experience. Astro-Menu's
-					intuitive, single-page layout presents your entire menu in an easy-to-view format. Despite
-					its simplicity, it boasts robust functionality, featuring a menu sections drawer and meal
-					type filters. These dynamic tools empower customers to glide smoothly through various
-					sections and find their preferred dishes effortlessly, enhancing satisfaction and boosting
-					engagement.
-				</p>
-				<PhoneMockup
-					className="flex w-4/12 flex-col items-center justify-center"
-					imgSrc={astroMenuVideo}
-				/>
-			</div>
-		</div>
-		<div id="tab2" class="rounded-xxl tab-content mt-4 min-h-[200px] bg-white p-8">
-			<p class="">Content for Tab 2</p>
-		</div>
-		<div id="tab3" class="rounded-xxl tab-content mt-4 min-h-[200px] bg-white p-8">
-			<p class="">Content for Tab 3</p>
+		<div class="flex flex-col gap-8">
+			{
+				CONCEPTS.map((concept, index) => (
+					<ConceptCard
+						class=""
+						title={concept.title}
+						description={concept.description}
+						color={concept.color}
+						imgSrc={concept.imgSrc}
+						direction={index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}
+					/>
+				))
+			}
 		</div>
 	</div>
 </section>

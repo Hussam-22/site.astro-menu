@@ -1,0 +1,123 @@
+---
+const FEATURES = [
+	'self-order',
+	'call waiter',
+	'pos/waitstaff dashboard',
+	'kitchen dashboard',
+	'admin/cms dashboard',
+	'multi currency',
+	'social links',
+	'wifi password',
+	'multiple languages',
+	'auto translation',
+	'analytics',
+	'most ordered',
+	'filter meals',
+	'minimum clicks design',
+	'responsive design',
+	'real-time updates',
+	'modern design',
+	'home page',
+	'cloud solution',
+	'no physical lock-down',
+	'email receipt',
+	'print receipt',
+	'google review',
+	'social links',
+	'affordable',
+	'easy to use',
+	'no app download',
+	'no maintenance'
+]
+---
+
+<style>
+	.scroll-container {
+		overflow: hidden;
+		white-space: nowrap;
+		width: 100%; /* Adjust to your container size */
+	}
+
+	.scroll-content {
+		display: inline-block;
+		animation: scroll-left 60s linear infinite;
+	}
+	.scroll-content-right {
+		display: inline-block;
+		animation: scroll-right 60s linear infinite;
+	}
+
+	.item {
+		display: inline-block;
+		padding: 0 10px;
+	}
+
+	@keyframes scroll-left {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-100%); /* Adjust based on content width */
+		}
+	}
+	@keyframes scroll-right {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateX(0%); /* Adjust based on content width */
+		}
+	}
+</style>
+
+<section class="my-32">
+	<div class="scroll-container">
+		<div class="scroll-content text-white">
+			{
+				FEATURES.slice(0, 14).map((feature, index) => (
+					<div class="item">
+						<div class="rounded-xxl bg-stone-800 p-3 text-2xl">
+							<p class="capitalize">{feature}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+		<div class="scroll-content text-white">
+			{
+				FEATURES.slice(0, 14).map((feature, index) => (
+					<div class="item">
+						<div class="rounded-xxl bg-stone-800 p-3 text-2xl">
+							<p class="capitalize">{feature}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+
+	<div class="scroll-container mt-6">
+		<div class="scroll-content-right text-white">
+			{
+				FEATURES.slice(14).map((feature, index) => (
+					<div class="item">
+						<div class="rounded-xxl bg-stone-800 p-3 text-2xl">
+							<p class="capitalize">{feature}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+		<div class="scroll-content-right text-white">
+			{
+				FEATURES.slice(14).map((feature, index) => (
+					<div class="item">
+						<div class="rounded-xxl bg-stone-800 p-3 text-2xl">
+							<p class="capitalize">{feature}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

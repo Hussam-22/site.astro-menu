@@ -33,7 +33,7 @@ const { plan, index } = Astro.props
 		</p>
 	</div>
 
-	<div class="group relative flex">
+	<!-- <div class="group relative flex">
 		<span
 			class="absolute left-1/2 m-4 mx-auto -translate-x-1/2 translate-y-full rounded-md bg-gray-800 p-3 text-sm
 		text-gray-100 opacity-0 transition-opacity group-hover:opacity-100 sm:p-3"
@@ -41,16 +41,14 @@ const { plan, index } = Astro.props
 			media, display it on your front door or you can use it as your main menu on all your tables of
 			you are planing to opt-out from the self-ordering feature</span
 		>
-	</div>
+	</div> -->
 
 	<ul class="mt-8 grid gap-y-2 text-left">
 		{
 			plan.features.map((item, featureIndex) => (
 				<li class="flex items-center gap-3">
 					{item.startsWith('x') ? <CrossMark class="h-3 w-3" /> : <CheckMark class="h-4 w-4" />}
-					<span class:list={[featureIndex <= 3 ? 'font-bold' : 'font-thin']}>
-						{item.startsWith('x') ? item.slice(1) : item}
-					</span>
+					<span>{item.startsWith('x') ? item.slice(1) : item}</span>
 				</li>
 			))
 		}
