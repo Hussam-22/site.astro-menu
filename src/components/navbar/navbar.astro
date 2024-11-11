@@ -4,6 +4,7 @@ import Link from '@components/ui/link.astro'
 import { Astronav, MenuItems, MenuIcon } from 'astro-navbar'
 import astroLogo from 'assets/astro-logo.svg'
 import { Image } from 'astro:assets'
+import Button from '@components/ui/button.astro'
 
 const menuitems = [
 	{ title: 'Home', path: '/' },
@@ -43,14 +44,13 @@ const menuitems = [
 ---
 
 <Container>
-	<header class="flex w-full flex-col items-center justify-between py-3 text-white sm:flex-row">
+	<header
+		class="flex w-full flex-col items-center justify-between px-3 py-3 text-white sm:flex-row"
+	>
 		<Astronav>
 			<div class="flex w-full flex-row items-center justify-between sm:w-auto">
 				<div class="flex w-max flex-row items-center">
-					<Image src={astroLogo} alt="Astro Menu" class="h-8 w-8" loading="eager" />
-					<a href="/" class="text-lg"
-						><span class="font-bold">Astro</span>-<span class="text-primary">Menu</span>
-					</a>
+					<a href="/" class="rounded-xxl bg-zinc-950 px-3 py-2 text-lg font-bold">ASTRO-MENU</a>
 				</div>
 
 				<div class="block sm:hidden">
@@ -78,12 +78,12 @@ const menuitems = [
 						}
 					</ul>
 				</div>
-				<div class="mt-2 flex w-max flex-col items-center sm:mt-0 sm:flex-row sm:gap-10">
+				<div class="mt-2 flex w-max flex-col items-center sm:mt-0 sm:flex-row sm:gap-4">
 					<!-- <Link href="#" block size="md" class="whitespace-nowrap bg-black text-white">Log in</Link> -->
-					<a href="#" class="flex flex-row items-center gap-1 whitespace-nowrap font-bold"
-						>Log in <img src="/assets/icons/login.svg" alt="Login" class="h-8 w-8" /></a
-					>
-					<Link href="#" size="md" block class="whitespace-nowrap">Get started</Link>
+					<div class="flex flex-row items-center gap-1">
+						<a href="#" class="font-semibold">Log in</a>
+					</div>
+					<Button href="/signup" class="" class="bg-green-400 text-black"> Get Started</Button>
 				</div>
 			</MenuItems>
 		</Astronav>

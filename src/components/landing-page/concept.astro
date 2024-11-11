@@ -1,8 +1,8 @@
 ---
 import ConceptCard from '@components/ui/concept-card.astro'
-import PhoneMockup from '@components/ui/phone-mockup.astro'
-import astroMenuPhone from 'assets/astro-menu-phone.png'
-
+import affordableImage from 'assets/concept/affordability.webp'
+import noCommissionImage from 'assets/concept/no-Commission.webp'
+import simplicityImage from 'assets/concept/simplicity.webp'
 const CONCEPTS = [
 	{
 		title: 'Simplicity',
@@ -11,8 +11,7 @@ const CONCEPTS = [
 		color: 'text-[#dfc4ab]',
 		btnText: 'See all features',
 		btnLink: '/features',
-		imgSrc:
-			'https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+		imgSrc: simplicityImage
 	},
 	{
 		title: 'Affordability',
@@ -21,8 +20,7 @@ const CONCEPTS = [
 		color: 'text-green-500',
 		btnText: 'See all features',
 		btnLink: '/features',
-		imgSrc:
-			'https://plus.unsplash.com/premium_photo-1680721444874-6b52aa31e26c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+		imgSrc: affordableImage
 	},
 	{
 		title: 'No Commission',
@@ -31,8 +29,7 @@ const CONCEPTS = [
 		color: 'text-blue-500',
 		btnText: 'See all features',
 		btnLink: '/features',
-		imgSrc:
-			'https://images.unsplash.com/photo-1726057403601-c099f03e7b3e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+		imgSrc: noCommissionImage
 	}
 ]
 ---
@@ -43,20 +40,20 @@ const CONCEPTS = [
 		<p class="mb-16 mt-4 text-lg">
 			Astro-Menu team believes in 3 main concepts that identify the core of our product.
 		</p>
+	</div>
 
-		<div class="flex flex-col gap-8">
-			{
-				CONCEPTS.map((concept, index) => (
-					<ConceptCard
-						class=""
-						title={concept.title}
-						description={concept.description}
-						color="text-black"
-						imgSrc={concept.imgSrc}
-						direction={index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}
-					/>
-				))
-			}
-		</div>
+	<div class="grid grid-cols-3 gap-8">
+		{
+			CONCEPTS.map((concept, index) => (
+				<ConceptCard
+					class=""
+					title={concept.title}
+					description={concept.description}
+					color="text-black"
+					imgSrc={concept.imgSrc}
+					direction="flex-col"
+				/>
+			))
+		}
 	</div>
 </section>
