@@ -5,6 +5,7 @@ import CrossMark from '@components/ui/icons/cross.astro'
 import oldMenu from 'assets/old-menu.png'
 import astroMenuFullReview from 'assets/full-menu-review.gif'
 import SectionCard from '@components/ui/section-card.astro'
+import AstroMenuQrCode from '@components/astro-menu-qr-code.astro'
 
 const GOOD = [
 	'Dynamic Interactive Menu',
@@ -32,49 +33,49 @@ const BAD = [
 ]
 ---
 
-<SectionCard bgColor="">
-	<section class="rounded-xxl -mx-8 bg-zinc-800 px-8 py-16 text-white sm:mx-auto">
-		<div class="intersect-once text-center intersect:animate-fade-right">
-			<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro Menu vs Regular Menus</h2>
-			<p class="mt-4 text-lg">
-				Why <span class="text-rose-400">Astro Menu</span> is the best choice for your restaurant
-			</p>
+<section class="-mx-8px-8 rounded-xxl pb-16 sm:mx-auto">
+	<div class="intersect-once text-center text-white intersect:animate-fade-right">
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro Menu vs Regular Menus</h2>
+		<p class="mt-4 text-lg">Why Astro Menu is the best choice for your restaurant</p>
+	</div>
+</section>
+
+<SectionCard bgColor="bg-white">
+	<div class="mt-10 flex flex-col items-center justify-between gap-10 lg:flex-row">
+		<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
+			<div class="text-xl leading-7">
+				{
+					GOOD.map((item) => (
+						<div class="flex items-center gap-2">
+							<CheckMark class="h-4 w-4" />
+							<p class="text-md whitespace-nowrap leading-8">{item}</p>
+						</div>
+					))
+				}
+			</div>
+			<PhoneMockup imgSrc={astroMenuFullReview} text="Astro Menu" />
 		</div>
 
-		<div class="mt-10 flex flex-col items-center justify-between gap-10 lg:flex-row">
-			<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-				<div class="text-xl leading-7">
-					{
-						GOOD.map((item) => (
-							<div class="flex items-center gap-2">
-								<CheckMark class="h-4 w-4" />
-								<p class="text-md whitespace-nowrap leading-8">{item}</p>
-							</div>
-						))
-					}
-				</div>
-				<PhoneMockup imgSrc={astroMenuFullReview} text="Astro Menu" />
-			</div>
+		<div class="flex flex-row items-center justify-center lg:flex-col">
+			<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
+			<span class="px-2 text-lg font-medium lg:py-2">vs</span>
+			<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
+		</div>
 
-			<div class="flex flex-row items-center justify-center lg:flex-col">
-				<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
-				<span class="px-2 text-lg font-medium lg:py-2">vs</span>
-				<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
-			</div>
-
-			<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-				<PhoneMockup imgSrc={oldMenu} text="Other Menus" />
-				<div class="text-left text-xl">
-					{
-						BAD.map((item) => (
-							<div class="flex items-center gap-2">
-								<CrossMark class="h-4 w-4" />
-								<p class="text-md whitespace-nowrap leading-8">{item}</p>
-							</div>
-						))
-					}
-				</div>
+		<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
+			<PhoneMockup imgSrc={oldMenu} text="Other Menus" />
+			<div class="text-left text-xl">
+				{
+					BAD.map((item) => (
+						<div class="flex items-center gap-2">
+							<CrossMark class="h-4 w-4" />
+							<p class="text-md whitespace-nowrap leading-8">{item}</p>
+						</div>
+					))
+				}
 			</div>
 		</div>
-	</section>
+	</div>
+
+	<AstroMenuQrCode />
 </SectionCard>

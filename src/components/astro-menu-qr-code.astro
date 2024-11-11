@@ -1,33 +1,31 @@
 ---
-import { Image } from "astro:assets";
-import astroQr from "assets/astro-menu-qr.svg";
+import { Image } from 'astro:assets'
+import astroQr from 'assets/astro-menu-qr.svg'
+import SectionCard from './ui/section-card.astro'
 ---
 
-<section class="mx-5 max-w-screen-md sm:mx-auto">
-	<div
-		class="intersect-once mt-16 flex flex-col items-center justify-center gap-8 rounded-xl bg-rose-400 p-8 intersect:animate-fade-right sm:flex-row"
-	>
-		<div>
-			<h2 class="text-center text-4xl font-bold lg:text-5xl lg:tracking-tight">
-				Scan QR Code for Demo Menu
-			</h2>
-			<p class="mt-2 text-center">
-				*The demo menu represents how the menu will look like on "coffee cup" plan which does not
-				include "self order" feature but everything else.
-			</p>
-		</div>
-		<div class="flex w-full flex-col items-center justify-center gap-2">
-			<Image
-				src={astroQr}
-				alt="QR code for astro menu"
-				class="h-64 w-64 rounded-lg border-8 border-black"
-				loading="lazy"
-			/>
-			<a
-				href="https://admin-qr-menu.netlify.app/qr-menu/sZ8cqIq1ceNOPDAwDB18/MshogdkMdPPvzXCheljs/q5hmh0r4Zdyu8lu8gA1k"
-				class="underline md:invisible"
-				target="_blank">Or click here</a
-			>
-		</div>
+<div
+	class="rounded-xxl mt-8 flex flex-row items-center justify-center gap-8 bg-purple-100 pt-4 text-center"
+>
+	<div class="text-black">
+		<p class="text-xl">Need a sneak-peak ?</p>
+		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+			Scan QR Code for live Demo Menu
+		</h2>
 	</div>
-</section>
+	<div class="">
+		<Image
+			src={astroQr}
+			alt="QR code for astro menu"
+			class="rounded-lg border-4 border-black"
+			loading="lazy"
+			width={200}
+			height={100}
+		/>
+		<a
+			href="https://admin-qr-menu.netlify.app/qr-menu/sZ8cqIq1ceNOPDAwDB18/MshogdkMdPPvzXCheljs/q5hmh0r4Zdyu8lu8gA1k"
+			class="underline md:invisible"
+			target="_blank">Or click here</a
+		>
+	</div>
+</div>
