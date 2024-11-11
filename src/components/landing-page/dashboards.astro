@@ -1,0 +1,62 @@
+---
+import astroMenuDashboard from 'assets/dashboard.png'
+import TabletMockup from '@components/ui/tablet-mockup.astro'
+import SectionCard from '@components/ui/section-card.astro'
+import ListItem from '@components/ui/list-item.astro'
+---
+
+<SectionCard
+	bgColor="bg-zinc-800 text-white"
+	sx="py-16 mt-32 overflow-hidden"
+	style="background-image: url(/assets/backgrounds/bg-blur-multi.svg); background-size: contain; background-repeat: no-repeat; background-position: center;"
+>
+	<div class="flex flex-col items-center justify-center pb-16 text-center">
+		<div class="w-[75%]">
+			<div class="px-14 pb-7">
+				<h1 class="mb-6 rounded-lg text-6xl font-extrabold capitalize" style="line-height: 2cm;">
+					Powerful <span
+						class="bg-gradient-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text p-4 text-transparent"
+						>PoS/Dashboard</span
+					> to run your business smoothly
+				</h1>
+				<p class="mb-4 text-xl">
+					Astro-Menu comes with its own dashboard to manage your food business. It's easy to use and
+					has all the features you need to run your business smoothly.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-row items-center justify-between gap-8">
+		<div class="flex w-1/2 flex-col gap-2 px-8">
+			<ListItem
+				title="Easy to use"
+				description="Astro-Menu dashboard is easy to use and has a clean interface."
+			/>
+			<ListItem
+				title="Real-time Sync"
+				description="Get orders synced between customers and your dashboard in real-time."
+			/>
+			<ListItem
+				title="Call Waiter"
+				description="Customers can call the waiter from the menu and see which table is calling your waiter directly from the dashboard tables in real-time."
+			/>
+			<ListItem
+				title="Print and Email Receipts"
+				description="Print and email receipts directly from the dashboard to your customers."
+			/>
+			<ListItem
+				title="No Physical Lock-in"
+				description="Astro-Menu dashboard is cloud-based and can be accessed from anywhere."
+			/>
+			<ListItem
+				title="Real-time Enable/Disable Meal"
+				description="Enable or disable meals in real-time from the dashboard that will reflect to all customers in real-time."
+			/>
+			<ListItem
+				title="Search Orders"
+				description="Search completed orders in case you need to re-print or re-email receipts."
+			/>
+		</div>
+		<TabletMockup className="-mr-40" imgSrc={astroMenuDashboard} />
+	</div>
+</SectionCard>

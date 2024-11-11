@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from 'astro:assets'
 
 const { className, imgSrc, text } = Astro.props
 ---
@@ -12,8 +12,13 @@ const { className, imgSrc, text } = Astro.props
 		<div class="absolute left-0 right-0 top-3 z-50 ml-auto mr-auto h-4 w-4 rounded-full bg-black">
 		</div>
 		<div class="h-full rounded-3xl">
-			<Image src={imgSrc} class="h-full w-full rounded-3xl object-cover" alt={text} loading='lazy' />
+			<Image
+				src={imgSrc}
+				class="h-full w-full rounded-3xl object-cover"
+				alt={text || 'device mockup'}
+				loading="lazy"
+			/>
 		</div>
 	</div>
-	<h2 class="mt-2 text-center font-bold">{text}</h2>
+	{text && <h2 class="mt-2 text-center font-bold">{text}</h2>}
 </div>
