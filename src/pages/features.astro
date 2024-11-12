@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import Container from '@components/container.astro'
-import Sectionhead from '@components/sectionhead.astro'
+import SectionHead from '@components/sectionhead.astro'
 import Button from '@components/ui/button.astro'
 
 // Filter blog entries with 'draft: false' & date before current date
@@ -14,41 +14,33 @@ const featuresEntries = await getCollection('features', ({ data }) => {
 featuresEntries.sort(function (a, b) {
 	return a.data.order.valueOf() - b.data.order.valueOf()
 })
+
+const collectionsTitles = [...new Set(featuresEntries.map((entry) => entry.data.category))]
 ---
 
 <Layout title="Features">
 	<Container>
-		<Sectionhead>
+		<SectionHead sx="text-white">
 			<Fragment slot="title">Astro-Menu Features</Fragment>
 			<Fragment slot="desc"> Learn more about Astro-Menu features and how to use them </Fragment>
-		</Sectionhead>
+		</SectionHead>
 		<main class="mt-16">
-			<ul class="mx-auto grid max-w-4xl gap-2">
+			<ul class="menu w-56 rounded-box bg-base-200 text-white">
 				{
-					featuresEntries.map((featureEntry, index) => (
+					collectionsTitles.map((collection) => (
 						<li>
-							<img src={`/assets/icons/${featureEntry.data.icon}.svg`} class="h-14 w-14" />
-
-							<h2 class="mt-1 text-3xl font-semibold leading-snug tracking-tight ">
-								{featureEntry.data.title}
-							</h2>
-							<p>{featureEntry.data.snippet}</p>
-
-							<div class="mt-3 flex gap-2">
-								<span class="text-gray-400">{featureEntry.data.author}</span>
-								<span class="text-gray-400">• </span>
-								<time class="text-gray-400" datetime={featureEntry.data.publishDate.toISOString()}>
-									{featureEntry.data.publishDate.toDateString()}
-								</time>
-							</div>
-							<Button
-								class="mt-2"
-								size="sm"
-								onclick={`location.href='/features/${featureEntry.slug}'`}
-							>
-								Learn More
-							</Button>
-							<hr class="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+							<h2 class="menu-title capitalize">{collection}</h2>
+							<ul>
+								{featuresEntries
+									.filter((entry) => entry.data.category === collection)
+									.map((featureEntry) => (
+										<li>
+											<a href={`features/${featureEntry.slug}`} class="menu-title">
+												{featureEntry.data.title}
+											</a>
+										</li>
+									))}
+							</ul>
 						</li>
 					))
 				}
