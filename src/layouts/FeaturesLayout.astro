@@ -1,0 +1,62 @@
+---
+import Container from '@components/container.astro'
+import { getFormattedDate } from '@utils/all'
+import Layout from './Layout.astro'
+import { getCollection } from 'astro:content'
+
+// Filter blog entries with 'draft: false' & date before current date
+const featuresEntries = await getCollection('features', ({ data }) => {
+	return !data.draft && data.publishDate < new Date()
+})
+
+// Sort content entries by publication date
+featuresEntries.sort(function (a, b) {
+	return a.data.order.valueOf() - b.data.order.valueOf()
+})
+
+const collectionsTitles = [...new Set(featuresEntries.map((entry) => entry.data.category))]
+const url = Astro.url.pathname
+
+console.log({ url })
+---
+
+<Layout title="Features">
+	<Container>
+		<main>
+			<div class="grid grid-cols-[min-content,3fr] gap-3">
+				<div class="">
+					<ul class="menu rounded-3xl bg-zinc-900 py-4 text-white">
+						{
+							collectionsTitles.map((collection) => (
+								<li>
+									<h2 class="menu-title capitalize  text-green-500">{collection}</h2>
+									<ul>
+										{featuresEntries
+											.filter((entry) => entry.data.category === collection)
+											.map((featureEntry) => (
+												<li>
+													<a
+														href={`/features/${featureEntry.slug}`}
+														class={
+															url === `/features/${featureEntry.slug}`
+																? 'menu-title flex items-center rounded-2xl bg-zinc-600 capitalize text-white hover:text-white'
+																: 'menu-title flex items-center capitalize text-white hover:text-zinc-500'
+														}
+													>
+														{featureEntry.data.title}
+													</a>
+												</li>
+											))}
+									</ul>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<div class="w-full rounded-3xl bg-zinc-900 py-8">
+					<slot />
+				</div>
+			</div>
+		</main>
+	</Container>
+</Layout>

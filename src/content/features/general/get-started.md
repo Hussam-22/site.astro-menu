@@ -7,9 +7,10 @@ image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
 publishDate: '2024-11-12 2:24'
 category: 'welcome'
 author: 'Astro-Menu'
-tags: [general,get started]
+tags: [social hero,coffee cup,menu master]
 order: 1.2
-path: /features/general/
+path: /general/get-started
 ---
 
-setup text
+Since Astro-Menu comes with predefined data (branch, meals, menus..etc) upon registration, we still encourage to follow the following steps for smooth experience using the admin's dashboard
+

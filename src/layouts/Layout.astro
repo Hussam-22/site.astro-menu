@@ -4,6 +4,7 @@ import Footer from '@components/footer.astro'
 import Navbar from '@components/navbar/navbar.astro'
 // Supports weights 200-800
 import '@fontsource-variable/plus-jakarta-sans'
+import { ViewTransitions } from 'astro:transitions'
 export interface Props {
 	title: string
 }
@@ -50,6 +51,7 @@ const makeTitle = title
 				}
 			}}
 		/>
+		<ViewTransitions />
 	</head>
 	<body>
 		<Navbar />
