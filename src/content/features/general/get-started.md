@@ -1,14 +1,14 @@
 ---
 draft: false
-title: 'setup'
+title: 'get started'
 snippet: Learn how to get your self around using astro-menu admin dashboard
 icon: 'setup'
 image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
 publishDate: '2024-11-12 2:24'
-category: 'general'
+category: 'welcome'
 author: 'Astro-Menu'
-tags: [setup]
-order: 0
+tags: [general,get started]
+order: 1.2
 path: /features/general/
 ---
 

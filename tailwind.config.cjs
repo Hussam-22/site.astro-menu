@@ -26,10 +26,13 @@ module.exports = {
 					'.text-primary': { color: '#000000' },
 					'.text-secondary': { color: '#EC5766' },
 					'.rounded-xxl': { borderRadius: '4rem' },
-					'font-weight': '300'
+					'font-weight': '300',
+					'.menu-title': {
+						'font-weight': '200',
+						'padding-top': '0.1rem'
+					}
 				}
-			},
-			'fantasy'
+			}
 		]
 	}
 }

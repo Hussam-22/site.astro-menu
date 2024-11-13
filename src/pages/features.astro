@@ -29,13 +29,16 @@ const collectionsTitles = [...new Set(featuresEntries.map((entry) => entry.data.
 				{
 					collectionsTitles.map((collection) => (
 						<li>
-							<h2 class="menu-title capitalize">{collection}</h2>
+							<h2 class="menu-title capitalize  text-green-500">{collection}</h2>
 							<ul>
 								{featuresEntries
 									.filter((entry) => entry.data.category === collection)
 									.map((featureEntry) => (
 										<li>
-											<a href={`features/${featureEntry.slug}`} class="menu-title">
+											<a
+												href={`features/${featureEntry.slug}`}
+												class="menu-title  capitalize text-white hover:text-zinc-500"
+											>
 												{featureEntry.data.title}
 											</a>
 										</li>
