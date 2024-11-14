@@ -6,6 +6,8 @@ import Container from '@components/container.astro'
 import { Debug } from 'astro:components'
 import Link from '@components/ui/link.astro'
 import FeaturesLayout from '@layouts/FeaturesLayout.astro'
+import { Image } from 'astro:assets'
+import BulbSvg from 'assets/icons/bulb.svg'
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -15,7 +17,6 @@ export async function getStaticPaths() {
 		.filter((entry) => entry.slug.includes('branches/'))
 		.map((entry) => ({
 			params: { slug: entry.slug.substring(9) },
-			fullPath: entry.data.path,
 			props: { entry }
 		}))
 }
@@ -62,23 +63,27 @@ const { Content } = await entry.render()
 		</div>
 
 		<div class="my-4 rounded-xl bg-zinc-800 p-3 text-zinc-300">
-			{entry.data.snippet}
+			<div class="flex flex-row items-center gap-1">
+				<Image src={BulbSvg} alt="bulb svg" class="h-8 w-8" />
+				<p class="font-semibold">Tip:</p>
+			</div>
+			<p class="ml-6">
+				{entry.data.snippet}
+			</p>
 		</div>
 
 		<hr class="border-dashed border-zinc-700" />
 
-		<article class="prose-lg my-4 text-white">
+		<article class="prose prose-base my-4 rounded-xl px-6 py-3">
 			<Content />
 		</article>
 
 		<hr class="my-4 border-dashed border-zinc-700" />
-		<div>
-			<p class="text-white">
-				If you need further assistance, please contact us on <a
-					href="mailto:hello@astro-menu.com"
-					class="text-orange-400 underline">hello@astro-menu.com</a
-				>
-			</p>
-		</div>
+		<p class="pl-6 text-sm text-white">
+			If you need further assistance, please contact us on <a
+				href="mailto:hello@astro-menu.com"
+				class="text-orange-400 underline">hello@astro-menu.com</a
+			>
+		</p>
 	</Container>
 </FeaturesLayout>

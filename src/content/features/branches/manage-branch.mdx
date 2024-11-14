@@ -1,0 +1,42 @@
+---
+draft: false
+title: 'manage branch'
+snippet: Branch Management is your place to go to run your branch operations.
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
+publishDate: '2024-11-12 2:24'
+category: 'branches'
+author: 'Astro-Menu'
+tags: [coffee cup, menu master]
+order: 2.2
+---
+
+import { Image } from 'astro:assets';
+import BranchInfo from 'assets/features/branches/branch-info.png'
+import FeatureLink from '@components/ui/feature-link.astro'
+
+
+From branch manage page, you can update branch information that will reflect on the QR Menu, such as 
+
+
+- Branch nickname
+- Default Menu
+    - This controls which menu your <FeatureLink link='/features/branches/tables-qr' style='dotted' text='tables QRs'/> will use
+    - Changing the default menu here does not affect your <FeatureLink link='/features/branches/qr-menu' style='dotted' text='Menu QR'/> menu, you can change it directly from the "Menu QR" tab, read more about "QR Menu" from here
+- Wi-Fi Password
+- Branch Currency
+- Branch TAX/VAT value
+- Branch Default Language
+    - The list is populated from your <a href='/features/translation-settings' class='text-orange-400 underline'>system selected languages settings</a>
+
+<Image src={BranchInfo} alt='branch-overview' class='rounded-xl h-2/3 w-2/3' />
+
+<div class='bg-zinc-800 px-8 py-2 rounded-xl'>
+Branch has two types of QR Codes
+
+#### <span class='text-cyan-400'>1- Menu QR</span>
+<FeatureLink link='/features/branches/menu-qr' text='Menu QR' /> is mainly used to share your menu on the social media, or stick the QR code on your front door, its not recommended to use it to show your menu for dine-in customers, instead use the <FeatureLink link='/features/branches/tables-qr' text='Tables QR' />.
+
+#### <span class='text-cyan-400'>2- Tables QR</span>
+Tables QR is intended to be placed on the tables so you can manage each table orders individually, and benefit from <FeatureLink link='/features/branches/self-order' text='self-order' /> feature, and many other features you can learn about in the <FeatureLink link='/features/branches/tables-qr' text='Tables QR' /> page.
+</div>

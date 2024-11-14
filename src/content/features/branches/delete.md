@@ -5,9 +5,9 @@ snippet: To maintain essential QR menu operations, deletion of branches or socia
 icon: 'introduction'
 image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
 publishDate: '2024-11-12 2:24'
-category: 'branches / social accounts'
+category: 'branches'
 author: 'Astro-Menu'
-tags: [social hero, coffee cup, menu master]
+tags: [coffee cup, menu master]
 order: 2.7
 ---
 

@@ -30,6 +30,11 @@ module.exports = {
 					'.menu-title': {
 						'font-weight': '200',
 						'padding-top': '0.1rem'
+					},
+					'.prose': {
+						'max-width': '100%',
+						'line-height': 1.4,
+						color: '#FFFFFF'
 					}
 				}
 			}

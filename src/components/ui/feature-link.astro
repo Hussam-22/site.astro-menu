@@ -1,0 +1,19 @@
+---
+interface Props {
+	style?: 'text' | 'underline' | 'dotted'
+	link: string
+	class?: string
+	text: string
+	[x: string]: any
+}
+
+const { style = 'dotted', class: className, link, text, ...rest } = Astro.props
+
+const styles = {
+	text: '',
+	underline: 'underline underline-offset-4',
+	dotted: 'underline decoration-dotted underline-offset-4'
+}
+---
+
+<a href={link} {...rest} class:list={['text-zinc-400', styles[style], className]}>{text}</a>
