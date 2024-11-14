@@ -16,4 +16,9 @@ const styles = {
 }
 ---
 
-<a href={link} {...rest} class:list={['text-zinc-400', styles[style], className]}>{text}</a>
+<a
+	href={link}
+	{...rest}
+	class:list={['whitespace-nowrap px-0.5 text-zinc-400 hover:text-white', styles[style], className]}
+	>{text}</a
+>

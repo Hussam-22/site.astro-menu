@@ -34,7 +34,7 @@ module.exports = {
 					'.prose': {
 						'max-width': '100%',
 						'line-height': 1.4,
-						color: '#FFFFFF'
+						color: '#a1a1aa'
 					}
 				}
 			}
