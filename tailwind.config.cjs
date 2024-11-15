@@ -34,7 +34,21 @@ module.exports = {
 					'.prose': {
 						'max-width': '100%',
 						'line-height': 1.4,
-						color: '#a1a1aa'
+						color: '#a1a1aa',
+						'h1,h2,h3,h4,h5,h6': {
+							'line-height': 0
+						}
+					},
+					'.prose-base': {
+						'margin-top': '0.5em',
+						'margin-bottom': '0.5em',
+						'line-height': 1.4,
+						'h1,h2,h3,h4,h5,h6': {
+							'line-height': 0
+						},
+						li: {
+							'line-height': 1.4
+						}
 					}
 				}
 			}

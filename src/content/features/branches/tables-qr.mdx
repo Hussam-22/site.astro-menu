@@ -1,0 +1,56 @@
+---
+draft: false
+title: 'Tables QR'
+snippet: Discover how to navigate the Astro-Menu admin dashboard
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: 'Dynamic QR code menu' }
+publishDate: '2024-11-12 02:24'
+category: 'branches'
+author: 'Astro-Menu'
+tags: [general, get started]
+order: 2.4
+path: /features/general/
+---
+
+import FeatureLink from '@components/ui/feature-link.astro';
+import { Image } from 'astro:assets';
+import BulbSvg from 'assets/icons/bulb.svg';
+
+The **Tables QR** code is specifically designed to be placed on tables, facilitating order-taking and streamlining the ordering process with a range of integrated features.
+
+## Features
+
+- #### Real-time Order Sync
+  When a customer or waitstaff adds a meal to an order, the order cart is updated in real time for both parties.
+
+- #### Real-time Meal Status Updates
+  Waitstaff or kitchen staff can toggle meal availability from their PoS/dashboard, and these changes will be reflected instantly across all **Tables QR** codes. This helps reduce frustration and improve table turnover by only showing available meals.
+
+- #### Individual Order Tracking
+  Each table has a unique QR code, allowing you to track orders for each table separately.
+
+- #### Call Waitstaff Bell
+  Customers can request assistance from the menu, and the waitstaff will be notified on their PoS/dashboard with an alert sound.
+
+- #### Order Summary Page
+  Once an order is served, the menu automatically switches to an "Order Summary" page. Here, customers can view the total bill, call waitstaff, enter their email to receive an invoice of the paid bill, and leave a Google review by clicking the "Rate us on Google" button.
+
+- #### Meal Filter
+  The menu includes a "Filter" feature that helps customers quickly find specific meals or options that fit dietary preferences, such as gluten-free items.
+
+- #### Change Menu Language
+  To eliminate language barriers, Astro-Menu allows customers to change the menu language with the press of a button, ensuring they understand what they are ordering.
+
+<div class="my-4 rounded-xl bg-zinc-800 px-6 pt-4 pb-1 text-zinc-300">
+  <div class="flex h-6 flex-row items-center gap-1">
+    <Image src={BulbSvg} alt="Tip icon" class="h-6 w-6" />
+    <p class="font-semibold">Tip:</p>
+  </div>
+  <p class="-mt-3">
+    You can add translation languages to your menu from the <FeatureLink text='translation settings' link='/features/translation-settings' /> in your admin dashboard.
+  </p>
+</div>
+
+## Statistics
+
+One of the major benefits of using **Tables QR** is its ability to track total bills, table turnover rates, top-ordered meals, and various other metrics that can provide valuable insights into your restaurant's performance.

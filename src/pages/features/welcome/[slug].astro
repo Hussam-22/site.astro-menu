@@ -1,10 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
-import Layout from '@layouts/Layout.astro'
 import Container from '@components/container.astro'
-import { Debug } from 'astro:components'
-import Link from '@components/ui/link.astro'
 import FeaturesLayout from '@layouts/FeaturesLayout.astro'
 
 // Generate a new path for every collection entry
@@ -12,10 +9,9 @@ export async function getStaticPaths() {
 	const featuresEntries = await getCollection('features')
 
 	return featuresEntries
-		.filter((entry) => entry.slug.includes('general/'))
+		.filter((entry) => entry.slug.includes('welcome/'))
 		.map((entry) => ({
 			params: { slug: entry.slug.substring(8) },
-			fullPath: entry.data.path,
 			props: { entry }
 		}))
 }
@@ -63,8 +59,16 @@ const { Content } = await entry.render()
 
 		<hr class="border-dashed border-zinc-700" />
 
-		<div class="mx-auto my-8 text-white">
+		<article class="prose prose-base my-4 rounded-xl px-6 py-3">
 			<Content />
-		</div>
+		</article>
+
+		<hr class="my-4 border-dashed border-zinc-700" />
+		<p class="pl-6 text-sm text-zinc-400">
+			If you find a mistake in the documentation or If you need further assistance, please contact
+			us on <a href="mailto:hello@astro-menu.com" class="text-orange-400 underline"
+				>hello@astro-menu.com</a
+			>
+		</p>
 	</Container>
 </FeaturesLayout>
