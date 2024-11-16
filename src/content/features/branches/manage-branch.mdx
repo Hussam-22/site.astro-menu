@@ -11,7 +11,7 @@ tags: [coffee cup, menu master]
 order: 2.2
 ---
 
-import FeatureLink from '@components/ui/feature-link.astro';
+import FeatureLink from '@components/ui/feature-link.astro'
 
 ## Branch Information
 
@@ -19,44 +19,53 @@ Updating branch information will reflect on both the branch QR Menu and Table QR
 
 - **Branch Nickname**
 - **Default Menu**
-    - This setting determines which menu your <FeatureLink link='/features/branches/tables-qr' style='dotted' text='table QRs'/> will display.
-    - Changing the default menu here does not affect your <FeatureLink link='/features/branches/qr-menu' style='dotted' text='social QR'/>. You can modify the social QR directly from the <FeatureLink link='/features/branches/menu-qr' text='social QR' /> tab.
+  - This setting determines which menu your <FeatureLink link='/features/branches/tables-qr' style='dotted' text='table QRs'/> will display.
+  - Changing the default menu here does not affect your <FeatureLink link='/features/branches/qr-menu' style='dotted' text='social QR'/>. You can modify the social QR directly from the <FeatureLink link='/features/branches/menu-qr' text='social QR' /> tab.
 - **Wi-Fi Password**
 - **Branch Currency**
 - **Branch Tax/VAT Value**
 - **Branch Default Language**
-    - The available options are based on your system's <FeatureLink link='/features/translation-settings' text='translation settings' />.
-    - If "French" is selected, the default language for all menus will be French when opened for the first time.
+  - The available options are based on your system's <FeatureLink link='/features/translation-settings' text='translation settings' />.
+  - If "French" is selected, the default language for all menus will be French when opened for the first time.
 - **Contact Information** (Contact Number, WhatsApp Number, and Email)
 
 <div class='bg-zinc-800 px-8 py-1 rounded-xl text-sm'>
-<p class='text-2xl text-white leading-3'>Each branch has two types of QR Codes:</p>
+<p class='text-2xl text-white'>Each branch has two types of QR Codes:</p>
 
 #### <span class='text-cyan-400'>1. Social QR</span>
+
 Primarily used for sharing your menu on social media or placing the QR code on your front door. It is not recommended for dine-in customers; for that, use the <FeatureLink link='/features/branches/tables-qr' text='tables QR' />.
 
 #### <span class='text-cyan-400'>2. Table QR</span>
+
 Designed to be placed on tables, allowing you to manage individual table orders and benefit from the <FeatureLink link='/features/branches/self-order' text='self-order' /> feature and other functionalities detailed on the <FeatureLink link='/features/branches/tables-qr' text='Tables QR' /> page.
+
 </div>
 
 ## Social Links
+
 You can add multiple social links that will appear on your menu's homepage.
 
 Including a Google review link will display a "Rate us on Google" button. To hide this button, simply remove the link.
 
 ## Settings
+
 Control the behavior of your QR menu with the following options:
 
 #### Dense Menu
+
 Enabling this setting hides meal descriptions and reduces image sizes, which is useful for large menus.
 
 #### Self-Order Mode
+
 This crucial setting defines how you want to operate the ordering process. Enable it to allow customers to add items to their orders independently. Waitstaff will only be required to send the orders to the kitchen, although they can still add or remove items via the <FeatureLink link='/features/dashboards/waitstaff' text='waitstaff PoS/Dashboard' />. If you want the waitstaff to manage the entire ordering process, disable the self-order feature.
 
 #### Show Call Waiter Bell
-Control whether to display the "Call Waiter" bell on the menu so customers can notify the waitstaff when they are ready to order or pay. 
+
+Control whether to display the "Call Waiter" bell on the menu so customers can notify the waitstaff when they are ready to order or pay.
 
 A notification sound will play on the <FeatureLink link='/features/dashboards/waitstaff' text='waitstaff PoS/Dashboard' /> when the bell is activated from the QR menu.
 
 #### Branch Status
+
 Change your branch status only when necessary. Setting the branch status to "Disabled" will suspend all branch operations (e.g., for renovations), blocking access to the <FeatureLink link='/features/dashboards/waitstaff' text='waitstaff PoS/Dashboard' />, <FeatureLink link='/features/branches/menu-qr' text='Social QR' />, and <FeatureLink link='/features/branches/tables-qr' style='dotted' text='Table QRs' />.

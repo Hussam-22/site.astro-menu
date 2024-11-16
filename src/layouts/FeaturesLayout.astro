@@ -19,46 +19,50 @@ const url = Astro.url.pathname
 ---
 
 <Layout title="Features">
-	<main class="mx-auto px-4 sm:px-8">
-		<div class="drawer sm:drawer-open">
-			<input id="my-drawer" type="checkbox" class="drawer-toggle" />
+	<Container>
+		<main>
+			<div class="drawer sm:drawer-open">
+				<input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
-			<div class="drawer-content">
-				<div class="w-full rounded-3xl bg-zinc-900 py-8">
-					<label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label>
-					<slot />
+				<div class="drawer-content">
+					<div class="w-full rounded-3xl bg-zinc-900 py-8">
+						<label for="my-drawer" class="btn btn-primary drawer-button mx-4 -mt-4 sm:hidden"
+							>Open
+						</label>
+						<slot />
+					</div>
+				</div>
+				<div class="drawer-side">
+					<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+					<ul class="menu rounded-3xl bg-zinc-900 py-4 text-white">
+						{
+							collectionsTitles.map((collection) => (
+								<li>
+									<h2 class="menu-title capitalize  text-green-500">{collection}</h2>
+									<ul>
+										{featuresEntries
+											.filter((entry) => entry.data.category === collection)
+											.map((featureEntry) => (
+												<li>
+													<a
+														href={`/features/${featureEntry.slug}`}
+														class={
+															url === `/features/${featureEntry.slug}`
+																? 'menu-title flex items-center rounded-2xl bg-zinc-600 capitalize text-white hover:text-white'
+																: 'menu-title flex items-center capitalize text-white hover:text-zinc-500'
+														}
+													>
+														{featureEntry.data.title}
+													</a>
+												</li>
+											))}
+									</ul>
+								</li>
+							))
+						}
+					</ul>
 				</div>
 			</div>
-			<div class="drawer-side">
-				<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-				<ul class="menu rounded-3xl bg-zinc-900 py-4 text-white">
-					{
-						collectionsTitles.map((collection) => (
-							<li>
-								<h2 class="menu-title capitalize  text-green-500">{collection}</h2>
-								<ul>
-									{featuresEntries
-										.filter((entry) => entry.data.category === collection)
-										.map((featureEntry) => (
-											<li>
-												<a
-													href={`/features/${featureEntry.slug}`}
-													class={
-														url === `/features/${featureEntry.slug}`
-															? 'menu-title flex items-center rounded-2xl bg-zinc-600 capitalize text-white hover:text-white'
-															: 'menu-title flex items-center capitalize text-white hover:text-zinc-500'
-													}
-												>
-													{featureEntry.data.title}
-												</a>
-											</li>
-										))}
-								</ul>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-		</div>
-	</main>
+		</main>
+	</Container>
 </Layout>
