@@ -15,8 +15,6 @@ import FeatureLink from '@components/ui/feature-link.astro'
 
 ## Branch Information
 
-Updating branch information will reflect on both the branch QR Menu and Table QR Menus.
-
 - **Branch Nickname**
 - **Default Menu**
   - This setting determines which menu your <FeatureLink link='/features/branches/tables-qr' style='dotted' text='table QRs'/> will display.
@@ -29,14 +27,14 @@ Updating branch information will reflect on both the branch QR Menu and Table QR
   - If "French" is selected, the default language for all menus will be French when opened for the first time.
 - **Contact Information** (Contact Number, WhatsApp Number, and Email)
 
-<div class='bg-zinc-800 px-8 py-1 rounded-xl text-sm'>
-<p class='text-2xl text-white'>Each branch has two types of QR Codes:</p>
+<div class='bg-zinc-800 px-8 py-0.5 rounded-xl'>
+<p class='text-2xl text-white'>There are two types of QR codes</p>
 
-#### <span class='text-cyan-400'>1. Social QR</span>
+#### 1. Social QR
 
 Primarily used for sharing your menu on social media or placing the QR code on your front door. It is not recommended for dine-in customers; for that, use the <FeatureLink link='/features/branches/tables-qr' text='tables QR' />.
 
-#### <span class='text-cyan-400'>2. Table QR</span>
+#### 2. Table QR
 
 Designed to be placed on tables, allowing you to manage individual table orders and benefit from the <FeatureLink link='/features/branches/self-order' text='self-order' /> feature and other functionalities detailed on the <FeatureLink link='/features/branches/tables-qr' text='Tables QR' /> page.
 
@@ -46,7 +44,7 @@ Designed to be placed on tables, allowing you to manage individual table orders 
 
 You can add multiple social links that will appear on your menu's homepage.
 
-Including a Google review link will display a "Rate us on Google" button. To hide this button, simply remove the link.
+**Including a Google review link will display a "Rate us on Google" button. To hide this button, simply remove the link.**
 
 ## Settings
 
@@ -59,6 +57,9 @@ Enabling this setting hides meal descriptions and reduces image sizes, which is 
 #### Self-Order Mode
 
 This crucial setting defines how you want to operate the ordering process. Enable it to allow customers to add items to their orders independently. Waitstaff will only be required to send the orders to the kitchen, although they can still add or remove items via the <FeatureLink link='/features/dashboards/waitstaff' text='waitstaff PoS/Dashboard' />. If you want the waitstaff to manage the entire ordering process, disable the self-order feature.
+
+#### Skip Kitchen
+You can enable **Skip Kitchen** setting if you want your waitstaff to manage the entire order process or if the waitstaff themselves will be preparing the orders, this way, waitstaff will make order ready to serve by themselves.
 
 #### Show Call Waiter Bell
 
