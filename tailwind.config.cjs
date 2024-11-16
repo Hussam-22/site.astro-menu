@@ -33,21 +33,21 @@ module.exports = {
 					},
 					'.prose': {
 						'max-width': '100%',
-						'line-height': 1.4,
+						'line-height': '1.4em',
 						color: '#a1a1aa',
 						'h1,h2,h3,h4,h5,h6': {
-							'line-height': 0
+							'line-height': '1.4em'
 						}
 					},
 					'.prose-base': {
 						'margin-top': '0.5em',
 						'margin-bottom': '0.5em',
-						'line-height': 1.4,
+						'line-height': '1.4em',
 						'h1,h2,h3,h4,h5,h6': {
-							'line-height': 0
+							'line-height': '1.4em'
 						},
 						li: {
-							'line-height': 1.4
+							'line-height': '1.4em'
 						}
 					}
 				}
