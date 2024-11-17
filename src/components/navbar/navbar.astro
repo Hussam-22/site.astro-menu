@@ -50,7 +50,7 @@ const menuitems = [
 		<Astronav>
 			<div class="flex w-full flex-row items-center justify-between sm:w-auto">
 				<div class="flex w-max flex-row items-center">
-					<a href="/" class="rounded-xxl bg-zinc-950 px-3 py-2 text-lg font-bold">ASTRO-MENU</a>
+					<a href="/" class="rounded-xxl py-2 text-sm font-bold sm:text-lg">ASTRO-MENU</a>
 				</div>
 
 				<div class="block sm:hidden">
@@ -59,7 +59,7 @@ const menuitems = [
 			</div>
 
 			<MenuItems
-				class="mt-2 hidden w-full flex-row items-center justify-between rounded-md border-b-2 border-b-rose-200 bg-gradient-to-b from-white to-rose-100 p-4 sm:mt-0 sm:flex sm:border-none sm:bg-none"
+				class="mt-2 hidden w-full flex-row items-center justify-between rounded-md border-b-2 border-b-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 sm:mt-0 sm:flex sm:border-none sm:bg-none"
 			>
 				<div class="mx-auto">
 					<ul class="flex flex-col gap-2 sm:mt-0 sm:flex-row sm:gap-8">
@@ -78,11 +78,9 @@ const menuitems = [
 						}
 					</ul>
 				</div>
-				<div class="mt-2 flex w-max flex-col items-center sm:mt-0 sm:flex-row sm:gap-4">
+				<div class="mt-2 flex flex-row items-center justify-between sm:mt-0 sm:flex-row sm:gap-4">
 					<!-- <Link href="#" block size="md" class="whitespace-nowrap bg-black text-white">Log in</Link> -->
-					<div class="flex flex-row items-center gap-1">
-						<a href="#" class="font-semibold">Log in</a>
-					</div>
+					<a href="#" class="font-semibold">Log in</a>
 					<Button href="/signup" class="" class="bg-green-400 text-black"> Get Started</Button>
 				</div>
 			</MenuItems>

@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets'
+
+const { imageFile, altText } = Astro.props
+---
+
+<!-- You can open the modal using ID.showModal() method -->
+<Image src={imageFile} alt={altText} class="h-auto w-full" onclick="my_modal.showModal()" />
+<dialog id="my_modal" class="modal">
+	<div class="modal-box w-11/12 max-w-5xl">
+		<div class="modal-action">
+			<form method="dialog">
+				<Image src={imageFile} alt={altText} class="h-auto w-full" />
+				<!-- if there is a button, it will close the modal -->
+				<button class="btn">Close</button>
+			</form>
+		</div>
+	</div>
+</dialog>

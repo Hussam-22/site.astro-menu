@@ -11,8 +11,8 @@ tags: [coffee cup, menu master]
 order: 2.7
 ---
 
-To ensure seamless operation of the QR menu, branches and social accounts are essential. To prevent accidental deletions that could disrupt your services, we have disabled the option to delete branches or social accounts directly.
+To ensure seamless operation and to prevent accidental deletions that could disrupt your services, we have disabled the option to delete branches directly.
 
-If you wish to remove all functionalities associated with a branch or social account—including QR menus, table QR codes, the waitstaff dashboard, and statistics—you can simply disable it.
+If you wish to remove all functionalities associated with a branch including QR menus, table QR codes, the waitstaff dashboard, and statistics—you can simply disable the branch.
 
-Should you need to permanently delete a branch or social account, please email us at <span class='text-orange-400 underline'>hello@astro-menu.com</span> with the details and reason for deletion, and our team will assist you with your request.
+Should you need to permanently delete a branch, please email us at <span class='text-orange-400 underline'>hello@astro-menu.com</span> with the details and reason for deletion, and our team will assist you with your request.

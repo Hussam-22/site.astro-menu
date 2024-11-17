@@ -3,6 +3,7 @@ import Container from '@components/container.astro'
 import { getFormattedDate } from '@utils/all'
 import Layout from './Layout.astro'
 import { getCollection } from 'astro:content'
+import OpenFeaturesListButton from '@components/ui/open-features-list-button.astro'
 
 // Filter blog entries with 'draft: false' & date before current date
 const featuresEntries = await getCollection('features', ({ data }) => {
@@ -25,10 +26,8 @@ const url = Astro.url.pathname
 				<input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
 				<div class="drawer-content">
-					<div class="w-full rounded-3xl bg-zinc-900 py-8">
-						<label for="my-drawer" class="btn btn-primary drawer-button mx-4 -mt-4 sm:hidden"
-							>Open
-						</label>
+					<div class="flex w-full flex-col rounded-3xl bg-zinc-900 px-4 py-6 sm:py-8">
+						<OpenFeaturesListButton />
 						<slot />
 					</div>
 				</div>
