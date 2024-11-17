@@ -1,0 +1,50 @@
+---
+draft: false
+title: 'Meals & Sections'
+snippet: Learn how to navigate and organize meals and sections using the Astro-Menu admin dashboard.
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
+publishDate: '2024-11-12 02:24'
+category: 'menus'
+author: 'Astro-Menu'
+tags: [All plans]
+order: 4.3
+path: /features/general/
+---
+
+import FeatureLink from '@components/ui/feature-link.astro'
+import TipCard from '@components/ui/tip-card.astro'
+
+Astro-Menu is designed for seamless viewing on a single page with vertical scrolling only. This ensures that customers stay focused while navigating the menu, avoiding the need to jump between multiple pages or sections.
+
+### How to Build Your Menu
+
+- **Start by Adding Sections**:
+    - Astro-Menu will automatically translate your sections into the languages configured in your <FeatureLink link='/features/translation-settings' text='translation settings' />.
+
+- **Add Meals to a Section**:
+    - Select meals from the available list to add them to each section. Note that disabled meals will not appear in the list.
+    - Once meals are added, click on **Edit Prices** to modify the price of each meal specifically for this menu. Changes made here will not affect the base price of the meal or prices on other menus.
+
+<TipCard text="Set base prices for the meal, then flexibly adjust those prices for each menu, allowing the same meal to have different costs across different menus." />
+
+### Reordering Your Sections
+Reorder sections by clicking the up and down arrows at the top right corner of the section card to arrange them in your desired order.
+
+### Section Titles and Translations
+
+When a section is added to a menu, Astro-Menu automatically translates it into the languages you selected in the <FeatureLink link='/features/translation-settings' text='translation settings' /> page.
+
+To manually update a translation or part of it, click the **Edit** icon at the top right of the section. If your section is translated into multiple languages (e.g., Arabic, French, Spanish), you will see a separate card for each language, allowing you to edit the translation individually.
+
+#### Translation Field Options
+
+Each translation field offers the following options:
+
+- **Reset to Default Value**: Reverts the translation to the state it was in before any unsaved edits.
+- **Reset to Original Translation**: Restores the initial system-provided translation.
+- **Save**: Saves your edited translation.
+
+### Important Considerations for Updating Section Titles
+
+Updating a section title will trigger automatic translation of the new content into your selected languages, overwriting any previously edited translations. Keep this in mind to prevent unintentional loss of manual edits.

@@ -14,7 +14,6 @@ order: 2.1
 import { Image } from 'astro:assets'
 import BranchOverviewImage from 'assets/features/branches/branch-overview.png'
 import FeatureLink from '@components/ui/feature-link.astro'
-import ImageModal from '@components/ui/image-modal.astro'
 
 A branch represents your business location, and you can <FeatureLink link='/features/branches/manage-branch' text='manage' /> multiple branches based on your subscription. Each branch has its own unique settings, meals menu, social links, table-specific QR codes, staff PoS/Dashboard access, and performance statistics.
 
@@ -25,4 +24,4 @@ A branch represents your business location, and you can <FeatureLink link='/feat
 
 To manage a branch, simply click on its name in the branch list for detailed controls and customization.
 
-<Image src={BranchOverviewImage} alt="branch-overview" class="rounded-xl" />
+<Image src={BranchOverviewImage} alt="branch-overview" class="h-2/3 w-2/3 rounded-xl" />

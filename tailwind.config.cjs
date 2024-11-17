@@ -34,13 +34,16 @@ module.exports = {
 					'.prose': {
 						'max-width': '100%',
 						'line-height': '1.4em',
-						color: '#a1a1aa',
+						color: '#d4d4d4',
 						'h1,h2': {
-							'line-height': '1.4em',
+							'line-height': '1.0em',
 							color: '#EC5766'
 						},
 						'h3,h4,h5,h6': {
 							'line-height': '1.4em',
+							color: '#FFFFFF'
+						},
+						strong: {
 							color: '#FFFFFF'
 						}
 					},
@@ -49,10 +52,10 @@ module.exports = {
 						'margin-bottom': '0.5em',
 						'line-height': '1.4em',
 						'h1,h2,h3,h4,h5,h6': {
-							'line-height': '1.4em'
+							'line-height': '1.0em'
 						},
 						li: {
-							'line-height': '1.4em'
+							'line-height': '1.2em'
 						},
 						'padding-right': '0.25rem',
 						'padding-left': '0.25rem'

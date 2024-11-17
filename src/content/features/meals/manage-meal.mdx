@@ -1,50 +1,43 @@
 ---
 draft: false
-title: 'manage meal'
-snippet: Learn how to get your self around using astro-menu admin dashboard
+title: 'Manage Meal'
+snippet: Learn how to navigate and effectively use the Astro-Menu admin dashboard.
 icon: 'setup'
-image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
-publishDate: '2024-11-12 2:24'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: 'Dynamic QR code menu' }
+publishDate: '2024-11-12 02:24'
 category: 'meals'
 author: 'Astro-Menu'
-tags: [general,get started]
+tags: [general, get started]
 order: 3.2
 path: /features/general/
 ---
 
-import TipCard from '@components/ui/tip-card.astro'
 import FeatureLink from '@components/ui/feature-link.astro'
 
-Astro-Menu admin dashboard simplifies the process of updating your restaurant's digital menu, ensuring a seamless experience for both staff and customers. Follow the steps below to add new meals and leverage built-in features that enhance meal discoverability:
+Managing meals is straightforward. Similar to adding a new meal, you can update existing meals with enhanced control through additional settings.
 
-Click the **Add** button from meals page to access the meal entry form.
-Complete the Required Fields:
+### Key Considerations When Updating a Meal
 
-- **Image:** Upload a high-quality photo that visually represents the meal.
-- **Name:** Enter the name of the meal as it should appear on the menu.
-- **Description:** Provide a brief and appealing description to inform customers about the meal's key ingredients and unique attributes.
+- **Portion Update**: If a meal is already included in one of your <FeatureLink link='/features/menus/overview' text='menus' />, updating the portion names or prices will not automatically reflect in the menu. This is because a copy of the meal, including its details, is saved to the menu. To apply updates, you need to remove the meal from the menu and re-add it with the updated information.
 
-### Add Portions and Pricing:
+- **Disabling Meals**: Disabling a meal will remove it from all <FeatureLink link='/features/menus/overview' text='menus' /> in which it appears. This provides a quick and efficient way to hide a meal across all menus without the need for manual removal. You can re-enable the meal at any time to make it visible again.
 
-Under the Portions section, specify the available portion sizes (e.g., small, medium, large).
-Assign a corresponding price for each portion size to cater to different customer preferences.
+- **Translation Limitations**: When a meal is disabled, you cannot update its translation from the <FeatureLink link='/features/meals/translation' text='translation' /> tab.
 
-<TipCard text='Set base prices for the meal, then flexibly adjust those prices for each menu, allowing the same meal to have different costs across different menus.' />
+## Settings
 
-### Apply Meal Labels for Enhanced Filtering:
+### Show "New" Label
 
-Use the <FeatureLink link='/features/meal-labels/overview' text='Meal Labels' /> feature to tag meals with attributes such as decaf, sugar-free, gluten-free, and more.
+You can add a **New** label at the top of the meal image to highlight that the meal is newly added to your QR Menu.
 
-These labels are crucial for helping customers filter through the menu based on dietary preferences or specific needs, enabling them to quickly find meals that match their criteria.
+### Meal Status
 
-This, in turn, enhances their experience and can improve table turnover by speeding up decision-making.
+Disabling a meal will remove it from all menus in which it appears, providing a streamlined way to hide it across the board. You can re-enable the meal at any time to restore its visibility.
 
-### Review and Save:
+### Delete Meal
 
-Once all details are completed, review the meal entry and save, to start adding your meal to your <FeatureLink link='/features/menus/overview' text='menus' />.
+Deleting a meal will completely remove it from the system, along with all its associated statistics. This action is permanent and cannot be undone.
 
-### Translation
+## Translation
 
-
-By incorporating detailed descriptions, portion sizes, and labels, astro-menu ensures that your restaurant’s digital menu is comprehensive, easy to navigate, and tailored to diverse customer preferences.
-
+You can edit meal translations through the <FeatureLink link='/features/meals/translation' text='translation' /> tab.

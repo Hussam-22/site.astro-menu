@@ -1,0 +1,28 @@
+---
+draft: false
+title: 'Overview'
+snippet: Learn how to navigate the Astro-Menu admin dashboard to optimize meal labeling.
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
+publishDate: '2024-11-12 02:24'
+category: 'meal labels'
+author: 'Astro-Menu'
+tags: [All Plans]
+order: 5.1
+path: /features/general/
+---
+
+import FeatureLink from '@components/ui/feature-link.astro'
+import { Image } from 'astro:assets'
+import MealLabelsImage from 'assets/features/meal-labels/meal-labels.png'
+
+Astro-Menu aims to enhance table turnover by providing customers with the option to filter meals based on dietary preferences, such as decaf, sugar-free, gluten-free, or by specific cravings like beef, chicken, seafood, and more.
+
+Meal labels play a crucial role in improving table turnover. Therefore, it’s essential to add meal labels to your <FeatureLink link='/features/meals/add-meal' text='meals' /> when adding them to the system for the first time.
+
+<Image src={MealLabelsImage} alt="Admin dashboard meals list" class="h-2/3 w-2/3 rounded-2xl" />
+
+### Adding Meal Labels
+To add a meal label, click **Add** on the meal labels page and include labels that match your meals, such as beef, chicken, healthy, vegetarian, etc.
+
+Astro-Menu will automatically translate your meal labels into the languages configured in your <FeatureLink link='/features/translation-settings' text='translation settings' />.
