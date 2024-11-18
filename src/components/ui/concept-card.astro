@@ -10,13 +10,13 @@ const { color, title, description, direction = 'flex-row', imgSrc, className } =
 	<Image class="rounded-xxl object-cover" src={imgSrc} alt="Astro Menu Phone" />
 	<h2
 		class:list={[
-			'px-4 text-4xl font-extrabold capitalize sm:px-8 sm:text-5xl sm:tracking-tight',
+			'whitespace-nowrap px-4 text-4xl font-extrabold capitalize sm:px-8 sm:text-5xl sm:tracking-tight',
 			color
 		]}
 	>
 		{title}
 	</h2>
-	<p class="mt-4 px-4 text-xl text-black sm:px-8">
+	<p class="text-md px-4 text-black sm:mt-4 sm:px-8 sm:text-xl">
 		{description}
 	</p>
 </div>

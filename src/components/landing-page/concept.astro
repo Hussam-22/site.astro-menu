@@ -5,6 +5,7 @@ import noCommissionImage from 'assets/concept/no-commission.webp'
 import simplicityImage from 'assets/concept/simplicity.webp'
 import { Image } from 'astro:assets'
 import ArrowRight from 'assets/icons/arrow-right.svg'
+import Container from '@components/container.astro'
 const CONCEPTS = [
 	{
 		title: 'Simplicity',
@@ -61,12 +62,11 @@ const CONCEPTS = [
 			))
 		}
 	</div>
-
-	<div class="carousel carousel-center max-w-md space-x-4 rounded-box bg-neutral p-4 sm:hidden">
+	<div class="carousel carousel-center mt-2 w-full max-w-md space-x-4 sm:hidden">
 		{
 			CONCEPTS.map((concept, index) => (
 				<ConceptCard
-					className="carousel-item w-96 -ml-4"
+					className="carousel-item w-[90%]"
 					title={concept.title}
 					description={concept.description}
 					color="text-black"
