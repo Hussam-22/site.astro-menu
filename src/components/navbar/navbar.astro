@@ -88,11 +88,12 @@ const menuitems = [
 		
 	</header> -->
 
-	<div class="drawer">
+	<div class="drawer drawer-end my-3 text-white">
 		<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 		<div class="drawer-content flex flex-col">
 			<!-- Navbar -->
-			<div class="navbar w-full bg-base-300">
+			<div class="navbar w-full flex-row items-center justify-between px-4">
+				<a href="/" class="rounded-xxl py-2 text-lg font-bold">ASTRO-MENU</a>
 				<div class="flex-none lg:hidden">
 					<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
 						<svg
@@ -109,24 +110,57 @@ const menuitems = [
 						</svg>
 					</label>
 				</div>
-				<div class="mx-2 flex-1 px-2">Navbar Title</div>
+
 				<div class="hidden flex-none lg:block">
 					<ul class="menu menu-horizontal">
 						<!-- Navbar menu content here -->
-						<li><a>Navbar Item 1</a></li>
-						<li><a>Navbar Item 2</a></li>
+						{
+							menuitems.map((item, index) => (
+								<>
+									{
+										<li>
+											<a href={item.path} class="text-lg font-bold hover:text-rose-400">
+												<span>{item.title}</span>
+											</a>
+										</li>
+									}
+								</>
+							))
+						}
 					</ul>
 				</div>
+
+				<div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4">
+					<a href="#" class="font-semibold">Log in</a>
+					<Button href="/signup" class="" class="bg-green-400 text-black"> Get Started</Button>
+				</div>
 			</div>
-			<!-- Page content here -->
-			Content
 		</div>
-		<div class="drawer-side">
+
+		<!-- Sidebar drawer -->
+		<div class="drawer-side z-50">
 			<label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-			<ul class="menu min-h-full w-80 bg-base-200 p-4">
+			<ul class="rounded-l-xxl menu min-h-full w-64 bg-base-200 px-4 pb-8 pt-8">
 				<!-- Sidebar content here -->
-				<li><a>Sidebar Item 1</a></li>
-				<li><a>Sidebar Item 2</a></li>
+				{
+					menuitems.map((item, index) => (
+						<>
+							{
+								<li>
+									<a href={item.path} class="text-xl font-bold hover:text-rose-400">
+										<span>{item.title}</span>
+									</a>
+								</li>
+							}
+						</>
+					))
+				}
+				<li class="text-xl"><a href="#" class="font-semibold">Log in</a></li>
+				<li>
+					<Button href="/signup" class="" class="mt-2 bg-green-400 text-xl text-black">
+						Get Started</Button
+					>
+				</li>
 			</ul>
 		</div>
 	</div>

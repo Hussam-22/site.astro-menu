@@ -2,7 +2,7 @@
 interface Props {
 	size?: 'sm' | 'md' | 'lg'
 	block?: boolean
-	style?: 'outline' | 'primary' | 'inverted'
+	style?: 'outline' | 'primary' | 'dark'
 	class?: string
 	[x: string]: any
 }
@@ -17,7 +17,8 @@ const sizes = {
 
 const styles = {
 	outline: 'border-2 border-black',
-	primary: 'bg-black border-2 border-transparent font-bold'
+	primary: 'bg-cyan-400 border-2 border-transparent font-bold text-black',
+	dark: 'bg-black font-bold text-white'
 }
 ---
 

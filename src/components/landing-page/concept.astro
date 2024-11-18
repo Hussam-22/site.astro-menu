@@ -3,6 +3,8 @@ import ConceptCard from '@components/ui/concept-card.astro'
 import affordableImage from 'assets/concept/affordability.webp'
 import noCommissionImage from 'assets/concept/no-commission.webp'
 import simplicityImage from 'assets/concept/simplicity.webp'
+import { Image } from 'astro:assets'
+import ArrowRight from 'assets/icons/arrow-right.svg'
 const CONCEPTS = [
 	{
 		title: 'Simplicity',
@@ -34,19 +36,37 @@ const CONCEPTS = [
 ]
 ---
 
-<section class="pt-32 md:mt-0">
+<section>
 	<div class="intersect-once text-center text-white intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro-Menu Concept</h2>
 		<p class="mb-16 mt-4 text-lg">
 			Astro-Menu team believes in 3 main concepts that identify the core of our product.
 		</p>
 	</div>
-
-	<div class="grid grid-cols-3 gap-8">
+	<div class="flex flex-row items-center justify-end gap-2 text-white sm:hidden">
+		<p>Swipe Right</p>
+		<Image src={ArrowRight} alt="arrow-right" class="h-8 w-8" />
+	</div>
+	<div class="hidden gap-8 sm:grid sm:grid-cols-3">
 		{
 			CONCEPTS.map((concept, index) => (
 				<ConceptCard
 					class=""
+					title={concept.title}
+					description={concept.description}
+					color="text-black"
+					imgSrc={concept.imgSrc}
+					direction="flex-col"
+				/>
+			))
+		}
+	</div>
+
+	<div class="carousel carousel-center max-w-md space-x-4 rounded-box bg-neutral p-4 sm:hidden">
+		{
+			CONCEPTS.map((concept, index) => (
+				<ConceptCard
+					className="carousel-item w-96 -ml-4"
 					title={concept.title}
 					description={concept.description}
 					color="text-black"

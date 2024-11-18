@@ -1,6 +1,6 @@
 ---
-// @ts-ignore
-import Button from '@components/ui/button.astro'
+import { Image } from 'astro:assets'
+import ArrowRight from 'assets/icons/arrow-right.svg'
 
 const REASONS = [
 	// why you should switch from print menu to QR menu ?
@@ -63,8 +63,8 @@ const REASONS = [
 ]
 ---
 
-<section class="py-32">
-	<div class="intersect-once text-center text-white intersect:animate-fade-right">
+<section>
+	<div class="intersect-once mb-16 text-center text-white intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
 			Why you should switch to digital QR menu anyway?
 		</h2>
@@ -75,7 +75,7 @@ const REASONS = [
 		</p>
 	</div>
 
-	<div class="mt-16 grid grid-cols-5 gap-4">
+	<div class="mt-16 hidden gap-4 sm:grid sm:grid-cols-5">
 		{
 			REASONS.map((item, index) => (
 				<div
@@ -86,6 +86,33 @@ const REASONS = [
 					<div>
 						<h3 class="text-xl font-semibold">{item.title}</h3>
 						<p class="mt-1 leading-relaxed ">{item.description}</p>
+					</div>
+				</div>
+			))
+		}
+	</div>
+
+	<div class="flex flex-row items-center justify-end gap-2 text-white sm:hidden">
+		<p>Swipe Right</p>
+		<Image src={ArrowRight} alt="arrow-right" class="h-8 w-8" />
+	</div>
+	<div class="carousel carousel-center max-w-md space-x-4 rounded-box bg-neutral p-4 sm:hidden">
+		{
+			REASONS.map((item, index) => (
+				<div class="carousel-item  w-64">
+					<div
+						class="rounded-xxl flex flex-col bg-white p-8"
+						style={`animation-delay: ${index * 25}ms`}
+					>
+						<img
+							src={`/assets/icons/why-to-switch/${item.icon}.svg`}
+							alt="icon"
+							class="h-12 w-12"
+						/>
+						<div>
+							<h3 class="text-xl font-semibold">{item.title}</h3>
+							<p class="mt-1 leading-relaxed ">{item.description}</p>
+						</div>
 					</div>
 				</div>
 			))

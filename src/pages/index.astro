@@ -8,7 +8,7 @@ import FAQ from '@components/landing-page/faq.astro'
 import WhyToSwitch from '@components/landing-page/why-to-switch.astro'
 import AstroMenuVsOtherMenus from '@components/landing-page/astro-menu-vs-other-menus.astro'
 import Concept from '@components/landing-page/concept.astro'
-import LetsDoTheMath from '@components/landing-page/lets-do-the-math.astro'
+import LetsGoOverNumbers from '@components/landing-page/lets-go-over-numbers.astro'
 import AllFeatures from '@components/landing-page/all-features.astro'
 import AstroMenuQrCode from '@components/astro-menu-qr-code.astro'
 import Dashboards from '@components/landing-page/dashboards.astro'
@@ -16,15 +16,17 @@ import Dashboards from '@components/landing-page/dashboards.astro'
 
 <Layout title="">
 	<Container>
-		<Hero />
-		<EverythingYouNeed />
-		<AllFeatures />
-		<Dashboards />
-		<Concept />
-		<WhyToSwitch />
-		<AstroMenuVsOtherMenus />
-		<LetsDoTheMath />
-		<Pricing />
-		<FAQ />
+		<div class="flex flex-col gap-16 sm:gap-36">
+			<Hero />
+			<EverythingYouNeed />
+			<AllFeatures />
+			<Dashboards />
+			<Concept />
+			<WhyToSwitch />
+			<AstroMenuVsOtherMenus />
+			<LetsGoOverNumbers />
+			<Pricing />
+			<FAQ />
+		</div>
 	</Container>
 </Layout>

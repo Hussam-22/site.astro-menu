@@ -26,11 +26,13 @@ module.exports = {
 					'.text-primary': { color: '#000000' },
 					'.text-secondary': { color: '#EC5766' },
 					'.rounded-xxl': { borderRadius: '4rem' },
+					'.rounded-l-xxl': { borderRadius: '4rem 0 0 4rem' },
 					'font-weight': '300',
 					'.menu-title': {
 						'font-weight': '200',
 						'padding-top': '0.1rem'
 					},
+					'.carousel': { background: 'none' },
 					'.prose': {
 						'max-width': '100%',
 						'line-height': '1.4em',

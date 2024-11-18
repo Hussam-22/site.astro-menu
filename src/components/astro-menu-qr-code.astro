@@ -1,19 +1,18 @@
 ---
 import { Image } from 'astro:assets'
 import astroQr from 'assets/astro-menu-qr.svg'
-import SectionCard from './ui/section-card.astro'
 ---
 
 <div
-	class="to rounded-xxl mt-8 flex flex-row items-center justify-center gap-8 bg-zinc-100 pt-4 text-center"
+	class="rounded-xxl mt-8 flex flex-col items-center justify-center gap-8 bg-[url('/assets/backgrounds/bg-blur-multi.svg')] bg-cover bg-center bg-no-repeat pt-4 text-center sm:flex-row"
 >
-	<div class="text-black">
+	<div class="text-white">
 		<p class="text-xl">Need a sneak-peak ?</p>
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+		<h2 class="px-4 text-4xl font-bold sm:text-5xl sm:tracking-tight">
 			Scan QR Code for live Demo Menu
 		</h2>
 	</div>
-	<div class="">
+	<div class="py-4">
 		<Image
 			src={astroQr}
 			alt="QR code for astro menu"
@@ -24,7 +23,7 @@ import SectionCard from './ui/section-card.astro'
 		/>
 		<a
 			href="https://admin-qr-menu.netlify.app/qr-menu/sZ8cqIq1ceNOPDAwDB18/MshogdkMdPPvzXCheljs/q5hmh0r4Zdyu8lu8gA1k"
-			class="underline md:invisible"
+			class="text-white underline sm:invisible"
 			target="_blank">Or click here</a
 		>
 	</div>

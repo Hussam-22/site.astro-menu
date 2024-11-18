@@ -87,8 +87,8 @@ const pricing = [
 ]
 ---
 
-<Container>
-	<div class="intersect-once mt-36 text-center text-white intersect:animate-fade-right">
+<section>
+	<div class="intersect-once text-center text-white intersect:animate-fade-right">
 		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
 			A Package for every business size
 		</h2>
@@ -108,12 +108,12 @@ const pricing = [
 	</p>
 
 	<SectionCard bgColor="bg-gradient-to-r from-purple-400 to-cyan-400 mt-16">
-		<div class="flex flex-row items-center gap-4 p-4">
+		<div class="flex flex-col items-center gap-4 p-4 text-center sm:flex-row">
 			<p class="flex-grow px-6 font-sans text-xl font-semibold">
 				Need a customized plan for your business, contact us and our sales team will get in touch
 				with you.
 			</p>
-			<Button class="whitespace-nowrap text-white">Contact Sales</Button>
+			<Button class="whitespace-nowrap" style="dark">Contact Sales</Button>
 		</div>
 	</SectionCard>
-</Container>
+</section>
