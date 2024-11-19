@@ -5,6 +5,7 @@ import astroMenuPhone from 'assets/astro-menu-phone.png'
 import astroMenuDashboard from 'assets/dashboard.png'
 import TabletMockup from '@components/ui/tablet-mockup.astro'
 import SectionCard from '@components/ui/section-card.astro'
+import Link from '@components/ui/link.astro'
 ---
 
 <main>
@@ -24,11 +25,14 @@ import SectionCard from '@components/ui/section-card.astro'
 						integrate ordering and kitchen management, all in one sleek, digital platform.
 					</p>
 					<div class="flex flex-row items-center justify-center gap-2 text-center">
-						<Button href="/signup" class="" class="whitespace-nowrap bg-green-400 text-black">
-							Get Started</Button
+						<Link href="/signup" class="whitespace-nowrap bg-green-400 text-black">
+							Get Started</Link
 						>
-						<Button href="/signup" class="" class="whitespace-nowrap bg-cyan-400 text-black">
-							Features List</Button
+						<Link
+							href="/features/welcome/introduction"
+							class="whitespace-nowrap bg-cyan-400 text-black"
+						>
+							Features List</Link
 						>
 					</div>
 				</div>

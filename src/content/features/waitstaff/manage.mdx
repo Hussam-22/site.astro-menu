@@ -1,0 +1,39 @@
+---
+draft: false
+title: 'Manage Staff'
+snippet: Learn how to navigate and utilize the Astro-Menu admin dashboard effectively.
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
+publishDate: '2024-11-12 2:24'
+category: 'waitstaff'
+author: 'Astro-Menu'
+tags: [Coffee Cup, Menu Master]
+order: 6.2
+path: /features/general/
+---
+import FeatureLink from '@components/ui/feature-link.astro'
+import TipCard from '@components/ui/tip-card.astro'
+
+In the **Staff Management** page, you have several options to manage your staff:
+
+- **Change Staff Type**  
+  Switch between *Chef* or *Waitstaff* based on the role of the staff/device.
+  
+- **Change Staff Name**  
+  Edit the name of the staff member if necessary.
+
+- **Assign Staff to a Branch**  
+  Assign staff members to specific branches to define their access.
+
+- **Change Staff Status**  
+  Update the staff member's status to active or disabled.
+
+- **Reset Staff Passcode**  
+  Reset the passcode for a staff member if they forget it.
+
+- **Delete Staff**  
+  Remove a staff member from the system.
+
+<TipCard text="Resetting the staff passcode or changing the staff status to 'disabled' will automatically sign out the staff from the dashboard." />
+
+**Note**: For added security, staff members have 5 attempts before their account is locked. If the account is locked, it must be unlocked from the *Staff Management* page.

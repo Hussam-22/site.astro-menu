@@ -57,7 +57,7 @@ module.exports = {
 							'line-height': '1.0em'
 						},
 						li: {
-							'line-height': '1.2em'
+							'line-height': '1.4em'
 						},
 						'padding-right': '0.25rem',
 						'padding-left': '0.25rem'

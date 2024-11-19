@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import Button from './button.astro'
+import Link from './link.astro'
 
 const {
 	className,
@@ -28,9 +29,9 @@ const {
 	</p>
 	{
 		btnText && btnLink && (
-			<Button styles="primary" href={btnLink} class="mt-4 self-start">
+			<Link styles="primary" href={btnLink} class="mt-4 self-start bg-cyan-400">
 				{btnText}
-			</Button>
+			</Link>
 		)
 	}
 	{bgSVG}
