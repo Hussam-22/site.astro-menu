@@ -6,9 +6,12 @@ import CrossMark from '@components/ui/icons/cross.astro'
 const { plan, index } = Astro.props
 ---
 
-<div
-	class={`intersect:animate-fade-left intersect-once w-full order-first lg:order-none ${plan.popular && 'bg-gradient-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
+<!-- <div
+	class={`intersect:animate-fade intersect-once w-full order-first lg:order-none ${plan.popular && 'bg-gradient-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
 	style={`animation-delay: ${index * 0.25}s`}
+></div> -->
+<div
+	class={`w-full order-first lg:order-none ${plan.popular && 'bg-gradient-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
 >
 	<div class="rounded-xxl flex h-full flex-col justify-between bg-white p-6">
 		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
