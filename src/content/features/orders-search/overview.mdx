@@ -1,47 +1,50 @@
 ---
 draft: false
 title: 'Overview'
-snippet: Learn how to navigate and utilize the Astro-Menu admin dashboard effectively.
+snippet: Learn how to navigate and efficiently use the Astro-Menu admin dashboard.
 icon: 'introduction'
 image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
-publishDate: '2024-11-12 2:24'
+publishDate: '2024-11-12 02:24'
 category: 'orders search'
 author: 'Astro-Menu'
 tags: [Coffee Cup, Menu Master]
-order: 6.1
+order: 7.1
 path: /features/general/
 ---
+
 import FeatureLink from '@components/ui/feature-link.astro'
 import { Image } from 'astro:assets'
 import OrdersDetails from 'assets/features/orders-search/order-details.png'
 import OrdersSearch from 'assets/features/orders-search/search-multiple-orders.png'
 
-Astro-Menus gives you the ability to search completed or canceled orders in case you need to review something, print the order, or resend the invoice to the customer
+Astro-Menu enables you to search for completed or canceled orders, allowing you to review details, print orders, or resend invoices to customers.
 
-You have 3 ways to search orders
-- Search multiple orders
-  - you may either search for last 1 hour, 8 hours and 24 hours, this kind of search is used when you need a quick look at orders in the past 1 hour for example
+You have three main methods to search for orders:
+
+- **Search Multiple Orders (Quick Search)**
+
+  - You can search for orders from the last 1 hour, 8 hours, or 24 hours. This type of search is useful for quickly reviewing recent orders, such as those placed within the past hour.
+
+- **Search by Date**
+
+  - This option allows you to find orders from a specific date, making it useful when you need to review all orders placed on a particular day.
+
+- **Search for a Single Order**
+
+  - This option lets you search for an order using its order number, ideal for when you need to view the details of a specific order.
 
 <Image
 	src={OrdersSearch}
-	alt="Admin dashboard meals list"
+	alt="Admin dashboard order search interface"
 	class="w-fit rounded-xl sm:h-2/3 sm:w-2/3"
 />
+
+By clicking on an order number, you can access the detailed view of the order.
 
 <Image
 	src={OrdersDetails}
-	alt="Admin dashboard meals list"
+	alt="Admin dashboard order details view"
 	class="w-fit rounded-xl sm:h-2/3 sm:w-2/3"
 />
 
-
-
-When creating staff profiles, each will have a unique access link tied to its corresponding branch. The type of staff determines their dashboard access:
-
-- **Waitstaff**: 
-<br /> These users will have access to a dashboard where they can take customer orders, mark meals as unavailable, send orders to the kitchen staff, and handle payments.
-
-- **Chef/Kitchen Staff**: 
-<br /> These users will have access to a dashboard that allows them to view and prepare incoming orders. They can also mark meals as unavailable.
-
-**Note**: You can assign staff to a branch either from the <FeatureLink text='Staff' link='/features/waitstaff/manage' /> page or directly within the <FeatureLink text='Branch waitstaff' link='/features/branches/waitstaff' /> page.
+Within the order details drawer, you can print the order, resend the invoice to the customer, or view additional details such as table turnover, order items, and the menu name.

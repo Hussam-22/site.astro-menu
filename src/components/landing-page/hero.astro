@@ -19,11 +19,14 @@ import Link from '@components/ui/link.astro'
 			text.textContent = 'Coffee Shop'
 		}, 4000)
 		setTimeout(() => {
-			text.textContent = 'Food Business'
+			text.textContent = 'Social Media'
 		}, 8000)
+		setTimeout(() => {
+			text.textContent = 'Food Business'
+		}, 12000)
 	}
 	textLoad()
-	setInterval(textLoad, 12000)
+	setInterval(textLoad, 16000)
 </script>
 
 <style>
@@ -65,19 +68,13 @@ import Link from '@components/ui/link.astro'
 				</div>
 
 				<h2 class="my-4 text-2xl sm:text-3xl">Modern, Effortless, Deliciously Digital</h2>
-				<p class="mb-4">
+				<p class="mb-7">
 					Empower your restaurant with our cutting-edge QR menu and cloud POS solution. Seamlessly
 					integrate ordering and kitchen management, all in one sleek, digital platform.
 				</p>
-				<div class="flex flex-row gap-2">
-					<Link href="/signup" class="whitespace-nowrap bg-green-400 text-black"> Get Started</Link>
-					<Link
-						href="/features/welcome/introduction"
-						class="whitespace-nowrap bg-cyan-400 text-black"
-					>
-						Features List</Link
-					>
-				</div>
+				<Link href="/signup" size="lg" class="whitespace-nowrap bg-green-400 text-black">
+					Get Started</Link
+				>
 			</div>
 
 			<div class="mt-5 flex flex-col items-center sm:relative sm:mt-10">
