@@ -3,7 +3,7 @@ draft: false
 title: 'Staff Dashboard'
 snippet: By integrating the Waiter(ess) and Kitchen Dashboards, Astro-Menu ensures a seamless and efficient dining experience. These features enhance communication, reduce errors, and improve overall service quality, allowing restaurants to operate smoothly and provide exceptional customer satisfaction.
 icon: 'waiter'
-image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
+image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2024-06-01 11:39'
 category: 'Features'
 author: 'Astro-Menu'
@@ -32,7 +32,7 @@ The kitchen dashboard prioritizes orders based on preparation time and urgency. 
 By centralizing all order information, the risk of miscommunication and errors is greatly reduced. Special requests and modifications are clearly visible to both waitstaff and kitchen staff, ensuring they are accurately addressed.
 
 <div class='flex justify-center'>
-<img src='/assets/features/waiter-kitchen-dashboard.webp' class='rounded-md border-2 border-gray-800' />
+<img src='/assets/docs/waiter-kitchen-dashboard.webp' class='rounded-md border-2 border-gray-800' />
 </div>
 
 ## Faster Order Processing

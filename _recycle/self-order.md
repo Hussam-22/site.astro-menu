@@ -3,7 +3,7 @@ draft: false
 title: 'Self Order'
 snippet: Allow your customers to take their orders themselves select portions and add notes to their orders. This will help you reduce the number of waiters you need, and increase the speed of service
 icon: 'self-order'
-image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
+image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
 category: 'Features'
 author: 'Astro-Menu'
@@ -31,7 +31,7 @@ In a post-pandemic world, minimizing physical contact is crucial. The "Self Orde
 Implementing the "Self Order" feature can significantly streamline restaurant operations and improve efficiency:
 
 <div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
-<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
+<img src='/assets/docs/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 
 <div>
 

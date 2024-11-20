@@ -3,19 +3,20 @@ draft: false
 title: 'Overview'
 snippet: Learn how to navigate and utilize the Astro-Menu admin dashboard effectively.
 icon: 'introduction'
-image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
+image: { src: '/assets/docs/general/dynamic-qr-code-menu.png', alt: '' }
 publishDate: '2024-11-12 2:24'
 category: 'waitstaff'
 author: 'Astro-Menu'
 tags: [Coffee Cup, Menu Master]
 order: 6.1
-path: /features/general/
+path: /docs/general/
 ---
+
 import FeatureLink from '@components/ui/feature-link.astro'
 import { Image } from 'astro:assets'
-import WaitStaffListImage from 'assets/features/waitstaff/waitstaff-list.png'
+import WaitStaffListImage from 'assets/docs/waitstaff/waitstaff-list.png'
 
-In Astro-Menu, **staff** refers to the access links for your POS/Dashboard. You can think of staff as waitstaff and kitchen staff or as devices such as *Device 1*, *Device 2*, etc.
+In Astro-Menu, **staff** refers to the access links for your POS/Dashboard. You can think of staff as waitstaff and kitchen staff or as devices such as _Device 1_, _Device 2_, etc.
 
 <Image
 	src={WaitStaffListImage}
@@ -25,10 +26,13 @@ In Astro-Menu, **staff** refers to the access links for your POS/Dashboard. You 
 
 When creating staff profiles, each will have a unique access link tied to its corresponding branch. The type of staff determines their dashboard access:
 
-- **Waitstaff**: 
-<br /> These users will have access to a dashboard where they can take customer orders, mark meals as unavailable, send orders to the kitchen staff, and handle payments.
+- **Waitstaff**:
 
-- **Chef/Kitchen Staff**: 
-<br /> These users will have access to a dashboard that allows them to view and prepare incoming orders. They can also mark meals as unavailable.
+  <br /> These users will have access to a dashboard where they can take customer orders, mark meals
+  as unavailable, send orders to the kitchen staff, and handle payments.
 
-**Note**: You can assign staff to a branch either from the <FeatureLink text='Staff' link='/features/waitstaff/manage' /> page or directly within the <FeatureLink text='Branch waitstaff' link='/features/branches/waitstaff' /> page.
+- **Chef/Kitchen Staff**:
+  <br /> These users will have access to a dashboard that allows them to view and prepare incoming
+  orders. They can also mark meals as unavailable.
+
+**Note**: You can assign staff to a branch either from the <FeatureLink text='Staff' link='/docs/waitstaff/manage' /> page or directly within the <FeatureLink text='Branch waitstaff' link='/docs/branches/waitstaff' /> page.

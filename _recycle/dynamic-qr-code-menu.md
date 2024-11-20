@@ -3,7 +3,7 @@ draft: false
 title: 'Dynamic Menu'
 snippet: Astro-Menu’s dynamic menu feature empowers restaurants to easily create and manage their menus, providing a customizable and efficient dining experience. With an intuitive interface, restaurant owners can effortlessly add and organize dishes, update sections, and ensure their menu is always current.
 icon: 'qr-code'
-image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
+image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
 category: 'Features'
 author: 'Astro-Menu'
@@ -37,7 +37,7 @@ Astro-Menu also supports the creation of different meal menus for each branch of
 - Multiple Menus for Different Tables
 
 <div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
-<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
+<img src='/assets/docs/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 <div>
 
 ## Unique QR codes for each table, allowing for customized menus.

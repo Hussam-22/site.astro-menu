@@ -3,7 +3,7 @@ draft: false
 title: 'delete'
 snippet: To maintain essential QR menu operations, deletion of branches or social accounts is disabled to prevent accidental issues. You can disable them instead to remove related functionalities.
 icon: 'introduction'
-image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: '' }
+image: { src: '/assets/docs/general/dynamic-qr-code-menu.png', alt: '' }
 publishDate: '2024-11-12 2:24'
 category: 'branches'
 author: 'Astro-Menu'

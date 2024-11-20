@@ -92,9 +92,9 @@ const { content: Content, entry } = Astro.props
 											.map((featureEntry) => (
 												<li>
 													<a
-														href={`/features/${featureEntry.slug}`}
+														href={`/docs/${featureEntry.slug}`}
 														class={
-															url === `/features/${featureEntry.slug}`
+															url === `/docs/${featureEntry.slug}`
 																? 'menu-title flex items-center rounded-2xl bg-zinc-600 capitalize text-white hover:text-white'
 																: 'menu-title flex items-center capitalize text-white hover:text-zinc-500'
 														}

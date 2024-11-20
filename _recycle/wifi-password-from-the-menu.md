@@ -3,7 +3,7 @@ draft: false
 title: 'Wifi Password'
 snippet: You can add your wifi password to the menu, so your customers can easily connect to your wifi without asking your staff for the password.
 icon: 'wifi'
-image: { src: '/assets/features/wifi.png', alt: 'full stack web development' }
+image: { src: '/assets/docs/wifi.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
 category: 'Features'
 author: 'Astro-Menu'
@@ -26,7 +26,7 @@ Many diners enjoy sharing their dining experiences in real-time. Easy access to 
 Customers who wish to work while they dine or relax with streaming services will appreciate hassle-free internet access.
 
 <div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
-<img src='/assets/features/wifi.gif' alt='astro-menu-wifi' class='border-2 border-gray-800 rounded-lg w-96'>
+<img src='/assets/docs/wifi.gif' alt='astro-menu-wifi' class='border-2 border-gray-800 rounded-lg w-96'>
 <div>
 <h2>Reduced Queries</h2>
 <p>

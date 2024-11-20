@@ -4,7 +4,7 @@ title: 'Astro-Speed'
 snippet: Experience near-instantaneous menu loading from the cloud, ensuring you spend less time waiting and more time enjoying your meal, dont overload customer with large pdf files or images that takes forever to load.
 extraText: Our cloud-based technology eliminates the need for downloads, unlike traditional PDF menus. This means you get immediate access to the menu without using up your device's storage space. Additionally, our optimized cloud solution requires significantly less bandwidth, making it ideal for customers with limited data plans or those in areas with slower internet connections. This efficiency not only improves user experience but also contributes to a more eco-friendly digital footprint.
 icon: 'fast'
-image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
+image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'
 category: 'Features'
 author: 'Astro-Menu'
@@ -33,12 +33,12 @@ With fast loading times and easy navigation, customers can quickly find what the
 <div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
 <div>
 <p>Astro-Menu</p>
-<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
+<img src='/assets/docs/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 </div>
 
 <div>
 <p>Other Menus</p>
-<img src='/assets/features/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
+<img src='/assets/docs/full-menu-review.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 </div>
 </div>
 

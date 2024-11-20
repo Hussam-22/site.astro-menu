@@ -3,7 +3,7 @@ draft: false
 title: 'Minimum Clicks'
 snippet: Astro-Menu was designed with a minimum clicks concept in mind, aiming to get customers to their desired meal in as few clicks as possible. To achieve this, we’ve implemented an intuitive filtering system that simplifies the browsing process, Customers can quickly filter meals based on meal types such as "beef," "chicken," "vegetarian," and more. With just a few clicks, diners can narrow down their options to their preferred ingredients, ensuring they find exactly what they’re craving without the need to scroll through unrelated items..
 icon: 'min-clicks'
-image: { src: '/assets/features/dynamic-qr-code-menu.png', alt: 'full stack web development' }
+image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2024-06-01 11:39'
 category: 'Features'
 author: 'Astro-Menu'
@@ -32,7 +32,7 @@ A streamlined ordering process means that customers spend less time browsing the
 
 <div class='sm:grid sm:grid-cols-2 gap-5 place-items-center'>
 
-<img src='/assets/features/min-clicks.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
+<img src='/assets/docs/min-clicks.gif' alt='astro-menu-min-clicks' class='border-2 border-gray-800 rounded-lg w-64'>
 
 <div>
 <h2>Improved Operational Efficiency</h2>
