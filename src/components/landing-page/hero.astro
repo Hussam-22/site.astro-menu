@@ -6,6 +6,7 @@ import astroMenuDashboard from 'assets/dashboard.png'
 import TabletMockup from '@components/ui/tablet-mockup.astro'
 import SectionCard from '@components/ui/section-card.astro'
 import Link from '@components/ui/link.astro'
+import Container from '@components/container.astro'
 ---
 
 <script>
@@ -17,13 +18,13 @@ import Link from '@components/ui/link.astro'
 		}, 0)
 		setTimeout(() => {
 			text.textContent = 'Coffee Shop'
-		}, 4000)
+		}, 4100)
 		setTimeout(() => {
 			text.textContent = 'Social Media'
-		}, 8000)
+		}, 8100)
 		setTimeout(() => {
 			text.textContent = 'Food Business'
-		}, 12000)
+		}, 12100)
 	}
 	textLoad()
 	setInterval(textLoad, 16000)
@@ -53,31 +54,38 @@ import Link from '@components/ui/link.astro'
 </style>
 
 <main>
-	<SectionCard bgColor="bg-white">
-		<div class="flex flex-col px-6 py-10 sm:px-14 sm:pb-16">
-			<div class="pb-7 sm:w-[75%]">
-				<h1 class="mb-2 text-5xl font-extrabold capitalize leading-none sm:text-8xl">
+	<SectionCard bgColor="bg-white px-5 sm:pb-16 pb-10">
+		<div class="mx-auto sm:max-w-[75%]">
+			<div class="flex flex-col pt-10">
+				<h1
+					class="mb-2 text-[2.5rem] font-extrabold capitalize leading-none tracking-tighter text-zinc-300 sm:text-8xl"
+				>
 					Revolutionize Your
 				</h1>
 				<div class="relative w-fit overflow-hidden">
 					<p
-						class="highlight whitespace-nowrap pb-2 text-5xl font-extrabold leading-none sm:text-8xl"
+						class="highlight whitespace-nowrap pb-2 pr-1 text-[2.5rem] font-extrabold leading-none tracking-tighter sm:text-8xl"
 					>
 						Food Business
 					</p>
 				</div>
-
-				<h2 class="my-4 text-2xl sm:text-3xl">Modern, Effortless, Deliciously Digital</h2>
-				<p class="mb-7">
-					Empower your restaurant with our cutting-edge QR menu and cloud POS solution. Seamlessly
-					integrate ordering and kitchen management, all in one sleek, digital platform.
-				</p>
-				<Link href="/signup" size="lg" class="whitespace-nowrap bg-green-400 text-black">
-					Get Started</Link
-				>
+				<h1 class="text-[2.5rem] font-extrabold leading-none tracking-tighter sm:text-8xl">
+					<span class="text-zinc-300">with</span> Astro-Menu
+				</h1>
 			</div>
 
-			<div class="mt-5 flex flex-col items-center sm:relative sm:mt-10">
+			<h2 class="mb-2 mt-4 text-lg font-semibold sm:mt-8 sm:text-3xl">
+				Modern, Effortless, Deliciously Digital
+			</h2>
+			<p class="mb-10">
+				Empower your restaurant with our cutting-edge QR menu and cloud POS solution. Seamlessly
+				integrate ordering and kitchen management, all in one sleek, digital platform.
+			</p>
+			<Link href="/signup" size="lg" class="whitespace-nowrap bg-green-400 text-black">
+				Get Started</Link
+			>
+
+			<div class="mt-14 flex flex-col items-center sm:relative sm:mt-20">
 				<PhoneMockup
 					className="z-10 sm:absolute sm:-bottom-10 sm:left-10"
 					imgSrc={astroMenuPhone}
