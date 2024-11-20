@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro'
 import Container from '@components/container.astro'
 import Sectionhead from '@components/sectionhead.astro'
 import PricingCard from '@components/landing-page/pricing-card.astro'
+import PricingComponent from '@components/landing-page/pricing-component.astro'
 
 const pricing = [
 	{
@@ -65,14 +66,7 @@ const pricing = [
 ---
 
 <Layout title="Pricing">
-	<Container>
-		<Sectionhead>
-			<Fragment slot="title">Pricing</Fragment>
-			<Fragment slot="desc"> Simple & Predictable pricing. No Surprises. </Fragment>
-		</Sectionhead>
-
-		<div class="mx-auto mt-12 grid max-w-screen-lg gap-10 md:grid-cols-3">
-			{pricing.map((item) => <PricingCard plan={item} />)}
-		</div>
+	<Container class="mt-16">
+		<PricingComponent />
 	</Container>
 </Layout>
