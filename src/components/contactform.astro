@@ -19,23 +19,23 @@ import Button from './ui/button.astro'
 			type="text"
 			placeholder="Full Name"
 			required
-			class="w-full rounded-md border-2 border-gray-300 px-4 py-3 outline-none ring-gray-100 placeholder:text-gray-400 focus:border-gray-600 focus:ring-4"
+			class="rounded-xxl w-full px-4 py-3 text-white outline-none placeholder:text-zinc-400"
 			name="name"
 		/>
-		<div class="empty-feedback invalid-feedback mt-1 text-sm text-red-400">
+		<div class="empty-feedback invalid-feedback text-md mt-1 pl-4 text-red-500">
 			Please provide your full name.
 		</div>
 	</div>
 	<div class="mb-5">
 		<label for="contact_number" class="sr-only">Contact Number</label>
-		<input
+		<!-- <input
 			id="contact_number"
 			type="tel"
 			placeholder="Contact Number"
-			class="w-full rounded-md border-2 border-gray-300 px-4 py-3 outline-none ring-gray-100 placeholder:text-gray-400 focus:border-gray-600 focus:ring-4"
+			class="rounded-xxl w-full px-4 py-3 text-white outline-none placeholder:text-zinc-400"
 			name="contact number"
-		/>
-		<div class="empty-feedback invalid-feedback mt-1 text-sm text-red-400">
+		/> -->
+		<div class="empty-feedback invalid-feedback text-md mt-1 pl-4 text-red-500">
 			Please provide your full name.
 		</div>
 	</div>
@@ -47,10 +47,12 @@ import Button from './ui/button.astro'
 			placeholder="Email Address"
 			name="email"
 			required
-			class="w-full rounded-md border-2 border-gray-300 px-4 py-3 outline-none ring-gray-100 placeholder:text-gray-400 focus:border-gray-600 focus:ring-4"
+			class="rounded-xxl w-full px-4 py-3 text-white outline-none placeholder:text-zinc-400"
 		/>
-		<div class="empty-feedback mt-1 text-sm text-red-400">Please provide your email address.</div>
-		<div class="invalid-feedback mt-1 text-sm text-red-400">
+		<div class="empty-feedback text-md mt-1 pl-4 text-red-500">
+			Please provide your email address.
+		</div>
+		<div class="invalid-feedback text-md mt-1 pl-4 text-red-500">
 			Please provide a valid email address.
 		</div>
 	</div>
@@ -59,14 +61,14 @@ import Button from './ui/button.astro'
 			name="message"
 			required
 			placeholder="Your Message"
-			class="h-36 w-full rounded-md border-2 border-gray-300 px-4 py-3 outline-none ring-gray-100 placeholder:text-gray-400 focus:border-gray-600 focus:ring-4"
+			class="h-36 w-full rounded-3xl px-4 py-3 text-white outline-none placeholder:text-zinc-400"
 		></textarea>
-		<div class="empty-feedback invalid-feedback mt-1 text-sm text-red-400">
+		<div class="empty-feedback invalid-feedback text-md mt-1 pl-4 text-red-500">
 			Please enter your message.
 		</div>
 	</div>
-	<Button type="submit" size="lg" block>Send Message</Button>
-	<div id="result" class="mt-3 text-center"></div>
+	<Button type="submit" size="lg" block class="bg-white" id="result">Send Message</Button>
+	<!-- <div id="result" class="mt-3 text-center"></div> -->
 </form>
 
 <style>
@@ -133,7 +135,10 @@ import Button from './ui/button.astro'
 				form.reset()
 				form.classList.remove('was-validated')
 				setTimeout(() => {
-					result.style.display = 'none'
+					result.classList.remove('text-red-500')
+					result.classList.remove('text-green-500')
+					result.classList.add('text-black')
+					result.innerHTML = 'Send Message'
 				}, 5000)
 			})
 	})

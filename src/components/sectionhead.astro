@@ -3,10 +3,10 @@ const { sx, align = 'center' } = Astro.props
 ---
 
 <div class:list={['mt-16', align === 'center' && 'text-center', sx]}>
-	<h1 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+	<h1 class="text-4xl font-bold text-white lg:text-5xl lg:tracking-tight">
 		<slot name="title">Title</slot>
 	</h1>
-	<p class="mt-4 text-lg">
+	<p class="mt-4 text-lg text-white">
 		<slot name="desc">Some description goes here</slot>
 	</p>
 </div>
