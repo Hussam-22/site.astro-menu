@@ -8,33 +8,75 @@ import SectionCard from '@components/ui/section-card.astro'
 import Link from '@components/ui/link.astro'
 ---
 
-<main>
-	<SectionCard bgColor="bg-white" sx="py-10 px-6 sm:px-0">
-		<div class="flex flex-col items-center justify-center pb-6 pt-6 text-center sm:pb-16">
-			<div class="sm:w-[75%]">
-				<div class="pb-7">
-					<h1
-						class="mb-4 inline-block text-4xl font-extrabold capitalize leading-tight text-black sm:text-6xl sm:leading-normal"
-					>
-						Revolutionize Your Food Business
-					</h1>
+<script>
+	const text = document.querySelector('.highlight') as HTMLElement
 
-					<h2 class="my-4 text-2xl sm:text-3xl">Modern, Effortless, Deliciously Digital</h2>
-					<p class="mb-4">
-						Empower your restaurant with our cutting-edge QR menu and cloud POS solution. Seamlessly
-						integrate ordering and kitchen management, all in one sleek, digital platform.
+	const textLoad = () => {
+		setTimeout(() => {
+			text.textContent = 'Restaurant'
+		}, 0)
+		setTimeout(() => {
+			text.textContent = 'Coffee Shop'
+		}, 4000)
+		setTimeout(() => {
+			text.textContent = 'Food Business'
+		}, 8000)
+	}
+	textLoad()
+	setInterval(textLoad, 12000)
+</script>
+
+<style>
+	.highlight::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: #ffffff;
+		border-left: 2px solid #000000;
+		animation: animate 4s steps(16) infinite;
+	}
+	@keyframes animate {
+		40%,
+		60% {
+			left: calc(100% - 2px);
+		}
+		100% {
+			left: 0%;
+		}
+	}
+</style>
+
+<main>
+	<SectionCard bgColor="bg-white">
+		<div class="flex flex-col px-6 py-10 sm:px-14 sm:pb-16">
+			<div class="pb-7 sm:w-[75%]">
+				<h1 class="mb-2 text-5xl font-extrabold capitalize leading-none sm:text-8xl">
+					Revolutionize Your
+				</h1>
+				<div class="relative w-fit overflow-hidden">
+					<p
+						class="highlight whitespace-nowrap pb-2 text-5xl font-extrabold leading-none sm:text-8xl"
+					>
+						Food Business
 					</p>
-					<div class="flex flex-row items-center justify-center gap-2 text-center">
-						<Link href="/signup" class="whitespace-nowrap bg-green-400 text-black">
-							Get Started</Link
-						>
-						<Link
-							href="/features/welcome/introduction"
-							class="whitespace-nowrap bg-cyan-400 text-black"
-						>
-							Features List</Link
-						>
-					</div>
+				</div>
+
+				<h2 class="my-4 text-2xl sm:text-3xl">Modern, Effortless, Deliciously Digital</h2>
+				<p class="mb-4">
+					Empower your restaurant with our cutting-edge QR menu and cloud POS solution. Seamlessly
+					integrate ordering and kitchen management, all in one sleek, digital platform.
+				</p>
+				<div class="flex flex-row gap-2">
+					<Link href="/signup" class="whitespace-nowrap bg-green-400 text-black"> Get Started</Link>
+					<Link
+						href="/features/welcome/introduction"
+						class="whitespace-nowrap bg-cyan-400 text-black"
+					>
+						Features List</Link
+					>
 				</div>
 			</div>
 
