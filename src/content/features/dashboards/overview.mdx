@@ -1,0 +1,58 @@
+---
+draft: false
+title: 'Overview'
+snippet: Learn how to navigate and use the Astro-Menu admin dashboard.
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: 'Dynamic QR Code Menu' }
+publishDate: '2024-11-12 02:24'
+category: 'PoS/dashboard'
+author: 'Astro-Menu'
+tags: [general, getting started]
+order: 9.0
+path: /features/general/
+---
+
+import FeatureLink from '@components/ui/feature-link.astro'
+import { Image } from 'astro:assets'
+import waitStaffDashboard from 'assets/views/waitstaff-dashboard.png'
+
+Astro-Menu offers a cloud-based Point of Sale (PoS) and dashboard system designed to streamline restaurant operations. The system includes two specialized dashboards tailored to the needs of your staff, ensuring efficient workflows and seamless management.
+
+<Image
+	src={waitStaffDashboard}
+	alt="waitstaff dashboard"
+	class="w-fit rounded-xl sm:h-2/3 sm:w-2/3"
+/>
+
+### Key Benefits of the Astro-Menu Dashboard
+
+- **Cloud-Based**: Access from anywhere with an internet connection—no physical location restrictions.
+- **Device Agnostic**: Compatible with any device equipped with a web browser.
+- **User-Friendly**: Intuitive interface for easy navigation and operation.
+- **Zero Maintenance**: No software updates or ongoing maintenance required.
+
+### Types of Dashboards in Astro-Menu
+
+Astro-Menu provides two dedicated dashboards for restaurant operations:
+
+#### 1. Waitstaff Dashboard
+
+The Waitstaff Dashboard is designed for your service staff to:
+
+- Manage orders and table assignments.
+- Process customer payments.
+- Toggle meal availability.
+- Send orders directly to the kitchen staff.
+
+#### 2. Kitchen Dashboard
+
+The Kitchen Dashboard is designed for your kitchen staff to:
+
+- Track and manage incoming orders.
+- Prepare meals efficiently.
+- Update order statuses in real time.
+- Toggle meal availability.
+
+### Staff-Specific Access
+
+Each staff member—whether a waitstaff or kitchen team member—has their own unique access URL. You can retrieve the appropriate URLs for your staff from the <FeatureLink link='features/branches/waitstaff' text={`Branch's Staff Access Link Tab`} />.

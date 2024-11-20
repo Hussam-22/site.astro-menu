@@ -1,0 +1,80 @@
+---
+draft: false
+title: 'Waitstaff'
+snippet: Learn how to navigate and utilize the Astro-Menu Waitstaff Dashboard.
+icon: 'introduction'
+image: { src: '/assets/features/general/dynamic-qr-code-menu.png', alt: 'Dynamic QR Code Menu' }
+publishDate: '2024-11-12 02:24'
+category: 'PoS/dashboard'
+author: 'Astro-Menu'
+tags: [Coffee Cup, Menu Master]
+order: 9.1
+path: /features/general/
+---
+
+import FeatureLink from '@components/ui/feature-link.astro'
+import TipCard from '@components/ui/tip-card.astro'
+
+The Waitstaff Dashboard is designed to streamline the order management process for your service staff. It enables efficient order handling, payment processing, meal availability toggling, and direct order sending to the kitchen.
+
+Waitstaff can also search for details of completed or canceled orders, print receipts, and resend invoices to customers. These capabilities are essential for reviewing past transactions and addressing any discrepancies quickly and accurately.
+
+### Two Ways to Place Orders in Astro-Menu
+
+Astro-Menu provides two methods for placing orders:
+
+1. **Customer Self-Ordering**  
+   Customers can place their orders directly from their own devices by scanning the QR code at their table. Once an order is placed, the waitstaff simply confirms and sends it to the kitchen.
+
+   This feature can be enabled or disabled based on your restaurant's needs via the <FeatureLink link='/features/branches/manage-branch' text='branch settings' />.
+
+2. **Waitstaff Ordering**  
+   The waitstaff can place orders directly from the Waitstaff Dashboard, giving them full control over customer requests and order accuracy.
+
+Astro-Menu’s Cloud PoS/Dashboard operates in real-time. When customers add a meal to their cart, it instantly appears on the Waitstaff Dashboard. Similarly, when staff add a meal from the dashboard, it is immediately reflected in the customer’s cart.
+
+<TipCard
+	text={`If your operations don’t involve a kitchen, such as when waitstaff handle both order-taking and preparation, you can allow them to mark orders as "Ready to Serve" directly. To enable the "Skip Kitchen" feature, visit the Branch Settings page.`}
+/>
+
+### User-Friendly Dashboard Design
+
+The Waitstaff Dashboard is intuitive and easy to navigate, ensuring that your staff can quickly get up to speed. The interface is organized into four main sections:
+
+#### 1. Tables
+
+- View and manage all restaurant tables.
+- Access detailed order information for each table.
+- Identify which tables are calling for service or payment.
+- Table colors change based on the order status:
+  - **Green**: Table is equipped.
+  - **Orange**: Food has been sent to the kitchen.
+  - **Cyan**: Order is ready to serve.
+  - **Gray**: Table is empty.
+  - **Red**: Table is disabled/blocked.
+
+#### 2. Orders
+
+- View and manage all customer orders.
+- Send orders to the kitchen staff.
+- Mark orders as completed or canceled.
+- Add customer emails to send invoices.
+- Mute the "Call Waiter" button when necessary.
+- Apply discounts to orders.
+- Print order invoices.
+
+#### 3. Menu
+
+- Browse the menu and add items to the cart.
+- Toggle meal availability (e.g., mark items as "Available" or "Unavailable").
+- View detailed meal information, including descriptions and images.
+- Add multiple meals to the cart simultaneously.
+
+#### 4. Menu Filters and Navigation
+
+- Filter the menu by meal labels or categories.
+- Jump directly to specific menu sections for faster order-taking.
+
+<TipCard text="For a better dining experience and faster table turnover, staff can toggle meal availability in real-time. This ensures customers always see the latest menu, reducing frustration and saving time." />
+
+Each Waitstaff team member or device has a unique access URL to ensure secure and streamlined operations. You can retrieve these URLs for your staff from the <FeatureLink link='/features/branches/waitstaff' text={`Branch's Staff Access Link Tab`} />.

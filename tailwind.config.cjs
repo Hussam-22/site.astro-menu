@@ -53,8 +53,13 @@ module.exports = {
 						'margin-top': '0.5em',
 						'margin-bottom': '0.5em',
 						'line-height': '1.4em',
-						'h1,h2,h3,h4,h5,h6': {
-							'line-height': '1.0em'
+						'h1,h2': {
+							'line-height': '1.0em',
+							color: '#EC5766'
+						},
+						'h3,h4,h5,h6': {
+							'line-height': '1.4em',
+							color: '#FFFFFF'
 						},
 						li: {
 							'line-height': '1.4em'
