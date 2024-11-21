@@ -1,14 +1,26 @@
 ---
 import { Image } from 'astro:assets'
 import astroQr from 'assets/astro-menu-qr.svg'
+
+const { footer = false } = Astro.props
+
+console.log(footer)
 ---
 
 <div
-	class="rounded-xxl mt-8 flex flex-col items-center justify-center gap-8 bg-[url('/assets/backgrounds/bg-blur-multi.svg')] bg-cover bg-center bg-no-repeat pt-4 text-center sm:flex-row"
+	class:list={[
+		"rounded-xxl flex items-center justify-center bg-[url('/assets/backgrounds/bg-blur-multi.svg')] bg-cover bg-center bg-no-repeat  text-center ",
+		footer ? 'flex-col' : 'mt-8 flex-col gap-8 pt-4 sm:flex-row'
+	]}
 >
 	<div class="text-white">
-		<p class="text-xl">Need a sneak-peak ?</p>
-		<h2 class="px-4 text-4xl font-bold sm:text-5xl sm:tracking-tight">
+		{!footer && <p class="text-xl">Need a sneak-peak ?</p>}
+		<h2
+			class:list={[
+				'px-4  font-bold ',
+				footer ? 'text-2xl sm:text-xl' : 'text-4xl sm:text-5xl sm:tracking-tight'
+			]}
+		>
 			Scan QR Code for live Demo Menu
 		</h2>
 	</div>

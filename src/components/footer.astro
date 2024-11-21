@@ -4,8 +4,8 @@ import Container from './container.astro'
 ---
 
 <Container>
-	<footer class="rounded-xxl mb-4 mt-16 bg-black px-10 py-8 text-white">
-		<div class="grid grid-cols-3">
+	<footer class="rounded-xxl mb-4 mt-8 bg-black px-10 pt-8 text-white sm:mt-16">
+		<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
 			<div>
 				<p class="text-2xl font-bold">ASTRO MENU</p>
 				<p class="text-md sm:text-lg">Modern, Effortless, Deliciously Digital</p>
@@ -13,9 +13,36 @@ import Container from './container.astro'
 					Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
 				</p>
 				<p class="mt-1 text-xs">Privacy policy | Terms & conditions</p>
+				<p class="mt-4 text-orange-400">
+					<a href="mailto:hello@astro-menu.com">hello@astro-menu.com</a>
+				</p>
 			</div>
-			<div></div>
-			<div></div>
+			<div class="grid grid-cols-2 gap-3">
+				<div>
+					<p class="font-bold text-orange-400">Sitemap</p>
+					<ul>
+						<li><a href="/docs/">Home</a></li>
+						<li><a href="/docs/">Pricing</a></li>
+						<li><a href="/docs/">Docs</a></li>
+						<li><a href="/docs/">Blog</a></li>
+						<li><a href="/docs/">Contact us</a></li>
+					</ul>
+				</div>
+				<div>
+					<p class="font-bold text-orange-400">Features Overview</p>
+					<ul>
+						<li><a href="/docs/">QR Menu</a></li>
+						<li><a href="/docs/">Branches</a></li>
+						<li><a href="/docs/">Meals</a></li>
+						<li><a href="/docs/">Menus</a></li>
+						<li><a href="/docs/">Meal Labels</a></li>
+						<li><a href="/docs/">PoS/Dashboard</a></li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<AstroMenuQrCode footer />
+			</div>
 		</div>
 
 		<!--
