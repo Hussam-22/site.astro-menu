@@ -1,27 +1,26 @@
 ---
-import Contactform from '@components/contactform.astro'
+import ContactForm from '@components/contactform.astro'
 import Container from '@components/container.astro'
-import Sectionhead from '@components/sectionhead.astro'
+import SectionHead from '@components/sectionhead.astro'
 import Layout from '@layouts/Layout.astro'
-import { Icon } from 'astro-icon/components'
 ---
 
 <Layout title="Contact">
-	<Container class="md:max-w-screen-md">
-		<Sectionhead>
+	<Container class="flex-grow md:max-w-screen-md">
+		<SectionHead>
 			<Fragment slot="title"
 				>Contact <span class="whitespace-nowrap">Astro-Menu</span> Team</Fragment
 			>
 			<Fragment slot="desc"
 				><p class="mt-3 text-lg leading-relaxed text-white">
 					Have something to say? We are here to help. Fill up the form or send email to:
-					<strong class="text-orange-400">hello@astro-menu.com</strong>
+					<strong class="whitespace-nowrap text-orange-400">hello@astro-menu.com</strong>
 				</p></Fragment
 			>
-		</Sectionhead>
+		</SectionHead>
 
 		<div class="mx-auto mt-16 grid max-w-4xl gap-10 lg:mb-24">
-			<Contactform />
+			<ContactForm />
 		</div>
 	</Container>
 </Layout>

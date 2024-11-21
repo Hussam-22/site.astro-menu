@@ -1,30 +1,37 @@
 ---
 import AstroMenuQrCode from '@components/astro-menu-qr-code.astro'
+import Container from './container.astro'
 ---
 
-<footer class="mt-10 w-full bg-black py-5">
-	<p class="mt-1 text-center text-xs text-rose-400">
-		<a href="https://web3templates.com" target="_blank" rel="noopener" class="hover:underline">
-			Terms and Conditions
-		</a>
-	</p>
-	<p class="text-center text-sm text-white">hello@astro-menu.com</p>
-	<p class="text-center text-sm text-gray-500">
-		Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
-	</p>
-	<!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-	<!-- <p class="text-center text-xs mt-1">
-		Made by <a
-			href="https://web3templates.com"
-			target="_blank"
-			rel="noopener"
-			class="hover:underline"
-		>
-			Web3Templates
-		</a>
-	</p> -->
-</footer>
+<Container>
+	<footer class="rounded-xxl mb-4 mt-16 bg-black px-10 py-8 text-white">
+		<div class="grid grid-cols-3">
+			<div>
+				<p class="text-2xl font-bold">ASTRO MENU</p>
+				<p class="text-md sm:text-lg">Modern, Effortless, Deliciously Digital</p>
+				<p class="mt-4 text-sm">
+					Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
+				</p>
+				<p class="mt-1 text-xs">Privacy policy | Terms & conditions</p>
+			</div>
+			<div></div>
+			<div></div>
+		</div>
+
+		<!--
+			Can we ask you a favor 🙏
+			Please keep this backlink on your website if possible.
+			or Purchase a commercial license from https://web3templates.com
+			-->
+		<!-- <p class="text-center text-xs mt-1">
+				Made by <a
+				href="https://web3templates.com"
+				target="_blank"
+				rel="noopener"
+				class="hover:underline"
+				>
+				Web3Templates
+				</a>
+				</p> -->
+	</footer>
+</Container>
