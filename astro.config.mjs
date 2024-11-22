@@ -4,10 +4,13 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
 
-import react from '@astrojs/react';
+import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://astroship.web3templates.com',
-    integrations: [tailwind(), mdx(), sitemap(), icon(), react()]
+	site: 'https://astroship.web3templates.com',
+	integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
+	server: {
+		host: true
+	}
 })

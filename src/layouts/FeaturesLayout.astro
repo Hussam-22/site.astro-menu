@@ -28,7 +28,7 @@ const { content: Content, entry } = Astro.props
 				<input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
 				<div class="drawer-content">
-					<div class="flex w-full flex-col rounded-3xl bg-zinc-900 px-4 py-6 sm:py-8">
+					<div class="flex w-full flex-col rounded-3xl bg-zinc-900 px-4 py-6 sm:ml-4 sm:py-8">
 						<OpenFeaturesListButton />
 						<div class="max-w-1xl my-2">
 							<div class="flex flex-col justify-between gap-1 sm:flex-row sm:items-center">
@@ -79,6 +79,7 @@ const { content: Content, entry } = Astro.props
 						</p>
 					</div>
 				</div>
+
 				<div class="drawer-side">
 					<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 					<ul class="menu rounded-3xl bg-zinc-900 py-4 text-white">

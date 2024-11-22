@@ -4,18 +4,18 @@ import Container from './container.astro'
 ---
 
 <Container>
-	<footer class="rounded-xxl mb-4 mt-8 bg-black px-10 pt-8 text-white sm:mt-16">
+	<footer class="rounded-xxl mb-4 mt-8 bg-black px-10 py-8 text-white sm:mt-16">
 		<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
 			<div>
 				<p class="text-2xl font-bold">ASTRO MENU</p>
 				<p class="text-md sm:text-lg">Modern, Effortless, Deliciously Digital</p>
-				<p class="mt-4 text-sm">
-					Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
-				</p>
-				<p class="mt-1 text-xs">Privacy policy | Terms & conditions</p>
-				<p class="mt-4 text-orange-400">
+				<p class="text-orange-400">
 					<a href="mailto:hello@astro-menu.com">hello@astro-menu.com</a>
 				</p>
+				<p class="mt-4 hidden text-sm sm:grid">
+					Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
+				</p>
+				<p class="mt-1 hidden text-xs sm:grid">Privacy policy | Terms & conditions</p>
 			</div>
 			<div class="grid grid-cols-2 gap-3">
 				<div>
@@ -28,7 +28,7 @@ import Container from './container.astro'
 						<li><a href="/docs/">Contact us</a></li>
 					</ul>
 				</div>
-				<div>
+				<!-- <div>
 					<p class="font-bold text-orange-400">Features Overview</p>
 					<ul>
 						<li><a href="/docs/">QR Menu</a></li>
@@ -38,10 +38,14 @@ import Container from './container.astro'
 						<li><a href="/docs/">Meal Labels</a></li>
 						<li><a href="/docs/">PoS/Dashboard</a></li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
-			<div>
-				<AstroMenuQrCode footer />
+
+			<div class="whitespace-nowrap pb-4 text-center sm:hidden">
+				<p class="mt-4 text-sm">
+					Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
+				</p>
+				<p class="mt-1 text-xs">Privacy policy | Terms & conditions</p>
 			</div>
 		</div>
 
