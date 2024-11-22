@@ -1,14 +1,5 @@
 ---
-import { getCollection } from 'astro:content'
 import FeatureCard from '@components/ui/feature-card.astro'
-import heroSvg from 'assets/hero.svg'
-import Counter from '@components/react/counter'
-
-const featuresEntries = await getCollection('features', ({ data }) => {
-	return !data.draft && data.publishDate < new Date()
-})
-
-featuresEntries.sort((a, b) => a.data.order - b.data.order)
 
 const features = [
 	{

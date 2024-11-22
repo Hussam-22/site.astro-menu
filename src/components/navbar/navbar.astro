@@ -29,6 +29,8 @@ const menuitems = [
 		path: '/contact'
 	}
 ]
+
+const url = Astro.url.pathname
 ---
 
 <Container>
@@ -107,7 +109,15 @@ const menuitems = [
 								<>
 									{
 										<li>
-											<a href={item.path} class="text-lg font-bold hover:text-green-400">
+											<a
+												href={item.path}
+												class:list={[
+													'text-lg font-bold hover:bg-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent',
+													url === item.path
+														? 'bg-gradient-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent'
+														: ''
+												]}
+											>
 												<span>{item.title}</span>
 											</a>
 										</li>
@@ -135,7 +145,15 @@ const menuitems = [
 						<>
 							{
 								<li>
-									<a href={item.path} class="text-xl font-bold hover:text-green-400">
+									<a
+										href={item.path}
+										class:list={[
+											'text-xl font-bold hover:bg-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent',
+											url === item.path
+												? 'bg-gradient-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent'
+												: ''
+										]}
+									>
 										<span>{item.title}</span>
 									</a>
 								</li>
