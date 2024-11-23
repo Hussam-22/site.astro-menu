@@ -52,7 +52,7 @@ import Link from '@components/ui/link.astro'
 		pointer-events: none;
 		white-space: nowrap;
 		overflow: hidden;
-		animation: typing 3s steps(22, end) infinite;
+		animation: typing 2s steps(22, end) infinite;
 	}
 
 	@keyframes typing {
@@ -76,7 +76,7 @@ import Link from '@components/ui/link.astro'
 	/* Text content for multiple strings */
 	.input-wrapper > .placeholder::after {
 		content: 'Restaurant';
-		animation: text-cycle 12s steps(1) infinite;
+		animation: text-cycle 8s steps(1) infinite;
 	}
 
 	@keyframes text-cycle {
@@ -122,7 +122,7 @@ import Link from '@components/ui/link.astro'
 				Modern, Effortless, Deliciously Digital
 			</h2>
 			<p class="mb-10">
-				Empower your restaurant with our cutting-edge QR menu and cloud POS solution. Seamlessly
+				Empower your food business with our cutting-edge QR menu and cloud POS solution. Seamlessly
 				integrate ordering and kitchen management, all in one sleek, digital platform.
 			</p>
 			<Link href="/signup" size="lg" class="whitespace-nowrap bg-green-400 text-black">

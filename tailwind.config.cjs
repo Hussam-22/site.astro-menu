@@ -39,7 +39,7 @@ module.exports = {
 						color: '#d4d4d4',
 						'h1,h2': {
 							'line-height': '1.0em',
-							color: '#EC5766'
+							color: '#22c55e'
 						},
 						'h3,h4,h5,h6': {
 							'line-height': '1.4em',

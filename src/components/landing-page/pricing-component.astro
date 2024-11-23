@@ -2,6 +2,7 @@
 import Container from '@components/container.astro'
 import PricingCard from '@components/landing-page/pricing-card.astro'
 import Button from '@components/ui/button.astro'
+import Link from '@components/ui/link.astro'
 import SectionCard from '@components/ui/section-card.astro'
 
 const pricing = [
@@ -117,7 +118,9 @@ const pricing = [
 				Need a customized plan for your business, contact us and our sales team will get in touch
 				with you.
 			</p>
-			<Button class="whitespace-nowrap sm:mx-8" style="dark">Contact Sales</Button>
+			<Link href="/contact" class="whitespace-nowrap bg-black text-white sm:mx-8"
+				>Contact Sales</Link
+			>
 		</div>
 	</SectionCard>
 </section>
