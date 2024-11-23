@@ -8,7 +8,7 @@ import SectionCard from '@components/ui/section-card.astro'
 import Link from '@components/ui/link.astro'
 ---
 
-<script>
+<!-- <script>
 	const text = document.querySelector('.highlight') as HTMLElement
 
 	const textLoad = () => {
@@ -27,27 +27,73 @@ import Link from '@components/ui/link.astro'
 	}
 	textLoad()
 	setInterval(textLoad, 16000)
-</script>
-
+</script> -->
 <style>
-	.highlight::before {
-		content: '';
+	.input-wrapper {
+		display: block;
+		position: relative;
+	}
+
+	.input-wrapper > input {
+		display: block;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 100%;
+		background-color: transparent;
+		border: none;
+		outline: none;
+	}
+
+	.input-wrapper > .placeholder {
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100%;
-		width: 100%;
-		background-color: #ffffff;
-		border-left: 2px solid #000000;
-		animation: animate 4s steps(16) infinite;
+		pointer-events: none;
+		white-space: nowrap;
+		overflow: hidden;
+		animation: typing 3s steps(22, end) infinite;
 	}
-	@keyframes animate {
-		40%,
-		60% {
-			left: calc(100% - 2px);
+
+	@keyframes typing {
+		0% {
+			width: 0;
+		}
+		25% {
+			width: 100%; /* Width for 'Restaurant' */
+		}
+		50% {
+			width: 100%; /* Width for 'Coffee Shop' */
+		}
+		75% {
+			width: 100%; /* Width for 'Social Media' */
 		}
 		100% {
-			left: 0%;
+			width: 100%; /* Width for 'Food Business' */
+		}
+	}
+
+	/* Text content for multiple strings */
+	.input-wrapper > .placeholder::after {
+		content: 'Restaurant';
+		animation: text-cycle 12s steps(1) infinite;
+	}
+
+	@keyframes text-cycle {
+		0% {
+			content: 'Restaurant';
+		}
+		25% {
+			content: 'Coffee Shop';
+		}
+		50% {
+			content: 'Social Media';
+		}
+		75% {
+			content: 'Food Business';
+		}
+		100% {
+			content: 'Restaurant';
 		}
 	}
 </style>
@@ -61,12 +107,11 @@ import Link from '@components/ui/link.astro'
 				>
 					Revolutionize Your
 				</h1>
-				<div class="relative w-fit overflow-hidden">
-					<p
-						class="highlight whitespace-nowrap pb-2 pr-1 text-[2.5rem] font-extrabold leading-none tracking-tighter sm:text-8xl"
-					>
-						Food Business
-					</p>
+				<div
+					class="input-wrapper text-[2.5rem] font-extrabold capitalize leading-none tracking-tighter sm:text-8xl"
+				>
+					<input type="text" />
+					<div class="placeholder"></div>
 				</div>
 				<h1 class="text-[2.5rem] font-extrabold leading-none tracking-tighter sm:text-8xl">
 					<span class="text-zinc-300">with</span> Astro Menu
