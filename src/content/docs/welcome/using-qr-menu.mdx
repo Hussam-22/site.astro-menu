@@ -13,6 +13,10 @@ path: /docs/general/
 ---
 
 import FeatureLink from '@components/ui/feature-link.astro'
+import landingView from 'assets/views/landing-view.png'
+import menuView from 'assets/views/menu-view.png'
+import checkoutView from 'assets/views/checkout-view.png'
+import { Image } from 'astro:assets'
 
 Here are a few questions and answers to help you learn more about using the QR Menu:
 
@@ -21,6 +25,34 @@ Here are a few questions and answers to help you learn more about using the QR M
 You can find your QR Codes under your branch. Simply click on your branch, and you'll see tabs at the top for <FeatureLink link='/docs/branches/social-qr' style='dotted' text='Social QR'/> and <FeatureLink link='/docs/branches/tables-qr' text='Tables QR' />.
 
 You can easily download the <FeatureLink link='/docs/branches/tables-qr' text='Tables QR' /> and place them on your tables for customer use.
+
+<div class="flex flex-col items-center sm:flex-row sm:justify-around">
+	<div class="text-center">
+		<Image
+			src={landingView}
+			alt="qr menu landing page"
+			class="w-fit rounded-xl border-4 border-zinc-600 sm:h-2/3 sm:w-52"
+		/>
+		<p class="-mt-6 font-bold">Landing Page</p>
+	</div>
+   <div class="text-center">
+	<Image
+		src={menuView}
+		alt="qr menu menu page"
+		class="w-fit rounded-xl border-4 border-zinc-600 sm:h-2/3 sm:w-52"
+	/>
+   <p class="-mt-6 font-bold">Menu Page</p>
+	</div>
+
+   <div class="text-center">
+	<Image
+		src={checkoutView}
+		alt="qr menu checkout page"
+		class="w-fit rounded-xl border-4 border-zinc-600 sm:h-2/3 sm:w-52"
+	/>
+   <p class="-mt-6 font-bold">Checkout Page</p>
+	</div>
+</div>
 
 ### Can customers pay directly from the menu?
 
