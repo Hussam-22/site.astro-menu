@@ -1,10 +1,9 @@
 ---
 import Container from '@components/container.astro'
-import Link from '@components/ui/link.astro'
-import { Astronav, MenuItems, MenuIcon } from 'astro-navbar'
-import astroLogo from 'assets/astro-logo.svg'
+import astroLogo from 'assets/astro-logo.png'
 import { Image } from 'astro:assets'
 import Button from '@components/ui/button.astro'
+import Logo from '@components/logo.astro'
 
 const menuitems = [
 	{ title: 'Home', path: '/' },
@@ -34,56 +33,12 @@ const url = Astro.url.pathname
 ---
 
 <Container>
-	<!-- <header
-		class="flex w-full flex-col items-center justify-between px-3 py-3 text-white sm:flex-row"
-	>
-		<Astronav>
-			<div class="flex w-full flex-row items-center justify-between sm:w-auto">
-				<div class="flex w-max flex-row items-center">
-					<a href="/" class="rounded-xxl py-2 text-sm font-bold sm:text-lg">ASTRO-MENU</a>
-				</div>
-
-				<div class="block sm:hidden">
-					<MenuIcon class="h-4 w-4" />
-				</div>
-			</div>
-
-			<MenuItems
-				class="mt-2 hidden w-full flex-row items-center justify-between rounded-md border-b-2 border-b-zinc-700 bg-gradient-to-b from-zinc-800 to-zinc-950 p-4 sm:mt-0 sm:flex sm:border-none sm:bg-none"
-			>
-				<div class="mx-auto">
-					<ul class="flex flex-col gap-2 sm:mt-0 sm:flex-row sm:gap-8">
-						{
-							menuitems.map((item, index) => (
-								<>
-									{
-										<li>
-											<a href={item.path} class="font-bold hover:text-rose-400">
-												<span>{item.title}</span>
-											</a>
-										</li>
-									}
-								</>
-							))
-						}
-					</ul>
-				</div>
-				<div class="mt-2 flex flex-row items-center justify-between sm:mt-0 sm:flex-row sm:gap-4">
-					
-					<a href="#" class="font-semibold">Log in</a>
-					<Button href="/signup" class="" class="bg-green-400 text-black"> Get Started</Button>
-				</div>
-			</MenuItems>
-		</Astronav>
-		
-	</header> -->
-
 	<div class="drawer drawer-end my-3 text-white">
 		<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 		<div class="drawer-content flex flex-col">
 			<!-- Navbar -->
 			<div class="navbar w-full flex-row items-center justify-between px-4">
-				<a href="/" class="rounded-xxl py-2 text-lg font-bold">ASTRO MENU</a>
+				<Logo />
 				<div class="flex-none lg:hidden">
 					<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
 						<svg

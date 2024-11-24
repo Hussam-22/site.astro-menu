@@ -7,7 +7,7 @@ image: { src: '/assets/docs/general/dynamic-qr-code-menu.png', alt: '' }
 publishDate: '2024-11-12 2:24'
 category: 'branches'
 author: 'Astro-Menu'
-tags: [coffee cup, menu master]
+tags: [All Plans]
 order: 2.7
 ---
 
