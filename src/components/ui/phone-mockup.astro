@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 
-const { className, imgSrc, text } = Astro.props
+const { className, imgSrc, text, isEager = false } = Astro.props
 ---
 
 <div class={className}>
@@ -20,7 +20,7 @@ const { className, imgSrc, text } = Astro.props
 			src={imgSrc}
 			class="h-full w-full rounded-3xl object-contain"
 			alt={text || 'phone mockup'}
-			loading="eager"
+			loading={isEager ? 'eager' : 'lazy'}
 			quality="mid"
 		/>
 	</div>

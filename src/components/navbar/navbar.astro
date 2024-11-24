@@ -1,9 +1,8 @@
 ---
 import Container from '@components/container.astro'
-import astroLogo from 'assets/astro-logo.png'
-import { Image } from 'astro:assets'
 import Button from '@components/ui/button.astro'
 import Logo from '@components/logo.astro'
+import Link from '@components/ui/link.astro'
 
 const menuitems = [
 	{ title: 'Home', path: '/' },
@@ -40,7 +39,12 @@ const url = Astro.url.pathname
 			<div class="navbar w-full flex-row items-center justify-between px-4">
 				<Logo />
 				<div class="flex-none lg:hidden">
-					<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+					<label
+						for="my-drawer-3"
+						aria-label="open sidebar"
+						class="btn btn-square btn-ghost"
+						title="open menu"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -84,15 +88,18 @@ const url = Astro.url.pathname
 				</div>
 
 				<div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4">
-					<a href="#" class="font-semibold text-green-400">Log in</a>
-					<Button href="/signup" class="" class="bg-green-400 text-black">Get Started</Button>
+					<a href="https://app-astro-menu.vercel.app/login" class="font-semibold text-green-400"
+						>Log in</a
+					>
+					<Link href="/pricing" class="" class="bg-green-400 text-black">Get Started</Link>
 				</div>
 			</div>
 		</div>
 
 		<!-- Sidebar drawer -->
 		<div class="drawer-side z-50">
-			<label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+			<label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay" title="close menu"
+			></label>
 			<ul class="rounded-l-xxl menu min-h-full w-64 bg-base-200 px-4 pb-8 pt-8">
 				<!-- Sidebar content here -->
 				{
@@ -116,10 +123,14 @@ const url = Astro.url.pathname
 						</>
 					))
 				}
-				<li class="text-xl"><a href="#" class="font-semibold text-green-400">Log in</a></li>
+				<li class="text-xl">
+					<a href="https://app-astro-menu.vercel.app/login" class="font-semibold text-green-400"
+						>Log in</a
+					>
+				</li>
 				<li>
-					<Button href="/signup" class="" class="mt-2 bg-green-400 text-xl text-black">
-						Get Started</Button
+					<Link href="/pricing" class="" class="mt-2 bg-green-400 text-xl text-black">
+						Get Started</Link
 					>
 				</li>
 			</ul>

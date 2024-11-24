@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 		.filter((entry) => entry.slug.includes('waitstaff/'))
 		.map((entry) => ({
 			params: { slug: entry.slug.substring(10) },
-			fullPath: entry.data.path,
+
 			props: { entry }
 		}))
 }
