@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Auto Translation'
-snippet: Dont let the language be a barrier between you and your customers. Astro Menu will automatically translate your menu to your most frequent customers languages, and you can always add more languages.
+snippet: Dont let the language be a barrier between you and your customers. Astro-Menu will automatically translate your menu to your most frequent customers languages, and you can always add more languages.
 icon: 'translate'
 image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'full stack web development' }
 publishDate: '2022-11-08 11:39'

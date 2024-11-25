@@ -27,13 +27,13 @@ export const FEATURES = [
 	{
 		title: 'Auto Translation',
 		description:
-			'Dont let the language be a barrier between you and your customers. Astro Menu will automatically translate your menu to your most frequent customers languages, and you can always add more languages.',
+			'Dont let the language be a barrier between you and your customers. Astro-Menu will automatically translate your menu to your most frequent customers languages, and you can always add more languages.',
 		icon: 'translate'
 	},
 	{
 		title: 'Astro-Speed Menu',
 		description:
-			'With Astro Menu, you can create a simple and fast menu for your restaurant. It is easy to use and fast to load., dont overload customer with large pdf files or images that takes forever to load.',
+			'With Astro-Menu, you can create a simple and fast menu for your restaurant. It is easy to use and fast to load., dont overload customer with large pdf files or images that takes forever to load.',
 		icon: 'fast'
 	},
 	{

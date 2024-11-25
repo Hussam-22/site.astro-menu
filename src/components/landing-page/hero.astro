@@ -27,11 +27,12 @@ import Link from '@components/ui/link.astro'
 	.input-wrapper > .placeholder {
 		position: absolute;
 		top: 0;
-		left: 0;
+		left: 50%;
 		pointer-events: none;
 		white-space: nowrap;
 		overflow: hidden;
-		animation: typing 2s steps(22, end) infinite;
+		animation: typing 3s steps(22, end) infinite;
+		transform: translateX(-50%);
 	}
 
 	@keyframes typing {
@@ -39,46 +40,55 @@ import Link from '@components/ui/link.astro'
 			width: 0;
 		}
 		25% {
-			width: 100%; /* Width for 'Restaurant' */
+			width: 100%;
+			/* Width for 'Restaurant' */
 		}
 		50% {
-			width: 100%; /* Width for 'Coffee Shop' */
+			width: 100%;
+			/* Width for 'Coffee Shop' */
 		}
 		75% {
-			width: 100%; /* Width for 'Social Media' */
+			width: 100%;
+			/* Width for 'Social Media' */
 		}
 		100% {
-			width: 100%; /* Width for 'Food Business' */
+			width: 100%;
+			/* Width for 'Food Business' */
 		}
 	}
 
 	/* Text content for multiple strings */
 	.input-wrapper > .placeholder::after {
 		content: 'Restaurant';
-		animation: text-cycle 8s steps(1) infinite;
+		animation: text-cycle 12s steps(1) infinite;
 	}
 
 	@keyframes text-cycle {
 		0% {
 			content: 'Restaurant';
+			color: #f97316;
 		}
 		25% {
 			content: 'Coffee Shop';
+			color: #22c55e;
 		}
 		50% {
 			content: 'Social Media';
+			color: #06b6d4;
 		}
 		75% {
 			content: 'Food Business';
+			color: #a855f7;
 		}
 		100% {
 			content: 'Restaurant';
+			color: #f97316;
 		}
 	}
 </style>
 
 <main>
-	<SectionCard bgColor="bg-white px-5 sm:pb-16 pb-10">
+	<SectionCard bgColor="bg-white px-5 sm:pb-16 pb-10 text-center">
 		<div class="mx-auto sm:max-w-[75%]">
 			<div class="flex flex-col pt-10">
 				<h1
@@ -93,7 +103,7 @@ import Link from '@components/ui/link.astro'
 					<br />
 				</div>
 				<h1 class="text-[2.5rem] font-extrabold leading-none tracking-tighter sm:text-8xl">
-					<span class="text-zinc-300">with</span> Astro Menu
+					<span class="text-zinc-300">with</span> Astro-Menu
 				</h1>
 			</div>
 
