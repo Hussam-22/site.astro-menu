@@ -7,26 +7,6 @@ import SectionCard from '@components/ui/section-card.astro'
 import Link from '@components/ui/link.astro'
 ---
 
-<!-- <script>
-	const text = document.querySelector('.highlight') as HTMLElement
-
-	const textLoad = () => {
-		setTimeout(() => {
-			text.textContent = 'Restaurant'
-		}, 0)
-		setTimeout(() => {
-			text.textContent = 'Coffee Shop'
-		}, 4100)
-		setTimeout(() => {
-			text.textContent = 'Social Media'
-		}, 8100)
-		setTimeout(() => {
-			text.textContent = 'Food Business'
-		}, 12100)
-	}
-	textLoad()
-	setInterval(textLoad, 16000)
-</script> -->
 <style>
 	.input-wrapper {
 		display: block;
@@ -102,15 +82,15 @@ import Link from '@components/ui/link.astro'
 		<div class="mx-auto sm:max-w-[75%]">
 			<div class="flex flex-col pt-10">
 				<h1
-					class="mb-2 text-[2.5rem] font-extrabold capitalize leading-none tracking-tighter text-zinc-300 sm:text-8xl"
+					class="text-[2.5rem] font-extrabold capitalize leading-none tracking-tighter text-zinc-300 sm:text-8xl"
 				>
 					Revolutionize Your
 				</h1>
 				<div
-					class="input-wrapper text-[2.5rem] font-extrabold capitalize leading-none tracking-tighter sm:text-8xl"
+					class="input-wrapper inline-block text-[2.5rem] font-extrabold capitalize leading-none tracking-tighter sm:text-8xl"
 				>
-					<input type="text" />
 					<div class="placeholder"></div>
+					<br />
 				</div>
 				<h1 class="text-[2.5rem] font-extrabold leading-none tracking-tighter sm:text-8xl">
 					<span class="text-zinc-300">with</span> Astro Menu

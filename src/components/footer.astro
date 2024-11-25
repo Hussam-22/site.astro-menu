@@ -4,32 +4,31 @@ import Container from './container.astro'
 import Logo from './logo.astro'
 ---
 
-<Container>
-	<footer class="rounded-xxl mb-4 mt-8 bg-black px-8 py-4 text-white sm:mt-16 sm:px-16">
-		<div
-			class="flex flex-col text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
-		>
-			<div>
-				<Logo />
-				<p class="text-md sm:text-lg">Modern, Effortless, Deliciously Digital</p>
-				<p class="text-orange-400">
-					<a href="mailto:hello@astro-menu.com">hello@astro-menu.com</a>
-				</p>
-			</div>
-			<div>
-				<p class="mt-4 text-xs sm:grid">
-					Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
-				</p>
-				<p class="mt-1 text-xs sm:grid">Privacy policy | Terms & conditions</p>
-			</div>
+<footer class="mt-8 rounded-[50px_50px_0_0] bg-black px-8 py-4 text-white sm:mt-16 sm:px-16">
+	<div
+		class="flex flex-col text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
+	>
+		<div>
+			<Logo />
+			<p class="text-md sm:text-lg">Modern, Effortless, Deliciously Digital</p>
+			<p class="text-orange-400">
+				<a href="mailto:hello@astro-menu.com">hello@astro-menu.com</a>
+			</p>
 		</div>
+		<div>
+			<p class="mt-4 text-xs sm:grid">
+				Copyright © {new Date().getFullYear()} Astro Menu. All rights reserved.
+			</p>
+			<p class="mt-1 text-xs sm:grid">Privacy policy | Terms & conditions</p>
+		</div>
+	</div>
 
-		<!--
+	<!--
 			Can we ask you a favor 🙏
 			Please keep this backlink on your website if possible.
 			or Purchase a commercial license from https://web3templates.com
 			-->
-		<!-- <p class="text-center text-xs mt-1">
+	<!-- <p class="text-center text-xs mt-1">
 				Made by <a
 				href="https://web3templates.com"
 				target="_blank"
@@ -39,5 +38,4 @@ import Logo from './logo.astro'
 				Web3Templates
 				</a>
 				</p> -->
-	</footer>
-</Container>
+</footer>
