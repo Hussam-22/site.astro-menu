@@ -6,6 +6,7 @@ import CrossMark from '@components/ui/icons/cross.astro'
 const { plan, index } = Astro.props
 
 const DOMAIN = 'https://app-astro-menu.vercel.app/register'
+// const DOMAIN = 'http://localhost:3035/register'
 ---
 
 <!-- <div
@@ -56,7 +57,7 @@ const DOMAIN = 'https://app-astro-menu.vercel.app/register'
 
 			<div class="mt-4 flex">
 				<Link
-					href={`${DOMAIN}?plan=${plan.param}`}
+					href={`${DOMAIN}?planID=${plan.param}`}
 					block
 					style="primary"
 					class="bg-green-400 text-black"
