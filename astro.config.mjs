@@ -8,7 +8,7 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://astro-menu.vercel.app/',
+	site: 'https://astro-menu.com',
 	integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
 	server: {
 		host: true
