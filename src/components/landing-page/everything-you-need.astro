@@ -4,26 +4,25 @@ import FeatureCard from '@components/ui/feature-card.astro'
 const features = [
 	{
 		title: 'cloud POS, kitchen and admin dashboard',
-		description:
-			'No physical lock-down, no expensive hardware, no more maintenance, run your business on any device that have an internet and a browser, iPad, Tablet or Desktop, astro-menu is responsive and works on any device, anywhere, everything runs on the cloud !!',
+		description: 'No physical lock-in, everything runs on the cloud !!',
 		bgColor: 'bg-cyan-400',
 		imgSrc: '/assets/icons/cloud.svg'
 	},
 	{
 		title: 'Multi-Languages and Translation',
-		description: `no more language barrier, translate your menu to any language you want and let your customers choose their preferred language, don't miss out on any customer`,
+		description: `No more language barrier, don't miss out on any customer`,
 		bgColor: 'bg-green-400',
 		imgSrc: '/assets/icons/translate.svg'
 	},
 	{
 		title: 'Self Order',
-		description: `Customers dont have to wait for a waiter to take their order, they can simply scan a QR code on their table and order directly from their phone, waiter will only need to confirm order and send it to the kitchen, this will save time and increase your sales`,
+		description: `Customers dont have to wait for a waiter to take their order`,
 		bgColor: 'bg-purple-400',
 		imgSrc: '/assets/icons/self-order.svg'
 	},
 	{
 		title: 'And many more features',
-		description: `Check out our features page to see all the features we offer, we are constantly adding new features to make your business run smoothly`,
+		description: `Check out our Docs page for more features`,
 		bgColor: 'bg-white',
 		imgSrc: '/assets/icons/features.svg'
 	}
@@ -56,9 +55,8 @@ const features = [
 				title={features[3].title}
 				description={features[3].description}
 				bgSVG={''}
-				btnText="Features List"
+				btnText="Docs Page"
 				btnLink="/docs/welcome/introduction"
-				height="200"
 				imgSrc={features[3].imgSrc}
 			/>
 		</div>
@@ -82,7 +80,7 @@ const features = [
 			title={features[3].title}
 			description={features[3].description}
 			bgSVG={''}
-			btnText="Features List"
+			btnText="Docs Page"
 			btnLink="/docs/welcome/introduction"
 			imgSrc={features[3].imgSrc}
 		/>

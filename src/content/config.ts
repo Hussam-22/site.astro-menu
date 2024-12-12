@@ -9,9 +9,7 @@ const blogCollection = defineCollection({
 			title: z.string(),
 			snippet: z.string(),
 			image: z.object({
-				src: image().refine((img) => img.width >= 200, {
-					message: 'Cover image must be at least 1080 pixels wide!'
-				}),
+				src: image(),
 				alt: z.string()
 			}),
 			publishDate: z.string().transform((str) => new Date(str)),
