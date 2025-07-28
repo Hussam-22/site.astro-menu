@@ -1,11 +1,14 @@
 ---
 import Container from '@components/container.astro'
-import Button from '@components/ui/button.astro'
 import Logo from '@components/logo.astro'
 import Link from '@components/ui/link.astro'
 
 const menuitems = [
 	{ title: 'Home', path: '/' },
+	{
+		title: 'Features',
+		path: '/features'
+	},
 	{
 		title: 'Pricing',
 		path: '/pricing'
@@ -14,10 +17,7 @@ const menuitems = [
 		title: 'Docs',
 		path: '/docs/welcome/introduction'
 	},
-	// {
-	// 	title: 'About',
-	// 	path: '/about'
-	// },
+
 	{
 		title: 'Blog',
 		path: '/blog'
@@ -88,8 +88,10 @@ const url = Astro.url.pathname
 				</div>
 
 				<div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4">
-					<a href="https://app.astro-menu.com/login" class="font-semibold text-green-400">Log in</a>
-					<Link href="/pricing" class="" class="bg-green-400 text-black">Get Started</Link>
+					<a href="https://app.astro-menu.com/login" class="font-semibold text-emerald-400"
+						>Log in</a
+					>
+					<Link href="/pricing" class="" class="bg-emerald-400 text-black">Try Now</Link>
 				</div>
 			</div>
 		</div>
@@ -122,10 +124,12 @@ const url = Astro.url.pathname
 					))
 				}
 				<li class="text-xl">
-					<a href="https://app.astro-menu.com/login" class="font-semibold text-green-400">Log in</a>
+					<a href="https://app.astro-menu.com/login" class="font-semibold text-emerald-400"
+						>Log in</a
+					>
 				</li>
 				<li>
-					<Link href="/pricing" class="" class="mt-2 bg-green-400 text-xl text-black">
+					<Link href="/pricing" class="" class="mt-2 bg-emerald-400 text-xl text-black">
 						Get Started</Link
 					>
 				</li>

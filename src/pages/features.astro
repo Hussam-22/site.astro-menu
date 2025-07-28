@@ -1,0 +1,25 @@
+---
+import Container from '@components/container.astro'
+import DriveThru from '@components/features/drive-thru.astro'
+import AllFeatures from '@components/landing-page/all-features.astro'
+import Concept from '@components/landing-page/concept.astro'
+import Dashboards from '@components/landing-page/dashboards.astro'
+import FAQ from '@components/landing-page/faq.astro'
+import LetsGoOverNumbers from '@components/landing-page/lets-go-over-numbers.astro'
+import SocialFoodBusiness from '@components/landing-page/social-food-business.astro'
+import WhyToSwitch from '@components/landing-page/why-to-switch.astro'
+import Layout from '@layouts/Layout.astro'
+---
+
+<Layout title="Features">
+	<Container class="flex flex-col gap-28 sm:gap-36">
+		<Dashboards />
+		<AllFeatures />
+		<DriveThru />
+		<SocialFoodBusiness />
+		<LetsGoOverNumbers />
+		<Concept />
+		<WhyToSwitch />
+		<FAQ />
+	</Container>
+</Layout>
