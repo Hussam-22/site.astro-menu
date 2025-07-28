@@ -1,28 +1,27 @@
 ---
-import { Image } from 'astro:assets'
-import Link from './link.astro'
+import { Image } from "astro:assets";
 
-const { className, title, description, bgSVG, btnText, btnLink, imgSrc = '', icon } = Astro.props
-console.log(imgSrc)
+const { title, description, btnText, btnLink, imgSrc = "", icon } = Astro.props;
+console.log(imgSrc);
 ---
 
 <div
-	class:list={[`rounded-xxl relative min-h-[250px] p-8 sm:p-12`, className]}
-	style={`background-image: url('${imgSrc}'); background-size: 80% 80%; background-repeat: no-repeat; background-position: 200% 200%`}
+  class:list={[
+    `rounded-4xl min-h-[250px] p-4 sm:p-6 bg-base-200 flex flex-col gap-2`,
+  ]}
 >
-	{icon && <Image src={icon} class="-ml-4 mb-1 h-32 w-32" alt={title} />}
-	<h2 class="text-3xl font-extrabold capitalize text-black lg:text-5xl lg:tracking-tight">
-		{title}
-	</h2>
-	<p class:list={['mt-2 text-xl font-semibold text-black', btnText && btnLink ? 'mb-6' : 'mb-0']}>
-		{description}
-	</p>
-	{
-		btnText && btnLink && (
-			<Link styles="primary" href={btnLink} class="self-start bg-black text-white">
-				{btnText}
-			</Link>
-		)
-	}
-	{bgSVG}
+  {icon && <Image src={icon} class="h-16 w-16" alt={title} />}
+  <h2
+    class="text-3xl font-extrabold capitalize text-black lg:text-5xl lg:tracking-tight"
+  >
+    {title}
+  </h2>
+  <p
+    class:list={[
+      "text-xl font-semibold text-black",
+      btnText && btnLink ? "mb-6" : "mb-0",
+    ]}
+  >
+    {description}
+  </p>
 </div>

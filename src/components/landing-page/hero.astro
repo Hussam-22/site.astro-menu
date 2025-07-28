@@ -5,13 +5,21 @@ import PhoneMockup from "@components/ui/phone-mockup.astro";
 import TabletMockup from "@components/ui/tablet-mockup.astro";
 import astroMenuPhone from "assets/views/menu-preview.webp";
 import waitStaffDashboard from "assets/views/waitstaff-dashboard.png";
+import Image from "astro/components/Image.astro";
+import backgroundColorImage from "../../assets/backgrounds/bg-blur-orange.svg";
 ---
 
 <Container>
-  <div class="grid grid-cols-2 gap-8">
+  <div class="grid grid-cols-2 gap-4 relative">
+    <Image
+      src={backgroundColorImage}
+      alt="Background Blur"
+      class="absolute top-1/2 left-0 w-full h-[90%] -translate-y-1/2 object-contain opacity-40"
+      loading="eager"
+    />
     <div class="flex flex-col justify-center gap-2">
       <h1 class="text-6xl font-black">
-        Your Restaurant, Simplified <br /> QR Menus & POS in Minutes
+        Your Restaurant, Simplified<br />QR Menus & POS in Minutes
       </h1>
 
       <h2 class="mb-10 text-xl font-semibold">
