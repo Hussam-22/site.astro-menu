@@ -10,11 +10,11 @@ const DOMAIN = 'https://app.astro-menu.com/register'
 ---
 
 <!-- <div
-	class={`intersect:animate-fade intersect-once w-full order-first lg:order-none ${plan.popular && 'bg-gradient-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
+	class={`intersect:animate-fade intersect-once w-full order-first lg:order-0 ${plan.popular && 'bg-linear-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
 	style={`animation-delay: ${index * 0.25}s`}
 ></div> -->
 <div
-	class={`w-full order-first lg:order-none ${plan.popular && 'bg-gradient-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
+	class={`w-full order-first lg:order-0 ${plan.popular && 'bg-linear-to-b from-purple-400 to-cyan-400'} p-2 bg-white rounded-xxl`}
 >
 	<div class="rounded-xxl flex h-full flex-col justify-between bg-white p-6">
 		<div style="display:flex; justify-content:space-between; align-items:center;" class="mb-2">
@@ -31,7 +31,7 @@ const DOMAIN = 'https://app.astro-menu.com/register'
 			</div>
 			{
 				plan.popular && (
-					<div class="rounded-lg bg-gradient-to-r from-purple-400 to-cyan-400 px-2 py-1 text-xs font-bold uppercase">
+					<div class="rounded-lg bg-linear-to-r from-purple-400 to-cyan-400 px-2 py-1 text-xs font-bold uppercase">
 						<p>most popular</p>
 					</div>
 				)
@@ -43,8 +43,8 @@ const DOMAIN = 'https://app.astro-menu.com/register'
 			<span class="text-sm">/month</span>
 		</p>
 
-		<div class="flex flex-grow flex-col">
-			<ul class="mt-8 grid flex-grow gap-y-0 text-left">
+		<div class="flex grow flex-col">
+			<ul class="mt-8 grid grow gap-y-0 text-left">
 				{
 					plan.features.map((item) => (
 						<li class="flex items-center gap-3">

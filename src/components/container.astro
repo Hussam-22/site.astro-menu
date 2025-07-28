@@ -1,12 +1,12 @@
 ---
-const { class: className } = Astro.props
+const { class: className } = Astro.props;
 ---
 
 <div
-	class:list={[
-		'mx-auto px-4 sm:max-w-screen-sm sm:px-8 md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl',
-		className
-	]}
+  class:list={[
+    "mx-auto px-4 sm:max-w-(--breakpoint-sm) sm:px-8 md:max-w-(--breakpoint-lg) lg:max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)",
+    className,
+  ]}
 >
-	<slot />
+  <slot />
 </div>

@@ -23,7 +23,7 @@ const { Content } = await entry.render()
 
 <!-- <Debug answer={{ entry }} /> -->
 <Layout title={entry.data.title}>
-	<div class="mx-6 max-w-screen-md text-white sm:mx-auto">
+	<div class="mx-6 max-w-(--breakpoint-md) text-white sm:mx-auto">
 		<div class="mx-auto mt-6 max-w-3xl">
 			<span class="text-sm font-medium uppercase tracking-wider text-cyan-400">
 				{entry.data.category}

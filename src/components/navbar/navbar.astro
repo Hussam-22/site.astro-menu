@@ -1,139 +1,150 @@
 ---
-import Container from '@components/container.astro'
-import Logo from '@components/logo.astro'
-import Link from '@components/ui/link.astro'
+import Container from "@components/container.astro";
+import Logo from "@components/logo.astro";
+import Link from "@components/ui/link.astro";
 
 const menuitems = [
-	{ title: 'Home', path: '/' },
-	{
-		title: 'Features',
-		path: '/features'
-	},
-	{
-		title: 'Pricing',
-		path: '/pricing'
-	},
-	{
-		title: 'Docs',
-		path: '/docs/welcome/introduction'
-	},
+  { title: "Home", path: "/" },
+  {
+    title: "Features",
+    path: "/features",
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
+  },
+  {
+    title: "Docs",
+    path: "/docs/welcome/introduction",
+  },
 
-	{
-		title: 'Blog',
-		path: '/blog'
-	},
-	{
-		title: 'Contact',
-		path: '/contact'
-	}
-]
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+];
 
-const url = Astro.url.pathname
+const url = Astro.url.pathname;
 ---
 
 <Container>
-	<div class="drawer drawer-end my-3 text-white">
-		<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-		<div class="drawer-content flex flex-col">
-			<!-- Navbar -->
-			<div class="navbar w-full flex-row items-center justify-between px-4">
-				<Logo />
-				<div class="flex-none lg:hidden">
-					<label
-						for="my-drawer-3"
-						aria-label="open sidebar"
-						class="btn btn-square btn-ghost"
-						title="open menu"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							class="inline-block h-6 w-6 stroke-current"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M4 6h16M4 12h16M4 18h16"></path>
-						</svg>
-					</label>
-				</div>
+  <div class="drawer drawer-end my-3">
+    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      <div
+        class="navbar w-full flex-row items-center justify-between px-8 bg-base-200 rounded-4xl"
+      >
+        <Logo />
+        <div class="flex-none lg:hidden">
+          <label
+            for="my-drawer-3"
+            aria-label="open sidebar"
+            class="btn btn-square btn-ghost"
+            title="open menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="inline-block h-6 w-6 stroke-current"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </label>
+        </div>
 
-				<div class="hidden flex-none lg:block">
-					<ul class="menu menu-horizontal">
-						<!-- Navbar menu content here -->
-						{
-							menuitems.map((item, index) => (
-								<>
-									{
-										<li>
-											<a
-												href={item.path}
-												class:list={[
-													'text-lg font-bold hover:bg-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent',
-													url === item.path
-														? 'bg-gradient-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent'
-														: ''
-												]}
-											>
-												<span>{item.title}</span>
-											</a>
-										</li>
-									}
-								</>
-							))
-						}
-					</ul>
-				</div>
+        <div class="hidden flex-none lg:block">
+          <ul class="menu menu-horizontal">
+            <!-- Navbar menu content here -->
+            {
+              menuitems.map((item, index) => (
+                <>
+                  {
+                    <li>
+                      <a
+                        href={item.path}
+                        class:list={[
+                          "text-lg font-bold hover:bg-transparent hover:bg-linear-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent",
+                          url === item.path
+                            ? "bg-linear-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent"
+                            : "",
+                        ]}
+                      >
+                        <span>{item.title}</span>
+                      </a>
+                    </li>
+                  }
+                </>
+              ))
+            }
+          </ul>
+        </div>
 
-				<div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4">
-					<a href="https://app.astro-menu.com/login" class="font-semibold text-emerald-400"
-						>Log in</a
-					>
-					<Link href="/pricing" class="" class="bg-emerald-400 text-black">Try Now</Link>
-				</div>
-			</div>
-		</div>
+        <div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4 items-center">
+          <a
+            href="https://app.astro-menu.com/login"
+            class="font-bold text-emerald-400">Log in</a
+          >
+          <Link href="/pricing" class="bg-purple-400" size="md">Try Now</Link>
+        </div>
+      </div>
+    </div>
 
-		<!-- Sidebar drawer -->
-		<div class="drawer-side z-50">
-			<label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay" title="close menu"
-			></label>
-			<ul class="rounded-l-xxl menu min-h-full w-64 bg-base-200 px-4 pb-8 pt-8">
-				<!-- Sidebar content here -->
-				{
-					menuitems.map((item, index) => (
-						<>
-							{
-								<li>
-									<a
-										href={item.path}
-										class:list={[
-											'text-xl font-bold hover:bg-transparent hover:bg-gradient-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent',
-											url === item.path
-												? 'bg-gradient-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent'
-												: ''
-										]}
-									>
-										<span>{item.title}</span>
-									</a>
-								</li>
-							}
-						</>
-					))
-				}
-				<li class="text-xl">
-					<a href="https://app.astro-menu.com/login" class="font-semibold text-emerald-400"
-						>Log in</a
-					>
-				</li>
-				<li>
-					<Link href="/pricing" class="" class="mt-2 bg-emerald-400 text-xl text-black">
-						Get Started</Link
-					>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <!-- Sidebar drawer -->
+    <div class="drawer-side z-50">
+      <label
+        for="my-drawer-3"
+        aria-label="close sidebar"
+        class="drawer-overlay"
+        title="close menu"></label>
+      <ul class="rounded-l-xxl menu min-h-full w-64 bg-base-200 px-4 pb-8 pt-8">
+        <!-- Sidebar content here -->
+        {
+          menuitems.map((item, index) => (
+            <>
+              {
+                <li>
+                  <a
+                    href={item.path}
+                    class:list={[
+                      "text-xl font-bold hover:bg-transparent hover:bg-linear-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent",
+                      url === item.path
+                        ? "bg-linear-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent"
+                        : "",
+                    ]}
+                  >
+                    <span>{item.title}</span>
+                  </a>
+                </li>
+              }
+            </>
+          ))
+        }
+        <li class="text-xl">
+          <a
+            href="https://app.astro-menu.com/login"
+            class="font-semibold text-emerald-400">Log in</a
+          >
+        </li>
+        <li>
+          <Link
+            href="/pricing"
+            class=""
+            class="mt-2 bg-emerald-400 text-xl text-black"
+          >
+            Get Started</Link
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </Container>

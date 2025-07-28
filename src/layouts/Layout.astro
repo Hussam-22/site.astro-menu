@@ -1,113 +1,213 @@
 ---
-import { SEO } from 'astro-seo'
-import Footer from '@components/footer.astro'
-import Navbar from '@components/navbar/navbar.astro'
+import { SEO } from "astro-seo";
+import { AstroFont } from "astro-font";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
 import "../assets/app.css";
-import { ClientRouter } from 'astro:transitions'
+import { ClientRouter } from "astro:transitions";
 export interface Props {
-	title: string
+  title: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString()
-const resolvedImageWithDomain = new URL('/opengraph.png', Astro.site).toString()
-const { title } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImageWithDomain = new URL(
+  "/opengraph.png",
+  Astro.site
+).toString();
+const { title } = Astro.props;
 
 const makeTitle = title
-	? title + ' | ' + 'Astro-Menu'
-	: 'Astro-Menu - Revolutionize Your Food Business with Astro-Menu'
+  ? title + " | " + "Astro-Menu"
+  : "Astro-Menu - Revolutionize Your Food Business with Astro-Menu";
 ---
 
 <!doctype html>
-<html lang="en" data-theme="business">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMMNZ0D1P"></script>
-		<script>
-			window.dataLayer = window.dataLayer || []
-			function gtag() {
-				dataLayer.push(arguments)
-			}
-			gtag('js', new Date())
+<html lang="en" data-theme="cmyk">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMMNZ0D1P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-			gtag('config', 'G-4FMMNZ0D1P')
-		</script>
-		<!-- Yandex.Metrika counter -->
-		<script type="text/javascript">
-			;(function (m, e, t, r, i, k, a) {
-				m[i] =
-					m[i] ||
-					function () {
-						;(m[i].a = m[i].a || []).push(arguments)
-					}
-				m[i].l = 1 * new Date()
-				for (var j = 0; j < document.scripts.length; j++) {
-					if (document.scripts[j].src === r) {
-						return
-					}
-				}
-				;(k = e.createElement(t)),
-					(a = e.getElementsByTagName(t)[0]),
-					(k.async = 1),
-					(k.src = r),
-					a.parentNode.insertBefore(k, a)
-			})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym')
+      gtag("config", "G-4FMMNZ0D1P");
+    </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-			ym(99191635, 'init', {
-				clickmap: true,
-				trackLinks: true,
-				accurateTrackBounce: true
-			})
-		</script>
-		<noscript
-			><div>
-				<img
-					src="https://mc.yandex.ru/watch/99191635"
-					style="position:absolute; left:-9999px;"
-					alt=""
-				/>
-			</div></noscript
-		>
-		<!-- /Yandex.Metrika counter -->
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="msvalidate.01" content="A5F12D489A25EE6C5EDE8613601EABE2" />
-		<meta name="yandex-verification" content="6986b8519cb7c539" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="icon" href="/favicon.ico" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<meta name="generator" content={Astro.generator} />
-		<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
-		<SEO
-			title={makeTitle}
-			description="Empower your food business, restaurant, coffee shop, and social media food business with our cutting-edge QR menu and cloud POS solution. Seamlessly integrate ordering and kitchen management, all in one sleek, digital platform."
-			canonical={canonicalURL}
-			openGraph={{
-				basic: {
-					url: canonicalURL,
-					type: 'website',
-					title: `Revolutionize Your Food Business with Astro-Menu`,
-					image: resolvedImageWithDomain
-				},
-				image: {
-					alt: 'Astro-Menu Homepage Screenshot'
-				}
-			}}
-		/>
-		<ClientRouter />
-	</head>
-	<body>
-		<Navbar />
-		<slot />
-		<Footer />
-		<style is:global>
-			/* Improve Page speed */
-			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-			img {
-				content-visibility: auto;
-			}
-		</style>
-	</body>
+      ym(99191635, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/99191635"
+          style="position:absolute; left:-9999px;"
+          alt=""
+        />
+      </div></noscript
+    >
+    <!-- /Yandex.Metrika counter -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="msvalidate.01" content="A5F12D489A25EE6C5EDE8613601EABE2" />
+    <meta name="yandex-verification" content="6986b8519cb7c539" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"
+    ></script>
+    <SEO
+      title={makeTitle}
+      description="Empower your food business, restaurant, coffee shop, and social media food business with our cutting-edge QR menu and cloud POS solution. Seamlessly integrate ordering and kitchen management, all in one sleek, digital platform."
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `Revolutionize Your Food Business with Astro-Menu`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Astro-Menu Homepage Screenshot",
+        },
+      }}
+    />
+    <AstroFont
+      config={[
+        {
+          name: "Open Sans",
+          src: [
+            {
+              style: "light",
+              weight: "300",
+              path: "./public/fonts/OpenSans-Light.ttf",
+            },
+            {
+              style: "normal",
+              weight: "400",
+              path: "./public/fonts/OpenSans-Regular.ttf",
+            },
+            {
+              style: "medium",
+              weight: "500",
+              path: "./public/fonts/OpenSans-Medium.ttf",
+            },
+            {
+              style: "semibold",
+              weight: "600",
+              path: "./public/fonts/OpenSans-SemiBold.ttf",
+            },
+            {
+              style: "bold",
+              weight: "700",
+              path: "./public/fonts/OpenSans-Bold.ttf",
+            },
+            {
+              style: "extrabold",
+              weight: "800",
+              path: "./public/fonts/OpenSans-ExtraBold.ttf",
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+        {
+          name: "Beiruti",
+          src: [
+            {
+              style: "light",
+              weight: "200",
+              path: "./public/fonts/Beiruti-ExtraLight.ttf",
+            },
+            {
+              style: "light",
+              weight: "300",
+              path: "./public/fonts/Beiruti-Light.ttf",
+            },
+            {
+              style: "normal",
+              weight: "400",
+              path: "./public/fonts/Beiruti-Regular.ttf",
+            },
+            {
+              style: "medium",
+              weight: "500",
+              path: "./public/fonts/Beiruti-Medium.ttf",
+            },
+            {
+              style: "semibold",
+              weight: "600",
+              path: "./public/fonts/Beiruti-SemiBold.ttf",
+            },
+            {
+              style: "bold",
+              weight: "700",
+              path: "./public/fonts/Beiruti-Bold.ttf",
+            },
+            {
+              style: "extrabold",
+              weight: "800",
+              path: "./public/fonts/Beiruti-ExtraBold.ttf",
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
+    <ClientRouter />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
 </html>
