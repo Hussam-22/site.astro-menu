@@ -73,9 +73,9 @@ const url = Astro.url.pathname;
                       <a
                         href={item.path}
                         class:list={[
-                          "text-lg font-bold hover:bg-transparent hover:bg-linear-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent",
+                          "text-lg font-bold hover:bg-transparent hover:bg-linear-to-r hover:from-orange-400 hover:to-red-500  hover:bg-clip-text hover:text-transparent",
                           url === item.path
-                            ? "bg-linear-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent"
+                            ? "bg-linear-to-r from-orange-400 to-red-500 bg-clip-text  text-transparent"
                             : "",
                         ]}
                       >
@@ -92,9 +92,9 @@ const url = Astro.url.pathname;
         <div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4 items-center">
           <a
             href="https://app.astro-menu.com/login"
-            class="font-bold text-emerald-400">Log in</a
+            class="font-bold text-orange-400">Log in</a
           >
-          <Link href="/pricing" class="bg-purple-400" size="md">Try Now</Link>
+          <Link href="/pricing" size="md">Try Now</Link>
         </div>
       </div>
     </div>
@@ -116,9 +116,9 @@ const url = Astro.url.pathname;
                   <a
                     href={item.path}
                     class:list={[
-                      "text-xl font-bold hover:bg-transparent hover:bg-linear-to-r hover:from-purple-400 hover:via-cyan-500 hover:to-green-500 hover:bg-clip-text hover:text-transparent",
+                      "text-xl font-bold hover:bg-transparent hover:bg-linear-to-r hover:from-orange-400 hover:to-red-500  hover:bg-clip-text hover:text-transparent",
                       url === item.path
-                        ? "bg-linear-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text  text-transparent"
+                        ? "bg-linear-to-r from-orange-400 to-red-500 bg-clip-text  text-transparent"
                         : "",
                     ]}
                   >
