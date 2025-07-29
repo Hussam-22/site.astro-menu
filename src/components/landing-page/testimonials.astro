@@ -1,0 +1,117 @@
+---
+import Container from "@components/container.astro";
+import avatar1 from "assets/images/avatars/avatar-1.webp";
+import avatar2 from "assets/images/avatars/avatar-2.webp";
+import avatar3 from "assets/images/avatars/avatar-3.webp";
+import avatar4 from "assets/images/avatars/avatar-4.webp";
+import avatar5 from "assets/images/avatars/avatar-5.webp";
+import avatar6 from "assets/images/avatars/avatar-6.webp";
+import Image from "astro/components/Image.astro";
+
+const TESTIMONIALS = [
+  {
+    type: "food_truck",
+    owner: "Omar H.",
+    business_name: "StreetEats Food Truck",
+    testimonial:
+      "Before Astro Menu, customers waited forever during lunch rush. Now, people can order ahead or from their car, pay instantly, and just pick up. Our line moves twice as fast, and we serve way more customers per day.",
+    benefit:
+      "Drive-thru ordering doubled serving speed and increased customer throughput.",
+    avatar: avatar1,
+  },
+  {
+    type: "food_truck",
+    owner: "Layla M.",
+    business_name: "Grill & Go Truck",
+    testimonial:
+      "On busy nights, we used to see people walk away because the line looked too long. Astro Menu’s drive-thru option lets customers place and pay for their orders without leaving the car. Our sales went up 25% because we keep everyone happy and moving.",
+    benefit:
+      "25% sales increase by reducing wait times with mobile drive-thru ordering.",
+    avatar: avatar2,
+  },
+  {
+    type: "food_truck",
+    owner: "Khaled R.",
+    business_name: "TacoTrail Food Truck",
+    testimonial:
+      "Taking orders and payments at the truck used to slow us down. With Astro Menu, customers handle it themselves on their phone, so we just focus on cooking and handing out food. It feels like we hired someone without the cost.",
+    benefit:
+      "Streamlined operations by shifting ordering to mobile, saving staff time.",
+    avatar: avatar3,
+  },
+  {
+    type: "restaurant",
+    owner: "Hassan & Family",
+    business_name: "Al Manar Grill",
+    testimonial:
+      "Big POS systems were overkill for us. Astro Menu is straightforward, affordable, and helps us track all our orders digitally. Staff picked it up in minutes, and we cut order mistakes by 80%.",
+    benefit:
+      "Reduced order errors by 80% with a simple, cost-effective solution.",
+    avatar: avatar4,
+  },
+  {
+    type: "restaurant",
+    owner: "Nour R.",
+    business_name: "Olive Grove Restaurant",
+    testimonial:
+      "Since switching to Astro Menu, we serve tables faster, and staff don’t waste time rewriting or double-checking orders. We even added a takeaway counter because managing orders became so easy.",
+    benefit: "Increased efficiency, enabling new takeaway service.",
+    avatar: avatar5,
+  },
+  {
+    type: "cafe",
+    owner: "Lina D.",
+    business_name: "Brew & Bite Café",
+    testimonial:
+      "Our morning rush used to be chaos, with baristas shouting orders. With Astro Menu, orders are organized and sent straight to the counter screen. We handle more customers, faster, and even boosted our daily revenue by 15%.",
+    benefit:
+      "Boosted daily revenue by 15% by streamlining peak hour operations.",
+    avatar: avatar6,
+  },
+  {
+    type: "social_media_seller",
+    owner: "Farah S.",
+    business_name: "@SweetByFarah",
+    testimonial:
+      "I used to spend hours replying to Instagram messages just to confirm orders. With Astro Menu, I just send customers a link where they can browse, order, and pay. It makes my dessert business feel like a real shop without the overhead.",
+    benefit:
+      "Automated Instagram orders, saving hours daily and improving professionalism.",
+    avatar: avatar6,
+  },
+  {
+    type: "social_media_seller",
+    owner: "Youssef A.",
+    business_name: "@YoussefsCrafts",
+    testimonial:
+      "Managing orders through DMs was a nightmare. Astro Menu lets my customers order directly from my posts. I can focus on creating instead of juggling messages, and it looks so professional.",
+    benefit: "Professionalized social media sales with direct ordering links.",
+    avatar: avatar6,
+  },
+];
+---
+
+<section>
+  <Container>
+    <h2 class="text-4xl font-black lg:text-5xl lg:tracking-tight">
+      What Our Customers Say
+    </h2>
+    <div class="mt-8 grid grid-cols-4 gap-4">
+      {
+        TESTIMONIALS.map((testimonial) => (
+          <div id={testimonial.owner} class="p-6 rounded-4xl bg-base-200">
+            <div>
+              <Image
+                src={testimonial.avatar}
+                alt={testimonial.owner}
+                class="w-24 h-24 rounded-full border-2 border-black"
+              />
+              <h3 class="text-xl font-semibold">{testimonial.business_name}</h3>
+              <p class="mt-2 font-medium">{testimonial.owner}</p>
+            </div>
+            <p class="mt-2 italic">{testimonial.testimonial}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

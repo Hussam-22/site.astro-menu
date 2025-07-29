@@ -6,18 +6,18 @@ import TabletMockup from "@components/ui/tablet-mockup.astro";
 import astroMenuPhone from "assets/views/menu-preview.webp";
 import waitStaffDashboard from "assets/views/waitstaff-dashboard.png";
 import Image from "astro/components/Image.astro";
-import backgroundColorImage from "../../assets/backgrounds/bg-blur-orange.svg";
+import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
 ---
 
 <Container>
-  <div class="grid grid-cols-2 gap-4 relative">
+  <div class="grid grid-cols-2 gap-4 relative px-8 py-24">
     <Image
       src={backgroundColorImage}
       alt="Background Blur"
-      class="absolute top-1/2 left-0 w-full h-[90%] -translate-y-1/2 object-contain opacity-40"
+      class="w-full h-full object-cover bg-center opacity-75 blur-3xl absolute rounded-4xl z-0"
       loading="eager"
     />
-    <div class="flex flex-col justify-center gap-2">
+    <div class="flex flex-col justify-center gap-2 z-10">
       <h1 class="text-6xl font-black">
         Your Restaurant, Simplified<br />QR Menus & POS in Minutes
       </h1>
@@ -33,9 +33,9 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-orange.svg";
       </div>
     </div>
 
-    <div class="flex flex-col items-center py-20 sm:relative">
+    <div class="flex flex-col items-center relative">
       <PhoneMockup
-        className="z-10 sm:absolute sm:-bottom-10 sm:left-8"
+        className="z-10 sm:absolute sm:-bottom-20 sm:left-8"
         imgSrc={astroMenuPhone}
         text="Menu View"
         isEager={true}

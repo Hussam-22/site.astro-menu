@@ -23,6 +23,7 @@
 		"astro-robots-txt": "^1.0.0",
 		"astro-seo": "^0.8.4",
 		"daisyui": "^5.0.46",
+		"ogl": "^1.0.11",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"tailwindcss": "^4.1.11",
