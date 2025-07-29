@@ -1,126 +1,127 @@
 ---
-import Container from '@components/container.astro'
-import PricingCard from '@components/landing-page/pricing-card.astro'
-import Button from '@components/ui/button.astro'
-import Link from '@components/ui/link.astro'
-import SectionCard from '@components/ui/section-card.astro'
+import Container from "@components/container.astro";
+import PricingCard from "@components/landing-page/pricing-card.astro";
 
 const pricing = [
-	{
-		name: 'Social Bites',
-		price: '9$',
-		popular: false,
-		features: [
-			'1 Social Account',
-			`1 "Menu View" QR Code`,
-			'1 Translation Languages',
-			'25 Meals',
-			'Unlimited Menus',
-			'Cloud Admin Dashboard',
-			'2,000,000 Scans /per month',
-			'Business Home/landing page',
-			'Social Media Links'
-		],
-		button: {
-			text: 'Get Started',
-			link: '/'
-		},
-		icon: 'social-hero',
-		description:
-			'Perfect for food businesses on social media, this plan helps you showcase your offerings and engage with customers online effortlessly.',
-		param: 'prod_QSORufNWBDLHz6'
-	},
-	{
-		name: 'Coffee Cup',
-		price: '39$',
-		popular: true,
-		features: [
-			'1 Branch',
-			`1 "Menu View" QR Code`,
-			`25 "Table" QR Codes`,
-			'3 Translation Languages',
-			'50 Meals',
-			'Unlimited Menus',
-			'Unlimited Scans (Fair Usage Policy)',
-			'Unlimited Orders',
-			'Cloud POS/Waitstaff Dashboard',
-			'Cloud Kitchen Dashboard',
-			'Cloud Admin Dashboard',
-			'Analytics & Reports',
-			'Business Home/landing page',
-			'Social Media Links'
-		],
-		button: {
-			text: 'Get Started',
-			link: '/'
-		},
-		icon: 'coffeecup',
-		description:
-			'Designed for small-scale food businesses like cozy cafes, bakeries, or specialty dessert shops. This plan is ideal for establishments with focused menus looking to enhance their customer experience and streamline operations.',
-		param: 'prod_QSJoKo5g5BbTLW'
-	},
-	{
-		name: 'Menu Master',
-		price: '59$',
-		popular: false,
-		features: [
-			'1 Branch',
-			`1 "Menu View" QR Code`,
-			`50 "Table" QR Codes`,
-			'4 Translation Languages',
-			'Unlimited Meals',
-			'Unlimited Menus',
-			'Unlimited Scans (Fair Usage Policy)',
-			'Unlimited Orders',
-			'Cloud POS/Waitstaff Dashboard',
-			'Cloud Kitchen Dashboard',
-			'Cloud Admin Dashboard',
-			'Analytics & Reports',
-			'Business Home/landing page',
-			'Social Media Links'
-		],
-		button: {
-			text: 'Get Started',
-			link: '/'
-		},
-		icon: 'menumaster',
-		description:
-			'Ideal for full-service restaurants and larger establishments with diverse and dynamic menus. This plan supports seamless menu management and operational efficiency for businesses catering to broader customer bases.',
-		param: 'prod_QSJp5bB2jPwc69'
-	}
-]
+  {
+    name: "Social Bites",
+    price: "9$",
+    popular: false,
+    features: [
+      "1 Social Account",
+      `1 "Menu View" QR Code`,
+      "1 Translation Languages",
+      "25 Meals",
+      "Unlimited Menus",
+      "Cloud Admin Dashboard",
+      "2,000,000 Scans /per month",
+      "Business Home/landing page",
+      "Social Media Links",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+    icon: "social-hero",
+    description:
+      "Perfect for food businesses on social media, this plan helps you showcase your offerings and engage with customers online effortlessly.",
+    param: "prod_QSORufNWBDLHz6",
+  },
+  {
+    name: "Coffee Cup",
+    price: "39$",
+    popular: true,
+    features: [
+      "1 Branch",
+      `1 "Menu View" QR Code`,
+      `25 "Table" QR Codes`,
+      "3 Translation Languages",
+      "50 Meals",
+      "Unlimited Menus",
+      "Unlimited Scans (Fair Usage Policy)",
+      "Unlimited Orders",
+      "Cloud POS/Waitstaff Dashboard",
+      "Cloud Kitchen Dashboard",
+      "Cloud Admin Dashboard",
+      "Analytics & Reports",
+      "Business Home/landing page",
+      "Social Media Links",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+    icon: "coffeecup",
+    description:
+      "Designed for small-scale food businesses like cozy cafes, bakeries, or specialty dessert shops. This plan is ideal for establishments with focused menus looking to enhance their customer experience and streamline operations.",
+    param: "prod_QSJoKo5g5BbTLW",
+  },
+  {
+    name: "Menu Master",
+    price: "59$",
+    popular: false,
+    features: [
+      "1 Branch",
+      `1 "Menu View" QR Code`,
+      `50 "Table" QR Codes`,
+      "4 Translation Languages",
+      "Unlimited Meals",
+      "Unlimited Menus",
+      "Unlimited Scans (Fair Usage Policy)",
+      "Unlimited Orders",
+      "Cloud POS/Waitstaff Dashboard",
+      "Cloud Kitchen Dashboard",
+      "Cloud Admin Dashboard",
+      "Analytics & Reports",
+      "Business Home/landing page",
+      "Social Media Links",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+    icon: "menumaster",
+    description:
+      "Ideal for full-service restaurants and larger establishments with diverse and dynamic menus. This plan supports seamless menu management and operational efficiency for businesses catering to broader customer bases.",
+    param: "prod_QSJp5bB2jPwc69",
+  },
+];
 ---
 
-<!-- <div class="intersect-once text-center text-white intersect:animate-fade-right"></div> -->
+<!-- <div class="intersect-once text-center  intersect:animate-fade-right"></div> -->
 <section>
-	<div class="text-center text-white">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-			A Package for every business size
-		</h2>
-		<p class="mt-4 text-lg">
-			Astro-Menu offers a variety of packages that covers all business sizes, starting from
-			social-media business to a large restaurants.
-		</p>
-	</div>
+  <Container>
+    <div class="">
+      <h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
+        A Package for every business size
+      </h2>
+      <p class="mt-2 text-lg">
+        Astro-Menu offers a variety of packages that covers all business sizes,
+        starting from social-media business to a large restaurants.
+      </p>
+    </div>
 
-	<div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-		{pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
-	</div>
+    <div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
+    </div>
 
-	<p class="mt-4 text-center text-sm text-white">
-		*Unlimited scans are subject to fair usage policy. For more information, please refer to our
-		terms of service.
-	</p>
+    <p class="mt-4 text-sm">
+      *Unlimited scans are subject to fair usage policy. For more information,
+      please refer to our terms of service.
+    </p>
 
-	<SectionCard bgColor="bg-linear-to-r from-purple-400 to-cyan-400 mt-12 px-0 py-8">
-		<div class="flex flex-col items-center gap-4 text-center sm:flex-row">
-			<p class="grow px-6 font-sans text-xl font-semibold">
-				Need a customized plan for your business, contact us and our sales team will get in touch
-				with you.
-			</p>
-			<Link href="/contact" class="whitespace-nowrap bg-black text-white sm:mx-8"
-				>Contact Sales</Link
-			>
-		</div>
-	</SectionCard>
+    <!-- <SectionCard
+      bgColor="bg-linear-to-r from-purple-400 to-cyan-400 mt-12 px-0 py-8"
+    >
+      <div class="flex flex-col items-center gap-4 text-center sm:flex-row">
+        <p class="grow px-6 font-sans text-xl font-semibold">
+          Need a customized plan for your business, contact us and our sales
+          team will get in touch with you.
+        </p>
+        <Link href="/contact" class="whitespace-nowrap bg-black sm:mx-8"
+          >Contact Sales</Link
+        >
+      </div>
+    </SectionCard> -->
+  </Container>
 </section>

@@ -1,40 +1,42 @@
 ---
-import { Image } from 'astro:assets'
-import astroQr from 'assets/astro-menu-qr.png'
+import astroQr from "assets/astro-menu-qr.svg";
+import { Image } from "astro:assets";
 
-const { footer = false } = Astro.props
+const { footer = false } = Astro.props;
 ---
 
 <div
-	class:list={[
-		"rounded-xxl flex items-center justify-center bg-[url('/assets/backgrounds/bg-blur-multi.svg')] bg-cover bg-center bg-no-repeat  text-center ",
-		footer ? 'flex-col' : 'mt-8 flex-col gap-8 pt-4 sm:flex-row'
-	]}
+  class:list={[
+    "rounded-xxl flex items-center justify-center text-center bg-gradient-to-br from-red-500 to-orange-400 rounded-4xl text-white p-6",
+    footer ? "flex-col" : "mt-8 flex-col gap-8 pt-4 sm:flex-row",
+  ]}
 >
-	<div class="text-white">
-		{!footer && <p class="text-xl">Need a sneak-peak ?</p>}
-		<h2
-			class:list={[
-				'px-4  font-bold ',
-				footer ? 'text-2xl sm:text-xl' : 'text-4xl sm:text-5xl sm:tracking-tight'
-			]}
-		>
-			Scan QR Code for live Demo Menu
-		</h2>
-	</div>
-	<div class="py-4">
-		<Image
-			src={astroQr}
-			alt="QR code for Astro-Menu"
-			class="mb-4 rounded-lg"
-			loading="lazy"
-			width={200}
-			height={100}
-		/>
-		<a
-			href="https://menu.astro-menu.com/V1iYvft42Rd19Gx2swCo/2EKctRFUaA06pGIvAT2D/upxdTRj5NaTRl68f6ly0/home"
-			class="text-white underline sm:invisible"
-			target="_blank">View Astro Menu Demo</a
-		>
-	</div>
+  <div class="">
+    {!footer && <p class="text-xl">Need a sneak-peak ?</p>}
+    <h2
+      class:list={[
+        "px-4  font-bold ",
+        footer
+          ? "text-2xl sm:text-xl"
+          : "text-4xl sm:text-5xl sm:tracking-tight",
+      ]}
+    >
+      Scan QR Code for live Demo Menu
+    </h2>
+  </div>
+  <div class="flex flex-col items-center justify-center gap-2">
+    <Image
+      src={astroQr}
+      alt="QR code for Astro-Menu"
+      class="rounded-lg"
+      loading="lazy"
+      width={200}
+      height={100}
+    />
+    <a
+      href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
+      class="font-semibold underline"
+      target="_blank">Visit the Link</a
+    >
+  </div>
 </div>
