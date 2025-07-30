@@ -1,6 +1,7 @@
 ---
 import Container from "@components/container.astro";
 import PricingCard from "@components/landing-page/pricing-card.astro";
+import SectionHead from "@components/ui/section-head.astro";
 
 const pricing = [
   {
@@ -88,40 +89,19 @@ const pricing = [
 ];
 ---
 
-<!-- <div class="intersect-once text-center  intersect:animate-fade-right"></div> -->
-<section>
-  <Container>
-    <div class="">
-      <h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-        A Package for every business size
-      </h2>
-      <p class="mt-2 text-lg">
-        Astro-Menu offers a variety of packages that covers all business sizes,
-        starting from social-media business to a large restaurants.
-      </p>
-    </div>
+<Container class="flex flex-col items-center">
+  <SectionHead
+    title="Pricing Plans"
+    description="Choose the right plan for your business"
+    classList="text-center self-center"
+  />
 
-    <div class="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
-    </div>
+  <div class="mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
+  </div>
 
-    <p class="mt-4 text-sm">
-      *Unlimited scans are subject to fair usage policy. For more information,
-      please refer to our terms of service.
-    </p>
-
-    <!-- <SectionCard
-      bgColor="bg-linear-to-r from-purple-400 to-cyan-400 mt-12 px-0 py-8"
-    >
-      <div class="flex flex-col items-center gap-4 text-center sm:flex-row">
-        <p class="grow px-6 font-sans text-xl font-semibold">
-          Need a customized plan for your business, contact us and our sales
-          team will get in touch with you.
-        </p>
-        <Link href="/contact" class="whitespace-nowrap bg-black sm:mx-8"
-          >Contact Sales</Link
-        >
-      </div>
-    </SectionCard> -->
-  </Container>
-</section>
+  <p class="mt-4 text-sm font-light text-neutral-400">
+    *Unlimited scans are subject to fair usage policy. For more information,
+    please refer to our terms of service.
+  </p>
+</Container>

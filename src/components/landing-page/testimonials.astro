@@ -1,5 +1,6 @@
 ---
 import Container from "@components/container.astro";
+import SectionHead from "@components/ui/section-head.astro";
 import avatar1 from "assets/images/avatars/avatar-1.webp";
 import avatar2 from "assets/images/avatars/avatar-2.webp";
 import avatar3 from "assets/images/avatars/avatar-3.webp";
@@ -90,28 +91,24 @@ const TESTIMONIALS = [
 ];
 ---
 
-<section>
-  <Container>
-    <h2 class="text-4xl font-black lg:text-5xl lg:tracking-tight">
-      What Our Customers Say
-    </h2>
-    <div class="mt-8 grid grid-cols-4 gap-4">
-      {
-        TESTIMONIALS.map((testimonial) => (
-          <div id={testimonial.owner} class="p-6 rounded-4xl bg-base-200">
-            <div>
-              <Image
-                src={testimonial.avatar}
-                alt={testimonial.owner}
-                class="w-24 h-24 rounded-full border-2 border-black"
-              />
-              <h3 class="text-xl font-semibold">{testimonial.business_name}</h3>
-              <p class="mt-2 font-medium">{testimonial.owner}</p>
-            </div>
-            <p class="mt-2 italic">{testimonial.testimonial}</p>
+<Container class="flex flex-col items-center">
+  <SectionHead title="what our customers say" />
+  <div class="mt-8 grid grid-cols-4 gap-4">
+    {
+      TESTIMONIALS.map((testimonial) => (
+        <div id={testimonial.owner} class="p-6 rounded-4xl bg-base-200">
+          <div>
+            <Image
+              src={testimonial.avatar}
+              alt={testimonial.owner}
+              class="w-24 h-24 rounded-full border-2 border-black"
+            />
+            <h3 class="text-xl font-semibold">{testimonial.business_name}</h3>
+            <p class="mt-2 font-medium">{testimonial.owner}</p>
           </div>
-        ))
-      }
-    </div>
-  </Container>
-</section>
+          <p class="mt-2 italic">{testimonial.testimonial}</p>
+        </div>
+      ))
+    }
+  </div>
+</Container>

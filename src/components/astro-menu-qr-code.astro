@@ -1,42 +1,28 @@
 ---
 import astroQr from "assets/astro-menu-qr.svg";
 import { Image } from "astro:assets";
-
-const { footer = false } = Astro.props;
+import Container from "./container.astro";
 ---
 
-<div
-  class:list={[
-    "rounded-xxl flex items-center justify-center text-center bg-gradient-to-br from-orange-400 to-red-400 rounded-4xl text-white p-6",
-    footer ? "flex-col" : "mt-8 flex-col gap-8 pt-4 sm:flex-row",
-  ]}
->
-  <div class="">
-    {!footer && <p class="text-xl">Need a sneak-peak ?</p>}
-    <h2
-      class:list={[
-        "px-4  font-bold ",
-        footer
-          ? "text-2xl sm:text-xl"
-          : "text-4xl sm:text-5xl sm:tracking-tight",
-      ]}
-    >
-      Scan QR Code for live Demo Menu
-    </h2>
+<Container>
+  <div
+    class="flex flex-row items-center justify-center gap-8 bg-base-200 rounded-4xl p-6"
+  >
+    <h2 class="text-7xl font-black max-w-6/12">Live Demo Menu</h2>
+    <div class="flex flex-col items-center justify-center gap-2">
+      <Image
+        src={astroQr}
+        alt="QR code for Astro-Menu"
+        class="rounded-lg"
+        loading="lazy"
+        width={200}
+        height={100}
+      />
+      <a
+        href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
+        class="font-semibold underline"
+        target="_blank">Visit the Link</a
+      >
+    </div>
   </div>
-  <div class="flex flex-col items-center justify-center gap-2">
-    <Image
-      src={astroQr}
-      alt="QR code for Astro-Menu"
-      class="rounded-lg"
-      loading="lazy"
-      width={200}
-      height={100}
-    />
-    <a
-      href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
-      class="font-semibold underline"
-      target="_blank">Visit the Link</a
-    >
-  </div>
-</div>
+</Container>
