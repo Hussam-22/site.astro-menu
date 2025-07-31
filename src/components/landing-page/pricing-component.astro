@@ -1,6 +1,7 @@
 ---
 import Container from "@components/container.astro";
 import PricingCard from "@components/landing-page/pricing-card.astro";
+import Link from "@components/ui/link.astro";
 import SectionHead from "@components/ui/section-head.astro";
 
 const pricing = [
@@ -89,7 +90,7 @@ const pricing = [
 ];
 ---
 
-<Container class="flex flex-col items-center">
+<Container class="flex flex-col items-center gap-1">
   <SectionHead
     title="Pricing Plans"
     description="Choose the right plan for your business"
@@ -104,4 +105,15 @@ const pricing = [
     *Unlimited scans are subject to fair usage policy. For more information,
     please refer to our terms of service.
   </p>
+
+  <div
+    class="bg-black p-8 text-center text-white mt-8 rounded-4xl flex flex-row items-center gap-4"
+  >
+    <p class="text-xl font-bold">
+      Need a tailored plan for your hotel, hospital, or franchise?
+    </p>
+    <Link href="/contact" class="font-semibold underline" size="md"
+      >Contact us</Link
+    >
+  </div>
 </Container>
