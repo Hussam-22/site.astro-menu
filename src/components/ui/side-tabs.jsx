@@ -5,7 +5,7 @@ export default function SideTabs({ tabs }) {
 
   return (
     <div className="bg-base-200 rounded-4xl p-4 flex flex-row gap-4">
-      <div className="w-4/12 flex flex-col gap-2 py-4">
+      <div className="w-3/12 flex flex-col gap-2 py-4">
         {tabs.map((tab, index) => (
           <div
             key={index}
@@ -21,7 +21,28 @@ export default function SideTabs({ tabs }) {
           </div>
         ))}
       </div>
-      <div className="w-8/12 bg-base-100 p-4 rounded-4xl"></div>
+      <div className="w-9/12 bg-base-100 p-2 rounded-4xl">
+        <div className="flex flex-row items-center gap-4">
+          <div className="px-4">
+            <p className="text-xl font-bold">
+              {tabs[activeTabIndex].description}
+            </p>
+            {tabs[activeTabIndex]?.features && (
+              <ul className="list-disc pl-6 mt-2">
+                {tabs[activeTabIndex].features.map((feature, index) => (
+                  <li key={index} className="text-lg">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <img
+            src={tabs[activeTabIndex].imagePath}
+            className="w-96 h-96 object-cover rounded-4xl"
+          />
+        </div>
+      </div>
     </div>
   );
 }
