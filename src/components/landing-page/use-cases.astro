@@ -1,75 +1,34 @@
 ---
 import Container from "@components/container.astro";
-import SvgColor from "@components/ui/svg-color.astro";
+import SectionHead from "@components/ui/section-head.astro";
+import SideTabs from "@components/ui/side-tabs";
+
+const TABS = [
+  {
+    name: "restaurant",
+    label: "Restaurant",
+    content: "src/components/landing-page/use-case-tab-content.astro",
+  },
+  {
+    name: "cafe",
+    label: "Cafe",
+    content: "src/components/landing-page/use-case-tab-content.astro",
+  },
+  {
+    name: "bar",
+    label: "Bar",
+    content: "src/components/landing-page/use-case-tab-content.astro",
+  },
+];
 ---
 
 <!-- name of each tab group should be unique -->
-<Container>
-  <div class="tabs tabs-lift">
-    <label class="tab text-lg font-bold">
-      <input type="radio" name="my_tabs_4" />
-      <SvgColor
-        iconPath="src/assets/icons/restaurant.svg"
-        classList="size-8 me-2"
-        alt="Restaurants"
-      />
-      Restaurants
-    </label>
-    <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 1</div>
+<Container class="flex flex-col justify-center">
+  <SectionHead
+    title="Use Cases"
+    description="Explore how our digital menu can benefit various types of establishments."
+    classList="text-center self-center"
+  />
 
-    <label class="tab text-lg font-bold">
-      <input type="radio" name="my_tabs_4" checked="checked" />
-      <SvgColor
-        iconPath="src/assets/icons/cafe.svg"
-        classList="size-8 me-2"
-        alt="Restaurants"
-      />
-      Cafe
-    </label>
-    <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
-
-    <label class="tab text-lg font-bold">
-      <input type="radio" name="my_tabs_4" />
-      <SvgColor
-        iconPath="src/assets/icons/food-truck.svg"
-        classList="size-8 me-2"
-        alt="Restaurants"
-      />
-      Drive-Thru & Food Trucks
-    </label>
-    <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
-
-    <label class="tab text-lg font-bold">
-      <input type="radio" name="my_tabs_4" />
-      <SvgColor
-        iconPath="src/assets/icons/social-media.svg"
-        classList="size-8 me-2"
-        alt="Restaurants"
-      />
-      Social Media
-    </label>
-    <div class="tab-content bg-base-100 border-base-300 p-6">Social Media</div>
-
-    <label class="tab text-lg font-bold">
-      <input type="radio" name="my_tabs_4" />
-      <SvgColor
-        iconPath="src/assets/icons/hotel.svg"
-        classList="size-8 me-2"
-        alt="Restaurants"
-      />
-      Hotels & Resorts
-    </label>
-    <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 4</div>
-
-    <label class="tab text-lg font-bold">
-      <input type="radio" name="my_tabs_4" />
-      <SvgColor
-        iconPath="src/assets/icons/hospital.svg"
-        classList="size-8 me-2"
-        alt="Restaurants"
-      />
-      Hospitals & Clinics
-    </label>
-    <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 5</div>
-  </div>
+  <SideTabs client:load tabs={TABS} />
 </Container>

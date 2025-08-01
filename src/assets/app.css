@@ -8,7 +8,7 @@
   --color-base-300: #f0f0f0;
   --color-base-content: #000000;
   --color-accent: #ffffff;
-  --color-primary: #0ea5e9;
+  --color-primary: #f97316;
   --color-secondary: #a855f7;
 }
 @plugin "daisyui/theme" {
@@ -19,7 +19,7 @@
   --color-base-300: #333333;
   --color-base-content: #ffffff;
   --color-accent: #000000;
-  --color-primary: #0ea5e9;
+  --color-primary: #f97316;
   --color-secondary: #a855f7;
 }
 @theme {
@@ -27,4 +27,9 @@
   --font-ar: "Beiruti", sans-serif;
   --text-5xl: 2.75rem;
 }
+
+/* .tab {
+  --tab-paddings: 1.5rem;
+} */
+
 @custom-variant dark (&:where([data-theme=business], [data-theme=business] *));
