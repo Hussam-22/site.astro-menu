@@ -24,18 +24,13 @@ export default function SideTabs({ tabs }) {
       <div className="w-9/12 bg-base-100 p-2 rounded-4xl">
         <div className="flex flex-row items-center gap-4">
           <div className="px-4">
-            <p className="text-xl font-bold">
-              {tabs[activeTabIndex].description}
+            <p className="text-3xl font-bold">
+              {tabs[activeTabIndex].title || "Explore the use case"}
             </p>
-            {tabs[activeTabIndex]?.features && (
-              <ul className="list-disc pl-6 mt-2">
-                {tabs[activeTabIndex].features.map((feature, index) => (
-                  <li key={index} className="text-lg">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <p>{tabs[activeTabIndex].description}</p>
+            <p className="text-7xl text-neutral-300 font-bold text-center capitalize">
+              {tabs[activeTabIndex].benefit}
+            </p>
           </div>
           <img
             src={tabs[activeTabIndex].imagePath}

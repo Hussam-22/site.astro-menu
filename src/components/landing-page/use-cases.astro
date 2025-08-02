@@ -1,29 +1,28 @@
 ---
 import Container from "@components/container.astro";
 import SectionHead from "@components/ui/section-head.astro";
-import SideTabs from "@components/ui/side-tabs";
+import UseCasesCard from "./use-cases-card.astro";
 
 const TABS = [
   {
     name: "restaurant",
-    label: "Restaurants & Cafes",
+    label: "Restaurants",
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/bar.svg",
     imagePath: "/assets/images/use-cases/restaurant.webp",
+    benefit: "30% increase in table turnover",
     description:
       "Discover how our digital menu enhances the dining experience in restaurants.",
-    features: [
-      "No wait for menus",
-      "Faster ordering",
-      "Fewer mistakes",
-      "Fewer back-and-forths",
-      "Fewer staff needed",
-      "Multi-Language",
-      "Reduce Printing Costs",
-      "Wifi Password",
-      "Easy to update",
-      "Contactless",
-    ],
+  },
+  {
+    name: "cafe",
+    label: "Cafes",
+    content: "src/components/landing-page/use-case-tab-content.astro",
+    iconPath: "/icons/use-cases/cafe.svg",
+    imagePath: "/assets/images/use-cases/cafe.webp",
+    benefit: "30% increase in table turnover",
+    description:
+      "Discover how our digital menu enhances the dining experience in cafes.",
   },
   {
     name: "food-truck",
@@ -31,7 +30,10 @@ const TABS = [
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/food-truck.svg",
     imagePath: "/assets/images/use-cases/food-truck.webp",
-    description: "Reduce the queue time, speed up the service",
+    title: "Reduce the queue time, speed up the service",
+    description:
+      "Discover how astro-menu can help food trucks serve customers faster.",
+    benefit: "20% increase in queue speed",
   },
   {
     name: "hospital",
@@ -69,6 +71,7 @@ const TABS = [
     description="Explore how our digital menu can benefit various types of establishments."
     classList="text-center self-center"
   />
-
-  <SideTabs client:load tabs={TABS} />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {TABS.map((tab) => <UseCasesCard {...tab} />)}
+  </div>
 </Container>
