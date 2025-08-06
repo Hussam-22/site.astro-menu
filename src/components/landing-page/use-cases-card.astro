@@ -1,18 +1,33 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { label, description, iconPath, imagePath, benefit, features } =
-  Astro.props;
+const {
+  label,
+  description,
+  iconPath,
+  imagePath,
+  benefit,
+  features,
+  classList,
+} = Astro.props;
 ---
 
-<div class="flex flex-col gap-2 bg-base-200 rounded-4xl pt-4">
-  <h2 class="text-2xl font-bold px-4 capitalize">{label}</h2>
-  <p class="text-base px-4 min-h-18">{description}</p>
-  <Image
-    src={imagePath}
-    alt="Use Cases Hero Image"
-    class="w-full h-auto rounded-b-4xl"
-    width={100}
-    height={100}
-  />
+<div class:list={["flex flex-col gap-2 rounded-4xl pb-3", classList]}>
+  <div class="p-3 rounded-4xl">
+    <Image
+      src={imagePath}
+      alt="Use Cases Hero Image"
+      class="w-full h-full rounded-4xl"
+      width={100}
+      height={100}
+    />
+  </div>
+  <h2 class="text-2xl font-extrabold px-6 capitalize">{label}</h2>
+  <p class="text-base px-6 min-h-18">{description}</p>
+  <a
+    href="/features"
+    class="bg-base-200 px-4 py-1 rounded-4xl font-bold text-md self-center"
+  >
+    Learn More
+  </a>
 </div>

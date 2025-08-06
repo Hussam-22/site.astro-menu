@@ -1,6 +1,4 @@
 ---
-import CheckMark from "@components/ui/icons/check.astro";
-import CrossMark from "@components/ui/icons/cross.astro";
 import Link from "@components/ui/link.astro";
 
 const { plan, index } = Astro.props;
@@ -49,15 +47,10 @@ const DOMAIN = "https://app.astro-menu.com/register";
     </p>
 
     <div class="flex grow flex-col">
-      <ul class="mt-8 grid grow gap-y-0 text-left">
+      <ul class="mt-8 grid grow gap-y-0 text-left list-disc ml-4">
         {
           plan.features.map((item) => (
-            <li class="flex items-center gap-3">
-              {item.startsWith("x") ? (
-                <CrossMark class="h-3 w-3" />
-              ) : (
-                <CheckMark class="h-4 w-4" />
-              )}
+            <li class={item.startsWith("x") ? "font-bold" : ""}>
               <span>{item.startsWith("x") ? item.slice(1) : item}</span>
             </li>
           ))

@@ -1,7 +1,9 @@
 ---
+import AstroMenuQrCode from "@components/astro-menu-qr-code.astro";
 import Container from "@components/container.astro";
 import CheckMark from "@components/ui/icons/check.astro";
 import CrossMark from "@components/ui/icons/cross.astro";
+import Link from "@components/ui/link.astro";
 import PhoneMockup from "@components/ui/phone-mockup.astro";
 import SectionHead from "@components/ui/section-head.astro";
 import oldMenu from "assets/old-menu.png";
@@ -77,4 +79,6 @@ const BAD = [
       </div>
     </div>
   </div>
+  <AstroMenuQrCode />
+  <Link href="/pricing" class="self-center">Create Your Menu Now</Link>
 </Container>

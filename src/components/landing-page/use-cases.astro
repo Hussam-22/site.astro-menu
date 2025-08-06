@@ -6,13 +6,15 @@ import UseCasesCard from "./use-cases-card.astro";
 const TABS = [
   {
     name: "restaurant",
-    label: "Restaurants",
+    label: "Restaurants & Cafes",
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/bar.svg",
     imagePath: "/assets/images/use-cases/restaurant.webp",
     benefit: "30% increase in table turnover",
     description:
       "Discover how our digital menu enhances the dining experience in restaurants.",
+    classList: "bg-gradient-to-br from-rose-300 to-rose-400",
+    enabled: true,
   },
   {
     name: "cafe",
@@ -23,6 +25,8 @@ const TABS = [
     benefit: "30% increase in table turnover",
     description:
       "Discover how our digital menu enhances the dining experience in cafes.",
+    classList: "bg-gradient-to-br from-sky-300 to-sky-400",
+    enabled: false,
   },
   {
     name: "food-truck",
@@ -34,6 +38,8 @@ const TABS = [
     description:
       "Discover how astro-menu can help food trucks serve customers faster.",
     benefit: "20% increase in queue speed",
+    classList: "bg-gradient-to-br from-sky-300 to-sky-400",
+    enabled: true,
   },
   {
     name: "hospital",
@@ -43,6 +49,8 @@ const TABS = [
     imagePath: "/assets/images/use-cases/hospital.webp",
     description:
       "Discover how our digital menu enhances the hospitality experience.",
+    classList: "bg-gradient-to-br from-emerald-300 to-emerald-400",
+    enabled: true,
   },
   {
     name: "hotel",
@@ -51,6 +59,8 @@ const TABS = [
     iconPath: "/icons/use-cases/hotel.svg",
     imagePath: "/assets/images/use-cases/hotel.webp",
     description: "Discover how our digital menu enhances the hotel experience.",
+    classList: "bg-gradient-to-br from-violet-300 to-violet-400",
+    enabled: true,
   },
   {
     name: "social-media",
@@ -60,6 +70,7 @@ const TABS = [
     imagePath: "/assets/images/use-cases/social-media.webp",
     description:
       "Stop the scrolling, stop the redundant DM conversations, and start selling.",
+    enabled: false,
   },
 ];
 ---
@@ -71,7 +82,7 @@ const TABS = [
     description="Explore how our digital menu can benefit various types of establishments."
     classList="text-center self-center"
   />
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {TABS.map((tab) => <UseCasesCard {...tab} />)}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    {TABS.filter((tab) => tab.enabled).map((tab) => <UseCasesCard {...tab} />)}
   </div>
 </Container>

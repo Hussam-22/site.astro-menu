@@ -1,28 +1,18 @@
 ---
-import astroQr from "assets/astro-menu-qr.svg";
-import { Image } from "astro:assets";
 import Container from "./container.astro";
 ---
 
-<Container>
+<Container class:list={["my-8"]}>
   <div
-    class="flex flex-row items-center justify-center gap-8 bg-base-200 rounded-4xl p-6"
+    class="flex flex-row items-center justify-center gap-4 bg-base-200 rounded-4xl p-6"
   >
-    <h2 class="text-7xl font-black max-w-6/12">Live Demo Menu</h2>
-    <div class="flex flex-col items-center justify-center gap-2">
-      <Image
-        src={astroQr}
-        alt="QR code for Astro-Menu"
-        class="rounded-lg border-4 border-orange-400"
-        loading="lazy"
-        width={200}
-        height={100}
-      />
-      <a
-        href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
-        class="font-semibold underline"
-        target="_blank">Visit the Link</a
-      >
-    </div>
+    <h2 class="text-4xl font-bold">See a Real Menu in Action</h2>
+    <a
+      href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
+      target="_blank"
+      class="text-4xl bg-emerald-400 px-4 py-2 rounded-4xl font-bold hover:bg-emerald-500 transition-colors duration-300 ease-in-out capitalize"
+    >
+      Click here</a
+    >
   </div>
 </Container>
