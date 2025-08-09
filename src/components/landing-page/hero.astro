@@ -10,14 +10,18 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
 ---
 
 <Container>
-  <div class="grid grid-cols-2 gap-4 relative px-8 pt-44 pb-16">
+  <div
+    class="grid sm:grid-cols-2 gap-4 relative px-2 sm:px-8 pt-16 sm:pt-44 pb-16"
+  >
     <Image
       src={backgroundColorImage}
       alt="Background Blur"
       class="w-full h-full object-cover bg-center opacity-75 blur-3xl absolute rounded-4xl z-0"
       loading="eager"
     />
-    <div class="flex flex-col justify-center gap-2 z-10">
+    <div
+      class="flex flex-col justify-center gap-2 z-10 mb-8 sm:mb-0 text-center sm:text-left"
+    >
       <h1 class="text-6xl font-extrabold">
         QR Menus for Rooms, Trucks, Tables, and More.
       </h1>
@@ -26,7 +30,7 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
         From restaurants to hotel rooms, Astro Menu is built for every food
         business.
       </h2>
-      <div class="flex flex-row items-center gap-4">
+      <div class="flex flex-col sm:flex-row items-center gap-4">
         <Link href="/pricing" size="lg">Start for Free</Link>
         <p class="text-sm">14 Days Free Trial. No credit card required.</p>
       </div>
@@ -40,7 +44,7 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
         isEager={true}
       />
       <TabletMockup
-        className="absolute bottom-1 left-8 z-10"
+        className="absolute bottom-1 left-8 z-10 hidden sm:block"
         imgSrc={waitStaffDashboard}
         text="Waitstaff Dashboard"
       />
