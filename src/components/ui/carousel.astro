@@ -1,0 +1,86 @@
+---
+const { name = "carousel", length } = Astro.props;
+---
+
+<div
+  class="carousel carousel-center w-full max-w-md space-x-4 mt-8 sm:hidden"
+  id={`${name}-carousel`}
+  data-name={name}
+  data-length={length}
+>
+  <slot />
+</div>
+
+<div
+  class="flex w-full justify-center gap-2 py-2 mt-1 sm:hidden"
+  id={`${name}-carousel-nav`}
+>
+  {
+    [...Array(length)].map((_, index) => (
+      <a
+        id={`${name}-carousel-nav-item-${index}`}
+        href={`#${name.slice(0, -1)}-item-${index}`}
+        class={`rounded-full p-2 ${name}-carousel-nav bg-base-300 transition-all duration-300`}
+        aria-label={`Go to item ${index + 1}`}
+      />
+    ))
+  }
+</div>
+
+<script>
+  const roots = document.querySelectorAll(".carousel");
+  // const names = root && roots.dataset.name;
+
+  roots.forEach((root) => {
+    const name = root.dataset.name;
+
+    // Carousel navigation without scroll jump
+    document.addEventListener("DOMContentLoaded", function () {
+      // console.log(entries[0].target.id, entries[0].isIntersecting)
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const targetElement = document.getElementById(
+              `${name}-carousel-nav-item-${entry.target.id.split("-").pop()}`
+            );
+            if (targetElement) {
+              if (entry.isIntersecting) {
+                targetElement.classList.add(
+                  "bg-neutral-500",
+                  "dark:bg-neutral-600"
+                );
+              } else {
+                targetElement.classList.remove(
+                  "bg-neutral-500",
+                  "dark:bg-neutral-600"
+                );
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      const nav = document.getElementById(`${name}-carousel-nav`);
+      const carousel = document.getElementById(`${name}-carousel`);
+
+      if (nav && carousel) {
+        const items = carousel.querySelectorAll(".carousel-item");
+        items.forEach((item) => {
+          observer.observe(item);
+        });
+        if (items.length) {
+          nav.querySelectorAll("a").forEach((btn, i) => {
+            btn.addEventListener("click", function (e) {
+              e.preventDefault();
+              items[i].scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+                block: "nearest",
+              });
+            });
+          });
+        }
+      }
+    });
+  });
+</script>

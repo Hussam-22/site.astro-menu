@@ -1,5 +1,6 @@
 ---
 import Container from "@components/container.astro";
+import Carousel from "@components/ui/carousel.astro";
 import SectionHead from "@components/ui/section-head.astro";
 import UseCasesCard from "./use-cases-card.astro";
 
@@ -16,18 +17,7 @@ const TABS = [
     classList: "bg-gradient-to-br from-rose-300 to-rose-400",
     enabled: true,
   },
-  {
-    name: "cafe",
-    label: "Cafes",
-    content: "src/components/landing-page/use-case-tab-content.astro",
-    iconPath: "/icons/use-cases/cafe.svg",
-    imagePath: "/assets/images/use-cases/cafe.webp",
-    benefit: "30% increase in table turnover",
-    description:
-      "Discover how our digital menu enhances the dining experience in cafes.",
-    classList: "bg-gradient-to-br from-sky-300 to-sky-400",
-    enabled: false,
-  },
+
   {
     name: "food-truck",
     label: "Food Truck",
@@ -62,16 +52,6 @@ const TABS = [
     classList: "bg-gradient-to-br from-violet-300 to-violet-400",
     enabled: true,
   },
-  {
-    name: "social-media",
-    label: "Social Media",
-    content: "src/components/landing-page/use-case-tab-content.astro",
-    iconPath: "/icons/use-cases/social-media.svg",
-    imagePath: "/assets/images/use-cases/social-media.webp",
-    description:
-      "Stop the scrolling, stop the redundant DM conversations, and start selling.",
-    enabled: false,
-  },
 ];
 ---
 
@@ -82,7 +62,18 @@ const TABS = [
     description="Explore how our digital menu can benefit various types of establishments."
     classList="text-center self-center"
   />
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 hidden sm:grid">
     {TABS.filter((tab) => tab.enabled).map((tab) => <UseCasesCard {...tab} />)}
   </div>
+
+  <Carousel length={TABS.length} name="testimonials">
+    {
+      TABS.filter((tab) => tab.enabled).map((tab) => (
+        <UseCasesCard
+          {...tab}
+          classList={[tab.classList, "carousel-item w-[80%]"]}
+        />
+      ))
+    }
+  </Carousel>
 </Container>
