@@ -1,92 +1,40 @@
 ---
 import Container from "@components/container.astro";
 import SectionHead from "@components/ui/section-head.astro";
-import avatar1 from "assets/images/avatars/avatar-1.webp";
-import avatar2 from "assets/images/avatars/avatar-2.webp";
-import avatar3 from "assets/images/avatars/avatar-3.webp";
-import avatar4 from "assets/images/avatars/avatar-4.webp";
-import avatar5 from "assets/images/avatars/avatar-5.webp";
-import avatar6 from "assets/images/avatars/avatar-6.webp";
+import logo1 from "assets/images/logos/logo-1.webp";
+import logo2 from "assets/images/logos/logo-2.webp";
+import logo3 from "assets/images/logos/logo-3.webp";
+import logo4 from "assets/images/logos/logo-4.webp";
 import Image from "astro/components/Image.astro";
 
 const TESTIMONIALS = [
   {
-    type: "food_truck",
-    owner: "Omar H.",
-    business_name: "StreetEats Food Truck",
+    owner: "Ahmed S.",
+    business_name: "The ACAI House Cafe",
     testimonial:
-      "Before Astro Menu, customers waited forever during lunch rush. Now, people can order ahead or from their car, pay instantly, and just pick up. Our line moves twice as fast, and we serve way more customers per day.",
-    benefit:
-      "Drive-thru ordering doubled serving speed and increased customer throughput.",
-    avatar: avatar1,
+      "The implementation of a QR menu system has been a game-changer for The Acai House Cafe's drive-thru. Before this, our staff often felt overwhelmed, especially during peak hours, trying to take orders accurately and quickly. The line of cars would grow, and we could feel the stress from both our employees and our customers. We knew we had to find a better way to operate.",
+    logo: logo1,
   },
   {
-    type: "food_truck",
-    owner: "Layla M.",
-    business_name: "Grill & Go Truck",
+    owner: "Bissan A.",
+    business_name: "Flavor Fusion Kitchen",
     testimonial:
-      "On busy nights, we used to see people walk away because the line looked too long. Astro Menu’s drive-thru option lets customers place and pay for their orders without leaving the car. Our sales went up 25% because we keep everyone happy and moving.",
-    benefit:
-      "25% sales increase by reducing wait times with mobile drive-thru ordering.",
-    avatar: avatar2,
+      "As a cloud kitchen with a constantly changing menu, we faced a major challenge: customers would often try to order dishes that were no longer available, leading to frustration and negative feedback. Implementing Astro-menu with live-updates has been a game-changer for our business.",
+    logo: logo2,
   },
   {
-    type: "food_truck",
-    owner: "Khaled R.",
-    business_name: "TacoTrail Food Truck",
+    owner: "Rani M.",
+    business_name: "The ABC Hotel",
     testimonial:
-      "Taking orders and payments at the truck used to slow us down. With Astro Menu, customers handle it themselves on their phone, so we just focus on cooking and handing out food. It feels like we hired someone without the cost.",
-    benefit:
-      "Streamlined operations by shifting ordering to mobile, saving staff time.",
-    avatar: avatar3,
+      "Since introducing Astro Menu in our hotel room service, ordering has never been faster. Guests simply scan the QR code, choose what they want, and the order goes straight to the kitchen-no more missed calls or wrong items. We've cut down on printing costs, reduced errors, and sped up service, all while giving guests a modern, hassle-free experience.",
+    logo: logo3,
   },
   {
-    type: "restaurant",
-    owner: "Hassan & Family",
-    business_name: "Al Manar Grill",
+    owner: "Dr. Hassan A.",
+    business_name: "Clarity One-Day Surgery Clinic",
     testimonial:
-      "Big POS systems were overkill for us. Astro Menu is straightforward, affordable, and helps us track all our orders digitally. Staff picked it up in minutes, and we cut order mistakes by 80%.",
-    benefit:
-      "Reduced order errors by 80% with a simple, cost-effective solution.",
-    avatar: avatar4,
-  },
-  {
-    type: "restaurant",
-    owner: "Nour R.",
-    business_name: "Olive Grove Restaurant",
-    testimonial:
-      "Since switching to Astro Menu, we serve tables faster, and staff don’t waste time rewriting or double-checking orders. We even added a takeaway counter because managing orders became so easy.",
-    benefit: "Increased efficiency, enabling new takeaway service.",
-    avatar: avatar5,
-  },
-  {
-    type: "cafe",
-    owner: "Lina D.",
-    business_name: "Brew & Bite Café",
-    testimonial:
-      "Our morning rush used to be chaos, with baristas shouting orders. With Astro Menu, orders are organized and sent straight to the counter screen. We handle more customers, faster, and even boosted our daily revenue by 15%.",
-    benefit:
-      "Boosted daily revenue by 15% by streamlining peak hour operations.",
-    avatar: avatar6,
-  },
-  {
-    type: "social_media_seller",
-    owner: "Farah S.",
-    business_name: "@SweetByFarah",
-    testimonial:
-      "I used to spend hours replying to Instagram messages just to confirm orders. With Astro Menu, I just send customers a link where they can browse, order, and pay. It makes my dessert business feel like a real shop without the overhead.",
-    benefit:
-      "Automated Instagram orders, saving hours daily and improving professionalism.",
-    avatar: avatar6,
-  },
-  {
-    type: "social_media_seller",
-    owner: "Youssef A.",
-    business_name: "@YoussefsCrafts",
-    testimonial:
-      "Managing orders through DMs was a nightmare. Astro Menu lets my customers order directly from my posts. I can focus on creating instead of juggling messages, and it looks so professional.",
-    benefit: "Professionalized social media sales with direct ordering links.",
-    avatar: avatar6,
+      "In a one-day surgery setting, every detail matters for a smooth recovery. Before our digital meal selection system, nurses were often interrupted by patient meal requests, relying on error-prone paper menus. Now, frequent orders like coffee, water, or guest meals are served quickly, freeing staff to focus on what matters most: medical care",
+    logo: logo4,
   },
 ];
 ---
@@ -96,17 +44,20 @@ const TESTIMONIALS = [
   <div class="mt-8 grid grid-cols-4 gap-4">
     {
       TESTIMONIALS.map((testimonial) => (
-        <div id={testimonial.owner} class="p-6 rounded-4xl bg-base-200">
+        <div
+          id={testimonial.owner}
+          class="rounded-4xl bg-base-200 px-4 py-5 flex flex-col gap-2"
+        >
+          <Image
+            src={testimonial.logo}
+            alt={testimonial.owner}
+            class="w-36 h-36 rounded-4xl"
+          />
           <div>
-            <Image
-              src={testimonial.avatar}
-              alt={testimonial.owner}
-              class="w-24 h-24 rounded-full border-2 border-black"
-            />
-            <h3 class="text-xl font-semibold">{testimonial.business_name}</h3>
-            <p class="mt-2 font-medium">{testimonial.owner}</p>
+            <h3 class="text-xl font-bold">{testimonial.business_name}</h3>
+            <p class="mt-0 font-light">{testimonial.owner}</p>
           </div>
-          <p class="mt-2 italic">{testimonial.testimonial}</p>
+          <p class="">{testimonial.testimonial}</p>
         </div>
       ))
     }
