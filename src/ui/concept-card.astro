@@ -1,22 +1,33 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 
-const { color, title, description, direction = 'flex-row', imgSrc, className } = Astro.props
+const {
+  color,
+  title,
+  description,
+  direction = "flex-row",
+  imgSrc,
+  className,
+} = Astro.props;
 ---
 
 <div
-	class:list={['rounded-xxl flex h-full justify-start gap-4 bg-white pb-10', className, direction]}
+  class:list={[
+    "rounded-4xl flex h-full justify-start gap-4 bg-base-200 pb-10",
+    className,
+    direction,
+  ]}
 >
-	<Image class="rounded-xxl object-cover" src={imgSrc} alt="Astro-Menu Phone" />
-	<h2
-		class:list={[
-			'whitespace-nowrap px-4 text-4xl font-extrabold capitalize sm:px-8 sm:text-5xl sm:tracking-tight',
-			color
-		]}
-	>
-		{title}
-	</h2>
-	<p class="text-md px-4 text-black sm:mt-4 sm:px-8 sm:text-xl">
-		{description}
-	</p>
+  <Image class="rounded-4xl object-cover" src={imgSrc} alt="Astro-Menu Phone" />
+  <h2
+    class:list={[
+      "whitespace-nowrap px-4 text-4xl font-extrabold capitalize sm:px-8 sm:text-5xl sm:tracking-tight",
+      color,
+    ]}
+  >
+    {title}
+  </h2>
+  <p class="text-md px-4 text-black sm:mt-4 sm:px-8 sm:text-xl">
+    {description}
+  </p>
 </div>

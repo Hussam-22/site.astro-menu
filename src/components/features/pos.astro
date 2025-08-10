@@ -14,19 +14,16 @@ const features = [
   {
     title: "Runs on any device",
     description: `No special hardware, no breakdowns`,
-    bgColor: "bg-purple-400",
     icon: Commissions,
   },
   {
     title: "Serve on the Move",
     description: `No fixed stations, no wasted steps`,
-    bgColor: "bg-orange-400",
     icon: POS,
   },
   {
     title: "Reduced Cost",
     description: "No maintenance costs, no setup fees",
-    bgColor: "bg-sky-400",
     icon: QRCode,
   },
 ];
@@ -43,9 +40,10 @@ const features = [
   <div class="flex flex-col items-start justify-center gap-4">
     <p class="rounded-lg text-4xl font-extrabold capitalize sm:text-6xl">
       <span
-        class="bg-linear-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text text-transparent"
-        >Powerful PoS</span
-      > Run your business smoothly
+        class="bg-linear-to-r from-purple-500 via-cyan-500 to-green-500 bg-clip-text text-transparent"
+        >Powerful PoS,</span
+      >
+      <br /> Run your business smoothly
     </p>
     <p class="text-xl">
       Astro-Menu comes with its own cloud-based PoS to manage your food
@@ -57,7 +55,6 @@ const features = [
       {
         features.map((feature) => (
           <FeatureCard
-            className={feature.bgColor}
             title={feature.title}
             description={feature.description}
             icon={feature.icon}
