@@ -1,5 +1,5 @@
 ---
-import Check from "@ui/icons/check.astro";
+import Container from "@components/container.astro";
 
 const FEATURES = [
   "self-order",
@@ -72,26 +72,24 @@ const FEATURES = [
   }
 </style>
 
-<section>
+<Container>
   <div class="scroll-container">
-    <div class="scroll-content text-white">
+    <div class="scroll-content">
       {
         FEATURES.slice(0, 14).map((feature, index) => (
           <div class="item">
-            <div class="rounded-xxl flex flex-row items-center gap-3 bg-zinc-800 p-3 text-lg sm:text-2xl">
-              <Check class="h-6 w-6" />
+            <div class="rounded-4xl flex flex-row items-center gap-3 bg-base-200 p-3 text-lg ">
               <p class="capitalize">{feature}</p>
             </div>
           </div>
         ))
       }
     </div>
-    <div class="scroll-content text-white">
+    <div class="scroll-content">
       {
         FEATURES.slice(0, 14).map((feature, index) => (
           <div class="item">
-            <div class="rounded-xxl flex flex-row items-center gap-3 bg-zinc-800 p-3 text-lg sm:text-2xl">
-              <Check class="h-6 w-6" />
+            <div class="rounded-4xl flex flex-row items-center gap-3 bg-base-200 p-3 text-lg ">
               <p class="capitalize">{feature}</p>
             </div>
           </div>
@@ -101,24 +99,22 @@ const FEATURES = [
   </div>
 
   <div class="scroll-container mt-6">
-    <div class="scroll-content-right text-white">
+    <div class="scroll-content-right">
       {
         FEATURES.slice(14).map((feature, index) => (
           <div class="item">
-            <div class="rounded-xxl flex flex-row items-center gap-3 bg-zinc-800 p-3 text-lg sm:text-2xl">
-              <Check class="h-6 w-6" />
+            <div class="rounded-4xl flex flex-row items-center gap-3 bg-base-200 p-3 text-lg ">
               <p class="capitalize">{feature}</p>
             </div>
           </div>
         ))
       }
     </div>
-    <div class="scroll-content-right text-white">
+    <div class="scroll-content-right">
       {
         FEATURES.slice(14).map((feature, index) => (
           <div class="item">
-            <div class="rounded-xxl flex flex-row items-center gap-3 bg-zinc-800 p-3 text-lg sm:text-2xl">
-              <Check class="h-6 w-6" />
+            <div class="rounded-4xl flex flex-row items-center gap-3 bg-base-200 p-3 text-lg ">
               <p class="capitalize">{feature}</p>
             </div>
           </div>
@@ -130,4 +126,4 @@ const FEATURES = [
   <!-- <div class="mt-8 text-center">
 		<Button style="primary" class="bg-white">Features List</Button>
 	</div> -->
-</section>
+</Container>

@@ -1,0 +1,72 @@
+---
+import TabletMockup from "@ui/tablet-mockup.astro";
+import astroMenuDashboard from "assets/views/waitstaff-dashboard.png";
+
+import Container from "@components/container.astro";
+import FeatureCard from "@ui/feature-card.astro";
+import { Image } from "astro:assets";
+import backgroundColorImage from "../../assets/backgrounds/bg-blur-green.svg";
+import Commissions from "../../assets/icons/commission.svg";
+import POS from "../../assets/icons/pos.svg";
+import QRCode from "../../assets/icons/qr-code.svg";
+
+const features = [
+  {
+    title: "Runs on any device",
+    description: `No special hardware, no breakdowns`,
+    bgColor: "bg-purple-400",
+    icon: Commissions,
+  },
+  {
+    title: "Serve on the Move",
+    description: `No fixed stations, no wasted steps`,
+    bgColor: "bg-orange-400",
+    icon: POS,
+  },
+  {
+    title: "Reduced Cost",
+    description: "No maintenance costs, no setup fees",
+    bgColor: "bg-sky-400",
+    icon: QRCode,
+  },
+];
+---
+
+<Container class:list="grid grid-cols-2 gap-8 py-16 relative">
+  <Image
+    src={backgroundColorImage}
+    alt="Background Blur"
+    class="w-full h-full object-cover bg-center opacity-75 blur-3xl absolute rounded-4xl z-0"
+    loading="eager"
+  />
+
+  <div class="flex flex-col items-start justify-center gap-4">
+    <p class="rounded-lg text-4xl font-extrabold capitalize sm:text-6xl">
+      <span
+        class="bg-linear-to-r from-purple-400 via-cyan-500 to-green-500 bg-clip-text text-transparent"
+        >Powerful PoS</span
+      > Run your business smoothly
+    </p>
+    <p class="text-xl">
+      Astro-Menu comes with its own cloud-based PoS to manage your food
+      business. It's easy to use and has all the features you need to run your
+      business smoothly.
+    </p>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-4">
+      {
+        features.map((feature) => (
+          <FeatureCard
+            className={feature.bgColor}
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+            isSmall
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <TabletMockup className="-mr-96" imgSrc={astroMenuDashboard} />
+</Container>

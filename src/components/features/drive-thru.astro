@@ -1,11 +1,26 @@
 ---
-
+import Container from "@components/container.astro";
+import SectionHead from "@ui/section-head.astro";
 ---
 
-<div class="text-white">
-	<p>Drive-Thru</p>
-	<p>
-		Speed-up Drive-Thru operations for your restaurant and your customers by streamlining the
-		ordering process.
-	</p>
-</div>
+<Container>
+  <SectionHead
+    title="Drive-Thru"
+    description="Speed-up Drive-Thru operations for your restaurant and your customers by      streamlining the ordering process."
+  />
+  <div class="grid grid-cols-3 gap-6">
+    <div>
+      <p class="font-bold text-xl">How it works</p>
+      <ul class="steps steps-vertical">
+        <li class="step">Customers Scan QR</li>
+        <li class="step">They Enter their Vehicle Information</li>
+        <li class="step">They Place their Order</li>
+        <li class="step">Order Goes to Kitchen</li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-xl">Benefits</p>
+      <p></p>
+    </div>
+  </div>
+</Container>
