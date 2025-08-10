@@ -5,7 +5,7 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "../assets/app.css";
 import { ClientRouter } from "astro:transitions";
-import Aurora from "@components/ui/animated/aurora";
+import Aurora from "@ui/animated/aurora";
 export interface Props {
   title: string;
 }
@@ -91,9 +91,7 @@ const makeTitle = title
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
-    <script
-      src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"
-    ></script>
+
     <SEO
       title={makeTitle}
       description="Empower your food business, restaurant, coffee shop, and social media food business with our cutting-edge QR menu and cloud POS solution. Seamlessly integrate ordering and kitchen management, all in one sleek, digital platform."

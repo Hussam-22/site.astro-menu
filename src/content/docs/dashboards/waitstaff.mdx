@@ -1,19 +1,23 @@
 ---
 draft: false
-title: 'Waitstaff'
+title: "Waitstaff"
 snippet: Learn how to navigate and utilize the Astro-Menu Waitstaff Dashboard.
-icon: 'introduction'
-image: { src: '/assets/docs/general/dynamic-qr-code-menu.png', alt: 'Dynamic QR Code Menu' }
-publishDate: '2024-11-12 02:24'
-category: 'PoS/dashboard'
-author: 'Astro-Menu'
+icon: "introduction"
+image:
+  {
+    src: "/assets/docs/general/dynamic-qr-code-menu.png",
+    alt: "Dynamic QR Code Menu",
+  }
+publishDate: "2024-11-12 02:24"
+category: "PoS/dashboard"
+author: "Astro-Menu"
 tags: [Coffee Cup, Menu Master]
 order: 9.1
 path: /docs/general/
 ---
 
-import FeatureLink from '@components/ui/feature-link.astro'
-import TipCard from '@components/ui/tip-card.astro'
+import FeatureLink from "@ui/feature-link.astro";
+import TipCard from "@ui/tip-card.astro";
 
 The Waitstaff Dashboard is designed to streamline the order management process for your service staff. It enables efficient order handling, payment processing, meal availability toggling, and direct order sending to the kitchen.
 
@@ -34,7 +38,7 @@ Astro-Menu provides two methods for placing orders:
 Astro-Menu’s Cloud PoS/Dashboard operates in real-time. When customers add a meal to their cart, it instantly appears on the Waitstaff Dashboard. Similarly, when staff add a meal from the dashboard, it is immediately reflected in the customer’s cart.
 
 <TipCard
-	text={`If your operations don’t involve a kitchen, such as when waitstaff handle both order-taking and preparation, you can allow them to mark orders as "Ready to Serve" directly. To enable the "Skip Kitchen" feature, visit the Branch Settings page.`}
+  text={`If your operations don’t involve a kitchen, such as when waitstaff handle both order-taking and preparation, you can allow them to mark orders as "Ready to Serve" directly. To enable the "Skip Kitchen" feature, visit the Branch Settings page.`}
 />
 
 ### User-Friendly Dashboard Design

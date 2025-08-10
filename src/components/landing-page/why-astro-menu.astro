@@ -1,18 +1,12 @@
 ---
 import Container from "@components/container.astro";
-import FeatureCard from "@components/ui/feature-card.astro";
-import SectionHead from "@components/ui/section-head.astro";
+import FeatureCard from "@ui/feature-card.astro";
+import SectionHead from "@ui/section-head.astro";
 import Commissions from "../../assets/icons/commission.svg";
 import POS from "../../assets/icons/pos.svg";
 import QRCode from "../../assets/icons/qr-code.svg";
 
 const features = [
-  {
-    title: "Instant QR Menus",
-    description: "No app downloads, just scan & order",
-    bgColor: "bg-sky-400",
-    icon: QRCode,
-  },
   {
     title: "No Commissions",
     description: `Flat monthly fee, keep your profits`,
@@ -24,6 +18,12 @@ const features = [
     description: `No annual contract, no maintenance fees`,
     bgColor: "bg-orange-400",
     icon: POS,
+  },
+  {
+    title: "Instant QR Menus",
+    description: "No app downloads, just scan & order",
+    bgColor: "bg-sky-400",
+    icon: QRCode,
   },
 ];
 ---

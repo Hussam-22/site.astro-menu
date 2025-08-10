@@ -1,7 +1,7 @@
 ---
 import Container from "@components/container.astro";
-import Carousel from "@components/ui/carousel.astro";
-import SectionHead from "@components/ui/section-head.astro";
+import Carousel from "@ui/carousel.astro";
+import SectionHead from "@ui/section-head.astro";
 import UseCasesCard from "./use-cases-card.astro";
 
 const TABS = [
@@ -55,7 +55,6 @@ const TABS = [
 ];
 ---
 
-<!-- name of each tab group should be unique -->
 <Container class="flex flex-col justify-center">
   <SectionHead
     title="Use Cases"
@@ -66,12 +65,12 @@ const TABS = [
     {TABS.filter((tab) => tab.enabled).map((tab) => <UseCasesCard {...tab} />)}
   </div>
 
-  <Carousel length={TABS.length} name="testimonials">
+  <Carousel length={TABS.length} name="use-cases">
     {
       TABS.filter((tab) => tab.enabled).map((tab) => (
         <UseCasesCard
           {...tab}
-          classList={[tab.classList, "carousel-item w-[80%]"]}
+          classList={[tab.classList, "carousel-item w-[90%]"]}
         />
       ))
     }

@@ -1,7 +1,7 @@
 ---
 import Container from "@components/container.astro";
-import Carousel from "@components/ui/carousel.astro";
-import SectionHead from "@components/ui/section-head.astro";
+import Carousel from "@ui/carousel.astro";
+import SectionHead from "@ui/section-head.astro";
 import logo1 from "assets/images/logos/logo-1.webp";
 import logo2 from "assets/images/logos/logo-2.webp";
 import logo3 from "assets/images/logos/logo-3.webp";
@@ -40,7 +40,7 @@ const TESTIMONIALS = [
 ];
 ---
 
-<Container class="flex flex-col items-center">
+<Container class="sm:flex sm:flex-col sm:items-center">
   <SectionHead
     title="what our customers say"
     classList="text-center self-center"
@@ -70,22 +70,15 @@ const TESTIMONIALS = [
   <Carousel length={TESTIMONIALS.length} name="testimonials">
     {
       TESTIMONIALS.map((testimonial) => (
-        <div
-          id={testimonial.owner}
-          class="carousel-item w-[80%] bg-base-200 rounded-4xl"
-        >
-          <div class="p-4 flex flex-col">
-            <Image
-              src={testimonial.logo}
-              alt={testimonial.owner}
-              class="w-36 h-36 rounded-4xl"
-            />
-            <div>
-              <h3 class="text-xl font-bold">{testimonial.business_name}</h3>
-              <p class="mt-0 font-light">{testimonial.owner}</p>
-            </div>
-            <p class="">{testimonial.testimonial}</p>
-          </div>
+        <div class="carousel-item w-[70%] flex flex-col gap-2 p-4 bg-base-200 rounded-4xl">
+          <Image
+            src={testimonial.logo}
+            alt={testimonial.owner}
+            class="w-36 h-36 rounded-4xl"
+          />
+          <p class="text-xl font-bold">{testimonial.business_name}</p>
+          <p class="font-light">{testimonial.owner}</p>
+          <p class="">{testimonial.testimonial}</p>
         </div>
       ))
     }
