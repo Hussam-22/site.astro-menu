@@ -1,8 +1,10 @@
 ---
-const { title, description, classList } = Astro.props;
+const { title, description, classList, fullWidth } = Astro.props;
 ---
 
-<div class:list={[classList, "mb-16 sm:max-w-8/12"]}>
+<div
+  class:list={[classList, "mb-16", fullWidth ? "max-w-full" : "sm:max-w-8/12"]}
+>
   <h2 class="text-6xl font-black lg:tracking-tight capitalize">
     {title}
   </h2>
