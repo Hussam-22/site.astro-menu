@@ -3,7 +3,7 @@ const { name = "carousel", length } = Astro.props;
 ---
 
 <div
-  class="carousel carousel-center max-w-md space-x-4 sm:hidden"
+  class="w-full max-w-2xl mx-auto overflow-x-auto flex gap-4 snap-x snap-mandatory scrollbar-hide"
   id={`${name}-carousel`}
   data-name={name}
   data-length={length}
@@ -11,7 +11,18 @@ const { name = "carousel", length } = Astro.props;
   <slot />
 </div>
 
-<!-- <div
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    behavior: smooth;
+  }
+</style>
+
+<div
   class="flex w-full justify-center gap-2 py-2 mt-1 sm:hidden"
   id={`${name}-carousel-nav`}
 >
@@ -25,9 +36,9 @@ const { name = "carousel", length } = Astro.props;
       />
     ))
   }
-</div> -->
+</div>
 
-<!-- <script>
+<script>
   const roots = document.querySelectorAll(".carousel");
   // const names = root && roots.dataset.name;
 
@@ -83,4 +94,4 @@ const { name = "carousel", length } = Astro.props;
       }
     });
   });
-</script> -->
+</script>
