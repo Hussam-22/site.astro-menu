@@ -3,7 +3,7 @@ const { name = "carousel", length } = Astro.props;
 ---
 
 <div
-  class="w-full max-w-2xl mx-auto overflow-x-auto flex gap-4 snap-x snap-mandatory scrollbar-hide"
+  class="w-full max-w-2xl mx-auto overflow-x-auto flex gap-4 snap-x snap-mandatory scrollbar-hide carousel-container"
   id={`${name}-carousel`}
   data-name={name}
   data-length={length}
@@ -39,7 +39,7 @@ const { name = "carousel", length } = Astro.props;
 </div>
 
 <script>
-  const roots = document.querySelectorAll(".carousel");
+  const roots = document.querySelectorAll(".carousel-container");
   // const names = root && roots.dataset.name;
 
   roots.forEach((root) => {
@@ -51,9 +51,13 @@ const { name = "carousel", length } = Astro.props;
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
+            console.log(entry);
+
             const targetElement = document.getElementById(
               `${name}-carousel-nav-item-${entry.target.id.split("-").pop()}`
             );
+            console.log(targetElement);
+
             if (targetElement) {
               if (entry.isIntersecting) {
                 targetElement.classList.add(
@@ -72,10 +76,10 @@ const { name = "carousel", length } = Astro.props;
         { threshold: 0.1 }
       );
       const nav = document.getElementById(`${name}-carousel-nav`);
-      const carousel = document.getElementById(`${name}-carousel`);
+      const carousel = document.getElementById(`${name}-carousel-container`);
 
       if (nav && carousel) {
-        const items = carousel.querySelectorAll(".carousel-item");
+        const items = carousel.querySelectorAll(".carousel-item-card");
         items.forEach((item) => {
           observer.observe(item);
         });
