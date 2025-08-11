@@ -29,7 +29,9 @@ const features = [
 ];
 ---
 
-<Container class:list="grid grid-cols-2 gap-8 py-16 relative">
+<Container
+  class:list="grid sm:grid-cols-2 gap-8 py-16 relative overflow-hidden"
+>
   <Image
     src={backgroundColorImage}
     alt="Background Blur"
@@ -37,8 +39,10 @@ const features = [
     loading="eager"
   />
 
-  <div class="flex flex-col items-start justify-center gap-4">
-    <p class="rounded-lg text-4xl font-extrabold capitalize sm:text-6xl">
+  <div
+    class="flex flex-col items-center sm:items-start justify-center text-center sm:text-left gap-4"
+  >
+    <p class="rounded-lg text-6xl font-extrabold capitalize">
       <span
         class="bg-linear-to-r from-purple-500 via-cyan-500 to-green-500 bg-clip-text text-transparent"
         >Powerful PoS,</span
@@ -65,5 +69,5 @@ const features = [
     </div>
   </div>
 
-  <TabletMockup className="-mr-96" imgSrc={astroMenuDashboard} />
+  <TabletMockup className="sm:-mr-96 -mr-56" imgSrc={astroMenuDashboard} />
 </Container>
