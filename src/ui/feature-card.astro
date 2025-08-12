@@ -16,7 +16,7 @@ const { title, description, btnText, btnLink, icon, isSmall, className } =
     icon && (
       <Image
         src={icon}
-        class:list={[isSmall ? "h-12 w-12" : "h-24 w-24"]}
+        class:list={[isSmall ? "sm:h-12 sm:w-12 h-18 w-18" : "h-24 w-24"]}
         alt={title}
       />
     )
@@ -25,7 +25,7 @@ const { title, description, btnText, btnLink, icon, isSmall, className } =
   <p
     class:list={[
       "font-extrabold capitalize lg:tracking-tight",
-      isSmall ? "text-md" : "text-3xl lg:text-4xl",
+      isSmall ? "sm:text-md text-xl" : "text-3xl lg:text-4xl",
     ]}
   >
     {title}
@@ -34,7 +34,7 @@ const { title, description, btnText, btnLink, icon, isSmall, className } =
     class:list={[
       "font-semibold text-black",
       btnText && btnLink ? "mb-6" : "mb-0",
-      isSmall ? "text-sm" : "text-base",
+      isSmall ? "sm:text-sm text-lg" : "text-base",
     ]}
   >
     {description}

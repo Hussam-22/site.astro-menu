@@ -2,37 +2,31 @@
 import driveThruImage from "@assets/images/features/drive-thru-img.png";
 import driveThruOldImage from "@assets/images/features/drive-thru-old-img.png";
 import Container from "@components/container.astro";
+import PhoneMockup from "@ui/phone-mockup.astro";
 import SectionHead from "@ui/section-head.astro";
+import driveThruMobileView from "assets/images/mockups/drive-thru-mobile-view.jpeg";
 import { Image } from "astro:assets";
 ---
 
 <Container class:list=" ">
   <div
-    class="w-full flex flex-col sm:flex-row gap-8 rounded-4xl p-6 bg-gradient-to-br from-orange-100 to-base-200"
+    class="w-full flex flex-col sm:flex-row gap-8 rounded-4xl bg-gradient-to-br from-orange-100 to-base-200 overflow-hidden relative px-6 py-12 sm:p-0"
   >
-    <div>
+    <div class="w-full sm:w-2/3 flex flex-col sm:px-12 sm:pt-12 sm:pb-96">
       <SectionHead
         title="Drive-Thru"
         description="Jump to today's Drive-Thru experience, ditching the wait, Astro-Menu includes drive-thru capabilities that let customers order seamlessly from their vehicles - so you can serve curbside and dine-in guests effortlessly."
-        bottomSpace="mb-2"
+        bottomSpace="sm:mb-6"
         fullWidth
       />
-      <ul class="list list-disc text-lg pl-6">
-        <li data-content="" class="font-semibold">
-          Customers can explore the menu and place orders in advance
-        </li>
-        <li data-content="" class="font-semibold">
-          No need for staff to go out to take the order
-        </li>
-        <li data-content="" class="font-semibold">
-          The order goes to kitchen automatically
-        </li>
-        <li data-content="" class="font-semibold">Reduce staff workload</li>
-        <li data-content="" class="font-semibold">Accurate orders</li>
-      </ul>
+      <PhoneMockup
+        className="absolute -bottom-36 left-18 scale-125 hidden sm:block"
+        imgSrc={driveThruMobileView}
+        text="Drive-Thru"
+        isEager={true}
+      />
     </div>
-
-    <figure class="diff aspect-16/9 rounded-4xl" tabindex="0">
+    <figure class="diff aspect-16/9 rounded-4xl sm:m-6" tabindex="0">
       <div class="diff-item-1" role="img" tabindex="0">
         <Image src={driveThruImage} alt="Drive-Thru" class="" />
       </div>

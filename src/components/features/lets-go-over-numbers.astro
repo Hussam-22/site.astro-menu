@@ -2,11 +2,9 @@
 import Container from "@components/container.astro";
 import FeatureCard from "@ui/feature-card.astro";
 import SectionHead from "@ui/section-head.astro";
-import ArrowRight from "assets/icons/arrow-right.svg";
 import HardwareDecrease from "assets/icons/hardware-decrease.svg";
 import PrintDecrease from "assets/icons/print-decrease.svg";
 import SalesIncrease from "assets/icons/sale-increase.svg";
-import { Image } from "astro:assets";
 ---
 
 <Container class="flex flex-col items-center text-center">
@@ -20,16 +18,18 @@ import { Image } from "astro:assets";
     <FeatureCard
       title="32% Increase tables turnover & sales"
       icon={SalesIncrease}
+      className="border-4 border-black"
     />
-    <FeatureCard title="95% decrease printing cost" icon={PrintDecrease} />
-    <FeatureCard title="99% decrease maintenance" icon={HardwareDecrease} />
-  </div>
-
-  <div
-    class="flex flex-row items-center justify-end gap-2 text-white sm:hidden"
-  >
-    <p>Swipe Right</p>
-    <Image src={ArrowRight} alt="arrow-right" class="h-8 w-8" />
+    <FeatureCard
+      title="95% decrease printing cost"
+      icon={PrintDecrease}
+      className="border-4 border-black"
+    />
+    <FeatureCard
+      title="99% decrease maintenance"
+      icon={HardwareDecrease}
+      className="border-4 border-black"
+    />
   </div>
 
   <div
@@ -39,19 +39,19 @@ import { Image } from "astro:assets";
       title="32% Increase in tables turnover and sales"
       description="With Astro-Menu, customers can order faster and more efficiently."
       icon={SalesIncrease}
-      className="carousel-item w-[65vw] flex-col "
+      className="carousel-item w-[65vw] flex-col border-4 border-black"
     />
     <FeatureCard
       title="95% decrease in printing cost"
       description="No need to print menus, print receipt or waste paper on taking orders, everything is digital, plus it's eco-friendly."
       icon={PrintDecrease}
-      className="carousel-item w-[65vw] flex-col "
+      className="carousel-item w-[65vw] flex-col border-4 border-black"
     />
     <FeatureCard
       title="99% decrease in maintenance cost"
       description="No need to buy expensive hardware or maintain it, everything is cloud-based."
       icon={HardwareDecrease}
-      className="carousel-item w-[65vw] flex-col "
+      className="carousel-item w-[65vw] flex-col border-4 border-black"
     />
   </div>
 </Container>

@@ -32,7 +32,7 @@ const REASONS = [
     icon: "no-waiting",
   },
   {
-    title: "No need for multiple menus with different languages",
+    title: "Single Menu, multiple languages",
     description: "Customers can view the menu in their preferred language.",
     icon: "multi-language",
   },
@@ -68,26 +68,18 @@ const REASONS = [
 ---
 
 <Container class="flex flex-col items-center text-center">
-  <SectionHead
-    title="Why you should switch to digital QR menu anyway?"
-    classList="text-center"
-  />
+  <SectionHead title="Why digital QR menu anyway?" classList="text-center" />
 
-  <div class="hidden gap-4 sm:grid sm:grid-cols-2">
+  <div class="hidden gap-4 sm:grid sm:grid-cols-5">
     {
       REASONS.map((item, index) => (
-        <div class="rounded-4xl flex flex-col justify-center bg-base-200 p-6">
-          <div class="flex flex-row  items-center gap-2">
-            <img
-              src={`/assets/icons/why-to-switch/${item.icon}.svg`}
-              alt="icon"
-              class="h-12 w-12"
-            />
-            <div class="w-full">
-              <h3 class="text-xl font-bold">{item.title}</h3>
-              <p class="mt-1 leading-relaxed ">{item.description}</p>
-            </div>
-          </div>
+        <div class="flex flex-col justify-center bg-base-200 rounded-4xl p-4 items-center gap-2">
+          <img
+            src={`/assets/icons/why-to-switch/${item.icon}.svg`}
+            alt="icon"
+            class="h-12 w-12"
+          />
+          <h3 class="text-xl font-bold capitalize">{item.title}</h3>
         </div>
       ))
     }
@@ -104,19 +96,14 @@ const REASONS = [
   >
     {
       REASONS.map((item, index) => (
-        <div class="carousel-item w-[90%]">
-          <div class="rounded-4xl flex flex-col bg-base-200 p-8">
-            <img
-              src={`/assets/icons/why-to-switch/${item.icon}.svg`}
-              alt="icon"
-              class="h-12 w-12"
-              loading="lazy"
-            />
-            <div>
-              <h3 class="text-xl font-semibold">{item.title}</h3>
-              <p class="mt-1 leading-relaxed ">{item.description}</p>
-            </div>
-          </div>
+        <div class="carousel-item w-[50%] flex flex-col items-center justify-center bg-base-200 rounded-4xl p-4 gap-2">
+          <img
+            src={`/assets/icons/why-to-switch/${item.icon}.svg`}
+            alt="icon"
+            class="h-18 w-18"
+            loading="lazy"
+          />
+          <h3 class="text-xl font-bold">{item.title}</h3>
         </div>
       ))
     }
