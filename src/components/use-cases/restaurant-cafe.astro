@@ -1,0 +1,71 @@
+---
+import burgerIcon from "@assets/icons/burger.svg";
+import image1 from "@assets/images/use-cases/img-1.jpg";
+import Container from "@components/container.astro";
+import FeatureCard from "@ui/feature-card.astro";
+import { Image } from "astro:assets";
+---
+
+<Container>
+  <div
+    class="flex w-full gap-2 bg-gradient-to-br from-red-400 to-orange-400 p-2 rounded-2xl"
+  >
+    <div class="w-full max-w-8/12 rounded-2xl grid grid-cols-12 gap-2">
+      <div class="w-full col-span-12 bg-white rounded-2xl p-6 h-full">
+        <p class="text-6xl font-extrabold mb-2">Restaurants & Cafes</p>
+        <p>
+          Astro-Menu is an all-in-one digital menu and cloud POS solution
+          designed to help restaurants and cafés streamline operations, reduce
+          costs, and deliver faster service. Customers can browse your
+          up-to-date menu and place orders directly from their smartphones,
+          cutting wait times and minimizing errors. The built-in cloud POS runs
+          on any tablet, or computer, allowing you to add unlimited devices
+          without the hardware restrictions, maintenance hassles, or costly
+          yearly contracts of traditional POS systems. By keeping staff mobile
+          and reducing unnecessary steps, Astro-Menu speeds up service, improves
+          table turnover, and ensures your menu is always fresh, accurate, and
+          engaging—helping you serve more guests with less effort.
+        </p>
+      </div>
+      <div class="w-full flex flex-row gap-2 col-span-12">
+        <div class="bg-white h-full rounded-2xl p-3 w-full max-w-9/12">
+          <div class="flex flex-row justify-between gap-4 items-center">
+            <FeatureCard
+              title="Streamline Operations"
+              description="Reduce wait times and minimize errors with our digital menu."
+              icon={burgerIcon}
+            />
+            <FeatureCard
+              title="Streamline Operations"
+              description="Reduce wait times and minimize errors with our digital menu."
+              icon={burgerIcon}
+            />
+          </div>
+        </div>
+        <div class="col-span-4 w-full max-w-3/12 h-full rounded-2xl">
+          <Image
+            src={image1}
+            alt="Restaurant & Cafe"
+            class="w-full h-full rounded-2xl"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="w-full max-w-4/12 rounded-2xl relative">
+      <Image
+        src={image1}
+        alt="Restaurant & Cafe"
+        class="w-full h-full rounded-2xl"
+      />
+      <div
+        class="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent via-transparent to-black/50"
+      >
+      </div>
+      <p
+        class="bottom-4 left-4 absolute text-white text-4xl font-extrabold z-10"
+      >
+        Restaurants & Cafes
+      </p>
+    </div>
+  </div>
+</Container>

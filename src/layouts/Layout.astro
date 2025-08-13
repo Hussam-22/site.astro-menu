@@ -5,10 +5,6 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "../assets/app.css";
 import { ClientRouter } from "astro:transitions";
-import Aurora from "@ui/animated/aurora";
-export interface Props {
-  title: string;
-}
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL(
