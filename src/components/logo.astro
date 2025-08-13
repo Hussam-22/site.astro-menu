@@ -1,8 +1,14 @@
 ---
-
+const { isLight = false } = Astro.props;
 ---
 
 <!-- <Image src={astroLogo} alt="Astro Logo" class="h-12 w-12" /> -->
-<a href="/" class="py-2 text-lg font-bold bg-black text-white rounded-4xl px-4"
-  >ASTRO-MENU</a
+<a
+  href="/"
+  class:list={[
+    "py-1.5 text-lg font-bold  rounded-4xl px-3",
+    isLight ? "bg-white text-black" : "bg-black text-white",
+  ]}
+>
+  ASTRO-MENU</a
 >

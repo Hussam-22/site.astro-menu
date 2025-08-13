@@ -35,7 +35,7 @@ const features = [
   <Image
     src={backgroundColorImage}
     alt="Background Blur"
-    class="w-full h-full object-cover bg-center opacity-75 blur-3xl absolute rounded-4xl z-0"
+    class="w-full h-full object-cover bg-center opacity-75 blur-3xl absolute rounded-4xl -z-10"
     loading="eager"
   />
 
@@ -45,9 +45,9 @@ const features = [
     <p class="rounded-lg text-6xl font-extrabold capitalize">
       <span
         class="bg-linear-to-r from-purple-500 via-cyan-500 to-green-500 bg-clip-text text-transparent"
-        >Powerful PoS,</span
+        >Cloud PoS,</span
       >
-      <br /> Run your business smoothly
+      <br /> that keeps your business in the fast lane
     </p>
     <p class="text-xl">
       Astro-Menu comes with its own cloud-based PoS to manage your food
@@ -63,6 +63,7 @@ const features = [
             description={feature.description}
             icon={feature.icon}
             isSmall
+            className="bg-base-100/60"
           />
         ))
       }

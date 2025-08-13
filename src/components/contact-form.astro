@@ -23,7 +23,7 @@ import Button from "@ui/button.astro";
       type="text"
       placeholder="Full Name"
       required
-      class="rounded-4xl w-full px-4 py-3 text-white outline-none placeholder:text-zinc-400"
+      class="rounded-4xl w-full px-4 py-3 bg-white outline-none placeholder:text-zinc-400"
       name="name"
     />
     <div class="empty-feedback invalid-feedback text-md mt-1 pl-4 text-red-500">
@@ -32,13 +32,13 @@ import Button from "@ui/button.astro";
   </div>
   <div class="mb-5">
     <label for="contact_number" class="sr-only">Contact Number</label>
-    <!-- <input
-			id="contact_number"
-			type="tel"
-			placeholder="Contact Number"
-			class="rounded-4xl w-full px-4 py-3 text-white outline-none placeholder:text-zinc-400"
-			name="contact number"
-		/> -->
+    <input
+      id="contact_number"
+      type="tel"
+      placeholder="Contact Number"
+      class="rounded-4xl w-full px-4 py-3 bg-white outline-none placeholder:text-zinc-400"
+      name="contact number"
+    />
     <div class="empty-feedback invalid-feedback text-md mt-1 pl-4 text-red-500">
       Please provide your full name.
     </div>
@@ -51,7 +51,7 @@ import Button from "@ui/button.astro";
       placeholder="Email Address"
       name="email"
       required
-      class="rounded-4xl w-full px-4 py-3 text-white outline-none placeholder:text-zinc-400"
+      class="rounded-4xl w-full px-4 py-3 bg-white outline-none placeholder:text-zinc-400"
     />
     <div class="empty-feedback text-md mt-1 pl-4 text-red-500">
       Please provide your email address.
@@ -65,7 +65,7 @@ import Button from "@ui/button.astro";
       name="message"
       required
       placeholder="Your Message"
-      class="h-36 w-full rounded-3xl px-4 py-3 text-white outline-none placeholder:text-zinc-400"
+      class="h-36 w-full rounded-3xl px-4 py-3 bg-white outline-none placeholder:text-zinc-400"
     ></textarea>
     <div class="empty-feedback invalid-feedback text-md mt-1 pl-4 text-red-500">
       Please enter your message.

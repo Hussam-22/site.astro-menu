@@ -3,7 +3,7 @@ const { name = "carousel", length } = Astro.props;
 ---
 
 <div
-  class="w-full max-w-2xl mx-auto overflow-x-auto flex gap-4 snap-x snap-mandatory scrollbar-hide carousel-container"
+  class="w-full max-w-2xl mx-auto overflow-x-auto flex gap-4 snap-x snap-mandatory scrollbar-hide carousel-container sm:hidden"
   id={`${name}-carousel`}
   data-name={name}
   data-length={length}
