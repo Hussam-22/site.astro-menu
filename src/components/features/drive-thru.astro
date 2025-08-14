@@ -8,7 +8,7 @@ import driveThruMobileView from "assets/images/mockups/drive-thru-mobile-view.jp
 import { Image } from "astro:assets";
 ---
 
-<Container class:list=" ">
+<Container>
   <div
     class="w-full flex flex-col sm:flex-row gap-8 rounded-4xl bg-gradient-to-br from-orange-100 to-base-200 overflow-hidden relative px-6 py-12 sm:p-0"
   >
@@ -26,7 +26,7 @@ import { Image } from "astro:assets";
         isEager={true}
       />
     </div>
-    <figure class="diff aspect-16/9 rounded-4xl sm:m-6" tabindex="0">
+    <figure class="diff aspect-16/9 rounded-4xl sm:m-3" tabindex="0">
       <div class="diff-item-1" role="img" tabindex="0">
         <Image src={driveThruImage} alt="Drive-Thru" class="" />
       </div>

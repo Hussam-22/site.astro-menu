@@ -1,12 +1,13 @@
 ---
+import Container from "@components/container.astro";
 import Hero from "@components/use-cases/hero.astro";
-import RestaurantCafe from "@components/use-cases/restaurant-cafe.astro";
+import UseCasesSections from "@components/use-cases/use-cases-sections.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Use Cases">
-  <div class="flex flex-col gap-32 sm:gap-36">
+  <Container class="sm:mt-16 flex flex-col justify-center items-center gap-16">
     <Hero />
-    <RestaurantCafe />
-  </div>
+    <UseCasesSections />
+  </Container>
 </Layout>

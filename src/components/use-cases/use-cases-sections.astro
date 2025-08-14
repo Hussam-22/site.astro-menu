@@ -1,0 +1,111 @@
+---
+import burgerIcon from "@assets/icons/burger.svg";
+import astro1 from "@assets/images/astro/astro-1.png";
+import astro2 from "@assets/images/astro/astro-2.png";
+import astro3 from "@assets/images/astro/astro-3.png";
+import astro4 from "@assets/images/astro/astro-4.png";
+import image1 from "@assets/images/use-cases/img-1.jpg";
+import FeatureCard from "@ui/feature-card.astro";
+import UseCaseSection from "./use-case-section.astro";
+---
+
+<!-- Restaurants & Cafes -->
+<UseCaseSection
+  bgColor="bg-gradient-to-br from-teal-400 to-sky-400"
+  title="Restaurants & Cafes"
+  description="Astro-Menu is an all-in-one digital menu and cloud POS solution designed to help restaurants and cafés streamline operations, reduce costs, and deliver faster service. Customers can browse your up-to-date menu and place orders directly from their smartphones, cutting wait times and minimizing errors. The built-in cloud POS runs on any tablet, or computer, allowing you to add unlimited devices without the hardware restrictions, maintenance hassles, or costly yearly contracts of traditional POS systems. By keeping staff mobile and reducing unnecessary steps, Astro-Menu speeds up service, improves table turnover, and ensures your menu is always fresh, accurate, and engaging—helping you serve more guests with less effort."
+  leftImage={image1}
+  leftImageAlt="Restaurant & Cafe"
+  rightImage={astro1}
+  rightImageAlt="Restaurant & Cafe"
+  rightTitle="Restaurants & Cafes"
+>
+  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+    <FeatureCard
+      title="Improve Tables Turnover"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+    <FeatureCard
+      title="Streamline Operations"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+  </div>
+</UseCaseSection>
+
+<!-- Food Trucks -->
+<UseCaseSection
+  bgColor="bg-gradient-to-br from-red-400 to-orange-400"
+  title="Food Trucks"
+  description="Astro-Menu is an all-in-one digital menu and cloud POS solution designed to help restaurants and cafés streamline operations, reduce costs, and deliver faster service. Customers can browse your up-to-date menu and place orders directly from their smartphones, cutting wait times and minimizing errors. The built-in cloud POS runs on any tablet, or computer, allowing you to add unlimited devices without the hardware restrictions, maintenance hassles, or costly yearly contracts of traditional POS systems. By keeping staff mobile and reducing unnecessary steps, Astro-Menu speeds up service, improves table turnover, and ensures your menu is always fresh, accurate, and engaging—helping you serve more guests with less effort."
+  leftImage={astro1}
+  leftImageAlt="Food Truck"
+  rightImage={astro2}
+  rightImageAlt="Food Truck"
+  rightTitle="Food Trucks"
+>
+  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+    <FeatureCard
+      title="Reduce Wait Times"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+    <FeatureCard
+      title="Reduce Staff Overhead"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+  </div>
+</UseCaseSection>
+
+<!-- Hospital -->
+<UseCaseSection
+  bgColor="bg-gradient-to-br from-emerald-400 to-yellow-400"
+  title="Hotel Rooms"
+  description="Astro-Menu is an all-in-one digital menu and cloud POS solution designed to help restaurants and cafés streamline operations, reduce costs, and deliver faster service. Customers can browse your up-to-date menu and place orders directly from their smartphones, cutting wait times and minimizing errors. The built-in cloud POS runs on any tablet, or computer, allowing you to add unlimited devices without the hardware restrictions, maintenance hassles, or costly yearly contracts of traditional POS systems. By keeping staff mobile and reducing unnecessary steps, Astro-Menu speeds up service, improves table turnover, and ensures your menu is always fresh, accurate, and engaging—helping you serve more guests with less effort."
+  leftImage={astro1}
+  leftImageAlt="Hotel Room"
+  rightImage={astro3}
+  rightImageAlt="Hotel Room"
+  rightTitle="Hotel Rooms"
+>
+  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+    <FeatureCard
+      title="Improve Guest Experience"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+    <FeatureCard
+      title="Enhance Room Service"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+  </div>
+</UseCaseSection>
+
+<!-- Hotel -->
+
+<UseCaseSection
+  bgColor="bg-gradient-to-br from-violet-400 to-rose-400"
+  title="Hospitals"
+  description="Astro-Menu is an all-in-one digital menu and cloud POS solution designed to help restaurants and cafés streamline operations, reduce costs, and deliver faster service. Customers can browse your up-to-date menu and place orders directly from their smartphones, cutting wait times and minimizing errors. The built-in cloud POS runs on any tablet, or computer, allowing you to add unlimited devices without the hardware restrictions, maintenance hassles, or costly yearly contracts of traditional POS systems. By keeping staff mobile and reducing unnecessary steps, Astro-Menu speeds up service, improves table turnover, and ensures your menu is always fresh, accurate, and engaging—helping you serve more guests with less effort."
+  leftImage={astro1}
+  leftImageAlt="Hospital"
+  rightImage={astro4}
+  rightImageAlt="Hospital"
+  rightTitle="Hospitals"
+>
+  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+    <FeatureCard
+      title="Reduce Nursing Overhead"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+    <FeatureCard
+      title="Enhance Patient Experience"
+      description="Reduce wait times and minimize errors with our digital menu."
+      icon={burgerIcon}
+    />
+  </div>
+</UseCaseSection>
