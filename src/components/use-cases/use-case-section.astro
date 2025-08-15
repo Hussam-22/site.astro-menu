@@ -36,7 +36,9 @@ const { bgColor } = Astro.props;
       class="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent via-transparent to-black/50"
     >
     </div>
-    <p class="bottom-4 left-4 absolute text-white text-4xl font-extrabold z-10">
+    <p
+      class="bottom-4 left-4 absolute text-white text-4xl font-extrabold z-10 capitalize"
+    >
       {Astro.props.rightTitle ?? Astro.props.title}
     </p>
   </div>

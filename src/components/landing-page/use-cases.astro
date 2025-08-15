@@ -4,13 +4,18 @@ import Carousel from "@ui/carousel.astro";
 import SectionHead from "@ui/section-head.astro";
 import UseCasesCard from "./use-cases-card.astro";
 
+import foodTruck from "@assets/images/use-cases/food-truck.webp";
+import hospital from "@assets/images/use-cases/hospital.webp";
+import hotel from "@assets/images/use-cases/hotel.webp";
+import restaurant from "@assets/images/use-cases/restaurant.webp";
+
 const TABS = [
   {
     name: "restaurant",
     label: "Restaurants & Cafes",
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/bar.svg",
-    imagePath: "/assets/images/use-cases/restaurant.webp",
+    imgComponent: restaurant,
     benefit: "30% increase in table turnover",
     description:
       "Discover how our digital menu enhances the dining experience in restaurants.",
@@ -23,7 +28,7 @@ const TABS = [
     label: "Food Truck",
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/food-truck.svg",
-    imagePath: "/assets/images/use-cases/food-truck.webp",
+    imgComponent: foodTruck,
     title: "Reduce the queue time, speed up the service",
     description:
       "Discover how astro-menu can help food trucks serve customers faster.",
@@ -36,7 +41,7 @@ const TABS = [
     label: "hospital",
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/hospital.svg",
-    imagePath: "/assets/images/use-cases/hospital.webp",
+    imgComponent: hospital,
     description:
       "Discover how our digital menu enhances the hospitality experience.",
     classList: "bg-base-200",
@@ -47,7 +52,7 @@ const TABS = [
     label: "Hotel",
     content: "src/components/landing-page/use-case-tab-content.astro",
     iconPath: "/icons/use-cases/hotel.svg",
-    imagePath: "/assets/images/use-cases/hotel.webp",
+    imgComponent: hotel,
     description: "Discover how our digital menu enhances the hotel experience.",
     classList: "bg-base-200",
     enabled: true,
@@ -75,4 +80,11 @@ const TABS = [
       ))
     }
   </Carousel>
+
+  <a
+    href="/use-cases"
+    class="bg-black text-white self-center mt-8 rounded-4xl px-4 py-1.5 text-xl font-bold"
+  >
+    Explore All Use Cases
+  </a>
 </Container>
