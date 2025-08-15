@@ -18,17 +18,16 @@ const menuitems = [
     path: "/pricing",
   },
   {
-    title: "Docs",
-    path: "/docs/welcome/introduction",
-  },
-
-  {
     title: "Blog",
     path: "/blog",
   },
   {
     title: "Contact",
     path: "/contact",
+  },
+  {
+    title: "Docs",
+    path: "/docs/welcome/introduction",
   },
 ];
 
@@ -133,20 +132,15 @@ const url = Astro.url.pathname;
             </>
           ))
         }
-        <li class="text-xl">
+        <hr class="border-neutral-300 border-dashed" />
+        <li class="text-xl my-2">
           <a
             href="https://app.astro-menu.com/login"
-            class="font-semibold text-emerald-400">Log in</a
+            class="font-bold text-orange-400">Log in</a
           >
         </li>
         <li>
-          <Link
-            href="/pricing"
-            class=""
-            class="mt-2 bg-emerald-400 text-xl text-black"
-          >
-            Get Started</Link
-          >
+          <Link href="/pricing" size="lg" class="w-fit">Try Now</Link>
         </li>
       </ul>
     </div>

@@ -30,9 +30,12 @@ import UseCaseSection from "./use-case-section.astro";
   leftImageAlt="Restaurant & Cafe"
   rightImage={astro1}
   rightImageAlt="Restaurant & Cafe"
-  rightTitle="Restaurants & Cafes"
+  rightTitle="reduce costs, and deliver faster service"
 >
-  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+  <div
+    slot="features"
+    class="flex flex-col md:flex-row justify-between gap-4 items-center"
+  >
     <FeatureCard
       title="Improve Tables Turnover"
       description="Speed up ordering and service."
@@ -55,9 +58,12 @@ import UseCaseSection from "./use-case-section.astro";
   leftImageAlt="Food Truck"
   rightImage={astro2}
   rightImageAlt="Food Truck"
-  rightTitle="Power Your Drive-Thru & Food-Truck Operations"
+  rightTitle="Improve queue time & service speed"
 >
-  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+  <div
+    slot="features"
+    class="flex flex-col md:flex-row justify-between gap-4 items-center"
+  >
     <FeatureCard
       title="Reduce Wait Times"
       description="Smooth out peaks. Cap the number of active orders per minute"
@@ -82,7 +88,10 @@ import UseCaseSection from "./use-case-section.astro";
   rightImageAlt="Hotel Room"
   rightTitle="faster service, fewer errors, and happier guests"
 >
-  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+  <div
+    slot="features"
+    class="flex flex-col md:flex-row justify-between gap-4 items-center"
+  >
     <FeatureCard
       title="Improve Guest Experience"
       description="Provide a seamless and enjoyable dining experience for hotel guests."
@@ -108,7 +117,10 @@ import UseCaseSection from "./use-case-section.astro";
   rightImageAlt="Hospital"
   rightTitle="Reduce paper waste & manual ordering"
 >
-  <div slot="features" class="flex flex-row justify-between gap-4 items-center">
+  <div
+    slot="features"
+    class="flex flex-col md:flex-row justify-between gap-4 items-center"
+  >
     <FeatureCard
       title="Reduce Nursing Overhead"
       description="Free up nursing staff to focus on patient care"
