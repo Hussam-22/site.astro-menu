@@ -17,25 +17,25 @@ const TESTIMONIALS = [
     logo: logo1,
   },
   {
-    owner: "Bissan A.",
+    owner: "Lana K.",
     business_name: "Flavor Fusion Kitchen",
     testimonial:
       "As a cloud kitchen with a constantly changing menu, we faced a major challenge: customers would often try to order dishes that were no longer available, leading to frustration and negative feedback. Implementing Astro-menu with live-updates has been a game-changer for our business.",
-    logo: logo2,
+    logo: logo4,
   },
   {
     owner: "Rani M.",
-    business_name: "The ABC Hotel",
+    business_name: "The Paradise Hotel",
     testimonial:
       "Since introducing Astro Menu in our hotel room service, ordering has never been faster. Guests simply scan the QR code, choose what they want, and the order goes straight to the kitchen-no more missed calls or wrong items. We've cut down on printing costs, reduced errors, and sped up service, all while giving guests a modern, hassle-free experience.",
-    logo: logo3,
+    logo: logo2,
   },
   {
     owner: "Dr. Hassan A.",
     business_name: "Clarity One-Day Surgery Clinic",
     testimonial:
       "In a one-day surgery setting, every detail matters for a smooth recovery. Before our digital meal selection system, nurses were often interrupted by patient meal requests, relying on error-prone paper menus. Now, frequent orders like coffee, water, or guest meals are served quickly, freeing staff to focus on what matters most: medical care",
-    logo: logo4,
+    logo: logo3,
   },
 ];
 ---
@@ -55,7 +55,7 @@ const TESTIMONIALS = [
           <Image
             src={testimonial.logo}
             alt={testimonial.owner}
-            class="w-36 h-36 rounded-4xl"
+            class="w-20 h-20 rounded-4xl"
           />
           <div>
             <h3 class="text-xl font-bold">{testimonial.business_name}</h3>
