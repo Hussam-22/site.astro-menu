@@ -3,7 +3,7 @@ interface Props {
   href: string;
   size?: "sm" | "md" | "lg";
   block?: boolean;
-  style?: "outline" | "primary" | "inverted" | "muted";
+  style?: "outline" | "primary" | "inverted" | "muted" | "dark";
   class?: string;
   [x: string]: any;
 }
@@ -25,9 +25,11 @@ const sizes = {
 
 const styles = {
   outline: "bg-white border-2 border-sky-600 hover:bg-gray-100 text-sky-600 ",
-  primary: "p-1 text-black font-bold rounded-4xl",
+  primary:
+    "p-1 text-black font-bold bg-gradient-to-br to-red-400 from-orange-400 text-white",
   inverted: "bg-white text-black border-2 border-transparent",
   muted: "bg-gray-100 hover:bg-gray-200 border-2 border-transparent",
+  dark: "bg-black text-white",
 };
 ---
 
@@ -35,7 +37,7 @@ const styles = {
   href={href}
   {...rest}
   class:list={[
-    "rounded-4xl bg-gradient-to-br to-red-400 from-orange-400 text-white text-center capitalize",
+    "rounded-4xl font-bold  text-center capitalize whitespace-nowrap",
     block && "w-full",
     sizes[size],
     styles[style],
