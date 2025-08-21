@@ -1,82 +1,100 @@
 ---
-import PhoneMockup from '@components/ui/phone-mockup.astro'
-import CheckMark from '@components/ui/icons/check.astro'
-import CrossMark from '@components/ui/icons/cross.astro'
-import oldMenu from 'assets/old-menu.png'
-import menuPreview from 'assets/views/menu-preview.webp'
-import SectionCard from '@components/ui/section-card.astro'
-import AstroMenuQrCode from '@components/astro-menu-qr-code.astro'
+import qrCodeIcon from "@assets/icons/qr-code-white.svg";
+import Container from "@components/container.astro";
+import CheckMark from "@ui/icons/check.astro";
+import CrossMark from "@ui/icons/cross.astro";
+import Link from "@ui/link.astro";
+import PhoneMockup from "@ui/phone-mockup.astro";
+import SectionHead from "@ui/section-head.astro";
+import oldMenu from "assets/old-menu.png";
+import menuPreview from "assets/views/menu-preview.webp";
+import { Image } from "astro:assets";
 
 const GOOD = [
-	'Dynamic Interactive Menu',
-	'Mobile Friendly Design',
-	'Multi Language',
-	'Meals Filtering',
-	'Menu Navigation',
-	'Order Cart and Summary',
-	'Restaurant Landing Page',
-	'Show Wifi Password',
-	'Fast Loading Menu',
-	'Social Links'
-]
+  "Dynamic Interactive Menu",
+  "Mobile Friendly Design",
+  "Multi Language",
+  "Meals Filtering",
+  "Menu Navigation",
+  "Order Cart and Summary",
+  "Restaurant Landing Page",
+  "Show Wifi Password",
+  "Fast Loading Menu",
+  "Social Links",
+];
 
 const BAD = [
-	'Static and Unresponsive Menu',
-	'Zooming In and Out Required',
-	'Non-Mobile Friendly Design',
-	'Unattractive Appearance',
-	'Single Language Support',
-	'No Order Cart or Summary',
-	'Slow Loading Times'
-]
+  "Static and Unresponsive Menu",
+  "Zooming In and Out Required",
+  "Non-Mobile Friendly Design",
+  "Unattractive Appearance",
+  "Single Language Support",
+  "No Order Cart or Summary",
+  "Slow Loading Times",
+];
 ---
 
-<section class="">
-	<div class="text-center text-white">
-		<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">Astro-Menu vs Regular Menus</h2>
-		<p class="mt-4 text-lg">Why Astro-Menu is the best choice for your food business</p>
-	</div>
+<Container class="flex flex-col justify-center">
+  <SectionHead
+    title="Astro-Menu vs Regular Menus"
+    description="Why Astro-Menu is the best choice for your food business"
+    classList="text-center self-center"
+  />
 
-	<SectionCard
-		bgColor="bg-zinc-800 sm:px-8"
-		sx="mt-16 py-16 text-white bg-[url('/assets/backgrounds/bg-blur-white.svg')] bg-cover sm:bg-contain bg-center bg-no-repeat"
-	>
-		<div class="flex flex-col items-center justify-between gap-10 lg:flex-row">
-			<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-				<div class="text-xl leading-7">
-					{
-						GOOD.map((item) => (
-							<div class="flex items-center gap-2">
-								<CheckMark class="h-4 w-4" />
-								<p class="text-md whitespace-nowrap leading-8">{item}</p>
-							</div>
-						))
-					}
-				</div>
-				<PhoneMockup imgSrc={menuPreview} text="Astro-Menu" />
-			</div>
+  <div class="flex flex-col items-center justify-between gap-10 lg:flex-row">
+    <div
+      class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2"
+    >
+      <div class="text-xl leading-7">
+        {
+          GOOD.map((item) => (
+            <div class="flex items-center gap-2">
+              <CheckMark class="h-4 w-4" />
+              <p class="text-md whitespace-nowrap leading-8 font-semibold">
+                {item}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+      <PhoneMockup imgSrc={menuPreview} text="Astro-Menu" />
+    </div>
 
-			<div class="flex flex-row items-center justify-center lg:flex-col">
-				<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
-				<span class="px-2 text-lg font-medium lg:py-2">vs</span>
-				<span class="h-1 w-32 bg-gray-200 lg:h-32 lg:w-1"></span>
-			</div>
+    <div class="flex flex-row items-center justify-center lg:flex-col">
+      <span class="h-1 w-32 bg-orange-400 lg:h-32 lg:w-1 rounded-full"></span>
+      <span class="px-2 text-lg font-medium lg:py-2">vs</span>
+      <span class="h-1 w-32 bg-orange-400 lg:h-32 lg:w-1 rounded-full"></span>
+    </div>
 
-			<div class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2">
-				<PhoneMockup imgSrc={oldMenu} text="Other Menus" />
-				<div class="text-left text-xl">
-					{
-						BAD.map((item) => (
-							<div class="flex items-center gap-2">
-								<CrossMark class="h-4 w-4" />
-								<p class="text-md whitespace-nowrap leading-8">{item}</p>
-							</div>
-						))
-					}
-				</div>
-			</div>
-		</div>
-	</SectionCard>
-
-	<AstroMenuQrCode />
-</section>
+    <div
+      class="flex w-full flex-col items-center justify-around gap-10 sm:flex-row sm:gap-2"
+    >
+      <PhoneMockup imgSrc={oldMenu} text="Other Menus" />
+      <div class="text-left text-xl">
+        {
+          BAD.map((item) => (
+            <div class="flex items-center gap-2">
+              <CrossMark class="h-4 w-4" />
+              <p class="text-md whitespace-nowrap leading-8 font-semibold">
+                {item}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 p-4 bg-base-200 rounded-4xl w-fit self-center"
+  >
+    <Link href="/pricing" class="self-center">Create Your Menu Now</Link>
+    <Link
+      href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
+      class="bg-gradient-to-br from-violet-500 to-sky-500 w-full sm:w-fit flex flex-row gap-2 items-center"
+      target="_blank"
+    >
+      <Image src={qrCodeIcon} alt="qr-code-icon" class="w-8 h-8" />
+      See Live Demo Menu</Link
+    >
+  </div>
+</Container>

@@ -1,39 +1,43 @@
 ---
 draft: false
-title: 'Social QR'
+title: "Social QR"
 snippet: Perfect for sharing on social media or displaying on your front window
-icon: 'introduction'
-image: { src: '/assets/docs/general/dynamic-qr-code-menu.png', alt: 'Dynamic QR code menu' }
-publishDate: '2024-11-12 02:24'
-category: 'branches'
-author: 'Astro-Menu'
+icon: "introduction"
+image:
+  {
+    src: "/assets/docs/general/dynamic-qr-code-menu.png",
+    alt: "Dynamic QR code menu",
+  }
+publishDate: "2024-11-12 02:24"
+category: "branches"
+author: "Astro-Menu"
 tags: [All Plans]
 order: 2.3
 path: /docs/general/
 ---
 
-import FeatureLink from '@components/ui/feature-link.astro'
-import { Image } from 'astro:assets'
-import BulbSvg from 'assets/icons/bulb.svg'
+import FeatureLink from "@ui/feature-link.astro";
+import BulbSvg from "assets/icons/bulb.svg";
+import { Image } from "astro:assets";
 
 The Social QR code is specifically designed for sharing on your social media accounts or displaying on your front window, allowing you to showcase your menu to a broader audience.
 
 While it is technically possible to use the Social QR code at tables, doing so means missing out on many features that come integrated with the <FeatureLink link='/docs/branches/tables-qr' text='Tables QR' />. These features are tailored to optimize and simplify ordering processes. Additionally.
 
 <span class="text-red-500">
-	Note that the Social QR code has a monthly scan limit of 3 million, ensuring compliance with our
-	fair usage policy.
+  Note that the Social QR code has a monthly scan limit of 3 million, ensuring
+  compliance with our fair usage policy.
 </span>
 
 <div class="my-4 rounded-xl bg-zinc-800 px-6 pb-1 pt-4 text-zinc-300">
-	<div class="flex h-6 flex-row items-center gap-1">
-		<Image src={BulbSvg} alt="Tip icon" class="h-6 w-6" />
-		<p class="font-semibold">Tip:</p>
-	</div>
-	<p class="-mt-3">
-		You can assign different menus with unique sets of meals to your Social QR code different from
-		the one set to your tables QR.
-	</p>
+  <div class="flex h-6 flex-row items-center gap-1">
+    <Image src={BulbSvg} alt="Tip icon" class="h-6 w-6" />
+    <p class="font-semibold">Tip:</p>
+  </div>
+  <p class="-mt-3">
+    You can assign different menus with unique sets of meals to your Social QR
+    code different from the one set to your tables QR.
+  </p>
 </div>
 
 #### Meals Availability Settings

@@ -1,136 +1,54 @@
 ---
-import PhoneMockup from '@components/ui/phone-mockup.astro'
-import astroMenuPhone from 'assets/views/menu-view.png'
-import waitStaffDashboard from 'assets/views/waitstaff-dashboard.png'
-import TabletMockup from '@components/ui/tablet-mockup.astro'
-import SectionCard from '@components/ui/section-card.astro'
-import Link from '@components/ui/link.astro'
+import Container from "@components/container.astro";
+import Link from "@ui/link.astro";
+import PhoneMockup from "@ui/phone-mockup.astro";
+import TabletMockup from "@ui/tablet-mockup.astro";
+import astroMenuPhone from "assets/views/menu-preview.webp";
+import waitStaffDashboard from "assets/views/waitstaff-dashboard.png";
+import Image from "astro/components/Image.astro";
+import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
 ---
 
-<style>
-	.input-wrapper {
-		display: block;
-		position: relative;
-	}
+<Container>
+  <div class="grid sm:grid-cols-2 gap-4 relative px-2 pt-16 sm:pt-44 pb-16">
+    <Image
+      src={backgroundColorImage}
+      alt="Background Blur"
+      class="w-full h-full object-cover bg-center opacity-75 blur-3xl absolute rounded-4xl z-0"
+      loading="eager"
+    />
+    <div
+      class="flex flex-col justify-center gap-2 z-10 mb-8 sm:mb-0 text-center sm:text-left sm:max-w-10/12"
+    >
+      <h1 class="text-6xl font-extrabold">
+        Digital Menus for <span
+          class="bg-linear-to-r from-purple-500 via-red-500 to-orange-500 bg-clip-text text-transparent"
+          >Rooms, Trucks, Tables,</span
+        > and More.
+      </h1>
 
-	.input-wrapper > input {
-		display: block;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		width: 100%;
-		background-color: transparent;
-		border: none;
-		outline: none;
-	}
+      <h2 class="mb-4 text-xl">
+        From restaurants to hotel rooms, Astro Menu is built for every food
+        business.
+      </h2>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <Link href="/pricing" size="lg">Start for Free</Link>
+        <p class="text-sm">14 Days Free Trial. No credit card required.</p>
+      </div>
+    </div>
 
-	.input-wrapper > .placeholder {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		pointer-events: none;
-		white-space: nowrap;
-		overflow: hidden;
-		animation: typing 2s steps(22, end) infinite;
-		transform: translateX(-50%);
-	}
-
-	@keyframes typing {
-		0% {
-			width: 0;
-		}
-		25% {
-			width: 100%;
-			/* Width for 'Restaurant' */
-		}
-		50% {
-			width: 100%;
-			/* Width for 'Coffee Shop' */
-		}
-		75% {
-			width: 100%;
-			/* Width for 'Social Media' */
-		}
-		100% {
-			width: 100%;
-			/* Width for 'Food Business' */
-		}
-	}
-
-	/* Text content for multiple strings */
-	.input-wrapper > .placeholder::after {
-		content: 'Restaurant';
-		animation: text-cycle 8s steps(1) infinite;
-	}
-
-	@keyframes text-cycle {
-		0% {
-			content: 'Restaurant';
-			color: #f97316;
-		}
-		25% {
-			content: 'Coffee Shop';
-			color: #22c55e;
-		}
-		50% {
-			content: 'Social Media';
-			color: #06b6d4;
-		}
-		75% {
-			content: 'Food Business';
-			color: #a855f7;
-		}
-		100% {
-			content: 'Restaurant';
-			color: #f97316;
-		}
-	}
-</style>
-
-<main>
-	<SectionCard bgColor="bg-white px-4 sm:pb-16 pb-10 text-center">
-		<div class="mx-auto sm:max-w-[75%]">
-			<div class="flex flex-col gap-2 pt-10">
-				<h1
-					class="whitespace-nowrap text-[2.25rem] font-extrabold leading-none tracking-tighter text-zinc-300 sm:text-8xl"
-				>
-					Revolutionize your
-				</h1>
-				<div
-					class="input-wrapper inline-block text-[2.25rem] font-extrabold capitalize leading-none tracking-tighter sm:text-8xl"
-				>
-					<div class="placeholder"></div>
-					<br />
-				</div>
-				<h1 class="text-[2.25rem] font-extrabold leading-none tracking-tighter sm:text-8xl">
-					<span class="text-zinc-300">with</span> Astro-Menu
-				</h1>
-			</div>
-
-			<h2 class="mb-2 mt-4 text-lg font-semibold sm:mt-8 sm:text-3xl">
-				Modern, Effortless, Deliciously Digital
-			</h2>
-			<p class="mb-10">
-				Empower your food business with our cutting-edge QR menu and cloud POS solution. Seamlessly
-				integrate ordering and kitchen management, all in one sleek, digital platform.
-			</p>
-			<Link href="/pricing" size="lg" class="whitespace-nowrap bg-green-400 text-black">
-				Get Started</Link
-			>
-
-			<div class="mt-14 flex flex-col items-center sm:relative sm:mt-20">
-				<PhoneMockup
-					className="z-10 sm:absolute sm:-bottom-10 sm:left-10"
-					imgSrc={astroMenuPhone}
-					text="Menu View"
-					isEager={true}
-				/>
-				<TabletMockup
-					className="invisible hidden flex-col sm:visible sm:flex"
-					imgSrc={waitStaffDashboard}
-					text="Waitstaff Dashboard"
-				/>
-			</div>
-		</div>
-	</SectionCard>
-</main>
+    <div class="flex flex-col items-center relative">
+      <PhoneMockup
+        className="sm:absolute sm:-top-6 sm:right-20 z-10"
+        imgSrc={astroMenuPhone}
+        text="Menu View"
+        isEager={true}
+      />
+      <TabletMockup
+        className="absolute -top-24 right-0 hidden sm:block"
+        imgSrc={waitStaffDashboard}
+        text="Waitstaff Dashboard"
+      />
+    </div>
+  </div>
+</Container>

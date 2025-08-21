@@ -1,64 +1,60 @@
 ---
-import SectionCard from '@components/ui/section-card.astro'
-
 const FAQs = [
-	{
-		question: 'Can I try Astro-Menu before I buy?',
-		answer:
-			'Yes, you can try Astro-Menu for free for 14 days. simply create an account and start using Astro-Menu right away.'
-	},
-	{
-		question: 'Can I cancel my subscription at any time?',
-		answer:
-			'Yes, you can cancel your subscription at any time. Your subscription will be active until the end of the billing cycle.'
-	},
-	{
-		question: 'Does Astro-Menu integrates with PoS systems?',
-		answer:
-			'No, Astro-Menu comes with its own cloud PoS system, you can manage your orders and statistics directly from your Astro-Menu account.'
-	},
-	{
-		question: 'What is self-order?',
-		answer:
-			'Self-order allows customers to place orders directly from their phones without the need for a waiter(ess) to attend the table, allowing customers to order at their own pace and convenience, and improve the table turnover rate.'
-	},
-	{
-		question: 'Can customers pay directly from the menu?',
-		answer:
-			'No, Astro-Menu is a QR Menu that allows customers to view your menu and place orders. Payments are managed by you.'
-	},
-	{
-		question: 'How I can add more branches to my subscription',
-		answer: `Please contact our sales team on hello@astro-menu.com and they will help you add more branches to your subscription.`
-	},
-	{
-		question: 'Do I need to install any software to use Astro-Menu?',
-		answer:
-			"Astro-Menu is a cloud web-based application. You don't need to install any software to use it. You can access it from any device with a web browser."
-	}
-]
+  {
+    question: "Can I try Astro-Menu before I buy?",
+    answer:
+      "Yes, you can try Astro-Menu for free for 14 days. simply create an account and start using Astro-Menu right away.",
+  },
+  {
+    question: "Can I cancel my subscription at any time?",
+    answer:
+      "Yes, you can cancel your subscription at any time. Your subscription will be active until the end of the billing cycle.",
+  },
+  {
+    question: "Does Astro-Menu integrates with PoS systems?",
+    answer:
+      "No, Astro-Menu comes with its own cloud PoS system, you can manage your orders and statistics directly from your Astro-Menu account.",
+  },
+  {
+    question: "What is self-order?",
+    answer:
+      "Self-order allows customers to place orders directly from their phones without the need for a waiter(ess) to attend the table, allowing customers to order at their own pace and convenience, and improve the table turnover rate.",
+  },
+  {
+    question: "Can customers pay directly from the menu?",
+    answer:
+      "No, Astro-Menu is a QR Menu that allows customers to view your menu and place orders. Payments are managed by you.",
+  },
+  {
+    question: "How I can add more branches to my subscription",
+    answer: `Please contact our sales team on hello@astro-menu.com and they will help you add more branches to your subscription.`,
+  },
+  {
+    question: "Do I need to install any software to use Astro-Menu?",
+    answer:
+      "Astro-Menu is a cloud web-based application. You don't need to install any software to use it. You can access it from any device with a web browser.",
+  },
+];
 ---
 
 <section class="sm:mx-auto sm:w-2/3">
-	<SectionCard>
-		<div class="mb-16 text-center">
-			<h2 class="text-4xl font-bold text-white lg:text-5xl lg:tracking-tight">
-				Frequently asked questions
-			</h2>
-		</div>
+  <div class="mb-16 text-center">
+    <h2 class="text-4xl font-bold text-white lg:text-5xl lg:tracking-tight">
+      Frequently asked questions
+    </h2>
+  </div>
 
-		{
-			FAQs.map((faq) => (
-				<div class="collapse mb-2">
-					<input type="radio" name="my-accordion-3" />
-					<div class="rounded-xxl collapse-title bg-white px-8 text-xl font-semibold">
-						{faq.question}
-					</div>
-					<div class="collapse-content -mt-6 mb-1 rounded-[0_0_50px_50px] bg-black">
-						<p class="px-6 pb-2 pt-8 text-lg text-white">{faq.answer}</p>
-					</div>
-				</div>
-			))
-		}
-	</SectionCard>
+  {
+    FAQs.map((faq) => (
+      <div class="collapse mb-2">
+        <input type="radio" name="my-accordion-3" />
+        <div class="rounded-4xl collapse-title bg-white px-8 text-xl font-semibold">
+          {faq.question}
+        </div>
+        <div class="collapse-content -mt-6 mb-1 rounded-[0_0_50px_50px] bg-black">
+          <p class="px-6 pb-2 pt-8 text-lg text-white">{faq.answer}</p>
+        </div>
+      </div>
+    ))
+  }
 </section>

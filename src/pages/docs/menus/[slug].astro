@@ -1,28 +1,23 @@
 ---
-import { getCollection } from 'astro:content'
-import type { GetStaticPaths } from 'astro'
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import { Debug } from 'astro:components'
-import Link from '@components/ui/link.astro'
-import FeaturesLayout from '@layouts/FeaturesLayout.astro'
+import FeaturesLayout from "@layouts/FeaturesLayout.astro";
+import { getCollection } from "astro:content";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
-	const featuresEntries = await getCollection('docs')
+  const featuresEntries = await getCollection("docs");
 
-	return featuresEntries
-		.filter((entry) => entry.slug.includes('menus/'))
-		.map((entry) => ({
-			params: { slug: entry.slug.substring(6) },
+  return featuresEntries
+    .filter((entry) => entry.slug.includes("menus/"))
+    .map((entry) => ({
+      params: { slug: entry.slug.substring(6) },
 
-			props: { entry }
-		}))
+      props: { entry },
+    }));
 }
 
 // Get the entry directly from the prop on render
-const { entry } = Astro.props
-const { Content } = await entry.render()
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
 
 <FeaturesLayout title={entry.data.title} content={Content} entry={entry} />

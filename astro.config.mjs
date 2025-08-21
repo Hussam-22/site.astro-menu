@@ -1,16 +1,18 @@
-import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
-import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
-import icon from 'astro-icon'
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
 
-import react from '@astrojs/react'
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://astro-menu.com',
-	integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
-	server: {
-		host: true
-	}
-})
+  site: "https://astro-menu.com",
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [mdx(), sitemap(), react()],
+  server: {
+    host: true,
+  },
+});

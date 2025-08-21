@@ -1,117 +1,131 @@
 ---
-import Container from '@components/container.astro'
-import { getFormattedDate } from '@utils/all'
-import Layout from './Layout.astro'
-import { getCollection } from 'astro:content'
-import OpenFeaturesListButton from '@components/ui/open-features-list-button.astro'
+import Container from "@components/container.astro";
+import OpenFeaturesListButton from "@ui/open-features-list-button.astro";
+import { getCollection } from "astro:content";
+import Layout from "./Layout.astro";
 
 // Filter blog entries with 'draft: false' & date before current date
-const featuresEntries = await getCollection('docs', ({ data }) => {
-	return !data.draft && data.publishDate < new Date()
-})
+const featuresEntries = await getCollection("docs", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
 
 // Sort content entries by publication date
 featuresEntries.sort(function (a, b) {
-	return a.data.order.valueOf() - b.data.order.valueOf()
-})
+  return a.data.order.valueOf() - b.data.order.valueOf();
+});
 
-const collectionsTitles = [...new Set(featuresEntries.map((entry) => entry.data.category))]
-const url = Astro.url.pathname
+const collectionsTitles = [
+  ...new Set(featuresEntries.map((entry) => entry.data.category)),
+];
+const url = Astro.url.pathname;
 
-const { content: Content, entry } = Astro.props
+const { content: Content, entry } = Astro.props;
 ---
 
 <Layout title="Docs">
-	<Container class="relative">
-		<OpenFeaturesListButton />
-		<main>
-			<div class="drawer sm:drawer-open">
-				<input id="my-drawer" type="checkbox" class="drawer-toggle" />
+  <Container class="relative">
+    <OpenFeaturesListButton />
+    <main class="mt-18 sm:mt-0">
+      <div class="drawer sm:drawer-open">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
-				<div class="drawer-content">
-					<div class="flex w-full flex-col rounded-3xl bg-zinc-900 px-4 py-6 sm:ml-4 sm:py-8">
-						<!-- <OpenFeaturesListButton /> -->
-						<div class="max-w-1xl my-2">
-							<div class="flex flex-col justify-between gap-1 sm:flex-row sm:items-center">
-								<div class="flex flex-row items-center gap-2 text-sm">
-									<p class="text-zinc-400 hover:text-zinc-400" style="text">Features</p>
-									<div class="text-zinc-400">/</div>
-									<p class="capitalize text-zinc-400">
-										{entry.data.category}
-									</p>
-									<div class="text-zinc-400">/</div>
-									<p class="capitalize text-zinc-400">
-										{entry.data.title}
-									</p>
-								</div>
-								<time class="text-xs text-zinc-400" datetime={entry.data.publishDate.toISOString()}>
-									Last updated: {entry.data.publishDate.toDateString()}
-								</time>
-							</div>
-							<h1
-								class="mt-1 text-4xl font-bold capitalize text-white lg:text-5xl lg:leading-tight lg:tracking-tight"
-							>
-								{entry.data.title}
-							</h1>
-							<div class="mt-2 flex w-full flex-wrap gap-3 md:w-auto">
-								<p class="text-purple-400">Applicable Plans:</p>
-								{
-									entry.data.tags.map((tag) => (
-										<span class="rounded-xxl bg-zinc-800 px-2 py-1 text-xs font-semibold capitalize text-white">
-											{tag}
-										</span>
-									))
-								}
-							</div>
-						</div>
+        <div class="drawer-content">
+          <div
+            class="flex w-full flex-col rounded-4xl bg-base-200 px-4 py-6 sm:ml-4 sm:py-8"
+          >
+            <!-- <OpenFeaturesListButton /> -->
+            <div class="w-full my-2">
+              <div
+                class="flex flex-col justify-between gap-1 sm:flex-row sm:items-center"
+              >
+                <div class="flex flex-row items-center gap-2 text-sm">
+                  <p class="" style="text">Features</p>
+                  <div class="">/</div>
+                  <p class="capitalize">
+                    {entry.data.category}
+                  </p>
+                  <div class="">/</div>
+                  <p class="capitalize">
+                    {entry.data.title}
+                  </p>
+                </div>
+                <time
+                  class="text-xs"
+                  datetime={entry.data.publishDate.toISOString()}
+                >
+                  Last updated: {entry.data.publishDate.toDateString()}
+                </time>
+              </div>
+              <h1
+                class="mt-1 text-4xl font-bold capitalize lg:text-5xl lg:leading-tight lg:tracking-tight"
+              >
+                {entry.data.title}
+              </h1>
+              <div class="mt-2 flex w-full flex-wrap gap-3 md:w-auto">
+                <p class="">Applicable Plans:</p>
+                {
+                  entry.data.tags.map((tag) => (
+                    <span class="rounded-4xl bg-orange-300 px-2 py-1 text-xs font-semibold capitalize">
+                      {tag}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
 
-						<hr class="border-dashed border-zinc-700" />
+            <hr class="border-dashed border-neutral-300" />
 
-						<article class="prose prose-base my-4 rounded-xl px-6 py-3">
-							<Content />
-						</article>
+            <article class="prose-base my-4 rounded-xl px-6 py-3">
+              <Content />
+            </article>
 
-						<hr class="my-4 border-dashed border-zinc-700" />
-						<p class="text-sm text-zinc-400">
-							If you find a mistake in the documentation or If you need further assistance, please
-							contact us on <a href="mailto:hello@astro-menu.com" class="text-orange-400 underline"
-								>hello@astro-menu.com</a
-							>
-						</p>
-					</div>
-				</div>
+            <hr class="my-4 border-dashed border-neutral-300" />
+            <p class="text-sm">
+              If you find a mistake in the documentation or If you need further
+              assistance, please contact us on <a
+                href="mailto:hello@astro-menu.com"
+                class="text-orange-400 underline">hello@astro-menu.com</a
+              >
+            </p>
+          </div>
+        </div>
 
-				<div class="drawer-side z-20">
-					<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-					<ul class="menu rounded-3xl bg-zinc-900 py-4 text-white">
-						{
-							collectionsTitles.map((collection) => (
-								<li>
-									<h2 class="menu-title capitalize  text-green-500">{collection}</h2>
-									<ul>
-										{featuresEntries
-											.filter((entry) => entry.data.category === collection)
-											.map((featureEntry) => (
-												<li>
-													<a
-														href={`/docs/${featureEntry.slug}`}
-														class={
-															url === `/docs/${featureEntry.slug}`
-																? 'menu-title flex items-center rounded-2xl bg-zinc-600 capitalize text-white hover:text-white'
-																: 'menu-title flex items-center capitalize text-white hover:text-zinc-500'
-														}
-													>
-														{featureEntry.data.title}
-													</a>
-												</li>
-											))}
-									</ul>
-								</li>
-							))
-						}
-					</ul>
-				</div>
-			</div>
-		</main>
-	</Container>
+        <div class="drawer-side z-20">
+          <label
+            for="my-drawer"
+            aria-label="close sidebar"
+            class="drawer-overlay"></label>
+          <ul class="menu rounded-4xl bg-base-200 py-4">
+            {
+              collectionsTitles.map((collection) => (
+                <li>
+                  <h2 class="menu-title capitalize  text-orange-400">
+                    {collection}
+                  </h2>
+                  <ul>
+                    {featuresEntries
+                      .filter((entry) => entry.data.category === collection)
+                      .map((featureEntry) => (
+                        <li>
+                          <a
+                            href={`/docs/${featureEntry.slug}`}
+                            class={
+                              url === `/docs/${featureEntry.slug}`
+                                ? "menu-title flex items-center rounded-2xl bg-base-300 capitalize text-black"
+                                : "menu-title text-black flex items-center capitalize hover:text-orange-400"
+                            }
+                          >
+                            {featureEntry.data.title}
+                          </a>
+                        </li>
+                      ))}
+                  </ul>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </main>
+  </Container>
 </Layout>

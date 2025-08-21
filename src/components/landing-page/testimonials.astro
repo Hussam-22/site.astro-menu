@@ -1,0 +1,89 @@
+---
+import Container from "@components/container.astro";
+import Carousel from "@ui/carousel.astro";
+import SectionHead from "@ui/section-head.astro";
+import logo1 from "assets/images/logos/logo-1.webp";
+import logo2 from "assets/images/logos/logo-2.webp";
+import logo3 from "assets/images/logos/logo-3.webp";
+import logo4 from "assets/images/logos/logo-4.webp";
+import Image from "astro/components/Image.astro";
+
+const TESTIMONIALS = [
+  {
+    owner: "Ahmed S.",
+    business_name: "The ACAI House Cafe",
+    testimonial:
+      "The implementation of a QR menu system has been a game-changer for The Acai House Cafe's drive-thru. Before this, our staff often felt overwhelmed, especially during peak hours, trying to take orders accurately and quickly. The line of cars would grow, and we could feel the stress from both our employees and our customers. We knew we had to find a better way to operate.",
+    logo: logo1,
+  },
+  {
+    owner: "Lana K.",
+    business_name: "Flavor Fusion Kitchen",
+    testimonial:
+      "As a cloud kitchen with a constantly changing menu, we faced a major challenge: customers would often try to order dishes that were no longer available, leading to frustration and negative feedback. Implementing Astro-menu with live-updates has been a game-changer for our business.",
+    logo: logo4,
+  },
+  {
+    owner: "Rani M.",
+    business_name: "The Paradise Hotel",
+    testimonial:
+      "Since introducing Astro Menu in our hotel room service, ordering has never been faster. Guests simply scan the QR code, choose what they want, and the order goes straight to the kitchen-no more missed calls or wrong items. We've cut down on printing costs, reduced errors, and sped up service, all while giving guests a modern, hassle-free experience.",
+    logo: logo2,
+  },
+  {
+    owner: "Dr. Hassan A.",
+    business_name: "Clarity One-Day Surgery Clinic",
+    testimonial:
+      "In a one-day surgery setting, every detail matters for a smooth recovery. Before our digital meal selection system, nurses were often interrupted by patient meal requests, relying on error-prone paper menus. Now, frequent orders like coffee, water, or guest meals are served quickly, freeing staff to focus on what matters most: medical care",
+    logo: logo3,
+  },
+];
+---
+
+<Container class="sm:flex sm:flex-col sm:items-center">
+  <SectionHead
+    title="what our customers say"
+    classList="text-center self-center"
+  />
+  <div class="mt-8 grid-cols-4 gap-4 hidden sm:grid">
+    {
+      TESTIMONIALS.map((testimonial) => (
+        <div
+          id={testimonial.owner}
+          class="rounded-4xl bg-base-200 px-4 py-5 flex flex-col gap-2"
+        >
+          <Image
+            src={testimonial.logo}
+            alt={testimonial.owner}
+            class="w-20 h-20 rounded-4xl"
+          />
+          <div>
+            <h3 class="text-xl font-bold">{testimonial.business_name}</h3>
+            <p class="mt-0 font-light">{testimonial.owner}</p>
+          </div>
+          <p class="">{testimonial.testimonial}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <Carousel length={TESTIMONIALS.length} name="testimonials">
+    {
+      TESTIMONIALS.map((testimonial, index) => (
+        <div
+          class="flex flex-col gap-2 p-4 bg-base-200 border-2 border-black rounded-4xl w-[90%] flex-shrink-0 snap-center carousel-item-card"
+          id={`testimonial-item-${index}`}
+        >
+          <Image
+            src={testimonial.logo}
+            alt={testimonial.owner}
+            class="w-36 h-36 rounded-4xl"
+          />
+          <p class="text-xl font-bold">{testimonial.business_name}</p>
+          <p class="font-light">{testimonial.owner}</p>
+          <p class="">{testimonial.testimonial}</p>
+        </div>
+      ))
+    }
+  </Carousel>
+</Container>

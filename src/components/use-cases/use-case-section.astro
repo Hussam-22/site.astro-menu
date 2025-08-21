@@ -1,0 +1,56 @@
+---
+// Abstract use-case section component for reuse
+import { Image } from "astro:assets";
+
+const { bgColor } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex flex-col-reverse md:flex-row w-full gap-2 p-2 rounded-2xl",
+    bgColor,
+  ]}
+>
+  <div
+    class="w-full md:max-w-8/12 rounded-2xl grid grid-cols-1 md:grid-cols-12 gap-2"
+  >
+    <div class="w-full col-span-12 bg-white rounded-2xl p-4 md:p-6 h-full">
+      <p class="text-3xl md:text-6xl font-extrabold mb-2 capitalize">
+        {Astro.props.title}
+      </p>
+      <p class="text-base md:text-lg">{Astro.props.description}</p>
+    </div>
+    <div class="w-full flex flex-col md:flex-row gap-2 col-span-12">
+      <div
+        class="bg-white h-full rounded-2xl p-3 w-full md:max-w-9/12 mb-2 md:mb-0"
+      >
+        <slot name="features" />
+      </div>
+      <div
+        class="col-span-4 w-full md:max-w-3/12 h-full rounded-2xl hidden md:block"
+      >
+        <Image
+          src={Astro.props.leftImage}
+          alt={Astro.props.leftImageAlt ?? Astro.props.title}
+          class="w-full h-full rounded-2xl object-cover"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="w-full md:max-w-4/12 rounded-2xl relative mt-2 md:mt-0 h-auto">
+    <Image
+      src={Astro.props.rightImage}
+      alt={Astro.props.rightImageAlt ?? Astro.props.title}
+      class="w-full h-full rounded-2xl object-cover"
+    />
+    <div
+      class="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent via-transparent to-black/50"
+    >
+    </div>
+    <p
+      class="bottom-2 left-2 md:bottom-4 md:left-4 absolute text-white text-4xl font-extrabold z-10 capitalize"
+    >
+      {Astro.props.rightTitle ?? Astro.props.title}
+    </p>
+  </div>
+</div>

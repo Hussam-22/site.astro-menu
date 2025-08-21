@@ -1,40 +1,18 @@
 ---
-import astroQr from 'assets/astro-menu-qr.svg'
-import { Image } from 'astro:assets'
-
-const { footer = false } = Astro.props
+import Container from "./container.astro";
 ---
 
-<div
-	class:list={[
-		"rounded-xxl flex items-center justify-center bg-[url('/assets/backgrounds/bg-blur-multi.svg')] bg-cover bg-center bg-no-repeat  text-center ",
-		footer ? 'flex-col' : 'mt-8 flex-col gap-8 pt-4 sm:flex-row'
-	]}
->
-	<div class="text-white">
-		{!footer && <p class="text-xl">Need a sneak-peak ?</p>}
-		<h2
-			class:list={[
-				'px-4  font-bold ',
-				footer ? 'text-2xl sm:text-xl' : 'text-4xl sm:text-5xl sm:tracking-tight'
-			]}
-		>
-			Scan QR Code for live Demo Menu
-		</h2>
-	</div>
-	<div class="py-4">
-		<Image
-			src={astroQr}
-			alt="QR code for Astro-Menu"
-			class="mb-4 rounded-lg"
-			loading="lazy"
-			width={200}
-			height={100}
-		/>
-		<a
-			href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
-			class="text-white underline"
-			target="_blank">View Astro Menu Demo</a
-		>
-	</div>
-</div>
+<Container class:list={["my-8"]}>
+  <div
+    class="flex flex-row items-center justify-center gap-2 bg-base-300 border-neutral-400 border rounded-4xl p-2 text-center animate-pulse"
+  >
+    <h2 class="text-xl font-bold">Demo Menu</h2>
+    <a
+      href="https://menu.astro-menu.com/qr-menu/?businessProfileID=V1iYvft42Rd19Gx2swCo&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0"
+      target="_blank"
+      class="text-md bg-black text-white px-2 py-1 rounded-4xl font-bold hover:bg-emerald-600 transition-colors duration-300 ease-in-out capitalize"
+    >
+      Click here</a
+    >
+  </div>
+</Container>

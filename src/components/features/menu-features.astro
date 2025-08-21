@@ -1,0 +1,150 @@
+---
+import callWaiterMobileView from "@assets/images/mockups/call-waiter-menu-view.png";
+import googleReviewMobileView from "@assets/images/mockups/google-review-menu-view.png";
+import homePageMobileView from "@assets/images/mockups/home-page-menu-view.png";
+import mealsFilterMobileView from "@assets/images/mockups/meals-filter-menu-view.png";
+import multiLanguageMobileView from "@assets/images/mockups/multi-lang-menu-view.png";
+import wifiMobileView from "@assets/images/mockups/wifi-menu-view.png";
+import Container from "@components/container.astro";
+import PhoneMockup from "@ui/phone-mockup.astro";
+import SectionHead from "@ui/section-head.astro";
+import { Image } from "astro:assets";
+---
+
+<Container class="flex flex-col items-center text-center">
+  <SectionHead
+    title="Menu Features"
+    description="A Menu that is fully packed with features to enhance your dining experience."
+    classList="text-center"
+  />
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 w-full">
+    <!-- Multi Language -->
+    <div
+      class="bg-black p-3 rounded-4xl relative overflow-hidden h-96 text-white"
+    >
+      <h3 class="text-2xl font-bold capitalize">Multi Language</h3>
+      <p class="">Offer your menu in multiple languages.</p>
+
+      <div
+        class="mockup-phone border-primary scale-50 absolute -top-36 left-1/2 -translate-x-1/2"
+      >
+        <div class="mockup-phone-camera"></div>
+        <div class="mockup-phone-display">
+          <Image
+            src={multiLanguageMobileView}
+            alt="Multi Language Mobile View"
+            class="object-cover w-full"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Call Waiter -->
+    <div
+      class="bg-gradient-to-br from-emerald-200 to-cyan-300 p-3 rounded-4xl relative overflow-hidden h-96"
+    >
+      <h3 class="text-2xl font-bold capitalize">Call Waiter</h3>
+      <p class="">Let customers call the waiter from their device</p>
+
+      <div
+        class="mockup-phone border-white scale-50 absolute -top-28 left-1/2 -translate-x-1/2"
+      >
+        <div class="mockup-phone-camera"></div>
+        <div class="mockup-phone-display">
+          <Image
+            src={callWaiterMobileView}
+            alt="Multi Language Mobile View"
+            class="object-cover w-full"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Filter -->
+    <div
+      class="rounded-4xl relative overflow-hidden h-96 w-full sm:col-span-2 bg-base-300 py-2 px-3 sm:px-6"
+    >
+      <div class="flex flex-row sm:gap-4 items-center justify-between">
+        <div class="flex flex-col gap-2">
+          <h3 class="text-2xl font-bold capitalize">Menu Filter</h3>
+          <p class="">
+            Let customers filter the menu based on their preferences so they can
+            order faster
+          </p>
+        </div>
+        <PhoneMockup
+          className="scale-75 sm:scale-100"
+          imgSrc={mealsFilterMobileView}
+          isEager={true}
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 w-full mt-4">
+    <!-- Home Page -->
+    <div
+      class="rounded-4xl relative overflow-hidden h-96 w-full sm:col-span-2 bg-base-300 py-2 px-1 sm:px-6"
+    >
+      <div class="flex flex-row sm:gap-4 items-center justify-between">
+        <PhoneMockup
+          className="scale-75 sm:scale-100"
+          imgSrc={homePageMobileView}
+          isEager={true}
+        />
+        <div class="flex flex-col gap-2">
+          <h3 class="text-2xl font-bold capitalize">Your Business Home Page</h3>
+          <p class="">
+            Showcase your business with a stunning homepage that highlights your
+            social profiles and important links just like Linktree.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Review -->
+    <div
+      class="bg-black p-3 rounded-4xl relative overflow-hidden h-96 text-white"
+    >
+      <h3 class="text-2xl font-bold capitalize">Google Review</h3>
+      <p class="">
+        Get more reviews by showing your Google reviews right on the menu
+      </p>
+
+      <div
+        class="mockup-phone border-primary scale-50 absolute -top-28 left-1/2 -translate-x-1/2"
+      >
+        <div class="mockup-phone-camera"></div>
+        <div class="mockup-phone-display">
+          <Image
+            src={googleReviewMobileView}
+            alt="Google Review Mobile View"
+            class="object-cover w-full -mt-44"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Wifi Password -->
+    <div
+      class="bg-gradient-to-br from-orange-200 to-red-400 p-3 rounded-4xl relative overflow-hidden h-96"
+    >
+      <h3 class="text-2xl font-bold capitalize">Wifi Password</h3>
+      <p class="">Show your customers the wifi password right from the menu</p>
+
+      <div
+        class="mockup-phone border-white scale-50 absolute -top-28 left-1/2 -translate-x-1/2"
+      >
+        <div class="mockup-phone-camera"></div>
+        <div class="mockup-phone-display">
+          <Image
+            src={wifiMobileView}
+            alt="Multi Language Mobile View"
+            class="object-cover w-full -mt-8"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Container>

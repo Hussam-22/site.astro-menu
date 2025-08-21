@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+const { title, description, btnText, btnLink, icon, isSmall, className } =
+  Astro.props;
+---
+
+<div
+  class:list={[
+    `rounded-4xl  p-4 flex flex-col gap-2 items-center justify-center text-center`,
+    isSmall ? "h-48" : "min-h-[250px]",
+    className ? className : "bg-base-200",
+  ]}
+>
+  {
+    icon && (
+      <Image
+        src={icon}
+        class:list={[isSmall ? "sm:h-12 sm:w-12 h-18 w-18" : "h-24 w-24"]}
+        alt={title}
+      />
+    )
+  }
+
+  <p
+    class:list={[
+      "font-extrabold capitalize lg:tracking-tight",
+      isSmall ? "sm:text-md text-xl" : "text-3xl lg:text-4xl",
+    ]}
+  >
+    {title}
+  </p>
+  <p
+    class:list={[
+      "font-semibold text-black",
+      btnText && btnLink ? "mb-6" : "mb-0",
+      isSmall ? "sm:text-sm text-lg" : "text-base",
+    ]}
+  >
+    {description}
+  </p>
+</div>

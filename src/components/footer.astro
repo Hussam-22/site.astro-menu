@@ -1,25 +1,29 @@
 ---
-import Logo from './logo.astro'
+import Logo from "./logo.astro";
 
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mt-8 rounded-[50px_50px_0_0] bg-black px-8 py-4 text-white sm:mt-16 sm:px-16">
-	<div
-		class="flex flex-col text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
-	>
-		<div>
-			<Logo />
-			<p class="text-md sm:text-lg">Modern, Effortless, Deliciously Digital</p>
-			<p class="text-orange-400">
-				<a href="mailto:hello@astro-menu.com">hello@astro-menu.com</a>
-			</p>
-		</div>
-		<div>
-			<p class="mt-4 text-xs sm:grid">
-				Copyright © {currentYear} Astro-Menu. All rights reserved.
-			</p>
-			<p class="mt-1 text-xs sm:grid">Privacy policy | Terms & conditions</p>
-		</div>
-	</div>
+<footer
+  class="mt-8 rounded-[50px_50px_0_0] bg-black px-8 py-4 text-white sm:mt-16 sm:px-16"
+>
+  <div
+    class="flex flex-col text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
+  >
+    <div>
+      <Logo isLight />
+      <p class="text-md sm:text-lg mt-3">
+        Modern, Effortless, Deliciously Digital
+      </p>
+      <p class="text-orange-400">
+        <a href="mailto:hello@astro-menu.com">hello@astro-menu.com</a>
+      </p>
+    </div>
+    <div>
+      <p class="mt-4 text-xs sm:grid">
+        Copyright &copy; {currentYear} Astro-Menu. All rights reserved.
+      </p>
+      <p class="mt-1 text-xs sm:grid">Privacy policy | Terms & conditions</p>
+    </div>
+  </div>
 </footer>

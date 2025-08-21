@@ -1,26 +1,30 @@
 ---
 draft: false
-title: 'Subscription & Invoices'
+title: "Subscription & Invoices"
 snippet: Designed to provide restaurant managers with invaluable insights into their establishment's performance. With just a few clicks, managers can access a comprehensive view of crucial metrics such as total scans, total income generated through the menu, and the most ordered meals.
-icon: 'analytics'
-image: { src: '/assets/docs/dynamic-qr-code-menu.png', alt: 'Full Stack Web Development' }
-publishDate: '2022-11-08 11:39'
-category: 'system'
-author: 'Astro-Menu'
+icon: "analytics"
+image:
+  {
+    src: "/assets/docs/dynamic-qr-code-menu.png",
+    alt: "Full Stack Web Development",
+  }
+publishDate: "2022-11-08 11:39"
+category: "system"
+author: "Astro-Menu"
 tags: [All Plans]
 order: 10.3
 ---
 
-import { Image } from 'astro:assets'
-import subscriptionImage from 'assets/docs/system/subscription-invoices.jpeg'
-import TipCard from '@components/ui/tip-card.astro'
+import TipCard from "@ui/tip-card.astro";
+import subscriptionImage from "assets/docs/system/subscription-invoices.jpeg";
+import { Image } from "astro:assets";
 
 From the **Subscriptions and Invoices** page, you can view your plan details, subscription status, and subscription period. You can also access the Subscription Portal to manage your subscription. This includes upgrading or downgrading your plan, canceling your subscription, updating your payment information, and viewing or downloading invoices.
 
 <TipCard text="If you need a more tailored plan for your business, such as additional branches, tables, or translation languages, feel free to reach out to us at hello@astro-menu.com." />
 
 <Image
-	src={subscriptionImage}
-	alt="Admin dashboard subscription and invoices interface"
-	class="w-fit rounded-xl sm:h-2/3 sm:w-2/3"
+  src={subscriptionImage}
+  alt="Admin dashboard subscription and invoices interface"
+  class="w-fit rounded-xl sm:h-2/3 sm:w-2/3"
 />

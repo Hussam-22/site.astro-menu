@@ -1,0 +1,47 @@
+---
+interface Props {
+  href: string;
+  size?: "sm" | "md" | "lg";
+  block?: boolean;
+  style?: "outline" | "primary" | "inverted" | "muted" | "dark";
+  class?: string;
+  [x: string]: any;
+}
+
+const {
+  href,
+  block,
+  size = "lg",
+  style = "primary",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const sizes = {
+  lg: "px-7 py-3.5 text-xl",
+  md: "px-5 py-2.5 text-md",
+  sm: "px-4 py-2 text-sm",
+};
+
+const styles = {
+  outline: "bg-white border-2 border-sky-600 hover:bg-gray-100 text-sky-600 ",
+  primary:
+    "p-1 text-black font-bold bg-gradient-to-br to-red-400 from-orange-400 text-white",
+  inverted: "bg-white text-black border-2 border-transparent",
+  muted: "bg-gray-100 hover:bg-gray-200 border-2 border-transparent",
+  dark: "bg-black text-white",
+};
+---
+
+<a
+  href={href}
+  {...rest}
+  class:list={[
+    "rounded-4xl font-bold  text-center capitalize whitespace-nowrap",
+    block && "w-full",
+    sizes[size],
+    styles[style],
+    className,
+  ]}
+  ><slot />
+</a>
