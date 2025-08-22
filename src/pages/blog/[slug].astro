@@ -15,10 +15,34 @@ export async function getStaticPaths() {
 // Get the entry directly from the prop on render
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const site = Astro.site?.toString() || "https://astro-menu.com";
+const ogImage = entry.data.image?.src
+  ? new URL(entry.data.image.src, site).toString()
+  : new URL("/opengraph.png", site).toString();
 ---
 
 <!-- <Debug answer={{ entry }} /> -->
-<Layout title={entry.data.title}>
+<Layout
+  title={entry.data.title}
+  description={entry.data.snippet}
+  image={ogImage}
+  ogType="article"
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: entry.data.title,
+        description: entry.data.snippet,
+        image: ogImage,
+        author: { "@type": "Person", name: entry.data.author },
+        datePublished: entry.data.publishDate,
+        mainEntityOfPage: new URL(Astro.url.pathname, site).toString(),
+      })}
+    />
+  </Fragment>
   <div class="mx-6 w-full sm:mx-auto">
     <div class="mx-auto mt-6 max-w-3xl">
       <span class="text-sm font-medium uppercase tracking-wider">

@@ -22,7 +22,11 @@ const url = Astro.url.pathname;
 const { content: Content, entry } = Astro.props;
 ---
 
-<Layout title="Docs">
+<Layout
+  title="Docs"
+  description={entry.data.snippet ||
+    "Documentation for Astro-Menu features: QR digital menus, POS, dashboards, translations, and more."}
+>
   <Container class="relative">
     <OpenFeaturesListButton />
     <main class="mt-18 sm:mt-0">

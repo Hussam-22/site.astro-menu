@@ -6,16 +6,22 @@ import Navbar from "@components/navbar/navbar.astro";
 import "../assets/app.css";
 import { ClientRouter } from "astro:transitions";
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-const resolvedImageWithDomain = new URL(
-  "/opengraph.png",
-  Astro.site
-).toString();
-const { title } = Astro.props;
+const SITE_NAME = "Astro-Menu";
+const SITE_URL = Astro.site?.toString() || "https://astro-menu.com";
+const DEFAULT_TITLE = `${SITE_NAME} - Revolutionize Your Food Business with Astro-Menu`;
+const DEFAULT_DESC =
+  "Empower your food business, restaurant, coffee shop, and social media food business with our cutting-edge QR menu and cloud POS solution. Seamlessly integrate ordering and kitchen management, all in one sleek, digital platform.";
+const DEFAULT_IMAGE = new URL("/opengraph.png", Astro.site).toString();
 
-const makeTitle = title
-  ? title + " | " + "Astro-Menu"
-  : "Astro-Menu - Revolutionize Your Food Business with Astro-Menu";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const { title, description, image, robots, ogType } = Astro.props;
+
+const makeTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
+const metaDescription = description || DEFAULT_DESC;
+const ogImage = image ? new URL(image, SITE_URL).toString() : DEFAULT_IMAGE;
+// Ensure single-slash when building SearchAction target
+const searchActionTarget =
+  new URL("/search", SITE_URL).toString() + "?q={search_term_string}";
 ---
 
 <!doctype html>
@@ -24,14 +30,17 @@ const makeTitle = title
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMMNZ0D1P"
     ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-4FMMNZ0D1P");
+    <script is:inline>
+      // Google Analytics initialization (plain JS)
+      (function () {
+        var w = window;
+        w.dataLayer = w.dataLayer || [];
+        function gtag() {
+          w.dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-4FMMNZ0D1P");
+      })();
     </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -77,32 +86,75 @@ const makeTitle = title
     >
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msvalidate.01" content="A5F12D489A25EE6C5EDE8613601EABE2" />
     <meta name="yandex-verification" content="6986b8519cb7c539" />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
 
     <SEO
       title={makeTitle}
-      description="Empower your food business, restaurant, coffee shop, and social media food business with our cutting-edge QR menu and cloud POS solution. Seamlessly integrate ordering and kitchen management, all in one sleek, digital platform."
+      description={metaDescription}
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
-          type: "website",
-          title: `Revolutionize Your Food Business with Astro-Menu`,
-          image: resolvedImageWithDomain,
+          type: ogType || "website",
+          title: makeTitle,
+          image: ogImage,
         },
         image: {
-          alt: "Astro-Menu Homepage Screenshot",
+          alt: `${SITE_NAME} Open Graph Image`,
+        },
+        optional: {
+          locale: "en_US",
+          siteName: SITE_NAME,
         },
       }}
+      twitter={{
+        card: "summary_large_image",
+        site: "@AstroMenu",
+        creator: "@AstroMenu",
+        title: makeTitle,
+        description: metaDescription,
+        image: ogImage,
+      }}
+    />
+    <slot name="head" />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: new URL("/android-chrome-512x512.png", SITE_URL).toString(),
+        sameAs: [
+          "https://x.com/astromenu",
+          "https://www.facebook.com/astromenu",
+        ],
+      })}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: searchActionTarget,
+          "query-input": "required name=search_term_string",
+        },
+      })}
     />
     <AstroFont
       config={[

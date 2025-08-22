@@ -4,9 +4,33 @@ import { getFormattedDate } from "@utils/all";
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
+const site = Astro.site?.toString() || "https://astro-menu.com";
+const ogImage = frontmatter.image?.src
+  ? new URL(frontmatter.image.src, site).toString()
+  : new URL("/opengraph.png", site).toString();
 ---
 
-<Layout title={frontmatter.title}>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.snippet}
+  image={ogImage}
+  ogType="article"
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: frontmatter.title,
+        description: frontmatter.snippet,
+        image: ogImage,
+        author: { "@type": "Person", name: frontmatter.author },
+        datePublished: frontmatter.publishDate,
+        mainEntityOfPage: new URL(Astro.url.pathname, site).toString(),
+      })}
+    />
+  </Fragment>
   <Container>
     <div class="mx-auto mt-14 max-w-[735px]">
       <span
