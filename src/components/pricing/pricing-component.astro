@@ -2,23 +2,21 @@
 import Container from "@components/container.astro";
 import Link from "@ui/link.astro";
 import SectionHead from "@ui/section-head.astro";
+import PlanSwitcher from "./plan-switcher.jsx";
 import PricingCard from "./pricing-card.astro";
 
 const pricing = [
-    {
-    name: "Coffee Cup",
+  {
+    name: "Essential",
     price: "149 AED",
-    popular: true,
+    yearlyPlan: "1490 AED",
+    popular: false,
     features: [
-      `x20 QR Codes`,
-      `xSelf-Order`,
-      "xCloud POS",
+      `1 QR Code (menu viewing only)`,
+      "1 Translation Languages",
       "Unlimited Meals",
       "Unlimited Menus",
       "Unlimited Scans (Fair Usage Policy)",
-      "Unlimited Orders",
-      "2 Translation Languages",
-      "Analytics & Reports",
       "Social Media Links",
       "1 Branch",
     ],
@@ -28,23 +26,53 @@ const pricing = [
     },
     icon: "coffeecup",
     description:
-      "Designed for small-scale food businesses like cozy cafes, bakeries, or specialty dessert shops. This plan is ideal for establishments with focused menus looking to enhance their customer experience and streamline operations.",
+      "Perfect for business that wants to show their menu digitally.",
     param: "prod_QSJoKo5g5BbTLW",
   },
   {
-    name: "Menu Master",
+    name: "Advanced",
     price: "229 AED",
-    popular: false,
+    yearlyPlan: "2290 AED",
+    popular: true,
     features: [
-      `x40 QR Codes`,
+      `x25 Dine-in QR Codes`,
       `xDrive-Thru QR Code`,
       `xSelf-Order`,
       "xCloud POS",
+      "x2 Translation Languages",
       "Unlimited Meals",
       "Unlimited Menus",
       "Unlimited Scans (Fair Usage Policy)",
       "Unlimited Orders",
-      "3 Translation Languages",
+      "Analytics & Reports",
+      "Social Media Links",
+      "1 Branch",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+    icon: "dinesmart",
+    description:
+      "Feature rich plan for growing businesses with drive-thru capabilities.",
+    param: "prod_QSJp5bB2jPwc69",
+  },
+  {
+    name: "Premium",
+    price: "299 AED",
+    yearlyPlan: "2990 AED",
+    popular: false,
+    features: [
+      `x50 Dine-in QR Codes`,
+      `xDrive-Thru QR Code`,
+      `xSelf-Order`,
+      "xCloud POS",
+      "x3 Translation Languages",
+      "xPremium Support",
+      "Unlimited Meals",
+      "Unlimited Menus",
+      "Unlimited Scans (Fair Usage Policy)",
+      "Unlimited Orders",
       "Analytics & Reports",
       "Social Media Links",
       "1 Branch",
@@ -55,7 +83,7 @@ const pricing = [
     },
     icon: "menumaster",
     description:
-      "Ideal for full-service restaurants and larger establishments with diverse and dynamic menus. This plan supports seamless menu management and operational efficiency for businesses catering to broader customer bases.",
+      "Tailored for large cafes and restaurants with high customer traffic.",
     param: "prod_QSJp5bB2jPwc69",
   },
 ];
@@ -68,6 +96,7 @@ const pricing = [
     classList="text-center self-center"
   />
 
+  <PlanSwitcher client:load />
   <div class="mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
   </div>

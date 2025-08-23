@@ -1,5 +1,6 @@
 ---
 import Link from "@ui/link.astro";
+import PlanPrice from "./plan-price";
 
 const { plan, index } = Astro.props;
 
@@ -40,11 +41,12 @@ const DOMAIN = "https://app.astro-menu.com/register";
         )
       }
     </div>
-    <p class="h-32 text-sm">{plan.description}</p>
-    <p class="py-1 text-center text-5xl font-bold">
+    <p class="text-sm mb-8">{plan.description}</p>
+    <!-- <p class="py-1 text-center text-5xl font-bold">
       {plan.price}
       <span class="text-sm">/month</span>
-    </p>
+    </p> -->
+    <PlanPrice plan={plan} client:load />
 
     <div class="flex grow flex-col">
       <ul class="mt-8 grid grow gap-y-0 text-left list-disc ml-4">
