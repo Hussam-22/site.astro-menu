@@ -90,13 +90,15 @@ const pricing = [
 ---
 
 <Container class="flex flex-col items-center gap-1">
-  <SectionHead
-    title="Pricing Plans"
-    description="Choose the right plan for your business"
-    classList="text-center self-center"
-  />
-
-  <PlanSwitcher client:load />
+  <div class="flex flex-col items-center w-full">
+    <SectionHead
+      title="Pricing Plans"
+      tag="h2"
+      description="Choose the right plan for your business"
+      classList="text-center"
+    />
+    <PlanSwitcher client:load />
+  </div>
   <div class="mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
     {pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
   </div>

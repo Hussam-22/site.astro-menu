@@ -17,7 +17,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const site = Astro.site?.toString() || "https://astro-menu.com";
 const ogImage = entry.data.image?.src
-  ? new URL(entry.data.image.src, site).toString()
+  ? new URL(entry.data.image.src.src, site).toString()
   : new URL("/opengraph.png", site).toString();
 ---
 
@@ -33,13 +33,21 @@ const ogImage = entry.data.image?.src
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: entry.data.title,
         description: entry.data.snippet,
         image: ogImage,
         author: { "@type": "Person", name: entry.data.author },
         datePublished: entry.data.publishDate,
         mainEntityOfPage: new URL(Astro.url.pathname, site).toString(),
+        publisher: {
+          "@type": "Organization",
+          name: "Astro-Menu",
+          logo: {
+            "@type": "ImageObject",
+            url: new URL("/assets/images/logos/logo.svg", site).toString(),
+          },
+        },
       })}
     />
   </Fragment>

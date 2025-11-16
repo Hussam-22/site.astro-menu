@@ -10,7 +10,7 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout
-  title=""
+  title="Astro-Menu | QR Digital Menu & Cloud POS for Restaurants"
   description="Astro-Menu is a QR digital menu with cloud POS for restaurants, cafes, and social food brands—fast ordering, translations, dashboards, and more."
 >
   <Fragment slot="head">
@@ -26,6 +26,15 @@ import Layout from "@layouts/Layout.astro";
           "QR digital menu with integrated cloud POS for restaurants and cafes, including translations, analytics, and dashboards.",
         image: new URL("/opengraph.png", Astro.site).toString(),
         url: new URL(Astro.url.pathname, Astro.site).toString(),
+        author: {
+          "@type": "Organization",
+          name: "Astro-Menu",
+        },
+        offers: {
+          "@type": "Offer",
+          price: "149",
+          priceCurrency: "AED",
+        },
       })}
     />
   </Fragment>

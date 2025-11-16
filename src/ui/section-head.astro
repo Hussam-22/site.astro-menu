@@ -5,7 +5,10 @@ const {
   classList,
   fullWidth,
   bottomSpace = "mb-6 sm:mb-16",
+  tag = "h1",
 } = Astro.props;
+
+const Tag = tag;
 ---
 
 <div
@@ -15,9 +18,9 @@ const {
     fullWidth ? "max-w-full" : "sm:max-w-8/12",
   ]}
 >
-  <h2 class="text-6xl font-black lg:tracking-tight capitalize">
+  <Tag class="text-6xl font-black lg:tracking-tight capitalize">
     {title}
-  </h2>
+  </Tag>
   <p class="mt-4 text-lg">
     {description}
   </p>

@@ -5,7 +5,6 @@ import SectionHead from "@ui/section-head.astro";
 import logo1 from "assets/images/logos/logo-1.webp";
 import logo2 from "assets/images/logos/logo-2.webp";
 import logo3 from "assets/images/logos/logo-3.webp";
-import logo4 from "assets/images/logos/logo-4.webp";
 import Image from "astro/components/Image.astro";
 
 const TESTIMONIALS = [
@@ -15,37 +14,41 @@ const TESTIMONIALS = [
     testimonial:
       "The implementation of a QR menu system has been a game-changer for The Acai House Cafe's drive-thru. Before this, our staff often felt overwhelmed, especially during peak hours, trying to take orders accurately and quickly. The line of cars would grow, and we could feel the stress from both our employees and our customers. We knew we had to find a better way to operate.",
     logo: logo1,
+    link: "",
   },
   {
-    owner: "Lana K.",
-    business_name: "Flavor Fusion Kitchen",
+    owner: "Mayed",
+    business_name: "FOAM COFFEE",
     testimonial:
-      "As a cloud kitchen with a constantly changing menu, we faced a major challenge: customers would often try to order dishes that were no longer available, leading to frustration and negative feedback. Implementing Astro-menu with live-updates has been a game-changer for our business.",
-    logo: logo4,
-  },
-  {
-    owner: "Rani M.",
-    business_name: "The Paradise Hotel",
-    testimonial:
-      "Since introducing Astro Menu in our hotel room service, ordering has never been faster. Guests simply scan the QR code, choose what they want, and the order goes straight to the kitchen-no more missed calls or wrong items. We've cut down on printing costs, reduced errors, and sped up service, all while giving guests a modern, hassle-free experience.",
+      "Astro-Menu has been a great addition to how we operate at FOAM COFFEE. Managing our menu is incredibly easy, and updates appear instantly. One of the biggest advantages is how smoothly customers can view our menu online through Google, Maps, or even our social media pages before visiting. It helps them decide faster and improves their overall experience. As a mobile coffee truck, having a reliable and flexible system like Astro-Menu makes our day-to-day work much simpler.",
     logo: logo2,
+    link: "https://menu.astro-menu.com/qr-menu/menu?businessProfileID=mbiRz8YmVGjOTvtknUOq&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0",
   },
   {
-    owner: "Dr. Hassan A.",
-    business_name: "Clarity One-Day Surgery Clinic",
+    owner: "Saeed",
+    business_name: "Number Eight Speciality Coffee",
     testimonial:
-      "In a one-day surgery setting, every detail matters for a smooth recovery. Before our digital meal selection system, nurses were often interrupted by patient meal requests, relying on error-prone paper menus. Now, frequent orders like coffee, water, or guest meals are served quickly, freeing staff to focus on what matters most: medical care",
+      "Astro-Menu transformed the way our customers interact with our menu at Number Eight Specialty Coffee. With more than 120 items, it used to take time for people to find what they wanted, but the filtering and clean layout changed everything. Customers can now browse, sort, and locate their preferred drinks or pastries in seconds, whether they’re checking the menu online or at the shop. This has noticeably reduced ordering time and kept the flow moving smoothly, especially during peak hours. The result is happier customers and a faster, more efficient service experience.",
     logo: logo3,
+    link: "https://menu.astro-menu.com/qr-menu/menu?businessProfileID=MSoxzRsPzpahDlGdoFMY&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0",
   },
+  // {
+  //   owner: "Dr. Hassan A.",
+  //   business_name: "Clarity One-Day Surgery Clinic",
+  //   testimonial:
+  //     "In a one-day surgery setting, every detail matters for a smooth recovery. Before our digital meal selection system, nurses were often interrupted by patient meal requests, relying on error-prone paper menus. Now, frequent orders like coffee, water, or guest meals are served quickly, freeing staff to focus on what matters most: medical care",
+  //   logo: logo3,
+  // },
 ];
 ---
 
 <Container class="sm:flex sm:flex-col sm:items-center">
   <SectionHead
     title="what our customers say"
+    tag="h2"
     classList="text-center self-center"
   />
-  <div class="mt-8 grid-cols-4 gap-4 hidden sm:grid">
+  <div class="mt-8 grid-cols-3 gap-4 hidden sm:grid">
     {
       TESTIMONIALS.map((testimonial) => (
         <div
@@ -62,6 +65,15 @@ const TESTIMONIALS = [
             <p class="mt-0 font-light">{testimonial.owner}</p>
           </div>
           <p class="">{testimonial.testimonial}</p>
+          {testimonial.link && (
+            <a
+              href={testimonial.link}
+              target="_blank"
+              class="mt-2 text-sm text-blue-500 underline"
+            >
+              View Menu
+            </a>
+          )}
         </div>
       ))
     }
