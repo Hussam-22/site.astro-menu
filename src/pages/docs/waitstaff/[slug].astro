@@ -1,15 +1,15 @@
 ---
 import FeaturesLayout from "@layouts/FeaturesLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
   const featuresEntries = await getCollection("docs");
 
   return featuresEntries
-    .filter((entry) => entry.slug.includes("waitstaff/"))
+    .filter((entry) => entry.id.includes("waitstaff/"))
     .map((entry) => ({
-      params: { slug: entry.slug.substring(10) },
+      params: { slug: entry.id.substring(10) },
 
       props: { entry },
     }));
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 
 // Get the entry directly from the prop on render
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <FeaturesLayout title={entry.data.title} content={Content} entry={entry} />

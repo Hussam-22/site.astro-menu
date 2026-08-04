@@ -3,9 +3,6 @@ import Link from "@ui/link.astro";
 import PlanPrice from "./plan-price";
 
 const { plan, index } = Astro.props;
-
-const DOMAIN = "https://app.astro-menu.com/register";
-// const DOMAIN = 'http://localhost:3035/register'
 ---
 
 <!-- <div
@@ -61,7 +58,7 @@ const DOMAIN = "https://app.astro-menu.com/register";
 
       <div class="mt-4 flex">
         <Link
-          href={`${DOMAIN}?planID=${plan.param}`}
+          href="https://app.astro-menu.com/register"
           block
           style="primary"
           class="bg-green-400 text-black"

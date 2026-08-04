@@ -1,0 +1,203 @@
+# Astro-Menu — Full Reference
+
+## Overview
+
+Astro-Menu (astro-menu.com) is a UAE-based, cloud-hosted QR digital menu and point-of-sale (POS) platform for food businesses. Restaurants, cafes, hotels, food trucks, drive-thrus, and social media food businesses use Astro-Menu to replace printed menus and expensive POS hardware with QR codes and a web dashboard.
+
+How it works:
+1. The restaurant builds a digital menu (meals, sections, prices, labels, translations) in the Astro-Menu dashboard.
+2. Astro-Menu generates QR codes for each table, branch, or for sharing on social media.
+3. Customers scan the QR code with their phone camera — no app download needed — and browse the menu, filter meals, and place orders directly.
+4. Orders appear in real time on the cloud POS, waitstaff dashboard, and kitchen dashboard.
+5. The restaurant tracks analytics: most-ordered meals, branch statistics, and order history.
+
+## Key facts
+
+- Cloud, web-based application. No software to install; works from any device with a browser.
+- No commission on orders — flat monthly subscription fee.
+- 14-day free trial. No credit card required to start.
+- Includes its own cloud POS — does not integrate with third-party POS systems.
+- Customers place orders via QR menu; payment processing is managed by the business, not by Astro-Menu.
+- Pricing in AED (UAE).
+
+## Features
+
+Core:
+- Instant QR menus — customers scan and order, no app download.
+- Self-order — customers order from their phones without waiting for staff.
+- Cloud POS — built-in point of sale, no annual contract or maintenance fees.
+- Waitstaff dashboard — staff and chef accounts, order management, access URLs per device.
+- Kitchen dashboard — order display for kitchen and drive-thru teams.
+- Admin/CMS dashboard — manage meals, menus, branches, and translations.
+- Multi-language menus with automatic translation (e.g. Arabic, and more).
+- Meal labels — tag meals (decaf, sugar-free, gluten-free, and more).
+- Analytics & reports — most-ordered meals, branch statistics, order history.
+- Email and print receipts for orders.
+- Google review links and social media links on the menu.
+- WiFi password display.
+- Multi-currency support.
+- Real-time order updates.
+- Responsive, modern design with minimal clicks.
+- Call waiter feature.
+- Social QR codes (shared via social media) and table-specific QR codes.
+
+Highlights ("Why Astro-Menu"):
+- No commissions — flat monthly fee, keep your profits.
+- Cloud POS included — no annual contract, no maintenance fees.
+- Instant QR menus — no app downloads, just scan & order.
+
+## Use cases
+
+- Restaurants
+- Cafes and coffee shops
+- Hotels and room service
+- Food trucks
+- Drive-thrus
+- Hospitals and patient meal ordering
+- Social media food businesses (home-based food brands)
+
+## Pricing
+
+All plans include a 14-day free trial (no credit card required) and unlimited menus, meals, and scans subject to a fair usage policy.
+
+Essential — 149 AED/month (1490 AED/year):
+- 1 QR code (menu viewing only)
+- 1 translation language
+- Unlimited meals, menus, and scans (fair usage policy)
+- Social media links
+- 1 branch
+
+Advanced — 229 AED/month (2290 AED/year):
+- 25 dine-in QR codes
+- Drive-thru QR code
+- Self-order
+- Cloud POS
+- 2 translation languages
+- Unlimited meals, menus, scans (fair usage policy), and orders
+- Analytics & reports
+- Social media links
+- 1 branch
+
+Premium — 299 AED/month (2990 AED/year):
+- 50 dine-in QR codes
+- Drive-thru QR code
+- Self-order
+- Cloud POS
+- 3 translation languages
+- Premium support
+- Unlimited meals, menus, scans (fair usage policy), and orders
+- Analytics & reports
+- Social media links
+- 1 branch
+
+Additional branches: contact hello@astro-menu.com.
+
+## FAQ
+
+Q: Can I try Astro-Menu before I buy?
+A: Yes, you can try Astro-Menu for free for 14 days. Simply create an account and start using Astro-Menu right away.
+
+Q: Can I cancel my subscription at any time?
+A: Yes, you can cancel your subscription at any time. Your subscription will be active until the end of the billing cycle.
+
+Q: Does Astro-Menu integrate with POS systems?
+A: No, Astro-Menu comes with its own cloud POS system. You can manage your orders and statistics directly from your Astro-Menu account.
+
+Q: What is self-order?
+A: Self-order allows customers to place orders directly from their phones without the need for a waiter(ess) to attend the table, allowing customers to order at their own pace and convenience, and improve the table turnover rate.
+
+Q: Can customers pay directly from the menu?
+A: No, Astro-Menu is a QR Menu that allows customers to view your menu and place orders. Payments are managed by you.
+
+Q: How can I add more branches to my subscription?
+A: Contact our sales team at hello@astro-menu.com and they will help you add more branches to your subscription.
+
+Q: Do I need to install any software to use Astro-Menu?
+A: Astro-Menu is a cloud web-based application. You don't need to install any software to use it. You can access it from any device with a web browser.
+
+## Documentation
+
+Getting started:
+- [Introduction](https://astro-menu.com/docs/welcome/introduction)
+- [Using the QR menu](https://astro-menu.com/docs/welcome/using-qr-menu)
+
+Business profile & settings:
+- [Business Profile](https://astro-menu.com/docs/bussiness-profile)
+- [Translation Settings](https://astro-menu.com/docs/translation-settings)
+- [Subscription & Invoices](https://astro-menu.com/docs/subscription-invoices)
+
+Branches:
+- [Branches overview](https://astro-menu.com/docs/branches/overview)
+- [Manage branch](https://astro-menu.com/docs/branches/manage-branch)
+- [Tables QR](https://astro-menu.com/docs/branches/tables-qr)
+- [Social QR](https://astro-menu.com/docs/branches/social-qr)
+- [Waitstaff (branch)](https://astro-menu.com/docs/branches/waitstaff)
+- [Statistics](https://astro-menu.com/docs/branches/statistics)
+- [Delete branch](https://astro-menu.com/docs/branches/delete)
+
+Dashboards:
+- [Dashboards overview](https://astro-menu.com/docs/dashboards/overview)
+- [Kitchen dashboard](https://astro-menu.com/docs/dashboards/kitchen)
+- [Waitstaff dashboard](https://astro-menu.com/docs/dashboards/waitstaff)
+
+Meals:
+- [Meals overview](https://astro-menu.com/docs/meals/overview)
+- [Add meal](https://astro-menu.com/docs/meals/add-meal)
+- [Manage meal](https://astro-menu.com/docs/meals/manage-meal)
+- [Meal translation](https://astro-menu.com/docs/meals/translation)
+
+Meal labels:
+- [Meal labels overview](https://astro-menu.com/docs/meal-labels/overview)
+- [Manage labels](https://astro-menu.com/docs/meal-labels/manage-labels)
+
+Menus:
+- [Menus overview](https://astro-menu.com/docs/menus/overview)
+- [Manage menu](https://astro-menu.com/docs/menus/manage-menu)
+- [Meals & sections](https://astro-menu.com/docs/menus/meals-and-sections)
+
+Orders & search:
+- [Orders & search overview](https://astro-menu.com/docs/orders-search/overview)
+
+Waitstaff:
+- [Waitstaff overview](https://astro-menu.com/docs/waitstaff/overview)
+- [Manage waitstaff](https://astro-menu.com/docs/waitstaff/manage)
+
+## Blog
+
+- [10 Ways a QR Menu Cuts Costs](https://astro-menu.com/blog/10-ways-qr-menu-cuts-costs)
+- [Accessibility in Digital Menus](https://astro-menu.com/blog/accessibility-in-digital-menus)
+- [Creative Uses for QR Menus](https://astro-menu.com/blog/creative-uses-for-qr-menus)
+- [The Future of Dining](https://astro-menu.com/blog/future-of-dining)
+- [Guide to Implementing QR Menu and Cloud POS](https://astro-menu.com/blog/guide-to-implementing-qr-menu-and-cloud-pos)
+- [How Astro-Menu Revolutionizes the QR Menu World](https://astro-menu.com/blog/how-astro-menu-revolutionizes-the-qr-menu-world)
+- [How QR Menus Benefit Social Media Food Businesses](https://astro-menu.com/blog/how-qr-menus-benefit-social-media-food-businesses)
+- [Leveraging QR Menus for Social Media Business](https://astro-menu.com/blog/leveraging-qr-menus-for-social-media-business)
+- [Phygital Restaurant](https://astro-menu.com/blog/phygital-restaurant)
+- [The Psychology of Menu Design](https://astro-menu.com/blog/psychology-of-menu-design)
+- [QR Menus in Hotels and Hospitality](https://astro-menu.com/blog/qr-menus-in-hotel-and-hospitality)
+- [Reinventing the Drive-Thru](https://astro-menu.com/blog/reinventing-the-drive-thru)
+- [Stunning Digital Menu Design](https://astro-menu.com/blog/stunning-digital-menu-design)
+- [The Benefits of a Cloud POS System for Restaurants](https://astro-menu.com/blog/the-benefits-of-a-cloud-pos-system-for-restaurants)
+- [The Importance of an Easy-to-Use QR Menu Design](https://astro-menu.com/blog/the-importance-of-an-easy-to-use-qr-menu-design-how-astro-menu-stands-out)
+- [The Importance of Tagging Meals to Enhance Dining Efficiency and Boost Sales](https://astro-menu.com/blog/the-importance-of-tagging-meals-to-enhance-dining-efficiency-and-boost-sales)
+- [Using Customer Data](https://astro-menu.com/blog/using-customer-data)
+- [Why Forcing Customers to Pay Through QR Menus Can Backfire](https://astro-menu.com/blog/why-forcing-customers-to-pay-through-qr-menus-can-backfire)
+- [Why Your Restaurant Needs a Blog](https://astro-menu.com/blog/why-your-restaurant-needs-a-blog)
+
+## Site pages
+
+- [Home](https://astro-menu.com/)
+- [Features](https://astro-menu.com/features)
+- [Use Cases](https://astro-menu.com/use-cases)
+- [Pricing](https://astro-menu.com/pricing)
+- [Blog](https://astro-menu.com/blog)
+- [Contact](https://astro-menu.com/contact)
+- [Search](https://astro-menu.com/search)
+- [Docs](https://astro-menu.com/docs/welcome/introduction)
+- [RSS feed](https://astro-menu.com/rss.xml)
+
+## Start using Astro-Menu
+
+- Create an account (14-day free trial, no credit card): https://app.astro-menu.com/register
+- Log in: https://app.astro-menu.com/login
+- Contact & support: hello@astro-menu.com

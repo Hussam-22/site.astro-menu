@@ -5,7 +5,7 @@ import PhoneMockup from "@ui/phone-mockup.astro";
 import TabletMockup from "@ui/tablet-mockup.astro";
 import astroMenuPhone from "assets/views/menu-preview.webp";
 import waitStaffDashboard from "assets/views/waitstaff-dashboard.png";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
 ---
 
@@ -21,7 +21,7 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
       class="flex flex-col justify-center gap-2 z-10 mb-8 sm:mb-0 text-center sm:text-left sm:max-w-10/12"
     >
       <h1 class="text-6xl font-extrabold">
-        Digital Menus for <span
+        QR Menus for <span
           class="bg-linear-to-r from-purple-500 via-red-500 to-orange-500 bg-clip-text text-transparent"
           >Rooms, Trucks, Tables,</span
         > and More.

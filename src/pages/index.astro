@@ -7,35 +7,56 @@ import UseCases from "@components/landing-page/use-cases.astro";
 import WhyAstroMenu from "@components/landing-page/why-astro-menu.astro";
 import PricingComponent from "@components/pricing/pricing-component.astro";
 import Layout from "@layouts/Layout.astro";
+import { FAQs } from "@data/faqs";
+
+const site = Astro.site?.toString() || "https://astro-menu.com";
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Astro-Menu",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description:
+    "QR digital menu with integrated cloud POS for restaurants and cafes, including translations, analytics, and dashboards.",
+  image: new URL("/opengraph.png", site).toString(),
+  url: new URL(Astro.url.pathname, site).toString(),
+  author: {
+    "@type": "Organization",
+    name: "Astro-Menu",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "149",
+    priceCurrency: "AED",
+  },
+};
+
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <Layout
-  title="Astro-Menu | QR Digital Menu & Cloud POS for Restaurants"
+  title="QR Digital Menu & Cloud POS for Restaurants"
   description="Astro-Menu is a QR digital menu with cloud POS for restaurants, cafes, and social food brands—fast ordering, translations, dashboards, and more."
 >
   <Fragment slot="head">
     <script
       type="application/ld+json"
-      set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Astro-Menu",
-        applicationCategory: "BusinessApplication",
-        operatingSystem: "Web",
-        description:
-          "QR digital menu with integrated cloud POS for restaurants and cafes, including translations, analytics, and dashboards.",
-        image: new URL("/opengraph.png", Astro.site).toString(),
-        url: new URL(Astro.url.pathname, Astro.site).toString(),
-        author: {
-          "@type": "Organization",
-          name: "Astro-Menu",
-        },
-        offers: {
-          "@type": "Offer",
-          price: "149",
-          priceCurrency: "AED",
-        },
-      })}
+      set:html={JSON.stringify(softwareApplicationSchema)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(faqPageSchema)}
     />
   </Fragment>
   <div class="flex flex-col gap-32 sm:gap-56">
