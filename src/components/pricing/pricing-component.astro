@@ -7,13 +7,13 @@ import PricingCard from "./pricing-card.astro";
 
 const pricing = [
   {
-    name: "Essential",
-    price: "149 AED",
-    yearlyPlan: "1490 AED",
+    name: "Menu",
+    price: "59 AED",
+    yearlyPlan: "468 AED",
     popular: false,
     features: [
       `1 QR Code (menu viewing only)`,
-      "1 Translation Languages",
+      "1 Translation Language",
       "Unlimited Meals",
       "Unlimited Menus",
       "Unlimited Scans (Fair Usage Policy)",
@@ -22,54 +22,7 @@ const pricing = [
     ],
     icon: "coffeecup",
     description:
-      "Perfect for business that wants to show their menu digitally.",
-  },
-  {
-    name: "Advanced",
-    price: "229 AED",
-    yearlyPlan: "2290 AED",
-    popular: true,
-    features: [
-      `x25 Dine-in QR Codes`,
-      `xDrive-Thru QR Code`,
-      `xSelf-Order`,
-      "xCloud POS",
-      "x2 Translation Languages",
-      "Unlimited Meals",
-      "Unlimited Menus",
-      "Unlimited Scans (Fair Usage Policy)",
-      "Unlimited Orders",
-      "Analytics & Reports",
-      "Social Media Links",
-      "1 Branch",
-    ],
-    icon: "dinesmart",
-    description:
-      "Feature rich plan for growing businesses with drive-thru capabilities.",
-  },
-  {
-    name: "Premium",
-    price: "299 AED",
-    yearlyPlan: "2990 AED",
-    popular: false,
-    features: [
-      `x50 Dine-in QR Codes`,
-      `xDrive-Thru QR Code`,
-      `xSelf-Order`,
-      "xCloud POS",
-      "x3 Translation Languages",
-      "xPremium Support",
-      "Unlimited Meals",
-      "Unlimited Menus",
-      "Unlimited Scans (Fair Usage Policy)",
-      "Unlimited Orders",
-      "Analytics & Reports",
-      "Social Media Links",
-      "1 Branch",
-    ],
-    icon: "menumaster",
-    description:
-      "Tailored for large cafes and restaurants with high customer traffic.",
+      "Perfect for businesses that want to show their menu digitally.",
   },
 ];
 ---
@@ -84,7 +37,7 @@ const pricing = [
     />
     <PlanSwitcher client:load />
   </div>
-  <div class="mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="mx-auto grid max-w-md gap-5">
     {pricing.map((item, index) => <PricingCard plan={item} index={index} />)}
   </div>
 
@@ -92,15 +45,4 @@ const pricing = [
     *Unlimited scans are subject to fair usage policy. For more information,
     please refer to our terms of service.
   </p>
-
-  <div
-    class="bg-black p-8 text-center text-white mt-8 rounded-4xl flex flex-col sm:flex-row items-center gap-4"
-  >
-    <p class="text-xl font-bold">
-      Need a tailored plan for your hotel, hospital, or franchise?
-    </p>
-    <Link href="/contact" class="font-semibold underline" size="md"
-      >Contact us</Link
-    >
-  </div>
 </Container>

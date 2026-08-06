@@ -19,7 +19,7 @@ export default function PlanSwitcher() {
         />
       </button>
       <span className={isYearly ? "font-bold text-orange-500" : ""}>
-        Yearly (2 months free)
+        Yearly (Save 240 AED)
       </span>
     </div>
   );
