@@ -3,9 +3,7 @@ import guestExperience from "@assets/icons/guest-experience.svg";
 import nursingOverhead from "@assets/icons/nursing.svg";
 import patientExperience from "@assets/icons/patient-experience.svg";
 import roomService from "@assets/icons/room-service.svg";
-import staffOverhead from "@assets/icons/staff-overhead.svg";
 import streamlineOperation from "@assets/icons/streamline-operations.svg";
-import tableTurnOver from "@assets/icons/tables-turnover.svg";
 import waitTime from "@assets/icons/wait-time.svg";
 
 import astro1 from "@assets/images/astro/astro-1.png";
@@ -24,8 +22,8 @@ import UseCaseSection from "./use-case-section.astro";
 <!-- Restaurants & Cafes -->
 <UseCaseSection
   bgColor="bg-gradient-to-br from-teal-400 to-sky-400"
-  title="reduce costs, and deliver faster service"
-  description="Astro-Menu is an all-in-one digital menu and cloud POS solution designed to help restaurants and cafes streamline operations, reduce costs, and deliver faster service. Customers can browse your up-to-date menu and place orders directly from their smartphones, cutting wait times and minimizing errors. The built-in cloud POS runs on any tablet, or computer, allowing you to add unlimited devices without the hardware restrictions, maintenance hassles, or costly yearly contracts of traditional POS systems. By keeping staff mobile and reducing unnecessary steps, Astro-Menu speeds up service, improves table turnover, and ensures your menu is always fresh, accurate, and engaging helping you serve more guests with less effort."
+  title="an up-to-date menu guests can browse instantly"
+  description="Astro-Menu is a QR digital menu for restaurants and cafes. Customers scan a QR code on their table and browse your full menu — items, prices, photos, and dietary labels — in their own language. No app download, no ordering, no commission. Update your menu in real time, share your QR code on social media, show your wifi password, and keep your menu fresh, accurate, and easy to read. Simple for guests, effortless for you."
   leftImage={restaurant}
   leftImageAlt="Restaurant & Cafe"
   rightImage={astro1}
@@ -37,13 +35,13 @@ import UseCaseSection from "./use-case-section.astro";
     class="flex flex-col md:flex-row justify-between gap-4 items-center"
   >
     <FeatureCard
-      title="Improve Tables Turnover"
-      description="Speed up ordering and service."
-      icon={tableTurnOver}
+      title="Browse in Any Language"
+      description="Guests read your menu in their preferred language."
+      icon={guestExperience}
     />
     <FeatureCard
-      title="Streamline Operations"
-      description="Simplify your workflow and reduce errors."
+      title="Always Up-to-Date"
+      description="Update prices and specials instantly, no reprinting."
       icon={streamlineOperation}
     />
   </div>
@@ -52,36 +50,36 @@ import UseCaseSection from "./use-case-section.astro";
 <!-- Food Trucks -->
 <UseCaseSection
   bgColor="bg-gradient-to-br from-red-400 to-orange-400"
-  title="Improve queue time & service speed"
-  description="Astro-menu is a cloud POS and QR ordering platform designed to make drive-thru and food-truck service faster and smoother. Customers simply scan a QR code to browse your menu, customize their order, and send it straight to the kitchen—reducing wait times and cutting errors with clear item details and modifiers. For drive-thru lanes, Astro-menu supports dual-lane syncing, order recall, and curbside handoff to keep traffic flowing during peak hours. Food trucks can quickly update daily menus, mark sold-out items, and run time-limited specials, while offline-tolerant mode ensures you can keep taking orders anywhere. With support for Arabic and English menus, Astro-menu helps you serve more customers, improve accuracy, and create a better overall guest experience."
+  title="daily specials and menus that change with you"
+  description="Astro-Menu brings QR menus to food trucks and mobile food businesses. Customers scan a QR code on the truck to browse today's menu — items, prices, photos, and sold-out badges — without crowding the window or asking staff to repeat the specials. Update your menu in real time as items sell out, mark daily specials, and share your QR code on social media so customers can browse your menu anywhere. No drive-thru equipment, no ordering hardware, no app."
   leftImage={foodTruck}
   leftImageAlt="Food Truck"
   rightImage={astro2}
   rightImageAlt="Food Truck"
-  rightTitle="Drive-Thru & Food-Truck"
+  rightTitle="Food Truck"
 >
   <div
     slot="features"
     class="flex flex-col md:flex-row justify-between gap-4 items-center"
   >
     <FeatureCard
-      title="Reduce Wait Times"
-      description="Smooth out peaks. Cap the number of active orders per minute"
+      title="Real-Time Updates"
+      description="Mark sold-out items and specials the moment they change."
       icon={waitTime}
     />
     <FeatureCard
-      title="Reduce Staff Overhead"
-      description="Reduce the need for staff to take orders manually"
-      icon={staffOverhead}
+      title="Browse on the Go"
+      description="Customers check the menu from the queue or from home."
+      icon={streamlineOperation}
     />
   </div>
 </UseCaseSection>
 
-<!-- Hospital -->
+<!-- Hotel -->
 <UseCaseSection
   bgColor="bg-gradient-to-br from-emerald-400 to-yellow-400"
-  title="faster service, fewer errors, and happier guests"
-  description="Astro-menu brings QR-powered in-room dining to hotel rooms, letting guests scan, browse the current menu, customize items, and send orders directly to your kitchen - all without phone calls or paper menus. Clear item details and modifiers reduce mistakes, sold-out badges keep expectations accurate, and real-time status updates let guests know when their food is on the way. Works on any tablet or phone, supports multi-languages, The result: faster service, fewer errors, and happier guests - all from a simple, mobile-first interface."
+  title="in-room dining without paper menus"
+  description="Astro-Menu brings QR-powered menus to hotel rooms. Guests scan a QR code on the table or welcome card and browse the current menu — items, prices, photos, and allergen labels — in their preferred language. No phone calls to ask what's on the menu, no outdated paper menus, and no app to install. Multi-language menus keep international guests comfortable, and real-time updates keep room service information accurate."
   leftImage={hotel}
   leftImageAlt="Hotel Room"
   rightImage={astro3}
@@ -93,24 +91,23 @@ import UseCaseSection from "./use-case-section.astro";
     class="flex flex-col md:flex-row justify-between gap-4 items-center"
   >
     <FeatureCard
-      title="Improve Guest Experience"
-      description="Provide a seamless and enjoyable dining experience for hotel guests."
+      title="Multi-Language Menus"
+      description="International guests browse comfortably in their own language."
       icon={guestExperience}
     />
     <FeatureCard
-      title="Enhance Room Service"
-      description="Streamline room service operations and improve efficiency."
+      title="No Paper Menus"
+      description="Always current menus, nothing to print or reprint."
       icon={roomService}
     />
   </div>
 </UseCaseSection>
 
-<!-- Hotel -->
-
+<!-- Hospital -->
 <UseCaseSection
   bgColor="bg-gradient-to-br from-violet-400 to-rose-400"
-  title="Reduce paper waste & manual ordering"
-  description="Astro-menu brings QR-powered meal ordering to hospital rooms, letting patients and staff quickly access the current menu, select diet-appropriate meals (clear labels for diabetic, low-sodium, halal, etc.), add modifiers and allergy notes, and send orders straight to the kitchen—reducing tray errors and unnecessary phone calls. Sold-out badges and portion options set clear expectations, while order status updates keep nurses and patients informed. Works on any tablet or phone, supports multi-languages, and includes offline-tolerant mode so meals can be taken anywhere across the facility. The result: more accurate trays, faster service, and a smoother mealtime experience for patients and kitchen teams."
+  title="clear, accessible meal options for patients"
+  description="Astro-Menu lets hospitals present meal options digitally. Patients and families scan a QR code at the bedside to browse the day's menu — with clear labels for diabetic, low-sodium, halal, and other diets — in their own language. Clear photos and descriptions reduce confusion, sold-out badges set accurate expectations, and multi-language support makes menus accessible to everyone. No stacks of paper menus to print, update, or reprint."
   leftImage={hospital}
   leftImageAlt="Hospital"
   rightImage={astro4}
@@ -122,14 +119,14 @@ import UseCaseSection from "./use-case-section.astro";
     class="flex flex-col md:flex-row justify-between gap-4 items-center"
   >
     <FeatureCard
-      title="Reduce Nursing Overhead"
-      description="Free up nursing staff to focus on patient care"
-      icon={nursingOverhead}
+      title="Clear Diet Labels"
+      description="Diabetic, low-sodium, halal, and other labels at a glance."
+      icon={patientExperience}
     />
     <FeatureCard
-      title="Enhance Patient Experience"
-      description="Prevent mistakes with a clear, accessible digital menu"
-      icon={patientExperience}
+      title="Multi-Language Access"
+      description="Menus in each patient's preferred language."
+      icon={nursingOverhead}
     />
   </div>
 </UseCaseSection>
