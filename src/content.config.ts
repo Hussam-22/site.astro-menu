@@ -22,29 +22,8 @@ const blogCollection = defineCollection({
     }),
 });
 
-const docsCollection = defineCollection({
-  loader: glob({ base: "./src/content/docs", pattern: "**/*.{md,mdx}" }),
-  schema: z.object({
-    draft: z.boolean(),
-    title: z.string(),
-    snippet: z.string(),
-    extraText: z.string().optional(),
-    icon: z.string(),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
-    publishDate: z.string().transform((str) => new Date(str)),
-    author: z.string().default("Astro-Menu"),
-    category: z.string(),
-    tags: z.array(z.string()),
-    order: z.number(),
-  }),
-});
-
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
-  blog: blogCollection,
-  docs: docsCollection,
+	blog: blogCollection,
 };
