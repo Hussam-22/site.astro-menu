@@ -1,7 +1,7 @@
 {
-  "name": "Astro-Menu — QR Digital Menu & Cloud POS",
+  "name": "Astro-Menu — QR Digital Menu",
   "short_name": "Astro-Menu",
-  "description": "QR digital menu with integrated cloud POS for restaurants, coffee shops, and social food businesses.",
+  "description": "QR digital menu for restaurants, coffee shops, and social food businesses. Customers scan and browse your menu in their own language.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
