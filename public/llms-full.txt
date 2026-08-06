@@ -63,7 +63,7 @@ Additional branches: contact hello@astro-menu.com.
 ## FAQ
 
 Q: Can I try Astro-Menu before I buy?
-A: Yes, you can try Astro-Menu for free for 14 days. Simply create an account and start using Astro-Menu right away.
+A: Yes, you can try Astro-Menu for free for 14 days. simply create an account and start using Astro-Menu right away.
 
 Q: Can I cancel my subscription at any time?
 A: Yes, you can cancel your subscription at any time. Your subscription will be active until the end of the billing cycle.
@@ -72,19 +72,19 @@ Q: Does Astro-Menu include ordering or a POS?
 A: No. Astro-Menu is a QR digital menu for viewing only. Customers scan the QR code to browse your menu, check prices and photos, and view translations. Ordering, payments, and your point of sale are handled by you — Astro-Menu takes no commission on your orders.
 
 Q: Can customers place orders from the menu?
-A: No. Astro-Menu is a menu-viewing product. Customers browse your menu in their preferred language, but ordering and payments happen through your own process.
+A: No. Astro-Menu is a menu-viewing product. Customers browse your menu in their preferred language, but ordering and payments happen through your own process. This keeps things simple and lets you handle payments the way you prefer.
 
 Q: Can customers pay directly from the menu?
 A: No, Astro-Menu is a QR Menu that lets customers view your menu. Payments are managed by you.
 
-Q: How many QR codes do I get with the Menu plan?
-A: One QR code per branch (menu viewing only). If you need more branches or QR codes, contact our sales team at hello@astro-menu.com.
-
-Q: How can I add more branches to my subscription?
-A: Contact our sales team at hello@astro-menu.com and they will help you add more branches to your subscription.
+Q: How I can add more branches to my subscription
+A: Please contact our sales team on hello@astro-menu.com and they will help you add more branches to your subscription.
 
 Q: Do I need to install any software to use Astro-Menu?
 A: Astro-Menu is a cloud web-based application. You don't need to install any software to use it. You can access it from any device with a web browser.
+
+Q: How many QR codes do I get with the Menu plan?
+A: One QR code per branch (menu viewing only). If you need more branches or QR codes, contact our sales team at hello@astro-menu.com.
 
 ## Blog
 
