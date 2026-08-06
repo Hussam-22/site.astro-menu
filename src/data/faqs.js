@@ -10,19 +10,19 @@ export const FAQs = [
       "Yes, you can cancel your subscription at any time. Your subscription will be active until the end of the billing cycle.",
   },
   {
-    question: "Does Astro-Menu integrates with PoS systems?",
+    question: "Does Astro-Menu include ordering or a POS?",
     answer:
-      "No, Astro-Menu comes with its own cloud PoS system, you can manage your orders and statistics directly from your Astro-Menu account.",
+      "No. Astro-Menu is a QR digital menu for viewing only. Customers scan the QR code to browse your menu, check prices and photos, and view translations. Ordering, payments, and your point of sale are handled by you — Astro-Menu takes no commission on your orders.",
   },
   {
-    question: "What is self-order?",
+    question: "Can customers place orders from the menu?",
     answer:
-      "Self-order allows customers to place orders directly from their phones without the need for a waiter(ess) to attend the table, allowing customers to order at their own pace and convenience, and improve the table turnover rate.",
+      "No. Astro-Menu is a menu-viewing product. Customers browse your menu in their preferred language, but ordering and payments happen through your own process. This keeps things simple and lets you handle payments the way you prefer.",
   },
   {
     question: "Can customers pay directly from the menu?",
     answer:
-      "No, Astro-Menu is a QR Menu that allows customers to view your menu and place orders. Payments are managed by you.",
+      "No, Astro-Menu is a QR Menu that lets customers view your menu. Payments are managed by you.",
   },
   {
     question: "How I can add more branches to my subscription",
@@ -32,5 +32,10 @@ export const FAQs = [
     question: "Do I need to install any software to use Astro-Menu?",
     answer:
       "Astro-Menu is a cloud web-based application. You don't need to install any software to use it. You can access it from any device with a web browser.",
+  },
+  {
+    question: "How many QR codes do I get with the Menu plan?",
+    answer:
+      "One QR code per branch (menu viewing only). If you need more branches or QR codes, contact our sales team at hello@astro-menu.com.",
   },
 ];

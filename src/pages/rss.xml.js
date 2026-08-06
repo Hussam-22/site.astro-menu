@@ -11,7 +11,7 @@ export async function GET(context) {
   return rss({
     title: "Astro-Menu Blog",
     description:
-      "Insights on QR menus, cloud POS, and digital transformation for food businesses.",
+      "Insights on QR menus and digital transformation for food businesses.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
