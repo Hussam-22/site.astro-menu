@@ -2,9 +2,7 @@
 import Container from "@components/container.astro";
 import Link from "@ui/link.astro";
 import PhoneMockup from "@ui/phone-mockup.astro";
-import TabletMockup from "@ui/tablet-mockup.astro";
 import astroMenuPhone from "assets/views/menu-preview.webp";
-import waitStaffDashboard from "assets/views/waitstaff-dashboard.png";
 import { Image } from "astro:assets";
 import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
 ---
@@ -23,13 +21,13 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
       <h1 class="text-6xl font-extrabold">
         QR Menus for <span
           class="bg-linear-to-r from-purple-500 via-red-500 to-orange-500 bg-clip-text text-transparent"
-          >Rooms, Trucks, Tables,</span
-        > and More.
+          >Every Table,</span
+        > Truck, and Room.
       </h1>
 
       <h2 class="mb-4 text-xl">
-        From restaurants to hotel rooms, Astro Menu is built for every food
-        business.
+        Astro-Menu is a QR digital menu your customers can browse in their own
+        language — no app, no ordering, no commissions.
       </h2>
       <div class="flex flex-col sm:flex-row items-center gap-4">
         <Link href="/pricing" size="lg">Start for Free</Link>
@@ -39,15 +37,9 @@ import backgroundColorImage from "../../assets/backgrounds/bg-blur-multi.svg";
 
     <div class="flex flex-col items-center relative">
       <PhoneMockup
-        className="sm:absolute sm:-top-6 sm:right-20 z-10"
         imgSrc={astroMenuPhone}
         text="Menu View"
         isEager={true}
-      />
-      <TabletMockup
-        className="absolute -top-24 right-0 hidden sm:block"
-        imgSrc={waitStaffDashboard}
-        text="Waitstaff Dashboard"
       />
     </div>
   </div>

@@ -17,7 +17,7 @@ const softwareApplicationSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "QR digital menu with integrated cloud POS for restaurants and cafes, including translations, analytics, and dashboards.",
+    "QR digital menu for restaurants and cafes, including multi-language menus, meal filters, wifi password, and social links.",
   image: new URL("/opengraph.png", site).toString(),
   url: new URL(Astro.url.pathname, site).toString(),
   author: {
@@ -26,7 +26,7 @@ const softwareApplicationSchema = {
   },
   offers: {
     "@type": "Offer",
-    price: "149",
+    price: "59",
     priceCurrency: "AED",
   },
 };
@@ -46,8 +46,8 @@ const faqPageSchema = {
 ---
 
 <Layout
-  title="QR Digital Menu & Cloud POS for Restaurants"
-  description="Astro-Menu is a QR digital menu with cloud POS for restaurants, cafes, and social food brands—fast ordering, translations, dashboards, and more."
+  title="QR Digital Menu for Restaurants"
+  description="Astro-Menu is a QR digital menu for restaurants, cafes, and food brands — customers browse items, prices, and photos in any language, no app download required."
 >
   <Fragment slot="head">
     <script
