@@ -1,14 +1,13 @@
 # Astro-Menu
 
-> Astro-Menu is a QR digital menu and cloud POS platform for restaurants, cafes, hotels, food trucks, drive-thrus, and social media food businesses. Customers scan a QR code to view the menu, browse meals, and place orders directly from their phones — no app download required. Restaurants manage menus, branches, waitstaff, kitchen dashboards, analytics, and multi-language translations from one web dashboard.
+> Astro-Menu is a QR digital menu for restaurants, cafes, hotels, food trucks, and social media food businesses. Customers scan a QR code to browse the menu — items, prices, photos, meal filters, and multi-language translations — no app download, no ordering, no POS.
 
 ## Key sections
 
 - [Home](https://astro-menu.com/): Product overview and highlights.
-- [Features](https://astro-menu.com/features): QR menus, self-order, cloud POS, waitstaff & kitchen dashboards, auto-translation, meal labels, analytics, and more.
-- [Use Cases](https://astro-menu.com/use-cases): Restaurants, cafes, hotels, food trucks, drive-thrus, hospitals, and social media food businesses.
-- [Pricing](https://astro-menu.com/pricing): Essential 149 AED/mo, Advanced 229 AED/mo, Premium 299 AED/mo. 14-day free trial, no credit card required. No commission on orders.
-- [Docs](https://astro-menu.com/docs/welcome/introduction): Full product documentation.
+- [Features](https://astro-menu.com/features): QR menus, multi-language, meal filters, meal labels, wifi password, and social links.
+- [Use Cases](https://astro-menu.com/use-cases): Restaurants, cafes, food trucks, hotels, hospitals, and social media food businesses.
+- [Pricing](https://astro-menu.com/pricing): Menu plan — 59 AED/month or 468 AED/year (39 AED/month billed annually). 14-day free trial, no credit card required. No commission on orders.
 - [Blog](https://astro-menu.com/blog): QR menu and food-tech insights.
 - [Contact](https://astro-menu.com/contact): hello@astro-menu.com.
 
@@ -22,6 +21,6 @@
 ## Important
 
 - Astro-Menu is a cloud, web-based application — no software installation needed.
-- Customers view menus and place orders via QR code; payments are managed by the business, not Astro-Menu.
-- Astro-Menu includes its own cloud POS; it does not integrate with third-party POS systems.
+- Customers view menus via QR code; ordering and payments are managed by the business, not Astro-Menu.
+- Astro-Menu does not include ordering, a POS, or third-party POS integrations.
 - Pricing is in AED (UAE).
