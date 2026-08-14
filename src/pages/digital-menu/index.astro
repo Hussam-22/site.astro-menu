@@ -1,0 +1,134 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Container from '@components/container.astro'
+import Section from '@components/ui/section.astro'
+import Breadcrumbs from '@components/ui/breadcrumbs.astro'
+import FaqList from '@components/ui/faq-list.astro'
+import CtaBand from '@components/ui/cta-band.astro'
+import Button from '@components/ui/button.astro'
+import { PLAN } from '@config/site'
+import { INDUSTRIES } from '@data/industries'
+import { LOCATIONS } from '@data/locations'
+
+const faqs = [
+	{
+		q: 'What is a digital menu?',
+		a: 'A digital menu is a menu published as a web page instead of a printed sheet, read on a phone via a QR code or a link. Unlike a printed menu or a PDF, it can be changed at any time, carries photos on every item, and can translate itself for each diner.'
+	},
+	{
+		q: 'What is the difference between a digital menu and a QR menu?',
+		a: 'They usually mean the same thing. "Digital menu" describes what it is; "QR menu" describes how people get to it. A digital menu can also be reached by a link, which is how most people open it outside the restaurant.'
+	},
+	{
+		q: 'Do digital menus increase sales?',
+		a: 'We are not going to quote a percentage at you, because the honest answer depends on your venue. What is verifiable is the mechanism: items with photos get chosen more often than items described only in text, and diners who can read a menu while queuing order faster.'
+	},
+	{
+		q: 'Are digital menus hard to set up?',
+		a: `No. Most venues are live the same day. You fill in your items the way you would fill in a form, or send us your existing menu and we will load the first version for you.`
+	},
+	{
+		q: 'Do I need to keep my printed menus?',
+		a: 'That is your call. Plenty of venues keep a handful of printed copies for guests who prefer them and use the digital menu for everything else — tables, windows, social media and Google.'
+	},
+	{
+		q: 'How much does a digital menu cost?',
+		a: `Astro-Menu is ${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year, per venue. Everything is included and there is no commission on your sales.`
+	}
+]
+
+const schema = {
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.q,
+		acceptedAnswer: { '@type': 'Answer', text: faq.a }
+	}))
+}
+
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Digital menus', path: '/digital-menu' }]
+---
+
+<Layout
+	title="Digital Menu Software for Restaurants"
+	description="Digital menu software that replaces printed menus and PDFs. Photos, translation, filters and instant updates for 59 AED a month. No POS, no commission."
+	schema={schema}
+	breadcrumbs={crumbs}
+>
+	<Container>
+		<Breadcrumbs items={crumbs} />
+
+		<Section
+			level={1}
+			eyebrow="Digital menus"
+			title="A digital menu, without the enterprise baggage"
+			lede="Most digital menu products are the front end of a restaurant platform that wants your orders, your payments and a percentage. This one is just the menu."
+		>
+			<div class="mx-auto mt-10 max-w-3xl space-y-5 text-lg leading-relaxed text-muted">
+				<p>
+					A digital menu is a menu that lives on a web page rather than a printed sheet. Diners open
+					it on their phone — from a QR code on the table, a link in your Instagram bio, or your
+					Google listing — and read the version that is current at that exact moment.
+				</p>
+				<p>
+					That last point is the whole argument. A printed menu is a photograph of your prices on
+					the day it went to print. A digital menu is the prices. When something changes, you change
+					it once and every diner from that second onwards sees the truth.
+				</p>
+				<p>
+					Everything else follows from being a web page rather than a sheet of paper: unlimited
+					space for descriptions, a photo on every item, automatic translation for every guest,
+					filters for dietary needs, and a page that Google and AI assistants can actually read.
+				</p>
+			</div>
+			<div class="mt-10 flex flex-wrap justify-center gap-3">
+				<Button href="/pricing" variant="brand">See pricing</Button>
+				<Button href="/qr-menu" variant="outline" class="text-ink">How QR menus work</Button>
+			</div>
+		</Section>
+
+		<Section
+			eyebrow="By business type"
+			title="Different kitchens, different problems"
+			lede="A food truck and a hotel do not have the same menu problem. Here is how a digital menu plays out in each."
+		>
+			<div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{
+					INDUSTRIES.map((industry) => (
+						<a
+							href={`/digital-menu/${industry.slug}`}
+							class="rounded-xxl group flex flex-col bg-card p-8 transition hover:bg-line"
+						>
+							<h3 class="text-2xl font-bold text-ink group-hover:text-brand">
+								{industry.name}
+							</h3>
+							<p class="mt-3 flex-grow text-muted">{industry.lede}</p>
+							<span class="mt-4 text-sm font-bold text-brand">Read more →</span>
+						</a>
+					))
+				}
+			</div>
+		</Section>
+
+		<Section eyebrow="Local" title="Digital menus across the UAE">
+			<div class="mt-10 flex flex-wrap justify-center gap-2">
+				{
+					LOCATIONS.map((location) => (
+						<a
+							href={`/qr-menu/${location.slug}`}
+							class="rounded-full bg-card px-4 py-2 text-sm font-medium text-muted transition hover:bg-invert hover:text-invert-ink"
+						>
+							{location.emirate}
+						</a>
+					))
+				}
+			</div>
+		</Section>
+
+		<Section eyebrow="Questions" title="Digital menu questions">
+			<FaqList faqs={faqs} />
+		</Section>
+
+		<CtaBand />
+	</Container>
+</Layout>

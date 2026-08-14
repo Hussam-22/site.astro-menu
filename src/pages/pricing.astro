@@ -1,78 +1,138 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import Container from '@components/container.astro'
-import Sectionhead from '@components/sectionhead.astro'
-import PricingCard from '@components/landing-page/pricing-card.astro'
+import Section from '@components/ui/section.astro'
+import Breadcrumbs from '@components/ui/breadcrumbs.astro'
+import FaqList from '@components/ui/faq-list.astro'
+import CtaBand from '@components/ui/cta-band.astro'
+import PricingBlock from '@components/pricing-block.astro'
+import { PLAN, ANNUAL_SAVING, SITE } from '@config/site'
 
-const pricing = [
+const faqs = [
 	{
-		name: 'Personal',
-		price: 'Free',
-		popular: false,
-		features: [
-			'Lifetime free',
-			'Up to 3 users',
-			'Unlimited Pages',
-			'Astro Sub domain',
-			'Basic Integrations',
-			'Community Support'
-		],
-		button: {
-			text: 'Get Started',
-			link: '/'
+		q: 'Is 59 AED the whole price?',
+		a: 'Yes. 59 AED per venue per month, or 500 AED for a year. No setup fee, no per-scan charge, no commission and nothing to buy.'
+	},
+	{
+		q: 'What does the annual price save me?',
+		a: `Paying yearly costs ${PLAN.annual.aed} AED instead of ${PLAN.monthly.aed * 12} AED — a saving of ${ANNUAL_SAVING.aed} AED, or about ${ANNUAL_SAVING.percent}%.`
+	},
+	{
+		q: 'Why are prices shown in both AED and USD?',
+		a: 'Most of our customers are in the UAE and are billed in dirhams. The USD figures are there so customers elsewhere can see roughly what they are paying. Exchange rates move, so treat the USD figure as indicative.'
+	},
+	{
+		q: 'Do I need a card to start the trial?',
+		a: `No. The ${PLAN.trialDays}-day trial needs no card. If you decide not to continue, it simply ends.`
+	},
+	{
+		q: 'Can I switch between monthly and yearly later?',
+		a: 'Yes. You can move to annual billing whenever you like, and the saving applies from that point.'
+	},
+	{
+		q: 'Is the price per venue or per company?',
+		a: 'Per venue. Each location gets its own menu, QR code and analytics, and each is billed separately.'
+	},
+	{
+		q: 'Are there any usage limits?',
+		a: 'Menu views are unlimited under a fair usage policy, and there is no cap on items, sections, menus or updates. A busy month never costs more than a quiet one.'
+	},
+	{
+		q: 'What happens if I cancel?',
+		a: 'Monthly billing stops at the end of the current month and your menu goes offline. Your QR codes stop resolving, so cancel with that in mind if they are printed on packaging.'
+	}
+]
+
+const schema = [
+	{
+		'@type': 'Product',
+		name: `${SITE.name} QR menu`,
+		description: SITE.description,
+		brand: { '@type': 'Brand', name: SITE.name },
+		offers: {
+			'@type': 'AggregateOffer',
+			priceCurrency: 'AED',
+			lowPrice: PLAN.annual.aed,
+			highPrice: PLAN.monthly.aed * 12,
+			offerCount: 2,
+			offers: [
+				{
+					'@type': 'Offer',
+					name: 'Monthly billing',
+					price: PLAN.monthly.aed,
+					priceCurrency: 'AED',
+					url: `${SITE.domain}/pricing`,
+					availability: 'https://schema.org/InStock'
+				},
+				{
+					'@type': 'Offer',
+					name: 'Annual billing',
+					price: PLAN.annual.aed,
+					priceCurrency: 'AED',
+					url: `${SITE.domain}/pricing`,
+					availability: 'https://schema.org/InStock'
+				}
+			]
 		}
 	},
 	{
-		name: 'Startup',
-		price: {
-			monthly: '$19',
-			annual: '$16',
-			discount: '10%',
-			original: '$24'
-		},
-		popular: true,
-		features: [
-			'All Free Features',
-			'Up to 20 users',
-			'20 Custom domains',
-			'Unlimited Collaborators',
-			'Advanced Integrations',
-			'Priority Support'
-		],
-		button: {
-			text: 'Get Started',
-			link: '#'
-		}
-	},
-	{
-		name: 'Enterprise',
-		price: 'Custom',
-		popular: false,
-		features: [
-			'All Pro Features',
-			'Unlimited Custom domains',
-			'99.99% Uptime SLA',
-			'SAML & SSO Integration',
-			'Dedicated Account Manager',
-			'24/7 Phone Support'
-		],
-		button: {
-			text: 'Contact us',
-			link: '/contact'
-		}
+		'@type': 'FAQPage',
+		mainEntity: faqs.map((faq) => ({
+			'@type': 'Question',
+			name: faq.q,
+			acceptedAnswer: { '@type': 'Answer', text: faq.a }
+		}))
 	}
 ]
 ---
 
-<Layout title="Pricing">
+<Layout
+	title="Pricing — 59 AED a Month, All Included"
+	description={`One plan: ${PLAN.monthly.aed} AED a month or ${PLAN.annual.aed} AED a year. Prices in AED and USD. No commission, no hardware, ${PLAN.trialDays} days free.`}
+	schema={schema}
+	breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing' }]}
+>
 	<Container>
-		<Sectionhead>
-			<Fragment slot="title">Pricing</Fragment>
-			<Fragment slot="desc"> Simple & Predictable pricing. No Surprises. </Fragment>
-		</Sectionhead>
+		<Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing' }]} />
 
-		<div class="mx-auto mt-12 grid max-w-screen-lg gap-10 md:grid-cols-3">
-			{pricing.map((item) => <PricingCard plan={item} />)}
-		</div>
+		<Section
+			level={1}
+			eyebrow="Pricing"
+			title="One plan. Everything in it."
+			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year. Switch currency and billing period below — the price is the same product either way.`}
+		>
+			<PricingBlock />
+		</Section>
+
+		<Section
+			eyebrow="No asterisks"
+			title="What we will never charge you for"
+			lede="The things that usually turn a cheap headline price into an expensive invoice."
+		>
+			<div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				{
+					[
+						{ t: 'Setup fees', b: 'Nothing to pay to get started, and we will load your first menu for you.' },
+						{ t: 'Per-scan charges', b: 'A viral weekend costs exactly the same as a quiet Tuesday.' },
+						{ t: 'Commission', b: 'We never process an order or a payment, so we can never take a cut.' },
+						{ t: 'Hardware', b: 'No tablets, no printers, no installation visit, no service contract.' }
+					].map((item) => (
+						<div class="rounded-xxl bg-card p-8">
+							<h3 class="text-lg font-bold text-ink">{item.t}</h3>
+							<p class="mt-2 text-sm text-muted">{item.b}</p>
+						</div>
+					))
+				}
+			</div>
+		</Section>
+
+		<Section eyebrow="Questions" title="Pricing questions">
+			<FaqList faqs={faqs} />
+		</Section>
+
+		<CtaBand
+			title="Try it for 30 days without paying anything"
+			body="No card, no contract, no sales call. If it does not suit you, it just ends."
+		/>
 	</Container>
 </Layout>

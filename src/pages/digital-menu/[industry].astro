@@ -1,0 +1,143 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Container from '@components/container.astro'
+import Section from '@components/ui/section.astro'
+import Breadcrumbs from '@components/ui/breadcrumbs.astro'
+import FaqList from '@components/ui/faq-list.astro'
+import CtaBand from '@components/ui/cta-band.astro'
+import Button from '@components/ui/button.astro'
+import Check from '@components/ui/icons/check.astro'
+import PricingBlock from '@components/pricing-block.astro'
+import { PLAN } from '@config/site'
+import { INDUSTRIES } from '@data/industries'
+import { LOCATIONS } from '@data/locations'
+
+export function getStaticPaths() {
+	return INDUSTRIES.map((industry) => ({
+		params: { industry: industry.slug },
+		props: { industry }
+	}))
+}
+
+const { industry } = Astro.props
+const others = INDUSTRIES.filter((i) => i.slug !== industry.slug)
+
+const schema = {
+	'@type': 'FAQPage',
+	mainEntity: industry.faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.q,
+		acceptedAnswer: { '@type': 'Answer', text: faq.a }
+	}))
+}
+
+const crumbs = [
+	{ name: 'Home', path: '/' },
+	{ name: 'Digital menus', path: '/digital-menu' },
+	{ name: industry.name, path: `/digital-menu/${industry.slug}` }
+]
+---
+
+<Layout
+	title={industry.title}
+	description={industry.description}
+	schema={schema}
+	breadcrumbs={crumbs}
+>
+	<Container>
+		<Breadcrumbs items={crumbs} />
+
+		<section class="py-14 md:py-20">
+			<div class="max-w-3xl">
+				<p class="mb-4 inline-block rounded-full bg-card px-4 py-1.5 text-sm font-bold text-brand">
+					{industry.name} · {PLAN.monthly.aed} AED a month
+				</p>
+				<h1 class="text-4xl font-extrabold leading-tight text-ink md:text-6xl md:leading-tight">
+					{industry.h1}
+				</h1>
+				<p class="mt-6 text-xl text-muted">{industry.lede}</p>
+				<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+					<Button href="/pricing" variant="brand" size="lg">See pricing</Button>
+					<Button href="/how-it-works" variant="outline" size="lg" class="text-ink">
+						How it works
+					</Button>
+				</div>
+			</div>
+		</section>
+
+		<section class="pb-16">
+			<div class="max-w-3xl space-y-5 text-lg leading-relaxed text-muted">
+				{industry.body.map((paragraph) => <p>{paragraph}</p>)}
+			</div>
+		</section>
+
+		<Section eyebrow="The problem" title={`What usually goes wrong`}>
+			<div class="mt-12 grid gap-4 md:grid-cols-2">
+				{
+					industry.problems.map((item) => (
+						<div class="rounded-xxl bg-card p-8">
+							<h3 class="text-xl font-bold text-ink">{item.title}</h3>
+							<p class="mt-3 text-muted">{item.body}</p>
+						</div>
+					))
+				}
+			</div>
+		</Section>
+
+		<Section eyebrow="What you get" title={`Astro-Menu for ${industry.name.toLowerCase()}`}>
+			<div class="rounded-xxl mx-auto mt-12 max-w-3xl bg-card p-8 md:p-12">
+				<ul class="space-y-3">
+					{
+						industry.highlights.map((item) => (
+							<li class="flex items-start gap-3">
+								<Check class="mt-1 h-4 w-4 flex-none text-green-600" />
+								<span class="text-ink">{item}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</Section>
+
+		<Section
+			eyebrow="Pricing"
+			title="The same one plan"
+			lede="No industry pricing, no per-feature upsell, no commission."
+		>
+			<PricingBlock />
+		</Section>
+
+		<Section eyebrow="Questions" title={`Questions from ${industry.name.toLowerCase()}`}>
+			<FaqList faqs={industry.faqs} />
+		</Section>
+
+		<Section eyebrow="Also for" title="Other kinds of venue">
+			<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+				{
+					others.map((other) => (
+						<a
+							href={`/digital-menu/${other.slug}`}
+							class="rounded-3xl bg-card p-6 font-bold text-ink transition hover:bg-invert hover:text-invert-ink"
+						>
+							{other.name}
+						</a>
+					))
+				}
+			</div>
+			<div class="mt-8 flex flex-wrap justify-center gap-2">
+				{
+					LOCATIONS.map((location) => (
+						<a
+							href={`/qr-menu/${location.slug}`}
+							class="rounded-full bg-card px-4 py-2 text-sm text-muted transition hover:bg-invert hover:text-invert-ink"
+						>
+							QR menus in {location.emirate}
+						</a>
+					))
+				}
+			</div>
+		</Section>
+
+		<CtaBand />
+	</Container>
+</Layout>

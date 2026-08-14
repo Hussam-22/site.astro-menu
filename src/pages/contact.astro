@@ -1,29 +1,95 @@
 ---
-import Contactform from '@components/contactform.astro'
-import Container from '@components/container.astro'
-import Sectionhead from '@components/sectionhead.astro'
 import Layout from '@layouts/Layout.astro'
-import { Icon } from 'astro-icon/components'
+import Container from '@components/container.astro'
+import Section from '@components/ui/section.astro'
+import Breadcrumbs from '@components/ui/breadcrumbs.astro'
+import Contactform from '@components/contactform.astro'
+import { SITE, PLAN } from '@config/site'
+
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]
+
+const schema = {
+	'@type': 'ContactPage',
+	name: `Contact ${SITE.name}`,
+	mainEntity: {
+		'@type': 'Organization',
+		'@id': `${SITE.domain}/#organization`,
+		email: SITE.email
+	}
+}
 ---
 
-<Layout title="Contact">
+<Layout
+	title="Contact — Talk to Astro-Menu"
+	description="Questions about QR menus, pricing or getting your first menu loaded? Email us or send a message and we will reply."
+	schema={schema}
+	breadcrumbs={crumbs}
+>
 	<Container class="md:max-w-screen-md">
-		<Sectionhead>
-			<Fragment slot="title">Contact</Fragment>
-			<Fragment slot="desc">We are a here to help.</Fragment>
-		</Sectionhead>
+		<Breadcrumbs items={crumbs} />
 
-		<div class="mx-auto mt-16 grid max-w-4xl gap-10 lg:mb-24">
-			<div>
-				<h2 class="text-2xl font-medium text-gray-800">Contact Astro-Menu</h2>
-				<p class="mt-3 text-lg leading-relaxed text-gray-500">
-					Have something to say? We are here to help. Fill up the form or send email to:
-					<strong class="text-rose-400">hello@astro-menu.com</strong>
+		<Section
+			level={1}
+			eyebrow="Contact"
+			title="Talk to a person"
+			lede="No call centre and no sales sequence. Send a message and you will get a straight answer."
+		>
+			<div class="mt-12 grid gap-8 md:grid-cols-5">
+				<div class="md:col-span-2">
+					<h2 class="text-xl font-bold text-ink">We can help with</h2>
+					<ul class="mt-4 space-y-3 text-muted">
+						<li>Loading your existing menu for you, free</li>
+						<li>Whether Astro-Menu suits your kind of venue</li>
+						<li>Pricing for several branches</li>
+						<li>Anything the FAQ did not answer</li>
+					</ul>
+					<p class="mt-8 text-muted">Or email us directly:</p>
+					<a
+						href={`mailto:${SITE.email}`}
+						class="text-lg font-bold text-brand hover:underline"
+					>
+						{SITE.email}
+					</a>
+					<p class="mt-8 text-sm text-muted">
+						Not ready to talk? The {PLAN.trialDays}-day trial needs no card and no conversation.
+					</p>
+				</div>
+
+				<div class="rounded-xxl bg-card p-6 md:col-span-3 md:p-8">
+					<Contactform />
+				</div>
+			</div>
+		</Section>
+
+		<Section eyebrow="Before you write" title="Answers you may not need to ask for">
+			<div class="mt-10 space-y-6 text-lg leading-relaxed text-muted">
+				<p>
+					<strong class="text-ink">Send us your menu and we will build the first version.</strong> This
+					is the thing most people email about, so to save you the message: yes, we do it, and it costs
+					nothing. Send whatever you have — a PDF, photos of a printed menu, a spreadsheet, a Word
+					document — and we will load your sections, items, descriptions and prices. You get an account
+					with the menu already in it, and you take over editing from there. It normally takes us less
+					than a working day.
+				</p>
+				<p>
+					<strong class="text-ink">If you need order taking or payments, we are not the right tool.</strong>
+					{' '}Astro-Menu shows your menu and stops there. There is no POS, no ordering and no payment
+					processing, and we are not planning to add them — that restraint is why it costs {PLAN.monthly.aed}
+					{' '}AED a month and takes no commission. If you need those things, a full restaurant platform
+					will serve you better, and we would rather say so now than after you have paid us.
+				</p>
+				<p>
+					<strong class="text-ink">Several branches are simply several subscriptions.</strong> Each venue
+					gets its own menu, its own QR code and its own analytics at {PLAN.monthly.aed} AED a month.
+					There is no franchise tier and no minimum. If you are opening a lot of locations at once,
+					write to us and we will sort out a single invoice rather than a dozen.
+				</p>
+				<p>
+					<strong class="text-ink">We reply in English or Arabic.</strong> We are set up for the UAE
+					market and most of our customers are here, but the product is not region-locked and we are
+					happy to work with venues elsewhere. Pricing is billed in dirhams either way.
 				</p>
 			</div>
-			<div>
-				<Contactform />
-			</div>
-		</div>
+		</Section>
 	</Container>
 </Layout>

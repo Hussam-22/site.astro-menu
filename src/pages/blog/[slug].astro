@@ -1,58 +1,81 @@
 ---
-import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import Container from '@components/container.astro'
-import { Debug } from 'astro:components'
+import Breadcrumbs from '@components/ui/breadcrumbs.astro'
+import CtaBand from '@components/ui/cta-band.astro'
+import { SITE } from '@config/site'
+import { getFormattedDate } from '@utils/all'
 
-// Generate a new path for every collection entry
 export async function getStaticPaths() {
-	const blogEntries = await getCollection('blog')
-
-	return blogEntries.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry }
-	}))
+	const posts = await getCollection('blog', ({ data }) => !data.draft)
+	return posts.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }))
 }
 
-// Get the entry directly from the prop on render
 const { entry } = Astro.props
 const { Content } = await entry.render()
+
+const schema = {
+	'@type': 'BlogPosting',
+	headline: entry.data.title,
+	description: entry.data.description,
+	datePublished: entry.data.publishDate.toISOString(),
+	dateModified: (entry.data.updatedDate ?? entry.data.publishDate).toISOString(),
+	author: { '@type': 'Organization', name: entry.data.author },
+	publisher: { '@id': `${SITE.domain}/#organization` },
+	mainEntityOfPage: `${SITE.domain}/blog/${entry.slug}`,
+	keywords: entry.data.tags.join(', ')
+}
+
+const crumbs = [
+	{ name: 'Home', path: '/' },
+	{ name: 'Blog', path: '/blog' },
+	{ name: entry.data.title, path: `/blog/${entry.slug}` }
+]
 ---
 
-<Debug answer={{ entry }} />
-
-<Layout title={entry.data.title}>
+<Layout
+	title={entry.data.title}
+	description={entry.data.description}
+	schema={schema}
+	breadcrumbs={crumbs}
+>
 	<Container>
-		<div class="mx-auto mt-14 max-w-3xl">
-			<span class="text-sm font-medium uppercase tracking-wider text-blue-400">
+		<Breadcrumbs items={crumbs} />
+
+		<article class="mx-auto max-w-3xl py-14">
+			<span class="text-sm font-bold uppercase tracking-widest text-brand">
 				{entry.data.category}
 			</span>
-			<h1 class="mt-1 text-4xl font-bold lg:text-5xl lg:leading-tight lg:tracking-tight">
+			<h1 class="mt-2 text-4xl font-extrabold leading-tight text-ink md:text-5xl">
 				{entry.data.title}
 			</h1>
-			<div class="mt-3 flex flex-wrap items-center gap-2 md:flex-nowrap">
-				<span class="text-gray-400">
-					{entry.data.author}
-				</span>
-				<span class="text-gray-400">•</span>
-				<time class="text-gray-400" datetime={entry.data.publishDate.toISOString()}>
-					{entry.data.publishDate.toDateString()}
+			<p class="mt-4 text-xl text-muted">{entry.data.description}</p>
+			<div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted">
+				<span>{entry.data.author}</span>
+				<span>•</span>
+				<time datetime={entry.data.publishDate.toISOString()}>
+					{getFormattedDate(entry.data.publishDate)}
 				</time>
-				<span class="hidden text-gray-400 md:block">•</span>
-				<div class="flex w-full flex-wrap gap-3 md:w-auto">
-					{entry.data.tags.map((tag) => <span class="text-sm text-gray-500">#{tag}</span>)}
-				</div>
 			</div>
-		</div>
 
-		<div class="prose prose-lg mx-auto mt-6 max-w-3xl text-rose-400">
-			<Content />
-		</div>
-		<div class="mt-8 text-center">
-			<a href="/blog" class="rounded-md bg-gray-100 px-5 py-3 transition hover:bg-gray-200"
-				>← Back to Blog</a
+			<div
+				class="prose dark:prose-invert prose-lg mt-10 max-w-none prose-headings:font-extrabold prose-a:text-brand prose-strong:text-ink"
 			>
-		</div>
+				<Content />
+			</div>
+
+			<div class="mt-10 flex flex-wrap gap-2">
+				{
+					entry.data.tags.map((tag) => (
+						<span class="rounded-full bg-card px-3 py-1 text-sm text-muted">#{tag}</span>
+					))
+				}
+			</div>
+
+			<a href="/blog" class="mt-10 inline-block text-brand hover:underline">← All posts</a>
+		</article>
+
+		<CtaBand />
 	</Container>
 </Layout>

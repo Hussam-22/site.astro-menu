@@ -1,15 +1,41 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
-	darkMode: 'selector',
+	darkMode: 'class',
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			fontFamily: {
-<<<<<<< HEAD
-				sans: ['"Jost Variable", sans-serif', ...defaultTheme.fontFamily.sans]
-=======
 				sans: [`'Plus Jakarta Sans Variable', sans-serif`, ...defaultTheme.fontFamily.sans]
->>>>>>> staging
+			},
+			borderRadius: {
+				xxl: '2.5rem',
+				'4xl': '2rem'
+			},
+			fontSize: {
+				// Display scale for the hero and section headings.
+				'display-sm': ['3rem', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+				display: ['4.25rem', { lineHeight: '0.98', letterSpacing: '-0.035em' }],
+				'display-lg': ['5.75rem', { lineHeight: '0.94', letterSpacing: '-0.04em' }]
+			},
+			colors: {
+				brand: 'rgb(var(--c-brand) / <alpha-value>)',
+				// Kept as aliases so existing markup does not break.
+				secondary: 'rgb(var(--c-brand) / <alpha-value>)',
+				accent: 'rgb(var(--c-brand) / <alpha-value>)',
+				page: 'rgb(var(--c-page) / <alpha-value>)',
+				ink: 'rgb(var(--c-ink) / <alpha-value>)',
+				muted: 'rgb(var(--c-muted) / <alpha-value>)',
+				card: 'rgb(var(--c-card) / <alpha-value>)',
+				'card-ink': 'rgb(var(--c-card-ink) / <alpha-value>)',
+				invert: 'rgb(var(--c-invert) / <alpha-value>)',
+				'invert-ink': 'rgb(var(--c-invert-ink) / <alpha-value>)',
+				line: 'rgb(var(--c-line) / <alpha-value>)',
+				mint: 'rgb(var(--c-mint) / <alpha-value>)',
+				lilac: 'rgb(var(--c-lilac) / <alpha-value>)',
+				butter: 'rgb(var(--c-butter) / <alpha-value>)',
+				blush: 'rgb(var(--c-blush) / <alpha-value>)',
+				sky: 'rgb(var(--c-sky) / <alpha-value>)'
 			}
 		}
 	},
@@ -22,18 +48,22 @@ module.exports = {
 	daisyui: {
 		themes: [
 			{
-				business: {
-					...require('daisyui/src/theming/themes')['business'],
-					primary: '#000000',
-					secondary: '#EC5766',
-					color: 'black',
-					'.text-primary': { color: '#000000' },
-					'.text-secondary': { color: '#EC5766' },
-					'.rounded-xxl': { borderRadius: '4rem' },
-					'font-weight': '300'
+				astro: {
+					primary: '#EC5766',
+					'primary-content': '#ffffff',
+					secondary: '#B2F0C7',
+					'secondary-content': '#0c0c0e',
+					accent: '#D6C7F8',
+					'accent-content': '#0c0c0e',
+					neutral: '#0c0c0e',
+					'neutral-content': '#ffffff',
+					'base-100': '#ffffff',
+					'base-200': '#f6f6f8',
+					'base-300': '#e2e2e8',
+					'base-content': '#0c0c0e'
 				}
-			},
-			'fantasy'
-		]
+			}
+		],
+		logs: false
 	}
 }

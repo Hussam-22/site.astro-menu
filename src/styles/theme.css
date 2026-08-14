@@ -1,0 +1,91 @@
+:root {
+	/* Light is the default theme. */
+	--c-page: 255 255 255;
+	--c-ink: 12 12 14;
+	--c-muted: 90 90 100;
+	--c-card: 246 246 248;
+	--c-card-ink: 12 12 14;
+	--c-invert: 12 12 14;
+	--c-invert-ink: 255 255 255;
+	--c-line: 226 226 232;
+
+	/* One brand tone, used for every filled surface, always with white text. */
+	--c-brand: 236 87 102;
+
+	/* Pastel accents for colour-blocked cards. */
+	--c-mint: 178 240 199;
+	--c-lilac: 214 199 248;
+	--c-butter: 253 225 152;
+	--c-blush: 251 212 226;
+	--c-sky: 190 222 250;
+
+	color-scheme: light;
+}
+
+.dark {
+	--c-page: 10 10 12;
+	--c-ink: 255 255 255;
+	--c-muted: 166 166 176;
+	--c-card: 24 24 28;
+	--c-card-ink: 255 255 255;
+	--c-invert: 255 255 255;
+	--c-invert-ink: 12 12 14;
+	--c-line: 42 42 48;
+
+	--c-brand: 236 87 102;
+
+	/* Pastels are deepened in dark mode so white text stays readable on them. */
+	--c-mint: 22 101 72;
+	--c-lilac: 76 51 130;
+	--c-butter: 122 84 15;
+	--c-blush: 129 46 79;
+	--c-sky: 27 76 122;
+
+	color-scheme: dark;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* NB: do not put `content-visibility: auto` on img. Combined with loading="lazy"
+   the browser skips layout for off-screen images and they never load at all. */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* Pastel cards carry dark ink in light mode and white ink in dark mode. */
+.pastel {
+	color: rgb(12 12 14);
+}
+.dark .pastel {
+	color: rgb(255 255 255);
+}
+
+/* Marquee used by the feature ticker. */
+@keyframes marquee-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+.marquee-track {
+	display: flex;
+	width: max-content;
+	animation: marquee-left 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}

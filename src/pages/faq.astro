@@ -1,0 +1,42 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Container from '@components/container.astro'
+import Section from '@components/ui/section.astro'
+import Breadcrumbs from '@components/ui/breadcrumbs.astro'
+import FaqList from '@components/ui/faq-list.astro'
+import CtaBand from '@components/ui/cta-band.astro'
+import { CORE_FAQS } from '@data/faqs'
+
+const schema = {
+	'@type': 'FAQPage',
+	mainEntity: CORE_FAQS.map((faq) => ({
+		'@type': 'Question',
+		name: faq.q,
+		acceptedAnswer: { '@type': 'Answer', text: faq.a }
+	}))
+}
+
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq' }]
+---
+
+<Layout
+	title="QR Menu FAQ — Common Questions"
+	description="Answers on pricing, setup time, languages, QR codes, analytics, contracts and why Astro-Menu deliberately has no POS, ordering or payments."
+	schema={schema}
+	breadcrumbs={crumbs}
+>
+	<Container>
+		<Breadcrumbs items={crumbs} />
+
+		<Section
+			level={1}
+			eyebrow="FAQ"
+			title="Frequently asked questions"
+			lede="Everything people ask before signing up, answered plainly. If yours is not here, email us and we will add it."
+		>
+			<FaqList faqs={CORE_FAQS} />
+		</Section>
+
+		<CtaBand />
+	</Container>
+</Layout>

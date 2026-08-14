@@ -1,27 +1,361 @@
 ---
-import Container from '@components/container.astro'
-import EverythingYouNeed from '@components/landing-page/everything-you-need.astro'
-import Hero from '@components/landing-page/hero.astro'
 import Layout from '@layouts/Layout.astro'
-import Pricing from '@components/landing-page/pricing-component.astro'
-import FAQ from '@components/landing-page/faq.astro'
-import WhyToSwitch from '@components/landing-page/why-to-switch.astro'
-import AstroMenuVsOtherMenus from '@components/landing-page/astro-menu-vs-other-menus.astro'
-import Concept from '@components/landing-page/concept.astro'
-import LetsDoTheMath from '@components/landing-page/lets-do-the-math.astro'
-import AllFeatures from '@components/landing-page/all-features.astro'
+import Container from '@components/container.astro'
+import Section from '@components/ui/section.astro'
+import Button from '@components/ui/button.astro'
+import Check from '@components/ui/icons/check.astro'
+import Cross from '@components/ui/icons/cross.astro'
+import FaqList from '@components/ui/faq-list.astro'
+import CtaBand from '@components/ui/cta-band.astro'
+import PricingBlock from '@components/pricing-block.astro'
+import ProductGallery from '@components/product-gallery.astro'
+import Hero from '@components/landing/hero.astro'
+import Marquee from '@components/landing/marquee.astro'
+import { Image } from 'astro:assets'
+import macrosShot from 'assets/screens/macros.png'
+import { SITE, PLAN, ANNUAL_SAVING } from '@config/site'
+import { STEPS, NOT_INCLUDED } from '@data/plan'
+import { CORE_FAQS } from '@data/faqs'
+import { INDUSTRIES } from '@data/industries'
+import { LOCATIONS } from '@data/locations'
+
+const homeFaqs = CORE_FAQS.slice(0, 8)
+const PASTELS = ['bg-mint', 'bg-lilac', 'bg-butter', 'bg-blush', 'bg-sky']
+
+const capabilities = [
+	{
+		title: 'Update it in seconds',
+		body: 'Change a price, hide a sold-out dish, add a special. Live before you put your phone down, and the QR code never changes.'
+	},
+	{
+		title: 'Every diner reads their own language',
+		body: 'Write the menu once. Automatic translation hands each guest a version in the language their phone is already set to.'
+	},
+	{
+		title: 'A photo on every item',
+		body: 'People order what they can see. Every dish gets a proper picture instead of a line of text on a laminated page.'
+	},
+	{
+		title: 'Calories and macros',
+		body: 'Show CAL, CARB, FAT and PRO on any item. Optional, and a genuine differentiator for healthy eating and meal-prep menus.'
+	},
+	{
+		title: 'One link, everywhere',
+		body: 'The same menu works on the table, in your Instagram bio, on your Google listing, in a WhatsApp reply and on a bag sticker.'
+	},
+	{
+		title: 'See what people look at',
+		body: 'Menu views, most-viewed items and peak times — so you know which dishes get attention before you change the menu.'
+	}
+]
+
+const schema = {
+	'@type': 'FAQPage',
+	mainEntity: homeFaqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.q,
+		acceptedAnswer: { '@type': 'Answer', text: faq.a }
+	}))
+}
 ---
 
-<Layout title="">
+<Layout
+	title="QR Menus for Restaurants, Cafés & Food Trucks"
+	description={`Turn your menu into a fast, mobile QR menu you can update any time. One plan at ${PLAN.monthly.aed} AED a month. No POS, no hardware, no commission.`}
+	schema={schema}
+>
 	<Container>
 		<Hero />
-		<EverythingYouNeed />
-		<WhyToSwitch />
-		<Concept />
-		<LetsDoTheMath />
-		<AllFeatures />
-		<AstroMenuVsOtherMenus />
-		<Pricing />
-		<FAQ />
+	</Container>
+
+	<Marquee />
+
+	<Container>
+		<!-- Positioning -->
+		<Section
+			eyebrow="The whole idea"
+			title="It is a menu. That is the entire product."
+			lede="Most menu products bolt themselves to a POS, take a cut of your orders and charge like an enterprise system. Astro-Menu does one job properly and gets out of the way."
+		>
+			<div class="mt-14 grid gap-5 md:grid-cols-2">
+				{
+					NOT_INCLUDED.map((item, i) => (
+						<div
+							class:list={[
+								'rounded-4xl pastel p-8 transition-transform duration-300 hover:-translate-y-1',
+								PASTELS[i % PASTELS.length]
+							]}
+						>
+							<div class="flex items-center gap-3">
+								<Cross class="h-5 w-5 flex-none" />
+								<h3 class="text-2xl font-extrabold">{item.label}</h3>
+							</div>
+							<p class="mt-3 text-lg opacity-80">{item.reason}</p>
+						</div>
+					))
+				}
+			</div>
+			<p class="mx-auto mt-10 max-w-2xl text-center text-lg text-muted">
+				That restraint is the reason the whole thing costs {PLAN.monthly.aed} AED a month instead of
+				several hundred.
+			</p>
+		</Section>
+
+		<!-- How it works -->
+		<Section
+			eyebrow="How it works"
+			title="Live by this afternoon"
+			lede="Four steps, no installation, nothing to plug in."
+		>
+			<div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+				{
+					STEPS.map((step, i) => (
+						<div
+							class:list={[
+								'rounded-4xl pastel flex flex-col p-8 transition-transform duration-300 hover:-translate-y-1',
+								PASTELS[i % PASTELS.length]
+							]}
+						>
+							<span class="text-6xl font-extrabold leading-none opacity-30">{i + 1}</span>
+							<h3 class="mt-5 text-2xl font-extrabold leading-tight">{step.title}</h3>
+							<p class="mt-3 flex-grow opacity-80">{step.body}</p>
+							<p class="mt-5 text-sm font-bold opacity-60">{step.detail}</p>
+						</div>
+					))
+				}
+			</div>
+			<div class="mt-10 text-center">
+				<Button href="/how-it-works" variant="surface">See the full setup walkthrough</Button>
+			</div>
+		</Section>
+
+		<!-- Real menus -->
+		<ProductGallery
+			eyebrow="Real menus"
+			title="This is what your customers actually get"
+			lede="Live Astro-Menu menus, exactly as they appear on a diner’s phone."
+		/>
+
+		<!-- Capabilities -->
+		<Section
+			eyebrow="What you get"
+			title="Everything, in the one plan"
+			lede="There is no cheaper tier missing the thing you need, and no expensive tier to grow into."
+		>
+			<div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+				{
+					capabilities.map((item) => (
+						<div class="rounded-4xl border border-line bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand">
+							<span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white">
+								<Check class="h-5 w-5" />
+							</span>
+							<h3 class="mt-5 text-xl font-extrabold text-ink">{item.title}</h3>
+							<p class="mt-2 text-muted">{item.body}</p>
+						</div>
+					))
+				}
+			</div>
+			<div class="mt-10 text-center">
+				<Button href="/features" variant="surface">See every feature</Button>
+			</div>
+		</Section>
+
+		<!-- The maths -->
+		<Section
+			eyebrow="The maths"
+			title={`${PLAN.annual.aed} AED for a year of menus`}
+			lede="We are not going to invent a statistic for you. Add up what you spent on menu printing last year — design, print, lamination, reprints when prices moved — and compare it with one number."
+		>
+			<div class="mt-14 grid gap-5 md:grid-cols-3">
+				{
+					[
+						{
+							n: PLAN.annual.aed,
+							suffix: ' AED',
+							t: 'A year of Astro-Menu',
+							b: 'Unlimited changes, unlimited items, unlimited views. Paid once.',
+							tone: 'bg-mint'
+						},
+						{
+							n: 0,
+							suffix: ' AED',
+							t: 'Cost of a price change',
+							b: 'However many times you change it. A printed menu charges you for every one.',
+							tone: 'bg-butter'
+						},
+						{
+							n: 0,
+							suffix: '%',
+							t: 'Commission on your sales',
+							b: 'We never touch an order or a payment, so there is nothing to take a cut of.',
+							tone: 'bg-lilac'
+						}
+					].map((card) => (
+						<div class:list={['rounded-4xl pastel p-10', card.tone]}>
+							<p class="text-6xl font-extrabold leading-none">
+								<span data-countup data-to={card.n}>
+									0
+								</span>
+								{card.suffix}
+							</p>
+							<p class="mt-4 text-xl font-extrabold">{card.t}</p>
+							<p class="mt-2 opacity-80">{card.b}</p>
+						</div>
+					))
+				}
+			</div>
+		</Section>
+
+		<!-- Found on Google -->
+		<Section
+			eyebrow="Found on Google"
+			title="Go and search your own restaurant right now"
+			lede="On your phone, tap Menu on your Google listing. Whatever appears is what every new customer sees before deciding whether to come. Most owners have never looked."
+		>
+			<div class="mt-14 grid gap-5 lg:grid-cols-3">
+				<div class="rounded-4xl border-2 border-dashed border-line p-8">
+					<p class="text-sm font-bold uppercase tracking-widest text-muted">What you probably see</p>
+					<h3 class="mt-3 text-2xl font-extrabold text-ink">Photos of a menu board</h3>
+					<p class="mt-3 text-muted">
+						Snapshots of a wall board or a laminated card, taken at an angle by you or a customer.
+						Shot once, never replaced. The prices are whatever they were that day, and on a phone
+						they are barely legible.
+					</p>
+				</div>
+				<div class="rounded-4xl border-2 border-dashed border-line p-8">
+					<p class="text-sm font-bold uppercase tracking-widest text-muted">Or worse</p>
+					<h3 class="mt-3 text-2xl font-extrabold text-ink">“Menu provided by” a delivery app</h3>
+					<p class="mt-3 text-muted">
+						Not your menu — an aggregator’s copy of it, in their layout, at their prices with their
+						commission built in. It updates when they update it, usually shows only your delivery
+						range, and quietly advertises a platform that charges you a percentage.
+					</p>
+				</div>
+				<div class="rounded-4xl bg-brand p-8 text-white">
+					<p class="text-sm font-bold uppercase tracking-widest text-white/80">With Astro-Menu</p>
+					<h3 class="mt-3 text-2xl font-extrabold">Your actual, current menu</h3>
+					<p class="mt-3 text-white/90">
+						Paste your menu link into your Google profile once. From then on, everyone who looks you
+						up gets today’s prices, a photo on every dish and their own language — on a page that
+						loads instantly and that you control.
+					</p>
+				</div>
+			</div>
+			<div class="mt-10 text-center">
+				<Button href="/compare/qr-menu-vs-google-business-menu" variant="brand">
+					See how to fix what Google shows
+				</Button>
+			</div>
+		</Section>
+
+		<!-- vs old menus -->
+		<Section
+			eyebrow="Compare"
+			title="Against what you are probably using now"
+			lede="An honest look at PDFs, printed menus, Instagram highlights and Google listings — including what each still does better."
+		>
+			<div class="rounded-xxl mt-14 grid items-center gap-10 bg-card p-8 md:p-12 lg:grid-cols-2">
+				<div class="flex justify-center">
+					<Image
+						src={macrosShot}
+						alt="An Astro-Menu menu showing dishes with photos, prices and macros"
+						widths={[280, 560]}
+						sizes="(max-width: 1024px) 70vw, 280px"
+						loading="lazy"
+						class="w-64 rounded-4xl border-8 border-invert object-cover shadow-2xl"
+					/>
+				</div>
+				<div>
+					<ul class="space-y-4">
+						{
+							[
+								'Readable the moment it opens — no pinching or zooming',
+								'A photo and a full description on every item',
+								'Sold-out items disappear instead of disappointing someone',
+								'Translated automatically for every diner',
+								'Filterable by dietary need and meal type',
+								'One link for your Google listing, bio and tables'
+							].map((item) => (
+								<li class="flex items-start gap-3 text-lg text-ink">
+									<Check class="mt-1.5 h-4 w-4 flex-none text-brand" />
+									<span>{item}</span>
+								</li>
+							))
+						}
+					</ul>
+					<div class="mt-8 flex flex-wrap gap-3">
+						<Button href="/compare/qr-menu-vs-pdf-menu" variant="primary" size="sm">
+							vs a PDF menu
+						</Button>
+						<Button href="/compare/qr-menu-vs-printed-menu" variant="primary" size="sm">
+							vs a printed menu
+						</Button>
+					</div>
+				</div>
+			</div>
+		</Section>
+
+		<!-- Pricing -->
+		<Section
+			id="pricing"
+			eyebrow="Pricing"
+			title="One plan. One price. Everything in it."
+			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year — that is ${ANNUAL_SAVING.percent}% off. Switch currency and billing period below.`}
+		>
+			<PricingBlock />
+		</Section>
+
+		<!-- Internal links -->
+		<Section eyebrow="Built for your kind of place" title="Find your setup">
+			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				{
+					INDUSTRIES.map((industry, i) => (
+						<a
+							href={`/digital-menu/${industry.slug}`}
+							class:list={[
+								'rounded-4xl pastel group p-8 transition-transform duration-300 hover:-translate-y-1',
+								PASTELS[i % PASTELS.length]
+							]}
+						>
+							<h3 class="text-2xl font-extrabold">{industry.name}</h3>
+							<p class="mt-2 opacity-80">{industry.lede}</p>
+							<span class="mt-4 inline-block font-bold underline-offset-4 group-hover:underline">
+								Read more →
+							</span>
+						</a>
+					))
+				}
+			</div>
+
+			<div class="rounded-4xl mt-6 border border-line bg-card p-8">
+				<h3 class="text-xl font-extrabold text-ink">Serving the UAE</h3>
+				<div class="mt-4 flex flex-wrap gap-2">
+					{
+						LOCATIONS.map((location) => (
+							<a
+								href={`/qr-menu/${location.slug}`}
+								class="rounded-full border border-line bg-page px-4 py-2 text-sm font-bold text-ink transition hover:bg-brand hover:text-white"
+							>
+								QR menu {location.emirate}
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</Section>
+
+		<!-- FAQ -->
+		<Section
+			eyebrow="Questions"
+			title="The things people ask first"
+			lede="If yours is not here, the full list has more — or just email us."
+		>
+			<FaqList faqs={homeFaqs} />
+			<div class="mt-10 text-center">
+				<Button href="/faq" variant="surface">Read all the questions</Button>
+			</div>
+		</Section>
+
+		<CtaBand />
 	</Container>
 </Layout>

@@ -1,0 +1,197 @@
+---
+import Button from '@components/ui/button.astro'
+import Check from '@components/ui/icons/check.astro'
+import Cross from '@components/ui/icons/cross.astro'
+import { SITE, PLAN, ANNUAL_SAVING } from '@config/site'
+import { INCLUDED, NOT_INCLUDED } from '@data/plan'
+
+const perMonthAnnual = {
+	aed: Math.round(PLAN.annual.aed / 12),
+	usd: Math.round((PLAN.annual.usd / 12) * 100) / 100
+}
+
+const priceData = {
+	aed: {
+		symbol: 'AED',
+		suffix: true,
+		monthly: { amount: PLAN.monthly.aed.toString(), note: 'billed monthly' },
+		annual: {
+			amount: perMonthAnnual.aed.toString(),
+			note: `${PLAN.annual.aed} AED billed once a year`
+		},
+		saving: `Save ${ANNUAL_SAVING.aed} AED a year`
+	},
+	usd: {
+		symbol: '$',
+		suffix: false as boolean,
+		monthly: { amount: PLAN.monthly.usd.toFixed(2), note: 'billed monthly' },
+		annual: {
+			amount: perMonthAnnual.usd.toFixed(2),
+			note: `$${PLAN.annual.usd} billed once a year`
+		},
+		saving: `Save $${ANNUAL_SAVING.usd.toFixed(2)} a year`
+	}
+}
+---
+
+<div
+	id="pricing-block"
+	class="mx-auto mt-12 max-w-3xl"
+	data-prices={JSON.stringify(priceData)}
+	data-currency="aed"
+	data-period="monthly"
+>
+	<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+		<div
+			class="inline-flex rounded-full border border-line bg-card p-1"
+			role="group"
+			aria-label="Choose billing period"
+		>
+			<button
+				type="button"
+				data-period-btn="monthly"
+				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+			>
+				Monthly
+			</button>
+			<button
+				type="button"
+				data-period-btn="annual"
+				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+			>
+				Yearly
+				<span class="ml-1 text-xs font-bold text-brand">−{ANNUAL_SAVING.percent}%</span>
+			</button>
+		</div>
+
+		<div class="inline-flex rounded-full border border-line bg-card p-1" role="group" aria-label="Choose currency">
+			<button
+				type="button"
+				data-currency-btn="aed"
+				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+			>
+				AED
+			</button>
+			<button
+				type="button"
+				data-currency-btn="usd"
+				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+			>
+				USD
+			</button>
+		</div>
+	</div>
+
+	<div class="rounded-xxl mt-8 bg-card p-8 md:p-12">
+		<div class="text-center">
+			<p class="text-sm font-bold uppercase tracking-widest text-brand">
+				One plan. Everything included.
+			</p>
+			<p class="mt-4 flex items-baseline justify-center">
+				<span class="text-2xl font-bold" data-symbol-prefix></span>
+				<span class="text-6xl font-extrabold md:text-7xl" data-price>{PLAN.monthly.aed}</span>
+				<span class="ml-1 text-2xl font-bold" data-symbol-suffix>AED</span>
+				<span class="ml-1 text-lg text-muted">/month</span>
+			</p>
+			<p class="mt-2 text-muted" data-note>billed monthly</p>
+			<p class="mt-1 h-5 text-sm font-bold text-brand" data-saving></p>
+
+			<div class="mt-8">
+				<Button href={SITE.signupUrl} size="lg" block>Start your 30 days free</Button>
+				<p class="mt-3 text-sm text-muted">
+					No card required. No commission, ever. Cancel any time.
+				</p>
+			</div>
+		</div>
+
+		<div class="mt-10 border-t border-line pt-8">
+			<h3 class="font-bold">What you get</h3>
+			<ul class="mt-4 grid gap-2 sm:grid-cols-2">
+				{
+					INCLUDED.map((item) => (
+						<li class="flex items-start gap-2 text-sm">
+							<Check class="mt-1 h-3.5 w-3.5 flex-none text-green-600" />
+							<span>{item}</span>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+
+		<div class="mt-8 rounded-3xl border border-line bg-page p-6">
+			<h3 class="font-bold">What it deliberately does not do</h3>
+			<p class="mt-1 text-sm text-muted">
+				Astro-Menu is a menu. Keeping it to one job is why it costs {PLAN.monthly.aed} AED instead of
+				ten times that.
+			</p>
+			<ul class="mt-4 grid gap-3 sm:grid-cols-2">
+				{
+					NOT_INCLUDED.map((item) => (
+						<li class="flex items-start gap-2 text-sm">
+							<Cross class="mt-1 h-3.5 w-3.5 flex-none text-muted" />
+							<span>
+								<span class="font-semibold">{item.label}.</span>{' '}
+								<span class="text-muted">{item.reason}</span>
+							</span>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+	const root = document.getElementById('pricing-block')
+	if (root) {
+		const prices = JSON.parse(root.dataset.prices || '{}')
+		const priceEl = root.querySelector('[data-price]')
+		const prefixEl = root.querySelector('[data-symbol-prefix]')
+		const suffixEl = root.querySelector('[data-symbol-suffix]')
+		const noteEl = root.querySelector('[data-note]')
+		const savingEl = root.querySelector('[data-saving]')
+
+		const render = () => {
+			const currency = root.dataset.currency || 'aed'
+			const period = root.dataset.period || 'monthly'
+			const set = prices[currency]
+			if (!set) return
+
+			priceEl.textContent = set[period].amount
+			prefixEl.textContent = set.suffix ? '' : set.symbol
+			suffixEl.textContent = set.suffix ? set.symbol : ''
+			noteEl.textContent = set[period].note
+			savingEl.textContent = period === 'annual' ? set.saving : ''
+
+			root.querySelectorAll('[data-currency-btn]').forEach((btn) => {
+				const on = btn.dataset.currencyBtn === currency
+				btn.classList.toggle('bg-brand', on)
+				btn.classList.toggle('text-white', on)
+				btn.classList.toggle('text-muted', !on)
+				btn.setAttribute('aria-pressed', String(on))
+			})
+			root.querySelectorAll('[data-period-btn]').forEach((btn) => {
+				const on = btn.dataset.periodBtn === period
+				btn.classList.toggle('bg-brand', on)
+				btn.classList.toggle('text-white', on)
+				btn.classList.toggle('text-muted', !on)
+				btn.setAttribute('aria-pressed', String(on))
+			})
+		}
+
+		root.querySelectorAll('[data-currency-btn]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				root.dataset.currency = btn.dataset.currencyBtn
+				render()
+			})
+		})
+		root.querySelectorAll('[data-period-btn]').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				root.dataset.period = btn.dataset.periodBtn
+				render()
+			})
+		})
+
+		render()
+	}
+</script>

@@ -1,15 +1,29 @@
 ---
-import Container from '@components/container.astro'
 import Layout from '@layouts/Layout.astro'
+import Container from '@components/container.astro'
+import Button from '@components/ui/button.astro'
 ---
 
-<Layout title="404 Not Found">
+<Layout
+	title="Page not found"
+	description="That page does not exist. Here are the pages that do — pricing, how QR menus work, features and contact."
+	noindex
+>
 	<Container>
-		<div class="flex min-h-[calc(100vh-16rem)] items-center justify-center">
-			<div class="mt-16 text-center">
-				<h1 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">404</h1>
-				<p class="mt-4 text-lg">Page not found.</p>
+		<section class="flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+			<p class="text-8xl font-extrabold text-brand">404</p>
+			<h1 class="mt-4 text-3xl font-extrabold text-ink md:text-5xl">
+				This page is off the menu
+			</h1>
+			<p class="mt-4 max-w-lg text-lg text-muted">
+				The page you were after does not exist. These ones do.
+			</p>
+			<div class="mt-8 flex flex-wrap justify-center gap-3">
+				<Button href="/" variant="brand">Home</Button>
+				<Button href="/pricing" variant="primary">Pricing</Button>
+				<Button href="/how-it-works" variant="outline" class="text-ink">How it works</Button>
+				<Button href="/contact" variant="outline" class="text-ink">Contact</Button>
 			</div>
-		</div>
+		</section>
 	</Container>
 </Layout>

@@ -1,72 +1,151 @@
 ---
-import { SEO } from 'astro-seo'
 import Footer from '@components/footer.astro'
 import Navbar from '@components/navbar/navbar.astro'
-<<<<<<< HEAD
-import '@fontsource-variable/inter/index.css'
-import '@fontsource-variable/jost'
-
-=======
-// Supports weights 200-800
+import { SITE, PLAN } from '@config/site'
 import '@fontsource-variable/plus-jakarta-sans'
->>>>>>> staging
+import '../styles/theme.css'
+
 export interface Props {
 	title: string
+	description: string
+	image?: string
+	noindex?: boolean
+	schema?: Record<string, unknown> | Record<string, unknown>[]
+	breadcrumbs?: { name: string; path: string }[]
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString()
+const { title, description, image = '/opengraph.jpg', noindex = false, schema, breadcrumbs } =
+	Astro.props
 
-const resolvedImageWithDomain = new URL('/opengraph.jpg', Astro.site).toString()
+const canonical = new URL(Astro.url.pathname.replace(/\/+$/, '') || '/', SITE.domain).toString()
+const ogImage = new URL(image, SITE.domain).toString()
+// Google truncates around 60 characters, so the brand suffix is only added when it fits.
+const suffix = ` | ${SITE.name}`
+const pageTitle =
+	title.includes(SITE.name) || title.length + suffix.length > 60 ? title : title + suffix
 
-const { title } = Astro.props
+const organization = {
+	'@type': 'Organization',
+	'@id': `${SITE.domain}/#organization`,
+	name: SITE.name,
+	url: SITE.domain,
+	email: SITE.email,
+	description: SITE.description,
+	logo: { '@type': 'ImageObject', url: `${SITE.domain}/assets/logo-titled-right.svg` },
+	areaServed: { '@type': 'Country', name: 'United Arab Emirates' }
+}
 
-const makeTitle = title
-	? title + ' | ' + 'Astro Menu'
-	: 'Astro Menu - A modern and responsive QR menu for restaurant'
+const website = {
+	'@type': 'WebSite',
+	'@id': `${SITE.domain}/#website`,
+	url: SITE.domain,
+	name: SITE.name,
+	description: SITE.description,
+	publisher: { '@id': `${SITE.domain}/#organization` },
+	inLanguage: 'en'
+}
+
+const software = {
+	'@type': 'SoftwareApplication',
+	'@id': `${SITE.domain}/#software`,
+	name: SITE.name,
+	applicationCategory: 'BusinessApplication',
+	applicationSubCategory: 'Digital menu software',
+	operatingSystem: 'Web browser',
+	url: SITE.domain,
+	description: SITE.description,
+	publisher: { '@id': `${SITE.domain}/#organization` },
+	offers: [
+		{
+			'@type': 'Offer',
+			name: 'Monthly',
+			price: PLAN.monthly.aed,
+			priceCurrency: 'AED',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock'
+		},
+		{
+			'@type': 'Offer',
+			name: 'Annual',
+			price: PLAN.annual.aed,
+			priceCurrency: 'AED',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock'
+		}
+	]
+}
+
+const breadcrumbSchema = breadcrumbs && {
+	'@type': 'BreadcrumbList',
+	itemListElement: breadcrumbs.map((crumb, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		name: crumb.name,
+		item: new URL(crumb.path, SITE.domain).toString()
+	}))
+}
+
+const graph = [
+	organization,
+	website,
+	software,
+	...(breadcrumbSchema ? [breadcrumbSchema] : []),
+	...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])
+]
+
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
 ---
 
 <!doctype html>
-<html lang="en" data-theme="business">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<script defer src="https://unpkg.com/tailwindcss-intersect@1.x.x/dist/observer.min.js"></script>
-		<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
-		<!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-		<SEO
-			title={makeTitle}
-			description="Astroship is a starter website template for Astro built with TailwindCSS."
-			canonical={canonicalURL}
-			twitter={{
-				creator: '@surjithctly',
-				site: '@web3templates',
-				card: 'summary_large_image'
-			}}
-			openGraph={{
-				basic: {
-					url: canonicalURL,
-					type: 'website',
-					title: `Astroship - Starter Template for Astro`,
-					image: resolvedImageWithDomain
-				},
-				image: {
-					alt: 'Astroship Homepage Screenshot'
-				}
-			}}
-		/>
+		<script is:inline>
+			// Runs before paint so a saved dark preference never flashes light.
+			if (localStorage.getItem('theme') === 'dark') {
+				document.documentElement.classList.add('dark')
+			}
+		</script>
+
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+		{
+			noindex ? (
+				<meta name="robots" content="noindex, nofollow" />
+			) : (
+				<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+			)
+		}
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={SITE.name} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content={SITE.locale} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<script type="application/ld+json" set:html={jsonLd} is:inline />
 	</head>
-	<body>
+	<body class="bg-page text-ink">
 		<Navbar />
 		<slot />
 		<Footer />
-		<style is:global>
-			/* Improve Page speed */
-			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-			img {
-				content-visibility: auto;
-			}
-		</style>
+		<script>
+			import Observer from 'tailwindcss-intersect'
+			Observer.start()
+		</script>
 	</body>
 </html>
