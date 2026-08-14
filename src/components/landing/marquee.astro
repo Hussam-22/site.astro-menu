@@ -13,20 +13,14 @@ const ITEMS = [
 	'No app to download',
 	'No commission, ever'
 ]
-
-const TONES = ['bg-mint', 'bg-lilac', 'bg-butter', 'bg-blush', 'bg-sky']
 ---
 
 <section class="marquee overflow-hidden border-y border-line py-6" aria-hidden="true">
 	<div class="marquee-track gap-3">
 		{
 			[...ITEMS, ...ITEMS].map((item, i) => (
-				<span
-					class:list={[
-						'pastel whitespace-nowrap rounded-full px-6 py-3 text-lg font-extrabold',
-						TONES[i % TONES.length]
-					]}
-				>
+				<span class="flex items-center gap-3 whitespace-nowrap px-3 text-lg font-extrabold text-muted">
+					<span class="h-1.5 w-1.5 flex-none rounded-full bg-brand" />
 					{item}
 				</span>
 			))

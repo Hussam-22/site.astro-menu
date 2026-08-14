@@ -20,6 +20,7 @@ module.exports = {
 			},
 			colors: {
 				brand: 'rgb(var(--c-brand) / <alpha-value>)',
+				brandInk: 'rgb(var(--c-brand-ink) / <alpha-value>)',
 				// Kept as aliases so existing markup does not break.
 				secondary: 'rgb(var(--c-brand) / <alpha-value>)',
 				accent: 'rgb(var(--c-brand) / <alpha-value>)',
@@ -30,12 +31,7 @@ module.exports = {
 				'card-ink': 'rgb(var(--c-card-ink) / <alpha-value>)',
 				invert: 'rgb(var(--c-invert) / <alpha-value>)',
 				'invert-ink': 'rgb(var(--c-invert-ink) / <alpha-value>)',
-				line: 'rgb(var(--c-line) / <alpha-value>)',
-				mint: 'rgb(var(--c-mint) / <alpha-value>)',
-				lilac: 'rgb(var(--c-lilac) / <alpha-value>)',
-				butter: 'rgb(var(--c-butter) / <alpha-value>)',
-				blush: 'rgb(var(--c-blush) / <alpha-value>)',
-				sky: 'rgb(var(--c-sky) / <alpha-value>)'
+				line: 'rgb(var(--c-line) / <alpha-value>)'
 			}
 		}
 	},
@@ -49,7 +45,7 @@ module.exports = {
 		themes: [
 			{
 				astro: {
-					primary: '#D6374A',
+					primary: '#CB3044',
 					'primary-content': '#ffffff',
 					secondary: '#B2F0C7',
 					'secondary-content': '#0c0c0e',

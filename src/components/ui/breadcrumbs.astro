@@ -15,7 +15,10 @@ const { items } = Astro.props
 					{i === items.length - 1 ? (
 						<span class="text-ink">{item.name}</span>
 					) : (
-						<a href={item.path} class="hover:text-ink hover:underline">
+						<a
+						href={item.path}
+						class="inline-flex min-h-11 items-center hover:text-ink hover:underline"
+					>
 							{item.name}
 						</a>
 					)}

@@ -1,25 +1,22 @@
 :root {
-	/* Light is the default theme. */
+	/* Light is the default theme. Monochrome surfaces, one brand accent. */
 	--c-page: 255 255 255;
 	--c-ink: 12 12 14;
 	--c-muted: 90 90 100;
-	--c-card: 246 246 248;
+	--c-card: 245 245 247;
 	--c-card-ink: 12 12 14;
 	--c-invert: 12 12 14;
 	--c-invert-ink: 255 255 255;
-	--c-line: 226 226 232;
+	--c-line: 224 224 230;
 
-	/* One brand tone, used for every filled surface, always with white text. */
-	/* One brand tone everywhere, always with white text on it. Deepened just enough
-	   from #EC5766 that white text clears WCAG AA (4.66:1 instead of 3.43:1). */
-	--c-brand: 214 55 74;
-
-	/* Pastel accents for colour-blocked cards. */
-	--c-mint: 178 240 199;
-	--c-lilac: 214 199 248;
-	--c-butter: 253 225 152;
-	--c-blush: 251 212 226;
-	--c-sky: 190 222 250;
+	/* The brand rose has two jobs, and one value cannot do both accessibly:
+	   --c-brand      the FILL behind white text (buttons, bands, badges)
+	   --c-brand-ink  the brand colour used AS text on a page/card surface
+	   In light mode they are the same. In dark mode the text tone lifts so it
+	   stays readable on near-black, while the fill stays put so white text on it
+	   keeps passing. */
+	--c-brand: 203 48 68;
+	--c-brand-ink: 203 48 68;
 
 	color-scheme: light;
 }
@@ -34,16 +31,10 @@
 	--c-invert-ink: 12 12 14;
 	--c-line: 42 42 48;
 
-	/* One brand tone everywhere, always with white text on it. Deepened just enough
-	   from #EC5766 that white text clears WCAG AA (4.66:1 instead of 3.43:1). */
-	--c-brand: 214 55 74;
-
-	/* Pastels are deepened in dark mode so white text stays readable on them. */
-	--c-mint: 22 101 72;
-	--c-lilac: 76 51 130;
-	--c-butter: 122 84 15;
-	--c-blush: 129 46 79;
-	--c-sky: 27 76 122;
+	/* Same fill so white text on buttons still passes; lifted text tone (#EC5766)
+	   so brand-coloured words stay readable on near-black. */
+	--c-brand: 203 48 68;
+	--c-brand-ink: 236 87 102;
 
 	color-scheme: dark;
 }
@@ -71,14 +62,6 @@ html {
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 	}
-}
-
-/* Pastel cards carry dark ink in light mode and white ink in dark mode. */
-.pastel {
-	color: rgb(12 12 14);
-}
-.dark .pastel {
-	color: rgb(255 255 255);
 }
 
 /* Marquee used by the feature ticker. */

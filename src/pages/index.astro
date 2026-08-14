@@ -12,41 +12,50 @@ import ProductGallery from '@components/product-gallery.astro'
 import Hero from '@components/landing/hero.astro'
 import Marquee from '@components/landing/marquee.astro'
 import { Image } from 'astro:assets'
-import macrosShot from 'assets/screens/macros.png'
-import { SITE, PLAN, ANNUAL_SAVING } from '@config/site'
+import menuShot from 'assets/screens/menu-sections.png'
+import printMenu from 'assets/print-menu.png'
+import { PLAN, ANNUAL_SAVING } from '@config/site'
 import { STEPS, NOT_INCLUDED } from '@data/plan'
 import { CORE_FAQS } from '@data/faqs'
 import { INDUSTRIES } from '@data/industries'
 import { LOCATIONS } from '@data/locations'
 
 const homeFaqs = CORE_FAQS.slice(0, 8)
-const PASTELS = ['bg-mint', 'bg-lilac', 'bg-butter', 'bg-blush', 'bg-sky']
 
 const capabilities = [
 	{
-		title: 'Update it in seconds',
-		body: 'Change a price, hide a sold-out dish, add a special. Live before you put your phone down, and the QR code never changes.'
+		title: 'Change a price in seconds',
+		body: 'Edit the item and every diner sees the new price immediately. The QR code stays the same, so you never reprint.'
 	},
 	{
-		title: 'Every diner reads their own language',
-		body: 'Write the menu once. Automatic translation hands each guest a version in the language their phone is already set to.'
+		title: 'A photo on every dish',
+		body: 'People order what they can see. Photos sit next to each item instead of a line of text on a laminated page.'
 	},
 	{
-		title: 'A photo on every item',
-		body: 'People order what they can see. Every dish gets a proper picture instead of a line of text on a laminated page.'
+		title: 'Arabic, English, anything else',
+		body: 'Write the menu once. Each guest reads it in the language their phone is already set to.'
 	},
 	{
 		title: 'Calories and macros',
-		body: 'Show CAL, CARB, FAT and PRO on any item. Optional, and a genuine differentiator for healthy eating and meal-prep menus.'
+		body: 'Show CAL, CARB, FAT and PRO on any item. Optional, and the reason healthy-eating and meal-prep kitchens pick us.'
+	},
+	{
+		title: 'Hide what has sold out',
+		body: 'Switch an item off and it disappears from the menu. Nobody orders something the kitchen cannot make.'
 	},
 	{
 		title: 'One link, everywhere',
-		body: 'The same menu works on the table, in your Instagram bio, on your Google listing, in a WhatsApp reply and on a bag sticker.'
-	},
-	{
-		title: 'See what people look at',
-		body: 'Menu views, most-viewed items and peak times — so you know which dishes get attention before you change the menu.'
+		body: 'The same menu works on the table, in your Instagram bio, on your Google listing and on a delivery bag.'
 	}
+]
+
+const printVsDigital = [
+	['Changing a price', 'Reprint every copy', 'Ten seconds, free'],
+	['A dish sells out', 'The server apologises', 'Hidden instantly'],
+	['Photos', 'Expensive to print', 'On every item'],
+	['A second language', 'A second print run', 'Automatic'],
+	['Reading it on a phone', 'Pinch, zoom, squint', 'Built for the screen'],
+	['Cost per year', 'Every reprint, again', `${PLAN.annual.aed} AED, all in`]
 ]
 
 const schema = {
@@ -60,8 +69,8 @@ const schema = {
 ---
 
 <Layout
-	title="QR Menus for Restaurants, Cafés & Food Trucks"
-	description={`Turn your menu into a fast, mobile QR menu you can update any time. One plan at ${PLAN.monthly.aed} AED a month. No POS, no hardware, no commission.`}
+	title="QR Menu for Restaurants & Cafés"
+	description={`A QR menu for your restaurant: photos on every dish, Arabic and English, prices you change in seconds. ${PLAN.monthly.aed} AED a month, no POS and no commission.`}
 	schema={schema}
 >
 	<Container>
@@ -71,33 +80,27 @@ const schema = {
 	<Marquee />
 
 	<Container>
-		<!-- Positioning -->
+		<!-- What it is -->
 		<Section
-			eyebrow="The whole idea"
-			title="It is a menu. That is the entire product."
-			lede="Most menu products bolt themselves to a POS, take a cut of your orders and charge like an enterprise system. Astro-Menu does one job properly and gets out of the way."
+			eyebrow="What it is"
+			title="A menu. Nothing bolted on."
+			lede="Most menu products come attached to a till system, take a cut of every order and charge like enterprise software. This one shows your menu and stays out of the way."
 		>
 			<div class="mt-14 grid gap-5 md:grid-cols-2">
 				{
-					NOT_INCLUDED.map((item, i) => (
-						<div
-							class:list={[
-								'rounded-4xl pastel p-8 transition-transform duration-300 hover:-translate-y-1',
-								PASTELS[i % PASTELS.length]
-							]}
-						>
+					NOT_INCLUDED.map((item) => (
+						<div class="rounded-4xl border border-line bg-card p-8">
 							<div class="flex items-center gap-3">
-								<Cross class="h-5 w-5 flex-none" />
-								<h3 class="text-2xl font-extrabold">{item.label}</h3>
+								<Cross class="h-5 w-5 flex-none text-brandInk" />
+								<h3 class="text-2xl font-extrabold text-ink">{item.label}</h3>
 							</div>
-							<p class="mt-3 text-lg opacity-80">{item.reason}</p>
+							<p class="mt-3 text-lg text-muted">{item.reason}</p>
 						</div>
 					))
 				}
 			</div>
-			<p class="mx-auto mt-10 max-w-2xl text-center text-lg text-muted">
-				That restraint is the reason the whole thing costs {PLAN.monthly.aed} AED a month instead of
-				several hundred.
+			<p class="mt-10 max-w-2xl text-lg text-muted">
+				That is why it costs {PLAN.monthly.aed} AED a month instead of several hundred.
 			</p>
 		</Section>
 
@@ -105,27 +108,22 @@ const schema = {
 		<Section
 			eyebrow="How it works"
 			title="Live by this afternoon"
-			lede="Four steps, no installation, nothing to plug in."
+			lede="Nothing to install, nothing to plug in, nobody has to visit your venue."
 		>
 			<div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
 				{
 					STEPS.map((step, i) => (
-						<div
-							class:list={[
-								'rounded-4xl pastel flex flex-col p-8 transition-transform duration-300 hover:-translate-y-1',
-								PASTELS[i % PASTELS.length]
-							]}
-						>
-							<span class="text-6xl font-extrabold leading-none opacity-30">{i + 1}</span>
-							<h3 class="mt-5 text-2xl font-extrabold leading-tight">{step.title}</h3>
-							<p class="mt-3 flex-grow opacity-80">{step.body}</p>
-							<p class="mt-5 text-sm font-bold opacity-60">{step.detail}</p>
+						<div class="rounded-4xl flex flex-col border border-line bg-card p-8">
+							<span class="text-6xl font-extrabold leading-none text-brandInk">{i + 1}</span>
+							<h3 class="mt-5 text-2xl font-extrabold leading-tight text-ink">{step.title}</h3>
+							<p class="mt-3 flex-grow text-muted">{step.body}</p>
+							<p class="mt-5 text-sm font-bold text-muted">{step.detail}</p>
 						</div>
 					))
 				}
 			</div>
-			<div class="mt-10 text-center">
-				<Button href="/how-it-works" variant="surface">See the full setup walkthrough</Button>
+			<div class="mt-10">
+				<Button href="/how-it-works" variant="surface">See the full walkthrough</Button>
 			</div>
 		</Section>
 
@@ -133,15 +131,131 @@ const schema = {
 		<ProductGallery
 			align="center"
 			eyebrow="Real menus"
-			title="This is what your customers actually get"
-			lede="Live Astro-Menu menus, exactly as they appear on a diner’s phone."
+			title="What your customers actually see"
+			lede="Live Astro-Menu menus, exactly as they appear on a diner's phone."
 		/>
+
+		<!-- Side by side -->
+		<Section
+			eyebrow="Side by side"
+			title="The same menu, printed and digital"
+			lede="Left is a printed or PDF menu. Right is the same kind of food on Astro-Menu. This is the difference your customer sees."
+		>
+			<div class="mt-14 grid items-start gap-6 lg:grid-cols-2">
+				<figure class="rounded-4xl border border-line bg-card p-6 md:p-8">
+					<div class="overflow-hidden rounded-2xl border border-line bg-white">
+						<Image
+							src={printMenu}
+							alt="A traditional printed restaurant menu: two columns of text with dotted price leaders and no photographs"
+							widths={[420, 840]}
+							sizes="(max-width: 1024px) 90vw, 420px"
+							loading="lazy"
+							class="mx-auto h-[460px] w-full object-contain"
+						/>
+					</div>
+					<figcaption class="mt-6">
+						<h3 class="text-2xl font-extrabold text-ink">Printed or PDF</h3>
+						<ul class="mt-4 space-y-2">
+							{
+								[
+									'No photos — diners guess what a dish looks like',
+									'Prices are fixed until the next print run',
+									'One language per printed copy',
+									'Sold-out dishes stay on the page all evening',
+									'On a phone it arrives as a wall of small text'
+								].map((item) => (
+									<li class="flex items-start gap-3 text-muted">
+										<Cross class="mt-1.5 h-3.5 w-3.5 flex-none" />
+										<span>{item}</span>
+									</li>
+								))
+							}
+						</ul>
+					</figcaption>
+				</figure>
+
+				<figure class="rounded-4xl border-2 border-brand bg-card p-6 md:p-8">
+					<div class="overflow-hidden rounded-2xl border border-line bg-white">
+						<Image
+							src={menuShot}
+							alt="The same menu on Astro-Menu: a photo, price and macros on every dish"
+							widths={[420, 840]}
+							sizes="(max-width: 1024px) 90vw, 420px"
+							loading="lazy"
+							class="mx-auto h-[460px] w-full object-contain"
+						/>
+					</div>
+					<figcaption class="mt-6">
+						<div class="flex flex-wrap items-center gap-3">
+							<h3 class="text-2xl font-extrabold text-ink">Astro-Menu</h3>
+							<span class="rounded-full bg-brand px-3 py-1 text-sm font-bold text-white">
+								{PLAN.monthly.aed} AED / month
+							</span>
+						</div>
+						<ul class="mt-4 space-y-2">
+							{
+								[
+									'A photo on every dish',
+									'Change a price in ten seconds, free',
+									'Every diner reads it in their own language',
+									'Sold-out dishes disappear instantly',
+									'Built for the phone it is read on'
+								].map((item) => (
+									<li class="flex items-start gap-3 text-ink">
+										<Check class="mt-1.5 h-3.5 w-3.5 flex-none text-brandInk" />
+										<span>{item}</span>
+									</li>
+								))
+							}
+						</ul>
+					</figcaption>
+				</figure>
+			</div>
+
+			<div class="rounded-4xl mt-6 overflow-x-auto border border-line">
+				<table class="w-full min-w-[560px] border-collapse text-left">
+					<thead>
+						<tr class="border-b border-line bg-card">
+							<th scope="col" class="p-4 text-sm font-extrabold uppercase tracking-wide text-muted">
+								&nbsp;
+							</th>
+							<th scope="col" class="p-4 text-sm font-extrabold uppercase tracking-wide text-muted">
+								Printed menu
+							</th>
+							<th scope="col" class="p-4 text-sm font-extrabold uppercase tracking-wide text-brandInk">
+								Astro-Menu
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							printVsDigital.map(([criterion, theirs, ours]) => (
+								<tr class="border-b border-line last:border-0">
+									<th scope="row" class="p-4 font-bold text-ink">
+										{criterion}
+									</th>
+									<td class="p-4 text-muted">{theirs}</td>
+									<td class="p-4 font-medium text-ink">{ours}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+
+			<div class="mt-8 flex flex-wrap gap-3">
+				<Button href="/compare/qr-menu-vs-printed-menu" variant="surface" size="sm">
+					vs a printed menu
+				</Button>
+				<Button href="/compare/qr-menu-vs-pdf-menu" variant="surface" size="sm">vs a PDF menu</Button>
+			</div>
+		</Section>
 
 		<!-- Capabilities -->
 		<Section
 			eyebrow="What you get"
-			title="Everything, in the one plan"
-			lede="There is no cheaper tier missing the thing you need, and no expensive tier to grow into."
+			title="Everything is in the one plan"
+			lede="No cheaper tier missing the thing you need, and no expensive tier to grow into."
 		>
 			<dl class="mt-14 divide-y divide-line border-y border-line">
 				{
@@ -160,138 +274,73 @@ const schema = {
 			</div>
 		</Section>
 
-		<!-- The maths -->
+		<!-- Cost -->
 		<Section
-			eyebrow="The maths"
-			title={`${PLAN.annual.aed} AED for a year of menus`}
-			lede="We are not going to invent a statistic for you. Add up what you spent on menu printing last year — design, print, lamination, reprints when prices moved — and compare it with one number."
+			eyebrow="Cost"
+			title={`${PLAN.annual.aed} AED a year. That is the whole bill.`}
+			lede="No setup fee, no charge per scan, no commission on what you sell. Compare it against what you spent on menu printing last year — design, print, lamination, and every reprint when a price moved."
 		>
 			<div class="mt-14 grid gap-5 md:grid-cols-3">
-				{
-					[
-						{
-							n: PLAN.annual.aed,
-							suffix: ' AED',
-							t: 'A year of Astro-Menu',
-							b: 'Unlimited changes, unlimited items, unlimited views. Paid once.',
-							tone: 'bg-mint'
-						},
-						{
-							n: 0,
-							suffix: ' AED',
-							t: 'Cost of a price change',
-							b: 'However many times you change it. A printed menu charges you for every one.',
-							tone: 'bg-butter'
-						},
-						{
-							n: 0,
-							suffix: '%',
-							t: 'Commission on your sales',
-							b: 'We never touch an order or a payment, so there is nothing to take a cut of.',
-							tone: 'bg-lilac'
-						}
-					].map((card) => (
-						<div class:list={['rounded-4xl pastel p-10', card.tone]}>
-							<p class="text-6xl font-extrabold leading-none">
-								<span data-countup data-to={card.n}>
-									0
-								</span>
-								{card.suffix}
-							</p>
-							<p class="mt-4 text-xl font-extrabold">{card.t}</p>
-							<p class="mt-2 opacity-80">{card.b}</p>
-						</div>
-					))
-				}
+				<div class="rounded-4xl bg-invert p-10 text-invert-ink">
+					<p class="text-6xl font-extrabold leading-none">{PLAN.annual.aed} AED</p>
+					<p class="mt-4 text-xl font-extrabold">Everything, for a year</p>
+					<p class="mt-2 opacity-70">
+						Unlimited items, unlimited changes, unlimited people looking at it.
+					</p>
+				</div>
+				<div class="rounded-4xl border border-line bg-card p-10">
+					<p class="text-6xl font-extrabold leading-none text-ink">0 AED</p>
+					<p class="mt-4 text-xl font-extrabold text-ink">To change a price</p>
+					<p class="mt-2 text-muted">
+						However often you do it. A printed menu charges you for every single change.
+					</p>
+				</div>
+				<div class="rounded-4xl border border-line bg-card p-10">
+					<p class="text-6xl font-extrabold leading-none text-ink">0%</p>
+					<p class="mt-4 text-xl font-extrabold text-ink">Commission</p>
+					<p class="mt-2 text-muted">
+						We never handle an order or a payment, so there is nothing to take a cut of.
+					</p>
+				</div>
 			</div>
 		</Section>
 
 		<!-- Found on Google -->
 		<Section
 			eyebrow="Found on Google"
-			title="Go and search your own restaurant right now"
-			lede="On your phone, tap Menu on your Google listing. Whatever appears is what every new customer sees before deciding whether to come. Most owners have never looked."
+			title="Search your own restaurant right now"
+			lede="Tap Menu on your Google listing. Whatever appears is what every new customer sees before deciding whether to come."
 		>
 			<div class="mt-14 grid gap-5 lg:grid-cols-3">
 				<div class="rounded-4xl border-2 border-dashed border-line p-8">
-					<p class="text-sm font-bold uppercase tracking-widest text-muted">What you probably see</p>
+					<p class="text-sm font-bold uppercase tracking-widest text-muted">Usually you get</p>
 					<h3 class="mt-3 text-2xl font-extrabold text-ink">Photos of a menu board</h3>
 					<p class="mt-3 text-muted">
-						Snapshots of a wall board or a laminated card, taken at an angle by you or a customer.
-						Shot once, never replaced. The prices are whatever they were that day, and on a phone
-						they are barely legible.
+						Snapshots taken at an angle by you or a customer, showing whatever the prices were that
+						day. Nobody goes back and deletes the one from two years ago.
 					</p>
 				</div>
 				<div class="rounded-4xl border-2 border-dashed border-line p-8">
 					<p class="text-sm font-bold uppercase tracking-widest text-muted">Or worse</p>
-					<h3 class="mt-3 text-2xl font-extrabold text-ink">“Menu provided by” a delivery app</h3>
+					<h3 class="mt-3 text-2xl font-extrabold text-ink">A delivery app’s copy</h3>
 					<p class="mt-3 text-muted">
-						Not your menu — an aggregator’s copy of it, in their layout, at their prices with their
-						commission built in. It updates when they update it, usually shows only your delivery
-						range, and quietly advertises a platform that charges you a percentage.
+						Marked “provided by” an aggregator: their layout, their prices with commission built in,
+						and usually only the items you list for delivery.
 					</p>
 				</div>
 				<div class="rounded-4xl bg-brand p-8 text-white">
 					<p class="text-sm font-bold uppercase tracking-widest text-white/80">With Astro-Menu</p>
-					<h3 class="mt-3 text-2xl font-extrabold">Your actual, current menu</h3>
+					<h3 class="mt-3 text-2xl font-extrabold">Your real menu</h3>
 					<p class="mt-3 text-white/90">
-						Paste your menu link into your Google profile once. From then on, everyone who looks you
-						up gets today’s prices, a photo on every dish and their own language — on a page that
-						loads instantly and that you control.
+						Paste your link into your Google profile once. Everyone who looks you up gets today’s
+						prices, a photo on every dish, and their own language.
 					</p>
 				</div>
 			</div>
-			<div class="mt-10 text-center">
+			<div class="mt-10">
 				<Button href="/compare/qr-menu-vs-google-business-menu" variant="brand">
-					See how to fix what Google shows
+					Fix what Google shows
 				</Button>
-			</div>
-		</Section>
-
-		<!-- vs old menus -->
-		<Section
-			eyebrow="Compare"
-			title="Against what you are probably using now"
-			lede="An honest look at PDFs, printed menus, Instagram highlights and Google listings — including what each still does better."
-		>
-			<div class="rounded-xxl mt-14 grid items-center gap-10 bg-card p-8 md:p-12 lg:grid-cols-2">
-				<div class="flex justify-center">
-					<Image
-						src={macrosShot}
-						alt="An Astro-Menu menu showing dishes with photos, prices and macros"
-						widths={[280, 560]}
-						sizes="(max-width: 1024px) 70vw, 280px"
-						loading="lazy"
-						class="w-64 rounded-4xl border-8 border-invert object-cover shadow-2xl"
-					/>
-				</div>
-				<div>
-					<ul class="space-y-4">
-						{
-							[
-								'Readable the moment it opens — no pinching or zooming',
-								'A photo and a full description on every item',
-								'Sold-out items disappear instead of disappointing someone',
-								'Translated automatically for every diner',
-								'Filterable by dietary need and meal type',
-								'One link for your Google listing, bio and tables'
-							].map((item) => (
-								<li class="flex items-start gap-3 text-lg text-ink">
-									<Check class="mt-1.5 h-4 w-4 flex-none text-brand" />
-									<span>{item}</span>
-								</li>
-							))
-						}
-					</ul>
-					<div class="mt-8 flex flex-wrap gap-3">
-						<Button href="/compare/qr-menu-vs-pdf-menu" variant="primary" size="sm">
-							vs a PDF menu
-						</Button>
-						<Button href="/compare/qr-menu-vs-printed-menu" variant="primary" size="sm">
-							vs a printed menu
-						</Button>
-					</div>
-				</div>
 			</div>
 		</Section>
 
@@ -300,29 +349,24 @@ const schema = {
 			id="pricing"
 			align="center"
 			eyebrow="Pricing"
-			title="One plan. One price. Everything in it."
-			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year — that is ${ANNUAL_SAVING.percent}% off. Switch currency and billing period below.`}
+			title="One plan. One price."
+			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year — ${ANNUAL_SAVING.percent}% cheaper. Switch currency below.`}
 		>
 			<PricingBlock />
 		</Section>
 
 		<!-- Internal links -->
-		<Section eyebrow="Built for your kind of place" title="Find your setup">
+		<Section eyebrow="By venue" title="Find your kind of place">
 			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 				{
-					INDUSTRIES.map((industry, i) => (
+					INDUSTRIES.map((industry) => (
 						<a
 							href={`/digital-menu/${industry.slug}`}
-							class:list={[
-								'rounded-4xl pastel group p-8 transition-transform duration-300 hover:-translate-y-1',
-								PASTELS[i % PASTELS.length]
-							]}
+							class="rounded-4xl border border-line bg-card p-8 transition hover:border-brand"
 						>
-							<h3 class="text-2xl font-extrabold">{industry.name}</h3>
-							<p class="mt-2 opacity-80">{industry.lede}</p>
-							<span class="mt-4 inline-block font-bold underline-offset-4 group-hover:underline">
-								Read more →
-							</span>
+							<h3 class="text-2xl font-extrabold text-ink">{industry.name}</h3>
+							<p class="mt-2 text-muted">{industry.lede}</p>
+							<span class="mt-4 inline-block font-bold text-brandInk">Read more →</span>
 						</a>
 					))
 				}

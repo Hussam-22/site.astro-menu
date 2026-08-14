@@ -13,8 +13,12 @@ const path = Astro.url.pathname
 		<Astronav>
 			<div class="flex w-full flex-col items-center justify-between py-3 sm:flex-row">
 				<div class="flex w-full flex-row items-center justify-between sm:w-auto">
-					<a href="/" class="text-lg text-ink" aria-label={`${SITE.name} home`}>
-						<span class="font-extrabold">Astro</span><span class="text-brand">-Menu</span>
+					<a
+						href="/"
+						class="inline-flex min-h-11 items-center text-lg text-ink"
+						aria-label={`${SITE.name} home`}
+					>
+						<span class="font-extrabold">Astro</span><span class="text-brandInk">-Menu</span>
 					</a>
 					<div class="flex items-center gap-2 sm:hidden">
 						<ThemeToggle />
@@ -31,7 +35,7 @@ const path = Astro.url.pathname
 										href={item.path}
 										aria-current={path.startsWith(item.path) ? 'page' : undefined}
 										class:list={[
-											'block rounded-full px-3 py-2 text-sm font-medium transition hover:bg-line',
+											'flex min-h-11 items-center rounded-full px-3 text-sm font-medium transition hover:bg-line',
 											path.startsWith(item.path) ? 'text-ink' : 'text-muted hover:text-ink'
 										]}
 									>
@@ -44,7 +48,7 @@ const path = Astro.url.pathname
 					<div class="mt-3 flex w-full flex-col gap-2 sm:mt-0 sm:w-auto sm:flex-row sm:items-center sm:pl-4">
 						<a
 							href={SITE.loginUrl}
-							class="rounded-full px-3 py-2 text-center text-sm font-medium text-muted transition hover:text-ink"
+							class="inline-flex min-h-11 items-center justify-center rounded-full px-3 text-center text-sm font-medium text-muted transition hover:text-ink"
 						>
 							Log in
 						</a>

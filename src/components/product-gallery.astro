@@ -47,8 +47,6 @@ const CAPTIONS: Record<string, { title: string; body: string }> = {
 	}
 }
 
-const TONES = ['bg-mint', 'bg-lilac', 'bg-butter', 'bg-blush', 'bg-sky', 'bg-mint']
-
 const prettify = (name: string) =>
 	name.replace(/[-_]/g, ' ').replace(/^\w/, (c) => c.toUpperCase())
 
@@ -72,10 +70,7 @@ const shots = Object.entries(modules)
 			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 				{shots.map((shot, i) => (
 					<figure
-						class:list={[
-							'rounded-4xl pastel flex flex-col items-center p-8 text-center transition-transform duration-300 hover:-translate-y-1',
-							TONES[i % TONES.length]
-						]}
+						class="rounded-4xl flex flex-col items-center border border-line bg-card p-8 text-center transition-transform duration-300 hover:-translate-y-1"
 					>
 						<div class="w-full max-w-[240px] overflow-hidden rounded-3xl shadow-2xl">
 							<Image
@@ -88,8 +83,8 @@ const shots = Object.entries(modules)
 							/>
 						</div>
 						<figcaption class="mt-6">
-							<h3 class="text-xl font-extrabold">{shot.title}</h3>
-							{shot.body && <p class="mt-2 text-sm opacity-80">{shot.body}</p>}
+							<h3 class="text-xl font-extrabold text-ink">{shot.title}</h3>
+							{shot.body && <p class="mt-2 text-sm text-muted">{shot.body}</p>}
 						</figcaption>
 					</figure>
 				))}
