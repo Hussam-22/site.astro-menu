@@ -1,3 +1,5 @@
+import { PRICE } from '@config/site'
+
 export type Industry = {
 	slug: string
 	name: string
@@ -17,7 +19,7 @@ export const INDUSTRIES: Industry[] = [
 		name: 'Restaurants',
 		title: 'Digital Menu for Restaurants',
 		description:
-			'A digital menu for restaurants: photos on every dish, allergen filters, instant price changes and one QR code you never reprint. 59 AED a month.',
+			`A digital menu for restaurants: photos on every dish, allergen filters, instant price changes and one QR code you never reprint. ${PRICE.monthly} a month.`,
 		h1: 'Digital menus for restaurants',
 		lede: 'A full restaurant menu is the hardest kind to keep accurate on paper. Sections, modifiers, seasonal dishes, price rises, and a printer who needs three days.',
 		body: [
@@ -71,7 +73,7 @@ export const INDUSTRIES: Industry[] = [
 		name: 'Cafés',
 		title: 'Digital Menu for Cafés & Coffee Shops',
 		description:
-			'A QR menu for cafés and coffee shops. Show every drink with a photo, swap seasonal specials in seconds, and skip the chalkboard rewrite. 59 AED a month.',
+			`A QR menu for cafés and coffee shops. Show every drink with a photo, swap seasonal specials in seconds, and skip the chalkboard rewrite. ${PRICE.monthly} a month.`,
 		h1: 'Digital menus for cafés and coffee shops',
 		lede: 'Coffee menus change more often than restaurant menus and have less room to say it. A phone gives you all the space a chalkboard never had.',
 		body: [
@@ -125,7 +127,7 @@ export const INDUSTRIES: Industry[] = [
 		name: 'Food trucks',
 		title: 'Digital Menu for Food Trucks',
 		description:
-			'A QR menu for food trucks and street food stalls. One sticker on the window, a menu you change per pitch, and no printing. 59 AED a month.',
+			`A QR menu for food trucks and street food stalls. One sticker on the window, a menu you change per pitch, and no printing. ${PRICE.monthly} a month.`,
 		h1: 'Digital menus for food trucks and street food',
 		lede: 'You move, your menu moves, and you have about one square foot of space to explain both. A QR sticker solves all three.',
 		body: [
@@ -170,7 +172,7 @@ export const INDUSTRIES: Industry[] = [
 			},
 			{
 				q: 'Is one subscription enough for one truck?',
-				a: 'Yes — 59 AED a month covers one venue, and a truck counts as one venue no matter how many places it parks.'
+				a: `Yes — ${PRICE.monthly} a month covers one venue, and a truck counts as one venue no matter how many places it parks.`
 			}
 		]
 	},
@@ -179,7 +181,7 @@ export const INDUSTRIES: Industry[] = [
 		name: 'Hotels',
 		title: 'Digital Menu for Hotels & Room Service',
 		description:
-			'QR menus for hotel outlets, room service and pool bars. Multilingual for international guests, separate menus per outlet, 59 AED per venue per month.',
+			`QR menus for hotel outlets, room service and pool bars. Multilingual for international guests, separate menus per outlet, ${PRICE.monthly} per venue per month.`,
 		h1: 'Digital menus for hotels and hospitality',
 		lede: 'A hotel does not have a menu. It has eight of them, in four languages, and one of them is always out of date.',
 		body: [
@@ -216,7 +218,7 @@ export const INDUSTRIES: Industry[] = [
 		faqs: [
 			{
 				q: 'Is the price per hotel or per outlet?',
-				a: 'Per outlet. Each outlet is its own venue with its own menu, QR code and analytics, at 59 AED a month each.'
+				a: `Per outlet. Each outlet is its own venue with its own menu, QR code and analytics, at ${PRICE.monthly} a month each.`
 			},
 			{
 				q: 'Can we match the menu to our hotel branding?',
@@ -233,7 +235,7 @@ export const INDUSTRIES: Industry[] = [
 		name: 'Cloud kitchens',
 		title: 'Digital Menu for Cloud Kitchens',
 		description:
-			'A menu link for cloud kitchens and delivery-only brands. No storefront needed — one link for Instagram, WhatsApp and delivery bags. 59 AED a month.',
+			`A menu link for cloud kitchens and delivery-only brands. No storefront needed — one link for Instagram, WhatsApp and delivery bags. ${PRICE.monthly} a month.`,
 		h1: 'Digital menus for cloud kitchens and delivery brands',
 		lede: 'With no dining room, your menu is the entire storefront. It should not be a screenshot.',
 		body: [
@@ -287,7 +289,7 @@ export const INDUSTRIES: Industry[] = [
 		name: 'Bakeries & sweets',
 		title: 'Digital Menu for Bakeries & Sweet Shops',
 		description:
-			'A QR menu for bakeries, patisseries and sweet shops. Show every product with a photo, run seasonal and Ramadan ranges, 59 AED a month.',
+			`A QR menu for bakeries, patisseries and sweet shops. Show every product with a photo, run seasonal and Ramadan ranges, ${PRICE.monthly} a month.`,
 		h1: 'Digital menus for bakeries and sweet shops',
 		lede: 'People buy pastries with their eyes. A text list is the worst possible way to sell something that looks like that.',
 		body: [

@@ -42,7 +42,7 @@ processes an order or a payment, which is why it charges a flat fee rather than 
 ## Core pages
 
 - [Home](${SITE.domain}/): what the product is and who it is for.
-- [Pricing](${SITE.domain}/pricing): the single plan, in AED and USD, monthly or yearly.
+- [Pricing](${SITE.domain}/pricing): the single plan, in USD and AED, monthly or yearly.
 - [Features](${SITE.domain}/features): every capability, plus an explicit list of what is excluded.
 - [How it works](${SITE.domain}/how-it-works): the four setup steps and where to place a QR code.
 - [FAQ](${SITE.domain}/faq): answers on setup, languages, contracts, analytics and limits.

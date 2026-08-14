@@ -1,3 +1,5 @@
+import { PRICE } from '@config/site'
+
 export type Comparison = {
 	slug: string
 	against: string
@@ -147,7 +149,7 @@ export const COMPARISONS: Comparison[] = [
 		faqs: [
 			{
 				q: 'How much does a printed menu actually cost per year?',
-				a: 'It depends entirely on your run size and finish, but the useful comparison is simple: add up what you spent on menu printing last year, including design time, and compare it with 500 AED.'
+				a: `It depends entirely on your run size and finish, but the useful comparison is simple: add up what you spent on menu printing last year, including design time, and compare it with ${PRICE.annual}.`
 			},
 			{
 				q: 'Can I use both a printed menu and a QR menu?',

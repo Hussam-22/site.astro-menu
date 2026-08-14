@@ -6,7 +6,7 @@ import Breadcrumbs from '@components/ui/breadcrumbs.astro'
 import FaqList from '@components/ui/faq-list.astro'
 import CtaBand from '@components/ui/cta-band.astro'
 import Button from '@components/ui/button.astro'
-import { PLAN } from '@config/site'
+import { PLAN, PRICE } from '@config/site'
 import { INDUSTRIES } from '@data/industries'
 import { LOCATIONS } from '@data/locations'
 
@@ -33,7 +33,7 @@ const faqs = [
 	},
 	{
 		q: 'How much does a digital menu cost?',
-		a: `Astro-Menu is ${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year, per venue. Everything is included and there is no commission on your sales.`
+		a: `Astro-Menu is ${PRICE.monthly} a month, or ${PRICE.annual} for the year, per venue. Everything is included and there is no commission on your sales.`
 	}
 ]
 
@@ -51,7 +51,7 @@ const crumbs = [{ name: 'Home', path: '/' }, { name: 'Digital menus', path: '/di
 
 <Layout
 	title="Digital Menu Software for Restaurants"
-	description="Digital menu software that replaces printed menus and PDFs. Photos, translation, filters and instant updates for 59 AED a month. No POS, no commission."
+	description={`Digital menu software that replaces printed menus and PDFs. Photos, translation, filters and instant updates for ${PRICE.monthly} a month. No POS, no commission.`}
 	schema={schema}
 	breadcrumbs={crumbs}
 >

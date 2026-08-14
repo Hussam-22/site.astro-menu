@@ -8,7 +8,7 @@ import CtaBand from '@components/ui/cta-band.astro'
 import Button from '@components/ui/button.astro'
 import Check from '@components/ui/icons/check.astro'
 import PricingBlock from '@components/pricing-block.astro'
-import { PLAN } from '@config/site'
+import { PLAN, PRICE } from '@config/site'
 import { INDUSTRIES } from '@data/industries'
 import { LOCATIONS } from '@data/locations'
 
@@ -50,7 +50,7 @@ const crumbs = [
 		<section class="py-14 md:py-20">
 			<div class="max-w-3xl">
 				<p class="mb-4 inline-block rounded-full bg-card px-4 py-1.5 text-sm font-bold text-brandInk">
-					{industry.name} · {PLAN.monthly.aed} AED a month
+					{industry.name} · {PRICE.monthly} a month
 				</p>
 				<h1 class="text-4xl font-extrabold leading-tight text-ink md:text-6xl md:leading-tight">
 					{industry.h1}

@@ -7,7 +7,7 @@ import FaqList from '@components/ui/faq-list.astro'
 import CtaBand from '@components/ui/cta-band.astro'
 import Button from '@components/ui/button.astro'
 import PricingBlock from '@components/pricing-block.astro'
-import { PLAN } from '@config/site'
+import { PLAN, PRICE } from '@config/site'
 import { LOCATIONS } from '@data/locations'
 import { INDUSTRIES } from '@data/industries'
 
@@ -49,7 +49,7 @@ const crumbs = [
 		<section class="py-14 md:py-20">
 			<div class="max-w-3xl">
 				<p class="mb-4 inline-block rounded-full bg-card px-4 py-1.5 text-sm font-bold text-brandInk">
-					{PLAN.monthly.aed} AED a month · {location.emirate}
+					{PRICE.monthly} a month · {location.emirate}
 				</p>
 				<h1 class="text-4xl font-extrabold leading-tight text-ink md:text-6xl md:leading-tight">
 					{location.h1}
@@ -114,7 +114,7 @@ const crumbs = [
 
 		<Section
 			eyebrow="Pricing"
-			title={`${PLAN.monthly.aed} AED a month, wherever you are`}
+			title={`${PRICE.monthlyWithLocal} a month, wherever you are`}
 			lede="The same price for every venue, in every emirate. No location loading, no commission."
 		>
 			<PricingBlock />

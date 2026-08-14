@@ -2,7 +2,7 @@
 import Button from '@components/ui/button.astro'
 import Check from '@components/ui/icons/check.astro'
 import Cross from '@components/ui/icons/cross.astro'
-import { SITE, PLAN, ANNUAL_SAVING } from '@config/site'
+import { SITE, PLAN, PRICE, CURRENCY, ANNUAL_SAVING } from '@config/site'
 import { INCLUDED, NOT_INCLUDED } from '@data/plan'
 
 const perMonthAnnual = {
@@ -38,7 +38,7 @@ const priceData = {
 	id="pricing-block"
 	class="mx-auto mt-12 max-w-3xl"
 	data-prices={JSON.stringify(priceData)}
-	data-currency="aed"
+	data-currency={CURRENCY}
 	data-period="monthly"
 >
 	<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -89,8 +89,8 @@ const priceData = {
 			</p>
 			<p class="mt-4 flex items-baseline justify-center">
 				<span class="text-2xl font-bold" data-symbol-prefix></span>
-				<span class="text-6xl font-extrabold md:text-7xl" data-price>{PLAN.monthly.aed}</span>
-				<span class="ml-1 text-2xl font-bold" data-symbol-suffix>AED</span>
+				<span class="text-6xl font-extrabold md:text-7xl" data-price>{PLAN.monthly[CURRENCY]}</span>
+				<span class="ml-1 text-2xl font-bold" data-symbol-suffix></span>
 				<span class="ml-1 text-lg text-muted">/month</span>
 			</p>
 			<p class="mt-2 text-muted" data-note>billed monthly</p>
@@ -121,7 +121,7 @@ const priceData = {
 		<div class="mt-8 rounded-3xl border border-line bg-page p-6">
 			<h3 class="font-bold">What it deliberately does not do</h3>
 			<p class="mt-1 text-sm text-muted">
-				Astro-Menu is a menu. Keeping it to one job is why it costs {PLAN.monthly.aed} AED instead of
+				Astro-Menu is a menu. Keeping it to one job is why it costs {PRICE.monthly} instead of
 				ten times that.
 			</p>
 			<ul class="mt-4 grid gap-3 sm:grid-cols-2">
@@ -152,7 +152,7 @@ const priceData = {
 		const savingEl = root.querySelector('[data-saving]')
 
 		const render = () => {
-			const currency = root.dataset.currency || 'aed'
+			const currency = root.dataset.currency || 'usd'
 			const period = root.dataset.period || 'monthly'
 			const set = prices[currency]
 			if (!set) return

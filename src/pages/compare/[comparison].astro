@@ -6,7 +6,7 @@ import Breadcrumbs from '@components/ui/breadcrumbs.astro'
 import FaqList from '@components/ui/faq-list.astro'
 import CtaBand from '@components/ui/cta-band.astro'
 import Button from '@components/ui/button.astro'
-import { PLAN } from '@config/site'
+import { PLAN, PRICE } from '@config/site'
 import { COMPARISONS } from '@data/comparisons'
 
 export function getStaticPaths() {
@@ -104,7 +104,7 @@ const crumbs = [
 				<p class="text-xl leading-relaxed">{comparison.verdict}</p>
 				<div class="mt-8 flex flex-wrap gap-3">
 					<Button href="/pricing" variant="onBrand">
-						{PLAN.monthly.aed} AED a month — see pricing
+						{PRICE.monthly} a month — see pricing
 					</Button>
 					<Button href="/how-it-works" variant="onBrandOutline">How it works</Button>
 				</div>

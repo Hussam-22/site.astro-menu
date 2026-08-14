@@ -8,7 +8,7 @@ import Cross from '@components/ui/icons/cross.astro'
 import CtaBand from '@components/ui/cta-band.astro'
 import Button from '@components/ui/button.astro'
 import ProductGallery from '@components/product-gallery.astro'
-import { PLAN } from '@config/site'
+import { PLAN, PRICE } from '@config/site'
 import { NOT_INCLUDED } from '@data/plan'
 
 const groups = [
@@ -163,7 +163,7 @@ const groups = [
 
 <Layout
 	title="Features — Everything in the One Plan"
-	description="Photos on every item, calories and macros, automatic translation, dietary filters, dynamic QR codes and menu analytics. All included at 59 AED a month."
+	description={`Photos on every item, calories and macros, automatic translation, dietary filters, dynamic QR codes and menu analytics. All included at ${PRICE.monthly} a month.`}
 	breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features' }]}
 >
 	<Container>
@@ -173,7 +173,7 @@ const groups = [
 			level={1}
 			eyebrow="Features"
 			title="Everything Astro-Menu does"
-			lede={`All of it is in the one plan at ${PLAN.monthly.aed} AED a month. There is no feature matrix to compare and no tier to upgrade into.`}
+			lede={`All of it is in the one plan at ${PRICE.monthly} a month. There is no feature matrix to compare and no tier to upgrade into.`}
 		/>
 
 		<ProductGallery title="Seen on a real menu" />

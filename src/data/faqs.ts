@@ -1,3 +1,5 @@
+import { PRICE } from '@config/site'
+
 export type Faq = { q: string; a: string }
 
 export const CORE_FAQS: Faq[] = [
@@ -7,7 +9,7 @@ export const CORE_FAQS: Faq[] = [
 	},
 	{
 		q: 'How much does it cost?',
-		a: 'One plan: 59 AED per month, or 500 AED if you pay for the year — about $15.99 a month or $135 a year. That is per venue, and it includes everything. There is no setup fee and no commission.'
+		a: `One plan: ${PRICE.monthly} per month, or ${PRICE.annual} if you pay for the year. That is per venue, and it includes everything. There is no setup fee and no commission.`
 	},
 	{
 		q: 'Is there really only one plan?',

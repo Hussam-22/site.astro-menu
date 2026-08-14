@@ -1,6 +1,6 @@
 ---
 import Container from '@components/container.astro'
-import { SITE, PLAN } from '@config/site'
+import { SITE, PRICE } from '@config/site'
 import { LOCATIONS } from '@data/locations'
 import { INDUSTRIES } from '@data/industries'
 import { COMPARISONS } from '@data/comparisons'
@@ -43,7 +43,7 @@ const columns = [
 					<span class="font-extrabold">Astro</span><span class="text-brandInk">-Menu</span>
 				</a>
 				<p class="mt-3 text-sm">
-					QR menus for restaurants, cafés and food trucks. One plan, {PLAN.monthly.aed} AED a month.
+					QR menus for restaurants, cafés and food trucks. One plan, {PRICE.monthly} a month.
 				</p>
 				<a href={`mailto:${SITE.email}`} class="mt-3 inline-block text-sm text-ink hover:underline">
 					{SITE.email}

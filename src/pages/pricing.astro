@@ -6,20 +6,20 @@ import Breadcrumbs from '@components/ui/breadcrumbs.astro'
 import FaqList from '@components/ui/faq-list.astro'
 import CtaBand from '@components/ui/cta-band.astro'
 import PricingBlock from '@components/pricing-block.astro'
-import { PLAN, ANNUAL_SAVING, SITE } from '@config/site'
+import { PLAN, PRICE, ANNUAL_SAVING, SITE } from '@config/site'
 
 const faqs = [
 	{
-		q: 'Is 59 AED the whole price?',
-		a: 'Yes. 59 AED per venue per month, or 500 AED for a year. No setup fee, no per-scan charge, no commission and nothing to buy.'
+		q: `Is ${PRICE.monthly} the whole price?`,
+		a: `Yes. ${PRICE.monthly} per venue per month, or ${PRICE.annual} for a year. No setup fee, no per-scan charge, no commission and nothing to buy.`
 	},
 	{
 		q: 'What does the annual price save me?',
-		a: `Paying yearly costs ${PLAN.annual.aed} AED instead of ${PLAN.monthly.aed * 12} AED — a saving of ${ANNUAL_SAVING.aed} AED, or about ${ANNUAL_SAVING.percent}%.`
+		a: `Paying yearly costs ${PRICE.annual} instead of ${PRICE.monthly} × 12 — a saving of ${PRICE.saving}, or about ${ANNUAL_SAVING.percent}%.`
 	},
 	{
-		q: 'Why are prices shown in both AED and USD?',
-		a: 'Most of our customers are in the UAE and are billed in dirhams. The USD figures are there so customers elsewhere can see roughly what they are paying. Exchange rates move, so treat the USD figure as indicative.'
+		q: 'Which currency will I actually be billed in?',
+		a: `Prices are shown in ${PRICE.code} by default and you can switch the toggle above to see dirhams. Venues in the UAE are billed in dirhams at ${PLAN.monthly.aed} AED a month; exchange rates move, so treat the converted figure as indicative.`
 	},
 	{
 		q: 'Do I need a card to start the trial?',
@@ -51,24 +51,24 @@ const schema = [
 		brand: { '@type': 'Brand', name: SITE.name },
 		offers: {
 			'@type': 'AggregateOffer',
-			priceCurrency: 'AED',
-			lowPrice: PLAN.annual.aed,
-			highPrice: PLAN.monthly.aed * 12,
+			priceCurrency: PRICE.code,
+			lowPrice: PRICE.amountAnnual,
+			highPrice: PRICE.amountMonthly * 12,
 			offerCount: 2,
 			offers: [
 				{
 					'@type': 'Offer',
 					name: 'Monthly billing',
-					price: PLAN.monthly.aed,
-					priceCurrency: 'AED',
+					price: PRICE.amountMonthly,
+					priceCurrency: PRICE.code,
 					url: `${SITE.domain}/pricing`,
 					availability: 'https://schema.org/InStock'
 				},
 				{
 					'@type': 'Offer',
 					name: 'Annual billing',
-					price: PLAN.annual.aed,
-					priceCurrency: 'AED',
+					price: PRICE.amountAnnual,
+					priceCurrency: PRICE.code,
 					url: `${SITE.domain}/pricing`,
 					availability: 'https://schema.org/InStock'
 				}
@@ -87,8 +87,8 @@ const schema = [
 ---
 
 <Layout
-	title="Pricing — 59 AED a Month, All Included"
-	description={`One plan: ${PLAN.monthly.aed} AED a month or ${PLAN.annual.aed} AED a year. Prices in AED and USD. No commission, no hardware, ${PLAN.trialDays} days free.`}
+	title={`Pricing — ${PRICE.monthly} a Month, All Included`}
+	description={`One plan: ${PRICE.monthly} a month or ${PRICE.annual} a year. Prices in USD and AED. No commission, no hardware, ${PLAN.trialDays} days free.`}
 	schema={schema}
 	breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing' }]}
 >
@@ -99,7 +99,7 @@ const schema = [
 			level={1}
 			eyebrow="Pricing"
 			title="One plan. Everything in it."
-			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year. Switch currency and billing period below — the price is the same product either way.`}
+			lede={`${PRICE.monthly} a month, or ${PRICE.annual} for the year. Switch currency and billing period below — the price is the same product either way.`}
 		>
 			<PricingBlock />
 		</Section>

@@ -4,7 +4,7 @@ import Container from '@components/container.astro'
 import Section from '@components/ui/section.astro'
 import Breadcrumbs from '@components/ui/breadcrumbs.astro'
 import Contactform from '@components/contactform.astro'
-import { SITE, PLAN } from '@config/site'
+import { SITE, PLAN, PRICE } from '@config/site'
 
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]
 
@@ -74,13 +74,13 @@ const schema = {
 				<p>
 					<strong class="text-ink">If you need order taking or payments, we are not the right tool.</strong>
 					{' '}Astro-Menu shows your menu and stops there. There is no POS, no ordering and no payment
-					processing, and we are not planning to add them — that restraint is why it costs {PLAN.monthly.aed}
-					{' '}AED a month and takes no commission. If you need those things, a full restaurant platform
+					processing, and we are not planning to add them — that restraint is why it costs {PRICE.monthly}
+					{' '}a month and takes no commission. If you need those things, a full restaurant platform
 					will serve you better, and we would rather say so now than after you have paid us.
 				</p>
 				<p>
 					<strong class="text-ink">Several branches are simply several subscriptions.</strong> Each venue
-					gets its own menu, its own QR code and its own analytics at {PLAN.monthly.aed} AED a month.
+					gets its own menu, its own QR code and its own analytics at {PRICE.monthly} a month.
 					There is no franchise tier and no minimum. If you are opening a lot of locations at once,
 					write to us and we will sort out a single invoice rather than a dozen.
 				</p>

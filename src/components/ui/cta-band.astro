@@ -1,6 +1,6 @@
 ---
 import Button from '@components/ui/button.astro'
-import { SITE, PLAN } from '@config/site'
+import { SITE, PLAN, PRICE } from '@config/site'
 
 interface Props {
 	title?: string
@@ -9,7 +9,7 @@ interface Props {
 
 const {
 	title = 'Put your menu on every phone this week',
-	body = `One plan, ${PLAN.monthly.aed} AED a month. ${PLAN.trialDays} days free, no card needed, no commission ever.`
+	body = `One plan, ${PRICE.monthly} a month. ${PLAN.trialDays} days free, no card needed, no commission ever.`
 } = Astro.props
 ---
 

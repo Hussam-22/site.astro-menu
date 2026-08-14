@@ -14,7 +14,7 @@ import Marquee from '@components/landing/marquee.astro'
 import { Image } from 'astro:assets'
 import menuShot from 'assets/screens/menu-sections.png'
 import printMenu from 'assets/print-menu.png'
-import { PLAN, ANNUAL_SAVING } from '@config/site'
+import { PLAN, PRICE, ANNUAL_SAVING } from '@config/site'
 import { STEPS, NOT_INCLUDED } from '@data/plan'
 import { CORE_FAQS } from '@data/faqs'
 import { INDUSTRIES } from '@data/industries'
@@ -55,7 +55,7 @@ const printVsDigital = [
 	['Photos', 'Expensive to print', 'On every item'],
 	['A second language', 'A second print run', 'Automatic'],
 	['Reading it on a phone', 'Pinch, zoom, squint', 'Built for the screen'],
-	['Cost per year', 'Every reprint, again', `${PLAN.annual.aed} AED, all in`]
+	['Cost per year', 'Every reprint, again', `${PRICE.annual}, all in`]
 ]
 
 const schema = {
@@ -70,7 +70,7 @@ const schema = {
 
 <Layout
 	title="QR Menu for Restaurants & Cafés"
-	description={`A QR menu for your restaurant: photos on every dish, Arabic and English, prices you change in seconds. ${PLAN.monthly.aed} AED a month, no POS and no commission.`}
+	description={`A QR menu for your restaurant: photos on every dish, Arabic and English, prices you change in seconds. ${PRICE.monthly} a month, no POS and no commission.`}
 	schema={schema}
 >
 	<Container>
@@ -100,7 +100,7 @@ const schema = {
 				}
 			</div>
 			<p class="mt-10 max-w-2xl text-lg text-muted">
-				That is why it costs {PLAN.monthly.aed} AED a month instead of several hundred.
+				That is why it costs {PRICE.monthly} a month instead of several hundred.
 			</p>
 		</Section>
 
@@ -189,7 +189,7 @@ const schema = {
 						<div class="flex flex-wrap items-center gap-3">
 							<h3 class="text-2xl font-extrabold text-ink">Astro-Menu</h3>
 							<span class="rounded-full bg-brand px-3 py-1 text-sm font-bold text-brandOn">
-								{PLAN.monthly.aed} AED / month
+								{PRICE.monthly} / month
 							</span>
 						</div>
 						<ul class="mt-4 space-y-2">
@@ -277,19 +277,19 @@ const schema = {
 		<!-- Cost -->
 		<Section
 			eyebrow="Cost"
-			title={`${PLAN.annual.aed} AED a year. That is the whole bill.`}
+			title={`${PRICE.annual} a year. That is the whole bill.`}
 			lede="No setup fee, no charge per scan, no commission on what you sell. Compare it against what you spent on menu printing last year — design, print, lamination, and every reprint when a price moved."
 		>
 			<div class="mt-14 grid gap-5 md:grid-cols-3">
 				<div class="rounded-4xl bg-invert p-10 text-invert-ink">
-					<p class="text-6xl font-extrabold leading-none">{PLAN.annual.aed} AED</p>
+					<p class="text-6xl font-extrabold leading-none">{PRICE.annual}</p>
 					<p class="mt-4 text-xl font-extrabold">Everything, for a year</p>
 					<p class="mt-2 opacity-70">
 						Unlimited items, unlimited changes, unlimited people looking at it.
 					</p>
 				</div>
 				<div class="rounded-4xl border border-line bg-card p-10">
-					<p class="text-6xl font-extrabold leading-none text-ink">0 AED</p>
+					<p class="text-6xl font-extrabold leading-none text-ink">{PRICE.zero}</p>
 					<p class="mt-4 text-xl font-extrabold text-ink">To change a price</p>
 					<p class="mt-2 text-muted">
 						However often you do it. A printed menu charges you for every single change.
@@ -350,7 +350,7 @@ const schema = {
 			align="center"
 			eyebrow="Pricing"
 			title="One plan. One price."
-			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year — ${ANNUAL_SAVING.percent}% cheaper. Switch currency below.`}
+			lede={`${PRICE.monthly} a month, or ${PRICE.annual} for the year — ${ANNUAL_SAVING.percent}% cheaper. Switch currency below.`}
 		>
 			<PricingBlock />
 		</Section>

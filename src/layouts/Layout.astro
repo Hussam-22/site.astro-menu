@@ -1,7 +1,7 @@
 ---
 import Footer from '@components/footer.astro'
 import Navbar from '@components/navbar/navbar.astro'
-import { SITE, PLAN } from '@config/site'
+import { SITE, PLAN, PRICE } from '@config/site'
 import '@fontsource-variable/plus-jakarta-sans'
 import '../styles/theme.css'
 
@@ -59,16 +59,16 @@ const software = {
 		{
 			'@type': 'Offer',
 			name: 'Monthly',
-			price: PLAN.monthly.aed,
-			priceCurrency: 'AED',
+			price: PRICE.amountMonthly,
+			priceCurrency: PRICE.code,
 			url: `${SITE.domain}/pricing`,
 			availability: 'https://schema.org/InStock'
 		},
 		{
 			'@type': 'Offer',
 			name: 'Annual',
-			price: PLAN.annual.aed,
-			priceCurrency: 'AED',
+			price: PRICE.amountAnnual,
+			priceCurrency: PRICE.code,
 			url: `${SITE.domain}/pricing`,
 			availability: 'https://schema.org/InStock'
 		}
