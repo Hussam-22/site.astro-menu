@@ -50,17 +50,17 @@ const priceData = {
 			<button
 				type="button"
 				data-period-btn="monthly"
-				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+				class="flex min-h-11 items-center rounded-full px-5 text-sm font-bold text-muted transition"
 			>
 				Monthly
 			</button>
 			<button
 				type="button"
 				data-period-btn="annual"
-				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+				class="flex min-h-11 items-center rounded-full px-5 text-sm font-bold text-muted transition"
 			>
 				Yearly
-				<span class="ml-1 text-xs font-bold text-brand">−{ANNUAL_SAVING.percent}%</span>
+				<span class="ml-2 rounded-full bg-brand px-2 py-0.5 text-xs font-bold text-white">−{ANNUAL_SAVING.percent}%</span>
 			</button>
 		</div>
 
@@ -68,14 +68,14 @@ const priceData = {
 			<button
 				type="button"
 				data-currency-btn="aed"
-				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+				class="flex min-h-11 items-center rounded-full px-5 text-sm font-bold text-muted transition"
 			>
 				AED
 			</button>
 			<button
 				type="button"
 				data-currency-btn="usd"
-				class="rounded-full px-5 py-2 text-sm font-bold text-muted transition"
+				class="flex min-h-11 items-center rounded-full px-5 text-sm font-bold text-muted transition"
 			>
 				USD
 			</button>
@@ -84,7 +84,7 @@ const priceData = {
 
 	<div class="rounded-xxl mt-8 bg-card p-8 md:p-12">
 		<div class="text-center">
-			<p class="text-sm font-bold uppercase tracking-widest text-brand">
+			<p class="text-sm font-extrabold uppercase tracking-widest text-ink">
 				One plan. Everything included.
 			</p>
 			<p class="mt-4 flex items-baseline justify-center">

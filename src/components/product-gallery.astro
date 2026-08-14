@@ -5,12 +5,13 @@ import Section from '@components/ui/section.astro'
 
 interface Props {
 	only?: string[]
+	align?: 'left' | 'center'
 	eyebrow?: string
 	title?: string
 	lede?: string
 }
 
-const { only, eyebrow, title, lede } = Astro.props
+const { only, eyebrow, title, lede, align = 'left' } = Astro.props
 
 // Renders whatever screenshots exist in src/assets/screens, so the page works
 // before the files are added and improves as they land. See the README in that folder.
@@ -67,7 +68,7 @@ const shots = Object.entries(modules)
 
 {
 	shots.length > 0 && (
-		<Section eyebrow={eyebrow} title={title} lede={lede}>
+		<Section eyebrow={eyebrow} title={title} lede={lede} align={align}>
 			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 				{shots.map((shot, i) => (
 					<figure

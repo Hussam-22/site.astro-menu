@@ -10,7 +10,9 @@
 	--c-line: 226 226 232;
 
 	/* One brand tone, used for every filled surface, always with white text. */
-	--c-brand: 236 87 102;
+	/* One brand tone everywhere, always with white text on it. Deepened just enough
+	   from #EC5766 that white text clears WCAG AA (4.66:1 instead of 3.43:1). */
+	--c-brand: 214 55 74;
 
 	/* Pastel accents for colour-blocked cards. */
 	--c-mint: 178 240 199;
@@ -32,7 +34,9 @@
 	--c-invert-ink: 12 12 14;
 	--c-line: 42 42 48;
 
-	--c-brand: 236 87 102;
+	/* One brand tone everywhere, always with white text on it. Deepened just enough
+	   from #EC5766 that white text clears WCAG AA (4.66:1 instead of 3.43:1). */
+	--c-brand: 214 55 74;
 
 	/* Pastels are deepened in dark mode so white text stays readable on them. */
 	--c-mint: 22 101 72;
@@ -46,6 +50,11 @@
 
 html {
 	scroll-behavior: smooth;
+}
+
+/* The header is sticky, so anchor targets need clearance or they land under it. */
+[id] {
+	scroll-margin-top: 6rem;
 }
 
 /* NB: do not put `content-visibility: auto` on img. Combined with loading="lazy"

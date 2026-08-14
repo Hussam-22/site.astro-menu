@@ -131,6 +131,7 @@ const schema = {
 
 		<!-- Real menus -->
 		<ProductGallery
+			align="center"
 			eyebrow="Real menus"
 			title="This is what your customers actually get"
 			lede="Live Astro-Menu menus, exactly as they appear on a diner’s phone."
@@ -142,20 +143,19 @@ const schema = {
 			title="Everything, in the one plan"
 			lede="There is no cheaper tier missing the thing you need, and no expensive tier to grow into."
 		>
-			<div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+			<dl class="mt-14 divide-y divide-line border-y border-line">
 				{
 					capabilities.map((item) => (
-						<div class="rounded-4xl border border-line bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand">
-							<span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white">
-								<Check class="h-5 w-5" />
-							</span>
-							<h3 class="mt-5 text-xl font-extrabold text-ink">{item.title}</h3>
-							<p class="mt-2 text-muted">{item.body}</p>
+						<div class="grid gap-2 py-8 md:grid-cols-[1fr_1.4fr] md:gap-12">
+							<dt class="text-2xl font-extrabold leading-tight text-ink md:text-3xl">
+								{item.title}
+							</dt>
+							<dd class="text-lg leading-relaxed text-muted">{item.body}</dd>
 						</div>
 					))
 				}
-			</div>
-			<div class="mt-10 text-center">
+			</dl>
+			<div class="mt-10">
 				<Button href="/features" variant="surface">See every feature</Button>
 			</div>
 		</Section>
@@ -298,6 +298,7 @@ const schema = {
 		<!-- Pricing -->
 		<Section
 			id="pricing"
+			align="center"
 			eyebrow="Pricing"
 			title="One plan. One price. Everything in it."
 			lede={`${PLAN.monthly.aed} AED a month, or ${PLAN.annual.aed} AED for the year — that is ${ANNUAL_SAVING.percent}% off. Switch currency and billing period below.`}
@@ -334,7 +335,7 @@ const schema = {
 						LOCATIONS.map((location) => (
 							<a
 								href={`/qr-menu/${location.slug}`}
-								class="rounded-full border border-line bg-page px-4 py-2 text-sm font-bold text-ink transition hover:bg-brand hover:text-white"
+								class="inline-flex min-h-11 items-center rounded-full border border-line bg-page px-5 text-sm font-bold text-ink transition hover:bg-brand hover:text-white"
 							>
 								QR menu {location.emirate}
 							</a>
@@ -346,6 +347,7 @@ const schema = {
 
 		<!-- FAQ -->
 		<Section
+			align="center"
 			eyebrow="Questions"
 			title="The things people ask first"
 			lede="If yours is not here, the full list has more — or just email us."

@@ -49,7 +49,7 @@ module.exports = {
 		themes: [
 			{
 				astro: {
-					primary: '#EC5766',
+					primary: '#D6374A',
 					'primary-content': '#ffffff',
 					secondary: '#B2F0C7',
 					'secondary-content': '#0c0c0e',
