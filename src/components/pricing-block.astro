@@ -60,7 +60,7 @@ const priceData = {
 				class="flex min-h-11 items-center rounded-full px-5 text-sm font-bold text-muted transition"
 			>
 				Yearly
-				<span class="ml-2 rounded-full bg-brand px-2 py-0.5 text-xs font-bold text-white">−{ANNUAL_SAVING.percent}%</span>
+				<span class="ml-2 rounded-full bg-brand px-2 py-0.5 text-xs font-bold text-brandOn">−{ANNUAL_SAVING.percent}%</span>
 			</button>
 		</div>
 
@@ -166,14 +166,14 @@ const priceData = {
 			root.querySelectorAll('[data-currency-btn]').forEach((btn) => {
 				const on = btn.dataset.currencyBtn === currency
 				btn.classList.toggle('bg-brand', on)
-				btn.classList.toggle('text-white', on)
+				btn.classList.toggle('text-brandOn', on)
 				btn.classList.toggle('text-muted', !on)
 				btn.setAttribute('aria-pressed', String(on))
 			})
 			root.querySelectorAll('[data-period-btn]').forEach((btn) => {
 				const on = btn.dataset.periodBtn === period
 				btn.classList.toggle('bg-brand', on)
-				btn.classList.toggle('text-white', on)
+				btn.classList.toggle('text-brandOn', on)
 				btn.classList.toggle('text-muted', !on)
 				btn.setAttribute('aria-pressed', String(on))
 			})

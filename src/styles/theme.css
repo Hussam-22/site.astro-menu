@@ -9,14 +9,20 @@
 	--c-invert-ink: 255 255 255;
 	--c-line: 224 224 230;
 
-	/* The brand rose has two jobs, and one value cannot do both accessibly:
-	   --c-brand      the FILL behind white text (buttons, bands, badges)
-	   --c-brand-ink  the brand colour used AS text on a page/card surface
-	   In light mode they are the same. In dark mode the text tone lifts so it
-	   stays readable on near-black, while the fill stays put so white text on it
-	   keeps passing. */
-	--c-brand: 203 48 68;
-	--c-brand-ink: 203 48 68;
+	/* The brand accent has three jobs. One value cannot do all three legibly, so
+	   each role gets its own token. To change the brand, set --c-brand to the hue
+	   you want and run `node scripts/brand-check.mjs` — it reports which roles
+	   pass and what the derived tones should be.
+
+	   --c-brand       the FILL: buttons, bands, badges.
+	   --c-brand-on    what sits ON that fill (label text, icons).
+	   --c-brand-ink   the brand used AS text on a page or card surface.
+	   --c-brand-deep  a fixed deep tone for brand text on a white chip, where the
+	                   theme-varying ink tone would fail in dark mode. */
+	--c-brand: 244 114 182;
+	--c-brand-on: 12 12 14;
+	--c-brand-ink: 190 24 93;
+	--c-brand-deep: 190 24 93;
 
 	color-scheme: light;
 }
@@ -31,10 +37,13 @@
 	--c-invert-ink: 12 12 14;
 	--c-line: 42 42 48;
 
-	/* Same fill so white text on buttons still passes; lifted text tone (#EC5766)
-	   so brand-coloured words stay readable on near-black. */
-	--c-brand: 203 48 68;
-	--c-brand-ink: 236 87 102;
+	/* Fill, on-fill and deep stay put so filled controls look identical in both
+	   themes. Only the text tone changes: the bright fill hue is readable as text
+	   on near-black, while the light-mode deep tone would not be. */
+	--c-brand: 244 114 182;
+	--c-brand-on: 12 12 14;
+	--c-brand-ink: 244 114 182;
+	--c-brand-deep: 190 24 93;
 
 	color-scheme: dark;
 }

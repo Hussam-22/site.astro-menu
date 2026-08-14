@@ -21,6 +21,8 @@ module.exports = {
 			colors: {
 				brand: 'rgb(var(--c-brand) / <alpha-value>)',
 				brandInk: 'rgb(var(--c-brand-ink) / <alpha-value>)',
+				brandOn: 'rgb(var(--c-brand-on) / <alpha-value>)',
+				brandDeep: 'rgb(var(--c-brand-deep) / <alpha-value>)',
 				// Kept as aliases so existing markup does not break.
 				secondary: 'rgb(var(--c-brand) / <alpha-value>)',
 				accent: 'rgb(var(--c-brand) / <alpha-value>)',
