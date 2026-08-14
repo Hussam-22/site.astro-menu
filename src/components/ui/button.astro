@@ -18,11 +18,10 @@ const sizes = {
 	xl: 'min-h-14 px-10 py-5 text-xl'
 }
 
-// Anything sitting on the brand fill uses brandOn, never white — see theme.css
-// for why the fill cannot carry white text. onBrand is a white chip on that
-// fill, so it needs the fixed deep tone rather than the theme-varying ink one.
+// Anything on the brand fill uses brandOn; brand-on-white chips use brandDeep.
+// See theme.css for the tokens and the accepted contrast decision.
 const variants = {
-	brand: 'bg-brand text-brandOn hover:brightness-95 shadow-lg shadow-brand/25',
+	brand: 'bg-brand text-brandOn hover:brightness-95',
 	primary: 'bg-invert text-invert-ink hover:opacity-90',
 	surface: 'bg-page text-ink border-2 border-line hover:border-ink',
 	outline: 'border-2 border-current bg-transparent hover:bg-ink/5',

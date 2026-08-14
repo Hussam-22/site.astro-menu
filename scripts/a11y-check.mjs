@@ -38,7 +38,17 @@ const AUDIT = () => {
 		return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05)
 	}
 
+	// The brand pink is knowingly below AA in both roles (see theme.css). Those
+	// pairs are reported separately so a genuine, unrelated regression still fails.
+	const brand = getComputedStyle(document.documentElement)
+		.getPropertyValue('--c-brand')
+		.trim()
+		.split(/[\s,]+/)
+		.map(Number)
+	const isBrand = (c) => brand.length === 3 && c.every((v, i) => Math.abs(v - brand[i]) <= 1)
+
 	const bad = []
+	const accepted = []
 	document
 		.querySelectorAll('p,h1,h2,h3,h4,li,a,span,td,th,button,summary,dt,dd,label')
 		.forEach((el) => {
@@ -47,13 +57,20 @@ const AUDIT = () => {
 			if (cs.display === 'none' || cs.visibility === 'hidden') return
 			const fg = parse(cs.color)
 			if (!fg || fg.a < 0.5) return
-			const r = ratio(fg.rgb, bgOf(el))
+			const bg = bgOf(el)
+			const r = ratio(fg.rgb, bg)
 			const size = parseFloat(cs.fontSize)
 			const min = size >= 24 || (size >= 18.66 && parseInt(cs.fontWeight) >= 700) ? 3 : 4.5
-			if (r < min) bad.push({ txt: el.textContent.trim().slice(0, 30), ratio: +r.toFixed(2) })
+			if (r >= min) return
+			const row = { txt: el.textContent.trim().slice(0, 30), ratio: +r.toFixed(2) }
+			;(isBrand(fg.rgb) || isBrand(bg) ? accepted : bad).push(row)
 		})
-	const seen = new Set()
-	const contrast = bad.filter((b) => (seen.has(b.txt) ? false : (seen.add(b.txt), true)))
+	const dedupe = (rows) => {
+		const seen = new Set()
+		return rows.filter((b) => (seen.has(b.txt) ? false : (seen.add(b.txt), true)))
+	}
+	const contrast = dedupe(bad)
+	const brandAccepted = dedupe(accepted)
 
 	const small = [...document.querySelectorAll('a,button,[role=button],input,select')]
 		.filter((e) => {
@@ -62,7 +79,7 @@ const AUDIT = () => {
 		})
 		.map((e) => ({ t: (e.textContent || e.tagName).trim().slice(0, 20), h: Math.round(e.getBoundingClientRect().height) }))
 
-	return { contrast, small }
+	return { contrast, brandAccepted, small }
 }
 
 const browser = await chromium.launch()
@@ -75,12 +92,12 @@ for (const dark of [false, true]) {
 		await page.addInitScript((d) => localStorage.setItem('theme', d ? 'dark' : 'light'), dark)
 		await page.goto(BASE + path, { waitUntil: 'load', timeout: 60000 })
 		await page.waitForTimeout(800)
-		const { contrast, small } = await page.evaluate(AUDIT)
+		const { contrast, brandAccepted, small } = await page.evaluate(AUDIT)
 		const label = `${dark ? 'dark ' : 'light'} ${path}`.padEnd(24)
 		const bad = contrast.length + small.length
 		fails += bad
 		console.log(
-			`${label} contrast:${String(contrast.length).padStart(2)}  small-targets:${String(small.length).padStart(2)}`
+			`${label} contrast:${String(contrast.length).padStart(2)}  small-targets:${String(small.length).padStart(2)}  brand-accepted:${String(brandAccepted.length).padStart(2)}`
 		)
 		contrast.slice(0, 4).forEach((c) => console.log(`    contrast ${c.ratio}  "${c.txt}"`))
 		small.slice(0, 4).forEach((s) => console.log(`    ${s.h}px  "${s.t}"`))

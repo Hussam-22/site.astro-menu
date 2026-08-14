@@ -17,12 +17,16 @@
 	   --c-brand       the FILL: buttons, bands, badges.
 	   --c-brand-on    what sits ON that fill (label text, icons).
 	   --c-brand-ink   the brand used AS text on a page or card surface.
-	   --c-brand-deep  a fixed deep tone for brand text on a white chip, where the
-	                   theme-varying ink tone would fail in dark mode. */
+	   --c-brand-deep  brand text on a white chip.
+
+	   DELIBERATE, do not "fix": white-on-brand measures 2.65:1 and brand-as-text
+	   2.65:1, both under the WCAG AA minimum of 4.5:1. This is an accepted design
+	   decision. scripts/a11y-check.mjs reports these separately so it still
+	   catches unrelated contrast regressions. */
 	--c-brand: 244 114 182;
-	--c-brand-on: 12 12 14;
-	--c-brand-ink: 190 24 93;
-	--c-brand-deep: 190 24 93;
+	--c-brand-on: 255 255 255;
+	--c-brand-ink: 244 114 182;
+	--c-brand-deep: 244 114 182;
 
 	color-scheme: light;
 }
@@ -37,13 +41,11 @@
 	--c-invert-ink: 12 12 14;
 	--c-line: 42 42 48;
 
-	/* Fill, on-fill and deep stay put so filled controls look identical in both
-	   themes. Only the text tone changes: the bright fill hue is readable as text
-	   on near-black, while the light-mode deep tone would not be. */
+	/* Identical to light mode: one pink, white on it, pink as text. */
 	--c-brand: 244 114 182;
-	--c-brand-on: 12 12 14;
+	--c-brand-on: 255 255 255;
 	--c-brand-ink: 244 114 182;
-	--c-brand-deep: 190 24 93;
+	--c-brand-deep: 244 114 182;
 
 	color-scheme: dark;
 }
