@@ -1,95 +1,188 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Section from '@components/ui/section.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import Contactform from '@components/contactform.astro'
-import { SITE, PLAN, PRICE } from '@config/site'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import Sticker from '../components/ui/Sticker.astro'
+import FoodImage from '../components/ui/FoodImage.astro'
+import { SITE, PRICE, CONTACT_FORM_KEY } from '../config/site'
+import { crumbSchema } from '../utils/schema'
 
-const crumbs = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]
+const title = 'Contact us'
+const description = `Send us the menu you have now and we build the first version free. Email ${SITE.email} or WhatsApp us — a person answers, usually the same day.`
 
-const schema = {
-	'@type': 'ContactPage',
-	name: `Contact ${SITE.name}`,
-	mainEntity: {
-		'@type': 'Organization',
-		'@id': `${SITE.domain}/#organization`,
-		email: SITE.email
-	}
-}
+const waHref = `https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
+	'Hi Astro-Menu — I would like to set up a QR menu.'
+)}`
+
+/**
+ * The form only renders once a real Web3Forms access key is set in
+ * src/config/site.ts. Shipping a form wired to a placeholder key would look
+ * like it worked and quietly drop every enquiry, so until the key is real the
+ * page leads with email and WhatsApp, which always work.
+ */
+const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
 ---
 
 <Layout
-	title="Contact — Talk to Astro-Menu"
-	description="Questions about QR menus, pricing or getting your first menu loaded? Email us or send a message and we will reply."
-	schema={schema}
-	breadcrumbs={crumbs}
+	title={title}
+	description={description}
+	path="/contact"
+	schema={crumbSchema([{ name: 'Contact', path: '/contact' }])}
 >
-	<Container class="md:max-w-screen-md">
-		<Breadcrumbs items={crumbs} />
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'Contact' }]} />
+		<div class="mt-8 grid items-start gap-14 lg:grid-cols-[1fr_1fr]">
+			<div>
+				<SectionHead
+					as="h1"
+					eyebrow="Contact"
+					title="Send us your menu"
+					lede="Whatever form it is in — a PDF, a photo of the printed card, a spreadsheet. We will build the first version for you and send it back ready to check. No charge, no obligation."
+				/>
 
-		<Section
-			level={1}
-			eyebrow="Contact"
-			title="Talk to a person"
-			lede="No call centre and no sales sequence. Send a message and you will get a straight answer."
-		>
-			<div class="mt-12 grid gap-8 md:grid-cols-5">
-				<div class="md:col-span-2">
-					<h2 class="text-xl font-bold text-ink">We can help with</h2>
-					<ul class="mt-4 space-y-3 text-muted">
-						<li>Loading your existing menu for you, free</li>
-						<li>Whether Astro-Menu suits your kind of venue</li>
-						<li>Pricing for several branches</li>
-						<li>Anything the FAQ did not answer</li>
-					</ul>
-					<p class="mt-8 text-muted">Or email us directly:</p>
+				<div class="mt-9 space-y-4">
 					<a
 						href={`mailto:${SITE.email}`}
-						class="text-lg font-bold text-brandInk hover:underline"
+						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"
 					>
-						{SITE.email}
+						<span class="brand-gradient border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white">
+							<svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+								<rect x="3" y="5" width="18" height="14" rx="2.5"></rect>
+								<path d="m3.5 7 8.5 6 8.5-6"></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xl font-bold">{SITE.email}</span>
+							<span class="text-ink-soft block text-base">Usually answered the same day</span>
+						</span>
 					</a>
-					<p class="mt-8 text-sm text-muted">
-						Not ready to talk? The {PLAN.trialDays}-day trial needs no card and no conversation.
-					</p>
+
+					<a
+						href={waHref}
+						rel="noopener noreferrer"
+						target="_blank"
+						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"
+					>
+						<span class="bg-go border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white">
+							<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+								<path
+									d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-2.5 4c-.2 0-.5 0-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.3-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4z"
+								></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xl font-bold">WhatsApp</span>
+							<span class="text-ink-soft block text-base">{SITE.whatsapp}</span>
+						</span>
+					</a>
 				</div>
 
-				<div class="rounded-xxl bg-card p-6 md:col-span-3 md:p-8">
-					<Contactform />
+				<div class="mt-8 flex flex-wrap gap-2.5">
+					<Sticker tone="orange">First menu built free</Sticker>
+					<Sticker tone="rose">{PRICE.trialDays} days free</Sticker>
+					<Sticker>No sales call</Sticker>
 				</div>
 			</div>
-		</Section>
 
-		<Section eyebrow="Before you write" title="Answers you may not need to ask for">
-			<div class="mt-10 space-y-6 text-lg leading-relaxed text-muted">
-				<p>
-					<strong class="text-ink">Send us your menu and we will build the first version.</strong> This
-					is the thing most people email about, so to save you the message: yes, we do it, and it costs
-					nothing. Send whatever you have — a PDF, photos of a printed menu, a spreadsheet, a Word
-					document — and we will load your sections, items, descriptions and prices. You get an account
-					with the menu already in it, and you take over editing from there. It normally takes us less
-					than a working day.
-				</p>
-				<p>
-					<strong class="text-ink">If you need order taking or payments, we are not the right tool.</strong>
-					{' '}Astro-Menu shows your menu and stops there. There is no POS, no ordering and no payment
-					processing, and we are not planning to add them — that restraint is why it costs {PRICE.monthly}
-					{' '}a month and takes no commission. If you need those things, a full restaurant platform
-					will serve you better, and we would rather say so now than after you have paid us.
-				</p>
-				<p>
-					<strong class="text-ink">Several branches are simply several subscriptions.</strong> Each venue
-					gets its own menu, its own QR code and its own analytics at {PRICE.monthly} a month.
-					There is no franchise tier and no minimum. If you are opening a lot of locations at once,
-					write to us and we will sort out a single invoice rather than a dozen.
-				</p>
-				<p>
-					<strong class="text-ink">We reply in English or Arabic.</strong> We are set up for the UAE
-					market and most of our customers are here, but the product is not region-locked and we are
-					happy to work with venues elsewhere. Pricing is billed in dirhams either way.
-				</p>
+			<div>
+				{
+					formReady ? (
+						<form
+							action="https://api.web3forms.com/submit"
+							method="POST"
+							class="bg-card slab-lg rounded-[1.5rem] p-8"
+						>
+							<input type="hidden" name="access_key" value={CONTACT_FORM_KEY} />
+							<input type="hidden" name="subject" value="New Astro-Menu enquiry" />
+							{/* Honeypot: bots fill it, people never see it. */}
+							<input
+								type="checkbox"
+								name="botcheck"
+								class="hidden"
+								style="display:none"
+								tabindex="-1"
+								autocomplete="off"
+							/>
+
+							<h2 class="text-3xl">Or write to us here</h2>
+
+							<div class="mt-6 space-y-5">
+								<div>
+									<label for="name" class="block text-lg font-bold">
+										Your name
+									</label>
+									<input
+										id="name"
+										name="name"
+										type="text"
+										required
+										autocomplete="name"
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+								<div>
+									<label for="venue" class="block text-lg font-bold">
+										Venue name
+									</label>
+									<input
+										id="venue"
+										name="venue"
+										type="text"
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+								<div>
+									<label for="email" class="block text-lg font-bold">
+										Email
+									</label>
+									<input
+										id="email"
+										name="email"
+										type="email"
+										required
+										autocomplete="email"
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+								<div>
+									<label for="message" class="block text-lg font-bold">
+										What do you need?
+									</label>
+									<textarea
+										id="message"
+										name="message"
+										rows="5"
+										required
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+							</div>
+
+							<button
+								type="submit"
+								class="brand-gradient border-ink mt-7 w-full rounded-full border-[2.5px] py-4 text-xl font-bold text-white shadow-[4px_4px_0_var(--color-ink)] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
+							>
+								Send it
+							</button>
+							<p class="text-ink-faint mt-4 text-base">
+								We use what you send only to reply. Nothing else, ever.
+							</p>
+						</form>
+					) : (
+						<div class="border-ink overflow-hidden rounded-[1.5rem] border-[3px]">
+							<FoodImage
+								name="contact"
+								alt="A cafe owner sitting with a laptop and a coffee, setting up their menu"
+								brief="Owner at a table with laptop and coffee, relaxed, setting up the menu"
+								tone="warm"
+								ratio="4/5"
+								sizes="(min-width:1024px) 45vw, 92vw"
+							/>
+						</div>
+					)
+				}
 			</div>
-		</Section>
-	</Container>
+		</div>
+	</Section>
 </Layout>

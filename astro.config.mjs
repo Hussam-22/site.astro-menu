@@ -1,5 +1,6 @@
+// @ts-check
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 
@@ -8,26 +9,27 @@ export default defineConfig({
 	site: 'https://astro-menu.com',
 	trailingSlash: 'never',
 	integrations: [
-		tailwind(),
 		mdx(),
 		sitemap({
 			changefreq: 'weekly',
 			lastmod: new Date(),
+			filter: (page) => !/\/(privacy|terms)$/.test(page),
 			serialize(item) {
 				if (item.url === 'https://astro-menu.com/') item.priority = 1.0
-				else if (/\/(pricing|qr-menu|features|how-it-works)$/.test(item.url)) item.priority = 0.9
-				else if (/\/(blog|terms|privacy)/.test(item.url)) item.priority = 0.5
+				else if (/\/(pricing|demo|features|how-it-works)$/.test(item.url)) item.priority = 0.9
+				else if (/\/blog\//.test(item.url)) item.priority = 0.6
 				else item.priority = 0.7
 				return item
 			}
 		})
 	],
+	image: {
+		// Every screenshot ships as WebP at a known width, so the browser can
+		// reserve the box before the bytes land.
+		responsiveStyles: true,
+		layout: 'constrained'
+	},
 	vite: {
-		// Declaring postcss inline stops the config search from walking above the project
-		// root. @astrojs/tailwind appends its plugin to this object.
-		css: { postcss: { plugins: [] } },
-		// Same reason: esbuild's dep scanner reads package.json files up the tree, which
-		// hangs when a parent checkout has one it cannot parse.
-		optimizeDeps: { exclude: ['tailwindcss-intersect'] }
+		plugins: [tailwindcss()]
 	}
 })

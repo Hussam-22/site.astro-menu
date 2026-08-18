@@ -1,122 +1,87 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import { SITE, PLAN } from '@config/site'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import { SITE } from '../config/site'
+import { crumbSchema } from '../utils/schema'
 
-const crumbs = [{ name: 'Home', path: '/' }, { name: 'Terms', path: '/terms' }]
-const updated = 'August 2026'
+const updated = '18 August 2026'
+const title = 'Terms & conditions'
+const description =
+	'The terms for using Astro-Menu: what the subscription includes, how billing and cancellation work, and what each side is responsible for.'
 ---
 
 <Layout
-	title="Terms of Service"
-	description="The terms that apply to using Astro-Menu, covering subscriptions, billing, cancellation, acceptable use and the content you upload."
-	breadcrumbs={crumbs}
+	title={title}
+	description={description}
+	path="/terms"
+	schema={crumbSchema([{ name: 'Terms & conditions', path: '/terms' }])}
 >
-	<Container class="md:max-w-screen-md">
-		<Breadcrumbs items={crumbs} />
+	<Section width="narrow" tight>
+		<Breadcrumbs trail={[{ name: 'Terms & conditions' }]} />
+		<h1 class="mt-8 text-5xl sm:text-6xl">Terms &amp; conditions</h1>
+		<p class="text-ink-faint mt-4 text-base">Last updated {updated}</p>
 
-		<article class="py-14">
-			<h1 class="text-4xl font-extrabold text-ink md:text-5xl">Terms of Service</h1>
-			<p class="mt-3 text-muted">Last updated: {updated}</p>
+		<div
+			class="prose prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:uppercase prose-h2:mt-10 prose-h2:text-2xl prose-p:text-ink-soft prose-li:text-ink-soft prose-strong:text-ink prose-a:text-brand-text prose-a:font-bold mt-10 max-w-none"
+		>
+			<h2>What the service is</h2>
+			<p>
+				Astro-Menu hosts a digital menu for your venue and gives you a dashboard to edit it, plus a
+				QR code and a link that point to it. It is a menu. It does not take orders, process payments
+				or replace a till, and we never take a commission on anything you sell.
+			</p>
 
-			<div
-				class="prose dark:prose-invert prose-lg mt-10 max-w-none prose-headings:font-extrabold prose-a:text-brandInk prose-strong:text-ink"
-			>
-				<h2>1. Who we are</h2>
-				<p>
-					These terms govern your use of {SITE.name}, a hosted digital menu service. Contacting us
-					about anything in this document is easiest at <a href={`mailto:${SITE.email}`}>
-						{SITE.email}
-					</a>.
-				</p>
+			<h2>Your account</h2>
+			<p>
+				You are responsible for keeping your login details private, and for what is published on
+				your menu — prices, descriptions, allergen information and photographs included. You confirm
+				you have the right to use any content you upload.
+			</p>
 
-				<h2>2. What the service does</h2>
-				<p>
-					{SITE.name} hosts your menu as a web page and gives you a QR code and link that point at
-					it. The service does not take orders, process payments, or act as an intermediary in any
-					transaction between you and your customers.
-				</p>
+			<h2>Billing</h2>
+			<ul>
+				<li>
+					Subscriptions are billed monthly or yearly in advance, at the price shown when you
+					subscribe.
+				</li>
+				<li>
+					The free trial requires no card, and becomes a paid subscription only if you choose to
+					continue.
+				</li>
+				<li>Prices may change; existing subscribers are told before a change affects them.</li>
+			</ul>
 
-				<h2>3. Your account</h2>
-				<p>
-					You are responsible for keeping your login details secure and for everything done through
-					your account. Tell us promptly if you believe someone else has gained access to it.
-				</p>
+			<h2>Cancelling</h2>
+			<p>
+				Cancel from the dashboard at any time. There is no notice period and no exit fee. Your menu
+				stops being served at the end of the paid period and the QR code stops resolving. We keep
+				your menu data for a reasonable period afterwards, so you can come back.
+			</p>
 
-				<h2>4. Subscriptions and billing</h2>
-				<p>
-					The service is charged per venue at {PLAN.monthly.aed} AED per month, or {PLAN.annual.aed}
-					AED per year. A venue means one location with its own menu and QR code. Monthly subscriptions
-					renew each month until cancelled; annual subscriptions renew each year.
-				</p>
-				<p>
-					Prices shown in US dollars are indicative conversions provided for convenience. Billing is
-					in AED unless we have agreed otherwise with you in writing.
-				</p>
+			<h2>Availability</h2>
+			<p>
+				We work to keep menus available at all times, but we do not guarantee uninterrupted service.
+				Planned maintenance is scheduled outside peak dining hours wherever possible.
+			</p>
 
-				<h2>5. Free trial</h2>
-				<p>
-					New accounts include a {PLAN.trialDays}-day trial that does not require payment details. If
-					you do not subscribe by the end of the trial, the account simply stops.
-				</p>
+			<h2>Acceptable use</h2>
+			<p>
+				Do not use Astro-Menu to publish unlawful content, to impersonate another business, or to
+				attempt to disrupt the service for others. We may suspend an account that does.
+			</p>
 
-				<h2>6. Cancelling</h2>
-				<p>
-					You can cancel at any time. Monthly subscriptions end at the close of the current billing
-					period, and annual subscriptions at the end of the paid year. When a subscription ends,
-					your menu stops being served and your QR codes stop resolving — please bear that in mind if
-					your codes are printed on packaging.
-				</p>
+			<h2>Liability</h2>
+			<p>
+				Astro-Menu is provided as-is. To the extent permitted by law, our liability is limited to
+				the amount you paid us in the twelve months before a claim. Nothing here limits liability
+				that cannot lawfully be limited.
+			</p>
 
-				<h2>7. Your content</h2>
-				<p>
-					Your menu content — item names, descriptions, prices, photos and branding — remains yours.
-					You grant us only the permission needed to host, display and back up that content in order
-					to run the service. You are responsible for having the right to use anything you upload,
-					including photographs.
-				</p>
-
-				<h2>8. Accuracy of your menu</h2>
-				<p>
-					You are responsible for the accuracy of your menu, including prices and any allergen or
-					dietary information. We provide tools to label items; we cannot verify what is in your
-					food, and the labels you apply are your representations to your customers, not ours.
-				</p>
-
-				<h2>9. Acceptable use</h2>
-				<p>
-					Do not use the service to publish unlawful content, to impersonate another business, or to
-					attempt to disrupt the service for other customers. Menu views are unlimited under a fair
-					usage policy; if traffic to a single venue is so far outside normal restaurant patterns
-					that it affects other customers, we will contact you before taking any action.
-				</p>
-
-				<h2>10. Availability</h2>
-				<p>
-					We work to keep the service available continuously but do not guarantee uninterrupted
-					operation. Planned maintenance will be scheduled outside peak dining hours where possible.
-				</p>
-
-				<h2>11. Liability</h2>
-				<p>
-					To the extent permitted by law, our total liability arising from the service is limited to
-					the amount you paid us in the twelve months before the claim. We are not liable for lost
-					profits or indirect losses.
-				</p>
-
-				<h2>12. Changes to these terms</h2>
-				<p>
-					We may update these terms. If a change materially affects you, we will give notice by
-					email before it takes effect.
-				</p>
-
-				<h2>13. Governing law</h2>
-				<p>
-					These terms are governed by the laws of the United Arab Emirates, and the courts of the
-					UAE have jurisdiction over any dispute.
-				</p>
-			</div>
-		</article>
-	</Container>
+			<h2>Contact</h2>
+			<p>
+				Questions about these terms: <a href={'mailto:' + SITE.email}>{SITE.email}</a>.
+			</p>
+		</div>
+	</Section>
 </Layout>

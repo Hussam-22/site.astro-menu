@@ -1,42 +1,77 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Section from '@components/ui/section.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import FaqList from '@components/ui/faq-list.astro'
-import CtaBand from '@components/ui/cta-band.astro'
-import { CORE_FAQS } from '@data/faqs'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import FaqList from '../components/ui/FaqList.astro'
+import CtaBand from '../components/ui/CtaBand.astro'
+import { SITE, PRICE } from '../config/site'
+import { FAQ_GROUPS, ALL_FAQS } from '../data/faqs'
+import { crumbSchema, faqSchema } from '../utils/schema'
 
-const schema = {
-	'@type': 'FAQPage',
-	mainEntity: CORE_FAQS.map((faq) => ({
-		'@type': 'Question',
-		name: faq.q,
-		acceptedAnswer: { '@type': 'Answer', text: faq.a }
-	}))
-}
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
-const crumbs = [{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq' }]
+const title = 'FAQ — QR menu questions answered'
+const description = `${ALL_FAQS.length} straight answers: what it costs (${PRICE.monthly} a month), whether the QR code needs reprinting, Arabic menus, allergens and commission.`
 ---
 
 <Layout
-	title="QR Menu FAQ — Common Questions"
-	description="Answers on pricing, setup time, languages, QR codes, analytics, contracts and why Astro-Menu deliberately has no POS, ordering or payments."
-	schema={schema}
-	breadcrumbs={crumbs}
+	title={title}
+	description={description}
+	path="/faq"
+	schema={[crumbSchema([{ name: 'FAQ', path: '/faq' }]), faqSchema(ALL_FAQS)]}
 >
-	<Container>
-		<Breadcrumbs items={crumbs} />
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'FAQ' }]} />
+		<div class="mt-8">
+			<SectionHead
+				as="h1"
+				eyebrow="FAQ"
+				title="Straight answers"
+				lede={`Everything people ask before they sign up, including the questions we would rather you asked early — like what Astro-Menu deliberately does not do.`}
+			/>
+		</div>
+		<nav aria-label="FAQ sections" class="mt-10 flex flex-wrap gap-2.5">
+			{
+				FAQ_GROUPS.map((g) => (
+					<a
+						href={`#${slug(g.heading)}`}
+						class="border-ink bg-card hover:bg-brand rounded-full border-[2.5px] px-4 py-2 text-base font-bold transition-colors"
+					>
+						{g.heading}
+					</a>
+				))
+			}
+		</nav>
+	</Section>
 
-		<Section
-			level={1}
-			eyebrow="FAQ"
-			title="Frequently asked questions"
-			lede="Everything people ask before signing up, answered plainly. If yours is not here, email us and we will add it."
-		>
-			<FaqList faqs={CORE_FAQS} />
-		</Section>
+	{
+		FAQ_GROUPS.map((group, i) => (
+			<Section id={slug(group.heading)} tone={i % 2 === 1 ? 'card' : 'paper'} ruled={i % 2 === 1} tight>
+				<div class="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
+					<h2 class="text-4xl lg:sticky lg:top-28 lg:self-start">{group.heading}</h2>
+					<FaqList items={group.items} />
+				</div>
+			</Section>
+		))
+	}
 
-		<CtaBand />
-	</Container>
+	<Section tight>
+		<div class="bg-brand/12 slab mx-auto max-w-3xl rounded-[1.5rem] p-9 text-center">
+			<h2 class="text-3xl">Something we have not answered?</h2>
+			<p class="text-ink-soft mt-3 text-lg text-pretty">
+				Email us and a person replies — usually the same day.
+			</p>
+			<p class="mt-5">
+				<a
+					href={`mailto:${SITE.email}`}
+					class="text-brand-text text-xl font-bold hover:underline"
+				>
+					{SITE.email}
+				</a>
+			</p>
+		</div>
+	</Section>
+
+	<CtaBand />
 </Layout>

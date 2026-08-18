@@ -1,0 +1,42 @@
+---
+/**
+ * The pill badge from the reference posters — hard black outline, brand fill,
+ * display type. Palette is brand-only by decision: orange, rose, ink, green,
+ * paper. No extra hues.
+ */
+interface Props {
+	tone?: 'paper' | 'orange' | 'rose' | 'ink' | 'go' | 'outline-light'
+	size?: 'sm' | 'md'
+	rotate?: number
+	class?: string
+}
+
+const { tone = 'paper', size = 'md', rotate, class: extra = '' } = Astro.props
+
+const tones = {
+	paper: 'bg-card text-ink border-ink',
+	orange: 'bg-brand text-ink border-ink',
+	rose: 'bg-flame text-ink border-ink',
+	ink: 'bg-ink text-white border-ink',
+	go: 'bg-go text-white border-ink',
+	/** For use on the dark band, where a black outline would disappear. */
+	'outline-light': 'bg-transparent text-white border-white'
+}
+
+const sizes = {
+	sm: 'px-3 py-1 text-xs',
+	md: 'px-4 py-1.5 text-sm'
+}
+---
+
+<span
+	class:list={[
+		'font-display inline-flex items-center gap-1.5 rounded-full border-[2.5px] whitespace-nowrap',
+		tones[tone],
+		sizes[size],
+		extra
+	]}
+	style={rotate ? `transform:rotate(${rotate}deg)` : undefined}
+>
+	<slot />
+</span>

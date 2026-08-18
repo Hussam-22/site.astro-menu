@@ -1,0 +1,38 @@
+---
+import type { Faq } from '../../data/faqs'
+
+interface Props {
+	items: Faq[]
+	/** Opens the first item, which is usually the price question. */
+	openFirst?: boolean
+}
+const { items, openFirst = false } = Astro.props
+---
+
+<div class="divide-line border-ink divide-y border-y-[2.5px]">
+	{
+		items.map((item, i) => (
+			<details class="group" open={openFirst && i === 0}>
+				<summary class="hover:text-brand-text flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-bold transition-colors sm:text-2xl">
+					<span class="text-pretty">{item.q}</span>
+					<span
+						class="border-ink grid h-9 w-9 shrink-0 place-items-center rounded-full border-[2.5px] transition-transform duration-300 group-open:rotate-45"
+						aria-hidden="true"
+					>
+						<svg
+							viewBox="0 0 16 16"
+							class="h-4 w-4"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2.4"
+							stroke-linecap="round"
+						>
+							<path d="M8 3v10M3 8h10" />
+						</svg>
+					</span>
+				</summary>
+				<p class="text-ink-soft max-w-3xl pb-6 text-lg leading-relaxed text-pretty">{item.a}</p>
+			</details>
+		))
+	}
+</div>

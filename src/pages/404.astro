@@ -1,29 +1,53 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Button from '@components/ui/button.astro'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Button from '../components/ui/Button.astro'
+import Burst from '../components/ui/Burst.astro'
+import { NAV, SITE } from '../config/site'
 ---
 
 <Layout
 	title="Page not found"
-	description="That page does not exist. Here are the pages that do — pricing, how QR menus work, features and contact."
+	description="That page does not exist — the link is wrong or the page has moved. Here is the way back to the menu, the pricing and the live demo."
+	path="/404"
 	noindex
 >
-	<Container>
-		<section class="flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
-			<p class="text-8xl font-extrabold text-brandInk">404</p>
-			<h1 class="mt-4 text-3xl font-extrabold text-ink md:text-5xl">
-				This page is off the menu
-			</h1>
-			<p class="mt-4 max-w-lg text-lg text-muted">
-				The page you were after does not exist. These ones do.
-			</p>
-			<div class="mt-8 flex flex-wrap justify-center gap-3">
-				<Button href="/" variant="brand">Home</Button>
-				<Button href="/pricing" variant="primary">Pricing</Button>
-				<Button href="/how-it-works" variant="outline" class="text-ink">How it works</Button>
-				<Button href="/contact" variant="outline" class="text-ink">Contact</Button>
+	<Section tight>
+		<div class="mx-auto max-w-2xl py-10 text-center">
+			<div class="flex justify-center">
+				<Burst size={9} rotate={-8}>404</Burst>
 			</div>
-		</section>
-	</Container>
+			<h1 class="mt-8 text-5xl sm:text-7xl">This page is off the menu</h1>
+			<p class="text-ink-soft mt-5 text-xl text-pretty">
+				The link is wrong, or the page has moved. Nothing is broken on your side.
+			</p>
+			<div class="mt-9 flex flex-wrap justify-center gap-4">
+				<Button href="/" size="lg">Back to the home page</Button>
+				<Button href="/demo" variant="outline" size="lg">See a real menu</Button>
+			</div>
+
+			<nav aria-label="Site sections" class="mt-12">
+				<p class="font-display text-brand-text text-sm tracking-[0.16em]">Try one of these</p>
+				<ul class="mt-4 flex flex-wrap justify-center gap-2.5">
+					{
+						NAV.map((item) => (
+							<li>
+								<a
+									href={item.path}
+									class="border-ink bg-card hover:bg-brand rounded-full border-[2.5px] px-4 py-2 text-base font-bold transition-colors"
+								>
+									{item.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<p class="text-ink-faint mt-10 text-base">
+				Still stuck?
+				<a href={'mailto:' + SITE.email} class="text-brand-text font-bold">{SITE.email}</a>
+			</p>
+		</div>
+	</Section>
 </Layout>

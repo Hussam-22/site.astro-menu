@@ -1,0 +1,48 @@
+---
+interface Props {
+	id?: string
+	/** paper is the default ground; card/ink paint the whole band. */
+	tone?: 'paper' | 'card' | 'sunk' | 'ink'
+	width?: 'default' | 'wide' | 'narrow'
+	class?: string
+	/** Trims the vertical rhythm where two sections need to read as one. */
+	tight?: boolean
+	/** Heavy rules top and bottom, the way the reference posters band sections. */
+	ruled?: boolean
+}
+
+const {
+	id,
+	tone = 'paper',
+	width = 'default',
+	tight = false,
+	ruled = false,
+	class: extra = ''
+} = Astro.props
+
+const tones = {
+	paper: '',
+	card: 'bg-card',
+	sunk: 'bg-paper-2',
+	ink: 'bg-ink text-white'
+}
+const widths = {
+	narrow: 'max-w-3xl',
+	default: 'max-w-7xl',
+	wide: 'max-w-[90rem]'
+}
+---
+
+<section
+	id={id}
+	class:list={[
+		tones[tone],
+		tight ? 'py-14 lg:py-20' : 'py-20 lg:py-28',
+		ruled && 'border-y-[2.5px] border-ink',
+		extra
+	]}
+>
+	<div class:list={['mx-auto px-5 lg:px-8', widths[width]]}>
+		<slot />
+	</div>
+</section>

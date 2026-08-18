@@ -1,0 +1,73 @@
+---
+import { FOOTER_NAV, SITE, PRICE } from '../config/site'
+
+const year = new Date().getFullYear()
+---
+
+<footer class="bg-ink mt-24 text-white">
+	<div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+		<div class="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
+			<div>
+				<a href="/" class="flex items-center gap-2">
+					<span class="brand-gradient border-ink grid h-9 w-9 place-items-center rounded-xl border-[2.5px] text-white">
+						<svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" aria-hidden="true">
+							<path
+								d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"
+								stroke="currentColor"
+								stroke-width="2.4"
+								stroke-linejoin="round"></path>
+							<path d="M14 14h2.5v2.5H14zM17.5 17.5H20V20h-2.5z" fill="currentColor"></path>
+						</svg>
+					</span>
+					<span class="font-display text-2xl">Astro-Menu</span>
+				</a>
+				<p class="mt-4 max-w-sm text-lg text-white/60">
+					The QR menu your customers can actually read. One flat price, no POS, no commission, no
+					hardware.
+				</p>
+				<p class="mt-6">
+					<a
+						href={`mailto:${SITE.email}`}
+						class="text-brand text-lg font-bold hover:underline"
+					>
+						{SITE.email}
+					</a>
+				</p>
+				<p class="mt-1 text-base text-white/45">
+					{PRICE.monthly} a month · {PRICE.trialDays}-day free trial
+				</p>
+			</div>
+
+			<div class="grid gap-8 sm:grid-cols-3">
+				{
+					FOOTER_NAV.map((group) => (
+						<div>
+							<h2 class="font-display text-brand text-sm tracking-[0.16em]">
+								{group.heading}
+							</h2>
+							<ul class="mt-4 space-y-3">
+								{group.links.map((link) => (
+									<li>
+										<a
+											href={link.path}
+											class="text-lg font-medium text-white/75 transition-colors hover:text-brand"
+										>
+											{link.title}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))
+				}
+			</div>
+		</div>
+
+		<div
+			class="mt-14 flex flex-col gap-3 border-t border-white/15 pt-8 text-base text-white/45 sm:flex-row sm:items-center sm:justify-between"
+		>
+			<p>© {year} Astro-Menu. All rights reserved.</p>
+			<p>Modern, effortless, deliciously digital.</p>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,124 @@
+---
+import { PRICE, SITE } from '../config/site'
+import { INCLUDED } from '../data/plan'
+import Button from './ui/Button.astro'
+import Check from './ui/Check.astro'
+
+interface Props {
+	/** Home page shows a trimmed list; /pricing shows all of it. */
+	compact?: boolean
+	id?: string
+	/**
+	 * Heading level for the card title. On /pricing the card follows the h1
+	 * directly so it must be an h2; on the home page it sits inside a section
+	 * that already has an h2, where h3 is correct. Passing it in keeps the
+	 * document outline valid on both.
+	 */
+	as?: 'h2' | 'h3'
+}
+const { compact = false, id, as: Heading = 'h3' } = Astro.props
+const SubHeading = Heading === 'h2' ? 'h3' : 'h4'
+const list = compact ? INCLUDED.slice(0, 8) : INCLUDED
+---
+
+<!--
+	Billing toggle. A checkbox plus CSS :has(), so the price swaps with zero
+	JavaScript — nothing on this page hydrates.
+-->
+<div id={id} class="plan mx-auto w-full max-w-2xl">
+	<div class="flex justify-center">
+		<label
+			class="border-ink bg-card relative inline-flex cursor-pointer items-center rounded-full border-[2.5px] p-1.5 shadow-[4px_4px_0_var(--color-ink)]"
+		>
+			<input type="checkbox" class="peer sr-only" id="billing-toggle" />
+			<span class="sr-only">Show yearly pricing</span>
+			<span
+				class="bg-ink absolute top-1.5 bottom-1.5 left-1.5 w-[calc(50%-0.375rem)] rounded-full transition-transform duration-300 ease-out peer-checked:translate-x-full"
+				aria-hidden="true"></span>
+			<span
+				class="font-display text-white peer-checked:text-ink relative z-10 w-32 py-2 text-center text-lg transition-colors sm:w-36"
+			>
+				Monthly
+			</span>
+			<span
+				class="font-display text-ink peer-checked:text-white relative z-10 w-32 py-2 text-center text-lg transition-colors sm:w-36"
+			>
+				Yearly
+			</span>
+		</label>
+	</div>
+
+	<div class="bg-card border-ink mt-8 overflow-hidden rounded-[2rem] border-[3px] shadow-[8px_8px_0_var(--color-ink)]">
+		<div class="border-ink border-b-[2.5px] p-8 text-center sm:p-10">
+			<Heading class="text-3xl">One plan. Everything in it.</Heading>
+
+			<div class="mt-6 min-h-[9.5rem]">
+				<div data-bill="monthly" class="tabular">
+					<p class="flex items-baseline justify-center gap-1">
+						<span class="font-display text-7xl sm:text-8xl">{PRICE.monthly}</span>
+						<span class="text-ink-soft text-xl font-semibold">/month</span>
+					</p>
+					<p class="text-ink-faint mt-2 text-lg">{PRICE.monthlyAed} a month · billed monthly</p>
+				</div>
+				<div data-bill="annual" class="tabular">
+					<p class="flex items-baseline justify-center gap-1">
+						<span class="font-display text-7xl sm:text-8xl">{PRICE.annualPerMonth}</span>
+						<span class="text-ink-soft text-xl font-semibold">/month</span>
+					</p>
+					<p class="text-ink-faint mt-2 text-lg">
+						{PRICE.annualTotal} billed yearly · {PRICE.annualTotalAed}
+					</p>
+					<p class="text-brand-text mt-1 text-lg font-bold">
+						Save {PRICE.annualSaving} a year · {PRICE.annualSavingPercent}% off
+					</p>
+				</div>
+			</div>
+
+			<div class="mt-8">
+				<Button href={SITE.signupUrl} size="lg" block>Start {PRICE.trialDays} days free</Button>
+				<p class="text-ink-faint mt-4 text-base">No card required · Cancel any time · No setup fee</p>
+			</div>
+		</div>
+
+		<div class="p-8 sm:p-10">
+			<SubHeading class="font-display text-brand-text text-sm tracking-[0.16em]">Everything included</SubHeading>
+			<ul class="mt-5 grid gap-3 sm:grid-cols-2">
+				{
+					list.map((item) => (
+						<li class="flex items-start gap-3 text-lg">
+							<Check class="text-go mt-1.5" />
+							<span class="text-pretty">{item}</span>
+						</li>
+					))
+				}
+			</ul>
+			{
+				compact && (
+					<p class="mt-7">
+						<a href="/pricing" class="text-brand-text text-lg font-bold hover:underline">
+							See the full list, and what is deliberately left out →
+						</a>
+					</p>
+				)
+			}
+		</div>
+	</div>
+</div>
+
+<style>
+	/*
+		:has() on the plan container rather than peer-* on the input, because the
+		price panels are not siblings of the checkbox — they sit in a different
+		branch of the tree. Monthly is the default so the page is correct even in
+		the instant before CSS applies.
+	*/
+	.plan [data-bill='annual'] {
+		display: none;
+	}
+	.plan:has(#billing-toggle:checked) [data-bill='monthly'] {
+		display: none;
+	}
+	.plan:has(#billing-toggle:checked) [data-bill='annual'] {
+		display: block;
+	}
+</style>

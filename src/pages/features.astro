@@ -1,227 +1,130 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Section from '@components/ui/section.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import Check from '@components/ui/icons/check.astro'
-import Cross from '@components/ui/icons/cross.astro'
-import CtaBand from '@components/ui/cta-band.astro'
-import Button from '@components/ui/button.astro'
-import ProductGallery from '@components/product-gallery.astro'
-import { PLAN, PRICE } from '@config/site'
-import { NOT_INCLUDED } from '@data/plan'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import Sticker from '../components/ui/Sticker.astro'
+import Check from '../components/ui/Check.astro'
+import CtaBand from '../components/ui/CtaBand.astro'
+import Ribbon from '../components/ui/Ribbon.astro'
+import { Image } from 'astro:assets'
+import { SITE, PRICE } from '../config/site'
+import { FEATURE_GROUPS } from '../data/features'
+import { RIBBON } from '../data/content'
+import { crumbSchema } from '../utils/schema'
 
-const groups = [
-	{
-		heading: 'The menu itself',
-		items: [
-			{
-				t: 'Unlimited items and sections',
-				b: 'Build the menu you actually have, not the one that fits on two printed sides. Starters, mains, drinks, sides, set menus — as many sections as you need.'
-			},
-			{
-				t: 'A photo on every item',
-				b: 'Upload a picture for each dish or drink. Images are compressed and resized automatically so the menu still loads fast on mobile data.'
-			},
-			{
-				t: 'Full descriptions',
-				b: 'Room to describe a dish properly — ingredients, spice level, portion size, origin of the beans. None of it costs you page space.'
-			},
-			{
-				t: 'Dietary and allergen tags',
-				b: 'Mark items vegetarian, vegan, gluten-free, nut-free or halal, and let guests filter the menu down to what they can actually eat.'
-			},
-			{
-				t: 'Filter by meal type',
-				b: 'Guests narrow the menu themselves — hot drinks, cold drinks, decaf, light portions, healthy, sweet — instead of scrolling past everything they did not come for.'
-			},
-			{
-				t: 'Sizes and portions with prices',
-				b: 'List small, regular and large — or 8oz and 12oz, or by weight — each with its own price, without cluttering the layout.'
-			},
-			{
-				t: 'Add-ons, free or paid',
-				b: 'Offer a choice of beans at no charge, or a side for three dirhams. Each add-on carries its own price, or none at all.'
-			},
-			{
-				t: 'Calories and macros',
-				b: 'Show calories, protein, carbs and fat on each item. Optional, and worth turning on for healthy eating, fitness and meal-prep menus.'
-			},
-			{
-				t: 'Hide and unhide instantly',
-				b: 'When the kitchen runs out, switch the item off. It disappears from the live menu immediately and comes back when you say so.'
-			}
-		]
-	},
-	{
-		heading: 'Languages',
-		items: [
-			{
-				t: 'Automatic translation',
-				b: 'Write your menu once. Guests read it in the language their phone is set to, without you printing or maintaining a second version.'
-			},
-			{
-				t: 'Arabic and English as standard',
-				b: 'Both are set up from the start, which covers most of the room in the UAE before you add anything else.'
-			},
-			{
-				t: 'Add any other language',
-				b: 'Hindi, Urdu, Malayalam, Tagalog, Russian, Chinese, German — whatever your customers actually read.'
-			},
-			{
-				t: 'Edit any translation',
-				b: 'Machine translation is a starting point. Where a dish name matters, override it with your own wording.'
-			}
-		]
-	},
-	{
-		heading: 'QR codes and sharing',
-		items: [
-			{
-				t: 'A dynamic QR code',
-				b: 'The code points at your menu, not a version of it. Print it once and it keeps working through every future change.'
-			},
-			{
-				t: 'Print-ready downloads',
-				b: 'PNG, SVG and PDF at any size — sized properly for table tents, window stickers, packaging and flyers.'
-			},
-			{
-				t: 'A shareable link',
-				b: 'A normal URL that works in your Instagram bio, a WhatsApp reply, your Google listing, an email or your own website.'
-			},
-			{
-				t: 'A link that never breaks',
-				b: 'The address stays the same for the life of your account, so a code printed on packaging keeps working long after the menu has changed.'
-			}
-		]
-	},
-	{
-		heading: 'Your menu page',
-		items: [
-			{
-				t: 'Your branding',
-				b: 'Your name, your logo, your photos and your colours. The page reads as yours, not as a template with your name typed into it.'
-			},
-			{
-				t: 'Wi-Fi password on the menu',
-				b: 'Put it where guests will look, and save your staff from being asked twenty times an evening.'
-			},
-			{
-				t: 'Social and contact links',
-				b: 'Instagram, WhatsApp, phone, directions and opening hours, all on the same page as the menu.'
-			},
-			{
-				t: 'Built for phones first',
-				b: 'Readable the moment it opens. No pinching, no zooming, no downloading a file to a Downloads folder.'
-			}
-		]
-	},
-	{
-		heading: 'Knowing what works',
-		items: [
-			{
-				t: 'Menu view counts',
-				b: 'How many people opened your menu, and when. Useful for seeing whether a QR placement is actually being scanned.'
-			},
-			{
-				t: 'Most-viewed items',
-				b: 'Which dishes people are looking at most — the closest thing to watching someone read your menu over their shoulder.'
-			},
-			{
-				t: 'Peak viewing times',
-				b: 'When your menu gets read, which is often earlier than when your tables fill up.'
-			},
-			{
-				t: 'No diner tracking',
-				b: 'We count menu activity, not people. There is no diner login, no personal data collected and nothing to consent to.'
-			}
-		]
-	},
-	{
-		heading: 'Reach',
-		items: [
-			{
-				t: 'One link you control',
-				b: 'A single menu everyone points at — your Google listing, your Instagram bio, your website, a WhatsApp reply — instead of four half-current versions.'
-			},
-			{
-				t: 'The menu behind your Google listing',
-				b: 'Paste your link into your Business Profile and the Menu button opens your real menu, rather than photos of a board or a delivery app’s copy.'
-			},
-			{
-				t: 'Fast on mobile',
-				b: 'Compressed images and a menu built for phones, because a menu that takes six seconds to open is a menu people close.'
-			},
-			{
-				t: 'No app, no account',
-				b: 'The diner scans and reads. Nothing to install, nothing to sign up for, nothing to consent to.'
-			}
-		]
-	}
-]
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
+	eager: true
+})
+const screenshot = (file: string) =>
+	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
+
+const title = 'Features — everything in the QR menu'
+const description = `Photos on every dish, portions and prices, automatic translation, allergen tags, filters, calories and analytics — all in one ${PRICE.monthly} plan.`
 ---
 
 <Layout
-	title="Features — Everything in the One Plan"
-	description={`Photos on every item, calories and macros, automatic translation, dietary filters, dynamic QR codes and menu analytics. All included at ${PRICE.monthly} a month.`}
-	breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features' }]}
+	title={title}
+	description={description}
+	path="/features"
+	schema={crumbSchema([{ name: 'Features', path: '/features' }])}
 >
-	<Container>
-		<Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Features', path: '/features' }]} />
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'Features' }]} />
+		<div class="mt-8 grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+			<SectionHead
+				as="h1"
+				eyebrow="Features"
+				title="Everything the menu does"
+				lede="No tiers, no add-ons, no upsell page. Every feature below is in the one plan, and the price does not move when you use them."
+			/>
+			<div class="flex flex-wrap gap-2.5 lg:justify-end lg:pt-10">
+				<Sticker tone="orange">Unlimited items</Sticker>
+				<Sticker tone="rose">Every language</Sticker>
+				<Sticker>One QR forever</Sticker>
+				<Sticker tone="go">No commission</Sticker>
+			</div>
+		</div>
 
-		<Section
-			level={1}
-			eyebrow="Features"
-			title="Everything Astro-Menu does"
-			lede={`All of it is in the one plan at ${PRICE.monthly} a month. There is no feature matrix to compare and no tier to upgrade into.`}
-		/>
+		<nav aria-label="Feature sections" class="mt-10 flex flex-wrap gap-2.5">
+			{
+				FEATURE_GROUPS.map((g) => (
+					<a
+						href={`#${g.id}`}
+						class="border-ink bg-card hover:bg-brand rounded-full border-[2.5px] px-4 py-2 text-base font-bold transition-colors"
+					>
+						{g.eyebrow}
+					</a>
+				))
+			}
+		</nav>
+	</Section>
 
-		<ProductGallery title="Seen on a real menu" />
+	<Ribbon items={RIBBON} />
 
-		{
-			groups.map((group) => (
-				<section class="pb-16">
-					<h2 class="text-2xl font-extrabold text-ink md:text-3xl">{group.heading}</h2>
-					<div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-						{group.items.map((item) => (
-							<div class="rounded-xxl bg-card p-8">
-								<Check class="h-5 w-5 text-green-500" />
-								<h3 class="mt-3 text-lg font-bold text-ink">{item.t}</h3>
-								<p class="mt-2 text-sm leading-relaxed text-muted">{item.b}</p>
-							</div>
-						))}
+	{
+		FEATURE_GROUPS.map((group, i) => (
+			<Section id={group.id} tone={i % 2 === 1 ? 'card' : 'paper'} ruled={i % 2 === 1}>
+				<div
+					class:list={[
+						'grid gap-12',
+						group.screen ? 'lg:grid-cols-[1fr_20rem] lg:gap-16' : ''
+					]}
+				>
+					<div>
+						<SectionHead eyebrow={group.eyebrow} title={group.title} lede={group.lede} />
+						<dl class="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+							{group.items.map((item) => (
+								<div class="border-ink border-t-[2.5px] pt-4">
+									<dt class="flex items-start gap-2.5 text-xl font-bold">
+										<Check class="text-go mt-1.5" />
+										<span>{item.title}</span>
+									</dt>
+									<dd class="text-ink-soft mt-2 pl-8 text-lg text-pretty">{item.body}</dd>
+								</div>
+							))}
+						</dl>
 					</div>
-				</section>
-			))
-		}
 
-		<Section
-			eyebrow="Honesty"
-			title="And here is what it does not do"
-			lede="Worth reading before you sign up, because for some venues these are dealbreakers — and we would rather you found out now."
-		>
-			<div class="mt-12 grid gap-4 md:grid-cols-2">
-				{
-					NOT_INCLUDED.map((item) => (
-						<div class="rounded-xxl bg-card p-8">
-							<div class="flex items-center gap-3">
-								<Cross class="h-5 w-5 flex-none text-brandInk" />
-								<h3 class="text-lg font-bold">{item.label}</h3>
-							</div>
-							<p class="mt-3 text-muted">{item.reason}</p>
+					{group.screen && (
+						<div class="border-ink shadow-lift mx-auto w-full max-w-[19rem] overflow-hidden rounded-[1.5rem] border-[3px] lg:sticky lg:top-28">
+							<Image
+								src={screenshot(group.screen)}
+								alt={`${group.title} — shown on a real customer menu`}
+								widths={[390, 600, 780]}
+								sizes="(min-width:1024px) 320px, 90vw"
+								class="block h-auto w-full"
+							/>
 						</div>
-					))
-				}
-			</div>
-			<p class="mx-auto mt-8 max-w-2xl text-center text-muted">
-				If you need order taking and payments in the same product, Astro-Menu is not the right tool
-				and we will tell you so.
-			</p>
-			<div class="mt-8 text-center">
-				<Button href="/pricing" variant="outline" class="text-ink">See the price</Button>
-			</div>
-		</Section>
+					)}
+				</div>
+			</Section>
+		))
+	}
 
-		<CtaBand />
-	</Container>
+	<Section tone="ink">
+		<div class="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+			<SectionHead
+				eyebrow="See it working"
+				title="Reading about it is not the same<br />as scanning it"
+				lede={`Open the live menu of ${SITE.demoVenueName} — 120 items, fourteen sections, filters and language switching, all running on the plan described above.`}
+				invert
+			/>
+			<div class="flex flex-wrap gap-4 lg:justify-end">
+				<a
+					href="/demo"
+					class="brand-gradient border-ink inline-flex items-center rounded-full border-[2.5px] px-9 py-4 text-xl font-bold text-white shadow-[4px_4px_0_#fff] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
+				>
+					Try the live demo
+				</a>
+			</div>
+		</div>
+	</Section>
+
+	<CtaBand
+		title="All of it, for one flat price"
+		body={`${PRICE.monthly} a month, or ${PRICE.annualPerMonth} a month paid yearly. ${PRICE.trialDays} days free first, no card.`}
+		secondaryHref="/pricing"
+		secondaryLabel="See pricing"
+	/>
 </Layout>

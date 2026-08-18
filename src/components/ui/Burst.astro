@@ -1,0 +1,28 @@
+---
+/**
+ * The rotated starburst sticker. Sized in rem so it scales with the type around
+ * it; `label` takes a <br> to force the line break the poster look wants.
+ */
+interface Props {
+	tone?: 'orange' | 'rose' | 'ink'
+	size?: number
+	rotate?: number
+	class?: string
+}
+
+const { tone = 'orange', size = 7, rotate = -13, class: extra = '' } = Astro.props
+
+const tones = {
+	orange: 'bg-brand text-ink',
+	rose: 'bg-flame text-ink',
+	ink: 'bg-ink text-white'
+}
+---
+
+<span
+	class:list={['burst font-display grid place-items-center text-center leading-none', tones[tone], extra]}
+	style={`width:${size}rem;height:${size}rem;font-size:${size * 0.145}rem;transform:rotate(${rotate}deg)`}
+	aria-hidden="true"
+>
+	<slot />
+</span>

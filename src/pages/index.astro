@@ -1,407 +1,506 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Section from '@components/ui/section.astro'
-import Button from '@components/ui/button.astro'
-import Check from '@components/ui/icons/check.astro'
-import Cross from '@components/ui/icons/cross.astro'
-import FaqList from '@components/ui/faq-list.astro'
-import CtaBand from '@components/ui/cta-band.astro'
-import PricingBlock from '@components/pricing-block.astro'
-import ProductGallery from '@components/product-gallery.astro'
-import Hero from '@components/landing/hero.astro'
-import Marquee from '@components/landing/marquee.astro'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Button from '../components/ui/Button.astro'
+import Sticker from '../components/ui/Sticker.astro'
+import Burst from '../components/ui/Burst.astro'
+import Ribbon from '../components/ui/Ribbon.astro'
+import FoodImage from '../components/ui/FoodImage.astro'
+import Check from '../components/ui/Check.astro'
+import Cross from '../components/ui/Cross.astro'
+import FaqList from '../components/ui/FaqList.astro'
+import CtaBand from '../components/ui/CtaBand.astro'
+import PricingCard from '../components/PricingCard.astro'
 import { Image } from 'astro:assets'
-import menuShot from 'assets/screens/menu-sections.png'
-import printMenu from 'assets/print-menu.png'
-import { PLAN, PRICE, ANNUAL_SAVING } from '@config/site'
-import { STEPS, NOT_INCLUDED } from '@data/plan'
-import { CORE_FAQS } from '@data/faqs'
-import { INDUSTRIES } from '@data/industries'
-import { LOCATIONS } from '@data/locations'
+import { SITE, PRICE } from '../config/site'
+import { PILLARS, TESTIMONIALS, VERSUS, USE_CASES, SCREENS, RIBBON } from '../data/content'
+import { DASHBOARD_CONTROLS, NOT_INCLUDED } from '../data/plan'
+import { HOME_FAQS, ALL_FAQS } from '../data/faqs'
+import menuManagerShot from '../assets/menu-manager.png'
 
-const homeFaqs = CORE_FAQS.slice(0, 8)
+/** Eagerly loaded so the six real menu screenshots can be looked up by filename. */
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
+	eager: true
+})
+const screenshot = (file: string) =>
+	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
 
-const capabilities = [
+const title = 'QR Menu for Restaurants & Cafés'
+const description = `Turn your menu into a fast, photo-led QR menu you update in seconds. Every language, one QR that never needs reprinting. ${PRICE.monthly} a month, no commission.`
+
+const schema = [
 	{
-		title: 'Change a price in seconds',
-		body: 'Edit the item and every diner sees the new price immediately. The QR code stays the same, so you never reprint.'
+		'@context': 'https://schema.org',
+		'@type': 'SoftwareApplication',
+		name: 'Astro-Menu',
+		applicationCategory: 'BusinessApplication',
+		applicationSubCategory: 'Digital QR Menu',
+		operatingSystem: 'Web browser',
+		url: SITE.domain,
+		description: SITE.description,
+		featureList: [
+			'QR code menu',
+			'Unlimited menus, sections and items',
+			'Automatic translation including Arabic',
+			'Dietary and allergen tags',
+			'Meal-type filters',
+			'Calories and macros per item',
+			'Menu analytics'
+		],
+		offers: {
+			'@type': 'Offer',
+			price: String(PRICE.monthlyAmount),
+			priceCurrency: 'USD',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock',
+			priceSpecification: {
+				'@type': 'UnitPriceSpecification',
+				price: String(PRICE.monthlyAmount),
+				priceCurrency: 'USD',
+				unitCode: 'MON',
+				billingIncrement: 1
+			}
+		}
 	},
 	{
-		title: 'A photo on every dish',
-		body: 'People order what they can see. Photos sit next to each item instead of a line of text on a laminated page.'
-	},
-	{
-		title: 'Arabic, English, anything else',
-		body: 'Write the menu once. Each guest reads it in the language their phone is already set to.'
-	},
-	{
-		title: 'Calories and macros',
-		body: 'Show CAL, CARB, FAT and PRO on any item. Optional, and the reason healthy-eating and meal-prep kitchens pick us.'
-	},
-	{
-		title: 'Hide what has sold out',
-		body: 'Switch an item off and it disappears from the menu. Nobody orders something the kitchen cannot make.'
-	},
-	{
-		title: 'One link, everywhere',
-		body: 'The same menu works on the table, in your Instagram bio, on your Google listing and on a delivery bag.'
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: HOME_FAQS.map((f) => ({
+			'@type': 'Question',
+			name: f.q,
+			acceptedAnswer: { '@type': 'Answer', text: f.a }
+		}))
 	}
 ]
-
-const printVsDigital = [
-	['Changing a price', 'Reprint every copy', 'Ten seconds, free'],
-	['A dish sells out', 'The server apologises', 'Hidden instantly'],
-	['Photos', 'Expensive to print', 'On every item'],
-	['A second language', 'A second print run', 'Automatic'],
-	['Reading it on a phone', 'Pinch, zoom, squint', 'Built for the screen'],
-	['Cost per year', 'Every reprint, again', `${PRICE.annual}, all in`]
-]
-
-const schema = {
-	'@type': 'FAQPage',
-	mainEntity: homeFaqs.map((faq) => ({
-		'@type': 'Question',
-		name: faq.q,
-		acceptedAnswer: { '@type': 'Answer', text: faq.a }
-	}))
-}
 ---
 
-<Layout
-	title="QR Menu for Restaurants & Cafés"
-	description={`A QR menu for your restaurant: photos on every dish, Arabic and English, prices you change in seconds. ${PRICE.monthly} a month, no POS and no commission.`}
-	schema={schema}
->
-	<Container>
-		<Hero />
-	</Container>
+<Layout title={title} description={description} path="/" schema={schema}>
+	<!-- ================= HERO ================= -->
+	<section class="relative overflow-hidden pt-14 pb-8 lg:pt-20">
+		<div class="mx-auto max-w-7xl px-5 lg:px-8">
+			<div class="flex flex-wrap items-center gap-2.5">
+				<Sticker tone="orange">No commission</Sticker>
+				<Sticker tone="rose">Live in seconds</Sticker>
+				<Sticker>No app to download</Sticker>
+			</div>
 
-	<Marquee />
+			<h1 class="mt-7 text-6xl leading-[0.9] sm:text-8xl lg:text-[7.5rem]">
+				The menu they<br />actually{' '}<span
+					class="border-ink inline-grid h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle"
+				>
+					<FoodImage
+						name="hero-cut"
+						alt=""
+						ratio="1"
+						tone="brand"
+						priority={true}
+						widths={[200, 400]}
+						sizes="120px"
+					/>
+				</span>{' '}read<span class="text-brand-text">.</span>
+			</h1>
 
-	<Container>
-		<!-- What it is -->
-		<Section
-			eyebrow="What it is"
-			title="A menu. Nothing bolted on."
-			lede="Most menu products come attached to a till system, take a cut of every order and charge like enterprise software. This one shows your menu and stays out of the way."
-		>
-			<div class="mt-14 grid gap-5 md:grid-cols-2">
-				{
-					NOT_INCLUDED.map((item) => (
-						<div class="rounded-4xl border border-line bg-card p-8">
-							<div class="flex items-center gap-3">
-								<Cross class="h-5 w-5 flex-none text-brandInk" />
-								<h3 class="text-2xl font-extrabold text-ink">{item.label}</h3>
+			<div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+				<div>
+					<p class="text-ink-soft max-w-xl text-xl leading-relaxed text-pretty sm:text-2xl">
+						Astro-Menu turns your food menu into a fast, photo-led QR menu you change from your
+						phone in seconds. One flat price. No POS, no commission, no hardware.
+					</p>
+
+					<div class="mt-8 flex flex-wrap gap-4">
+						<Button href={SITE.signupUrl} size="lg">Start {PRICE.trialDays} days free</Button>
+						<Button href="/demo" variant="outline" size="lg">See a real menu</Button>
+					</div>
+					<p class="text-ink-faint mt-4 text-base">
+						No card required · {PRICE.monthly} a month after · Cancel any time
+					</p>
+
+					<div class="border-line mt-10 flex flex-wrap items-center gap-x-10 gap-y-6 border-t pt-8">
+						<div>
+							<p class="font-display text-5xl">120+</p>
+							<p class="text-ink-soft text-base font-semibold">items on one live menu</p>
+						</div>
+						<div>
+							<p class="font-display text-5xl">&lt;1s</p>
+							<p class="text-ink-soft text-base font-semibold">to load on a phone</p>
+						</div>
+						<div class="flex items-center gap-3">
+							<div class="flex">
+								{
+									['owner', 'staff', 'guests'].map((n, i) => (
+										<span
+											class:list={[
+												'border-paper h-12 w-12 overflow-hidden rounded-full border-[3px]',
+												i > 0 && '-ml-4'
+											]}
+										>
+											<FoodImage
+												name={n}
+												alt=""
+												ratio="1"
+												tone={i === 1 ? 'brand' : i === 2 ? 'dark' : 'warm'}
+												widths={[100, 200]}
+												sizes="48px"
+											/>
+										</span>
+									))
+								}
 							</div>
-							<p class="mt-3 text-lg text-muted">{item.reason}</p>
+							<div>
+								<p class="text-base font-bold">Real venues, real menus</p>
+								<p class="text-ink-faint text-base">Cafés · trucks · hotels</p>
+							</div>
 						</div>
-					))
-				}
-			</div>
-			<p class="mt-10 max-w-2xl text-lg text-muted">
-				That is why it costs {PRICE.monthly} a month instead of several hundred.
-			</p>
-		</Section>
+					</div>
+				</div>
 
-		<!-- How it works -->
-		<Section
-			eyebrow="How it works"
-			title="Live by this afternoon"
-			lede="Nothing to install, nothing to plug in, nobody has to visit your venue."
-		>
-			<div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-				{
-					STEPS.map((step, i) => (
-						<div class="rounded-4xl flex flex-col border border-line bg-card p-8">
-							<span class="text-6xl font-extrabold leading-none text-brandInk">{i + 1}</span>
-							<h3 class="mt-5 text-2xl font-extrabold leading-tight text-ink">{step.title}</h3>
-							<p class="mt-3 flex-grow text-muted">{step.body}</p>
-							<p class="mt-5 text-sm font-bold text-muted">{step.detail}</p>
+				<!-- Phone, burst and float are one composition, so they are anchored to a
+				     single relative wrapper rather than to the grid column. -->
+				<div class="flex justify-center lg:justify-end">
+					<div class="relative w-full max-w-[19rem]">
+						<Burst class="absolute -top-5 -left-8 z-20" size={7.5} rotate={-13}>
+							{PRICE.trialDays} days<br />free
+						</Burst>
+
+						<div
+							class="border-ink shadow-lift relative rounded-[2.75rem] border-[3px] bg-black p-2.5"
+						>
+							<div
+								class="absolute top-4 left-1/2 z-10 h-6 w-24 -translate-x-1/2 rounded-full bg-black"
+							>
+							</div>
+							<div class="overflow-hidden rounded-[2.1rem] bg-white">
+								<Image
+									src={screenshot('menu-sections.png')}
+									alt={`The live ${SITE.demoVenueName} menu on a phone, showing section chips and dishes with photos and prices`}
+									widths={[390, 600, 780]}
+									sizes="304px"
+									loading="eager"
+									fetchpriority="high"
+									class="block h-auto w-full"
+								/>
+							</div>
 						</div>
-					))
-				}
-			</div>
-			<div class="mt-10">
-				<Button href="/how-it-works" variant="surface">See the full walkthrough</Button>
-			</div>
-		</Section>
 
-		<!-- Real menus -->
-		<ProductGallery
-			align="center"
-			eyebrow="Real menus"
-			title="What your customers actually see"
-			lede="Live Astro-Menu menus, exactly as they appear on a diner's phone."
+						<div
+							class="border-ink shadow-lift absolute -bottom-9 -left-10 z-20 w-40 -rotate-[8deg] overflow-hidden rounded-2xl border-[3px] sm:w-44"
+						>
+							<FoodImage
+								name="hero-float"
+								alt=""
+								ratio="4/3"
+								tone="warm"
+								brief="Hands holding a burger, cut out on colour"
+								widths={[300, 500]}
+								sizes="176px"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="mt-20">
+		<Ribbon items={RIBBON} />
+	</div>
+
+	<!-- ================= WHY / PILLARS ================= -->
+	<Section id="why">
+		<SectionHead
+			eyebrow="Why Astro-Menu"
+			title="Everybody at the table wins"
+			lede="The owner stops reprinting. The staff stop apologising. The guest stops squinting at a PDF."
+		/>
+		<div class="mt-14 grid gap-7 md:grid-cols-3">
+			{
+				PILLARS.map((p) => (
+					<article class="bg-card slab slab-hover overflow-hidden rounded-[1.75rem]">
+						<div class="border-ink border-b-[2.5px]">
+							<FoodImage
+								name={p.image}
+								alt={p.brief}
+								brief={p.brief}
+								tone={p.tone}
+								ratio="16/10"
+								sizes="(min-width:768px) 33vw, 100vw"
+							/>
+						</div>
+						<div class="p-7">
+							<Sticker tone={p.tone === 'dark' ? 'ink' : 'orange'} size="sm">
+								{p.who}
+							</Sticker>
+							<h3 class="mt-4 text-3xl">{p.title}</h3>
+							<p class="text-ink-soft mt-3 text-lg text-pretty">{p.body}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</Section>
+
+	<!-- ================= WHAT GUESTS SEE ================= -->
+	<Section tone="card" ruled id="menu">
+		<SectionHead
+			eyebrow="What your guests see"
+			title="Six screens.<br />All of them real."
+			lede={`Every screen below is a real customer menu running on Astro-Menu today — most of them ${SITE.demoVenueName}, 120 items live in Al Ain. Nothing here is a render.`}
+		/>
+		<div class="masonry mt-14 sm:columns-2 lg:columns-3">
+			{
+				SCREENS.map((s) => (
+					<figure class="border-ink pin-hover bg-paper overflow-hidden rounded-[1.5rem] border-[2.5px]">
+						<Image
+							src={screenshot(s.file)}
+							alt={`${s.title} — ${s.body}`}
+							widths={[390, 600, 780]}
+							sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw"
+							class="block h-auto w-full"
+						/>
+						<figcaption class="border-ink border-t-[2.5px] p-5">
+							<h3 class="text-xl">{s.title}</h3>
+							<p class="text-ink-soft mt-1.5 text-base text-pretty">{s.body}</p>
+						</figcaption>
+					</figure>
+				))
+			}
+		</div>
+		<div class="mt-12 flex flex-wrap justify-center gap-4">
+			<Button href={SITE.demoMenuUrl} external size="lg">Open the live menu</Button>
+			<Button href="/features" variant="outline" size="lg">All the features</Button>
+		</div>
+	</Section>
+
+	<!-- ================= DASHBOARD ================= -->
+	<Section tone="ink" id="dashboard">
+		<div class="grid items-center gap-14 lg:grid-cols-2">
+			<div>
+				<SectionHead
+					eyebrow="What you control"
+					title="The whole menu,<br />from your phone"
+					lede="Everything a guest sees is a field you own. No designer, no developer, no support ticket, no waiting on anyone."
+					invert
+				/>
+				<div class="mt-8 flex flex-wrap gap-2.5">
+					{
+						DASHBOARD_CONTROLS.map((c, i) => (
+							<Sticker tone={i % 4 === 1 ? 'orange' : i % 4 === 3 ? 'rose' : 'outline-light'}>
+								{c.title}
+							</Sticker>
+						))
+					}
+				</div>
+				<div class="mt-9">
+					<Button href="/how-it-works" variant="light" size="lg">How setup works</Button>
+				</div>
+			</div>
+
+			<div class="overflow-hidden rounded-[1.75rem] border-[3px] border-white">
+				<Image
+					src={menuManagerShot}
+					alt="The Astro-Menu dashboard: menu sections, each item with its sizes and prices, and an availability toggle on every dish"
+					widths={[600, 900, 1200]}
+					sizes="(min-width:1024px) 45vw, 92vw"
+					class="block h-auto w-full"
+				/>
+			</div>
+		</div>
+
+		<dl class="mt-16 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+			{
+				DASHBOARD_CONTROLS.map((c) => (
+					<div class="border-t-[2.5px] border-white/25 pt-4">
+						<dt class="font-display text-brand text-xl">{c.title}</dt>
+						<dd class="mt-1.5 text-lg text-white/65 text-pretty">{c.body}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</Section>
+
+	<!-- ================= VERSUS ================= -->
+	<Section id="compare">
+		<SectionHead
+			eyebrow="Astro-Menu vs a printed menu"
+			title="One of these costs you money<br />every time it changes"
 		/>
 
-		<!-- Side by side -->
-		<Section
-			eyebrow="Side by side"
-			title="The same menu, printed and digital"
-			lede="Left is a printed or PDF menu. Right is the same kind of food on Astro-Menu. This is the difference your customer sees."
-		>
-			<div class="mt-14 grid items-start gap-6 lg:grid-cols-2">
-				<figure class="rounded-4xl border border-line bg-card p-6 md:p-8">
-					<div class="overflow-hidden rounded-2xl border border-line bg-white">
-						<Image
-							src={printMenu}
-							alt="A traditional printed restaurant menu: two columns of text with dotted price leaders and no photographs"
-							widths={[420, 840]}
-							sizes="(max-width: 1024px) 90vw, 420px"
-							loading="lazy"
-							class="mx-auto h-[460px] w-full object-contain"
-						/>
-					</div>
-					<figcaption class="mt-6">
-						<h3 class="text-2xl font-extrabold text-ink">Printed or PDF</h3>
-						<ul class="mt-4 space-y-2">
-							{
-								[
-									'No photos — diners guess what a dish looks like',
-									'Prices are fixed until the next print run',
-									'One language per printed copy',
-									'Sold-out dishes stay on the page all evening',
-									'On a phone it arrives as a wall of small text'
-								].map((item) => (
-									<li class="flex items-start gap-3 text-muted">
-										<Cross class="mt-1.5 h-3.5 w-3.5 flex-none" />
-										<span>{item}</span>
-									</li>
-								))
-							}
-						</ul>
-					</figcaption>
-				</figure>
-
-				<figure class="rounded-4xl border-2 border-brand bg-card p-6 md:p-8">
-					<div class="overflow-hidden rounded-2xl border border-line bg-white">
-						<Image
-							src={menuShot}
-							alt="The same menu on Astro-Menu: a photo, price and macros on every dish"
-							widths={[420, 840]}
-							sizes="(max-width: 1024px) 90vw, 420px"
-							loading="lazy"
-							class="mx-auto h-[460px] w-full object-contain"
-						/>
-					</div>
-					<figcaption class="mt-6">
-						<div class="flex flex-wrap items-center gap-3">
-							<h3 class="text-2xl font-extrabold text-ink">Astro-Menu</h3>
-							<span class="rounded-full bg-brand px-3 py-1 text-sm font-bold text-brandOn">
-								{PRICE.monthly} / month
-							</span>
-						</div>
-						<ul class="mt-4 space-y-2">
-							{
-								[
-									'A photo on every dish',
-									'Change a price in ten seconds, free',
-									'Every diner reads it in their own language',
-									'Sold-out dishes disappear instantly',
-									'Built for the phone it is read on'
-								].map((item) => (
-									<li class="flex items-start gap-3 text-ink">
-										<Check class="mt-1.5 h-3.5 w-3.5 flex-none text-brandInk" />
-										<span>{item}</span>
-									</li>
-								))
-							}
-						</ul>
-					</figcaption>
-				</figure>
-			</div>
-
-			<div class="rounded-4xl mt-6 overflow-x-auto border border-line">
-				<table class="w-full min-w-[560px] border-collapse text-left">
+		<div class="border-ink bg-card slab mt-12 overflow-hidden rounded-[1.75rem]">
+			<div class="overflow-x-auto">
+				<table class="w-full min-w-[46rem] text-left">
+					<caption class="sr-only">
+						Astro-Menu compared with a printed or PDF menu, across eight everyday situations
+					</caption>
 					<thead>
-						<tr class="border-b border-line bg-card">
-							<th scope="col" class="p-4 text-sm font-extrabold uppercase tracking-wide text-muted">
-								&nbsp;
-							</th>
-							<th scope="col" class="p-4 text-sm font-extrabold uppercase tracking-wide text-muted">
-								Printed menu
-							</th>
-							<th scope="col" class="p-4 text-sm font-extrabold uppercase tracking-wide text-brandInk">
+						<tr class="border-ink border-b-[2.5px]">
+							<th scope="col" class="font-display w-1/4 px-6 py-5 text-lg">Situation</th>
+							<th scope="col" class="text-brand-text font-display w-[37.5%] px-6 py-5 text-lg">
 								Astro-Menu
+							</th>
+							<th scope="col" class="font-display w-[37.5%] px-6 py-5 text-lg">
+								Printed or PDF menu
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						{
-							printVsDigital.map(([criterion, theirs, ours]) => (
-								<tr class="border-b border-line last:border-0">
-									<th scope="row" class="p-4 font-bold text-ink">
-										{criterion}
+							VERSUS.map((row) => (
+								<tr class="border-line border-b-2 last:border-b-0">
+									<th scope="row" class="px-6 py-5 align-top text-lg font-bold">
+										{row.point}
 									</th>
-									<td class="p-4 text-muted">{theirs}</td>
-									<td class="p-4 font-medium text-ink">{ours}</td>
+									<td class="bg-brand/8 px-6 py-5 align-top text-lg font-semibold">
+										<span class="flex gap-2.5">
+											<Check class="text-go mt-1.5" />
+											<span class="text-pretty">{row.astro}</span>
+										</span>
+									</td>
+									<td class="text-ink-soft px-6 py-5 align-top text-lg">
+										<span class="flex gap-2.5">
+											<Cross class="mt-1.5 text-[#c33]" />
+											<span class="text-pretty">{row.other}</span>
+										</span>
+									</td>
 								</tr>
 							))
 						}
 					</tbody>
 				</table>
 			</div>
+		</div>
+	</Section>
 
-			<div class="mt-8 flex flex-wrap gap-3">
-				<Button href="/compare/qr-menu-vs-printed-menu" variant="surface" size="sm">
-					vs a printed menu
-				</Button>
-				<Button href="/compare/qr-menu-vs-pdf-menu" variant="surface" size="sm">vs a PDF menu</Button>
-			</div>
-		</Section>
+	<!-- ================= USE CASES ================= -->
+	<Section tone="card" ruled id="use-cases">
+		<SectionHead eyebrow="Who it is for" title="If you serve food, it fits" />
+		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				USE_CASES.map((u) => (
+					<article class="border-ink pin-hover bg-paper overflow-hidden rounded-[1.5rem] border-[2.5px]">
+						<FoodImage
+							name={u.image}
+							alt={u.brief}
+							brief={u.brief}
+							tone={u.tone}
+							ratio="5/4"
+							sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw"
+						/>
+						<div class="border-ink border-t-[2.5px] p-6">
+							<h3 class="text-2xl">{u.title}</h3>
+							<p class="text-ink-soft mt-2 text-lg text-pretty">{u.body}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</Section>
 
-		<!-- Capabilities -->
-		<Section
-			eyebrow="What you get"
-			title="Everything is in the one plan"
-			lede="No cheaper tier missing the thing you need, and no expensive tier to grow into."
-		>
-			<dl class="mt-14 divide-y divide-line border-y border-line">
+	<!-- ================= PRICING ================= -->
+	<Section id="pricing">
+		<SectionHead
+			eyebrow="Pricing"
+			title="One plan. Everything in it."
+			lede={`${PRICE.monthly} a month, or ${PRICE.annualPerMonth} a month paid yearly. Every competitor in this market makes you ask for a quote — here is the number.`}
+			align="center"
+		/>
+		<div class="mt-12">
+			<PricingCard compact />
+		</div>
+
+		<div class="mx-auto mt-16 max-w-4xl">
+			<h3 class="text-center text-3xl">And what is deliberately left out</h3>
+			<p class="text-ink-soft mx-auto mt-3 max-w-2xl text-center text-lg">
+				This is the part competitors bury. Saying it plainly is what makes the price believable.
+			</p>
+			<div class="mt-8 grid gap-4 sm:grid-cols-2">
 				{
-					capabilities.map((item) => (
-						<div class="grid gap-2 py-8 md:grid-cols-[1fr_1.4fr] md:gap-12">
-							<dt class="text-2xl font-extrabold leading-tight text-ink md:text-3xl">
-								{item.title}
-							</dt>
-							<dd class="text-lg leading-relaxed text-muted">{item.body}</dd>
+					NOT_INCLUDED.map((n) => (
+						<div class="bg-card slab-sm rounded-2xl p-6">
+							<p class="flex items-start gap-2.5 text-lg font-bold">
+								<Cross class="mt-1 text-[#c33]" />
+								<span>{n.label}</span>
+							</p>
+							<p class="text-ink-soft mt-2 pl-8 text-base text-pretty">{n.reason}</p>
 						</div>
 					))
 				}
-			</dl>
-			<div class="mt-10">
-				<Button href="/features" variant="surface">See every feature</Button>
 			</div>
-		</Section>
+		</div>
+	</Section>
 
-		<!-- Cost -->
-		<Section
-			eyebrow="Cost"
-			title={`${PRICE.annual} a year. That is the whole bill.`}
-			lede="No setup fee, no charge per scan, no commission on what you sell. Compare it against what you spent on menu printing last year — design, print, lamination, and every reprint when a price moved."
-		>
-			<div class="mt-14 grid gap-5 md:grid-cols-3">
-				<div class="rounded-4xl bg-invert p-10 text-invert-ink">
-					<p class="text-6xl font-extrabold leading-none">{PRICE.annual}</p>
-					<p class="mt-4 text-xl font-extrabold">Everything, for a year</p>
-					<p class="mt-2 opacity-70">
-						Unlimited items, unlimited changes, unlimited people looking at it.
-					</p>
+	<!-- ================= TESTIMONIALS ================= -->
+	<Section tone="sunk" ruled id="customers">
+		<SectionHead eyebrow="Real venues" title="They already run on it" />
+		<div class="mt-14 grid gap-7 lg:grid-cols-3">
+			{
+				TESTIMONIALS.map((t, i) => (
+					<figure class="bg-card slab flex flex-col rounded-[1.5rem] p-7">
+						<div class="flex items-center gap-3.5">
+							<span class="border-ink h-14 w-14 shrink-0 overflow-hidden rounded-full border-[2.5px]">
+								<FoodImage
+									name={`avatar-${t.person.split(' ')[0].toLowerCase()}`}
+									alt=""
+									ratio="1"
+									tone={i === 0 ? 'warm' : i === 1 ? 'brand' : 'dark'}
+									widths={[100, 200]}
+									sizes="56px"
+								/>
+							</span>
+							<figcaption>
+								<p class="text-lg font-bold">{t.person}</p>
+								<p class="text-ink-faint text-base">
+									{t.venue} · {t.role}
+								</p>
+							</figcaption>
+						</div>
+						<blockquote class="mt-5 grow text-lg leading-relaxed text-pretty">
+							“{t.quote}”
+						</blockquote>
+						{t.menuUrl && (
+							<p class="mt-5">
+								<a
+									href={t.menuUrl}
+									rel="noopener noreferrer"
+									target="_blank"
+									class="text-brand-text text-lg font-bold hover:underline"
+								>
+									View their live menu →
+								</a>
+							</p>
+						)}
+					</figure>
+				))
+			}
+		</div>
+	</Section>
+
+	<!-- ================= FAQ ================= -->
+	<Section id="faq">
+		<div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+			<div>
+				<SectionHead eyebrow="Questions" title="The ones that<br />actually block a sale" />
+				<div class="border-ink slab mt-10 overflow-hidden rounded-[1.5rem]">
+					<FoodImage
+						name="faq-flatlay"
+						alt="Overhead view of a coffee, a pastry and a phone showing a QR menu"
+						brief="Overhead flat-lay: coffee, pastry, phone showing the menu"
+						tone="warm"
+						ratio="4/3"
+						sizes="(min-width:1024px) 38vw, 92vw"
+					/>
 				</div>
-				<div class="rounded-4xl border border-line bg-card p-10">
-					<p class="text-6xl font-extrabold leading-none text-ink">{PRICE.zero}</p>
-					<p class="mt-4 text-xl font-extrabold text-ink">To change a price</p>
-					<p class="mt-2 text-muted">
-						However often you do it. A printed menu charges you for every single change.
-					</p>
-				</div>
-				<div class="rounded-4xl border border-line bg-card p-10">
-					<p class="text-6xl font-extrabold leading-none text-ink">0%</p>
-					<p class="mt-4 text-xl font-extrabold text-ink">Commission</p>
-					<p class="mt-2 text-muted">
-						We never handle an order or a payment, so there is nothing to take a cut of.
-					</p>
-				</div>
+				<p class="mt-6 text-lg">
+					<a href="/faq" class="text-brand-text font-bold hover:underline">
+						Read all {ALL_FAQS.length} questions →
+					</a>
+				</p>
 			</div>
-		</Section>
-
-		<!-- Found on Google -->
-		<Section
-			eyebrow="Found on Google"
-			title="Search your own restaurant right now"
-			lede="Tap Menu on your Google listing. Whatever appears is what every new customer sees before deciding whether to come."
-		>
-			<div class="mt-14 grid gap-5 lg:grid-cols-3">
-				<div class="rounded-4xl border-2 border-dashed border-line p-8">
-					<p class="text-sm font-bold uppercase tracking-widest text-muted">Usually you get</p>
-					<h3 class="mt-3 text-2xl font-extrabold text-ink">Photos of a menu board</h3>
-					<p class="mt-3 text-muted">
-						Snapshots taken at an angle by you or a customer, showing whatever the prices were that
-						day. Nobody goes back and deletes the one from two years ago.
-					</p>
-				</div>
-				<div class="rounded-4xl border-2 border-dashed border-line p-8">
-					<p class="text-sm font-bold uppercase tracking-widest text-muted">Or worse</p>
-					<h3 class="mt-3 text-2xl font-extrabold text-ink">A delivery app’s copy</h3>
-					<p class="mt-3 text-muted">
-						Marked “provided by” an aggregator: their layout, their prices with commission built in,
-						and usually only the items you list for delivery.
-					</p>
-				</div>
-				<div class="rounded-4xl bg-brand p-8 text-brandOn">
-					<p class="text-sm font-bold uppercase tracking-widest text-brandOn/70">With Astro-Menu</p>
-					<h3 class="mt-3 text-2xl font-extrabold">Your real menu</h3>
-					<p class="mt-3 text-brandOn/80">
-						Paste your link into your Google profile once. Everyone who looks you up gets today’s
-						prices, a photo on every dish, and their own language.
-					</p>
-				</div>
+			<div>
+				<FaqList items={HOME_FAQS} openFirst />
 			</div>
-			<div class="mt-10">
-				<Button href="/compare/qr-menu-vs-google-business-menu" variant="brand">
-					Fix what Google shows
-				</Button>
-			</div>
-		</Section>
+		</div>
+	</Section>
 
-		<!-- Pricing -->
-		<Section
-			id="pricing"
-			align="center"
-			eyebrow="Pricing"
-			title="One plan. One price."
-			lede={`${PRICE.monthly} a month, or ${PRICE.annual} for the year — ${ANNUAL_SAVING.percent}% cheaper. Switch currency below.`}
-		>
-			<PricingBlock />
-		</Section>
-
-		<!-- Internal links -->
-		<Section eyebrow="By venue" title="Find your kind of place">
-			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-				{
-					INDUSTRIES.map((industry) => (
-						<a
-							href={`/digital-menu/${industry.slug}`}
-							class="rounded-4xl border border-line bg-card p-8 transition hover:border-brand"
-						>
-							<h3 class="text-2xl font-extrabold text-ink">{industry.name}</h3>
-							<p class="mt-2 text-muted">{industry.lede}</p>
-							<span class="mt-4 inline-block font-bold text-brandInk">Read more →</span>
-						</a>
-					))
-				}
-			</div>
-
-			<div class="rounded-4xl mt-6 border border-line bg-card p-8">
-				<h3 class="text-xl font-extrabold text-ink">Serving the UAE</h3>
-				<div class="mt-4 flex flex-wrap gap-2">
-					{
-						LOCATIONS.map((location) => (
-							<a
-								href={`/qr-menu/${location.slug}`}
-								class="inline-flex min-h-11 items-center rounded-full border border-line bg-page px-5 text-sm font-bold text-ink transition hover:bg-brand hover:text-brandOn"
-							>
-								QR menu {location.emirate}
-							</a>
-						))
-					}
-				</div>
-			</div>
-		</Section>
-
-		<!-- FAQ -->
-		<Section
-			align="center"
-			eyebrow="Questions"
-			title="The things people ask first"
-			lede="If yours is not here, the full list has more — or just email us."
-		>
-			<FaqList faqs={homeFaqs} />
-			<div class="mt-10 text-center">
-				<Button href="/faq" variant="surface">Read all the questions</Button>
-			</div>
-		</Section>
-
-		<CtaBand />
-	</Container>
+	<CtaBand />
 </Layout>

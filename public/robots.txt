@@ -1,20 +1,16 @@
+# Astro-Menu — https://astro-menu.com
+
 User-agent: *
 Allow: /
 
-# AI assistants and answer engines are welcome to read and cite these pages.
+# AI answer engines are welcome; see /llms.txt for a plain-text brief.
 User-agent: GPTBot
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
@@ -24,6 +20,3 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://astro-menu.com/sitemap-index.xml
-
-# Plain-text summary of this site for AI assistants:
-# https://astro-menu.com/llms.txt

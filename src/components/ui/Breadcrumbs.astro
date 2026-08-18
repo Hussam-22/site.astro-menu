@@ -1,0 +1,31 @@
+---
+import { SITE } from '../../config/site'
+
+interface Props {
+	/** Home is prepended automatically; pass the trail after it. */
+	trail: { name: string; path?: string }[]
+}
+const { trail } = Astro.props
+const all = [{ name: 'Home', path: '/' }, ...trail]
+---
+
+<nav aria-label="Breadcrumb" class="text-ink-faint text-base">
+	<ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
+		{
+			all.map((crumb, i) => (
+				<li class="flex items-center gap-2">
+					{crumb.path && i < all.length - 1 ? (
+						<a href={crumb.path} class="hover:text-brand-text font-medium transition-colors">
+							{crumb.name}
+						</a>
+					) : (
+						<span class="text-ink font-semibold" aria-current="page">
+							{crumb.name}
+						</span>
+					)}
+					{i < all.length - 1 && <span aria-hidden="true">/</span>}
+				</li>
+			))
+		}
+	</ol>
+</nav>

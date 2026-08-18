@@ -1,166 +1,120 @@
-# Astroship - Astro SAAS Starter Website Template
+# Astro-Menu website
 
-Astroship is a free starter astro website template for saas, startups, marketing websites, landing pages & blogs. Built with Astro & TailwindCSS.
-
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
-
-## Live Demo
-
-**[https://astroship.web3templates.com/](https://astroship.web3templates.com/)**
-
-**[Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)**
-
-## Upgrade to Astroship Pro Version
-
-**[https://astroship-pro.web3templates.com/](https://astroship-pro.web3templates.com/)**
-
-**[Purchase Astroship Pro — $49](https://web3templates.com/templates/astroship-pro-astro-saas-website-template)**
-
-
-<!-- prettier-ignore -->
-| Feature | Free Version | Pro Version |
-| --- | ------ | --- |
-| Astro v3 | ✅  | ✅ |
-| Content Collections | ✅  | ✅ |
-| Tailwind CSS   | ✅  | ✅ |
-| Mobile Responsive | ✅  | ✅ |
-| Working Contact Page | ✅  | ✅ |
-| Pro Layouts & Features | ❌  | ✅ |
-| Blog with Pagination | ❌ | ✅ |
-| View Transitions | ❌ | ✅ |
-| Advanced Homepage Design | ❌  | ✅ |
-| Features Page | ❌  | ✅ |
-| Integrations Page | ❌  | ✅ |
-| Elegant 404 Page | ❌  | ✅ |
-| 6 Months Support| ❌  | ✅  |
-| Free Updates    | ✅  | ✅  |
-| License         | GPL-2.0 | Commercial |
-| &nbsp; | &nbsp;| &nbsp;|
-| Pricing| Free|**$49**|
-| &nbsp; | [Deploy for free](https://vercel.com/new/surjithctly/clone?demo-description=Starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20blogs%20built%20with%20Astro%20and%20TailwindCSS.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F5dB0dDqBr1BfvIoNOmffVB%2F784984a8d3fe5e3db123e7c655166046%2Fastroship_-_Tony_Sullivan.jpg&demo-title=Astroship&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&from=templates&project-name=Astroship&repository-name=astroship&repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&skippable-integrations=1) | [Purchase Pro](https://web3templates.com/templates/astroship-pro-astro-saas-website-template) |
-
-<a href="https://web3templates.com/templates/astroship-pro-astro-saas-website-template">
-<img width="160" alt="Upgrade to Pro" src="https://user-images.githubusercontent.com/1884712/199181300-37c2128e-d033-4145-a906-16fa5263a53b.png">
-</a>
-
-## Deploy this template
-
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
-
-Click here to deploy on Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-Click here to deploy on Netlify:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/astroship)
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-
-## Pro Version Preview
-
-![preview](https://github.com/surjithctly/astroship/assets/1884712/25665c02-d2a7-43dc-89b2-34a8ae37ade9)
-
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
-
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
-### 1. Clone the repo
+Marketing site for Astro-Menu, a digital QR menu for restaurants, cafés, coffee
+trucks and hotels. Static, zero client JavaScript, deploys as plain files.
 
 ```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
+npm install     # Node >= 22.19 — see "Node version" below
+npm run dev     # http://localhost:4321
+npm run build   # -> dist/
 ```
 
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
+## Stack
 
-### 2. Install Dependencies
+| | |
+| --- | --- |
+| Astro | 7.x — static output, Rust compiler, zero JS shipped |
+| Tailwind CSS | 4.x via `@tailwindcss/vite`, configured in CSS not JS |
+| daisyUI | 5.x, themed to match the brand |
+| Fonts | Anton (display) + Afacad (body), self-hosted via Fontsource |
+
+There is no `tailwind.config.cjs`. Tailwind 4 is configured entirely in
+`src/styles/global.css` with `@theme`, `@plugin` and `@utility`.
+
+### Node version
+
+The Astro 7 / Vite 8 dependency tree pulls in `undici@8`, which declares
+`node >= 22.19.0`. On an older Node the install fails the `engine-strict=true`
+check in `.npmrc`. It runs correctly on 22.18 in practice, but the supported fix
+is to move to Node 22.19+ or 24 LTS. To install on an older Node anyway:
 
 ```bash
-npm install
-# or
-yarn install
-# or (recommended)
-pnpm install
+npm install --engine-strict=false
 ```
 
-### 3. Start development Server
+## Design system
+
+Everything lives in `src/styles/global.css`.
+
+Brand colours are taken verbatim from the computed styles of the live
+astro-menu.com, so the identity is unchanged:
+
+| Token | Value | Job |
+| --- | --- | --- |
+| `--color-brand` | `#ff8904` | Fills: buttons, stickers, rules |
+| `--color-flame` | `#ff637e` | Terminus of the primary-button gradient |
+| `--color-brand-text` | `#ca3500` | The brand used **as small text** |
+| `--color-ink` | `#0d0b09` | Warm near-black |
+| `--color-paper` | `#fdf6ec` | The ground |
+
+`--color-brand` and `--color-brand-text` are deliberately two tokens.
+`#ff8904` measures 2.05:1 on paper, far below the WCAG AA 4.5:1 floor for body
+text, so fills and display type use the exact brand orange while small orange
+text uses `#ca3500` (5.2:1). Do not collapse them back into one.
+
+Recurring utilities: `slab` / `slab-sm` / `slab-lg` (hard offset shadow),
+`slab-hover`, `pin-hover`, `masonry`, `brand-gradient`, `burst`, `drift-track`.
+
+## Content
+
+Copy is data, not markup, so pages cannot drift apart:
+
+- `src/config/site.ts` — URLs, contact details, and **every price**. Change
+  `PLAN` and the whole site, its schema and `llms.txt` follow.
+- `src/data/plan.ts` — what the subscription includes, excludes, setup steps.
+- `src/data/content.ts` — pillars, testimonials, comparison table, use cases.
+- `src/data/features.ts` — the `/features` page.
+- `src/data/faqs.ts` — every FAQ; also the source for FAQPage schema.
+- `src/content/blog/*.md` — posts.
+
+## Images
+
+**Product screenshots** in `src/assets/screens/` are captured from a real live
+customer menu. Re-shoot them with:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or (recommended)
-pnpm dev
+node scripts/capture-menu.mjs
 ```
 
-### Preview & Build
+**Photography** goes in `src/assets/generated/`. `FoodImage.astro` resolves each
+slot by filename stem — save `owner.webp` and the `owner` slot fills itself, no
+code change. Unfilled slots render a captioned placeholder so the site is never
+broken mid-shoot. See `src/assets/generated/PROMPTS.md` for the slot list and a
+generation prompt for each.
+
+Use WebP or JPG for photographs, never PNG.
+
+**The share card** `public/opengraph.jpg` is generated, not hand-made:
 
 ```bash
-npm run preview
-npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
-pnpm build
+node scripts/make-og.mjs
 ```
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
+## SEO
 
-### Other Commands
+Per-page title, meta description, canonical and OG tags come from `Layout.astro`.
+JSON-LD is assembled per page: `Organization` and `WebSite` on every page, plus
+`SoftwareApplication`, `Product`+`Offer`, `FAQPage`, `HowTo`, `BreadcrumbList`
+and `BlogPosting` where they apply. `/llms.txt` is generated from the same data
+for AI answer engines. `public/robots.txt` allows the major AI crawlers.
 
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
+## Scripts
 
-## Project Structure
+| Script | What it does |
+| --- | --- |
+| `scripts/qa.mjs` | Walks every route: console errors, broken images, heading order, overflow, meta lengths, JSON-LD validity |
+| `scripts/qa-mobile.mjs` | The same at 390px, plus minimum font size |
+| `scripts/capture-menu.mjs` | Re-shoots product screenshots from the live menu |
+| `scripts/make-og.mjs` | Regenerates the social share card |
+| `scripts/shoot.mjs` | Full-page screenshot of one route |
 
-Inside of your Astro project, you'll see the following folders and files:
+Run the dev server first; the QA scripts drive it.
 
-```
-/
-├── public/
-│   └── ...
-├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
-└── package.json
-```
+## Before going live
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## TailwindCSS
-
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
-
-## Credits
-
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
-
-## 👀 Want to learn more?
-
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
-
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+- [ ] Set `CONTACT_FORM_KEY` in `src/config/site.ts` to a real Web3Forms key.
+      Until then `/contact` hides the form and leads with email and WhatsApp,
+      so no enquiry is silently dropped.
+- [ ] Fill the photography slots listed in `src/assets/generated/PROMPTS.md`.
+- [ ] Have `privacy.astro` and `terms.astro` reviewed by someone qualified —
+      they are written in good faith but are not legal advice.

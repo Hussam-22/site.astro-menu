@@ -1,0 +1,282 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin 'daisyui' {
+	themes: astro --default;
+}
+
+/* ---------------------------------------------------------------------------
+   Design tokens — "poster" direction.
+
+   Brand colours are lifted verbatim from the live astro-menu.com computed
+   styles, so the identity is unchanged: orange-400 accent, an orange→rose
+   gradient on every primary button, black ink.
+
+   What is new, and only new, is the GROUND: warm paper instead of clinical
+   white. That single change is most of what makes the reference designs read
+   as friendly rather than as SaaS.
+
+   One deliberate accessibility exception, agreed with the owner: --color-brand
+   at #ff8904 measures 2.05:1 on paper, far under the WCAG AA 4.5:1 floor for
+   body text. Fills, gradients and display type keep the exact live value; SMALL
+   orange text uses --color-brand-text (#ca3500, 5.2:1) instead. Do not "fix"
+   this by collapsing the two tokens back into one.
+--------------------------------------------------------------------------- */
+@theme {
+	/* Anton carries the poster headlines; Afacad (the live site's face) carries
+	   everything else. Afacad stops at 700, too light to hold a 100px headline. */
+	--font-display: 'Anton', 'Arial Black', Impact, sans-serif;
+	--font-sans: 'Afacad Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+	--color-brand: #ff8904; /* the FILL: buttons, bands, stickers */
+	--color-brand-strong: #ff6900; /* hover / pressed state of that fill */
+	--color-brand-text: #ca3500; /* the brand used AS small text */
+	--color-flame: #ff637e; /* gradient terminus, from the live CTA */
+
+	--color-ink: #0d0b09; /* warm near-black, so it sits on paper not on white */
+	--color-ink-soft: #5b5148;
+	--color-ink-faint: #857567;
+
+	--color-paper: #fdf6ec; /* the ground */
+	--color-paper-2: #f7ebdc; /* recessed bands */
+	--color-card: #ffffff; /* cards lift off the paper by being white */
+	--color-line: #e6d9c8;
+	--color-go: #05b06a;
+
+	--radius-tile: 1rem;
+	--radius-card: 1.5rem;
+	--radius-slab: 2.25rem;
+
+	--shadow-pin: 0 2px 4px rgb(30 18 6 / 0.06), 0 18px 40px rgb(30 18 6 / 0.1);
+	--shadow-lift: 0 4px 8px rgb(30 18 6 / 0.08), 0 28px 60px rgb(30 18 6 / 0.18);
+
+	/* Display scale. Anton is condensed, so it takes a larger optical size than
+	   the live site's 60px Afacad hero for the same perceived weight. */
+	--text-display: 4.5rem;
+	--text-display--line-height: 0.92;
+	--text-display--letter-spacing: -0.02em;
+	--text-display-lg: 6.5rem;
+	--text-display-lg--line-height: 0.88;
+	--text-display-lg--letter-spacing: -0.025em;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'astro';
+	default: true;
+	prefersdark: false;
+	color-scheme: light;
+
+	--color-base-100: #fdf6ec;
+	--color-base-200: #f7ebdc;
+	--color-base-300: #e6d9c8;
+	--color-base-content: #0d0b09;
+	--color-primary: #ff8904;
+	--color-primary-content: #0d0b09;
+	--color-secondary: #ff637e;
+	--color-secondary-content: #0d0b09;
+	--color-accent: #ca3500;
+	--color-accent-content: #ffffff;
+	--color-neutral: #0d0b09;
+	--color-neutral-content: #ffffff;
+	--color-info: #0084d1;
+	--color-info-content: #ffffff;
+	--color-success: #05b06a;
+	--color-success-content: #ffffff;
+	--color-warning: #ff6900;
+	--color-warning-content: #ffffff;
+	--color-error: #e7000b;
+	--color-error-content: #ffffff;
+
+	--radius-selector: 999px;
+	--radius-field: 999px;
+	--radius-box: 1.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.28rem;
+	--border: 2px;
+	--depth: 0;
+	--noise: 0;
+}
+
+/* ------------------------------------------------------------------------- */
+
+html {
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+	background: var(--color-paper);
+}
+
+body {
+	background: var(--color-paper);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+}
+
+/* Anton only ships uppercase-optimised metrics and is always set in caps here,
+   so the tracking is tightened once, globally, rather than per heading. */
+.font-display,
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: -0.015em;
+	text-wrap: balance;
+}
+
+/* The header floats over content, so in-page anchors need clearance. */
+[id] {
+	scroll-margin-top: 6.5rem;
+}
+
+:where(a, button, summary, input, textarea, select):focus-visible {
+	outline: 3px solid var(--color-brand-text);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+@utility brand-gradient {
+	/* The live site's primary button fill, to the degree. */
+	background-image: linear-gradient(to bottom right, var(--color-brand) 0%, var(--color-flame) 100%);
+}
+
+@utility tabular {
+	font-variant-numeric: tabular-nums;
+}
+
+/* The hard-edged offset shadow that gives the reference cards their weight.
+   Deliberately not blurred — a soft shadow reads as a different design. */
+@utility slab {
+	border: 2.5px solid var(--color-ink);
+	box-shadow: 5px 5px 0 var(--color-ink);
+}
+@utility slab-sm {
+	border: 2.5px solid var(--color-ink);
+	box-shadow: 3px 3px 0 var(--color-ink);
+}
+@utility slab-lg {
+	border: 3px solid var(--color-ink);
+	box-shadow: 8px 8px 0 var(--color-ink);
+}
+@utility slab-hover {
+	transition:
+		transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+		box-shadow 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+	&:hover {
+		transform: translate(-3px, -3px);
+		box-shadow: 8px 8px 0 var(--color-ink);
+	}
+}
+
+/* Pinterest-style pin: the image is the card, and the whole tile lifts. */
+@utility pin-hover {
+	transition:
+		transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+		box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+	&:hover {
+		transform: translateY(-6px);
+		box-shadow: var(--shadow-lift);
+	}
+}
+
+/* True CSS masonry. `columns` reflows variable-height tiles into balanced
+   columns with no JS and no layout shift. */
+@utility masonry {
+	column-gap: 1.25rem;
+	> * {
+		break-inside: avoid;
+		margin-bottom: 1.25rem;
+	}
+}
+
+@utility rail {
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	> * {
+		scroll-snap-align: start;
+	}
+}
+
+/* The starburst sticker from the reference posters. */
+.burst {
+	clip-path: polygon(
+		50% 0%,
+		61% 12%,
+		76% 6%,
+		80% 22%,
+		96% 24%,
+		92% 40%,
+		105% 50%,
+		92% 60%,
+		96% 76%,
+		80% 78%,
+		76% 94%,
+		61% 88%,
+		50% 100%,
+		39% 88%,
+		24% 94%,
+		20% 78%,
+		4% 76%,
+		8% 60%,
+		-5% 50%,
+		8% 40%,
+		4% 24%,
+		20% 22%,
+		24% 6%,
+		39% 12%
+	);
+}
+
+/* Diagonal scrolling ribbon. Duplicated content inside .drift-track is what
+   makes the -50% translate loop seamlessly. */
+@keyframes drift {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+.drift-track {
+	display: flex;
+	width: max-content;
+	animation: drift 42s linear infinite;
+}
+.drift:hover .drift-track {
+	animation-play-state: paused;
+}
+
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@utility rise {
+	animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.slab-hover:hover,
+	.pin-hover:hover {
+		transform: none !important;
+	}
+}

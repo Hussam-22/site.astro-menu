@@ -1,81 +1,105 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import CtaBand from '@components/ui/cta-band.astro'
-import { SITE } from '@config/site'
-import { getFormattedDate } from '@utils/all'
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import CtaBand from '../../components/ui/CtaBand.astro'
+import { getCollection, render, type CollectionEntry } from 'astro:content'
+import { SITE } from '../../config/site'
+import { crumbSchema } from '../../utils/schema'
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog', ({ data }) => !data.draft)
-	return posts.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }))
+	return posts.map((post) => ({ params: { slug: post.id }, props: { post } }))
 }
 
-const { entry } = Astro.props
-const { Content } = await entry.render()
+interface Props {
+	post: CollectionEntry<'blog'>
+}
+const { post } = Astro.props
+const { Content } = await render(post)
 
-const schema = {
+const all = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+)
+const more = all.filter((p) => p.id !== post.id).slice(0, 3)
+
+const fmt = (d: Date) =>
+	d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+
+const article = {
+	'@context': 'https://schema.org',
 	'@type': 'BlogPosting',
-	headline: entry.data.title,
-	description: entry.data.description,
-	datePublished: entry.data.publishDate.toISOString(),
-	dateModified: (entry.data.updatedDate ?? entry.data.publishDate).toISOString(),
-	author: { '@type': 'Organization', name: entry.data.author },
+	headline: post.data.title,
+	description: post.data.description,
+	datePublished: post.data.publishDate.toISOString(),
+	dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
+	author: { '@type': 'Organization', name: post.data.author, url: SITE.domain },
 	publisher: { '@id': `${SITE.domain}/#organization` },
-	mainEntityOfPage: `${SITE.domain}/blog/${entry.slug}`,
-	keywords: entry.data.tags.join(', ')
+	mainEntityOfPage: new URL(`/blog/${post.id}`, SITE.domain).href,
+	keywords: post.data.tags.join(', ')
 }
-
-const crumbs = [
-	{ name: 'Home', path: '/' },
-	{ name: 'Blog', path: '/blog' },
-	{ name: entry.data.title, path: `/blog/${entry.slug}` }
-]
 ---
 
 <Layout
-	title={entry.data.title}
-	description={entry.data.description}
-	schema={schema}
-	breadcrumbs={crumbs}
+	title={post.data.title}
+	description={post.data.description}
+	path={`/blog/${post.id}`}
+	type="article"
+	schema={[
+		crumbSchema([
+			{ name: 'Blog', path: '/blog' },
+			{ name: post.data.title, path: `/blog/${post.id}` }
+		]),
+		article
+	]}
 >
-	<Container>
-		<Breadcrumbs items={crumbs} />
+	<Section tight width="narrow">
+		<Breadcrumbs trail={[{ name: 'Blog', path: '/blog' }, { name: post.data.title }]} />
 
-		<article class="mx-auto max-w-3xl py-14">
-			<span class="text-sm font-bold uppercase tracking-widest text-brandInk">
-				{entry.data.category}
-			</span>
-			<h1 class="mt-2 text-4xl font-extrabold leading-tight text-ink md:text-5xl">
-				{entry.data.title}
-			</h1>
-			<p class="mt-4 text-xl text-muted">{entry.data.description}</p>
-			<div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted">
-				<span>{entry.data.author}</span>
-				<span>•</span>
-				<time datetime={entry.data.publishDate.toISOString()}>
-					{getFormattedDate(entry.data.publishDate)}
-				</time>
-			</div>
+		<header class="mt-8">
+			<Sticker tone="orange" size="sm">{post.data.category}</Sticker>
+			<h1 class="mt-4 text-4xl sm:text-6xl">{post.data.title}</h1>
+			<p class="text-ink-soft mt-5 text-xl text-pretty sm:text-2xl">{post.data.description}</p>
+			<p class="text-ink-faint border-line mt-6 border-t pt-5 text-base">
+				<time datetime={post.data.publishDate.toISOString()}>{fmt(post.data.publishDate)}</time>
+				{post.data.updatedDate && <span> · updated {fmt(post.data.updatedDate)}</span>}
+				<span> · {post.data.author}</span>
+			</p>
+		</header>
 
-			<div
-				class="prose dark:prose-invert prose-lg mt-10 max-w-none prose-headings:font-extrabold prose-a:text-brandInk prose-strong:text-ink"
-			>
-				<Content />
-			</div>
+		<div
+			class="prose prose-lg mt-12 max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:uppercase prose-headings:tracking-tight prose-h2:mt-12 prose-h2:text-3xl prose-h3:text-2xl prose-p:text-ink-soft prose-p:text-lg prose-li:text-ink-soft prose-li:text-lg prose-strong:text-ink prose-a:text-brand-text prose-a:font-bold"
+		>
+			<Content />
+		</div>
 
-			<div class="mt-10 flex flex-wrap gap-2">
-				{
-					entry.data.tags.map((tag) => (
-						<span class="rounded-full bg-card px-3 py-1 text-sm text-muted">#{tag}</span>
-					))
-				}
-			</div>
+		<div class="border-ink mt-14 flex flex-wrap gap-2.5 border-t-[2.5px] pt-8">
+			{post.data.tags.map((tag) => <Sticker size="sm">#{tag}</Sticker>)}
+		</div>
+	</Section>
 
-			<a href="/blog" class="mt-10 inline-block text-brandInk hover:underline">← All posts</a>
-		</article>
+	{
+		more.length > 0 && (
+			<Section tone="card" ruled tight>
+				<h2 class="text-3xl">Keep reading</h2>
+				<div class="mt-8 grid gap-6 md:grid-cols-3">
+					{more.map((p) => (
+						<article class="bg-paper slab slab-hover rounded-[1.25rem] p-6">
+							<Sticker tone="orange" size="sm">
+								{p.data.category}
+							</Sticker>
+							<h3 class="mt-3 text-xl">
+								<a href={`/blog/${p.id}`} class="hover:text-brand-text transition-colors">
+									{p.data.title}
+								</a>
+							</h3>
+						</article>
+					))}
+				</div>
+			</Section>
+		)
+	}
 
-		<CtaBand />
-	</Container>
+	<CtaBand />
 </Layout>

@@ -1,0 +1,58 @@
+---
+interface Props {
+	eyebrow?: string
+	title: string
+	lede?: string
+	align?: 'left' | 'center'
+	/** h2 nearly always; h1 only where the section IS the page heading. */
+	as?: 'h1' | 'h2' | 'h3'
+	invert?: boolean
+	class?: string
+}
+
+const {
+	eyebrow,
+	title,
+	lede,
+	align = 'left',
+	as: Tag = 'h2',
+	invert = false,
+	class: extra = ''
+} = Astro.props
+
+const sizes = {
+	h1: 'text-6xl sm:text-display lg:text-display-lg',
+	h2: 'text-4xl sm:text-6xl lg:text-7xl',
+	h3: 'text-3xl sm:text-4xl'
+}
+---
+
+<div class:list={[align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-4xl', extra]}>
+	{
+		eyebrow && (
+			<p
+				class:list={[
+					'font-display mb-4 text-sm tracking-[0.18em]',
+					invert ? 'text-brand' : 'text-brand-text'
+				]}
+			>
+				{eyebrow}
+			</p>
+		)
+	}
+	<Tag class:list={[sizes[Tag]]} set:html={title} />
+	{
+		lede && (
+			<p
+				class:list={[
+					'mt-6 max-w-2xl text-xl leading-relaxed text-pretty sm:text-2xl',
+					align === 'center' && 'mx-auto',
+					invert ? 'text-white/70' : 'text-ink-soft'
+				]}
+			>
+				{lede}
+			</p>
+		)
+	}
+	<slot />
+</div>

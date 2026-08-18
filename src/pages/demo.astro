@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import Button from '../components/ui/Button.astro'
+import Sticker from '../components/ui/Sticker.astro'
+import CtaBand from '../components/ui/CtaBand.astro'
+import { Image } from 'astro:assets'
+import { SITE, PRICE } from '../config/site'
+import { crumbSchema } from '../utils/schema'
+
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
+	eager: true
+})
+const screenshot = (file: string) =>
+	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
+
+const title = 'Live QR menu demo'
+const description = `Open a real Astro-Menu menu — ${SITE.demoVenueName}, 120 items live in Al Ain. Filter by meal type, switch to Arabic, open a dish. No sign-up.`
+
+/** Ordered so each one exercises a different claim made elsewhere on the site. */
+const TRY = [
+	{
+		n: '01',
+		do: 'Scroll to Brewed Coffee using the chips at the top',
+		why: 'Fourteen sections stay one tap apart, however long the menu gets.'
+	},
+	{
+		n: '02',
+		do: 'Open the filter and choose Decaf, then Cold Beverages',
+		why: 'A 120-item menu narrows to a shortlist in two taps.'
+	},
+	{
+		n: '03',
+		do: 'Tap the globe and switch the menu to Arabic',
+		why: 'The whole menu translates and relays itself right-to-left.'
+	},
+	{
+		n: '04',
+		do: 'Open V60 Geisha and look at the sizes',
+		why: 'Each portion carries its own price, on the item itself.'
+	},
+	{
+		n: '05',
+		do: 'Tap the back arrow to reach the venue page',
+		why: 'Call, WhatsApp, Maps, Instagram and a Google review, one tap each.'
+	},
+	{
+		n: '06',
+		do: 'Time how long it took to load',
+		why: 'That is the whole point. Nobody waits for a menu.'
+	}
+]
+---
+
+<Layout
+	title={title}
+	description={description}
+	path="/demo"
+	schema={crumbSchema([{ name: 'Live demo', path: '/demo' }])}
+>
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'Live demo' }]} />
+		<div class="mt-8 grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+			<div>
+				<SectionHead
+					as="h1"
+					eyebrow="Live demo"
+					title="This is not a mockup"
+					lede={`It is the working menu of ${SITE.demoVenueName} in Al Ain — 120 items, fourteen sections, running on Astro-Menu right now. Open it on your phone if you can; that is where your guests will see it.`}
+				/>
+				<div class="mt-8 flex flex-wrap gap-4">
+					<Button href={SITE.demoMenuUrl} external size="lg">Open the live menu</Button>
+					<Button href={SITE.demoVenueUrl} external variant="outline" size="lg">
+						Open the venue page
+					</Button>
+				</div>
+				<div class="mt-7 flex flex-wrap gap-2.5">
+					<Sticker tone="orange">No sign-up</Sticker>
+					<Sticker tone="rose">No app</Sticker>
+					<Sticker>Real customer menu</Sticker>
+				</div>
+				<p class="text-ink-faint mt-7 text-base text-pretty">
+					Please treat it kindly — this is a working business, not a sandbox. Browsing is all the
+					demo does; there is nothing to order and nothing to submit.
+				</p>
+			</div>
+
+			<div class="border-ink shadow-lift mx-auto w-full max-w-[19rem] overflow-hidden rounded-[2rem] border-[3px]">
+				<Image
+					src={screenshot('menu-sections.png')}
+					alt={`The live ${SITE.demoVenueName} menu, showing section chips and breakfast dishes with photos and prices`}
+					widths={[390, 600, 780]}
+					sizes="(min-width:1024px) 304px, 90vw"
+					loading="eager"
+					fetchpriority="high"
+					class="block h-auto w-full"
+				/>
+			</div>
+		</div>
+	</Section>
+
+	<Section tone="card" ruled>
+		<SectionHead
+			eyebrow="Six things to try"
+			title="What to actually do<br />once it opens"
+			lede="Each of these exercises a claim made elsewhere on this site. Two minutes tells you more than the feature list does."
+		/>
+		<ol class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{
+				TRY.map((t) => (
+					<li class="bg-paper slab slab-hover rounded-[1.5rem] p-7">
+						<span class="font-display text-brand text-4xl">{t.n}</span>
+						<h2 class="mt-2 text-2xl">{t.do}</h2>
+						<p class="text-ink-soft mt-3 text-lg text-pretty">{t.why}</p>
+					</li>
+				))
+			}
+		</ol>
+		<div class="mt-12 flex justify-center">
+			<Button href={SITE.demoMenuUrl} external size="lg">Open the live menu</Button>
+		</div>
+	</Section>
+
+	<Section>
+		<div class="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+			<div>
+				<SectionHead
+					eyebrow="Then picture yours"
+					title="Same menu engine,<br />your food on it"
+					lede="Your cover photo, your logo, your sections, your prices, your languages. The venue above did not design any of this — they filled in fields."
+				/>
+				<div class="mt-8 flex flex-wrap gap-4">
+					<Button href={SITE.signupUrl} size="lg">Start {PRICE.trialDays} days free</Button>
+					<Button href="/how-it-works" variant="outline" size="lg">How setup works</Button>
+				</div>
+			</div>
+			<div class="grid grid-cols-2 gap-5">
+				{
+					['filter-meal-type.png', 'language-switch.png'].map((f, i) => (
+						<div class="border-ink pin-hover overflow-hidden rounded-[1.25rem] border-[2.5px]">
+							<Image
+								src={screenshot(f)}
+								alt={
+									i === 0
+										? 'The meal-type filter sheet open, showing options like decaf, healthy and light portion'
+										: 'The language picker open on the live menu'
+								}
+								widths={[300, 500, 780]}
+								sizes="(min-width:1024px) 22vw, 45vw"
+								class="block h-auto w-full"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</Section>
+
+	<CtaBand
+		title="Build yours the same way"
+		body={`Send us the menu you have now and we will load the first version for you. ${PRICE.trialDays} days free, no card.`}
+		secondaryHref="/pricing"
+		secondaryLabel="See pricing"
+	/>
+</Layout>

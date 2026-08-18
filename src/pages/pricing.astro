@@ -1,138 +1,187 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Section from '@components/ui/section.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import FaqList from '@components/ui/faq-list.astro'
-import CtaBand from '@components/ui/cta-band.astro'
-import PricingBlock from '@components/pricing-block.astro'
-import { PLAN, PRICE, ANNUAL_SAVING, SITE } from '@config/site'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import PricingCard from '../components/PricingCard.astro'
+import Cross from '../components/ui/Cross.astro'
+import Check from '../components/ui/Check.astro'
+import FaqList from '../components/ui/FaqList.astro'
+import CtaBand from '../components/ui/CtaBand.astro'
+import Sticker from '../components/ui/Sticker.astro'
+import { SITE, PRICE, PLAN } from '../config/site'
+import { NOT_INCLUDED } from '../data/plan'
+import { FAQ_GROUPS } from '../data/faqs'
+import { crumbSchema, faqSchema } from '../utils/schema'
 
-const faqs = [
-	{
-		q: `Is ${PRICE.monthly} the whole price?`,
-		a: `Yes. ${PRICE.monthly} per venue per month, or ${PRICE.annual} for a year. No setup fee, no per-scan charge, no commission and nothing to buy.`
-	},
-	{
-		q: 'What does the annual price save me?',
-		a: `Paying yearly costs ${PRICE.annual} instead of ${PRICE.monthly} × 12 — a saving of ${PRICE.saving}, or about ${ANNUAL_SAVING.percent}%.`
-	},
-	{
-		q: 'Which currency will I actually be billed in?',
-		a: `Prices are shown in ${PRICE.code} by default and you can switch the toggle above to see dirhams. Venues in the UAE are billed in dirhams at ${PLAN.monthly.aed} AED a month; exchange rates move, so treat the converted figure as indicative.`
-	},
-	{
-		q: 'Do I need a card to start the trial?',
-		a: `No. The ${PLAN.trialDays}-day trial needs no card. If you decide not to continue, it simply ends.`
-	},
-	{
-		q: 'Can I switch between monthly and yearly later?',
-		a: 'Yes. You can move to annual billing whenever you like, and the saving applies from that point.'
-	},
-	{
-		q: 'Is the price per venue or per company?',
-		a: 'Per venue. Each location gets its own menu, QR code and analytics, and each is billed separately.'
-	},
-	{
-		q: 'Are there any usage limits?',
-		a: 'Menu views are unlimited under a fair usage policy, and there is no cap on items, sections, menus or updates. A busy month never costs more than a quiet one.'
-	},
-	{
-		q: 'What happens if I cancel?',
-		a: 'Monthly billing stops at the end of the current month and your menu goes offline. Your QR codes stop resolving, so cancel with that in mind if they are printed on packaging.'
-	}
-]
+const pricingFaqs = FAQ_GROUPS.find((g) => g.heading === 'Pricing')!.items
 
-const schema = [
-	{
-		'@type': 'Product',
-		name: `${SITE.name} QR menu`,
-		description: SITE.description,
-		brand: { '@type': 'Brand', name: SITE.name },
-		offers: {
-			'@type': 'AggregateOffer',
-			priceCurrency: PRICE.code,
-			lowPrice: PRICE.amountAnnual,
-			highPrice: PRICE.amountMonthly * 12,
-			offerCount: 2,
-			offers: [
-				{
-					'@type': 'Offer',
-					name: 'Monthly billing',
-					price: PRICE.amountMonthly,
-					priceCurrency: PRICE.code,
-					url: `${SITE.domain}/pricing`,
-					availability: 'https://schema.org/InStock'
-				},
-				{
-					'@type': 'Offer',
-					name: 'Annual billing',
-					price: PRICE.amountAnnual,
-					priceCurrency: PRICE.code,
-					url: `${SITE.domain}/pricing`,
-					availability: 'https://schema.org/InStock'
-				}
-			]
+const title = `Pricing — ${PRICE.monthly} a month, one plan`
+const description = `${PRICE.monthly} a month, or ${PRICE.annualPerMonth} a month billed yearly (${PRICE.annualTotal}). Unlimited menus, items and views. No setup fee, no commission, no contract.`
+
+const product = {
+	'@context': 'https://schema.org',
+	'@type': 'Product',
+	name: 'Astro-Menu',
+	description: SITE.description,
+	brand: { '@type': 'Brand', name: 'Astro-Menu' },
+	offers: [
+		{
+			'@type': 'Offer',
+			name: 'Monthly',
+			price: String(PRICE.monthlyAmount),
+			priceCurrency: 'USD',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock'
+		},
+		{
+			'@type': 'Offer',
+			name: 'Yearly',
+			price: String(PRICE.annualTotalAmount),
+			priceCurrency: 'USD',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock'
 		}
-	},
-	{
-		'@type': 'FAQPage',
-		mainEntity: faqs.map((faq) => ({
-			'@type': 'Question',
-			name: faq.q,
-			acceptedAnswer: { '@type': 'Answer', text: faq.a }
-		}))
-	}
-]
+	]
+}
+
+/**
+ * The honest cost comparison. Print figures are a stated assumption, not a
+ * claim about any particular venue — the point is the shape of the spend, and
+ * the arithmetic is shown so a reader can substitute their own numbers.
+ */
+const PRINT_RUNS_PER_YEAR = 3
+const PRINT_COST_PER_RUN = 90
+const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 ---
 
 <Layout
-	title={`Pricing — ${PRICE.monthly} a Month, All Included`}
-	description={`One plan: ${PRICE.monthly} a month or ${PRICE.annual} a year. Prices in USD and AED. No commission, no hardware, ${PLAN.trialDays} days free.`}
-	schema={schema}
-	breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing' }]}
+	title={title}
+	description={description}
+	path="/pricing"
+	schema={[crumbSchema([{ name: 'Pricing', path: '/pricing' }]), product, faqSchema(pricingFaqs)]}
 >
-	<Container>
-		<Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing' }]} />
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'Pricing' }]} />
+		<div class="mt-8">
+			<SectionHead
+				as="h1"
+				align="center"
+				eyebrow="Pricing"
+				title="One plan.<br />Everything in it."
+				lede="Every competitor in this market makes you request a quote. Here is the number, and here is exactly what it does and does not buy."
+			/>
+		</div>
+		<div class="mt-6 flex flex-wrap justify-center gap-2.5">
+			<Sticker tone="orange">No setup fee</Sticker>
+			<Sticker tone="rose">No contract</Sticker>
+			<Sticker>No hardware</Sticker>
+			<Sticker tone="go">No commission</Sticker>
+		</div>
+		<div class="mt-12">
+			<PricingCard id="plan" as="h2" />
+		</div>
+	</Section>
 
-		<Section
-			level={1}
-			eyebrow="Pricing"
-			title="One plan. Everything in it."
-			lede={`${PRICE.monthly} a month, or ${PRICE.annual} for the year. Switch currency and billing period below — the price is the same product either way.`}
-		>
-			<PricingBlock />
-		</Section>
-
-		<Section
-			eyebrow="No asterisks"
-			title="What we will never charge you for"
-			lede="The things that usually turn a cheap headline price into an expensive invoice."
-		>
-			<div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-				{
-					[
-						{ t: 'Setup fees', b: 'Nothing to pay to get started, and we will load your first menu for you.' },
-						{ t: 'Per-scan charges', b: 'A viral weekend costs exactly the same as a quiet Tuesday.' },
-						{ t: 'Commission', b: 'We never process an order or a payment, so we can never take a cut.' },
-						{ t: 'Hardware', b: 'No tablets, no printers, no installation visit, no service contract.' }
-					].map((item) => (
-						<div class="rounded-xxl bg-card p-8">
-							<h3 class="text-lg font-bold text-ink">{item.t}</h3>
-							<p class="mt-2 text-sm text-muted">{item.b}</p>
-						</div>
-					))
-				}
-			</div>
-		</Section>
-
-		<Section eyebrow="Questions" title="Pricing questions">
-			<FaqList faqs={faqs} />
-		</Section>
-
-		<CtaBand
-			title="Try it for 30 days without paying anything"
-			body="No card, no contract, no sales call. If it does not suit you, it just ends."
+	<Section tone="card" ruled>
+		<SectionHead
+			align="center"
+			eyebrow="The other half of the truth"
+			title="What is deliberately left out"
+			lede="This is the part competitors bury in a feature matrix. Saying it plainly is what makes one flat price believable."
 		/>
-	</Container>
+		<div class="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2">
+			{
+				NOT_INCLUDED.map((n) => (
+					<div class="bg-paper slab rounded-2xl p-7">
+						<p class="flex items-start gap-3 text-xl font-bold">
+							<Cross class="mt-1.5 text-[#c33]" />
+							<span>{n.label}</span>
+						</p>
+						<p class="text-ink-soft mt-3 pl-8 text-lg text-pretty">{n.reason}</p>
+					</div>
+				))
+			}
+		</div>
+		<p class="text-ink-soft mx-auto mt-10 max-w-2xl text-center text-lg text-pretty">
+			If you need a till, an ordering flow or payments, Astro-Menu is the wrong product and we would
+			rather tell you now than after you have paid.
+		</p>
+	</Section>
+
+	<Section>
+		<div class="grid items-start gap-14 lg:grid-cols-2">
+			<div>
+				<SectionHead
+					eyebrow="Against what you already spend"
+					title="Compare it to the<br />print bill, not to software"
+					lede="Most venues are not choosing between two apps. They are choosing between a subscription and a printer's invoice."
+				/>
+				<p class="text-ink-soft mt-6 text-lg text-pretty">
+					A venue that reprints its menu {PRINT_RUNS_PER_YEAR} times a year at around ${PRINT_COST_PER_RUN}
+					a run spends about ${printYear} on print alone — before anyone counts the evening a manager
+					lost to proofreading, or the month a wrong price stayed on the table because reprinting was
+					not worth it.
+				</p>
+				<p class="text-ink-soft mt-4 text-lg text-pretty">
+					Those figures are an illustration, not a quote. Put your own numbers in — the shape rarely
+					changes.
+				</p>
+			</div>
+
+			<div class="bg-card slab-lg rounded-[1.5rem] p-8">
+				<dl class="tabular divide-line divide-y">
+					<div class="flex items-baseline justify-between gap-6 pb-5">
+						<dt class="text-lg font-bold">Astro-Menu, billed yearly</dt>
+						<dd class="font-display text-3xl">{PRICE.annualTotal}<span class="text-lg">/yr</span></dd>
+					</div>
+					<div class="flex items-baseline justify-between gap-6 py-5">
+						<dt class="text-lg font-bold">Astro-Menu, billed monthly</dt>
+						<dd class="font-display text-3xl">
+							{PRICE.monthly}<span class="text-lg">/mo</span>
+						</dd>
+					</div>
+					<div class="flex items-baseline justify-between gap-6 py-5">
+						<dt class="text-ink-soft text-lg">Illustrative print spend</dt>
+						<dd class="font-display text-ink-soft text-3xl">${printYear}<span class="text-lg">/yr</span></dd>
+					</div>
+					<div class="flex items-baseline justify-between gap-6 pt-5">
+						<dt class="text-lg font-bold">Commission we take</dt>
+						<dd class="font-display text-go text-3xl">{PRICE.zero}</dd>
+					</div>
+				</dl>
+				<ul class="border-line mt-7 space-y-3 border-t pt-6">
+					<li class="flex items-start gap-3 text-lg">
+						<Check class="text-go mt-1.5" />
+						<span>Reprints after a price change: unlimited, and free</span>
+					</li>
+					<li class="flex items-start gap-3 text-lg">
+						<Check class="text-go mt-1.5" />
+						<span>In dirhams: {PRICE.monthlyAed} a month, {PRICE.annualTotalAed} a year</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</Section>
+
+	<Section tone="sunk" ruled>
+		<div class="mx-auto max-w-3xl">
+			<SectionHead align="center" eyebrow="Pricing questions" title="The money questions" />
+			<div class="mt-10">
+				<FaqList items={pricingFaqs} openFirst />
+			</div>
+			<p class="mt-8 text-center text-lg">
+				<a href="/faq" class="text-brand-text font-bold hover:underline">
+					Every other question →
+				</a>
+			</p>
+		</div>
+	</Section>
+
+	<CtaBand
+		title={`Try it for ${PLAN.trialDays} days first`}
+		body="No card, no setup fee, no contract. If it is not right, walk away and nothing has changed."
+		secondaryHref="/demo"
+		secondaryLabel="See a real menu"
+	/>
 </Layout>

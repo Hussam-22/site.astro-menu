@@ -1,151 +1,114 @@
 ---
-import Footer from '@components/footer.astro'
-import Navbar from '@components/navbar/navbar.astro'
-import { SITE, PLAN, PRICE } from '@config/site'
-import '@fontsource-variable/plus-jakarta-sans'
-import '../styles/theme.css'
+import '@fontsource-variable/afacad'
+// Anton ships a single weight (400) and is only ever set in caps — it carries
+// the display headings while Afacad carries every other piece of text.
+import '@fontsource/anton'
+import '../styles/global.css'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { SITE } from '../config/site'
 
-export interface Props {
+interface Props {
+	/** Page title WITHOUT the brand suffix — this component appends it. */
 	title: string
 	description: string
+	/** Path only, e.g. "/pricing". Combined with SITE.domain for the canonical. */
+	path?: string
 	image?: string
+	/** Emitted as-is inside a JSON-LD script tag. Pass objects, not strings. */
+	schema?: object | object[]
 	noindex?: boolean
-	schema?: Record<string, unknown> | Record<string, unknown>[]
-	breadcrumbs?: { name: string; path: string }[]
+	type?: 'website' | 'article'
 }
 
-const { title, description, image = '/opengraph.jpg', noindex = false, schema, breadcrumbs } =
-	Astro.props
+const {
+	title,
+	description,
+	path = Astro.url.pathname,
+	image = '/opengraph.jpg',
+	schema,
+	noindex = false,
+	type = 'website'
+} = Astro.props
 
-const canonical = new URL(Astro.url.pathname.replace(/\/+$/, '') || '/', SITE.domain).toString()
-const ogImage = new URL(image, SITE.domain).toString()
-// Google truncates around 60 characters, so the brand suffix is only added when it fits.
-const suffix = ` | ${SITE.name}`
-const pageTitle =
-	title.includes(SITE.name) || title.length + suffix.length > 60 ? title : title + suffix
+// trailingSlash is 'never', but the site root still has to canonicalise to "/".
+const clean = path === '/' ? '/' : path.replace(/\/$/, '')
+const canonical = new URL(clean, SITE.domain).href
+const ogImage = new URL(image, SITE.domain).href
+const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`
 
-const organization = {
+/** Present on every page, so search and AI assistants always have the entity. */
+const orgSchema = {
+	'@context': 'https://schema.org',
 	'@type': 'Organization',
 	'@id': `${SITE.domain}/#organization`,
 	name: SITE.name,
 	url: SITE.domain,
 	email: SITE.email,
+	logo: new URL('/favicon.svg', SITE.domain).href,
 	description: SITE.description,
-	logo: { '@type': 'ImageObject', url: `${SITE.domain}/assets/logo-titled-right.svg` },
-	areaServed: { '@type': 'Country', name: 'United Arab Emirates' }
+	areaServed: 'AE',
+	slogan: SITE.tagline
 }
 
-const website = {
+const siteSchema = {
+	'@context': 'https://schema.org',
 	'@type': 'WebSite',
 	'@id': `${SITE.domain}/#website`,
-	url: SITE.domain,
 	name: SITE.name,
-	description: SITE.description,
+	url: SITE.domain,
 	publisher: { '@id': `${SITE.domain}/#organization` },
 	inLanguage: 'en'
 }
 
-const software = {
-	'@type': 'SoftwareApplication',
-	'@id': `${SITE.domain}/#software`,
-	name: SITE.name,
-	applicationCategory: 'BusinessApplication',
-	applicationSubCategory: 'Digital menu software',
-	operatingSystem: 'Web browser',
-	url: SITE.domain,
-	description: SITE.description,
-	publisher: { '@id': `${SITE.domain}/#organization` },
-	offers: [
-		{
-			'@type': 'Offer',
-			name: 'Monthly',
-			price: PRICE.amountMonthly,
-			priceCurrency: PRICE.code,
-			url: `${SITE.domain}/pricing`,
-			availability: 'https://schema.org/InStock'
-		},
-		{
-			'@type': 'Offer',
-			name: 'Annual',
-			price: PRICE.amountAnnual,
-			priceCurrency: PRICE.code,
-			url: `${SITE.domain}/pricing`,
-			availability: 'https://schema.org/InStock'
-		}
-	]
-}
-
-const breadcrumbSchema = breadcrumbs && {
-	'@type': 'BreadcrumbList',
-	itemListElement: breadcrumbs.map((crumb, i) => ({
-		'@type': 'ListItem',
-		position: i + 1,
-		name: crumb.name,
-		item: new URL(crumb.path, SITE.domain).toString()
-	}))
-}
-
-const graph = [
-	organization,
-	website,
-	software,
-	...(breadcrumbSchema ? [breadcrumbSchema] : []),
-	...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])
-]
-
-const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
+const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])]
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<script is:inline>
-			// Runs before paint so a saved dark preference never flashes light.
-			if (localStorage.getItem('theme') === 'dark') {
-				document.documentElement.classList.add('dark')
-			}
-		</script>
-
-		<title>{pageTitle}</title>
+		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
-		<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		{
-			noindex ? (
-				<meta name="robots" content="noindex, nofollow" />
-			) : (
+			!noindex && (
 				<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 			)
 		}
 
-		<meta property="og:type" content="website" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="theme-color" content="#fdf6ec" />
+
+		<meta property="og:type" content={type} />
 		<meta property="og:site_name" content={SITE.name} />
-		<meta property="og:title" content={pageTitle} />
+		<meta property="og:title" content={fullTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
 		<meta property="og:image" content={ogImage} />
 		<meta property="og:locale" content={SITE.locale} />
-
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:title" content={fullTitle} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
 
-		<script type="application/ld+json" set:html={jsonLd} is:inline />
+		<script type="application/ld+json" set:html={JSON.stringify(graph)} is:inline />
+		<slot name="head" />
 	</head>
-	<body class="bg-page text-ink">
+	<body class="bg-paper text-ink antialiased">
+		<a
+			href="#main"
+			class="focus:bg-ink focus:text-white sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:px-5 focus:py-3 focus:font-bold"
+		>
+			Skip to content
+		</a>
 		<Navbar />
-		<slot />
+		<main id="main">
+			<slot />
+		</main>
 		<Footer />
-		<script>
-			import Observer from 'tailwindcss-intersect'
-			Observer.start()
-		</script>
 	</body>
 </html>

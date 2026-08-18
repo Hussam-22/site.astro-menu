@@ -1,0 +1,38 @@
+---
+/**
+ * The diagonal scrolling marquee from the reference posters. Segments alternate
+ * orange / rose / paper across a black band, tilted a degree and a half.
+ *
+ * The item list is rendered twice inside .drift-track — that duplication is what
+ * makes the -50% translate loop seamlessly.
+ */
+interface Props {
+	items: string[]
+}
+const { items } = Astro.props
+const doubled = [...items, ...items]
+
+const fills = ['bg-brand', 'bg-flame', 'bg-paper']
+---
+
+<div class="drift bg-ink overflow-hidden py-7" aria-hidden="true">
+	<div class="drift-track -rotate-[1.5deg]">
+		{
+			doubled.map((item, i) => (
+				<span
+					class:list={[
+						'font-display text-ink flex items-center gap-2.5 px-6 py-2 text-2xl whitespace-nowrap',
+						fills[i % fills.length]
+					]}
+				>
+					<svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor">
+						<path d="M12 1.8 14.9 8l6.8.8-5 4.7 1.3 6.7L12 17l-6 3.2 1.3-6.7-5-4.7L9.1 8z" />
+					</svg>
+					{item}
+				</span>
+			))
+		}
+	</div>
+</div>
+<!-- The ribbon is decorative repetition of claims made in real copy elsewhere,
+     so it is hidden from assistive tech rather than read out eight times. -->

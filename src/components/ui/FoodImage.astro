@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets'
+
+/**
+ * Renders a photograph if one has been dropped into src/assets/generated,
+ * otherwise a designed placeholder carrying the shot brief.
+ *
+ * This exists so the site is complete and shippable before the photography
+ * lands: every slot is laid out, sized and captioned, and adding the real image
+ * is purely a matter of saving a file with the matching name. Nothing in the
+ * markup changes.
+ *
+ * See src/assets/generated/PROMPTS.md for the brief behind each `name`.
+ */
+const generated = import.meta.glob<{ default: ImageMetadata }>(
+	'../../assets/generated/*.{png,jpg,jpeg,webp,avif}',
+	{ eager: true }
+)
+
+/** Keyed by filename stem, so "owner.webp" and "owner.png" both answer to "owner". */
+const bank = new Map<string, ImageMetadata>()
+for (const [path, mod] of Object.entries(generated)) {
+	const stem = path.split('/').pop()!.replace(/\.[^.]+$/, '')
+	bank.set(stem, mod.default)
+}
+
+interface Props {
+	/** Filename stem in src/assets/generated, e.g. "owner". */
+	name: string
+	/** Real alt text. Used for the photo and read out for the placeholder. */
+	alt: string
+	/** Short brief shown on the placeholder only. */
+	brief?: string
+	tone?: 'brand' | 'dark' | 'warm'
+	/** Any CSS aspect-ratio value, e.g. "4/3" or "1". */
+	ratio?: string
+	priority?: boolean
+	class?: string
+	sizes?: string
+	widths?: number[]
+}
+
+const {
+	name,
+	alt,
+	brief,
+	tone = 'brand',
+	ratio = '4/3',
+	priority = false,
+	class: extra = '',
+	sizes = '(min-width: 1024px) 33vw, 100vw',
+	widths = [400, 700, 1000]
+} = Astro.props
+
+const found = bank.get(name)
+
+const tones = {
+	brand: 'bg-[linear-gradient(150deg,#ff8904,#ff637e)] text-white',
+	dark: 'bg-[linear-gradient(150deg,#1a1613,#4a3d33)] text-white',
+	warm: 'bg-[linear-gradient(150deg,#ffd9a8,#ffb3a0)] text-[#4a2a10]'
+}
+---
+
+{
+	found ? (
+		<Image
+			src={found}
+			alt={alt}
+			widths={widths}
+			sizes={sizes}
+			loading={priority ? 'eager' : 'lazy'}
+			fetchpriority={priority ? 'high' : 'auto'}
+			class:list={['h-full w-full object-cover', extra]}
+			style={`aspect-ratio:${ratio}`}
+		/>
+	) : (
+		<div
+			class:list={[
+				'relative flex flex-col justify-end overflow-hidden p-4',
+				tones[tone],
+				extra
+			]}
+			style={`aspect-ratio:${ratio}`}
+			role="img"
+			aria-label={alt}
+		>
+			{/* Diagonal hatch marks the panel as a placeholder at a glance, so an
+			    unfilled slot is never mistaken for a finished design. */}
+			<div
+				class="pointer-events-none absolute inset-0 opacity-[0.18]"
+				style="background:repeating-linear-gradient(45deg,#fff 0 10px,transparent 10px 20px)"
+				aria-hidden="true"
+			/>
+			<svg
+				class="absolute top-3 left-4 h-5 w-5 opacity-80"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				aria-hidden="true"
+			>
+				<path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.7l1.2-2h6.2l1.2 2h1.7A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" />
+				<circle cx="12" cy="12.5" r="3.4" />
+			</svg>
+			<p class="relative font-mono text-[10px] font-bold tracking-[0.14em] uppercase opacity-80">
+				{name}
+			</p>
+			{brief && <p class="relative text-sm leading-snug font-bold">{brief}</p>}
+		</div>
+	)
+}

@@ -1,146 +1,179 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Container from '@components/container.astro'
-import Section from '@components/ui/section.astro'
-import Breadcrumbs from '@components/ui/breadcrumbs.astro'
-import CtaBand from '@components/ui/cta-band.astro'
-import FaqList from '@components/ui/faq-list.astro'
-import Button from '@components/ui/button.astro'
-import { SITE, PLAN } from '@config/site'
-import { STEPS } from '@data/plan'
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import SectionHead from '../components/ui/SectionHead.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import Button from '../components/ui/Button.astro'
+import Sticker from '../components/ui/Sticker.astro'
+import FoodImage from '../components/ui/FoodImage.astro'
+import Check from '../components/ui/Check.astro'
+import CtaBand from '../components/ui/CtaBand.astro'
+import { Image } from 'astro:assets'
+import { SITE, PRICE } from '../config/site'
+import { STEPS, DASHBOARD_CONTROLS } from '../data/plan'
+import { crumbSchema } from '../utils/schema'
+import menuManagerShot from '../assets/menu-manager.png'
 
-const placements = [
-	{ t: 'On the table', b: 'A table tent or a vinyl sticker. The most common placement, and the one people expect.' },
-	{ t: 'On the window', b: 'Lets someone read the whole menu before deciding to come in. Strong for passing trade.' },
-	{ t: 'At the counter', b: 'People in the queue arrive at the till already knowing what they want.' },
-	{ t: 'In your Instagram bio', b: 'The single most valuable link you have. Send it to the menu, not a homepage.' },
-	{ t: 'On your Google listing', b: 'Add the menu link so searchers see the real thing instead of a photo someone took.' },
-	{ t: 'On packaging and bags', b: 'Turns a delivery customer into someone who can order from you directly next time.' }
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
+	eager: true
+})
+const screenshot = (file: string) =>
+	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
+
+const title = 'How it works — from your menu to a QR code'
+const description = `Send your menu in any form and we build the first version free. Brand it, print the code, change it whenever you like. Most menus are live the same day.`
+
+const howTo = {
+	'@context': 'https://schema.org',
+	'@type': 'HowTo',
+	name: 'How to set up a QR menu with Astro-Menu',
+	description,
+	totalTime: 'PT1H',
+	estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '0' },
+	step: STEPS.map((s, i) => ({
+		'@type': 'HowToStep',
+		position: i + 1,
+		name: s.title,
+		text: s.body,
+		url: `${SITE.domain}/how-it-works#step-${i + 1}`
+	}))
+}
+
+const NEED = [
+	'Your current menu — a PDF, a photo of the printed card, or a spreadsheet',
+	'Your logo',
+	'A cover photo of the venue',
+	'The languages you serve in',
+	'Dish photos, eventually — they can be added one at a time later'
 ]
-
-const faqs = [
-	{
-		q: 'Do I have to type my whole menu in myself?',
-		a: 'Only if you want to. Send us your current menu — a PDF, a photo, a spreadsheet, whatever you have — and we will load the first version for you. After that you edit it yourself.'
-	},
-	{
-		q: 'How long does the first setup take?',
-		a: 'Most venues are live the same day. A menu of forty or fifty items typically takes under an hour to enter, less if you send it to us.'
-	},
-	{
-		q: 'Do I need someone technical?',
-		a: 'No. If you can fill in an online form and upload a photo, you can run your menu. There is nothing to install and no website to maintain.'
-	},
-	{
-		q: 'What size should I print the QR code?',
-		a: 'For a table tent, around 3–4 cm square is comfortable. For a window sticker, larger — people scan it from further away. Download the SVG or PDF so it stays sharp at any size.'
-	},
-	{
-		q: 'Does a diner need an app or an account?',
-		a: 'No. The camera app on any modern phone opens the menu in the browser. There is no download, no sign-up and nothing for them to agree to.'
-	},
-	{
-		q: 'What if the QR code sticker gets damaged?',
-		a: 'Print another one. The code never changes, so a replacement is identical to the original and costs almost nothing.'
-	}
-]
-
-// HowTo schema is intentionally absent: Google deprecated HowTo rich results in
-// September 2023, and the markup no longer earns a SERP feature.
-const schema = [
-	{
-		'@type': 'ItemList',
-		name: 'How to set up a QR menu for your restaurant',
-		itemListElement: STEPS.map((step, i) => ({
-			'@type': 'ListItem',
-			position: i + 1,
-			name: step.title,
-			description: step.body,
-			url: `${SITE.domain}/how-it-works#step-${i + 1}`
-		}))
-	},
-	{
-		'@type': 'FAQPage',
-		mainEntity: faqs.map((faq) => ({
-			'@type': 'Question',
-			name: faq.q,
-			acceptedAnswer: { '@type': 'Answer', text: faq.a }
-		}))
-	}
-]
-
-const crumbs = [{ name: 'Home', path: '/' }, { name: 'How it works', path: '/how-it-works' }]
 ---
 
 <Layout
-	title="How It Works — Set Up a QR Menu Today"
-	description="How to set up a QR menu: add your items, download the code, put it where people look, and change the menu whenever you like. No app, no hardware, no reprinting."
-	schema={schema}
-	breadcrumbs={crumbs}
+	title={title}
+	description={description}
+	path="/how-it-works"
+	schema={[crumbSchema([{ name: 'How it works', path: '/how-it-works' }]), howTo]}
 >
-	<Container>
-		<Breadcrumbs items={crumbs} />
-
-		<Section
-			level={1}
-			eyebrow="How it works"
-			title="From printed menu to live QR menu in an afternoon"
-			lede="There is no installation, no hardware and nobody who needs to visit your venue. Here is the whole process."
-		>
-			<div class="mt-12 space-y-6">
-				{
-					STEPS.map((step, i) => (
-						<div
-							id={`step-${i + 1}`}
-							class="rounded-xxl flex flex-col gap-6 bg-card p-8 md:flex-row md:items-start md:p-12"
-						>
-							<span class="text-6xl font-extrabold leading-none text-brandInk md:w-24">
-								{i + 1}
-							</span>
-							<div>
-								<h2 class="text-2xl font-extrabold md:text-3xl">{step.title}</h2>
-								<p class="mt-3 text-lg text-muted">{step.body}</p>
-								<p class="mt-3 text-sm font-medium text-muted">{step.detail}</p>
-							</div>
-						</div>
-					))
-				}
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'How it works' }]} />
+		<div class="mt-8 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+			<div>
+				<SectionHead
+					as="h1"
+					eyebrow="How it works"
+					title="From your menu<br />to a QR code"
+					lede="Four steps. Most venues are live the same day, and the only one that takes real effort is the one we can do for you."
+				/>
+				<div class="mt-8 flex flex-wrap gap-4">
+					<Button href={SITE.signupUrl} size="lg">Start {PRICE.trialDays} days free</Button>
+					<Button href="/demo" variant="outline" size="lg">See a finished menu</Button>
+				</div>
 			</div>
-		</Section>
-
-		<Section
-			eyebrow="Placement"
-			title="Where to put the code"
-			lede="The QR code and the link point at the same menu, so you can use as many of these as you like at once."
-		>
-			<div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-				{
-					placements.map((item) => (
-						<div class="rounded-xxl bg-card p-8">
-							<h3 class="text-lg font-bold text-ink">{item.t}</h3>
-							<p class="mt-2 text-sm text-muted">{item.b}</p>
-						</div>
-					))
-				}
+			<div class="border-ink shadow-lift mx-auto w-full max-w-[17rem] overflow-hidden rounded-[1.5rem] border-[3px]">
+				<Image
+					src={screenshot('landing.png')}
+					alt="A finished Astro-Menu venue page with cover photo, logo and one-tap contact buttons"
+					widths={[390, 600, 780]}
+					sizes="(min-width:1024px) 272px, 80vw"
+					class="block h-auto w-full"
+				/>
 			</div>
-		</Section>
+		</div>
+	</Section>
 
-		<Section
-			eyebrow="See it working"
-			title="Scan a real menu before you commit"
-			lede="This is a live Astro-Menu menu, exactly as a customer of yours would see it."
-		>
-			<div class="mt-10 text-center">
-				<Button href={SITE.demoMenuUrl} variant="brand" size="lg" target="_blank" rel="noopener">
-					Open the demo menu
-				</Button>
+	<Section tone="card" ruled>
+		<SectionHead eyebrow="The four steps" title="What actually happens" />
+		<ol class="mt-14 grid gap-7 lg:grid-cols-2">
+			{
+				STEPS.map((step, i) => (
+					<li id={`step-${i + 1}`} class="bg-paper slab slab-hover rounded-[1.5rem] p-8">
+						<span class="font-display text-brand text-5xl">{step.n}</span>
+						<h2 class="mt-3 text-3xl">{step.title}</h2>
+						<p class="text-ink-soft mt-3 text-lg text-pretty">{step.body}</p>
+						<p class="border-line text-ink-faint mt-5 border-t pt-4 text-base">{step.detail}</p>
+					</li>
+				))
+			}
+		</ol>
+	</Section>
+
+	<Section>
+		<div class="grid items-start gap-14 lg:grid-cols-2">
+			<div>
+				<SectionHead
+					eyebrow="What we need from you"
+					title="Send it in whatever<br />form you have it"
+					lede="You do not need to prepare anything. A photo of the printed menu taken on your phone is enough to start."
+				/>
+				<ul class="mt-8 space-y-4">
+					{
+						NEED.map((n) => (
+							<li class="flex items-start gap-3 text-lg">
+								<Check class="text-go mt-1.5" />
+								<span class="text-pretty">{n}</span>
+							</li>
+						))
+					}
+				</ul>
+				<div class="bg-brand/12 slab-sm mt-9 rounded-2xl p-6">
+					<p class="text-lg font-bold">We will load the first menu for you.</p>
+					<p class="text-ink-soft mt-2 text-lg text-pretty">
+						Email it to
+						<a href={`mailto:${SITE.email}`} class="text-brand-text font-bold hover:underline"
+							>{SITE.email}</a
+						> and we will send back a menu ready for you to check, correct and publish.
+					</p>
+				</div>
 			</div>
-		</Section>
 
-		<Section eyebrow="Questions" title="Setup questions">
-			<FaqList faqs={faqs} />
-		</Section>
+			<div class="border-ink shadow-lift overflow-hidden rounded-[1.5rem] border-[3px]">
+				<FoodImage
+					name="onboarding"
+					alt="A restaurant owner photographing their printed menu with a phone"
+					brief="Owner photographing their printed menu on a phone, counter behind"
+					tone="warm"
+					ratio="4/3"
+					sizes="(min-width:1024px) 45vw, 92vw"
+				/>
+			</div>
+		</div>
+	</Section>
 
-		<CtaBand />
-	</Container>
+	<Section tone="ink">
+		<div class="grid items-center gap-14 lg:grid-cols-2">
+			<div>
+				<SectionHead
+					eyebrow="Then it is yours"
+					title="Everything is a field<br />in the dashboard"
+					lede="Once the menu is loaded, nothing needs us again. Every change is something you make yourself, in seconds, from a phone."
+					invert
+				/>
+				<div class="mt-8 flex flex-wrap gap-2.5">
+					{
+						DASHBOARD_CONTROLS.map((c, i) => (
+							<Sticker tone={i % 4 === 1 ? 'orange' : i % 4 === 3 ? 'rose' : 'outline-light'}>
+								{c.title}
+							</Sticker>
+						))
+					}
+				</div>
+			</div>
+			<div class="overflow-hidden rounded-[1.5rem] border-[3px] border-white">
+				<Image
+					src={menuManagerShot}
+					alt="The Astro-Menu dashboard, showing menu sections, item sizes and prices, and an availability toggle on each dish"
+					widths={[500, 800, 902]}
+					sizes="(min-width:1024px) 45vw, 92vw"
+					class="block h-auto w-full"
+				/>
+			</div>
+		</div>
+	</Section>
+
+	<CtaBand
+		title="Your menu could be live tonight"
+		body={`Start the ${PRICE.trialDays}-day trial, or send us the menu and we will build the first version for you.`}
+		secondaryHref="/contact"
+		secondaryLabel="Send us your menu"
+	/>
 </Layout>
