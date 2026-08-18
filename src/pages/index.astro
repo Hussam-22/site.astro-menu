@@ -81,13 +81,13 @@ const schema = [
 		<div class="mx-auto max-w-7xl px-5 lg:px-8">
 			<div class="flex flex-wrap items-center gap-2.5">
 				<Sticker tone="orange">No commission</Sticker>
-				<Sticker tone="rose">Live in seconds</Sticker>
+				<Sticker tone="rose">We build it for you</Sticker>
 				<Sticker>No app to download</Sticker>
 			</div>
 
-			<h1 class="mt-7 text-6xl leading-[0.9] sm:text-8xl lg:text-[7.5rem]">
-				The menu they<br />actually{' '}<span
-					class="border-ink inline-grid h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle"
+			<h1 class="mt-7 text-[3.4rem] leading-[0.9] sm:text-8xl lg:text-[8.5rem]">
+				Show the{' '}<span
+					class="border-ink hidden h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle sm:inline-grid"
 				>
 					<FoodImage
 						name="hero-cut"
@@ -98,14 +98,15 @@ const schema = [
 						widths={[200, 400]}
 						sizes="120px"
 					/>
-				</span>{' '}read<span class="text-brand-text">.</span>
+				</span>{' '}food,<br />not a list<span class="text-brand-text">.</span>
 			</h1>
 
 			<div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
 				<div>
 					<p class="text-ink-soft max-w-xl text-xl leading-relaxed text-pretty sm:text-2xl">
-						Astro-Menu turns your food menu into a fast, photo-led QR menu you change from your
-						phone in seconds. One flat price. No POS, no commission, no hardware.
+						Send us the menu you have now and we turn it into a photo-led QR menu for you. After
+						that it is yours — every change you make goes live the moment you save it. One flat
+						price. No POS, no commission, no hardware.
 					</p>
 
 					<div class="mt-8 flex flex-wrap gap-4">
@@ -311,7 +312,7 @@ const schema = [
 			{
 				DASHBOARD_CONTROLS.map((c) => (
 					<div class="border-t-[2.5px] border-white/25 pt-4">
-						<dt class="font-display text-brand text-xl">{c.title}</dt>
+						<dt class="label text-brand text-base">{c.title}</dt>
 						<dd class="mt-1.5 text-lg text-white/65 text-pretty">{c.body}</dd>
 					</div>
 				))
@@ -334,13 +335,9 @@ const schema = [
 					</caption>
 					<thead>
 						<tr class="border-ink border-b-[2.5px]">
-							<th scope="col" class="font-display w-1/4 px-6 py-5 text-lg">Situation</th>
-							<th scope="col" class="text-brand-text font-display w-[37.5%] px-6 py-5 text-lg">
-								Astro-Menu
-							</th>
-							<th scope="col" class="font-display w-[37.5%] px-6 py-5 text-lg">
-								Printed or PDF menu
-							</th>
+							<th scope="col" class="label w-1/4 px-6 py-5 text-sm">Situation</th>
+							<th scope="col" class="text-brand-text label w-[37.5%] px-6 py-5 text-sm">Astro-Menu</th>
+							<th scope="col" class="label w-[37.5%] px-6 py-5 text-sm">Printed or PDF menu</th>
 						</tr>
 					</thead>
 					<tbody>

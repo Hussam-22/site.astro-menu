@@ -64,7 +64,7 @@ export const TESTIMONIALS = [
 export const VERSUS = [
 	{
 		point: 'Changing a price',
-		astro: 'Type it. Live in seconds, at no cost.',
+		astro: 'Type it. Live the moment you save, at no cost.',
 		other: 'Reprint the whole run, or live with a sticker over it.'
 	},
 	{
@@ -141,7 +141,7 @@ export const USE_CASES = [
 		tone: 'warm' as const
 	},
 	{
-		title: 'Lounges & shisha',
+		title: 'Lounges',
 		body: 'Long lists, filtered fast, with the Wi-Fi password on the same screen.',
 		image: 'uc-lounge',
 		brief: 'Evening lounge table, phone glowing with the menu',
@@ -183,7 +183,7 @@ export const SCREENS = [
 	{
 		file: 'item-detail.png',
 		title: 'Every dish, properly',
-		body: 'A full-width photo, the description you wrote, and each size or portion with its own price.',
+		body: 'A full-width photo, the description you wrote, sizes and portions each with their own price, and add-ons — priced or free.',
 		tall: true
 	},
 	{

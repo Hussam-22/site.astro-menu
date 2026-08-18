@@ -52,8 +52,8 @@ export const STEPS = [
 	{
 		n: '01',
 		title: 'Send us your menu',
-		body: 'Type it in yourself, or send the PDF, the photos, even the printed copy. We will load the first menu for you and hand it back ready to check.',
-		detail: 'Most menus are live the same day.'
+		body: 'Send the PDF, the photos, even a snapshot of the printed card. We do the conversion by hand — every section, item, description and price — and hand the finished menu back for you to check.',
+		detail: 'This is the part that takes real work, and it is the part we do for you.'
 	},
 	{
 		n: '02',

@@ -14,7 +14,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
 		items: [
 			{
 				q: 'How long does it take to set up a QR menu?',
-				a: `Most menus are live the same day. You can type your items in yourself, or send us your existing PDF, photos or printed menu and we will load the first version for you and hand it back ready to check. There is a ${PRICE.trialDays}-day free trial and no card is needed to start.`
+				a: `Building the first menu is real work, and we do it for you. Send us your existing PDF, photos or printed card and we type it in by hand — every section, item, description and price — then hand it back for you to check and correct. How long that takes depends on the size of your menu and how quickly we can settle the details with you. Once it is live you are in control, and every change you make after that appears instantly. There is a ${PRICE.trialDays}-day free trial and no card is needed to start.`
 			},
 			{
 				q: 'Do I need to be technical to use it?',
@@ -22,7 +22,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
 			},
 			{
 				q: 'What do you need from me to build the first menu?',
-				a: 'Your current menu in any form — a PDF, a photo of the printed card, or a spreadsheet — plus your logo and a cover photo of the venue. Dish photos are optional at the start and can be added item by item afterwards.'
+				a: 'Your current menu in any form — a PDF, a photo of the printed card, or a spreadsheet — plus your logo and a cover photo of the venue. Dish photos are optional at the start and can be added item by item afterwards. Expect a little back and forth while we check prices and spellings with you — that is normal, and it is how the menu ends up right.'
 			},
 			{
 				q: 'Can I try it before paying?',

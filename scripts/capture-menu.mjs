@@ -52,6 +52,17 @@ await shoot('landing')
 console.log('menu + sections')
 await page.goto(`${BASE}/qr-menu/menu?${Q}`, { waitUntil: 'domcontentloaded', timeout: 60000 })
 await settle()
+// The first section (Breakfast) has no item descriptions, so the top of the
+// menu screenshots as a column of names against a lot of empty white. Jump to
+// a section whose items are written out properly.
+const chip = await page.$('button:text-is("Croissant")')
+if (chip) {
+	await chip.click()
+	await page.waitForTimeout(1600)
+	// Nudge back up so the section heading stays in frame above the items.
+	await page.evaluate(() => window.scrollBy(0, -90))
+	await page.waitForTimeout(700)
+}
 await shoot('menu-sections')
 
 console.log('meal-type filter')
@@ -81,15 +92,16 @@ await page.waitForTimeout(1400)
 await shoot('language-switch')
 
 console.log('item detail')
-await page.goto(`${BASE}/qr-menu/menu?${Q}`, { waitUntil: 'domcontentloaded', timeout: 60000 })
-await settle(2000)
-const link = await page.$('a[href*="/qr-menu/meal/"]')
-if (link) {
-	await link.click()
-	await page.waitForLoadState('domcontentloaded')
-	await settle(2000)
-	await shoot('item-detail')
-}
+// Picked deliberately: Kalita carries a full description AND four priced
+// sizes, so the shot demonstrates portions rather than a bare name and number.
+// scripts/probe-meals.mjs ranks every dish if this one ever disappears.
+const MEAL = 'ZEeWPMd9iuwJYIfSh2Jb'
+await page.goto(`${BASE}/qr-menu/meal/${MEAL}?${Q}`, {
+	waitUntil: 'domcontentloaded',
+	timeout: 60000
+})
+await settle(2200)
+await shoot('item-detail')
 
 await browser.close()
 console.log('done')

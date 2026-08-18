@@ -111,7 +111,12 @@ body {
 }
 
 /* Anton only ships uppercase-optimised metrics and is always set in caps here,
-   so the tracking is tightened once, globally, rather than per heading. */
+   so the tracking is tightened once, globally, rather than per heading.
+
+   Anton is CONDENSED: it reads well from roughly 20px up and collapses into a
+   dense stripe below that. Use it for display type only. Anything small and
+   capitalised — eyebrows, stickers, column headers — uses the `label` utility
+   below instead. */
 .font-display,
 h1,
 h2,
@@ -121,6 +126,16 @@ h3 {
 	text-transform: uppercase;
 	letter-spacing: -0.015em;
 	text-wrap: balance;
+}
+
+/* Small capitalised labels. Afacad bold with OPEN tracking — positive letter
+   spacing is what makes caps legible at 13-15px, where Anton's negative
+   tracking does the opposite. */
+@utility label {
+	font-family: var(--font-sans);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.09em;
 }
 
 /* The header floats over content, so in-page anchors need clearance. */

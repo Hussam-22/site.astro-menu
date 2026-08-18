@@ -12,13 +12,13 @@ interface Props {
 
 const {
 	title = 'Put your menu on every phone that walks in',
-	body = `Build it today, print the code tonight. ${PRICE.trialDays} days free, no card, cancel from the dashboard.`,
+	body = `Send us the menu you have now and we will build the first version for you. ${PRICE.trialDays} days free, no card, cancel from the dashboard.`,
 	secondaryHref = '/demo',
 	secondaryLabel = 'See a real menu'
 } = Astro.props
 ---
 
-<section class="px-5 lg:px-8">
+<section class="px-5 py-16 lg:px-8 lg:py-20">
 	<div class="bg-ink border-ink relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border-[3px] px-6 py-20 shadow-[8px_8px_0_var(--color-brand)] lg:px-16">
 		<div
 			class="brand-gradient pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full opacity-25 blur-3xl"

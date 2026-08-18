@@ -24,14 +24,14 @@ const tones = {
 }
 
 const sizes = {
-	sm: 'px-3 py-1 text-xs',
-	md: 'px-4 py-1.5 text-sm'
+	sm: 'px-3 py-1 text-xs sm:px-3.5 sm:py-1.5 sm:text-[0.8125rem]',
+	md: 'px-3.5 py-1.5 text-[0.8125rem] sm:px-5 sm:py-2 sm:text-[0.9375rem]'
 }
 ---
 
 <span
 	class:list={[
-		'font-display inline-flex items-center gap-1.5 rounded-full border-[2.5px] whitespace-nowrap',
+		'label inline-flex items-center gap-1.5 rounded-full border-[2.5px] whitespace-nowrap',
 		tones[tone],
 		sizes[size],
 		extra

@@ -21,7 +21,7 @@ const screenshot = (file: string) =>
 	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
 
 const title = 'How it works — from your menu to a QR code'
-const description = `Send your menu in any form and we build the first version free. Brand it, print the code, change it whenever you like. Most menus are live the same day.`
+const description = `Send your menu in any form and we convert it for you by hand. Brand it, print the code, and change it whenever you like — every edit goes live instantly.`
 
 const howTo = {
 	'@context': 'https://schema.org',
@@ -62,7 +62,7 @@ const NEED = [
 					as="h1"
 					eyebrow="How it works"
 					title="From your menu<br />to a QR code"
-					lede="Four steps. Most venues are live the same day, and the only one that takes real effort is the one we can do for you."
+					lede="Four steps. The first one is the only one that takes real work, and it is the one we do for you."
 				/>
 				<div class="mt-8 flex flex-wrap gap-4">
 					<Button href={SITE.signupUrl} size="lg">Start {PRICE.trialDays} days free</Button>
@@ -171,8 +171,8 @@ const NEED = [
 	</Section>
 
 	<CtaBand
-		title="Your menu could be live tonight"
-		body={`Start the ${PRICE.trialDays}-day trial, or send us the menu and we will build the first version for you.`}
+		title="Send us the menu you have now"
+		body={`We will convert it by hand and send it back ready to check. ${PRICE.trialDays} days free, no card.`}
 		secondaryHref="/contact"
 		secondaryLabel="Send us your menu"
 	/>

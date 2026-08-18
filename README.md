@@ -105,8 +105,9 @@ for AI answer engines. `public/robots.txt` allows the major AI crawlers.
 | `scripts/qa.mjs` | Walks every route: console errors, broken images, heading order, overflow, meta lengths, JSON-LD validity |
 | `scripts/qa-mobile.mjs` | The same at 390px, plus minimum font size |
 | `scripts/capture-menu.mjs` | Re-shoots product screenshots from the live menu |
+| `scripts/probe-meals.mjs` | Ranks every dish on the live menu by description length and portion count, to pick the best one for the item-detail shot |
 | `scripts/make-og.mjs` | Regenerates the social share card |
-| `scripts/shoot.mjs` | Full-page screenshot of one route |
+| `scripts/shoot.mjs` | Screenshot one route: `<path> [name] [width] [full\|top\|bottom]` |
 
 Run the dev server first; the QA scripts drive it.
 
