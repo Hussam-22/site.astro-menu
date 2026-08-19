@@ -12,7 +12,7 @@ import { Image } from 'astro:assets'
 import { SITE, PRICE } from '../config/site'
 import { STEPS, DASHBOARD_CONTROLS } from '../data/plan'
 import { crumbSchema } from '../utils/schema'
-import menuManagerShot from '../assets/menu-manager.png'
+import DashboardImage from '../components/ui/DashboardImage.astro'
 
 const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
 	eager: true
@@ -158,15 +158,14 @@ const NEED = [
 					}
 				</div>
 			</div>
-			<div class="overflow-hidden rounded-[1.5rem] border-[3px] border-white">
-				<Image
-					src={menuManagerShot}
-					alt="The Astro-Menu dashboard, showing menu sections, item sizes and prices, and an availability toggle on each dish"
-					widths={[500, 800, 902]}
-					sizes="(min-width:1024px) 45vw, 92vw"
-					class="block h-auto w-full"
-				/>
-			</div>
+			<DashboardImage
+				name="dash-sections"
+				alt="The Astro-Menu dashboard, building a menu: sections added and filled with items and prices"
+				brief="Building a menu: sections added, reordered and filled with items"
+				frame="light"
+				sizes="(min-width:1024px) 45vw, 92vw"
+				widths={[600, 900, 1400]}
+			/>
 		</div>
 	</Section>
 

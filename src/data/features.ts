@@ -1,6 +1,9 @@
 /**
- * /features, grouped. Each group is a section on the page; `screen` names a
- * file in src/assets/screens to illustrate it, or null for a text-only group.
+ * /features, grouped. Each group is a section on the page.
+ *
+ * `screen` names a phone screenshot in src/assets/screens — what the guest
+ * sees. `dash` names an admin screenshot in src/assets/dashboard — what the
+ * owner sees. A group may have either, both, or neither.
  */
 export const FEATURE_GROUPS = [
 	{
@@ -59,6 +62,8 @@ export const FEATURE_GROUPS = [
 	},
 	{
 		id: 'diet',
+		dash: 'dash-meal',
+		dashBrief: 'The meal editor: calories and macro fields, dietary labels, portions',
 		eyebrow: 'Diet & nutrition',
 		title: 'Answer the allergy question before it is asked',
 		lede: 'The information a guest needs to order confidently, attached to the item instead of a laminated sheet behind the till.',
@@ -80,6 +85,8 @@ export const FEATURE_GROUPS = [
 	},
 	{
 		id: 'qr',
+		dash: 'dash-branch',
+		dashBrief: 'Branch settings: cover photo, currency, language and the social links grid',
 		eyebrow: 'Your code & link',
 		title: 'One code. Print it once.',
 		lede: 'The QR points at your menu, not at a file. Change the menu a hundred times and the code on the table still works.',
@@ -109,6 +116,8 @@ export const FEATURE_GROUPS = [
 	},
 	{
 		id: 'dashboard',
+		dash: 'dash-sections',
+		dashBrief: 'A menu being built: sections added, reordered and filled with items',
 		eyebrow: 'What you control',
 		title: 'The whole menu, from your phone',
 		lede: 'Everything a guest sees is a field you own. Nothing needs a designer, a developer or a support ticket.',
@@ -138,6 +147,8 @@ export const FEATURE_GROUPS = [
 	},
 	{
 		id: 'analytics',
+		dash: 'dash-qr',
+		dashBrief: 'The QR panel: total scans, the menu it points at, and the shareable link',
 		eyebrow: 'Evidence',
 		title: 'Find out what the menu is actually doing',
 		lede: 'A printed menu tells you nothing. This one tells you what got opened and what got scrolled past.',

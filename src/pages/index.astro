@@ -17,7 +17,7 @@ import { SITE, PRICE } from '../config/site'
 import { PILLARS, TESTIMONIALS, VERSUS, USE_CASES, SCREENS, RIBBON } from '../data/content'
 import { DASHBOARD_CONTROLS, NOT_INCLUDED } from '../data/plan'
 import { HOME_FAQS, ALL_FAQS } from '../data/faqs'
-import menuManagerShot from '../assets/menu-manager.png'
+import DashboardImage from '../components/ui/DashboardImage.astro'
 
 /** Eagerly loaded so the six real menu screenshots can be looked up by filename. */
 const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
@@ -297,15 +297,14 @@ const schema = [
 				</div>
 			</div>
 
-			<div class="overflow-hidden rounded-[1.75rem] border-[3px] border-white">
-				<Image
-					src={menuManagerShot}
-					alt="The Astro-Menu dashboard: menu sections, each item with its sizes and prices, and an availability toggle on every dish"
-					widths={[600, 900, 1200]}
-					sizes="(min-width:1024px) 45vw, 92vw"
-					class="block h-auto w-full"
-				/>
-			</div>
+			<DashboardImage
+				name="dash-meals"
+				alt="The Astro-Menu meals list: every dish with its photo, portions and prices, and an Active or Disabled toggle on each row"
+				brief="The Meals list: photos, portions, prices, and one dish switched off"
+				frame="light"
+				sizes="(min-width:1024px) 45vw, 92vw"
+				widths={[600, 900, 1400]}
+			/>
 		</div>
 
 		<dl class="mt-16 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">

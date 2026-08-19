@@ -7,6 +7,7 @@ import Sticker from '../components/ui/Sticker.astro'
 import Check from '../components/ui/Check.astro'
 import CtaBand from '../components/ui/CtaBand.astro'
 import Ribbon from '../components/ui/Ribbon.astro'
+import DashboardImage from '../components/ui/DashboardImage.astro'
 import { Image } from 'astro:assets'
 import { SITE, PRICE } from '../config/site'
 import { FEATURE_GROUPS } from '../data/features'
@@ -98,6 +99,19 @@ const description = `Photos on every dish, portions and prices, automatic transl
 						</div>
 					)}
 				</div>
+
+				{group.dash && (
+					<div class="mx-auto mt-14 max-w-5xl">
+						<p class="label text-brand-text mb-4 text-sm">What you see in the dashboard</p>
+						<DashboardImage
+							name={group.dash}
+							alt={`The Astro-Menu dashboard — ${group.dashBrief}`}
+							brief={group.dashBrief}
+							sizes="(min-width:1024px) 900px, 92vw"
+							widths={[600, 900, 1400]}
+						/>
+					</div>
+				)}
 			</Section>
 		))
 	}

@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets'
+
+/**
+ * Renders an admin-dashboard screenshot if one has been dropped into
+ * src/assets/dashboard, otherwise a designed placeholder carrying the brief.
+ *
+ * Same contract as FoodImage: the slot is resolved by filename stem, so saving
+ * `dash-meals.png` fills the `dash-meals` slot with no code change. See
+ * src/assets/dashboard/README.md for the five slots and what each must show.
+ *
+ * Dashboard shots are wide and full of small UI, so unlike FoodImage they are
+ * framed in browser chrome — it reads as "this is software" at a glance and
+ * stops a screenshot from looking like a stray rectangle on the page.
+ */
+const shots = import.meta.glob<{ default: ImageMetadata }>(
+	'../../assets/dashboard/*.{png,jpg,jpeg,webp,avif}',
+	{ eager: true }
+)
+
+const bank = new Map<string, ImageMetadata>()
+for (const [path, mod] of Object.entries(shots)) {
+	const stem = path.split('/').pop()!.replace(/\.[^.]+$/, '')
+	bank.set(stem, mod.default)
+}
+
+interface Props {
+	/** Filename stem in src/assets/dashboard, e.g. "dash-meals". */
+	name: string
+	alt: string
+	/** Shown on the placeholder only. */
+	brief?: string
+	/** Chrome colour. Use "light" on the ink band so the frame stays visible. */
+	frame?: 'ink' | 'light'
+	priority?: boolean
+	class?: string
+	sizes?: string
+	widths?: number[]
+}
+
+const {
+	name,
+	alt,
+	brief,
+	frame = 'ink',
+	priority = false,
+	class: extra = '',
+	sizes = '(min-width: 1024px) 50vw, 92vw',
+	widths = [600, 900, 1400]
+} = Astro.props
+
+const found = bank.get(name)
+const border = frame === 'light' ? 'border-white' : 'border-ink'
+const bar = frame === 'light' ? 'bg-white/15 border-white' : 'bg-paper-2 border-ink'
+const dot = frame === 'light' ? 'bg-white/50' : 'bg-ink/25'
+---
+
+<figure class:list={['overflow-hidden rounded-[1.25rem] border-[3px]', border, extra]}>
+	<div class:list={['flex items-center gap-1.5 border-b-[3px] px-4 py-2.5', bar]}>
+		{[0, 1, 2].map(() => <span class:list={['h-2.5 w-2.5 rounded-full', dot]} />)}
+	</div>
+	{
+		found ? (
+			<Image
+				src={found}
+				alt={alt}
+				widths={widths}
+				sizes={sizes}
+				loading={priority ? 'eager' : 'lazy'}
+				fetchpriority={priority ? 'high' : 'auto'}
+				class="block h-auto w-full"
+			/>
+		) : (
+			<div
+				class="relative flex flex-col justify-end bg-[linear-gradient(150deg,#1a1613,#4a3d33)] p-5 text-white"
+				style="aspect-ratio:16/10"
+				role="img"
+				aria-label={alt}
+			>
+				<div
+					class="pointer-events-none absolute inset-0 opacity-[0.16]"
+					style="background:repeating-linear-gradient(45deg,#fff 0 10px,transparent 10px 20px)"
+					aria-hidden="true"
+				/>
+				<p class="relative font-mono text-[11px] font-bold tracking-[0.14em] uppercase opacity-80">
+					{name}
+				</p>
+				{brief && <p class="relative mt-1 text-base leading-snug font-bold">{brief}</p>}
+			</div>
+		)
+	}
+</figure>
