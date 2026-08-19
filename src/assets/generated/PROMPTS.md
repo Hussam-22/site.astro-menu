@@ -6,6 +6,20 @@ changes — `FoodImage.astro` resolves each slot by filename stem, so saving
 `owner.webp` fills the `owner` slot. Until a file exists the site renders a
 captioned placeholder, so it is never broken mid-shoot.
 
+## Status
+
+Eleven of the sixteen slots are filled. `scripts/prep-photos.mjs` maps each
+generated file to its slot, crops it to that slot's exact aspect ratio and
+re-encodes to WebP — the raw output is 2-3MB per image and the ratios do not all
+match, so it is not committed as-is.
+
+| Filled | Still empty |
+| --- | --- |
+| `hero-cut`, `hero-float`, `owner`, `staff`, `guests`, `uc-cafe`, `uc-truck`, `uc-hotel`, `uc-bakery`, `uc-clinic`, `uc-lounge` | `faq-flatlay`, `onboarding`, `contact`, and the three testimonial avatars |
+
+The empty ones still render captioned placeholders, so nothing is broken. Their
+prompts are below, unchanged.
+
 ## Using Nano Banana
 
 Nano Banana is Gemini 2.5 Flash Image, in the [Gemini app](https://gemini.google.com)
