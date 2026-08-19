@@ -1,96 +1,235 @@
-# Image slots and generation prompts
+# Image slots — Gemini "Nano Banana" prompts
 
-Drop finished images in **this folder**. `FoodImage.astro` picks them up by
-filename stem — save `owner.webp` and the `owner` slot fills itself. No code
-changes, no imports to add. Until a file exists the site renders a captioned
-placeholder, so nothing ever looks broken.
+Sixteen empty slots. Each prompt below is complete and standalone: copy one,
+paste it, generate, save the file here under the slot name. Nothing in the code
+changes — `FoodImage.astro` resolves each slot by filename stem, so saving
+`owner.webp` fills the `owner` slot. Until a file exists the site renders a
+captioned placeholder, so it is never broken mid-shoot.
 
-**Format:** WebP or JPG. **Never PNG** for photographs — a photo saved as PNG is
-roughly ten times the bytes for no visible gain. Astro re-encodes and resizes on
-build, so upload generously sized originals and let the build shrink them.
+## Using Nano Banana
+
+Nano Banana is Gemini 2.5 Flash Image, in the [Gemini app](https://gemini.google.com)
+or [AI Studio](https://aistudio.google.com). Two things about it shape how these
+prompts are written:
+
+**It wants prose, not tags.** Midjourney-style keyword soup with `--ar 16:9
+--style raw` flags does nothing here — the flags land as literal text in the
+prompt and the keywords give it less to work with than a sentence does. Every
+prompt below is a described scene.
+
+**It edits conversationally.** Do not re-roll from scratch when something is
+close. Reply to the image: "warmer light", "lose the sign on the back wall",
+"same shot but she is looking away from camera". That is where it beats other
+models, so spend your effort there.
+
+**Aspect ratio.** Set it in AI Studio, or add "Generate this as a 16:9 image" to
+the prompt in the app. Each slot's target is listed. Exact is nice but not
+critical — the CSS crops to fill, so keep the subject centred and it will
+survive a mismatch.
+
+**Consistency.** The three pillar shots sit in one row and must feel like one
+shoot. Generate `owner` first, then start the next two with: *"Same photographic
+style, lighting and colour grade as the previous image."*
+
+**Save as WebP or JPG. Never PNG** — a photo saved as PNG is roughly ten times
+the bytes for no visible gain. Generate large; the build resizes and re-encodes.
 
 ---
 
-## House style — paste this in front of every prompt
+## Hero
 
-> Editorial food-and-people photography for a hospitality brand. Warm natural
-> daylight, shallow depth of field, candid documentary feel — real working
-> venues, not a studio. Warm cream and off-white surfaces (#FDF6EC). Accents of
-> warm orange (#FF8904) and coral pink (#FF637E) appear naturally in props,
-> clothing or packaging — never as a filter over the whole frame. Middle
-> Eastern and international mix of people, Gulf café culture, Dubai and Al Ain.
-> Genuine unposed expressions; nobody grinning at the lens like stock
-> photography. No text, no logos, no watermarks, no visible brand names, no
-> distorted hands, no extra fingers.
+### `hero-cut` — 1:1
 
-Then add the per-slot prompt below.
+This one is cropped into a circle inside a giant headline, at roughly 120px. It
+must read instantly at thumbnail size, so it needs one clear subject, strong
+colour, and nothing important near the edges.
+
+> A tight overhead photograph of a single flat white coffee in a white ceramic
+> cup, filling almost the entire square frame, shot from directly above. The
+> latte art rosetta is crisp and centred. Warm natural daylight from the left
+> throws a soft shadow to the right. The cup sits on a warm cream surface. Rich
+> contrast, appetising, editorial food photography. The cup is centred with a
+> little breathing room on all four sides. No text, no logos, no watermarks, no
+> hands, no cutlery.
+
+If the coffee feels too quiet next to the headline, try the same prompt with
+*shakshuka in a small copper pan* — more colour, same composition.
+
+### `hero-float` — 4:3
+
+Sits tilted at the corner of the phone mockup, so it wants a flat background it
+can be cut against rather than a busy scene.
+
+> A pair of hands holding a tall loaded cheeseburger up towards the camera, just
+> before the first bite, photographed against a completely flat solid orange
+> background the colour of #FF8904. Studio product lighting, crisp edges, sharp
+> focus on the burger. Sesame bun, melted cheese, fresh lettuce and tomato
+> visible. The mood is playful and appetising, slightly energetic, as if caught
+> mid-motion. Natural relaxed hands with correct anatomy. No text, no logos, no
+> watermarks, no background detail of any kind.
 
 ---
 
-## Slot list
+## The three pillars — "everybody at the table wins"
 
-Aspect ratios are what the layout expects. Generating at a different ratio is
-fine — the CSS crops to fill — but you lose control of what gets cut.
+These carry the emotional argument of the whole page: the owner stops
+reprinting, the staff stop apologising, the guest stops squinting. Each is a
+different person and each is genuinely happy. Generate `owner` first and ask for
+the other two in the same style.
 
-### Hero
+### `owner` — 16:9
 
-| Slot | Ratio | Prompt |
-| --- | --- | --- |
-| `hero-cut` | 1:1 | Extreme close-up of one beautiful dish from directly above, filling the whole square — a flat white with latte art, or shakshuka in a copper pan. It is cropped into a circle inside a giant headline, so keep the subject dead centre and leave no important detail near the edges. Rich colour, high contrast against a plain background. |
-| `hero-float` | 4:3 | Two hands holding a loaded burger just before the first bite, cut out cleanly and floating on a flat warm-orange background. Playful and appetising, slightly tilted energy. Product-shot lighting, crisp edges. |
+> A candid photograph of a café owner in her thirties standing behind a counter
+> in her own coffee shop, holding a phone in one hand and laughing at something
+> just off camera. Behind her, a chrome espresso machine and a glass case of
+> pastries, softly out of focus. Warm morning light comes through a large window
+> to her left. She looks relaxed and in control of her own business, not posing
+> for a photographer. Shot on a 50mm lens at a wide aperture, shallow depth of
+> field, warm natural colour grade, documentary style. No text, no logos, no
+> watermarks, no visible brand names.
 
-### The three pillars — "everybody at the table wins"
+### `staff` — 16:9
 
-These carry the emotional argument. Each is a different person, genuinely happy.
+> Same photographic style, lighting and colour grade as the previous image. A
+> candid photograph of a barista mid-service, one hand on the steam wand of an
+> espresso machine, laughing with a colleague who is out of frame. There is a
+> sense of movement and warmth — a good shift, not a stressful one. Café
+> interior softly blurred behind him. Warm daylight, shallow depth of field,
+> documentary style. No text, no logos, no watermarks, no visible brand names.
 
-| Slot | Ratio | Prompt |
-| --- | --- | --- |
-| `owner` | 16:10 | A café owner in their thirties standing behind the counter, holding a phone, laughing at something off-camera. Espresso machine and pastry case behind them, warm morning light through a window. Relaxed and in control, not performing for the camera. |
-| `staff` | 16:10 | A barista mid-service, steam wand in one hand, laughing with a colleague out of frame. Motion and warmth, a genuinely good shift rather than a stressful one. Shallow depth of field, café interior softly blurred behind. |
-| `guests` | 16:10 | Two friends at a café table, one holding a phone up to scan a small QR code on a table tent, both smiling at what has just appeared on screen. Coffee and a shared plate on the table. Natural window light. |
+### `guests` — 16:9
 
-### Use cases
+> Same photographic style, lighting and colour grade as the previous image. Two
+> friends sitting at a café table, one holding up a phone to scan a small QR
+> code on a wooden table tent, both smiling at what has just appeared on the
+> screen. Coffee cups and a shared plate of food on the table between them.
+> Natural window light from the side. Candid and unposed, mid-conversation.
+> Shallow depth of field, warm colour grade. No text on the table tent, no
+> readable text anywhere, no logos, no watermarks.
 
-| Slot | Ratio | Prompt |
-| --- | --- | --- |
-| `uc-cafe` | 5:4 | Busy speciality café floor at mid-morning, shot low across a table with a small QR table tent sharp in the foreground and the room warm and out of focus behind. |
-| `uc-truck` | 5:4 | A coffee truck serving hatch in evening light, owner leaning out to hand over a cup, a QR sticker on the counter edge. String lights, dusk sky. |
-| `uc-hotel` | 5:4 | A hotel room breakfast card resting on crisp white bedding beside a phone showing a menu, morning light from a balcony door. Calm, upscale, uncluttered. |
-| `uc-bakery` | 5:4 | A bakery counter loaded with croissants and pastries, a hand reaching into frame holding a phone. Golden crusts, warm interior light. |
-| `uc-clinic` | 5:4 | A bright modern staff canteen counter with a tray of clearly labelled healthy dishes, clean surfaces, cool daylight — calmer and more clinical than the café shots. |
-| `uc-lounge` | 5:4 | A low evening lounge table with cushions and mezze plates, a phone glowing with a menu. Moody warm lighting, relaxed late-night mood. |
+---
 
-### Testimonial avatars
+## Use cases — 5:4 each
 
-Square portraits, cropped to a circle at 56px, so faces must be large in frame.
+Six tiles in a grid. They should feel like one set, so keep the same warm
+daylight treatment across all six.
 
-| Slot | Ratio | Prompt |
-| --- | --- | --- |
-| `avatar-saeed` | 1:1 | Head-and-shoulders portrait of a man in his thirties, speciality coffee shop blurred behind, warm and approachable, natural light. |
-| `avatar-mayed` | 1:1 | Head-and-shoulders portrait of a man in his late twenties beside a coffee truck, daylight, friendly and casual. |
-| `avatar-ahmed` | 1:1 | Head-and-shoulders portrait of a man in his forties in a bright modern café, calm and confident. |
+### `uc-cafe`
 
-> **A note worth taking seriously.** These three are real named customers who
-> gave you real testimonials. An AI-generated face presented as a real person's
-> photograph is a misrepresentation, and it is the kind of thing that damages
-> trust badly if noticed. Ask Saeed, Mayed and Ahmed for a real photo, or leave
-> these three slots empty — the layout is fine without them, and the placeholder
-> reads as a neutral avatar rather than a fake person.
+> A busy speciality café at mid-morning, photographed low across a wooden table.
+> A small QR code table tent stands sharp in the foreground on the left, while
+> the room behind — customers, counter, warm interior — falls away into soft
+> focus. Warm natural daylight, shallow depth of field, documentary style. No
+> readable text on the table tent, no logos, no watermarks.
 
-### Supporting
+### `uc-truck`
 
-| Slot | Ratio | Prompt |
-| --- | --- | --- |
-| `faq-flatlay` | 4:3 | Overhead flat-lay on a warm cream table: a flat white, a croissant on a small plate, and a phone showing a food menu. Neat, generous negative space, soft daylight from one side. |
-| `onboarding` | 4:3 | A restaurant owner photographing their printed paper menu with a phone, standing at a counter. Shows the "just send us what you have" idea in one frame. |
-| `contact` | 4:5 | A café owner sitting at a table with a laptop and a coffee, mid-afternoon light, unhurried and content. Portrait orientation. |
+> A coffee truck serving hatch photographed in golden evening light, the owner
+> leaning out to hand a takeaway cup to a customer. A small QR code sticker is
+> visible on the counter edge of the hatch. Warm string lights above, dusk sky
+> behind. Candid, friendly, documentary style, shallow depth of field. No
+> readable text, no logos, no watermarks, no brand names on the truck.
+
+### `uc-hotel`
+
+> A hotel room breakfast card resting on crisp white bedding beside a
+> smartphone, photographed in soft morning light from a balcony door. The room
+> is upscale, calm and uncluttered — pale linen, a corner of a wooden
+> nightstand. Shot from slightly above at an angle. Quiet, premium, restrained
+> colour. No readable text on the card or the phone, no logos, no watermarks.
+
+### `uc-bakery`
+
+> A bakery counter loaded with golden croissants and pastries in trays,
+> photographed from just above counter height. A hand reaches into the frame
+> from the right holding a phone. Warm interior lighting, golden crusts, rich
+> texture and shallow depth of field. Appetising and abundant. No readable text
+> on the phone, no logos, no watermarks, no price labels.
+
+### `uc-clinic`
+
+> A bright modern staff canteen counter with a tray of clearly labelled healthy
+> dishes — grain bowls, salads, fruit. Clean pale surfaces, cool even daylight
+> from large windows. Calmer and more clinical than a café: orderly, hygienic,
+> uncluttered. Shot straight on at counter height, moderate depth of field. No
+> readable text on the labels, no logos, no watermarks.
+
+### `uc-lounge`
+
+> A low evening lounge table surrounded by cushions, spread with small mezze
+> plates, with a smartphone glowing softly on the table. Moody warm lighting
+> from lamps overhead, deep shadows, relaxed late-night atmosphere. Shot from
+> above at an angle. Rich warm colour, shallow depth of field. No readable text
+> on the phone, no logos, no watermarks.
+
+---
+
+## Testimonial avatars — 1:1
+
+**Read this before generating these three.**
+
+Saeed, Mayed and Ahmed are real named customers who gave you real testimonials.
+An AI-generated face presented as a real person's photograph is a
+misrepresentation, and it is the kind of thing that costs a lot of trust if
+anyone notices. Ask the three of them for a real photo, or leave these slots
+empty — the layout is fine without them and the placeholder reads as a neutral
+avatar rather than a fabricated person.
+
+If you do generate them, use them as generic illustrative avatars and do not
+attach real names to invented faces.
+
+The prompts, should you have permission and want a consistent crop: these are
+cropped to a circle at 56px, so the face must be large in frame and centred.
+
+> A natural head-and-shoulders portrait of a man in his thirties, photographed
+> in a speciality coffee shop with the interior blurred warmly behind him. Warm
+> approachable expression, natural window light from the side. The face fills
+> most of the frame and is centred, with a little space above the head. Shot on
+> an 85mm lens at a wide aperture, documentary portrait style. No text, no
+> logos, no watermarks.
+
+Vary the second and third by setting and age: *beside a coffee truck in
+daylight, late twenties, friendly and casual*; *in a bright modern café, forties,
+calm and confident*.
+
+---
+
+## Supporting
+
+### `faq-flatlay` — 4:3
+
+> A neat overhead flat-lay on a warm cream table: a flat white coffee in a white
+> cup, a croissant on a small plate, and a smartphone lying beside them. Soft
+> daylight from one side casting gentle shadows. Generous empty space around the
+> objects, calm and uncluttered, styled but not fussy. Shot straight down. No
+> readable text on the phone screen, no logos, no watermarks.
+
+### `onboarding` — 4:3
+
+This one has a job: it shows "just send us whatever you have" in a single frame.
+
+> A restaurant owner standing at a counter photographing his own printed paper
+> menu with a smartphone, holding the phone above the menu to capture it. The
+> printed menu is a plain folded card on the counter. Warm daylight from a
+> window, café interior soft behind him. Candid and practical, documentary
+> style, shallow depth of field. No readable text on the menu or the phone, no
+> logos, no watermarks.
+
+### `contact` — 4:5 (portrait)
+
+> A portrait-orientation photograph of a café owner sitting at a table with an
+> open laptop and a cup of coffee, mid-afternoon light falling across the table
+> from a window. She looks unhurried and content, glancing down at the screen.
+> The café is warm and quiet behind her, softly out of focus. Vertical
+> composition with room above her head. Natural colour grade, shallow depth of
+> field. No readable text on the laptop screen, no logos, no watermarks.
 
 ---
 
 ## After generating
 
-1. Save as `<slot>.webp` in this folder.
+1. Save as `<slot>.webp` (or `.jpg`) in this folder — `owner.webp`, `uc-cafe.webp`, and so on.
 2. `npm run build` — Astro resizes and re-encodes automatically.
-3. Run `node scripts/qa.mjs` with the dev server up to confirm nothing broke.
+3. With the dev server running, `node scripts/qa.mjs` to confirm nothing broke.
 
-Slots you do not fill keep their placeholder. Filling them in any order is fine.
+Fill them in any order. Every slot you skip keeps its placeholder.
