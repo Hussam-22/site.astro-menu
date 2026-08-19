@@ -1,40 +1,51 @@
 # Admin dashboard screenshots
 
-Five slots. `DashboardImage.astro` resolves each by filename stem, so saving
-`dash-meals.png` here fills the `dash-meals` slot with no code change. Until a
-file exists the site renders a captioned placeholder in browser chrome, so
-nothing looks broken.
+Five slots, all filled. `DashboardImage.astro` resolves each by filename stem,
+so replacing `dash-meals.png` here changes the site with no code edit. If a file
+is ever removed the slot falls back to a captioned placeholder rather than
+breaking.
 
-PNG is fine here — these are UI screenshots with flat colour and text, which is
-exactly what PNG is good at. Astro converts to WebP on build anyway.
-
-Take them at a wide desktop width (1600px+) with the sidebar expanded.
-
-| Slot | What it must show | Used on |
+| Slot | Shows | Used on |
 | --- | --- | --- |
-| `dash-meals` | The **Meals** list: search box, rows of dishes with photo, portions and prices, and the Active/Disable column with at least one item **Disabled** | Home, the dark "what you control" band |
-| `dash-sections` | A menu's **Meals and Sections** tab: the Add Section field and a section such as Breakfast with its items and the section action icons | `/features` → dashboard, `/how-it-works` |
-| `dash-meal` | A single meal's **Menu Info**: title, description, the Carbohydrates / Calories / Protein / Fat fields, Meal Labels with some selected, and Portions with a price | `/features` → diet |
-| `dash-branch` | A branch's **Branches info** tab: branch name, currency, default language, cover photo, and the Social Links grid | `/features` → QR & links |
-| `dash-qr` | A branch's **Social QR** tab: Total Scans, the menu selector, the QR code and the menu link | `/features` → analytics |
+| `dash-meals` | The Meals list, cropped to the rows around **V60 geisha — Disabled** | Home, the dark "what you control" band |
+| `dash-sections` | A menu's Meals and Sections tab: Add Section, and Breakfast with its items | `/features` → dashboard, `/how-it-works` |
+| `dash-meal` | One meal's editor: description, macro fields, meal labels, portions | `/features` → diet |
+| `dash-branch` | Branch settings and the Social Links grid | `/features` → QR & links |
+| `dash-qr` | The Social QR tab: total scans, menu selector, QR code and link | `/features` → analytics |
 
-## Redact before saving `dash-branch`
+## Regenerating
 
-That screen carries a real customer's private contact details. On the shot taken
-from the Number Eight branch that is:
+The files here are derived, not raw captures. `scripts/prep-dashboard.mjs`
+crops and redacts the originals:
 
-- **Contact Email** — `numbereight5440@gmail.com`
-- **Contact Number** — `0565956180`
-- **WhatsApp Number** — `565956180`
+```bash
+node scripts/prep-dashboard.mjs
+```
 
-Publishing those on a public marketing site exposes a customer's personal
-contact information, and it is the sort of thing that is very hard to walk back
-once it is indexed. Blur or overwrite all three fields before saving the file
-here, or retake the shot on a test branch with dummy details.
+It reads from a folder outside the repo, so update the `SRC` path in that script
+if the originals move. Three things it does that matter:
 
-The Instagram, Google Review and Location Map links on the same screen are
-already public, so they can stay — they are good evidence that the social links
-are real.
+**`dash-branch` is redacted.** That screen carries a real customer's contact
+email, phone number and WhatsApp number. Publishing those on a public marketing
+site would expose personal contact details to indexing. The three field
+interiors are crushed to a handful of pixels and blown back up before being
+blurred, so the original text is not recoverable — a plain blur over text can be
+partially reversed, which is not good enough for someone's phone number. The
+field *labels* are left readable, so the screenshot still shows what the fields
+are. Everything else on that screen — branch name, currency, language, and the
+Instagram, Google Review and Maps links — is already public and stays.
 
-Nothing else in the five needs redacting. The branch and meal IDs in the
-breadcrumbs are already public in the demo menu URL.
+**`dash-meals` is cropped, not resized.** The source is 1753x1928, far too tall
+for the layout, and the one row that proves the sold-out claim sits near the
+bottom. The crop takes a landscape window around that row and drops the left
+gutter, which is blank at that scroll depth.
+
+**`dash-qr` is trimmed.** Only the top two thirds of that screen has content.
+
+## Replacing one
+
+PNG is right for these — flat colour and text is what PNG is good at, and Astro
+converts to WebP on build. Capture at 1600px or wider with the sidebar expanded.
+
+Check any new screenshot for customer data before committing it: contact
+details, real names, anything in a Business Profile or Subscription screen.
