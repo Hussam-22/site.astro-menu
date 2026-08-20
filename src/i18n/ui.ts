@@ -65,5 +65,6 @@ export function useTranslations(lang: Lang) {
 
 /** Prefixes a root-relative path with the locale, e.g. "/pricing" -> "/ar/pricing". */
 export function localizePath(path: string, lang: Lang): string {
-	return lang === DEFAULT_LANG ? path : `/ar${path}`
+	if (lang === DEFAULT_LANG) return path
+	return path === '/' ? '/ar' : `/ar${path}`
 }

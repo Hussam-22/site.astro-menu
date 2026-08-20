@@ -7,7 +7,8 @@ const here = Astro.url.pathname.replace(/\/$/, '') || '/'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const home = lang === 'ar' ? '/ar' : '/'
-const switchHref = lang === 'ar' ? here.replace(/^\/ar(\/|$)/, '/') || '/' : `/ar${here}`
+const switchHref =
+	lang === 'ar' ? here.replace(/^\/ar(\/|$)/, '/') || '/' : here === '/' ? '/ar' : `/ar${here}`
 
 const navLabels: Record<string, string> = {
 	'/features': t('nav.features'),
