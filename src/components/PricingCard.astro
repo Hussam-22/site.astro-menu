@@ -34,18 +34,21 @@ const list = compact ? fullList.slice(0, 8) : fullList
 		<label
 			class="border-ink bg-card relative inline-flex cursor-pointer items-center rounded-full border-[2.5px] p-1.5 shadow-[4px_4px_0_var(--color-ink)]"
 		>
-			<input type="checkbox" class="peer sr-only" id="billing-toggle" />
+			<input type="checkbox" class="sr-only" id="billing-toggle" />
 			<span class="sr-only">{isAr ? 'إظهار السعر السنوي' : 'Show yearly pricing'}</span>
 			<span
-				class="bg-ink absolute top-1.5 bottom-1.5 start-1.5 w-[calc(50%-0.375rem)] rounded-full transition-transform duration-300 ease-out ltr:peer-checked:translate-x-full rtl:peer-checked:-translate-x-full"
+				data-thumb
+				class="bg-ink absolute top-1.5 bottom-1.5 start-1.5 w-[calc(50%-0.375rem)] rounded-full transition-transform duration-300 ease-out"
 				aria-hidden="true"></span>
 			<span
-				class="label text-white peer-checked:text-ink relative z-10 w-32 py-2.5 text-center text-base transition-colors sm:w-36"
+				data-period-label="monthly"
+				class="label relative z-10 w-32 py-2.5 text-center text-base transition-colors sm:w-36"
 			>
 				{isAr ? 'شهري' : 'Monthly'}
 			</span>
 			<span
-				class="label text-ink peer-checked:text-white relative z-10 w-32 py-2.5 text-center text-base transition-colors sm:w-36"
+				data-period-label="annual"
+				class="label relative z-10 w-32 py-2.5 text-center text-base transition-colors sm:w-36"
 			>
 				{isAr ? 'سنوي' : 'Yearly'}
 			</span>
@@ -134,10 +137,18 @@ const list = compact ? fullList.slice(0, 8) : fullList
 
 <style>
 	/*
-		:has() on the plan container rather than peer-* on the input, because the
-		price panels are not siblings of the checkbox — they sit in a different
-		branch of the tree. Monthly is the default so the page is correct even in
-		the instant before CSS applies.
+		:has() throughout, including for the toggle thumb and label colours below
+		— NOT peer-checked:, which turned out to be unreliable here: Tailwind v4
+		implements peer-* with a relative selector nested in :is(), and this
+		project's target browsers do not consistently re-run style recalculation
+		for that pattern when the peer's :checked state changes (Element.matches()
+		confirms the selector, the computed style does not). :has() on an ancestor
+		is the well-supported, invalidation-safe way to express the same thing.
+
+		:has() on the plan container rather than on the label, because the price
+		panels are not siblings of the checkbox — they sit in a different branch
+		of the tree. Monthly is the default so the page is correct even in the
+		instant before CSS applies.
 	*/
 	.plan [data-bill='annual'] {
 		display: none;
@@ -148,4 +159,45 @@ const list = compact ? fullList.slice(0, 8) : fullList
 	.plan:has(#billing-toggle:checked) [data-bill='annual'] {
 		display: block;
 	}
+
+	/* Base (monthly) position/colour. The checked state is applied as inline
+	   styles by the script below rather than through a CSS selector — see the
+	   comment there for why. */
+	.plan [data-thumb] {
+		transform: translateX(0);
+	}
+	.plan [data-period-label='monthly'] {
+		color: var(--color-white);
+	}
+	.plan [data-period-label='annual'] {
+		color: var(--color-ink);
+	}
 </style>
+
+<script>
+	// The thumb slide and label colour swap are set as inline styles rather
+	// than through a CSS class/selector (:has(), peer-checked:, or a plain
+	// toggled class all had the same failure mode in testing: the selector
+	// matched and the cascade value resolved correctly, but the transitioned
+	// property never actually repainted). Inline styles set directly on the
+	// element sidestep selector matching and cascade entirely, which is the
+	// only approach that was reliable. The untransitioned [data-bill] display
+	// swap above is unaffected and stays CSS-only via :has().
+	document.querySelectorAll<HTMLElement>('.plan').forEach((plan) => {
+		const checkbox = plan.querySelector<HTMLInputElement>('#billing-toggle')
+		const thumb = plan.querySelector<HTMLElement>('[data-thumb]')
+		const monthlyLabel = plan.querySelector<HTMLElement>('[data-period-label="monthly"]')
+		const annualLabel = plan.querySelector<HTMLElement>('[data-period-label="annual"]')
+		if (!checkbox || !thumb) return
+
+		const sync = () => {
+			const annual = checkbox.checked
+			const rtl = document.documentElement.dir === 'rtl'
+			thumb.style.transform = annual ? `translateX(${rtl ? '-' : ''}100%)` : 'translateX(0)'
+			monthlyLabel?.style.setProperty('color', annual ? 'var(--color-ink)' : 'var(--color-white)')
+			annualLabel?.style.setProperty('color', annual ? 'var(--color-white)' : 'var(--color-ink)')
+		}
+		checkbox.addEventListener('change', sync)
+		sync()
+	})
+</script>
