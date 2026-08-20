@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import SectionHead from '../../components/ui/SectionHead.astro'
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
+import PricingCard from '../../components/PricingCard.astro'
+import Cross from '../../components/ui/Cross.astro'
+import Check from '../../components/ui/Check.astro'
+import FaqList from '../../components/ui/FaqList.astro'
+import CtaBand from '../../components/ui/CtaBand.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import { SITE, PRICE, PLAN } from '../../config/site'
+import { NOT_INCLUDED } from '../../data/plan'
+import { FAQ_GROUPS } from '../../data/faqs'
+import { crumbSchema, faqSchema } from '../../utils/schema'
+
+const pricingGroup = FAQ_GROUPS.find((g) => g.heading === 'Pricing')!
+const pricingFaqs = pricingGroup.items.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
+
+const title = `الأسعار — ${PRICE.monthly} شهريًا، باقة واحدة`
+const description = `${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا (${PRICE.annualTotal}). قوائم وأصناف ومشاهدات غير محدودة. بلا رسوم إعداد، بلا عمولة، بلا عقد.`
+
+const product = {
+	'@context': 'https://schema.org',
+	'@type': 'Product',
+	name: 'Astro-Menu',
+	description: SITE.description,
+	brand: { '@type': 'Brand', name: 'Astro-Menu' },
+	offers: [
+		{
+			'@type': 'Offer',
+			name: 'شهري',
+			price: String(PRICE.monthlyAmount),
+			priceCurrency: 'USD',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock'
+		},
+		{
+			'@type': 'Offer',
+			name: 'سنوي',
+			price: String(PRICE.annualTotalAmount),
+			priceCurrency: 'USD',
+			url: `${SITE.domain}/pricing`,
+			availability: 'https://schema.org/InStock'
+		}
+	]
+}
+
+const PRINT_RUNS_PER_YEAR = 3
+const PRINT_COST_PER_RUN = 90
+const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
+---
+
+<Layout
+	title={title}
+	description={description}
+	path="/ar/pricing"
+	schema={[
+		crumbSchema([{ name: 'الأسعار', path: '/ar/pricing' }]),
+		product,
+		faqSchema(pricingFaqs)
+	]}
+>
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'الأسعار' }]} />
+		<div class="mt-8">
+			<SectionHead
+				as="h1"
+				align="center"
+				eyebrow="الأسعار"
+				title="باقة واحدة.<br />كل شيء فيها."
+				lede="كل منافس في هذا السوق يطلب منك تعبئة طلب عرض سعر. إليك الرقم، وإليك بالضبط ما يشتريه وما لا يشتريه."
+			/>
+		</div>
+		<div class="mt-6 flex flex-wrap justify-center gap-2.5">
+			<Sticker tone="orange">بلا رسوم إعداد</Sticker>
+			<Sticker tone="rose">بلا عقد</Sticker>
+			<Sticker>بلا أجهزة</Sticker>
+			<Sticker tone="go">بلا عمولة</Sticker>
+		</div>
+		<div class="mt-12">
+			<PricingCard id="plan" as="h2" />
+		</div>
+	</Section>
+
+	<Section tone="card" ruled>
+		<SectionHead
+			align="center"
+			eyebrow="النصف الآخر من الحقيقة"
+			title="ما تم استبعاده عمدًا"
+			lede="هذا هو الجزء الذي يخفيه المنافسون في مصفوفة مزايا. قوله بوضوح هو ما يجعل السعر الثابت الواحد قابلًا للتصديق."
+		/>
+		<div class="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2">
+			{
+				NOT_INCLUDED.map((n) => (
+					<div class="bg-paper slab rounded-2xl p-7">
+						<p class="flex items-start gap-3 text-xl font-bold">
+							<Cross class="mt-1.5 text-[#c33]" />
+							<span>{n.labelAr}</span>
+						</p>
+						<p class="text-ink-soft mt-3 ps-8 text-lg text-pretty">{n.reasonAr}</p>
+					</div>
+				))
+			}
+		</div>
+		<p class="text-ink-soft mx-auto mt-10 max-w-2xl text-center text-lg text-pretty">
+			إذا كنت تحتاج نظام كاشير أو مسار طلبات أو مدفوعات، فأسترو مينيو ليست المنتج المناسب، ونفضّل
+			أن نخبرك الآن بدلاً من بعد أن تكون قد دفعت.
+		</p>
+	</Section>
+
+	<Section>
+		<div class="grid items-start gap-14 lg:grid-cols-2">
+			<div>
+				<SectionHead
+					eyebrow="مقارنة بما تنفقه فعلًا"
+					title="قارنها بفاتورة الطباعة،<br />لا بالبرمجيات"
+					lede="معظم المنشآت لا تختار بين تطبيقين. إنها تختار بين اشتراك وفاتورة مطبعة."
+				/>
+				<p class="text-ink-soft mt-6 text-lg text-pretty">
+					منشأة تعيد طباعة قائمتها {PRINT_RUNS_PER_YEAR} مرات سنويًا بحوالي ${PRINT_COST_PER_RUN}
+					{' '}للطبعة الواحدة تنفق حوالي ${printYear} على الطباعة وحدها — قبل أن يُحتسب المساء الذي
+					خسره مدير في تدقيق القائمة، أو الشهر الذي بقي فيه سعر خاطئ على الطاولة لأن إعادة الطباعة
+					لم تكن تستحق العناء.
+				</p>
+				<p class="text-ink-soft mt-4 text-lg text-pretty">
+					هذه الأرقام توضيحية، لا عرض سعر. ضع أرقامك الخاصة — الشكل نادرًا ما يتغيّر.
+				</p>
+			</div>
+
+			<div class="bg-card slab-lg rounded-[1.5rem] p-8">
+				<dl class="tabular divide-line divide-y">
+					<div class="flex items-baseline justify-between gap-6 pb-5">
+						<dt class="text-lg font-bold">أسترو مينيو، فوترة سنوية</dt>
+						<dd class="font-display text-3xl">{PRICE.annualTotal}<span class="text-lg">/سنويًا</span></dd>
+					</div>
+					<div class="flex items-baseline justify-between gap-6 py-5">
+						<dt class="text-lg font-bold">أسترو مينيو، فوترة شهرية</dt>
+						<dd class="font-display text-3xl">
+							{PRICE.monthly}<span class="text-lg">/شهريًا</span>
+						</dd>
+					</div>
+					<div class="flex items-baseline justify-between gap-6 py-5">
+						<dt class="text-ink-soft text-lg">إنفاق طباعة توضيحي</dt>
+						<dd class="font-display text-ink-soft text-3xl">${printYear}<span class="text-lg">/سنويًا</span></dd>
+					</div>
+					<div class="flex items-baseline justify-between gap-6 pt-5">
+						<dt class="text-lg font-bold">العمولة التي نأخذها</dt>
+						<dd class="font-display text-go text-3xl">{PRICE.zero}</dd>
+					</div>
+				</dl>
+				<ul class="border-line mt-7 space-y-3 border-t pt-6">
+					<li class="flex items-start gap-3 text-lg">
+						<Check class="text-go mt-1.5" />
+						<span>إعادة الطباعة بعد تغيير السعر: غير محدودة، ومجانية</span>
+					</li>
+					<li class="flex items-start gap-3 text-lg">
+						<Check class="text-go mt-1.5" />
+						<span>بالدرهم: {PRICE.monthlyAed} شهريًا، {PRICE.annualTotalAed} سنويًا</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</Section>
+
+	<Section tone="sunk" ruled>
+		<div class="mx-auto max-w-3xl">
+			<SectionHead align="center" eyebrow="أسئلة الأسعار" title="أسئلة عن المال" />
+			<div class="mt-10">
+				<FaqList items={pricingFaqs} openFirst />
+			</div>
+			<p class="mt-8 text-center text-lg">
+				<a href="/ar/faq" class="text-brand-text font-bold hover:underline">
+					كل سؤال آخر ←
+				</a>
+			</p>
+		</div>
+	</Section>
+
+	<CtaBand
+		title={`جرّبها ${PLAN.trialDays} يومًا أولًا`}
+		body="بلا بطاقة، بلا رسوم إعداد، بلا عقد. إذا لم تكن مناسبة، توقف عن استخدامها ولم يتغيّر شيء."
+		secondaryHref="/ar/demo"
+		secondaryLabel="شاهد قائمة حقيقية"
+	/>
+</Layout>

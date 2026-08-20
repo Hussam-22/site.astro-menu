@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import SectionHead from '../../components/ui/SectionHead.astro'
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import Check from '../../components/ui/Check.astro'
+import CtaBand from '../../components/ui/CtaBand.astro'
+import Ribbon from '../../components/ui/Ribbon.astro'
+import DashboardImage from '../../components/ui/DashboardImage.astro'
+import { Image } from 'astro:assets'
+import { SITE, PRICE } from '../../config/site'
+import { FEATURE_GROUPS } from '../../data/features'
+import { RIBBON_AR } from '../../data/content'
+import { crumbSchema } from '../../utils/schema'
+
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/screens/*.png', {
+	eager: true
+})
+const screenshot = (file: string) =>
+	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
+
+const title = 'المزايا — كل ما تفعله قائمة QR'
+const description = `صور على كل طبق، أحجام وأسعار، ترجمة تلقائية، وسوم الحساسية، فلاتر، سعرات وتحليلات — كل ذلك في باقة واحدة بسعر ${PRICE.monthly} شهريًا.`
+---
+
+<Layout
+	title={title}
+	description={description}
+	path="/ar/features"
+	schema={crumbSchema([{ name: 'المزايا', path: '/ar/features' }])}
+>
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'المزايا' }]} />
+		<div class="mt-8 grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+			<SectionHead
+				as="h1"
+				eyebrow="المزايا"
+				title="كل ما تفعله القائمة"
+				lede="بلا فئات، بلا إضافات، بلا صفحة ترقية. كل ميزة أدناه في الباقة الواحدة، والسعر لا يتغيّر عند استخدامها."
+			/>
+			<div class="flex flex-wrap gap-2.5 lg:justify-end lg:pt-10">
+				<Sticker tone="orange">أصناف غير محدودة</Sticker>
+				<Sticker tone="rose">كل لغة</Sticker>
+				<Sticker>رمز واحد للأبد</Sticker>
+				<Sticker tone="go">بلا عمولة</Sticker>
+			</div>
+		</div>
+
+		<nav aria-label="أقسام المزايا" class="mt-10 flex flex-wrap gap-2.5">
+			{
+				FEATURE_GROUPS.map((g) => (
+					<a
+						href={`#${g.id}`}
+						class="border-ink bg-card hover:bg-brand rounded-full border-[2.5px] px-4 py-2 text-base font-bold transition-colors"
+					>
+						{g.eyebrowAr}
+					</a>
+				))
+			}
+		</nav>
+	</Section>
+
+	<Ribbon items={RIBBON_AR} />
+
+	{
+		FEATURE_GROUPS.map((group, i) => (
+			<Section id={group.id} tone={i % 2 === 1 ? 'card' : 'paper'} ruled={i % 2 === 1}>
+				<div
+					class:list={[
+						'grid gap-12',
+						group.screen ? 'lg:grid-cols-[1fr_20rem] lg:gap-16' : ''
+					]}
+				>
+					<div>
+						<SectionHead eyebrow={group.eyebrowAr} title={group.titleAr} lede={group.ledeAr} />
+						<dl class="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+							{group.items.map((item) => (
+								<div class="border-ink border-t-[2.5px] pt-4">
+									<dt class="flex items-start gap-2.5 text-xl font-bold">
+										<Check class="text-go mt-1.5" />
+										<span>{item.titleAr}</span>
+									</dt>
+									<dd class="text-ink-soft mt-2 ps-8 text-lg text-pretty">{item.bodyAr}</dd>
+								</div>
+							))}
+						</dl>
+					</div>
+
+					{group.screen && (
+						<div class="border-ink shadow-lift mx-auto w-full max-w-[19rem] overflow-hidden rounded-[1.5rem] border-[3px] lg:sticky lg:top-28">
+							<Image
+								src={screenshot(group.screen)}
+								alt={`${group.titleAr} — كما تظهر على قائمة زبون حقيقية`}
+								widths={[390, 600, 780]}
+								sizes="(min-width:1024px) 320px, 90vw"
+								class="block h-auto w-full"
+							/>
+						</div>
+					)}
+				</div>
+
+				{group.dash && (
+					<div class="mx-auto mt-14 max-w-5xl">
+						<p class="label text-brand-text mb-4 text-sm">ما تراه في لوحة التحكم</p>
+						<DashboardImage
+							name={group.dash}
+							alt={`لوحة تحكم أسترو مينيو — ${group.dashBriefAr}`}
+							brief={group.dashBrief}
+							sizes="(min-width:1024px) 900px, 92vw"
+							widths={[600, 900, 1400]}
+						/>
+					</div>
+				)}
+			</Section>
+		))
+	}
+
+	<Section tone="ink">
+		<div class="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+			<SectionHead
+				eyebrow="شاهدها تعمل"
+				title="القراءة عنها ليست<br />كتجربتها فعليًا"
+				lede={`افتح القائمة الحية لـ${SITE.demoVenueName} — 120 صنفًا، أربعة عشر قسمًا، فلاتر وتبديل لغة، كل ذلك يعمل على الباقة الموصوفة أعلاه.`}
+				invert
+			/>
+			<div class="flex flex-wrap gap-4 lg:justify-end">
+				<a
+					href="/ar/demo"
+					class="brand-gradient border-ink inline-flex items-center rounded-full border-[2.5px] px-9 py-4 text-xl font-bold text-white shadow-[4px_4px_0_#fff] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
+				>
+					جرّب العرض الحي
+				</a>
+			</div>
+		</div>
+	</Section>
+
+	<CtaBand
+		title="كل ذلك، بسعر ثابت واحد"
+		body={`${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا. ${PRICE.trialDays} يومًا مجانًا أولًا، بلا بطاقة.`}
+		secondaryHref="/ar/pricing"
+		secondaryLabel="شاهد الأسعار"
+	/>
+</Layout>

@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
+import { SITE } from '../../config/site'
+import { crumbSchema } from '../../utils/schema'
+
+const updated = '18 أغسطس 2026'
+const title = 'سياسة الخصوصية'
+const description =
+	'ما الذي تجمعه أسترو مينيو، ولماذا، وما لا نفعله أبدًا به. بلا ملفات تعريف ارتباط، بلا تحليلات، بلا متتبعات على هذا الموقع. قصيرة، لأننا نجمع القليل جدًا.'
+---
+
+<Layout
+	title={title}
+	description={description}
+	path="/ar/privacy"
+	schema={crumbSchema([{ name: 'سياسة الخصوصية', path: '/ar/privacy' }])}
+>
+	<Section width="narrow" tight>
+		<Breadcrumbs trail={[{ name: 'سياسة الخصوصية' }]} />
+		<h1 class="mt-8 text-5xl sm:text-6xl">سياسة الخصوصية</h1>
+		<p class="text-ink-faint mt-4 text-base">آخر تحديث {updated}</p>
+
+		<div
+			class="prose prose-lg prose-headings:font-display prose-headings:font-normal prose-h2:mt-10 prose-h2:text-2xl prose-p:text-ink-soft prose-li:text-ink-soft prose-strong:text-ink prose-a:text-brand-text prose-a:font-bold mt-10 max-w-none"
+		>
+			<h2>الخلاصة</h2>
+			<p>
+				لا يضع هذا الموقع أي ملفات تعريف ارتباط، ولا يشغّل أي تحليلات أو متتبعات إعلانية، ولا يضمّن
+				أي شيء من أطراف ثالثة. إذا اكتفيت بقراءة هذا الموقع، فنحن لا نعرف عنك شيئًا يتجاوز ما يسجّله
+				أي خادم ويب لخدمة الصفحة.
+			</p>
+
+			<h2>ما نجمعه، ومتى</h2>
+			<ul>
+				<li>
+					<strong>إذا راسلتنا بالبريد أو الرسائل</strong> — اسمك وبريدك الإلكتروني وما تكتبه. نستخدمه
+					للرد فقط، ولا شيء آخر.
+				</li>
+				<li>
+					<strong>إذا فتحت حسابًا</strong> — التفاصيل اللازمة لتشغيل قائمتك وفوترتك. تلك يغطيها ما
+					توافق عليه داخل التطبيق.
+				</li>
+				<li>
+					<strong>سجلات الخادم</strong> — يسجّل مستضيفنا الطلبات، بما فيها عنوان IP ونوع المتصفح،
+					لخدمة الصفحات والحماية من الإساءة. تُحفظ لفترة قصيرة ولا تُستخدم لبناء ملف تعريف عنك.
+				</li>
+			</ul>
+
+			<h2>الضيوف الذين يمسحون قائمة</h2>
+			<p>
+				لا يسجّل الزبائن الذين يمسحون كود QR لمنشأة دخولهم ولا يُطلب منهم شيء. تحصي أسترو مينيو
+				مشاهدات القائمة والأصناف التي فُتحت، حتى تعرف المنشأة ما تفعله قائمتها. هذا الإحصاء غير
+				مرتبط بشخص محدد.
+			</p>
+
+			<h2>ما لا نفعله أبدًا</h2>
+			<ul>
+				<li>بيع أو تأجير أو مشاركة بياناتك مع المعلنين.</li>
+				<li>إرسال تسويق لم تطلبه.</li>
+				<li>تتبعك عبر مواقع أخرى.</li>
+			</ul>
+
+			<h2>حقوقك</h2>
+			<p>
+				اطلب منا نسخة مما نحتفظ به عنك، أو اطلب تصحيحه، أو اطلب حذفه. راسلنا على <a
+					href={'mailto:' + SITE.email}>{SITE.email}</a
+				> وسنتصرف بناءً على طلبك.
+			</p>
+
+			<h2>التغييرات</h2>
+			<p>
+				إذا تغيّرت هذه السياسة بشكل جوهري، سنحدّث التاريخ في الأعلى، وحيث تؤثر على أصحاب الحسابات،
+				سنخبرهم مباشرة.
+			</p>
+
+			<h2>التواصل</h2>
+			<p>
+				أسئلة حول هذه السياسة: <a href={'mailto:' + SITE.email}>{SITE.email}</a>.
+			</p>
+		</div>
+	</Section>
+</Layout>

@@ -1,33 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Section from '../components/ui/Section.astro'
-import SectionHead from '../components/ui/SectionHead.astro'
-import Button from '../components/ui/Button.astro'
-import Sticker from '../components/ui/Sticker.astro'
-import Burst from '../components/ui/Burst.astro'
-import Ribbon from '../components/ui/Ribbon.astro'
-import FoodImage from '../components/ui/FoodImage.astro'
-import Check from '../components/ui/Check.astro'
-import Cross from '../components/ui/Cross.astro'
-import FaqList from '../components/ui/FaqList.astro'
-import CtaBand from '../components/ui/CtaBand.astro'
-import PricingCard from '../components/PricingCard.astro'
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import SectionHead from '../../components/ui/SectionHead.astro'
+import Button from '../../components/ui/Button.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import Burst from '../../components/ui/Burst.astro'
+import Ribbon from '../../components/ui/Ribbon.astro'
+import FoodImage from '../../components/ui/FoodImage.astro'
+import Check from '../../components/ui/Check.astro'
+import Cross from '../../components/ui/Cross.astro'
+import FaqList from '../../components/ui/FaqList.astro'
+import CtaBand from '../../components/ui/CtaBand.astro'
+import PricingCard from '../../components/PricingCard.astro'
 import { Image } from 'astro:assets'
-import { SITE, PRICE } from '../config/site'
-import { PILLARS, TESTIMONIALS, VERSUS, USE_CASES, SCREENS, RIBBON } from '../data/content'
-import { DASHBOARD_CONTROLS, NOT_INCLUDED } from '../data/plan'
-import { HOME_FAQS, ALL_FAQS } from '../data/faqs'
-import DashboardImage from '../components/ui/DashboardImage.astro'
+import { SITE, PRICE } from '../../config/site'
+import { PILLARS, TESTIMONIALS, VERSUS, USE_CASES, SCREENS, RIBBON_AR } from '../../data/content'
+import { DASHBOARD_CONTROLS, NOT_INCLUDED } from '../../data/plan'
+import { HOME_FAQS, ALL_FAQS } from '../../data/faqs'
+import DashboardImage from '../../components/ui/DashboardImage.astro'
 
-/** Eagerly loaded so the six real menu screenshots can be looked up by filename. */
-const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/screens/*.png', {
 	eager: true
 })
 const screenshot = (file: string) =>
-	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
+	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
 
-const title = 'QR Menu for Restaurants & Cafés'
-const description = `Turn your menu into a fast, photo-led QR menu you update in seconds. Every language, one QR that never needs reprinting. ${PRICE.monthly} a month, no commission.`
+const homeFaqsAr = HOME_FAQS.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
+
+const title = 'قائمة QR للمطاعم والمقاهي'
+const description = `حوّل قائمتك إلى قائمة QR سريعة، مصممة بالصور، تحدّثها خلال ثوانٍ. كل لغة، رمز QR واحد لا يحتاج إعادة طباعة أبدًا. ${PRICE.monthly} شهريًا، بلا عمولة.`
 
 const schema = [
 	{
@@ -66,7 +67,7 @@ const schema = [
 	{
 		'@context': 'https://schema.org',
 		'@type': 'FAQPage',
-		mainEntity: HOME_FAQS.map((f) => ({
+		mainEntity: homeFaqsAr.map((f) => ({
 			'@type': 'Question',
 			name: f.q,
 			acceptedAnswer: { '@type': 'Answer', text: f.a }
@@ -75,18 +76,18 @@ const schema = [
 ]
 ---
 
-<Layout title={title} description={description} path="/" schema={schema}>
+<Layout title={title} description={description} path="/ar" schema={schema}>
 	<!-- ================= HERO ================= -->
 	<section class="relative overflow-hidden pt-14 pb-8 lg:pt-20">
 		<div class="mx-auto max-w-7xl px-5 lg:px-8">
 			<div class="flex flex-wrap items-center gap-2.5">
-				<Sticker tone="orange">No commission</Sticker>
-				<Sticker tone="rose">We build it for you</Sticker>
-				<Sticker>No app to download</Sticker>
+				<Sticker tone="orange">بلا عمولة</Sticker>
+				<Sticker tone="rose">نبنيها لك</Sticker>
+				<Sticker>بلا تطبيق يُحمَّل</Sticker>
 			</div>
 
 			<h1 class="mt-7 text-[3.4rem] leading-[0.9] sm:text-8xl lg:text-[8.5rem]">
-				Show the{' '}<span
+				أظهر{' '}<span
 					class="border-ink hidden h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle sm:inline-grid"
 				>
 					<FoodImage
@@ -98,33 +99,33 @@ const schema = [
 						widths={[200, 400]}
 						sizes="120px"
 					/>
-				</span>{' '}food,<br />not a list<span class="text-brand-text">.</span>
+				</span>{' '}الطعام،<br />لا القائمة النصية<span class="text-brand-text">.</span>
 			</h1>
 
 			<div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
 				<div>
 					<p class="text-ink-soft max-w-xl text-xl leading-relaxed text-pretty sm:text-2xl">
-						Send us the menu you have now and we turn it into a photo-led QR menu for you. After
-						that it is yours — every change you make goes live the moment you save it. One flat
-						price. No POS, no commission, no hardware.
+						أرسل لنا القائمة التي لديك الآن ونحوّلها إلى قائمة QR مصممة بالصور نيابة عنك. بعدها
+						تصبح ملكك — كل تعديل تقوم به يُنشر لحظة حفظه. سعر ثابت واحد. بلا نظام نقاط بيع، بلا
+						عمولة، بلا أجهزة.
 					</p>
 
 					<div class="mt-8 flex flex-wrap gap-4">
-						<Button href={SITE.signupUrl} size="lg">Start {PRICE.trialDays} days free</Button>
-						<Button href="/demo" variant="outline" size="lg">See a real menu</Button>
+						<Button href={SITE.signupUrl} size="lg">ابدأ {PRICE.trialDays} يومًا مجانًا</Button>
+						<Button href="/ar/demo" variant="outline" size="lg">شاهد قائمة حقيقية</Button>
 					</div>
 					<p class="text-ink-faint mt-4 text-base">
-						No card required · {PRICE.monthly} a month after · Cancel any time
+						بلا بطاقة مطلوبة · {PRICE.monthly} شهريًا بعدها · ألغِ في أي وقت
 					</p>
 
 					<div class="border-line mt-10 flex flex-wrap items-center gap-x-10 gap-y-6 border-t pt-8">
 						<div>
-							<p class="font-display text-5xl">120+</p>
-							<p class="text-ink-soft text-base font-semibold">items on one live menu</p>
+							<p class="font-display text-5xl">+120</p>
+							<p class="text-ink-soft text-base font-semibold">صنفًا على قائمة حيّة واحدة</p>
 						</div>
 						<div>
-							<p class="font-display text-5xl">&lt;1s</p>
-							<p class="text-ink-soft text-base font-semibold">to load on a phone</p>
+							<p class="font-display text-5xl">&lt;1ث</p>
+							<p class="text-ink-soft text-base font-semibold">للتحميل على الهاتف</p>
 						</div>
 						<div class="flex items-center gap-3">
 							<div class="flex">
@@ -133,7 +134,7 @@ const schema = [
 										<span
 											class:list={[
 												'border-paper h-12 w-12 overflow-hidden rounded-full border-[3px]',
-												i > 0 && '-ml-4'
+												i > 0 && '-ms-4'
 											]}
 										>
 											<FoodImage
@@ -149,19 +150,17 @@ const schema = [
 								}
 							</div>
 							<div>
-								<p class="text-base font-bold">Real venues, real menus</p>
-								<p class="text-ink-faint text-base">Cafés · trucks · hotels</p>
+								<p class="text-base font-bold">منشآت حقيقية، قوائم حقيقية</p>
+								<p class="text-ink-faint text-base">مقاهٍ · عربات · فنادق</p>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Phone, burst and float are one composition, so they are anchored to a
-				     single relative wrapper rather than to the grid column. -->
 				<div class="flex justify-center lg:justify-end">
 					<div class="relative w-full max-w-[19rem]">
-						<Burst class="absolute -top-5 -left-8 z-20" size={7.5} rotate={-13}>
-							{PRICE.trialDays} days<br />free
+						<Burst class="absolute -top-5 -start-8 z-20" size={7.5} rotate={-13}>
+							{PRICE.trialDays} يومًا<br />مجانًا
 						</Burst>
 
 						<div
@@ -174,7 +173,7 @@ const schema = [
 							<div class="overflow-hidden rounded-[2.1rem] bg-white">
 								<Image
 									src={screenshot('menu-sections.png')}
-									alt={`The live ${SITE.demoVenueName} menu on a phone, showing section chips and dishes with photos and prices`}
+									alt={`قائمة ${SITE.demoVenueName} الحية على الهاتف، تُظهر شرائح الأقسام وأطباقًا بصور وأسعار`}
 									widths={[390, 600, 780]}
 									sizes="304px"
 									loading="eager"
@@ -185,7 +184,7 @@ const schema = [
 						</div>
 
 						<div
-							class="border-ink shadow-lift absolute -bottom-9 -left-10 z-20 w-40 -rotate-[8deg] overflow-hidden rounded-2xl border-[3px] sm:w-44"
+							class="border-ink shadow-lift absolute -bottom-9 -start-10 z-20 w-40 -rotate-[8deg] overflow-hidden rounded-2xl border-[3px] sm:w-44"
 						>
 							<FoodImage
 								name="hero-float"
@@ -204,15 +203,15 @@ const schema = [
 	</section>
 
 	<div class="mt-20">
-		<Ribbon items={RIBBON} />
+		<Ribbon items={RIBBON_AR} />
 	</div>
 
 	<!-- ================= WHY / PILLARS ================= -->
 	<Section id="why">
 		<SectionHead
-			eyebrow="Why Astro-Menu"
-			title="Everybody at the table wins"
-			lede="The owner stops reprinting. The staff stop apologising. The guest stops squinting at a PDF."
+			eyebrow="لماذا أسترو مينيو"
+			title="الجميع على الطاولة يربح"
+			lede="المالك يتوقف عن إعادة الطباعة. الطاقم يتوقف عن الاعتذار. الضيف يتوقف عن التحديق في ملف PDF."
 		/>
 		<div class="mt-14 grid gap-7 md:grid-cols-3">
 			{
@@ -230,10 +229,10 @@ const schema = [
 						</div>
 						<div class="p-7">
 							<Sticker tone={p.tone === 'dark' ? 'ink' : 'orange'} size="sm">
-								{p.who}
+								{p.whoAr}
 							</Sticker>
-							<h3 class="mt-4 text-3xl">{p.title}</h3>
-							<p class="text-ink-soft mt-3 text-lg text-pretty">{p.body}</p>
+							<h3 class="mt-4 text-3xl">{p.titleAr}</h3>
+							<p class="text-ink-soft mt-3 text-lg text-pretty">{p.bodyAr}</p>
 						</div>
 					</article>
 				))
@@ -244,9 +243,9 @@ const schema = [
 	<!-- ================= WHAT GUESTS SEE ================= -->
 	<Section tone="card" ruled id="menu">
 		<SectionHead
-			eyebrow="What your guests see"
-			title="Six screens.<br />All of them real."
-			lede={`Every screen below is a real customer menu running on Astro-Menu today — most of them ${SITE.demoVenueName}, 120 items live in Al Ain. Nothing here is a render.`}
+			eyebrow="ما يراه ضيوفك"
+			title="ستة شاشات.<br />كلها حقيقية."
+			lede={`كل شاشة أدناه هي قائمة زبون حقيقية تعمل على أسترو مينيو اليوم، معظمها ${SITE.demoVenueName}، 120 صنفًا حيًّا في العين. لا شيء هنا محاكاة.`}
 		/>
 		<div class="masonry mt-14 sm:columns-2 lg:columns-3">
 			{
@@ -254,22 +253,22 @@ const schema = [
 					<figure class="border-ink pin-hover bg-paper overflow-hidden rounded-[1.5rem] border-[2.5px]">
 						<Image
 							src={screenshot(s.file)}
-							alt={`${s.title} — ${s.body}`}
+							alt={`${s.titleAr} — ${s.bodyAr}`}
 							widths={[390, 600, 780]}
 							sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw"
 							class="block h-auto w-full"
 						/>
 						<figcaption class="border-ink border-t-[2.5px] p-5">
-							<h3 class="text-xl">{s.title}</h3>
-							<p class="text-ink-soft mt-1.5 text-base text-pretty">{s.body}</p>
+							<h3 class="text-xl">{s.titleAr}</h3>
+							<p class="text-ink-soft mt-1.5 text-base text-pretty">{s.bodyAr}</p>
 						</figcaption>
 					</figure>
 				))
 			}
 		</div>
 		<div class="mt-12 flex flex-wrap justify-center gap-4">
-			<Button href={SITE.demoMenuUrl} external size="lg">Open the live menu</Button>
-			<Button href="/features" variant="outline" size="lg">All the features</Button>
+			<Button href={SITE.demoMenuUrl} external size="lg">افتح القائمة الحية</Button>
+			<Button href="/ar/features" variant="outline" size="lg">كل المزايا</Button>
 		</div>
 	</Section>
 
@@ -278,28 +277,28 @@ const schema = [
 		<div class="grid items-center gap-14 lg:grid-cols-2">
 			<div>
 				<SectionHead
-					eyebrow="What you control"
-					title="The whole menu,<br />from your phone"
-					lede="Everything a guest sees is a field you own. No designer, no developer, no support ticket, no waiting on anyone."
+					eyebrow="ما تتحكم به"
+					title="القائمة كاملة،<br />من هاتفك"
+					lede="كل ما يراه الضيف هو حقل تملكه أنت. بلا مصمم، بلا مطور، بلا تذكرة دعم، بلا انتظار أحد."
 					invert
 				/>
 				<div class="mt-8 flex flex-wrap gap-2.5">
 					{
 						DASHBOARD_CONTROLS.map((c, i) => (
 							<Sticker tone={i % 4 === 1 ? 'orange' : i % 4 === 3 ? 'rose' : 'outline-light'}>
-								{c.title}
+								{c.titleAr}
 							</Sticker>
 						))
 					}
 				</div>
 				<div class="mt-9">
-					<Button href="/how-it-works" variant="light" size="lg">How setup works</Button>
+					<Button href="/ar/how-it-works" variant="light" size="lg">كيف يعمل الإعداد</Button>
 				</div>
 			</div>
 
 			<DashboardImage
 				name="dash-meals"
-				alt="The Astro-Menu meals list: every dish with its photo, portions and prices, and an Active or Disabled toggle on each row"
+				alt="قائمة أصناف أسترو مينيو: كل طبق بصورته وحصصه وأسعاره، مع مفتاح تفعيل أو تعطيل لكل صف"
 				brief="The Meals list: photos, portions, prices, and one dish switched off"
 				frame="light"
 				sizes="(min-width:1024px) 45vw, 92vw"
@@ -311,8 +310,8 @@ const schema = [
 			{
 				DASHBOARD_CONTROLS.map((c) => (
 					<div class="border-t-[2.5px] border-white/25 pt-4">
-						<dt class="label text-brand text-base">{c.title}</dt>
-						<dd class="mt-1.5 text-lg text-white/65 text-pretty">{c.body}</dd>
+						<dt class="label text-brand text-base">{c.titleAr}</dt>
+						<dd class="mt-1.5 text-lg text-white/65 text-pretty">{c.bodyAr}</dd>
 					</div>
 				))
 			}
@@ -322,21 +321,21 @@ const schema = [
 	<!-- ================= VERSUS ================= -->
 	<Section id="compare">
 		<SectionHead
-			eyebrow="Astro-Menu vs a printed menu"
-			title="One of these costs you money<br />every time it changes"
+			eyebrow="أسترو مينيو مقابل القائمة المطبوعة"
+			title="واحدة من هاتين تكلّفك مالًا<br />في كل مرة تتغيّر فيها"
 		/>
 
 		<div class="border-ink bg-card slab mt-12 overflow-hidden rounded-[1.75rem]">
 			<div class="overflow-x-auto">
 				<table class="w-full min-w-[46rem] text-start">
 					<caption class="sr-only">
-						Astro-Menu compared with a printed or PDF menu, across eight everyday situations
+						مقارنة أسترو مينيو بقائمة مطبوعة أو PDF، عبر ثماني مواقف يومية
 					</caption>
 					<thead>
 						<tr class="border-ink border-b-[2.5px]">
-							<th scope="col" class="label w-1/4 px-6 py-5 text-sm">Situation</th>
-							<th scope="col" class="text-brand-text label w-[37.5%] px-6 py-5 text-sm">Astro-Menu</th>
-							<th scope="col" class="label w-[37.5%] px-6 py-5 text-sm">Printed or PDF menu</th>
+							<th scope="col" class="label w-1/4 px-6 py-5 text-sm">الموقف</th>
+							<th scope="col" class="text-brand-text label w-[37.5%] px-6 py-5 text-sm">أسترو مينيو</th>
+							<th scope="col" class="label w-[37.5%] px-6 py-5 text-sm">قائمة مطبوعة أو PDF</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -344,18 +343,18 @@ const schema = [
 							VERSUS.map((row) => (
 								<tr class="border-line border-b-2 last:border-b-0">
 									<th scope="row" class="px-6 py-5 align-top text-lg font-bold">
-										{row.point}
+										{row.pointAr}
 									</th>
 									<td class="bg-brand/8 px-6 py-5 align-top text-lg font-semibold">
 										<span class="flex gap-2.5">
 											<Check class="text-go mt-1.5" />
-											<span class="text-pretty">{row.astro}</span>
+											<span class="text-pretty">{row.astroAr}</span>
 										</span>
 									</td>
 									<td class="text-ink-soft px-6 py-5 align-top text-lg">
 										<span class="flex gap-2.5">
 											<Cross class="mt-1.5 text-[#c33]" />
-											<span class="text-pretty">{row.other}</span>
+											<span class="text-pretty">{row.otherAr}</span>
 										</span>
 									</td>
 								</tr>
@@ -369,7 +368,7 @@ const schema = [
 
 	<!-- ================= USE CASES ================= -->
 	<Section tone="card" ruled id="use-cases">
-		<SectionHead eyebrow="Who it is for" title="If you serve food, it fits" />
+		<SectionHead eyebrow="لمن هذا" title="إن كنت تقدّم طعامًا، فهي مناسبة لك" />
 		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{
 				USE_CASES.map((u) => (
@@ -383,8 +382,8 @@ const schema = [
 							sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw"
 						/>
 						<div class="border-ink border-t-[2.5px] p-6">
-							<h3 class="text-2xl">{u.title}</h3>
-							<p class="text-ink-soft mt-2 text-lg text-pretty">{u.body}</p>
+							<h3 class="text-2xl">{u.titleAr}</h3>
+							<p class="text-ink-soft mt-2 text-lg text-pretty">{u.bodyAr}</p>
 						</div>
 					</article>
 				))
@@ -395,9 +394,9 @@ const schema = [
 	<!-- ================= PRICING ================= -->
 	<Section id="pricing">
 		<SectionHead
-			eyebrow="Pricing"
-			title="One plan. Everything in it."
-			lede={`${PRICE.monthly} a month, or ${PRICE.annualPerMonth} a month paid yearly. Every competitor in this market makes you ask for a quote — here is the number.`}
+			eyebrow="الأسعار"
+			title="باقة واحدة. كل شيء فيها."
+			lede={`${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا. كل منافس في هذا السوق يطلب منك طلب عرض سعر — إليك الرقم مباشرة.`}
 			align="center"
 		/>
 		<div class="mt-12">
@@ -405,9 +404,9 @@ const schema = [
 		</div>
 
 		<div class="mx-auto mt-16 max-w-4xl">
-			<h3 class="text-center text-3xl">And what is deliberately left out</h3>
+			<h3 class="text-center text-3xl">وما تم استبعاده عمدًا</h3>
 			<p class="text-ink-soft mx-auto mt-3 max-w-2xl text-center text-lg">
-				This is the part competitors bury. Saying it plainly is what makes the price believable.
+				هذا الجزء الذي يخفيه المنافسون. قوله بوضوح هو ما يجعل السعر قابلًا للتصديق.
 			</p>
 			<div class="mt-8 grid gap-4 sm:grid-cols-2">
 				{
@@ -415,9 +414,9 @@ const schema = [
 						<div class="bg-card slab-sm rounded-2xl p-6">
 							<p class="flex items-start gap-2.5 text-lg font-bold">
 								<Cross class="mt-1 text-[#c33]" />
-								<span>{n.label}</span>
+								<span>{n.labelAr}</span>
 							</p>
-							<p class="text-ink-soft mt-2 ps-8 text-base text-pretty">{n.reason}</p>
+							<p class="text-ink-soft mt-2 ps-8 text-base text-pretty">{n.reasonAr}</p>
 						</div>
 					))
 				}
@@ -427,7 +426,7 @@ const schema = [
 
 	<!-- ================= TESTIMONIALS ================= -->
 	<Section tone="sunk" ruled id="customers">
-		<SectionHead eyebrow="Real venues" title="They already run on it" />
+		<SectionHead eyebrow="منشآت حقيقية" title="يعملون عليها بالفعل" />
 		<div class="mt-14 grid gap-7 lg:grid-cols-3">
 			{
 				TESTIMONIALS.map((t, i) => (
@@ -446,12 +445,12 @@ const schema = [
 							<figcaption>
 								<p class="text-lg font-bold">{t.person}</p>
 								<p class="text-ink-faint text-base">
-									{t.venue} · {t.role}
+									{t.venue} · {t.roleAr}
 								</p>
 							</figcaption>
 						</div>
 						<blockquote class="mt-5 grow text-lg leading-relaxed text-pretty">
-							“{t.quote}”
+							"{t.quoteAr}"
 						</blockquote>
 						{t.menuUrl && (
 							<p class="mt-5">
@@ -461,7 +460,7 @@ const schema = [
 									target="_blank"
 									class="text-brand-text text-lg font-bold hover:underline"
 								>
-									View their live menu →
+									شاهد قائمتهم الحية ←
 								</a>
 							</p>
 						)}
@@ -475,11 +474,11 @@ const schema = [
 	<Section id="faq">
 		<div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
 			<div>
-				<SectionHead eyebrow="Questions" title="The ones that<br />actually block a sale" />
+				<SectionHead eyebrow="أسئلة" title="تلك التي<br />تمنع الشراء فعليًا" />
 				<div class="border-ink slab mt-10 overflow-hidden rounded-[1.5rem]">
 					<FoodImage
 						name="faq-flatlay"
-						alt="Overhead view of a coffee, a pastry and a phone showing a QR menu"
+						alt="منظر علوي لقهوة ومعجنات وهاتف يعرض قائمة QR"
 						brief="Overhead flat-lay: coffee, pastry, phone showing the menu"
 						tone="warm"
 						ratio="4/3"
@@ -487,13 +486,13 @@ const schema = [
 					/>
 				</div>
 				<p class="mt-6 text-lg">
-					<a href="/faq" class="text-brand-text font-bold hover:underline">
-						Read all {ALL_FAQS.length} questions →
+					<a href="/ar/faq" class="text-brand-text font-bold hover:underline">
+						اقرأ كل الأسئلة الـ{ALL_FAQS.length} ←
 					</a>
 				</p>
 			</div>
 			<div>
-				<FaqList items={HOME_FAQS} openFirst />
+				<FaqList items={homeFaqsAr} openFirst />
 			</div>
 		</div>
 	</Section>

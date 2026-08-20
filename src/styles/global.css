@@ -143,6 +143,26 @@ h3 {
 	scroll-margin-top: 6.5rem;
 }
 
+/* Neither Anton nor Afacad has Arabic glyphs, so Arabic pages use Cairo for
+   both display and body text. Uppercase/negative-tracking rules only make
+   sense for Latin type, so they are reset here too. */
+html[lang='ar'] body {
+	font-family: 'Cairo Variable', ui-sans-serif, system-ui, sans-serif;
+}
+html[lang='ar'] .font-display,
+html[lang='ar'] h1,
+html[lang='ar'] h2,
+html[lang='ar'] h3 {
+	font-family: 'Cairo Variable', ui-sans-serif, system-ui, sans-serif;
+	font-weight: 800;
+	text-transform: none;
+	letter-spacing: normal;
+}
+html[lang='ar'] .label {
+	font-family: 'Cairo Variable', ui-sans-serif, system-ui, sans-serif;
+	letter-spacing: normal;
+}
+
 :where(a, button, summary, input, textarea, select):focus-visible {
 	outline: 3px solid var(--color-brand-text);
 	outline-offset: 3px;

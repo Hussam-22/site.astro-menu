@@ -8,6 +8,11 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
 	site: 'https://astro-menu.com',
 	trailingSlash: 'never',
+	i18n: {
+		locales: ['en', 'ar'],
+		defaultLocale: 'en',
+		routing: { prefixDefaultLocale: false }
+	},
 	integrations: [
 		mdx(),
 		sitemap({

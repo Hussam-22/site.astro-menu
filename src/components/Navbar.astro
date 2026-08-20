@@ -1,9 +1,26 @@
 ---
 import { NAV, SITE } from '../config/site'
 import Button from './ui/Button.astro'
+import { getLangFromUrl, useTranslations, localizePath } from '../i18n/ui'
 
 const here = Astro.url.pathname.replace(/\/$/, '') || '/'
-const isCurrent = (p: string) => here === p || (p !== '/' && here.startsWith(p + '/'))
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const home = lang === 'ar' ? '/ar' : '/'
+const switchHref = lang === 'ar' ? here.replace(/^\/ar(\/|$)/, '/') || '/' : `/ar${here}`
+
+const navLabels: Record<string, string> = {
+	'/features': t('nav.features'),
+	'/how-it-works': t('nav.how'),
+	'/pricing': t('nav.pricing'),
+	'/demo': t('nav.demo'),
+	'/blog': t('nav.blog')
+}
+
+const isCurrent = (p: string) => {
+	const target = localizePath(p, lang)
+	return here === target || (target !== home && here.startsWith(target + '/'))
+}
 ---
 
 <header class="sticky top-0 z-50">
@@ -12,7 +29,7 @@ const isCurrent = (p: string) => here === p || (p !== '/' && here.startsWith(p +
 			class="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-5 lg:px-8"
 			aria-label="Main"
 		>
-			<a href="/" class="flex shrink-0 items-center gap-2" aria-label={`${SITE.name} home`}>
+			<a href={home} class="flex shrink-0 items-center gap-2" aria-label={`${SITE.name} home`}>
 				<span class="brand-gradient border-ink grid h-9 w-9 place-items-center rounded-xl border-[2.5px] text-white">
 					<svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" aria-hidden="true">
 						<path
@@ -31,14 +48,14 @@ const isCurrent = (p: string) => here === p || (p !== '/' && here.startsWith(p +
 					NAV.map((item) => (
 						<li>
 							<a
-								href={item.path}
+								href={localizePath(item.path, lang)}
 								aria-current={isCurrent(item.path) ? 'page' : undefined}
 								class:list={[
 									'hover:bg-paper-2 rounded-full px-4 py-2 text-lg font-semibold transition-colors',
 									isCurrent(item.path) ? 'text-brand-text' : 'text-ink'
 								]}
 							>
-								{item.title}
+								{navLabels[item.path]}
 							</a>
 						</li>
 					))
@@ -47,20 +64,27 @@ const isCurrent = (p: string) => here === p || (p !== '/' && here.startsWith(p +
 
 			<div class="hidden items-center gap-3 lg:flex">
 				<a
+					href={switchHref}
+					class="text-ink hover:text-brand-text px-2 text-lg font-bold transition-colors"
+					aria-label={t('nav.language')}
+				>
+					{lang === 'ar' ? 'English' : 'العربية'}
+				</a>
+				<a
 					href={SITE.loginUrl}
 					class="text-brand-text hover:text-ink px-2 text-lg font-bold transition-colors"
 				>
-					Log in
+					{t('nav.login')}
 				</a>
-				<Button href={SITE.signupUrl} size="sm">Start free</Button>
+				<Button href={SITE.signupUrl} size="sm">{t('nav.startFree')}</Button>
 			</div>
 
 			<!-- Checkbox toggle: the mobile menu opens with no JavaScript at all. -->
 			<input type="checkbox" id="nav-open" class="peer hidden" />
 			<label
 				for="nav-open"
-				class="hover:bg-paper-2 -mr-2 cursor-pointer rounded-full p-2 lg:hidden"
-				aria-label="Open menu"
+				class="hover:bg-paper-2 -me-2 cursor-pointer rounded-full p-2 lg:hidden"
+				aria-label={t('nav.openMenu')}
 			>
 				<svg
 					viewBox="0 0 24 24"
@@ -83,25 +107,28 @@ const isCurrent = (p: string) => here === p || (p !== '/' && here.startsWith(p +
 						NAV.map((item) => (
 							<li>
 								<a
-									href={item.path}
+									href={localizePath(item.path, lang)}
 									aria-current={isCurrent(item.path) ? 'page' : undefined}
 									class:list={[
 										'block rounded-2xl px-4 py-3 text-xl font-semibold',
 										isCurrent(item.path) ? 'bg-paper-2 text-brand-text' : 'text-ink'
 									]}
 								>
-									{item.title}
+									{navLabels[item.path]}
 								</a>
 							</li>
 						))
 					}
 					<li class="mt-2 flex flex-col gap-3 px-1 pb-2">
-						<Button href={SITE.signupUrl} block>Start free trial</Button>
+						<Button href={SITE.signupUrl} block>{t('nav.startFreeTrial')}</Button>
 						<a
 							href={SITE.loginUrl}
 							class="border-ink text-ink rounded-full border-[2.5px] py-3 text-center text-lg font-bold"
 						>
-							Log in
+							{t('nav.login')}
+						</a>
+						<a href={switchHref} class="text-brand-text py-2 text-center text-lg font-bold">
+							{lang === 'ar' ? 'English' : 'العربية'}
 						</a>
 					</li>
 				</ul>

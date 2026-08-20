@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import SectionHead from '../../components/ui/SectionHead.astro'
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import FoodImage from '../../components/ui/FoodImage.astro'
+import { SITE, PRICE, CONTACT_FORM_KEY } from '../../config/site'
+import { crumbSchema } from '../../utils/schema'
+
+const title = 'تواصل معنا'
+const description = `أرسل لنا القائمة التي لديك الآن وسنبني النسخة الأولى مجانًا. راسلنا على ${SITE.email} أو عبر واتساب — يرد عليك شخص، عادة في نفس اليوم.`
+
+const waHref = `https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
+	'مرحبًا أسترو مينيو — أرغب في إعداد قائمة QR.'
+)}`
+
+const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
+---
+
+<Layout
+	title={title}
+	description={description}
+	path="/ar/contact"
+	schema={crumbSchema([{ name: 'تواصل معنا', path: '/ar/contact' }])}
+>
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'تواصل معنا' }]} />
+		<div class="mt-8 grid items-start gap-14 lg:grid-cols-[1fr_1fr]">
+			<div>
+				<SectionHead
+					as="h1"
+					eyebrow="تواصل معنا"
+					title="أرسل لنا قائمتك"
+					lede="بأي صيغة كانت — ملف PDF، صورة للقائمة المطبوعة، جدول بيانات. سنبني النسخة الأولى نيابة عنك ونرسلها جاهزة للمراجعة. بلا رسوم، بلا التزام."
+				/>
+
+				<div class="mt-9 space-y-4">
+					<a
+						href={`mailto:${SITE.email}`}
+						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"
+					>
+						<span class="brand-gradient border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white">
+							<svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+								<rect x="3" y="5" width="18" height="14" rx="2.5"></rect>
+								<path d="m3.5 7 8.5 6 8.5-6"></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xl font-bold">{SITE.email}</span>
+							<span class="text-ink-soft block text-base">عادة ما نرد في نفس اليوم</span>
+						</span>
+					</a>
+
+					<a
+						href={waHref}
+						rel="noopener noreferrer"
+						target="_blank"
+						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"
+					>
+						<span class="bg-go border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white">
+							<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+								<path
+									d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-2.5 4c-.2 0-.5 0-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.3-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4z"
+								></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xl font-bold">واتساب</span>
+							<span class="text-ink-soft block text-base">{SITE.whatsapp}</span>
+						</span>
+					</a>
+				</div>
+
+				<div class="mt-8 flex flex-wrap gap-2.5">
+					<Sticker tone="orange">بناء القائمة الأولى مجانًا</Sticker>
+					<Sticker tone="rose">{PRICE.trialDays} يومًا مجانًا</Sticker>
+					<Sticker>بلا مكالمة مبيعات</Sticker>
+				</div>
+			</div>
+
+			<div>
+				{
+					formReady ? (
+						<form
+							action="https://api.web3forms.com/submit"
+							method="POST"
+							class="bg-card slab-lg rounded-[1.5rem] p-8"
+						>
+							<input type="hidden" name="access_key" value={CONTACT_FORM_KEY} />
+							<input type="hidden" name="subject" value="New Astro-Menu enquiry (Arabic)" />
+							<input
+								type="checkbox"
+								name="botcheck"
+								class="hidden"
+								style="display:none"
+								tabindex="-1"
+								autocomplete="off"
+							/>
+
+							<h2 class="text-3xl">أو راسلنا من هنا</h2>
+
+							<div class="mt-6 space-y-5">
+								<div>
+									<label for="name" class="block text-lg font-bold">
+										اسمك
+									</label>
+									<input
+										id="name"
+										name="name"
+										type="text"
+										required
+										autocomplete="name"
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+								<div>
+									<label for="venue" class="block text-lg font-bold">
+										اسم المنشأة
+									</label>
+									<input
+										id="venue"
+										name="venue"
+										type="text"
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+								<div>
+									<label for="email" class="block text-lg font-bold">
+										البريد الإلكتروني
+									</label>
+									<input
+										id="email"
+										name="email"
+										type="email"
+										required
+										autocomplete="email"
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+								<div>
+									<label for="message" class="block text-lg font-bold">
+										ما الذي تحتاجه؟
+									</label>
+									<textarea
+										id="message"
+										name="message"
+										rows="5"
+										required
+										class="border-ink bg-paper mt-2 w-full rounded-xl border-[2.5px] px-4 py-3 text-lg"
+									/>
+								</div>
+							</div>
+
+							<button
+								type="submit"
+								class="brand-gradient border-ink mt-7 w-full rounded-full border-[2.5px] py-4 text-xl font-bold text-white shadow-[4px_4px_0_var(--color-ink)] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
+							>
+								أرسلها
+							</button>
+							<p class="text-ink-faint mt-4 text-base">
+								نستخدم ما ترسله للرد فقط. لا شيء آخر، أبدًا.
+							</p>
+						</form>
+					) : (
+						<div class="border-ink overflow-hidden rounded-[1.5rem] border-[3px]">
+							<FoodImage
+								name="contact"
+								alt="صاحب مقهى يجلس مع حاسوب محمول وكوب قهوة، يُعِد قائمته"
+								brief="Owner at a table with laptop and coffee, relaxed, setting up the menu"
+								tone="warm"
+								ratio="4/5"
+								sizes="(min-width:1024px) 45vw, 92vw"
+							/>
+						</div>
+					)
+				}
+			</div>
+		</div>
+	</Section>
+</Layout>

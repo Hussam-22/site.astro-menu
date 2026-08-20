@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Button from '../../components/ui/Button.astro'
+import Burst from '../../components/ui/Burst.astro'
+import { NAV, SITE } from '../../config/site'
+import { getLangFromUrl, useTranslations, localizePath } from '../../i18n/ui'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const navLabels: Record<string, string> = {
+	'/features': t('nav.features'),
+	'/how-it-works': t('nav.how'),
+	'/pricing': t('nav.pricing'),
+	'/demo': t('nav.demo'),
+	'/blog': t('nav.blog')
+}
+---
+
+<Layout
+	title="الصفحة غير موجودة"
+	description="هذه الصفحة غير موجودة — الرابط خاطئ أو انتقلت الصفحة. إليك الطريق إلى القائمة والأسعار والعرض الحي."
+	path="/ar/404"
+	noindex
+>
+	<Section tight>
+		<div class="mx-auto max-w-2xl py-10 text-center">
+			<div class="flex justify-center">
+				<Burst size={9} rotate={-8}>404</Burst>
+			</div>
+			<h1 class="mt-8 text-5xl sm:text-7xl">هذه الصفحة خارج القائمة</h1>
+			<p class="text-ink-soft mt-5 text-xl text-pretty">
+				الرابط خاطئ، أو انتقلت الصفحة. لا شيء معطّل من جهتك.
+			</p>
+			<div class="mt-9 flex flex-wrap justify-center gap-4">
+				<Button href="/ar" size="lg">العودة إلى الصفحة الرئيسية</Button>
+				<Button href="/ar/demo" variant="outline" size="lg">شاهد قائمة حقيقية</Button>
+			</div>
+
+			<nav aria-label="أقسام الموقع" class="mt-12">
+				<p class="label text-brand-text text-sm">جرّب واحدًا من هذه</p>
+				<ul class="mt-4 flex flex-wrap justify-center gap-2.5">
+					{
+						NAV.map((item) => (
+							<li>
+								<a
+									href={localizePath(item.path, lang)}
+									class="border-ink bg-card hover:bg-brand rounded-full border-[2.5px] px-4 py-2 text-base font-bold transition-colors"
+								>
+									{navLabels[item.path]}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<p class="text-ink-faint mt-10 text-base">
+				ما زلت عالقًا؟
+				<a href={'mailto:' + SITE.email} class="text-brand-text font-bold">{SITE.email}</a>
+			</p>
+		</div>
+	</Section>
+</Layout>

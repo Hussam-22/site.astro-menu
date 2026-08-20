@@ -1,8 +1,9 @@
 ---
 import { PRICE, SITE } from '../config/site'
-import { INCLUDED } from '../data/plan'
+import { INCLUDED, INCLUDED_AR } from '../data/plan'
 import Button from './ui/Button.astro'
 import Check from './ui/Check.astro'
+import { getLangFromUrl, localizePath } from '../i18n/ui'
 
 interface Props {
 	/** Home page shows a trimmed list; /pricing shows all of it. */
@@ -18,7 +19,10 @@ interface Props {
 }
 const { compact = false, id, as: Heading = 'h3' } = Astro.props
 const SubHeading = Heading === 'h2' ? 'h3' : 'h4'
-const list = compact ? INCLUDED.slice(0, 8) : INCLUDED
+const lang = getLangFromUrl(Astro.url)
+const isAr = lang === 'ar'
+const fullList = isAr ? INCLUDED_AR : INCLUDED
+const list = compact ? fullList.slice(0, 8) : fullList
 ---
 
 <!--
@@ -31,57 +35,75 @@ const list = compact ? INCLUDED.slice(0, 8) : INCLUDED
 			class="border-ink bg-card relative inline-flex cursor-pointer items-center rounded-full border-[2.5px] p-1.5 shadow-[4px_4px_0_var(--color-ink)]"
 		>
 			<input type="checkbox" class="peer sr-only" id="billing-toggle" />
-			<span class="sr-only">Show yearly pricing</span>
+			<span class="sr-only">{isAr ? 'إظهار السعر السنوي' : 'Show yearly pricing'}</span>
 			<span
-				class="bg-ink absolute top-1.5 bottom-1.5 left-1.5 w-[calc(50%-0.375rem)] rounded-full transition-transform duration-300 ease-out peer-checked:translate-x-full"
+				class="bg-ink absolute top-1.5 bottom-1.5 start-1.5 w-[calc(50%-0.375rem)] rounded-full transition-transform duration-300 ease-out ltr:peer-checked:translate-x-full rtl:peer-checked:-translate-x-full"
 				aria-hidden="true"></span>
 			<span
 				class="label text-white peer-checked:text-ink relative z-10 w-32 py-2.5 text-center text-base transition-colors sm:w-36"
 			>
-				Monthly
+				{isAr ? 'شهري' : 'Monthly'}
 			</span>
 			<span
 				class="label text-ink peer-checked:text-white relative z-10 w-32 py-2.5 text-center text-base transition-colors sm:w-36"
 			>
-				Yearly
+				{isAr ? 'سنوي' : 'Yearly'}
 			</span>
 		</label>
 	</div>
 
 	<div class="bg-card border-ink mt-8 overflow-hidden rounded-[2rem] border-[3px] shadow-[8px_8px_0_var(--color-ink)]">
 		<div class="border-ink border-b-[2.5px] p-8 text-center sm:p-10">
-			<Heading class="text-3xl">One plan. Everything in it.</Heading>
+			<Heading class="text-3xl">
+				{isAr ? 'باقة واحدة. كل شيء فيها.' : 'One plan. Everything in it.'}
+			</Heading>
 
 			<div class="mt-6 min-h-[9.5rem]">
 				<div data-bill="monthly" class="tabular">
 					<p class="flex items-baseline justify-center gap-1">
 						<span class="font-display text-7xl sm:text-8xl">{PRICE.monthly}</span>
-						<span class="text-ink-soft text-xl font-semibold">/month</span>
+						<span class="text-ink-soft text-xl font-semibold">{isAr ? '/شهريًا' : '/month'}</span>
 					</p>
-					<p class="text-ink-faint mt-2 text-lg">{PRICE.monthlyAed} a month · billed monthly</p>
+					<p class="text-ink-faint mt-2 text-lg">
+						{isAr
+							? `${PRICE.monthlyAed} شهريًا · فوترة شهرية`
+							: `${PRICE.monthlyAed} a month · billed monthly`}
+					</p>
 				</div>
 				<div data-bill="annual" class="tabular">
 					<p class="flex items-baseline justify-center gap-1">
 						<span class="font-display text-7xl sm:text-8xl">{PRICE.annualPerMonth}</span>
-						<span class="text-ink-soft text-xl font-semibold">/month</span>
+						<span class="text-ink-soft text-xl font-semibold">{isAr ? '/شهريًا' : '/month'}</span>
 					</p>
 					<p class="text-ink-faint mt-2 text-lg">
-						{PRICE.annualTotal} billed yearly · {PRICE.annualTotalAed}
+						{isAr
+							? `${PRICE.annualTotal} تُفوتَر سنويًا · ${PRICE.annualTotalAed}`
+							: `${PRICE.annualTotal} billed yearly · ${PRICE.annualTotalAed}`}
 					</p>
 					<p class="text-brand-text mt-1 text-lg font-bold">
-						Save {PRICE.annualSaving} a year · {PRICE.annualSavingPercent}% off
+						{isAr
+							? `وفّر ${PRICE.annualSaving} سنويًا · خصم ${PRICE.annualSavingPercent}%`
+							: `Save ${PRICE.annualSaving} a year · ${PRICE.annualSavingPercent}% off`}
 					</p>
 				</div>
 			</div>
 
 			<div class="mt-8">
-				<Button href={SITE.signupUrl} size="lg" block>Start {PRICE.trialDays} days free</Button>
-				<p class="text-ink-faint mt-4 text-base">No card required · Cancel any time · No setup fee</p>
+				<Button href={SITE.signupUrl} size="lg" block>
+					{isAr ? `ابدأ ${PRICE.trialDays} يومًا مجانًا` : `Start ${PRICE.trialDays} days free`}
+				</Button>
+				<p class="text-ink-faint mt-4 text-base">
+					{isAr
+						? 'بلا بطاقة مطلوبة · ألغِ في أي وقت · بلا رسوم إعداد'
+						: 'No card required · Cancel any time · No setup fee'}
+				</p>
 			</div>
 		</div>
 
 		<div class="p-8 sm:p-10">
-			<SubHeading class="label text-brand-text text-sm">Everything included</SubHeading>
+			<SubHeading class="label text-brand-text text-sm">
+				{isAr ? 'كل شيء مشمول' : 'Everything included'}
+			</SubHeading>
 			<ul class="mt-5 grid gap-3 sm:grid-cols-2">
 				{
 					list.map((item) => (
@@ -95,8 +117,13 @@ const list = compact ? INCLUDED.slice(0, 8) : INCLUDED
 			{
 				compact && (
 					<p class="mt-7">
-						<a href="/pricing" class="text-brand-text text-lg font-bold hover:underline">
-							See the full list, and what is deliberately left out →
+						<a
+							href={localizePath('/pricing', lang)}
+							class="text-brand-text text-lg font-bold hover:underline"
+						>
+							{isAr
+								? 'شاهد القائمة الكاملة، وما تم استبعاده عمدًا ←'
+								: 'See the full list, and what is deliberately left out →'}
 						</a>
 					</p>
 				)

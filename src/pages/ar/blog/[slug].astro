@@ -1,16 +1,19 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import Section from '../../components/ui/Section.astro'
-import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
-import Sticker from '../../components/ui/Sticker.astro'
-import CtaBand from '../../components/ui/CtaBand.astro'
+import Layout from '../../../layouts/Layout.astro'
+import Section from '../../../components/ui/Section.astro'
+import Breadcrumbs from '../../../components/ui/Breadcrumbs.astro'
+import Sticker from '../../../components/ui/Sticker.astro'
+import CtaBand from '../../../components/ui/CtaBand.astro'
 import { getCollection, render, type CollectionEntry } from 'astro:content'
-import { SITE } from '../../config/site'
-import { crumbSchema } from '../../utils/schema'
+import { SITE } from '../../../config/site'
+import { crumbSchema } from '../../../utils/schema'
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog', ({ data, id }) => !data.draft && !id.startsWith('ar/'))
-	return posts.map((post) => ({ params: { slug: post.id }, props: { post } }))
+	const posts = await getCollection('blog', ({ data, id }) => !data.draft && id.startsWith('ar/'))
+	return posts.map((post) => ({
+		params: { slug: post.id.replace(/^ar\//, '') },
+		props: { post }
+	}))
 }
 
 interface Props {
@@ -18,16 +21,14 @@ interface Props {
 }
 const { post } = Astro.props
 const { Content } = await render(post)
+const slug = post.id.replace(/^ar\//, '')
 
 const all = (
-	await getCollection('blog', ({ data, id }) => !data.draft && !id.startsWith('ar/'))
-).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-)
+	await getCollection('blog', ({ data, id }) => !data.draft && id.startsWith('ar/'))
+).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 const more = all.filter((p) => p.id !== post.id).slice(0, 3)
 
-const fmt = (d: Date) =>
-	d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+const fmt = (d: Date) => d.toLocaleDateString('ar-AE', { day: 'numeric', month: 'long', year: 'numeric' })
 
 const article = {
 	'@context': 'https://schema.org',
@@ -38,7 +39,7 @@ const article = {
 	dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
 	author: { '@type': 'Organization', name: post.data.author, url: SITE.domain },
 	publisher: { '@id': `${SITE.domain}/#organization` },
-	mainEntityOfPage: new URL(`/blog/${post.id}`, SITE.domain).href,
+	mainEntityOfPage: new URL(`/ar/blog/${slug}`, SITE.domain).href,
 	keywords: post.data.tags.join(', ')
 }
 ---
@@ -46,18 +47,18 @@ const article = {
 <Layout
 	title={post.data.title}
 	description={post.data.description}
-	path={`/blog/${post.id}`}
+	path={`/ar/blog/${slug}`}
 	type="article"
 	schema={[
 		crumbSchema([
-			{ name: 'Blog', path: '/blog' },
-			{ name: post.data.title, path: `/blog/${post.id}` }
+			{ name: 'المدونة', path: '/ar/blog' },
+			{ name: post.data.title, path: `/ar/blog/${slug}` }
 		]),
 		article
 	]}
 >
 	<Section tight width="narrow">
-		<Breadcrumbs trail={[{ name: 'Blog', path: '/blog' }, { name: post.data.title }]} />
+		<Breadcrumbs trail={[{ name: 'المدونة', path: '/ar/blog' }, { name: post.data.title }]} />
 
 		<header class="mt-8">
 			<Sticker tone="orange" size="sm">{post.data.category}</Sticker>
@@ -65,13 +66,13 @@ const article = {
 			<p class="text-ink-soft mt-5 text-xl text-pretty sm:text-2xl">{post.data.description}</p>
 			<p class="text-ink-faint border-line mt-6 border-t pt-5 text-base">
 				<time datetime={post.data.publishDate.toISOString()}>{fmt(post.data.publishDate)}</time>
-				{post.data.updatedDate && <span> · updated {fmt(post.data.updatedDate)}</span>}
+				{post.data.updatedDate && <span> · حُدّثت في {fmt(post.data.updatedDate)}</span>}
 				<span> · {post.data.author}</span>
 			</p>
 		</header>
 
 		<div
-			class="prose prose-lg mt-12 max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:uppercase prose-headings:tracking-tight prose-h2:mt-12 prose-h2:text-3xl prose-h3:text-2xl prose-p:text-ink-soft prose-p:text-lg prose-li:text-ink-soft prose-li:text-lg prose-strong:text-ink prose-a:text-brand-text prose-a:font-bold"
+			class="prose prose-lg mt-12 max-w-none prose-headings:font-display prose-headings:font-normal prose-h2:mt-12 prose-h2:text-3xl prose-h3:text-2xl prose-p:text-ink-soft prose-p:text-lg prose-li:text-ink-soft prose-li:text-lg prose-strong:text-ink prose-a:text-brand-text prose-a:font-bold"
 		>
 			<Content />
 		</div>
@@ -84,7 +85,7 @@ const article = {
 	{
 		more.length > 0 && (
 			<Section tone="card" ruled tight>
-				<h2 class="text-3xl">Keep reading</h2>
+				<h2 class="text-3xl">تابع القراءة</h2>
 				<div class="mt-8 grid gap-6 md:grid-cols-3">
 					{more.map((p) => (
 						<article class="bg-paper slab slab-hover rounded-[1.25rem] p-6">
@@ -92,7 +93,10 @@ const article = {
 								{p.data.category}
 							</Sticker>
 							<h3 class="mt-3 text-xl">
-								<a href={`/blog/${p.id}`} class="hover:text-brand-text transition-colors">
+								<a
+									href={`/ar/blog/${p.id.replace(/^ar\//, '')}`}
+									class="hover:text-brand-text transition-colors"
+								>
 									{p.data.title}
 								</a>
 							</h3>

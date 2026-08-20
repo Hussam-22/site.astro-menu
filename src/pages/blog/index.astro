@@ -8,7 +8,9 @@ import CtaBand from '../../components/ui/CtaBand.astro'
 import { getCollection } from 'astro:content'
 import { crumbSchema } from '../../utils/schema'
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+const posts = (
+	await getCollection('blog', ({ data, id }) => !data.draft && !id.startsWith('ar/'))
+).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 )
 

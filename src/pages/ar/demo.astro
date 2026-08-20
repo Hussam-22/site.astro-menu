@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import SectionHead from '../../components/ui/SectionHead.astro'
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro'
+import Button from '../../components/ui/Button.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import CtaBand from '../../components/ui/CtaBand.astro'
+import { Image } from 'astro:assets'
+import { SITE, PRICE } from '../../config/site'
+import { crumbSchema } from '../../utils/schema'
+
+const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/screens/*.png', {
+	eager: true
+})
+const screenshot = (file: string) =>
+	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
+
+const title = 'عرض حي لقائمة QR'
+const description = `افتح قائمة أسترو مينيو حقيقية — ${SITE.demoVenueName}، 120 صنفًا حيًّا في العين. فلترة حسب نوع الوجبة، بدّل إلى العربية، افتح طبقًا. بلا تسجيل.`
+
+const TRY = [
+	{
+		n: '01',
+		do: 'مرر إلى Brewed Coffee باستخدام الشرائح في الأعلى',
+		why: 'تبقى أربعة عشر قسمًا على بُعد لمسة واحدة، مهما طالت القائمة.'
+	},
+	{
+		n: '02',
+		do: 'افتح الفلتر واختر Decaf، ثم Cold Beverages',
+		why: 'قائمة من 120 صنفًا تضيق إلى قائمة مختصرة بلمستين.'
+	},
+	{
+		n: '03',
+		do: 'اضغط على أيقونة الكرة الأرضية وبدّل القائمة إلى العربية',
+		why: 'تُترجم القائمة كاملة وتُعاد صياغتها من اليمين إلى اليسار.'
+	},
+	{
+		n: '04',
+		do: 'افتح V60 Geisha وانظر إلى الأحجام',
+		why: 'كل حصة تحمل سعرها الخاص، على الصنف نفسه.'
+	},
+	{
+		n: '05',
+		do: 'اضغط على سهم العودة للوصول إلى صفحة المنشأة',
+		why: 'اتصال، واتساب، خرائط، انستقرام وتقييم جوجل، بلمسة واحدة لكل منها.'
+	},
+	{
+		n: '06',
+		do: 'احسب المدة التي استغرقها التحميل',
+		why: 'هذه هي كل الفكرة. لا أحد ينتظر قائمة.'
+	}
+]
+---
+
+<Layout
+	title={title}
+	description={description}
+	path="/ar/demo"
+	schema={crumbSchema([{ name: 'عرض حي', path: '/ar/demo' }])}
+>
+	<Section tight>
+		<Breadcrumbs trail={[{ name: 'عرض حي' }]} />
+		<div class="mt-8 grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+			<div>
+				<SectionHead
+					as="h1"
+					eyebrow="عرض حي"
+					title="هذا ليس نموذجًا تجريبيًا"
+					lede={`إنها القائمة العاملة فعليًا لـ${SITE.demoVenueName} في العين — 120 صنفًا، أربعة عشر قسمًا، تعمل على أسترو مينيو الآن. افتحها على هاتفك إن أمكن؛ فهناك سيراها ضيوفك.`}
+				/>
+				<div class="mt-8 flex flex-wrap gap-4">
+					<Button href={SITE.demoMenuUrl} external size="lg">افتح القائمة الحية</Button>
+					<Button href={SITE.demoVenueUrl} external variant="outline" size="lg">
+						افتح صفحة المنشأة
+					</Button>
+				</div>
+				<div class="mt-7 flex flex-wrap gap-2.5">
+					<Sticker tone="orange">بلا تسجيل</Sticker>
+					<Sticker tone="rose">بلا تطبيق</Sticker>
+					<Sticker>قائمة زبون حقيقية</Sticker>
+				</div>
+				<p class="text-ink-faint mt-7 text-base text-pretty">
+					يرجى التعامل معها بلطف — هذا نشاط تجاري حقيقي، لا صندوق تجارب. التصفح هو كل ما يفعله
+					العرض؛ لا شيء لطلبه ولا شيء لإرساله.
+				</p>
+			</div>
+
+			<div class="border-ink shadow-lift mx-auto w-full max-w-[19rem] overflow-hidden rounded-[2rem] border-[3px]">
+				<Image
+					src={screenshot('menu-sections.png')}
+					alt={`قائمة ${SITE.demoVenueName} الحية، تُظهر شرائح الأقسام وأطباق الإفطار بصورها وأسعارها`}
+					widths={[390, 600, 780]}
+					sizes="(min-width:1024px) 304px, 90vw"
+					loading="eager"
+					fetchpriority="high"
+					class="block h-auto w-full"
+				/>
+			</div>
+		</div>
+	</Section>
+
+	<Section tone="card" ruled>
+		<SectionHead
+			eyebrow="ستة أشياء جرّبها"
+			title="ما الذي تفعله فعليًا<br />بمجرد فتحها"
+			lede="كل واحدة من هذه تختبر ادعاءً ورد في مكان آخر من هذا الموقع. دقيقتان تخبرانك أكثر مما تخبرك قائمة المزايا."
+		/>
+		<ol class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{
+				TRY.map((t) => (
+					<li class="bg-paper slab slab-hover rounded-[1.5rem] p-7">
+						<span class="font-display text-brand text-4xl">{t.n}</span>
+						<h2 class="mt-2 text-2xl">{t.do}</h2>
+						<p class="text-ink-soft mt-3 text-lg text-pretty">{t.why}</p>
+					</li>
+				))
+			}
+		</ol>
+		<div class="mt-12 flex justify-center">
+			<Button href={SITE.demoMenuUrl} external size="lg">افتح القائمة الحية</Button>
+		</div>
+	</Section>
+
+	<Section>
+		<div class="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+			<div>
+				<SectionHead
+					eyebrow="ثم تخيّل قائمتك"
+					title="نفس محرك القوائم،<br />طعامك عليه"
+					lede="صورة الغلاف، شعارك، أقسامك، أسعارك، لغاتك. المنشأة أعلاه لم تصمم أيًا من هذا — بل ملأت حقولًا."
+				/>
+				<div class="mt-8 flex flex-wrap gap-4">
+					<Button href={SITE.signupUrl} size="lg">ابدأ {PRICE.trialDays} يومًا مجانًا</Button>
+					<Button href="/ar/how-it-works" variant="outline" size="lg">كيف يعمل الإعداد</Button>
+				</div>
+			</div>
+			<div class="grid grid-cols-2 gap-5">
+				{
+					['filter-meal-type.png', 'language-switch.png'].map((f, i) => (
+						<div class="border-ink pin-hover overflow-hidden rounded-[1.25rem] border-[2.5px]">
+							<Image
+								src={screenshot(f)}
+								alt={
+									i === 0
+										? 'ورقة فلتر نوع الوجبة مفتوحة، تُظهر خيارات مثل بدون كافيين وصحي وحصة خفيفة'
+										: 'منتقي اللغة مفتوح على القائمة الحية'
+								}
+								widths={[300, 500, 780]}
+								sizes="(min-width:1024px) 22vw, 45vw"
+								class="block h-auto w-full"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</Section>
+
+	<CtaBand
+		title="ابنِ قائمتك بنفس الطريقة"
+		body={`أرسل لنا القائمة التي لديك الآن وسنُحمّل النسخة الأولى نيابة عنك. ${PRICE.trialDays} يومًا مجانًا، بلا بطاقة.`}
+		secondaryHref="/ar/pricing"
+		secondaryLabel="شاهد الأسعار"
+	/>
+</Layout>
