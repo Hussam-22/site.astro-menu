@@ -16,13 +16,13 @@ const isAr = lang === 'ar'
 
 const {
 	title = isAr
-		? 'ضع قائمتك على كل هاتف يدخل من الباب'
+		? 'حط منيوك على كل موبايل يدخل من الباب'
 		: 'Put your menu on every phone that walks in',
 	body = isAr
-		? `أرسل لنا القائمة التي لديك الآن وسنبني النسخة الأولى نيابة عنك. ${PRICE.trialDays} يومًا مجانًا، بلا بطاقة، ألغِ من لوحة التحكم متى شئت.`
+		? `ابعتلنا المنيو اللي عندك هلق ونحن منبني النسخة الأولى بدالك. ${PRICE.trialDays} يومًا مجانًا، بلا بطاقة، وألغِ من لوحة التحكم وقتما بدك.`
 		: `Send us the menu you have now and we will build the first version for you. ${PRICE.trialDays} days free, no card, cancel from the dashboard.`,
 	secondaryHref = localizePath('/demo', lang),
-	secondaryLabel = isAr ? 'شاهد قائمة حقيقية' : 'See a real menu'
+	secondaryLabel = isAr ? 'شاهد منيو حقيقية' : 'See a real menu'
 } = Astro.props
 ---
 

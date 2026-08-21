@@ -38,7 +38,7 @@ const screenshot = (file: string) =>
 const homeFaqsAr = HOME_FAQS.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
 
 const title = 'قائمة QR للمطاعم والمقاهي'
-const description = `حوّل قائمتك إلى قائمة QR سريعة، مصممة بالصور، تحدّثها خلال ثوانٍ. كل لغة، رمز QR واحد لا يحتاج إعادة طباعة أبدًا. ${PRICE.monthly} شهريًا، بلا عمولة.`
+const description = `حوّل قائمة مطعمك إلى منيو QR بالصور، تعدّلها بنفسك خلال ثوانٍ وتظهر فورًا لزبائنك — بكل لغة، من رمز واحد لا يحتاج إعادة طباعة. ${PRICE.monthly} شهريًا، بلا عمولة.`
 
 const schema = [
 	{
@@ -50,7 +50,7 @@ const schema = [
 		operatingSystem: 'Web browser',
 		url: `${SITE.domain}/ar`,
 		description:
-			'منيو QR للمطاعم والمقاهي، سهلة التحديث وتعمل بسرعة على الموبايل — بالصور والأسعار وبأي لغة يحتاجها زبائنك.',
+			'منيو QR للمطاعم والمقاهي، بتتحدّث بضغطة وبتفتح سريع على الموبايل — بالصور والأسعار وبأي لغة يحتاجها زبائنك.',
 		featureList: [
 			'قائمة QR',
 			'منيو غير محدودة بأقسامها وأصنافها',
@@ -98,7 +98,7 @@ const schema = [
 			</div>
 
 			<h1 class="mt-7 text-[3.4rem] leading-[0.9] sm:text-8xl lg:text-[8.5rem]">
-				أظهر{' '}<span
+				ورّي{' '}<span
 					class="border-ink hidden h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle sm:inline-grid"
 				>
 					<FoodImage
@@ -110,15 +110,15 @@ const schema = [
 						widths={[200, 400]}
 						sizes="120px"
 					/>
-				</span>{' '}الطعام،<br />لا القائمة النصية<span class="text-brand-text">.</span>
+				</span>{' '}الأكل،<br />مو بس أسماء وأسعار<span class="text-brand-text">.</span>
 			</h1>
 
 			<div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
 				<div>
 					<p class="text-ink-soft max-w-xl text-xl leading-relaxed text-pretty sm:text-2xl">
-						أرسل لنا القائمة التي لديك الآن ونحوّلها إلى قائمة QR مصممة بالصور نيابة عنك. بعدها
-						تصبح ملكك — كل تعديل تقوم به يُنشر لحظة حفظه. سعر ثابت واحد. بلا نظام نقاط بيع، بلا
-						عمولة، بلا أجهزة.
+						ابعتلنا المنيو اللي عندك هلق، ونحن منحوّلها لمنيو QR بالصور. بعدها بتصير ملكك بالكامل
+						— أي تعديل بتعمله بيظهر فورًا لحظة الحفظ. سعر ثابت واحد. بلا نظام نقاط بيع، بلا
+						عمولة، بلا أجهزة إضافية.
 					</p>
 
 					<div class="mt-8 flex flex-wrap gap-4">
@@ -136,7 +136,7 @@ const schema = [
 						</div>
 						<div>
 							<p class="font-display text-5xl">&lt;1ث</p>
-							<p class="text-ink-soft text-base font-semibold">للتحميل على الهاتف</p>
+							<p class="text-ink-soft text-base font-semibold">ليفتح على الموبايل</p>
 						</div>
 						<div class="flex items-center gap-3">
 							<div class="flex">
@@ -222,9 +222,9 @@ const schema = [
 	<!-- ================= WHY / PILLARS ================= -->
 	<Section id="why">
 		<SectionHead
-			eyebrow="لماذا أسترو مينيو"
-			title="الجميع على الطاولة يربح"
-			lede="المالك يتوقف عن إعادة الطباعة. الطاقم يتوقف عن الاعتذار. الضيف يتوقف عن التحديق في ملف PDF."
+			eyebrow="ليش أسترو مينيو"
+			title="الكل عالطاولة بيستفيد"
+			lede="صاحب المطعم بيبطّل يعيد الطباعة. الطاقم بيبطّل يعتذر عن صنف خلص. والزبون بيبطّل يحدّق بملف PDF ما بينفتح."
 		/>
 		<div class="mt-14 grid gap-7 md:grid-cols-3">
 			{
@@ -256,9 +256,9 @@ const schema = [
 	<!-- ================= WHAT GUESTS SEE ================= -->
 	<Section tone="card" ruled id="menu">
 		<SectionHead
-			eyebrow="ما يراه ضيوفك"
-			title="ستة شاشات.<br />كلها حقيقية."
-			lede={`كل شاشة أدناه هي قائمة زبون حقيقية تعمل على أسترو مينيو اليوم، معظمها ${SITE.demoVenueName}، 120 صنفًا حيًّا في العين. لا شيء هنا محاكاة.`}
+			eyebrow="شو بيشوف زبونك"
+			title="ست شاشات.<br />كلها حقيقية."
+			lede={`كل شاشة تحت هي منيو زبون شغّال فعليًا على أسترو مينيو اليوم، معظمها من ${SITE.demoVenueName}، 120 صنفًا أمام عينك مباشرة. ولا شي هون محاكاة أو تصميم تجريبي.`}
 		/>
 		<div class="masonry mt-14 sm:columns-2 lg:columns-3">
 			{
@@ -303,9 +303,9 @@ const schema = [
 		<div class="grid items-center gap-14 lg:grid-cols-2">
 			<div>
 				<SectionHead
-					eyebrow="ما تتحكم به"
-					title="القائمة كاملة،<br />من هاتفك"
-					lede="كل ما يراه الضيف هو حقل تملكه أنت. بلا مصمم، بلا مطور، بلا تذكرة دعم، بلا انتظار أحد."
+					eyebrow="شو بتتحكم فيه"
+					title="المنيو كلها،<br />من موبايلك"
+					lede="كل شي بيشوفه الزبون هو حقل إنت اللي بتتحكم فيه. بلا مصمم، بلا مبرمج، بلا تذكرة دعم، وبلا ما تستنى حدا."
 					invert
 				/>
 				<div class="mt-8 flex flex-wrap gap-2.5">
@@ -348,14 +348,14 @@ const schema = [
 	<Section id="compare">
 		<SectionHead
 			eyebrow="أسترو مينيو مقابل القائمة المطبوعة"
-			title="واحدة من هاتين تكلّفك مالًا<br />في كل مرة تتغيّر فيها"
+			title="وحدة من الاثنتين بتكلّفك مصاري<br />كل مرة بتتغيّر فيها"
 		/>
 
 		<div class="border-ink bg-card slab mt-12 overflow-hidden rounded-[1.75rem]">
 			<div class="overflow-x-auto">
 				<table class="w-full min-w-[46rem] text-start">
 					<caption class="sr-only">
-						مقارنة أسترو مينيو بقائمة مطبوعة أو PDF، عبر ثماني مواقف يومية
+						مقارنة بين أسترو مينيو وقائمة الطعام المطبوعة أو ملف PDF، عبر ثماني مواقف يومية
 					</caption>
 					<thead>
 						<tr class="border-ink border-b-[2.5px]">
@@ -394,7 +394,7 @@ const schema = [
 
 	<!-- ================= USE CASES ================= -->
 	<Section tone="card" ruled id="use-cases">
-		<SectionHead eyebrow="لمن هذا" title="إن كنت تقدّم طعامًا، فهي مناسبة لك" />
+		<SectionHead eyebrow="لمين هالمنيو" title="إذا بتقدّم أكل، هي إلك" />
 		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{
 				USE_CASES.map((u) => (
@@ -430,9 +430,9 @@ const schema = [
 		</div>
 
 		<div class="mx-auto mt-16 max-w-4xl">
-			<h3 class="text-center text-3xl">وما تم استبعاده عمدًا</h3>
+			<h3 class="text-center text-3xl">وشو يلي مش موجود، عن قصد</h3>
 			<p class="text-ink-soft mx-auto mt-3 max-w-2xl text-center text-lg">
-				هذا الجزء الذي يخفيه المنافسون. قوله بوضوح هو ما يجعل السعر قابلًا للتصديق.
+				هذا الجزء يلي بيخبّيه أغلب المنافسين. إحنا منحكيه بوضوح لأنه هيك بيصير للسعر معنى تقدر تصدّقه.
 			</p>
 			<div class="mt-8 grid gap-4 sm:grid-cols-2">
 				{
@@ -501,7 +501,7 @@ const schema = [
 	<Section id="faq">
 		<div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
 			<div>
-				<SectionHead eyebrow="أسئلة" title="تلك التي<br />تمنع الشراء فعليًا" />
+				<SectionHead eyebrow="أسئلة" title="يلي فعلًا<br />بتوقّف قرار الاشتراك" />
 				<div class="border-ink slab mt-10 overflow-hidden rounded-[1.5rem]">
 					<FoodImage
 						name="faq-flatlay"

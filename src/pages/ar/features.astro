@@ -20,8 +20,8 @@ const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/s
 const screenshot = (file: string) =>
 	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
 
-const title = 'المزايا — كل ما تفعله قائمة QR'
-const description = `صور على كل طبق، أحجام وأسعار، ترجمة تلقائية، وسوم الحساسية، فلاتر، سعرات وتحليلات — كل ذلك في باقة واحدة بسعر ${PRICE.monthly} شهريًا.`
+const title = 'المزايا — كل ما تقدر تعمله بقائمة QR'
+const description = `صورة لكل طبق، أحجام وأسعار، ترجمة تلقائية، وسوم الحساسية، فلاتر أنواع الوجبات، سعرات وتحليلات — كل هذا في باقة واحدة بسعر ${PRICE.monthly} شهريًا.`
 ---
 
 <Layout
@@ -36,8 +36,8 @@ const description = `صور على كل طبق، أحجام وأسعار، تر�
 			<SectionHead
 				as="h1"
 				eyebrow="المزايا"
-				title="كل ما تفعله القائمة"
-				lede="بلا فئات، بلا إضافات، بلا صفحة ترقية. كل ميزة أدناه في الباقة الواحدة، والسعر لا يتغيّر عند استخدامها."
+				title="كل شي بتعمله المنيو"
+				lede="بلا فئات، بلا إضافات مدفوعة، بلا صفحة ترقية. كل ميزة تحت هي جزء من الباقة الواحدة، والسعر ما بيتغيّر مهما استخدمتها."
 			/>
 			<div class="flex flex-wrap gap-2.5 lg:justify-end lg:pt-10">
 				<Sticker tone="orange">أصناف غير محدودة</Sticker>
@@ -102,7 +102,7 @@ const description = `صور على كل طبق، أحجام وأسعار، تر�
 
 				{group.dash && (
 					<div class="mx-auto mt-14 max-w-5xl">
-						<p class="label text-brand-text mb-4 text-sm">ما تراه في لوحة التحكم</p>
+						<p class="label text-brand-text mb-4 text-sm">هيك بتشوفها بلوحة التحكم</p>
 						<DashboardImage
 							name={group.dash}
 							alt={`لوحة تحكم أسترو مينيو — ${group.dashBriefAr}`}
@@ -119,9 +119,9 @@ const description = `صور على كل طبق، أحجام وأسعار، تر�
 	<Section tone="ink">
 		<div class="grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
 			<SectionHead
-				eyebrow="شاهدها تعمل"
-				title="القراءة عنها ليست<br />كتجربتها فعليًا"
-				lede={`افتح القائمة الحية لـ${SITE.demoVenueName} — 120 صنفًا، أربعة عشر قسمًا، فلاتر وتبديل لغة، كل ذلك يعمل على الباقة الموصوفة أعلاه.`}
+				eyebrow="جرّبها بعينك"
+				title="القراءة عنها شي،<br />وتجربتها شي ثاني"
+				lede={`افتح المنيو الحية لـ${SITE.demoVenueName} — 120 صنفًا، أربعتاشر قسمًا، فلاتر وتبديل لغة، كل هذا شغّال على نفس الباقة الموصوفة فوق.`}
 				invert
 			/>
 			<div class="flex flex-wrap gap-4 lg:justify-end">
@@ -129,14 +129,14 @@ const description = `صور على كل طبق، أحجام وأسعار، تر�
 					href="/ar/demo"
 					class="brand-gradient border-ink inline-flex items-center rounded-full border-[2.5px] px-9 py-4 text-xl font-bold text-white shadow-[4px_4px_0_#fff] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
 				>
-					جرّب العرض الحي
+					جرّب المنيو الحية
 				</a>
 			</div>
 		</div>
 	</Section>
 
 	<CtaBand
-		title="كل ذلك، بسعر ثابت واحد"
+		title="كل هذا، بسعر ثابت واحد"
 		body={`${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا. ${PRICE.trialDays} يومًا مجانًا أولًا، بلا بطاقة.`}
 		secondaryHref="/ar/pricing"
 		secondaryLabel="شاهد الأسعار"

@@ -18,14 +18,14 @@ const pricingGroup = FAQ_GROUPS.find((g) => g.heading === 'Pricing')!
 const pricingFaqs = pricingGroup.items.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
 
 const title = `الأسعار — ${PRICE.monthly} شهريًا، باقة واحدة`
-const description = `${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا (${PRICE.annualTotal}). قوائم وأصناف ومشاهدات غير محدودة. بلا رسوم إعداد، بلا عمولة، بلا عقد.`
+const description = `${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا (${PRICE.annualTotal}). قوائم طعام وأصناف ومشاهدات غير محدودة. بلا رسوم إعداد، بلا عمولة، بلا عقد.`
 
 const product = {
 	'@context': 'https://schema.org',
 	'@type': 'Product',
 	name: 'Astro-Menu',
 	description:
-		'باقة واحدة بسعر ثابت لقائمة QR رقمية: مشاهدات وأصناف وقوائم غير محدودة، بلا عمولة وبلا رسوم إعداد.',
+		'باقة واحدة بسعر ثابت لقائمة طعام رقمية QR: مشاهدات وأصناف وقوائم غير محدودة، بلا عمولة وبلا رسوم إعداد.',
 	brand: { '@type': 'Brand', name: 'Astro-Menu' },
 	offers: [
 		{
@@ -70,7 +70,7 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 				align="center"
 				eyebrow="الأسعار"
 				title="باقة واحدة.<br />كل شيء فيها."
-				lede="كل منافس في هذا السوق يطلب منك تعبئة طلب عرض سعر. إليك الرقم، وإليك بالضبط ما يشتريه وما لا يشتريه."
+				lede="كل منافس بهذا السوق بيطلب منك تعبئة طلب عرض سعر. إحنا منعطيك الرقم مباشرة، ومنقولك بالضبط شو بيشتريه وشو لأ."
 			/>
 		</div>
 		<div class="mt-6 flex flex-wrap justify-center gap-2.5">
@@ -88,8 +88,8 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 		<SectionHead
 			align="center"
 			eyebrow="النصف الآخر من الحقيقة"
-			title="ما تم استبعاده عمدًا"
-			lede="هذا هو الجزء الذي يخفيه المنافسون في مصفوفة مزايا. قوله بوضوح هو ما يجعل السعر الثابت الواحد قابلًا للتصديق."
+			title="وشو يلي مش موجود، عن قصد"
+			lede="هذا الجزء يلي بيخبّيه المنافسون بجدول المزايا. إحنا منحكيه بوضوح لأنه هيك بيصير للسعر الثابت الواحد معنى تقدر تصدّقه."
 		/>
 		<div class="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2">
 			{
@@ -105,8 +105,8 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 			}
 		</div>
 		<p class="text-ink-soft mx-auto mt-10 max-w-2xl text-center text-lg text-pretty">
-			إذا كنت تحتاج نظام كاشير أو مسار طلبات أو مدفوعات، فأسترو مينيو ليست المنتج المناسب، ونفضّل
-			أن نخبرك الآن بدلاً من بعد أن تكون قد دفعت.
+			إذا كنت تحتاج نظام كاشير أو مسار طلبات أو مدفوعات، فأسترو مينيو مو المنتج المناسب إلك، ونحن
+			نفضّل نقولك هيك من الأول بدل ما تدفع وبعدين تكتشف.
 		</p>
 	</Section>
 
@@ -114,18 +114,18 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 		<div class="grid items-start gap-14 lg:grid-cols-2">
 			<div>
 				<SectionHead
-					eyebrow="مقارنة بما تنفقه فعلًا"
-					title="قارنها بفاتورة الطباعة،<br />لا بالبرمجيات"
-					lede="معظم المنشآت لا تختار بين تطبيقين. إنها تختار بين اشتراك وفاتورة مطبعة."
+					eyebrow="قارنها بيلي فعلًا بتصرفه"
+					title="قارنها بفاتورة المطبعة،<br />مو بسعر برنامج"
+					lede="أغلب المطاعم ما بتختار بين تطبيقين. هي بتختار بين اشتراك وفاتورة مطبعة."
 				/>
 				<p class="text-ink-soft mt-6 text-lg text-pretty">
-					منشأة تعيد طباعة قائمتها {PRINT_RUNS_PER_YEAR} مرات سنويًا بحوالي ${PRINT_COST_PER_RUN}
-					{' '}للطبعة الواحدة تنفق حوالي ${printYear} على الطباعة وحدها — قبل أن يُحتسب المساء الذي
-					خسره مدير في تدقيق القائمة، أو الشهر الذي بقي فيه سعر خاطئ على الطاولة لأن إعادة الطباعة
-					لم تكن تستحق العناء.
+					مطعم بيعيد طباعة منيوه {PRINT_RUNS_PER_YEAR} مرات بالسنة بحوالي ${PRINT_COST_PER_RUN}
+					{' '}للطبعة الواحدة بيصرف حوالي ${printYear} على الطباعة لحالها — قبل ما نحسب المسا يلي
+					ضيّعه المدير بمراجعة القائمة، أو الشهر يلي ضل فيه سعر غلط عالطاولة لأن إعادة الطباعة ما
+					كانت تستاهل التعب.
 				</p>
 				<p class="text-ink-soft mt-4 text-lg text-pretty">
-					هذه الأرقام توضيحية، لا عرض سعر. ضع أرقامك الخاصة — الشكل نادرًا ما يتغيّر.
+					هذه الأرقام للتوضيح فقط، مو عرض سعر رسمي. حط أرقامك إنت — الصورة العامة نادرًا ما بتتغيّر.
 				</p>
 			</div>
 
@@ -153,7 +153,7 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 				<ul class="border-line mt-7 space-y-3 border-t pt-6">
 					<li class="flex items-start gap-3 text-lg">
 						<Check class="text-go mt-1.5" />
-						<span>إعادة الطباعة بعد تغيير السعر: غير محدودة، ومجانية</span>
+						<span>إعادة الطباعة بعد تغيير السعر: غير محدودة، ومجانًا تمامًا</span>
 					</li>
 					<li class="flex items-start gap-3 text-lg">
 						<Check class="text-go mt-1.5" />
@@ -179,9 +179,9 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 	</Section>
 
 	<CtaBand
-		title={`جرّبها ${PLAN.trialDays} يومًا أولًا`}
-		body="بلا بطاقة، بلا رسوم إعداد، بلا عقد. إذا لم تكن مناسبة، توقف عن استخدامها ولم يتغيّر شيء."
+		title={`جرّبها ${PLAN.trialDays} يومًا أول شي`}
+		body="بلا بطاقة، بلا رسوم إعداد، بلا عقد. إذا ما ناسبتك، بتوقف عن استخدامها وما بيتغيّر شي."
 		secondaryHref="/ar/demo"
-		secondaryLabel="شاهد قائمة حقيقية"
+		secondaryLabel="شاهد منيو حقيقية"
 	/>
 </Layout>

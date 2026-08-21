@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro'
 import { crumbSchema } from '../../utils/schema'
 
 const title = 'تواصل معنا'
-const description = `أرسل لنا القائمة التي لديك الآن وسنبني النسخة الأولى مجانًا. راسلنا على ${SITE.email} — يرد عليك شخص، عادة في نفس اليوم.`
+const description = `ابعتلنا المنيو اللي عندك هلق ونحن منبني النسخة الأولى مجانًا. راسلنا على ${SITE.email} — بيردّ عليك شخص فعلي، عادة بنفس اليوم.`
 
 const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
 ---
@@ -27,8 +27,8 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 				<SectionHead
 					as="h1"
 					eyebrow="تواصل معنا"
-					title="أرسل لنا قائمتك"
-					lede="بأي صيغة كانت — ملف PDF، صورة للقائمة المطبوعة، جدول بيانات. سنبني النسخة الأولى نيابة عنك ونرسلها جاهزة للمراجعة. بلا رسوم، بلا التزام."
+					title="ابعتلنا منيوك"
+					lede="بأي صيغة عندك — ملف PDF، صورة للقائمة المطبوعة، جدول بيانات. نحن منبني النسخة الأولى بدالك ومنرسلها جاهزة تراجعها. بلا رسوم، بلا التزام."
 				/>
 
 				<div class="mt-9">
@@ -53,13 +53,13 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 						</span>
 						<span>
 							<span class="block text-xl font-bold">{SITE.email}</span>
-							<span class="text-ink-soft block text-base">عادة ما نرد في نفس اليوم</span>
+							<span class="text-ink-soft block text-base">عادة منردّ بنفس اليوم</span>
 						</span>
 					</a>
 				</div>
 
 				<div class="mt-8 flex flex-wrap gap-2.5">
-					<Sticker tone="orange">بناء القائمة الأولى مجانًا</Sticker>
+					<Sticker tone="orange">بناء المنيو الأولى مجانًا</Sticker>
 					<Sticker tone="rose">{PRICE.trialDays} يومًا مجانًا</Sticker>
 					<Sticker>بلا مكالمة مبيعات</Sticker>
 				</div>
@@ -84,7 +84,7 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 								autocomplete="off"
 							/>
 
-							<h2 class="text-3xl">أو راسلنا من هنا</h2>
+							<h2 class="text-3xl">أو عبّي النموذج هون</h2>
 
 							<div class="mt-6 space-y-5">
 								<div>
@@ -126,7 +126,7 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 								</div>
 								<div>
 									<label for="message" class="block text-lg font-bold">
-										ما الذي تحتاجه؟
+										شو بتحتاج بالضبط؟
 									</label>
 									<textarea
 										id="message"
@@ -142,10 +142,10 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 								type="submit"
 								class="brand-gradient border-ink mt-7 w-full rounded-full border-[2.5px] py-4 text-xl font-bold text-white shadow-[4px_4px_0_var(--color-ink)] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5"
 							>
-								أرسلها
+								ابعتها
 							</button>
 							<p class="text-ink-faint mt-4 text-base">
-								نستخدم ما ترسله للرد فقط. لا شيء آخر، أبدًا.
+								منستخدم يلي بتبعته بس للرد عليك. ولا شي غير هيك، أبدًا.
 							</p>
 						</form>
 					) : (

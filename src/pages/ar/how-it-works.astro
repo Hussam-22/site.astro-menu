@@ -20,13 +20,13 @@ const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/s
 const screenshot = (file: string) =>
 	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
 
-const title = 'كيف تعمل — من قائمتك إلى كود QR'
-const description = `أرسل قائمتك بأي شكل ونحوّلها لك يدويًا. أضف هويتك، اطبع الكود، وغيّره متى شئت — كل تعديل يُنشر فورًا.`
+const title = 'كيف تعمل — من قائمة طعامك إلى رمز QR'
+const description = `ابعتلنا منيو مطعمك بأي شكل عندك، ونحن منجهّزها لك يدويًا. زيد هوية مطعمك، اطبع الرمز، وغيّر أي شي وقتما بدك — كل تعديل بيظهر فورًا.`
 
 const howTo = {
 	'@context': 'https://schema.org',
 	'@type': 'HowTo',
-	name: 'كيفية إعداد قائمة QR مع أسترو مينيو',
+	name: 'كيف تجهّز قائمة QR مع أسترو مينيو',
 	description,
 	totalTime: 'PT1H',
 	estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '0' },
@@ -40,11 +40,11 @@ const howTo = {
 }
 
 const NEED = [
-	'قائمتك الحالية — ملف PDF، صورة للقائمة المطبوعة، أو جدول بيانات',
-	'شعارك',
-	'صورة غلاف للمنشأة',
-	'اللغات التي تخدم بها',
-	'صور الأطباق، لاحقًا — يمكن إضافتها صنفًا صنفًا بعد ذلك'
+	'منيو مطعمك الحالية — ملف PDF، صورة للقائمة المطبوعة، أو حتى جدول بيانات',
+	'شعار مطعمك',
+	'صورة غلاف للمكان',
+	'اللغات التي تتعامل بها مع زبائنك',
+	'صور الأطباق، لاحقًا — تقدر تضيفها صنفًا صنفًا بعدين'
 ]
 ---
 
@@ -61,12 +61,12 @@ const NEED = [
 				<SectionHead
 					as="h1"
 					eyebrow="كيف تعمل"
-					title="من قائمتك<br />إلى كود QR"
-					lede="أربع خطوات. الأولى هي الوحيدة التي تتطلب عملًا حقيقيًا، وهي التي نقوم بها نيابة عنك."
+					title="من منيوك<br />إلى رمز QR"
+					lede="أربع خطوات بس. الأولى هي الوحيدة يلي فيها شغل حقيقي، وهاي إحنا يلي منعملها بدالك."
 				/>
 				<div class="mt-8 flex flex-wrap gap-4">
 					<Button href={SITE.signupUrl} size="lg">ابدأ {PRICE.trialDays} يومًا مجانًا</Button>
-					<Button href="/ar/demo" variant="outline" size="lg">شاهد قائمة جاهزة</Button>
+					<Button href="/ar/demo" variant="outline" size="lg">شاهد منيو جاهزة</Button>
 				</div>
 			</div>
 			<div class="border-ink shadow-lift mx-auto w-full max-w-[17rem] overflow-hidden rounded-[1.5rem] border-[3px]">
@@ -82,7 +82,7 @@ const NEED = [
 	</Section>
 
 	<Section tone="card" ruled>
-		<SectionHead eyebrow="الخطوات الأربع" title="ما الذي يحدث فعليًا" />
+		<SectionHead eyebrow="الخطوات الأربع" title="شو يلي بيصير بالضبط" />
 		<ol class="mt-14 grid gap-7 lg:grid-cols-2">
 			{
 				STEPS.map((step, i) => (
@@ -101,9 +101,9 @@ const NEED = [
 		<div class="grid items-start gap-14 lg:grid-cols-2">
 			<div>
 				<SectionHead
-					eyebrow="ما نحتاجه منك"
-					title="أرسلها بأي شكل<br />هي عليه لديك"
-					lede="لا تحتاج لتحضير أي شيء. صورة للقائمة المطبوعة بهاتفك كافية للبدء."
+					eyebrow="شو بدنا منك"
+					title="ابعتها بأي شكل<br />هي عندك فيه"
+					lede="ما في داعي تحضّر شي. صورة للقائمة المطبوعة بموبايلك كافية نبدأ فيها."
 				/>
 				<ul class="mt-8 space-y-4">
 					{
@@ -116,12 +116,12 @@ const NEED = [
 					}
 				</ul>
 				<div class="bg-brand/12 slab-sm mt-9 rounded-2xl p-6">
-					<p class="text-lg font-bold">سنحمّل القائمة الأولى نيابة عنك.</p>
+					<p class="text-lg font-bold">نحن منرتب لك المنيو الأولى بأنفسنا.</p>
 					<p class="text-ink-soft mt-2 text-lg text-pretty">
-						أرسلها إلى{' '}
+						ابعتها على{' '}
 						<a href={`mailto:${SITE.email}`} class="text-brand-text font-bold hover:underline"
 							>{SITE.email}</a
-						> وسنعيد لك قائمة جاهزة للمراجعة والتصحيح والنشر.
+						> ومنرجعلك منيو جاهزة تراجعها، تصحّح فيها، وتنشرها.
 					</p>
 				</div>
 			</div>
@@ -143,9 +143,9 @@ const NEED = [
 		<div class="grid items-center gap-14 lg:grid-cols-2">
 			<div>
 				<SectionHead
-					eyebrow="ثم تصبح ملكك"
-					title="كل شيء حقل<br />في لوحة التحكم"
-					lede="بمجرد تحميل القائمة، لن تحتاجنا مجددًا. كل تعديل تقوم به بنفسك، خلال ثوانٍ، من هاتفك."
+					eyebrow="وبعدها بتصير إلك بالكامل"
+					title="كل شي حقل<br />بلوحة التحكم"
+					lede="أول ما ترفع المنيو، ما رح تحتاجنا كمان. كل تعديل بتعمله بنفسك، بثوانٍ، من موبايلك."
 					invert
 				/>
 				<div class="mt-8 flex flex-wrap gap-2.5">
@@ -170,9 +170,9 @@ const NEED = [
 	</Section>
 
 	<CtaBand
-		title="أرسل لنا القائمة التي لديك الآن"
-		body={`سنحوّلها يدويًا ونعيدها جاهزة للمراجعة. ${PRICE.trialDays} يومًا مجانًا، بلا بطاقة.`}
+		title="ابعتلنا المنيو اللي عندك هلق"
+		body={`منرتبها لك يدويًا ومنرجعلك إياها جاهزة للمراجعة. ${PRICE.trialDays} يومًا مجانًا، بلا بطاقة.`}
 		secondaryHref="/ar/contact"
-		secondaryLabel="أرسل لنا قائمتك"
+		secondaryLabel="ابعتلنا منيوك"
 	/>
 </Layout>

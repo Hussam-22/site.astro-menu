@@ -14,9 +14,9 @@ const posts = (
 
 const fmt = (d: Date) => d.toLocaleDateString('ar-AE', { day: 'numeric', month: 'long', year: 'numeric' })
 
-const title = 'المدونة — قوائم، رموز QR والظهور في البحث'
+const title = 'المدونة — قوائم طعام، رموز QR والظهور في البحث'
 const description =
-	'كتابة عملية لمن يديرون أعمال الطعام: قوائم QR لا تعيد طباعتها أبدًا، قوائم تبيع، تكلفة القوائم الرقمية، والظهور على جوجل.'
+	'كتابة عملية لأصحاب مطاعم ومقاهي: قوائم QR ما بتحتاج إعادة طباعة، منيو بتبيع أكتر، تكلفة القوائم الرقمية، والظهور على جوجل.'
 ---
 
 <Layout
@@ -31,8 +31,8 @@ const description =
 			<SectionHead
 				as="h1"
 				eyebrow="المدونة"
-				title="قوائم، رموز<br />وظهور في البحث"
-				lede="مكتوبة لمن يديرون أعمال طعام، لا لمن يديرون برمجيات. بلا مقالات عامة، بلا حشو."
+				title="قوائم طعام، رموز<br />وظهور بالبحث"
+				lede="مكتوبة لأصحاب مطاعم ومقاهي، مو لأصحاب شركات برمجيات. بلا مقالات عامة، بلا حشو."
 			/>
 		</div>
 	</Section>
@@ -65,7 +65,7 @@ const description =
 		</div>
 		{
 			posts.length === 0 && (
-				<p class="text-ink-soft text-center text-xl">لا شيء منشور بعد. تفقد الصفحة لاحقًا.</p>
+				<p class="text-ink-soft text-center text-xl">ما في شي منشور لسا. تفقّد الصفحة بعدين.</p>
 			)
 		}
 	</Section>

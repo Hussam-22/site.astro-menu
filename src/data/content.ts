@@ -14,8 +14,8 @@ export const PILLARS = [
 		brief: 'Cafe owner grinning, phone in hand, behind the counter',
 		tone: 'warm' as const,
 		whoAr: 'صاحب المطعم',
-		titleAr: 'بلا عمولة، أبدًا',
-		bodyAr: 'رسم شهري ثابت ولا شيء غيره. لا نأخذ أبدًا نسبة من فاتورة أو طلب أو توصيل، فما تتقاضاه هو ما تحتفظ به بالكامل.'
+		titleAr: 'بلا عمولة، خلص',
+		bodyAr: 'رسم شهري ثابت، ولا شيء غيره. ما نلمس ولا نسبة من فاتورة أو طلب أو توصيل، فكل ما تتقاضاه يبقى إلك بالكامل.'
 	},
 	{
 		who: 'The staff',
@@ -25,8 +25,8 @@ export const PILLARS = [
 		brief: 'Barista laughing mid-service, relaxed, not stressed',
 		tone: 'brand' as const,
 		whoAr: 'فريق العمل',
-		titleAr: 'يتغيّر خلال ثوانٍ',
-		bodyAr: 'ارتفاع سعر، طبق نفد، عرض جديد. أحدهم يعدّله من هاتفه وكل رمز QR في الصالة يعرضه فورًا. لا مزيد من الاعتذار طاولة تلو الأخرى.'
+		titleAr: 'يتغيّر بثوانٍ',
+		bodyAr: 'سعر ارتفع، طبق خلص، عرض جديد؟ حدا من الفريق يعدّلها من موبايله وكل رمز QR بالمطعم بيعرضها فورًا. خلص زمن الاعتذار طاولة طاولة.'
 	},
 	{
 		who: 'The guest',
@@ -35,9 +35,9 @@ export const PILLARS = [
 		image: 'guests',
 		brief: 'Two friends at a table scanning a QR, laughing at the phone',
 		tone: 'dark' as const,
-		whoAr: 'الضيف',
-		titleAr: 'بلا تطبيق، بلا عناء',
-		bodyAr: 'يوجّه الكاميرا فيفتح القائمة بلغته هو. لا شيء يُحمَّل، ولا حساب يُنشأ، ولا شيء يحتاج موظفوك لشرحه.'
+		whoAr: 'الزبون',
+		titleAr: 'بلا تطبيق، بلا تعقيد',
+		bodyAr: 'بس يصوّر الكود بالكاميرا وتفتح المنيو بلغته هو. ما في شي يحمّله، ولا حساب ينشئه، ولا شي يحتاج موظفينك يشرحوه.'
 	}
 ]
 
@@ -113,7 +113,7 @@ export const TESTIMONIALS = [
 		role: 'Owner',
 		quote:
 			'Astro-Menu transformed the way our customers interact with our menu. With more than 120 items, it used to take time for people to find what they wanted, but the filtering and clean layout changed everything. Customers can now browse, sort, and locate their preferred drinks or pastries in seconds. This has noticeably reduced ordering time and kept the flow moving smoothly, especially during peak hours.',
-		roleAr: 'المالك',
+		roleAr: 'صاحب المكان',
 		quoteAr:
 			'غيّرت Astro-Menu الطريقة التي يتفاعل بها عملاؤنا مع قائمتنا. مع أكثر من 120 صنفًا، كان الأمر يستغرق وقتًا حتى يجد الناس ما يريدون، لكن الفلترة والتصميم الواضح غيّرا كل شيء. أصبح بإمكان العملاء الآن التصفح والفرز وإيجاد مشروبهم أو حلواهم المفضلة خلال ثوانٍ. هذا خفّض وقت الطلب بشكل ملحوظ وحافظ على انسيابية الحركة، خصوصًا في أوقات الذروة.'
 	},
@@ -123,7 +123,7 @@ export const TESTIMONIALS = [
 		role: 'Mobile coffee truck',
 		quote:
 			'Astro-Menu has been a great addition to how we operate. Managing our menu is incredibly easy, and updates appear instantly. One of the biggest advantages is how smoothly customers can view our menu online through Google, Maps, or even our social media pages before visiting. It helps them decide faster and improves their overall experience.',
-		roleAr: 'شاحنة قهوة متنقلة',
+		roleAr: 'صاحب شاحنة قهوة متنقلة',
 		quoteAr:
 			'كانت Astro-Menu إضافة رائعة لطريقة عملنا. إدارة قائمتنا سهلة للغاية، والتحديثات تظهر فورًا. من أكبر المزايا هي السلاسة التي يستطيع بها العملاء الاطلاع على قائمتنا أونلاين عبر جوجل أو الخرائط أو حتى صفحاتنا على وسائل التواصل الاجتماعي قبل الزيارة. هذا يساعدهم على اتخاذ القرار بسرعة أكبر ويحسّن تجربتهم بشكل عام.'
 	}
@@ -135,65 +135,65 @@ export const VERSUS = [
 		point: 'Changing a price',
 		astro: 'Type it. Live the moment you save, at no cost.',
 		other: 'Reprint the whole run, or live with a sticker over it.',
-		pointAr: 'تغيير سعر',
-		astroAr: 'اكتبه فقط. يظهر مباشرة لحظة الحفظ، بلا أي تكلفة.',
-		otherAr: 'أعد طباعة القائمة بالكامل، أو تعايش مع ملصق فوقه.'
+		pointAr: 'تغيير السعر',
+		astroAr: 'تكتبه، وبنفس اللحظة يظهر عالمنيو، بدون أي تكلفة.',
+		otherAr: 'إعادة طباعة القائمة كلها، أو تعيش مع ملصق فوق السعر القديم.'
 	},
 	{
 		point: 'A dish runs out',
 		astro: 'One toggle and it disappears from the menu.',
 		other: 'The waiter apologises, table by table, all night.',
-		pointAr: 'نفاد طبق',
-		astroAr: 'مفتاح واحد ويختفي الطبق من القائمة.',
-		otherAr: 'النادل يعتذر، طاولة تلو الأخرى، طوال الليل.'
+		pointAr: 'نفاد صنف',
+		astroAr: 'مفتاح واحد وبيختفي الطبق من المنيو.',
+		otherAr: 'النادل يعتذر، طاولة ورا طاولة، طول الليل.'
 	},
 	{
 		point: 'Reading it on a phone',
 		astro: 'Built for a phone screen first. Nothing to zoom.',
 		other: 'A PDF you pinch, drag and squint at.',
-		pointAr: 'القراءة على الهاتف',
-		astroAr: 'مصمم لشاشة الهاتف أولًا. لا حاجة للتكبير.',
+		pointAr: 'قراءتها على الموبايل',
+		astroAr: 'منيو مصممة للموبايل من الأساس. ولا داعي للتكبير.',
 		otherAr: 'ملف PDF تكبّره وتسحبه وتحدّق فيه بصعوبة.'
 	},
 	{
 		point: 'Guests who read Arabic',
 		astro: 'Every language you add, translated and right-to-left.',
 		other: 'A second print run, or nothing at all.',
-		pointAr: 'الضيوف الذين يقرؤون العربية',
-		astroAr: 'كل لغة تضيفها، مترجمة وبالاتجاه الصحيح من اليمين لليسار.',
-		otherAr: 'طبعة ثانية، أو لا شيء على الإطلاق.'
+		pointAr: 'الزبائن الذين يقرؤون العربية',
+		astroAr: 'كل لغة تضيفها عالمنيو، بترجمة كاملة واتجاه صحيح من اليمين لليسار.',
+		otherAr: 'طبعة ثانية، أو ولا شيء أصلًا.'
 	},
 	{
 		point: 'Finding one dish in 120',
 		astro: 'Section chips, meal-type filters, photos. Seconds.',
 		other: 'Scroll, scroll, scroll, ask a waiter.',
-		pointAr: 'إيجاد طبق واحد بين 120',
-		astroAr: 'أقسام سريعة، فلاتر لنوع الوجبة، صور. خلال ثوانٍ.',
-		otherAr: 'تمرير، تمرير، تمرير، ثم سؤال النادل.'
+		pointAr: 'إيجاد صنف واحد من بين 120',
+		astroAr: 'أقسام سريعة، فلاتر لنوع الوجبة، صور واضحة — كله بثوانٍ.',
+		otherAr: 'نزّل، كبّر، حرّك... وبالأخير اسأل النادل.'
 	},
 	{
 		point: 'Allergies and calories',
 		astro: 'Tagged per item, filterable, always current.',
 		other: 'A separate sheet nobody can find.',
 		pointAr: 'الحساسية والسعرات الحرارية',
-		astroAr: 'موسومة لكل صنف، قابلة للفلترة، محدّثة دائمًا.',
-		otherAr: 'ورقة منفصلة لا يجدها أحد.'
+		astroAr: 'موسومة على كل صنف، قابلة للفلترة، ومحدّثة دايمًا.',
+		otherAr: 'ورقة لحالها ما حدا بيلاقيها.'
 	},
 	{
 		point: 'Before they arrive',
 		astro: 'The same menu opens from Google, Maps and Instagram.',
 		other: 'A PDF download, if it is online at all.',
-		pointAr: 'قبل وصولهم',
-		astroAr: 'نفس القائمة تُفتح من جوجل والخرائط وإنستغرام.',
-		otherAr: 'تنزيل ملف PDF، إن وُجد أونلاين أصلًا.'
+		pointAr: 'قبل ما يوصلوا',
+		astroAr: 'نفس المنيو بتفتح من جوجل والخرائط وإنستغرام.',
+		otherAr: 'تنزيل ملف PDF، إذا كان أصلًا موجود أونلاين.'
 	},
 	{
 		point: 'What it tells you',
 		astro: 'Views, popular items, peak hours.',
 		other: 'Nothing at all.',
 		pointAr: 'ما تخبرك به',
-		astroAr: 'المشاهدات، الأصناف الأكثر طلبًا، ساعات الذروة.',
-		otherAr: 'لا شيء على الإطلاق.'
+		astroAr: 'المشاهدات، الأصناف الأكثر طلبًا، وساعات الذروة.',
+		otherAr: 'ولا شيء، خالص.'
 	}
 ]
 
@@ -205,7 +205,7 @@ export const USE_CASES = [
 		brief: 'Busy cafe floor, table tent with QR in focus',
 		tone: 'brand' as const,
 		titleAr: 'المطاعم والمقاهي',
-		bodyAr: 'قوائم كبيرة، رموز QR على الطاولات، ورابط يجيب على سؤال "ماذا يقدّمون؟" قبل أن يحجز أحد.'
+		bodyAr: 'قوائم كبيرة، رموز QR على الطاولات، ورابط يجاوب على سؤال "شو عندهم؟" قبل ما يحجز حدا.'
 	},
 	{
 		title: 'Coffee trucks',
@@ -214,7 +214,7 @@ export const USE_CASES = [
 		brief: 'Truck hatch, owner leaning out, QR sticker on the counter',
 		tone: 'warm' as const,
 		titleAr: 'شاحنات القهوة',
-		bodyAr: 'رمز واحد على النافذة. غيّر القائمة كلما غيّرت الموقع.'
+		bodyAr: 'رمز واحد على الشباك. غيّر المنيو كل ما غيّرت مكانك.'
 	},
 	{
 		title: 'Hotel rooms',
@@ -223,7 +223,7 @@ export const USE_CASES = [
 		brief: 'Room-service card on a bed, phone showing the menu',
 		tone: 'dark' as const,
 		titleAr: 'غرف الفنادق',
-		bodyAr: 'خدمة الغرف والإفطار وقوائم المسبح على رمز واحد، بكل لغة يقرؤها ضيوفك.'
+		bodyAr: 'خدمة الغرف والإفطار ومنيو المسبح على رمز واحد، بأي لغة يقرؤها ضيوفك.'
 	},
 	{
 		title: 'Bakeries & dessert bars',
@@ -232,7 +232,7 @@ export const USE_CASES = [
 		brief: 'Counter of pastries, hand pointing at the phone menu',
 		tone: 'brand' as const,
 		titleAr: 'المخابز وبارات الحلويات',
-		bodyAr: 'الصور تبيع ما في الكاونتر. الصواني النافدة تختفي بمفتاح واحد.'
+		bodyAr: 'الصور بتبيع يلي عالكاونتر. الصواني يلي خلصت بتختفي بمفتاح واحد.'
 	},
 	{
 		title: 'Clinics & staff canteens',
@@ -241,7 +241,7 @@ export const USE_CASES = [
 		brief: 'Bright canteen counter, tray of labelled healthy dishes',
 		tone: 'warm' as const,
 		titleAr: 'العيادات ومطاعم الموظفين',
-		bodyAr: 'السعرات الحرارية والعناصر الغذائية ومسببات الحساسية على كل صنف، بلا ورقة مطبوعة.'
+		bodyAr: 'السعرات الحرارية والعناصر الغذائية ومسببات الحساسية على كل صنف، من دون ورقة مطبوعة.'
 	},
 	{
 		title: 'Lounges',
@@ -250,7 +250,7 @@ export const USE_CASES = [
 		brief: 'Evening lounge table, phone glowing with the menu',
 		tone: 'dark' as const,
 		titleAr: 'الصالات',
-		bodyAr: 'قوائم طويلة، تُفلتر بسرعة، مع كلمة مرور الواي فاي على نفس الشاشة.'
+		bodyAr: 'قوائم طويلة، تتفلتر بسرعة، وكلمة سر الواي فاي على نفس الشاشة.'
 	}
 ]
 
@@ -267,14 +267,14 @@ export const RIBBON = [
 ]
 
 export const RIBBON_AR: string[] = [
-	'قوائم غير محدودة',
+	'قوائم بلا حدود',
 	'كل لغة',
-	'بلا عمولة',
+	'بدون عمولة',
 	'صورة على كل طبق',
-	'رمز QR واحد للأبد',
+	'QR واحد يضل شغال',
 	'مفتاح النفاد',
-	'بلا تطبيق يُحمَّل',
-	'تحديثات غير محدودة'
+	'بلا تطبيق تحمّله',
+	'تحديثات بلا حدود'
 ]
 
 /**
@@ -289,16 +289,16 @@ export const SCREENS = [
 		title: 'Your venue, first',
 		body: 'Cover photo, logo and your story — plus one tap to call, WhatsApp, Maps, Instagram or leave a Google review.',
 		tall: true,
-		titleAr: 'مكانك، في المقدمة',
-		bodyAr: 'صورة غلاف وشعار وقصتك — بالإضافة إلى ضغطة واحدة للاتصال أو واتساب أو الخرائط أو إنستغرام أو ترك تقييم على جوجل.'
+		titleAr: 'مطعمك، أول شي يشوفوه',
+		bodyAr: 'صورة غلاف وشعار وقصتك — وبضغطة وحدة تتصل أو تواتساب أو تفتح الخرائط أو إنستغرام أو تترك تقييم على جوجل.'
 	},
 	{
 		file: 'menu-sections.png',
 		title: 'Sections that stay put',
 		body: 'Section chips pin to the top. Guests jump straight to Brewed Coffee without scrolling past breakfast.',
 		tall: false,
-		titleAr: 'أقسام تبقى في مكانها',
-		bodyAr: 'أزرار الأقسام تثبت في الأعلى. يقفز الضيوف مباشرة إلى القهوة المحمّصة دون التمرير عبر قسم الإفطار.'
+		titleAr: 'أقسام ما بتتحرك من مكانها',
+		bodyAr: 'أزرار الأقسام تثبت فوق. الزبون يوصل مباشرة لقسم القهوة المحمّصة بدون ما يمرّق عقسم الفطور.'
 	},
 	{
 		file: 'item-detail.png',
@@ -306,15 +306,15 @@ export const SCREENS = [
 		body: 'A full-width photo, the description you wrote, sizes and portions each with their own price, and add-ons — priced or free.',
 		tall: true,
 		titleAr: 'كل طبق، كما يجب',
-		bodyAr: 'صورة بعرض الشاشة، الوصف الذي كتبته، الأحجام والحصص وكل منها بسعره الخاص، والإضافات — مسعّرة أو مجانية.'
+		bodyAr: 'صورة بعرض الشاشة، الوصف يلي كتبته، الأحجام والحصص وكل وحدة بسعرها الخاص، والإضافات — مسعّرة أو مجانية.'
 	},
 	{
 		file: 'filter-meal-type.png',
 		title: 'Filter to what they want',
 		body: 'Iced, decaf, healthy, light portion — 120 items narrow to five in two taps.',
 		tall: false,
-		titleAr: 'فلترة لما يريدونه',
-		bodyAr: 'مثلج، بدون كافيين، صحي، حصة خفيفة — 120 صنفًا تتقلص إلى خمسة بضغطتين.'
+		titleAr: 'فلترة على قد الطلب',
+		bodyAr: 'مثلج، بدون كافيين، صحي، حصة خفيفة — 120 صنف بيصيروا خمسة بضغطتين بس.'
 	},
 	{
 		file: 'language-switch.png',
@@ -322,7 +322,7 @@ export const SCREENS = [
 		body: 'Add a language and the whole menu is translated, right-to-left where it should be.',
 		tall: true,
 		titleAr: 'بلغتهم هم',
-		bodyAr: 'أضف لغة وتُترجم القائمة بأكملها، من اليمين لليسار حيث ينبغي ذلك.'
+		bodyAr: 'ضيف لغة وتترجم القائمة كلها، من اليمين لليسار وين ما لازم.'
 	},
 	{
 		file: 'macros.png',
@@ -333,6 +333,6 @@ export const SCREENS = [
 		credit: 'carb-protein' as const,
 		titleAr: 'السعرات الحرارية والعناصر الغذائية',
 		bodyAr:
-			'لكل صنف، إن أردت ذلك — السعرات الحرارية والكربوهيدرات والدهون والبروتين، مع وسوم مسببات الحساسية بجانبها.'
+			'لكل صنف، إذا حبيت — سعرات حرارية، كربوهيدرات، دهون وبروتين، مع وسوم الحساسية جنبها.'
 	}
 ]

@@ -20,7 +20,7 @@ const navLabels: Record<string, string> = {
 
 <Layout
 	title="الصفحة غير موجودة"
-	description="هذه الصفحة غير موجودة — الرابط خاطئ أو انتقلت الصفحة. إليك الطريق إلى القائمة والأسعار والعرض الحي."
+	description="هذه الصفحة مش موجودة — الرابط غلط أو الصفحة انتقلت. تفضّل الطريق للمنيو والأسعار والعرض الحي."
 	path="/ar/404"
 	noindex
 >
@@ -29,17 +29,17 @@ const navLabels: Record<string, string> = {
 			<div class="flex justify-center">
 				<Burst size={9} rotate={-8}>404</Burst>
 			</div>
-			<h1 class="mt-8 text-5xl sm:text-7xl">هذه الصفحة خارج القائمة</h1>
+			<h1 class="mt-8 text-5xl sm:text-7xl">هاي الصفحة مش عالمنيو</h1>
 			<p class="text-ink-soft mt-5 text-xl text-pretty">
-				الرابط خاطئ، أو انتقلت الصفحة. لا شيء معطّل من جهتك.
+				الرابط غلط، أو الصفحة انتقلت لمكان تاني. ما في شي معطّل من جهتك.
 			</p>
 			<div class="mt-9 flex flex-wrap justify-center gap-4">
-				<Button href="/ar" size="lg">العودة إلى الصفحة الرئيسية</Button>
-				<Button href="/ar/demo" variant="outline" size="lg">شاهد قائمة حقيقية</Button>
+				<Button href="/ar" size="lg">رجعني عالصفحة الرئيسية</Button>
+				<Button href="/ar/demo" variant="outline" size="lg">شاهد منيو حقيقية</Button>
 			</div>
 
 			<nav aria-label="أقسام الموقع" class="mt-12">
-				<p class="label text-brand-text text-sm">جرّب واحدًا من هذه</p>
+				<p class="label text-brand-text text-sm">جرّب وحدة من هدول</p>
 				<ul class="mt-4 flex flex-wrap justify-center gap-2.5">
 					{
 						NAV.map((item) => (
@@ -57,7 +57,7 @@ const navLabels: Record<string, string> = {
 			</nav>
 
 			<p class="text-ink-faint mt-10 text-base">
-				ما زلت عالقًا؟
+				لسا تايه؟
 				<a href={'mailto:' + SITE.email} class="text-brand-text font-bold">{SITE.email}</a>
 			</p>
 		</div>
