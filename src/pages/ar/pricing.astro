@@ -24,7 +24,8 @@ const product = {
 	'@context': 'https://schema.org',
 	'@type': 'Product',
 	name: 'Astro-Menu',
-	description: SITE.description,
+	description:
+		'باقة واحدة بسعر ثابت لقائمة QR رقمية: مشاهدات وأصناف وقوائم غير محدودة، بلا عمولة وبلا رسوم إعداد.',
 	brand: { '@type': 'Brand', name: 'Astro-Menu' },
 	offers: [
 		{
@@ -32,7 +33,7 @@ const product = {
 			name: 'شهري',
 			price: String(PRICE.monthlyAmount),
 			priceCurrency: 'USD',
-			url: `${SITE.domain}/pricing`,
+			url: `${SITE.domain}/ar/pricing`,
 			availability: 'https://schema.org/InStock'
 		},
 		{
@@ -40,7 +41,7 @@ const product = {
 			name: 'سنوي',
 			price: String(PRICE.annualTotalAmount),
 			priceCurrency: 'USD',
-			url: `${SITE.domain}/pricing`,
+			url: `${SITE.domain}/ar/pricing`,
 			availability: 'https://schema.org/InStock'
 		}
 	]

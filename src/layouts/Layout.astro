@@ -43,6 +43,7 @@ const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`
 
 const lang = getLangFromUrl(Astro.url)
 const dir = lang === 'ar' ? 'rtl' : 'ltr'
+const localeTag = lang === 'ar' ? 'ar-AE' : 'en-AE'
 const enPath = clean.replace(/^\/ar(\/|$)/, '/')
 const arPath = enPath === '/' ? '/ar' : `/ar${enPath}`
 
@@ -67,7 +68,7 @@ const siteSchema = {
 	name: SITE.name,
 	url: SITE.domain,
 	publisher: { '@id': `${SITE.domain}/#organization` },
-	inLanguage: lang
+	inLanguage: localeTag
 }
 
 const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])]
@@ -81,8 +82,8 @@ const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? sche
 		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
-		<link rel="alternate" hreflang="en" href={new URL(enPath, SITE.domain).href} />
-		<link rel="alternate" hreflang="ar" href={new URL(arPath, SITE.domain).href} />
+		<link rel="alternate" hreflang="en-AE" href={new URL(enPath, SITE.domain).href} />
+		<link rel="alternate" hreflang="ar-AE" href={new URL(arPath, SITE.domain).href} />
 		<link rel="alternate" hreflang="x-default" href={new URL(enPath, SITE.domain).href} />
 		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		{

@@ -46,24 +46,25 @@ const schema = [
 		'@type': 'SoftwareApplication',
 		name: 'Astro-Menu',
 		applicationCategory: 'BusinessApplication',
-		applicationSubCategory: 'Digital QR Menu',
+		applicationSubCategory: 'قائمة QR رقمية',
 		operatingSystem: 'Web browser',
-		url: SITE.domain,
-		description: SITE.description,
+		url: `${SITE.domain}/ar`,
+		description:
+			'منيو QR للمطاعم والمقاهي، سهلة التحديث وتعمل بسرعة على الموبايل — بالصور والأسعار وبأي لغة يحتاجها زبائنك.',
 		featureList: [
-			'QR code menu',
-			'Unlimited menus, sections and items',
-			'Automatic translation including Arabic',
-			'Dietary and allergen tags',
-			'Meal-type filters',
-			'Calories and macros per item',
-			'Menu analytics'
+			'قائمة QR',
+			'منيو غير محدودة بأقسامها وأصنافها',
+			'ترجمة تلقائية تشمل العربية',
+			'وسوم الحساسية والنظام الغذائي',
+			'فلاتر أنواع الوجبات',
+			'السعرات والقيم الغذائية لكل صنف',
+			'تحليلات المنيو'
 		],
 		offers: {
 			'@type': 'Offer',
 			price: String(PRICE.monthlyAmount),
 			priceCurrency: 'USD',
-			url: `${SITE.domain}/pricing`,
+			url: `${SITE.domain}/ar/pricing`,
 			availability: 'https://schema.org/InStock',
 			priceSpecification: {
 				'@type': 'UnitPriceSpecification',
