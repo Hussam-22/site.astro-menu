@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
+import FoodImage from '../components/ui/FoodImage.astro'
 import Section from '../components/ui/Section.astro'
 import SectionHead from '../components/ui/SectionHead.astro'
-import Breadcrumbs from '../components/ui/Breadcrumbs.astro'
 import Sticker from '../components/ui/Sticker.astro'
-import FoodImage from '../components/ui/FoodImage.astro'
-import { SITE, PRICE, CONTACT_FORM_KEY } from '../config/site'
+import { CONTACT_FORM_KEY, PRICE, SITE } from '../config/site'
+import Layout from '../layouts/Layout.astro'
 import { crumbSchema } from '../utils/schema'
 
 const title = 'Contact us'
@@ -46,8 +46,17 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 						href={`mailto:${SITE.email}`}
 						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"
 					>
-						<span class="brand-gradient border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white">
-							<svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+						<span
+							class="brand-gradient border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white"
+						>
+							<svg
+								viewBox="0 0 24 24"
+								class="h-6 w-6"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								aria-hidden="true"
+							>
 								<rect x="3" y="5" width="18" height="14" rx="2.5"></rect>
 								<path d="m3.5 7 8.5 6 8.5-6"></path>
 							</svg>
@@ -55,25 +64,6 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 						<span>
 							<span class="block text-xl font-bold">{SITE.email}</span>
 							<span class="text-ink-soft block text-base">Usually answered the same day</span>
-						</span>
-					</a>
-
-					<a
-						href={waHref}
-						rel="noopener noreferrer"
-						target="_blank"
-						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"
-					>
-						<span class="bg-go border-ink grid h-12 w-12 shrink-0 place-items-center rounded-xl border-[2.5px] text-white">
-							<svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-								<path
-									d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-2.5 4c-.2 0-.5 0-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.3-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4z"
-								></path>
-							</svg>
-						</span>
-						<span>
-							<span class="block text-xl font-bold">WhatsApp</span>
-							<span class="text-ink-soft block text-base">{SITE.whatsapp}</span>
 						</span>
 					</a>
 				</div>
