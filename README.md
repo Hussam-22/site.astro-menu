@@ -98,6 +98,47 @@ JSON-LD is assembled per page: `Organization` and `WebSite` on every page, plus
 and `BlogPosting` where they apply. `/llms.txt` is generated from the same data
 for AI answer engines. `public/robots.txt` allows the major AI crawlers.
 
+### Sitemap dates
+
+`<lastmod>` is set only where the date is provable: blog posts get theirs from
+`updatedDate ?? publishDate` in the frontmatter, and the two blog indexes get
+the newest post they list. Everything else ships with no `lastmod` at all.
+
+That is deliberate. The sitemap used to stamp `new Date()` on every URL, so a
+post untouched since March claimed to have changed on whatever day the site
+last deployed. Google stops trusting `lastmod` across an entire site once it
+catches that, which is worse than publishing no dates. A build machine has no
+honest answer for the marketing pages — file mtimes are the checkout time and
+the git clone may be shallow — so those stay blank.
+
+### Redirects
+
+`vercel.json` carries the redirect map from the site that existed before the
+August 2026 rebuild. That rebuild dropped the `/docs` tree and replaced the old
+blog with new slugs, which left 22 indexed URLs returning a hard 404 — including
+the second and third best pages on the site by clicks. JSON cannot hold
+comments, so the map is documented here.
+
+Most entries are `permanent: true` (a 308) to the closest surviving page. **Two
+are deliberately `permanent: false`** (a 307), and must stay that way:
+
+| URL | Impressions lost | Why temporary |
+| --- | --- | --- |
+| `/blog/qr-menus-in-hotel-and-hospitality` | 625 | To be rewritten at this exact URL |
+| `/blog/phygital-restaurant` | 273 | To be rewritten at this exact URL |
+
+A 307 tells Google the URL is coming back, so it keeps the original indexed and
+holds the ranking open. A 308 would tell it to swap in the destination page
+permanently and throw the ranking away. Delete these two entries when the posts
+are republished — do not "fix" them to `permanent: true`.
+
+Three entries point at `/blog` itself (`future-of-dining`,
+`reinventing-the-drive-thru`, `why-your-restaurant-needs-a-blog`). Google treats
+a redirect to a hub as a soft 404 and drops the URL, which is the intended
+outcome — that content is gone for good and the three of them carried 38
+impressions between them. They exist so a human following an old link still
+lands somewhere sensible.
+
 ## Scripts
 
 | Script | What it does |

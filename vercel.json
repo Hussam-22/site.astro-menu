@@ -1,0 +1,54 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"trailingSlash": false,
+	"redirects": [
+		{ "source": "/docs/welcome/introduction", "destination": "/how-it-works", "permanent": true },
+		{ "source": "/docs/subscription-invoices", "destination": "/pricing", "permanent": true },
+		{ "source": "/docs/:path*", "destination": "/features", "permanent": true },
+
+		{
+			"source": "/blog/qr-menus-in-hotel-and-hospitality",
+			"destination": "/blog/how-to-make-a-qr-code-menu",
+			"permanent": false
+		},
+		{ "source": "/blog/phygital-restaurant", "destination": "/features", "permanent": false },
+
+		{
+			"source": "/blog/accessibility-in-digital-menus",
+			"destination": "/blog/how-to-structure-a-menu-that-sells",
+			"permanent": true
+		},
+		{
+			"source": "/blog/psychology-of-menu-design",
+			"destination": "/blog/how-to-structure-a-menu-that-sells",
+			"permanent": true
+		},
+		{
+			"source": "/blog/stunning-digital-menu-design",
+			"destination": "/blog/how-to-structure-a-menu-that-sells",
+			"permanent": true
+		},
+		{
+			"source": "/blog/guide-to-implementing-qr-menu-and-cloud-pos",
+			"destination": "/blog/how-to-make-a-qr-code-menu",
+			"permanent": true
+		},
+		{
+			"source": "/blog/creative-uses-for-qr-menus",
+			"destination": "/blog/how-to-make-a-qr-code-menu",
+			"permanent": true
+		},
+		{
+			"source": "/blog/how-astro-menu-revolutionizes-the-qr-menu-world",
+			"destination": "/features",
+			"permanent": true
+		},
+
+		{ "source": "/blog/future-of-dining", "destination": "/blog", "permanent": true },
+		{ "source": "/blog/reinventing-the-drive-thru", "destination": "/blog", "permanent": true },
+		{ "source": "/blog/why-your-restaurant-needs-a-blog", "destination": "/blog", "permanent": true },
+
+		{ "source": "/use-cases", "destination": "/features", "permanent": true },
+		{ "source": "/search", "destination": "/blog", "permanent": true }
+	]
+}
