@@ -9,6 +9,8 @@ import CtaBand from '../components/ui/CtaBand.astro'
 import { Image } from 'astro:assets'
 import { SITE, PRICE } from '../config/site'
 import { crumbSchema } from '../utils/schema'
+import { VENUES } from '../data/content'
+import VenueLogo from '../components/ui/VenueLogo.astro'
 
 const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/screens/*.png', {
 	eager: true
@@ -121,6 +123,36 @@ const TRY = [
 		<div class="mt-12 flex justify-center">
 			<Button href={SITE.demoMenuUrl} external size="lg">Open the live menu</Button>
 		</div>
+	</Section>
+
+	<Section ruled>
+		<SectionHead
+			eyebrow="Three real menus"
+			title="Different businesses,<br />the same menu engine"
+			lede="A speciality coffee shop, a coffee truck and a healthy restaurant. Same product underneath, and none of them look like each other — open all three and the difference is theirs, not ours."
+		/>
+		<ul class="mt-14 grid gap-7 md:grid-cols-3">
+			{
+				VENUES.map((v) => (
+					<li class="bg-card slab slab-hover flex flex-col rounded-[1.5rem] p-7">
+						<span class="border-ink bg-paper mb-5 h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-[2.5px]">
+							<VenueLogo name={v.logo} venue={v.name} size={80} />
+						</span>
+						<h2 class="text-2xl">{v.name}</h2>
+						<p class="text-ink-soft mt-3 grow text-lg text-pretty">{v.blurb}</p>
+						<p class="mt-6">
+							<Button href={v.menuUrl} external variant="outline">
+								Open their menu
+							</Button>
+						</p>
+					</li>
+				))
+			}
+		</ul>
+		<p class="text-ink-faint mx-auto mt-10 max-w-2xl text-center text-base text-pretty">
+			All three are working businesses. Browse them as a customer would — there is nothing to order
+			and nothing to submit.
+		</p>
 	</Section>
 
 	<Section>

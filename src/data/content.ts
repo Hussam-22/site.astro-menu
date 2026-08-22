@@ -41,40 +41,91 @@ export const PILLARS = [
 	}
 ]
 
-/** Real venues running Astro-Menu, quoted from their own testimonials. */
+/**
+ * Real venues running Astro-Menu, each with its own logo and a menu anyone can
+ * open. `logo` is a filename stem in src/assets/logos — these are the venues'
+ * own marks, used with permission, never a stand-in.
+ */
+export const VENUES = [
+	{
+		id: 'number-eight',
+		name: 'Number Eight Speciality Coffee',
+		kind: 'Speciality coffee shop',
+		logo: 'number-8',
+		blurb:
+			'120 items across fourteen sections, in Al Ain. Every screenshot on this site is shot from this menu.',
+		menuUrl: SITE.demoMenuUrl,
+		nameAr: 'نمبر إيت للقهوة المختصة',
+		kindAr: 'مقهى قهوة مختصة',
+		blurbAr:
+			'120 صنفًا في أربعة عشر قسمًا، في العين. كل لقطة شاشة على هذا الموقع مأخوذة من هذه القائمة.'
+	},
+	{
+		id: 'foamy',
+		name: 'Foamy Coffee Cafe',
+		kind: 'Mobile coffee truck',
+		logo: 'foamy-cafe',
+		blurb: 'A coffee truck menu that moves with the truck — edited from a phone between pitches.',
+		menuUrl:
+			'https://menu.astro-menu.com/qr-menu/?businessProfileID=mbiRz8YmVGjOTvtknUOq&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0',
+		nameAr: 'فومي كوفي كافيه',
+		kindAr: 'شاحنة قهوة متنقلة',
+		blurbAr: 'قائمة شاحنة قهوة تتنقل مع الشاحنة — تُعدَّل من الهاتف بين موقع وآخر.'
+	},
+	{
+		id: 'carb-protein',
+		name: 'Carb & Protein Healthy Restaurant',
+		kind: 'Healthy restaurant',
+		logo: 'carb-protein',
+		blurb:
+			'An Abu Dhabi restaurant whose menu is built around a goal rather than a cuisine — meals balanced for weight loss or weight gain, every dish tagged with calories, carbs, fat and protein, plus multi-day plans. The macros screenshot on this site is theirs.',
+		menuUrl:
+			'https://menu.astro-menu.com/qr-menu/?businessProfileID=QpPFdtogRHoWo1uL0KGe&branchID=2EKctRFUaA06pGIvAT2D&tableID=upxdTRj5NaTRl68f6ly0',
+		nameAr: 'كارب آند بروتين مطعم صحي',
+		kindAr: 'مطعم صحي',
+		blurbAr:
+			'مطعم في أبوظبي تُبنى قائمته حول هدف لا حول مطبخ — وجبات موزونة لإنقاص الوزن أو زيادته، وكل طبق موسوم بالسعرات والكربوهيدرات والدهون والبروتين، إضافة إلى برامج متعددة الأيام. لقطة العناصر الغذائية على هذا الموقع من قائمتهم.'
+	}
+] as const
+
+export type VenueId = (typeof VENUES)[number]['id']
+
+/** Looks a venue up by id, so a testimonial never carries a duplicate copy of the logo or URL. */
+export const venue = (id: VenueId) => VENUES.find((v) => v.id === id)!
+
+/**
+ * The quote for a venue, if that venue has given one. Returns undefined
+ * otherwise, and the caller falls back to describing the menu in our own words.
+ * Deliberately not "every venue must have a quote": inventing one to fill a
+ * card is the exact failure this whole file is arranged to prevent.
+ */
+export const testimonialFor = (id: VenueId) => TESTIMONIALS.find((t) => t.venueId === id)
+
+/**
+ * Quotes from their own testimonials, word for word. `venueId` points at the
+ * VENUES entry, which supplies the logo shown beside the quote and the link to
+ * their live menu — so a venue can never end up wearing another one's mark.
+ */
 export const TESTIMONIALS = [
 	{
-		venue: 'Number Eight Speciality Coffee',
+		venueId: 'number-eight' as const,
 		person: 'Saeed',
 		role: 'Owner',
 		quote:
 			'Astro-Menu transformed the way our customers interact with our menu. With more than 120 items, it used to take time for people to find what they wanted, but the filtering and clean layout changed everything. Customers can now browse, sort, and locate their preferred drinks or pastries in seconds. This has noticeably reduced ordering time and kept the flow moving smoothly, especially during peak hours.',
-		menuUrl: SITE.demoMenuUrl,
 		roleAr: 'المالك',
 		quoteAr:
 			'غيّرت Astro-Menu الطريقة التي يتفاعل بها عملاؤنا مع قائمتنا. مع أكثر من 120 صنفًا، كان الأمر يستغرق وقتًا حتى يجد الناس ما يريدون، لكن الفلترة والتصميم الواضح غيّرا كل شيء. أصبح بإمكان العملاء الآن التصفح والفرز وإيجاد مشروبهم أو حلواهم المفضلة خلال ثوانٍ. هذا خفّض وقت الطلب بشكل ملحوظ وحافظ على انسيابية الحركة، خصوصًا في أوقات الذروة.'
 	},
 	{
-		venue: 'FOAM Coffee',
+		venueId: 'foamy' as const,
 		person: 'Mayed',
 		role: 'Mobile coffee truck',
 		quote:
 			'Astro-Menu has been a great addition to how we operate. Managing our menu is incredibly easy, and updates appear instantly. One of the biggest advantages is how smoothly customers can view our menu online through Google, Maps, or even our social media pages before visiting. It helps them decide faster and improves their overall experience.',
-		menuUrl: null,
 		roleAr: 'شاحنة قهوة متنقلة',
 		quoteAr:
 			'كانت Astro-Menu إضافة رائعة لطريقة عملنا. إدارة قائمتنا سهلة للغاية، والتحديثات تظهر فورًا. من أكبر المزايا هي السلاسة التي يستطيع بها العملاء الاطلاع على قائمتنا أونلاين عبر جوجل أو الخرائط أو حتى صفحاتنا على وسائل التواصل الاجتماعي قبل الزيارة. هذا يساعدهم على اتخاذ القرار بسرعة أكبر ويحسّن تجربتهم بشكل عام.'
-	},
-	{
-		venue: 'The ACAI House Cafe',
-		person: 'Ahmed S.',
-		role: 'Cafe & drive-thru',
-		quote:
-			'The implementation of a QR menu system has been a game-changer for the drive-thru. Before this, our staff often felt overwhelmed, especially during peak hours, trying to take orders accurately and quickly. The line of cars would grow, and we could feel the stress from both our employees and our customers. We knew we had to find a better way to operate.',
-		menuUrl: null,
-		roleAr: 'مقهى ودرايف ثرو',
-		quoteAr:
-			'كان تطبيق نظام قائمة QR نقطة تحوّل بالنسبة للدرايف ثرو. قبل ذلك، كان فريقنا يشعر غالبًا بالإرهاق، خصوصًا في أوقات الذروة، في محاولة أخذ الطلبات بدقة وسرعة. كان صف السيارات يطول، وكنا نشعر بالتوتر من موظفينا وعملائنا معًا. أدركنا أنه لا بد من إيجاد طريقة أفضل للعمل.'
 	}
 ]
 
@@ -276,9 +327,12 @@ export const SCREENS = [
 	{
 		file: 'macros.png',
 		title: 'Calories and macros',
-		body: 'Per item, if you want them — calories, carbs, fat and protein, with allergen tags alongside. Shown here on another customer’s menu.',
+		body: 'Per item, if you want them — calories, carbs, fat and protein, with allergen tags alongside.',
 		tall: false,
+		/** Not Number Eight's menu, so it is credited to the venue it belongs to. */
+		credit: 'carb-protein' as const,
 		titleAr: 'السعرات الحرارية والعناصر الغذائية',
-		bodyAr: 'لكل صنف، إن أردت ذلك — السعرات الحرارية والكربوهيدرات والدهون والبروتين، مع وسوم مسببات الحساسية بجانبها. معروضة هنا على قائمة عميل آخر.'
+		bodyAr:
+			'لكل صنف، إن أردت ذلك — السعرات الحرارية والكربوهيدرات والدهون والبروتين، مع وسوم مسببات الحساسية بجانبها.'
 	}
 ]

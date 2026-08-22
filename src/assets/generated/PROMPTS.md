@@ -1,6 +1,6 @@
 # Image slots — Gemini "Nano Banana" prompts
 
-Sixteen empty slots. Each prompt below is complete and standalone: copy one,
+Fourteen photo slots. Each prompt below is complete and standalone: copy one,
 paste it, generate, save the file here under the slot name. Nothing in the code
 changes — `FoodImage.astro` resolves each slot by filename stem, so saving
 `owner.webp` fills the `owner` slot. Until a file exists the site renders a
@@ -8,17 +8,19 @@ captioned placeholder, so it is never broken mid-shoot.
 
 ## Status
 
-Eleven of the sixteen slots are filled. `scripts/prep-photos.mjs` maps each
-generated file to its slot, crops it to that slot's exact aspect ratio and
-re-encodes to WebP — the raw output is 2-3MB per image and the ratios do not all
-match, so it is not committed as-is.
+Every slot is filled. `scripts/prep-photos.mjs` maps each generated file to its
+slot, crops it to that slot's exact aspect ratio and re-encodes to WebP — the
+raw output is 2-3MB per image and the ratios do not all match, so it is not
+committed as-is.
 
 | Filled | Still empty |
 | --- | --- |
-| `hero-cut`, `hero-float`, `owner`, `staff`, `guests`, `uc-cafe`, `uc-truck`, `uc-hotel`, `uc-bakery`, `uc-clinic`, `uc-lounge` | `faq-flatlay`, `onboarding`, `contact`, and the three testimonial avatars |
+| `hero-cut`, `hero-float`, `owner`, `staff`, `guests`, `uc-cafe`, `uc-truck`, `uc-hotel`, `uc-bakery`, `uc-clinic`, `uc-lounge`, `faq-flatlay`, `onboarding`, `contact` | — |
 
-The empty ones still render captioned placeholders, so nothing is broken. Their
-prompts are below, unchanged.
+The three testimonial avatar slots were **deleted rather than filled**. Real
+customers now show their own logos instead, from `src/assets/logos`, rendered by
+`VenueLogo.astro` — see [Testimonial avatars](#testimonial-avatars--resolved-do-not-generate)
+below.
 
 ## Using Nano Banana
 
@@ -178,33 +180,27 @@ daylight treatment across all six.
 
 ---
 
-## Testimonial avatars — 1:1
+## Testimonial avatars — resolved, do not generate
 
-**Read this before generating these three.**
+**There is no avatar slot any more. Do not add one back.**
 
-Saeed, Mayed and Ahmed are real named customers who gave you real testimonials.
-An AI-generated face presented as a real person's photograph is a
+Saeed and Mayed are real named customers who gave real testimonials. An
+AI-generated face presented as a real person's photograph is a
 misrepresentation, and it is the kind of thing that costs a lot of trust if
-anyone notices. Ask the three of them for a real photo, or leave these slots
-empty — the layout is fine without them and the placeholder reads as a neutral
-avatar rather than a fabricated person.
+anyone notices. Rather than invent faces, the venues supplied their own logos,
+which is what the testimonial cards and the `/demo` venue grid now show:
 
-If you do generate them, use them as generic illustrative avatars and do not
-attach real names to invented faces.
+| Venue | File | Where |
+| --- | --- | --- |
+| Number Eight Speciality Coffee | `src/assets/logos/number-8.webp` | home testimonial, `/demo` |
+| Foamy Coffee Cafe | `src/assets/logos/foamy-cafe.webp` | home testimonial, `/demo` |
+| Carb & Protein Healthy Restaurant | `src/assets/logos/carb-protein.webp` | `/demo`, macros screenshot credit |
 
-The prompts, should you have permission and want a consistent crop: these are
-cropped to a circle at 56px, so the face must be large in frame and centred.
-
-> A natural head-and-shoulders portrait of a man in his thirties, photographed
-> in a speciality coffee shop with the interior blurred warmly behind him. Warm
-> approachable expression, natural window light from the side. The face fills
-> most of the frame and is centred, with a little space above the head. Shot on
-> an 85mm lens at a wide aperture, documentary portrait style. No text, no
-> logos, no watermarks.
-
-Vary the second and third by setting and age: *beside a coffee truck in
-daylight, late twenties, friendly and casual*; *in a bright modern café, forties,
-calm and confident*.
+These are customers' own marks. `VenueLogo.astro` contains them rather than
+cropping them and has no placeholder fallback on purpose: a missing photograph
+can be stood in for, a missing logo cannot. To add a venue, put its logo in
+`scripts/prep-photos.mjs` under `LOGOS`, run it, and add the entry to `VENUES`
+in `src/data/content.ts`.
 
 ---
 

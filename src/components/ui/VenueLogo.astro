@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets'
+
+/**
+ * A real customer's logo, on its own mount.
+ *
+ * Deliberately not FoodImage: that crops to fill, which is right for a
+ * photograph and wrong for a wordmark — Foamy's lockup is three and a half
+ * times wider than it is tall and object-cover would slice the ends off it.
+ * Here the mark is contained, never cropped, and `scripts/prep-photos.mjs`
+ * has already padded each file to a square in its own background colour so
+ * the three sit at a consistent visual weight beside each other.
+ *
+ * `fit` is set on the component rather than with a Tailwind utility because
+ * Astro's own `[data-astro-image-fit=cover]` rule matches at the same
+ * specificity as a class, so the winner would otherwise depend on which
+ * stylesheet happened to come last.
+ *
+ * There is no placeholder fallback on purpose. A missing photograph can be
+ * stood in for; a missing logo cannot, and inventing one would misrepresent a
+ * real business — so an unknown slug renders nothing at all.
+ */
+const logos = import.meta.glob<{ default: ImageMetadata }>('../../assets/logos/*.webp', {
+	eager: true
+})
+
+const bank = new Map<string, ImageMetadata>()
+for (const [path, mod] of Object.entries(logos)) {
+	bank.set(path.split('/').pop()!.replace(/\.[^.]+$/, ''), mod.default)
+}
+
+interface Props {
+	/** Filename stem in src/assets/logos, e.g. "foamy-cafe". */
+	name: string
+	/** The venue name. Used to build the alt text. */
+	venue: string
+	/** Rendered CSS size of the square tile. */
+	size?: number
+	class?: string
+}
+
+const { name, venue, size = 64, class: extra = '' } = Astro.props
+const found = bank.get(name)
+---
+
+{
+	found && (
+		<Image
+			src={found}
+			alt={`${venue} logo`}
+			widths={[size, size * 2, size * 3]}
+			sizes={`${size}px`}
+			loading="lazy"
+			fit="contain"
+			class:list={['block h-full w-full', extra]}
+		/>
+	)
+}

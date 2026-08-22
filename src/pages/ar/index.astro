@@ -14,7 +14,17 @@ import CtaBand from '../../components/ui/CtaBand.astro'
 import PricingCard from '../../components/PricingCard.astro'
 import { Image } from 'astro:assets'
 import { SITE, PRICE } from '../../config/site'
-import { PILLARS, TESTIMONIALS, VERSUS, USE_CASES, SCREENS, RIBBON_AR } from '../../data/content'
+import {
+	PILLARS,
+	VENUES,
+	VERSUS,
+	USE_CASES,
+	SCREENS,
+	RIBBON_AR,
+	venue,
+	testimonialFor
+} from '../../data/content'
+import VenueLogo from '../../components/ui/VenueLogo.astro'
 import { DASHBOARD_CONTROLS, NOT_INCLUDED } from '../../data/plan'
 import { HOME_FAQS, ALL_FAQS } from '../../data/faqs'
 import DashboardImage from '../../components/ui/DashboardImage.astro'
@@ -163,9 +173,11 @@ const schema = [
 							{PRICE.trialDays} يومًا<br />مجانًا
 						</Burst>
 
-						<div
-							class="border-ink shadow-lift relative rounded-[2.75rem] border-[3px] bg-black p-2.5"
-						>
+						<!-- No drop shadow here. The hero section is overflow-hidden, so a soft
+						     shadow gets sliced off at its right and bottom edges and reads as a grey
+						     rectangle around the phone rather than as depth. The 3px ink border
+						     carries the lift instead, which is the house style anyway. -->
+						<div class="border-ink relative rounded-[2.75rem] border-[3px] bg-black p-2.5">
 							<div
 								class="absolute top-4 left-1/2 z-10 h-6 w-24 -translate-x-1/2 rounded-full bg-black"
 							>
@@ -184,7 +196,7 @@ const schema = [
 						</div>
 
 						<div
-							class="border-ink shadow-lift absolute -bottom-9 -start-10 z-20 w-40 -rotate-[8deg] overflow-hidden rounded-2xl border-[3px] sm:w-44"
+							class="border-ink absolute -bottom-9 -start-10 z-20 w-40 -rotate-[8deg] overflow-hidden rounded-2xl border-[3px] sm:w-44"
 						>
 							<FoodImage
 								name="hero-float"
@@ -261,6 +273,19 @@ const schema = [
 						<figcaption class="border-ink border-t-[2.5px] p-5">
 							<h3 class="text-xl">{s.titleAr}</h3>
 							<p class="text-ink-soft mt-1.5 text-base text-pretty">{s.bodyAr}</p>
+							{'credit' in s && (
+								<p class="text-ink-faint mt-2 text-base">
+									معروضة على{' '}
+									<a
+										href={venue(s.credit).menuUrl}
+										rel="noopener noreferrer"
+										target="_blank"
+										class="font-bold hover:underline"
+									>
+										{venue(s.credit).nameAr}
+									</a>
+								</p>
+							)}
 						</figcaption>
 					</figure>
 				))
@@ -424,38 +449,39 @@ const schema = [
 		</div>
 	</Section>
 
-	<!-- ================= TESTIMONIALS ================= -->
+	<!-- ================= CUSTOMERS ================= -->
+	<!-- See the English page for why this is driven off VENUES rather than off
+	     the quotes, and why a venue without a quote gets soft grey body copy
+	     instead of a blockquote. -->
 	<Section tone="sunk" ruled id="customers">
 		<SectionHead eyebrow="منشآت حقيقية" title="يعملون عليها بالفعل" />
 		<div class="mt-14 grid gap-7 lg:grid-cols-3">
 			{
-				TESTIMONIALS.map((t, i) => (
-					<figure class="bg-card slab flex flex-col rounded-[1.5rem] p-7">
-						<div class="flex items-center gap-3.5">
-							<span class="border-ink h-14 w-14 shrink-0 overflow-hidden rounded-full border-[2.5px]">
-								<FoodImage
-									name={`avatar-${t.person.split(' ')[0].toLowerCase()}`}
-									alt=""
-									ratio="1"
-									tone={i === 0 ? 'warm' : i === 1 ? 'brand' : 'dark'}
-									widths={[100, 200]}
-									sizes="56px"
-								/>
-							</span>
-							<figcaption>
-								<p class="text-lg font-bold">{t.person}</p>
-								<p class="text-ink-faint text-base">
-									{t.venue} · {t.roleAr}
-								</p>
-							</figcaption>
-						</div>
-						<blockquote class="mt-5 grow text-lg leading-relaxed text-pretty">
-							"{t.quoteAr}"
-						</blockquote>
-						{t.menuUrl && (
+				VENUES.map((v) => {
+					const t = testimonialFor(v.id)
+					return (
+						<figure class="bg-card slab flex flex-col rounded-[1.5rem] p-7">
+							<div class="flex items-center gap-4">
+								<span class="border-ink bg-paper h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-[2.5px]">
+									<VenueLogo name={v.logo} venue={v.nameAr} size={80} />
+								</span>
+								<figcaption>
+									<p class="text-lg font-bold">{t ? t.person : v.nameAr}</p>
+									<p class="text-ink-faint text-base">
+										{t ? `${v.nameAr} · ${t.roleAr}` : v.kindAr}
+									</p>
+								</figcaption>
+							</div>
+							{t ? (
+								<blockquote class="mt-5 grow text-lg leading-relaxed text-pretty">
+									“{t.quoteAr}”
+								</blockquote>
+							) : (
+								<p class="text-ink-soft mt-5 grow text-lg leading-relaxed text-pretty">{v.blurbAr}</p>
+							)}
 							<p class="mt-5">
 								<a
-									href={t.menuUrl}
+									href={v.menuUrl}
 									rel="noopener noreferrer"
 									target="_blank"
 									class="text-brand-text text-lg font-bold hover:underline"
@@ -463,9 +489,9 @@ const schema = [
 									شاهد قائمتهم الحية ←
 								</a>
 							</p>
-						)}
-					</figure>
-				))
+						</figure>
+					)
+				})
 			}
 		</div>
 	</Section>
