@@ -43,6 +43,9 @@ const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`
 
 const lang = getLangFromUrl(Astro.url)
 const dir = lang === 'ar' ? 'rtl' : 'ltr'
+// Used for inLanguage and og:locale, which describe what this page IS.
+// Deliberately NOT used for hreflang, which decides who Google shows it to
+// — see the hreflang links below.
 const localeTag = lang === 'ar' ? 'ar-AE' : 'en-AE'
 const enPath = clean.replace(/^\/ar(\/|$)/, '/')
 const arPath = enPath === '/' ? '/ar' : `/ar${enPath}`
@@ -82,8 +85,12 @@ const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? sche
 		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
-		<link rel="alternate" hreflang="en-AE" href={new URL(enPath, SITE.domain).href} />
-		<link rel="alternate" hreflang="ar-AE" href={new URL(arPath, SITE.domain).href} />
+		{/* Language-only, not en-AE/ar-AE. There is one English version and one
+		    Arabic one, with no regional variants to disambiguate, so a regional
+		    tag would only narrow them to the UAE — and Search Console shows real
+		    impressions from over a hundred countries against USD pricing. */}
+		<link rel="alternate" hreflang="en" href={new URL(enPath, SITE.domain).href} />
+		<link rel="alternate" hreflang="ar" href={new URL(arPath, SITE.domain).href} />
 		<link rel="alternate" hreflang="x-default" href={new URL(enPath, SITE.domain).href} />
 		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		{
