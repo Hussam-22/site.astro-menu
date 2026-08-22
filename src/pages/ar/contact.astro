@@ -9,11 +9,7 @@ import Layout from '../../layouts/Layout.astro'
 import { crumbSchema } from '../../utils/schema'
 
 const title = 'تواصل معنا'
-const description = `أرسل لنا القائمة التي لديك الآن وسنبني النسخة الأولى مجانًا. راسلنا على ${SITE.email} أو عبر واتساب — يرد عليك شخص، عادة في نفس اليوم.`
-
-const waHref = `https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
-	'مرحبًا أسترو مينيو — أرغب في إعداد قائمة QR.'
-)}`
+const description = `أرسل لنا القائمة التي لديك الآن وسنبني النسخة الأولى مجانًا. راسلنا على ${SITE.email} — يرد عليك شخص، عادة في نفس اليوم.`
 
 const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
 ---
@@ -35,7 +31,7 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 					lede="بأي صيغة كانت — ملف PDF، صورة للقائمة المطبوعة، جدول بيانات. سنبني النسخة الأولى نيابة عنك ونرسلها جاهزة للمراجعة. بلا رسوم، بلا التزام."
 				/>
 
-				<div class="mt-9 space-y-4">
+				<div class="mt-9">
 					<a
 						href={`mailto:${SITE.email}`}
 						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"

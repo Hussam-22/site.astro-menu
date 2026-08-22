@@ -4,6 +4,9 @@
  */
 import { chromium } from 'playwright'
 
+/** Defaults to the usual dev port; override when a second checkout is running its own. */
+const BASE = process.env.QA_BASE ?? 'http://localhost:4321'
+
 const ROUTES = [
 	['/', 'home'],
 	['/features', 'features'],
@@ -27,7 +30,7 @@ for (const [route, name] of ROUTES) {
 	const errors = []
 	page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
 	page.on('pageerror', (e) => errors.push(String(e)))
-	await page.goto('http://localhost:4321' + route, { waitUntil: 'networkidle' })
+	await page.goto(BASE + route, { waitUntil: 'networkidle' })
 	await page.evaluate(async () => {
 		window.scrollTo(0, document.body.scrollHeight)
 		await new Promise((r) => setTimeout(r, 500))
@@ -77,7 +80,10 @@ for (const [route, name] of ROUTES) {
 
 	if (issues.length) bad++
 	console.log(
-		(issues.length ? 'X ' : 'OK') + ' ' + route.padEnd(34) + (issues.join(' ; ') || report.ld.join(' '))
+		(issues.length ? 'X ' : 'OK') +
+			' ' +
+			route.padEnd(34) +
+			(issues.join(' ; ') || report.ld.join(' '))
 	)
 	await page.close()
 }

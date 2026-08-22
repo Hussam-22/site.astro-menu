@@ -138,6 +138,26 @@ h3 {
 	letter-spacing: 0.09em;
 }
 
+/* The `h1, h2, h3` rule above is UNLAYERED, and an unlayered rule beats every
+   cascade layer no matter how specific — so `class="label"` alone loses to it
+   and a heading that is also a small capitalised label renders in condensed
+   Anton at 14px, which is precisely what `label` exists to prevent. Raising the
+   specificity here puts it back. The Arabic overrides below are more specific
+   still, so they continue to win. */
+h1.label,
+h2.label,
+h3.label {
+	font-family: var(--font-sans);
+	font-weight: 700;
+	letter-spacing: 0.09em;
+}
+
+/* daisyUI ships its own `.label` form component and it lands first, so every
+   element carrying this class is an inline-flex box. That silently kills
+   `text-align` on it — centring a label needs `justify-*`, not `text-center`.
+   Named here so the next person finds out from the stylesheet rather than from
+   a screenshot. */
+
 /* The header floats over content, so in-page anchors need clearance. */
 [id] {
 	scroll-margin-top: 6.5rem;

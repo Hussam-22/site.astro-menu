@@ -5,6 +5,9 @@
  */
 import { chromium } from 'playwright'
 
+/** Defaults to the usual dev port; override when a second checkout is running its own. */
+const BASE = process.env.QA_BASE ?? 'http://localhost:4321'
+
 const [, , route = '/', out = 'shot', width = '1280', mode = 'full'] = process.argv
 const w = Number(width)
 const mobile = w < 768
@@ -21,7 +24,7 @@ const errors = []
 page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
 page.on('pageerror', (e) => errors.push(String(e)))
 
-await page.goto('http://localhost:4321' + route, { waitUntil: 'networkidle' })
+await page.goto(BASE + route, { waitUntil: 'networkidle' })
 // scroll-behavior:smooth animates scrollTo, so a reset can still be mid-flight
 // when the shutter fires. Disable it for the duration of the capture.
 await page.addStyleTag({ content: 'html{scroll-behavior:auto !important}' })

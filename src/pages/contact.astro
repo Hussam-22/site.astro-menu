@@ -9,17 +9,13 @@ import Layout from '../layouts/Layout.astro'
 import { crumbSchema } from '../utils/schema'
 
 const title = 'Contact us'
-const description = `Send us the menu you have now and we build the first version free. Email ${SITE.email} or WhatsApp us — a person answers, usually the same day.`
-
-const waHref = `https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
-	'Hi Astro-Menu — I would like to set up a QR menu.'
-)}`
+const description = `Send us the menu you have now and we build the first version free. Email ${SITE.email} — a person answers, usually the same day.`
 
 /**
  * The form only renders once a real Web3Forms access key is set in
  * src/config/site.ts. Shipping a form wired to a placeholder key would look
  * like it worked and quietly drop every enquiry, so until the key is real the
- * page leads with email and WhatsApp, which always work.
+ * page leads with email, which always works.
  */
 const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
 ---
@@ -41,7 +37,7 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 					lede="Whatever form it is in — a PDF, a photo of the printed card, a spreadsheet. We will build the first version for you and send it back ready to check. No charge, no obligation."
 				/>
 
-				<div class="mt-9 space-y-4">
+				<div class="mt-9">
 					<a
 						href={`mailto:${SITE.email}`}
 						class="bg-card slab slab-hover flex items-center gap-4 rounded-[1.25rem] p-6"

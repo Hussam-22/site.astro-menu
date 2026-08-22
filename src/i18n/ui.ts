@@ -4,6 +4,7 @@ export type Lang = keyof typeof LANGUAGES
 
 export const ui = {
 	en: {
+		'nav.home': 'Home',
 		'nav.features': 'Features',
 		'nav.how': 'How it works',
 		'nav.pricing': 'Pricing',
@@ -27,6 +28,7 @@ export const ui = {
 		'common.home': 'Home'
 	},
 	ar: {
+		'nav.home': 'الرئيسية',
 		'nav.features': 'المزايا',
 		'nav.how': 'كيف تعمل',
 		'nav.pricing': 'الأسعار',

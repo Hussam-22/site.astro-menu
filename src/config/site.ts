@@ -2,7 +2,6 @@ export const SITE = {
 	name: 'Astro-Menu',
 	domain: 'https://astro-menu.com',
 	email: 'hello@astro-menu.com',
-	whatsapp: '+971565956180',
 	tagline: 'The QR menu your customers can actually read',
 	description:
 		'Astro-Menu turns your food menu into a fast, photo-led QR menu you update from a dashboard in seconds. One flat price, no POS, no commission, no hardware.',
@@ -63,6 +62,7 @@ export const PRICE = {
 } as const
 
 export const NAV = [
+	{ title: 'Home', path: '/' },
 	{ title: 'Features', path: '/features' },
 	{ title: 'How it works', path: '/how-it-works' },
 	{ title: 'Pricing', path: '/pricing' },
@@ -100,7 +100,7 @@ export const FOOTER_NAV = [
 /**
  * Web3Forms access key for the /contact form. Get one free at
  * https://web3forms.com and paste it here. While this is the placeholder, the
- * contact page hides the form and leads with email and WhatsApp instead, so a
+ * contact page hides the form and leads with email instead, so a
  * visitor never fills in a form that quietly goes nowhere.
  */
 export const CONTACT_FORM_KEY = 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY'

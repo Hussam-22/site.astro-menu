@@ -11,6 +11,7 @@ const switchHref =
 	lang === 'ar' ? here.replace(/^\/ar(\/|$)/, '/') || '/' : here === '/' ? '/ar' : `/ar${here}`
 
 const navLabels: Record<string, string> = {
+	'/': t('nav.home'),
 	'/features': t('nav.features'),
 	'/how-it-works': t('nav.how'),
 	'/pricing': t('nav.pricing'),
@@ -101,7 +102,7 @@ const isCurrent = (p: string) => {
 			</label>
 
 			<div
-				class="bg-paper border-ink invisible absolute inset-x-0 top-full max-h-0 overflow-hidden border-b-[2.5px] opacity-0 transition-all duration-300 peer-checked:visible peer-checked:max-h-[32rem] peer-checked:opacity-100 lg:hidden"
+				class="bg-paper border-ink invisible absolute inset-x-0 top-full max-h-0 overflow-hidden border-b-[2.5px] opacity-0 transition-all duration-300 peer-checked:visible peer-checked:max-h-[42rem] peer-checked:opacity-100 lg:hidden"
 			>
 				<ul class="flex flex-col gap-1 px-5 py-4">
 					{
