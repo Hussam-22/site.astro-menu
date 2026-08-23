@@ -31,13 +31,13 @@ export const PILLARS = [
 	{
 		who: 'The guest',
 		title: 'No app, no friction',
-		body: 'They point a camera and the menu opens in their own language. Nothing to download, nothing to sign into, nothing for your staff to explain.',
+		body: 'They point a camera and the menu opens in whichever of your languages they read. Nothing to download, nothing to sign into, nothing for your staff to explain.',
 		image: 'guests',
 		brief: 'Two friends at a table scanning a QR, laughing at the phone',
 		tone: 'dark' as const,
 		whoAr: 'الزبون',
 		titleAr: 'بلا تطبيق، بلا تعقيد',
-		bodyAr: 'بس يصوّر الكود بالكاميرا وتفتح المنيو بلغته هو. ما في شي يحمّله، ولا حساب ينشئه، ولا شي يحتاج موظفينك يشرحوه.'
+		bodyAr: 'بس يصوّر الكود بالكاميرا وتفتح المنيو بأي لغة من لغات منيوك بيقراها. ما في شي يحمّله، ولا حساب ينشئه، ولا شي يحتاج موظفينك يشرحوه.'
 	}
 ]
 
@@ -115,7 +115,7 @@ export const TESTIMONIALS = [
 			'Astro-Menu transformed the way our customers interact with our menu. With more than 120 items, it used to take time for people to find what they wanted, but the filtering and clean layout changed everything. Customers can now browse, sort, and locate their preferred drinks or pastries in seconds. This has noticeably reduced ordering time and kept the flow moving smoothly, especially during peak hours.',
 		roleAr: 'صاحب المكان',
 		quoteAr:
-			'غيّرت Astro-Menu الطريقة التي يتفاعل بها عملاؤنا مع قائمتنا. مع أكثر من 120 صنفًا، كان الأمر يستغرق وقتًا حتى يجد الناس ما يريدون، لكن الفلترة والتصميم الواضح غيّرا كل شيء. أصبح بإمكان العملاء الآن التصفح والفرز وإيجاد مشروبهم أو حلواهم المفضلة خلال ثوانٍ. هذا خفّض وقت الطلب بشكل ملحوظ وحافظ على انسيابية الحركة، خصوصًا في أوقات الذروة.'
+			'غيّرت استرو منيو الطريقة التي يتفاعل بها عملاؤنا مع قائمتنا. مع أكثر من 120 صنفًا، كان الأمر يستغرق وقتًا حتى يجد الناس ما يريدون، لكن الفلترة والتصميم الواضح غيّرا كل شيء. أصبح بإمكان العملاء الآن التصفح والفرز وإيجاد مشروبهم أو حلواهم المفضلة خلال ثوانٍ. هذا خفّض وقت الطلب بشكل ملحوظ وحافظ على انسيابية الحركة، خصوصًا في أوقات الذروة.'
 	},
 	{
 		venueId: 'foamy' as const,
@@ -125,7 +125,7 @@ export const TESTIMONIALS = [
 			'Astro-Menu has been a great addition to how we operate. Managing our menu is incredibly easy, and updates appear instantly. One of the biggest advantages is how smoothly customers can view our menu online through Google, Maps, or even our social media pages before visiting. It helps them decide faster and improves their overall experience.',
 		roleAr: 'صاحب شاحنة قهوة متنقلة',
 		quoteAr:
-			'كانت Astro-Menu إضافة رائعة لطريقة عملنا. إدارة قائمتنا سهلة للغاية، والتحديثات تظهر فورًا. من أكبر المزايا هي السلاسة التي يستطيع بها العملاء الاطلاع على قائمتنا أونلاين عبر جوجل أو الخرائط أو حتى صفحاتنا على وسائل التواصل الاجتماعي قبل الزيارة. هذا يساعدهم على اتخاذ القرار بسرعة أكبر ويحسّن تجربتهم بشكل عام.'
+			'كانت استرو منيو إضافة رائعة لطريقة عملنا. إدارة قائمتنا سهلة للغاية، والتحديثات تظهر فورًا. من أكبر المزايا هي السلاسة التي يستطيع بها العملاء الاطلاع على قائمتنا أونلاين عبر جوجل أو الخرائط أو حتى صفحاتنا على وسائل التواصل الاجتماعي قبل الزيارة. هذا يساعدهم على اتخاذ القرار بسرعة أكبر ويحسّن تجربتهم بشكل عام.'
 	}
 ]
 
@@ -157,10 +157,10 @@ export const VERSUS = [
 	},
 	{
 		point: 'Guests who read Arabic',
-		astro: 'Every language you add, translated and right-to-left.',
+		astro: 'Up to three languages, fully translated and right-to-left.',
 		other: 'A second print run, or nothing at all.',
 		pointAr: 'الزبائن الذين يقرؤون العربية',
-		astroAr: 'كل لغة تضيفها عالمنيو، بترجمة كاملة واتجاه صحيح من اليمين لليسار.',
+		astroAr: 'لحد تلات لغات، بترجمة كاملة واتجاه صحيح من اليمين لليسار.',
 		otherAr: 'طبعة ثانية، أو ولا شيء أصلًا.'
 	},
 	{
@@ -172,11 +172,11 @@ export const VERSUS = [
 		otherAr: 'نزّل، كبّر، حرّك... وبالأخير اسأل النادل.'
 	},
 	{
-		point: 'Allergies and calories',
-		astro: 'Tagged per item, filterable, always current.',
+		point: 'Calories and macros',
+		astro: 'On the item itself, always current.',
 		other: 'A separate sheet nobody can find.',
-		pointAr: 'الحساسية والسعرات الحرارية',
-		astroAr: 'موسومة على كل صنف، قابلة للفلترة، ومحدّثة دايمًا.',
+		pointAr: 'السعرات الحرارية والعناصر الغذائية',
+		astroAr: 'على الصنف نفسه، ومحدّثة دايمًا.',
 		otherAr: 'ورقة لحالها ما حدا بيلاقيها.'
 	},
 	{
@@ -218,12 +218,12 @@ export const USE_CASES = [
 	},
 	{
 		title: 'Hotel rooms',
-		body: 'Room service, breakfast and pool menus on one code, in every language your guests read.',
+		body: 'Room service, breakfast and pool menus on one code, in up to three languages.',
 		image: 'uc-hotel',
 		brief: 'Room-service card on a bed, phone showing the menu',
 		tone: 'dark' as const,
 		titleAr: 'غرف الفنادق',
-		bodyAr: 'خدمة الغرف والإفطار ومنيو المسبح على رمز واحد، بأي لغة يقرؤها ضيوفك.'
+		bodyAr: 'خدمة الغرف والإفطار ومنيو المسبح على رمز واحد، بلحد تلات لغات.'
 	},
 	{
 		title: 'Bakeries & dessert bars',
@@ -236,12 +236,12 @@ export const USE_CASES = [
 	},
 	{
 		title: 'Clinics & staff canteens',
-		body: 'Calories, macros and allergens on every item, without a printed sheet.',
+		body: 'Calories and macros on every item, without a printed sheet.',
 		image: 'uc-clinic',
 		brief: 'Bright canteen counter, tray of labelled healthy dishes',
 		tone: 'warm' as const,
 		titleAr: 'العيادات ومطاعم الموظفين',
-		bodyAr: 'السعرات الحرارية والعناصر الغذائية ومسببات الحساسية على كل صنف، من دون ورقة مطبوعة.'
+		bodyAr: 'السعرات الحرارية والعناصر الغذائية على كل صنف، من دون ورقة مطبوعة.'
 	},
 	{
 		title: 'Lounges',
@@ -257,7 +257,7 @@ export const USE_CASES = [
 /** The claims that scroll past on the ribbon under the hero. */
 export const RIBBON = [
 	'Unlimited menus',
-	'Every language',
+	'Three menu languages',
 	'No commission',
 	'A photo on every dish',
 	'One QR forever',
@@ -268,7 +268,7 @@ export const RIBBON = [
 
 export const RIBBON_AR: string[] = [
 	'قوائم بلا حدود',
-	'كل لغة',
+	'تلات لغات للمنيو',
 	'بدون عمولة',
 	'صورة على كل طبق',
 	'QR واحد يضل شغال',
@@ -319,20 +319,20 @@ export const SCREENS = [
 	{
 		file: 'language-switch.png',
 		title: 'In their language',
-		body: 'Add a language and the whole menu is translated, right-to-left where it should be.',
+		body: 'Your language plus two more. The whole menu is translated, right-to-left where it should be.',
 		tall: true,
 		titleAr: 'بلغتهم هم',
-		bodyAr: 'ضيف لغة وتترجم القائمة كلها، من اليمين لليسار وين ما لازم.'
+		bodyAr: 'لغتك وتنتين غيرها. القائمة كلها بتتترجم، من اليمين لليسار وين ما لازم.'
 	},
 	{
 		file: 'macros.png',
 		title: 'Calories and macros',
-		body: 'Per item, if you want them — calories, carbs, fat and protein, with allergen tags alongside.',
+		body: 'Per item, if you want them — calories, carbs, fat and protein.',
 		tall: false,
 		/** Not Number Eight's menu, so it is credited to the venue it belongs to. */
 		credit: 'carb-protein' as const,
 		titleAr: 'السعرات الحرارية والعناصر الغذائية',
 		bodyAr:
-			'لكل صنف، إذا حبيت — سعرات حرارية، كربوهيدرات، دهون وبروتين، مع وسوم الحساسية جنبها.'
+			'لكل صنف، إذا حبيت — سعرات حرارية، كربوهيدرات، دهون وبروتين.'
 	}
 ]

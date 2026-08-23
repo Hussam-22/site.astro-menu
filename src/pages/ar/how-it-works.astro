@@ -26,7 +26,7 @@ const description = `ابعتلنا منيو مطعمك بأي شكل عندك،
 const howTo = {
 	'@context': 'https://schema.org',
 	'@type': 'HowTo',
-	name: 'كيف تجهّز قائمة QR مع أسترو مينيو',
+	name: 'كيف تجهّز قائمة QR مع استرو منيو',
 	description,
 	totalTime: 'PT1H',
 	estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '0' },
@@ -43,7 +43,7 @@ const NEED = [
 	'منيو مطعمك الحالية — ملف PDF، صورة للقائمة المطبوعة، أو حتى جدول بيانات',
 	'شعار مطعمك',
 	'صورة غلاف للمكان',
-	'اللغات التي تتعامل بها مع زبائنك',
+	'اللغات التي تتعامل بها مع زبائنك — لغتك ولغتان غيرها ضمن الاشتراك',
 	'صور الأطباق، لاحقًا — تقدر تضيفها صنفًا صنفًا بعدين'
 ]
 ---
@@ -72,7 +72,7 @@ const NEED = [
 			<div class="border-ink shadow-lift mx-auto w-full max-w-[17rem] overflow-hidden rounded-[1.5rem] border-[3px]">
 				<Image
 					src={screenshot('landing.png')}
-					alt="صفحة منشأة جاهزة على أسترو مينيو بصورة غلاف وشعار وأزرار تواصل بلمسة واحدة"
+					alt="صفحة منشأة جاهزة على استرو منيو بصورة غلاف وشعار وأزرار تواصل بلمسة واحدة"
 					widths={[390, 600, 780]}
 					sizes="(min-width:1024px) 272px, 80vw"
 					class="block h-auto w-full"
@@ -160,7 +160,7 @@ const NEED = [
 			</div>
 			<DashboardImage
 				name="dash-sections"
-				alt="لوحة تحكم أسترو مينيو أثناء بناء قائمة: أقسام مضافة ومملوءة بالأصناف والأسعار"
+				alt="لوحة تحكم استرو منيو أثناء بناء قائمة: أقسام مضافة ومملوءة بالأصناف والأسعار"
 				brief="Building a menu: sections added, reordered and filled with items"
 				frame="light"
 				sizes="(min-width:1024px) 45vw, 92vw"

@@ -38,7 +38,7 @@ const screenshot = (file: string) =>
 const homeFaqsAr = HOME_FAQS.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
 
 const title = 'قائمة QR للمطاعم والمقاهي'
-const description = `حوّل قائمة مطعمك إلى منيو QR بالصور، تعدّلها بنفسك خلال ثوانٍ وتظهر فورًا لزبائنك — بكل لغة، من رمز واحد لا يحتاج إعادة طباعة. ${PRICE.monthly} شهريًا، بلا عمولة.`
+const description = `حوّل قائمة مطعمك إلى منيو QR بالصور، تعدّلها بنفسك خلال ثوانٍ وتظهر فورًا لزبائنك — بتلات لغات، من رمز واحد لا يحتاج إعادة طباعة. ${PRICE.monthly} شهريًا، بلا عمولة.`
 
 const schema = [
 	{
@@ -50,12 +50,11 @@ const schema = [
 		operatingSystem: 'Web browser',
 		url: `${SITE.domain}/ar`,
 		description:
-			'منيو QR للمطاعم والمقاهي، بتتحدّث بضغطة وبتفتح سريع على الموبايل — بالصور والأسعار وبأي لغة يحتاجها زبائنك.',
+			'منيو QR للمطاعم والمقاهي، بتتحدّث بضغطة وبتفتح سريع على الموبايل — بالصور والأسعار وبتلات لغات للمنيو.',
 		featureList: [
 			'قائمة QR',
 			'منيو غير محدودة بأقسامها وأصنافها',
-			'ترجمة تلقائية تشمل العربية',
-			'وسوم الحساسية والنظام الغذائي',
+			'منيو بحد ثلاث لغات، والعربية من ضمنها',
 			'فلاتر أنواع الوجبات',
 			'السعرات والقيم الغذائية لكل صنف',
 			'تحليلات المنيو'
@@ -97,8 +96,8 @@ const schema = [
 				<Sticker>بلا تطبيق يُحمَّل</Sticker>
 			</div>
 
-			<h1 class="mt-7 text-[3.4rem] leading-[0.9] sm:text-8xl lg:text-[8.5rem]">
-				ورّي{' '}<span
+			<h1 class="mt-7 text-[2.7rem] leading-[1.15] sm:text-[4.4rem] lg:text-[6.2rem]">
+				خلّي زباينك يشوفوا{' '}<span
 					class="border-ink hidden h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle sm:inline-grid"
 				>
 					<FoodImage
@@ -110,7 +109,7 @@ const schema = [
 						widths={[200, 400]}
 						sizes="120px"
 					/>
-				</span>{' '}الأكل،<br />مو بس أسماء وأسعار<span class="text-brand-text">.</span>
+				</span>{' '}الأكل،<br />مو بس يقروه<span class="text-brand-text">.</span>
 			</h1>
 
 			<div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
@@ -222,7 +221,7 @@ const schema = [
 	<!-- ================= WHY / PILLARS ================= -->
 	<Section id="why">
 		<SectionHead
-			eyebrow="ليش أسترو مينيو"
+			eyebrow="ليش استرو منيو"
 			title="الكل عالطاولة بيستفيد"
 			lede="صاحب المطعم بيبطّل يعيد الطباعة. الطاقم بيبطّل يعتذر عن صنف خلص. والزبون بيبطّل يحدّق بملف PDF ما بينفتح."
 		/>
@@ -258,7 +257,7 @@ const schema = [
 		<SectionHead
 			eyebrow="شو بيشوف زبونك"
 			title="ست شاشات.<br />كلها حقيقية."
-			lede={`كل شاشة تحت هي منيو زبون شغّال فعليًا على أسترو مينيو اليوم، معظمها من ${SITE.demoVenueName}، 120 صنفًا أمام عينك مباشرة. ولا شي هون محاكاة أو تصميم تجريبي.`}
+			lede={`كل شاشة تحت هي منيو زبون شغّال فعليًا على استرو منيو اليوم، معظمها من ${SITE.demoVenueName}، 120 صنفًا أمام عينك مباشرة. ولا شي هون محاكاة أو تصميم تجريبي.`}
 		/>
 		<div class="masonry mt-14 sm:columns-2 lg:columns-3">
 			{
@@ -324,7 +323,7 @@ const schema = [
 
 			<DashboardImage
 				name="dash-meals"
-				alt="قائمة أصناف أسترو مينيو: كل طبق بصورته وحصصه وأسعاره، مع مفتاح تفعيل أو تعطيل لكل صف"
+				alt="قائمة أصناف استرو منيو: كل طبق بصورته وحصصه وأسعاره، مع مفتاح تفعيل أو تعطيل لكل صف"
 				brief="The Meals list: photos, portions, prices, and one dish switched off"
 				frame="light"
 				sizes="(min-width:1024px) 45vw, 92vw"
@@ -347,7 +346,7 @@ const schema = [
 	<!-- ================= VERSUS ================= -->
 	<Section id="compare">
 		<SectionHead
-			eyebrow="أسترو مينيو مقابل القائمة المطبوعة"
+			eyebrow="استرو منيو مقابل القائمة المطبوعة"
 			title="وحدة من الاثنتين بتكلّفك مصاري<br />كل مرة بتتغيّر فيها"
 		/>
 
@@ -355,20 +354,20 @@ const schema = [
 			<div class="overflow-x-auto">
 				<table class="w-full min-w-[46rem] text-start">
 					<caption class="sr-only">
-						مقارنة بين أسترو مينيو وقائمة الطعام المطبوعة أو ملف PDF، عبر ثماني مواقف يومية
+						مقارنة بين استرو منيو وقائمة الطعام المطبوعة أو ملف PDF، عبر ثماني مواقف يومية
 					</caption>
 					<thead>
 						<tr class="border-ink border-b-[2.5px]">
-							<th scope="col" class="label w-1/4 px-6 py-5 text-sm">الموقف</th>
-							<th scope="col" class="text-brand-text label w-[37.5%] px-6 py-5 text-sm">أسترو مينيو</th>
-							<th scope="col" class="label w-[37.5%] px-6 py-5 text-sm">قائمة مطبوعة أو PDF</th>
+							<th scope="col" class="label !table-cell w-1/4 px-6 py-5 text-start text-sm">الموقف</th>
+							<th scope="col" class="text-brand-text label !table-cell w-[37.5%] px-6 py-5 text-start text-sm">استرو منيو</th>
+							<th scope="col" class="label !table-cell w-[37.5%] px-6 py-5 text-start text-sm">قائمة مطبوعة أو PDF</th>
 						</tr>
 					</thead>
 					<tbody>
 						{
 							VERSUS.map((row) => (
 								<tr class="border-line border-b-2 last:border-b-0">
-									<th scope="row" class="px-6 py-5 align-top text-lg font-bold">
+									<th scope="row" class="px-6 py-5 text-start align-top text-lg font-bold">
 										{row.pointAr}
 									</th>
 									<td class="bg-brand/8 px-6 py-5 align-top text-lg font-semibold">
@@ -394,7 +393,7 @@ const schema = [
 
 	<!-- ================= USE CASES ================= -->
 	<Section tone="card" ruled id="use-cases">
-		<SectionHead eyebrow="لمين هالمنيو" title="إذا بتقدّم أكل، هي إلك" />
+		<SectionHead eyebrow="لمين هالمنيو" title="إذا بتقدّم أكل، استرو منيو إلك" />
 		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{
 				USE_CASES.map((u) => (
@@ -455,7 +454,7 @@ const schema = [
 	     the quotes, and why a venue without a quote gets soft grey body copy
 	     instead of a blockquote. -->
 	<Section tone="sunk" ruled id="customers">
-		<SectionHead eyebrow="منشآت حقيقية" title="يعملون عليها بالفعل" />
+		<SectionHead eyebrow="منشآت حقيقية" title="عم يستخدَموا استرو منيو هلأ" />
 		<div class="mt-14 grid gap-7 lg:grid-cols-3">
 			{
 				VENUES.map((v) => {

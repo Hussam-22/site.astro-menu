@@ -9,8 +9,7 @@ export const INCLUDED = [
 	'A photo on every item',
 	'Sizes and portions, each with its own price',
 	'Calories and macros per item, if you want them',
-	'Automatic translation into any language, Arabic included',
-	'Dietary and allergen tags',
+	'Up to three menu languages — the one you write in, plus two more',
 	'Filter the menu by meal type',
 	'One QR code that never changes, however often the menu does',
 	'Print-ready QR downloads — PNG, SVG and PDF',
@@ -29,8 +28,7 @@ export const INCLUDED_AR: string[] = [
 	'صورة لكل صنف',
 	'أحجام وحصص، لكل منها سعرها الخاص',
 	'السعرات الحرارية والعناصر الغذائية لكل صنف، إذا بدك',
-	'ترجمة تلقائية لأي لغة، والعربية من ضمنها',
-	'علامات النظام الغذائي والحساسية',
+	'لحد تلات لغات للمنيو — اللغة يلي بتكتب فيها، وتنتين غيرها',
 	'تصفية المنيو حسب نوع الوجبة',
 	'رمز QR واحد ما بيتغيّر، مهما تغيّر المنيو',
 	'تحميل رمز QR جاهز للطباعة، بصيغ PNG وSVG وPDF',
@@ -89,10 +87,10 @@ export const STEPS = [
 	{
 		n: '02',
 		title: 'Make it yours',
-		body: 'Cover photo, logo, colours, section order, a photo on each dish. Add the languages you serve in and Astro-Menu translates the whole menu.',
+		body: 'Cover photo, logo, colours, section order, a photo on each dish. Tell us the languages you serve in — yours plus two more are included — and Astro-Menu translates the whole menu.',
 		detail: 'Everything is a field in the dashboard. No designer, no ticket.',
 		titleAr: 'خلّيها منيوك أنت',
-		bodyAr: 'صورة غلاف، شعار، ألوان، ترتيب الأقسام، صورة لكل طبق. ضيف اللغات يلي بتخدم فيها زبائنك، وبتترجم Astro-Menu المنيو بأكمله.',
+		bodyAr: 'صورة غلاف، شعار، ألوان، ترتيب الأقسام، صورة لكل طبق. قلنا شو اللغات يلي بتخدم فيها زبائنك — لغتك وتنتين غيرها ضمن الاشتراك — وبتترجم استرو منيو المنيو بأكمله.',
 		detailAr: 'كل شيء عبارة عن حقل في لوحة التحكم. بلا مصمم، وبلا تذكرة دعم.'
 	},
 	{
@@ -131,9 +129,9 @@ export const DASHBOARD_CONTROLS = [
 	},
 	{
 		title: 'Items & prices',
-		body: 'Photo, description, price, portions, calories, allergen tags. Edit any field and it is live immediately.',
+		body: 'Photo, description, price, portions, calories and macros. Edit any field and it is live immediately.',
 		titleAr: 'الأصناف والأسعار',
-		bodyAr: 'صورة، وصف، سعر، حصص، سعرات حرارية، علامات الحساسية. عدّل أي حقل وبيصير مباشرًا فورًا.'
+		bodyAr: 'صورة، وصف، سعر، حصص، سعرات حرارية وعناصر غذائية. عدّل أي حقل وبيصير مباشرًا فورًا.'
 	},
 	{
 		title: 'Availability',
@@ -143,9 +141,9 @@ export const DASHBOARD_CONTROLS = [
 	},
 	{
 		title: 'Languages',
-		body: 'Add the languages your guests read. Astro-Menu translates the whole menu and switches to right-to-left for Arabic.',
+		body: 'Your menu language plus two more, chosen when we set you up. Astro-Menu translates the whole menu and switches to right-to-left for Arabic.',
 		titleAr: 'اللغات',
-		bodyAr: 'ضيف اللغات يلي بيقراها زبائنك. Astro-Menu بتترجم المنيو بأكمله وبتحوّل الاتجاه من اليمين لليسار للعربي.'
+		bodyAr: 'لغة منيوك وتنتين غيرها، بتختارهم وقت الإعداد. استرو منيو بتترجم المنيو بأكمله وبتحوّل الاتجاه من اليمين لليسار للعربي.'
 	},
 	{
 		title: 'Look & feel',

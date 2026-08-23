@@ -22,8 +22,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
 			{
 				q: 'Do I need to be technical to use it?',
 				a: 'No. Everything is a form field in a dashboard — item name, price, description, photo. If you can post to Instagram you can run an Astro-Menu menu. There is nothing to install and nothing to host.',
-				qAr: 'هل أحتاج خبرة تقنية لاستخدامه؟',
-				aAr: 'لا. كل شي عبارة عن حقل بتعبّيه في لوحة التحكم — اسم الصنف، السعر، الوصف، الصورة. إذا بتعرف تنشر على إنستغرام، بتقدر تشغّل منيو Astro-Menu. ما في شي تثبّته وما في شي تستضيفه.'
+				qAr: 'هل أحتاج خبرة تقنية لاستخدام استرو منيو؟',
+				aAr: 'لا. كل شي عبارة عن حقل بتعبّيه في لوحة التحكم — اسم الصنف، السعر، الوصف، الصورة. إذا بتعرف تنشر على إنستغرام، بتقدر تشغّل منيو استرو منيو. ما في شي تثبّته وما في شي تستضيفه.'
 			},
 			{
 				q: 'What do you need from me to build the first menu?',
@@ -34,7 +34,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
 			{
 				q: 'Can I try it before paying?',
 				a: `Yes. Every account starts with a ${PRICE.trialDays}-day free trial and no card is required. You can build the whole menu, print the code and put it on tables during the trial.`,
-				qAr: 'هل بقدر أجربه قبل ما أدفع؟',
+				qAr: 'هل بقدر أجرب استرو منيو قبل ما أدفع؟',
 				aAr: `أكيد. كل حساب بيبدأ بفترة تجربة مجانية مدتها ${PRICE.trialDays} يوم، ومن دون ما تحتاج بطاقة. بتقدر تجهّز المنيو كامل، تطبع الرمز، وتحطه على الطاولات خلال فترة التجربة.`
 			}
 		]
@@ -45,15 +45,15 @@ export const FAQ_GROUPS: FaqGroup[] = [
 		items: [
 			{
 				q: 'How much does Astro-Menu cost?',
-				a: `Astro-Menu is ${PRICE.monthly} per month, or ${PRICE.annualPerMonth} per month when you pay ${PRICE.annualTotal} for the year — a saving of ${PRICE.annualSaving}, about ${PRICE.annualSavingPercent}%. That is one price for everything: unlimited menus, unlimited items, unlimited views, every language and all updates. In dirhams it is ${PRICE.monthlyAed} a month or ${PRICE.annualTotalAed} a year.`,
-				qAr: 'كم سعر اشتراك Astro-Menu؟',
-				aAr: `سعر Astro-Menu ${PRICE.monthly} بالشهر، أو ${PRICE.annualPerMonth} بالشهر إذا دفعت ${PRICE.annualTotal} سنويًا — يعني توفير ${PRICE.annualSaving}، أي حوالي ${PRICE.annualSavingPercent}٪. وهذا السعر يشمل كل شيء: قوائم غير محدودة، أصناف غير محدودة، مشاهدات غير محدودة، كل اللغات وكل التحديثات. بالدرهم، السعر ${PRICE.monthlyAed} بالشهر أو ${PRICE.annualTotalAed} بالسنة.`
+				a: `Astro-Menu is ${PRICE.monthly} per month, or ${PRICE.annualPerMonth} per month when you pay ${PRICE.annualTotal} for the year — a saving of ${PRICE.annualSaving}, about ${PRICE.annualSavingPercent}%. That is one price for everything: unlimited menus, unlimited items, unlimited views, three menu languages and all updates. In dirhams it is ${PRICE.monthlyAed} a month or ${PRICE.annualTotalAed} a year.`,
+				qAr: 'كم سعر اشتراك استرو منيو؟',
+				aAr: `سعر استرو منيو ${PRICE.monthly} بالشهر، أو ${PRICE.annualPerMonth} بالشهر إذا دفعت ${PRICE.annualTotal} سنويًا — يعني توفير ${PRICE.annualSaving}، أي حوالي ${PRICE.annualSavingPercent}٪. وهذا السعر يشمل كل شيء: قوائم غير محدودة، أصناف غير محدودة، مشاهدات غير محدودة، تلات لغات للمنيو وكل التحديثات. بالدرهم، السعر ${PRICE.monthlyAed} بالشهر أو ${PRICE.annualTotalAed} بالسنة.`
 			},
 			{
 				q: 'Do you take a commission on orders?',
 				a: 'No, and we could not — Astro-Menu does not process orders or payments at all. It is a menu. Your staff take orders the way they always have, and every dirham your customer spends goes straight to you.',
 				qAr: 'هل تاخدوا عمولة على الطلبات؟',
-				aAr: 'لا، وما بنقدر أصلًا — Astro-Menu ما بتعالج ولا طلب ولا دفعة على الإطلاق. هي منيو، بس. طاقمك بياخد الطلبات متل ما اعتاد دايمًا، وكل درهم بيصرفه زبونك بيوصلك مباشرة.'
+				aAr: 'لا، وما بنقدر أصلًا — استرو منيو ما بتعالج ولا طلب ولا دفعة على الإطلاق. مجرد منيو، لا أكتر. طاقمك بياخد الطلبات متل ما اعتاد دايمًا، وكل درهم بيصرفه زبونك بيوصلك مباشرة.'
 			},
 			{
 				q: 'Are there setup fees, hardware costs or contracts?',
@@ -92,10 +92,16 @@ export const FAQ_GROUPS: FaqGroup[] = [
 				aAr: 'لا، وهاي أهم نقطة لازم تفهمها منّا. الـQR بيفتح منيو مطعمك مباشرة، مو ملف PDF. غيّر الأسعار، ضيف أطباق جديدة، أعد بناء المنيو كامل — الرمز المطبوع على الطاولة بيضل شغّال متل ما هو. أما الرموز يلي بتشفّر ملف PDF فلازم تنعاد طباعتها كل مرة، وهاد يلي بيضطر معظم المطاعم يبلّشوا من الصفر.'
 			},
 			{
+				q: 'How many languages can my menu be in?',
+				a: 'Three are included: the language you write the menu in, plus two more. You choose them during onboarding, when you tell us which languages your guests actually read, and you can change your mind later. A fourth language and beyond is a paid extra rather than a different plan — email us and we will quote it.',
+				qAr: 'بكم لغة بيقدر يكون منيوي؟',
+				aAr: 'تلات لغات ضمن الاشتراك: اللغة يلي بتكتب فيها المنيو، وتنتين غيرها. بتختارهن وقت الإعداد، لما بتقلنا شو اللغات يلي فعلًا بيقراها زبائنك، وبتقدر تغيّر رأيك بعدين. أما اللغة الرابعة وما بعدها فخدمة مدفوعة مش باقة تانية — راسلنا ومنسعّرلك ياها.'
+			},
+			{
 				q: 'Can I show the menu in Arabic?',
-				a: 'Yes. Add Arabic in the dashboard and the whole menu is translated and laid out right-to-left. Guests switch language from the header. Any language works the same way, and you can override an individual translation if a dish name comes back wrong.',
+				a: 'Yes. Name Arabic as one of your menu languages and the whole menu is translated and laid out right-to-left. Guests switch language from the header. Any language works the same way, and you can override an individual translation if a dish name comes back wrong.',
 				qAr: 'هل بقدر أعرض المنيو بالعربي؟',
-				aAr: 'أكيد. ضيف اللغة العربية من لوحة التحكم وتُترجم القائمة كلها وتُعرض من اليمين إلى اليسار. ويختار الزبون لغته من أعلى المنيو. أي لغة تانية بتشتغل بنفس الطريقة، وبتقدر تعدّل أي ترجمة يدويًا إذا طلع اسم طبق غلط.'
+				aAr: 'أكيد. خلّي العربي وحدة من لغات منيوك وتُترجم القائمة كلها وتُعرض من اليمين إلى اليسار. ويختار الزبون لغته من أعلى المنيو. أي لغة تانية بتشتغل بنفس الطريقة، وبتقدر تعدّل أي ترجمة يدويًا إذا طلع اسم طبق غلط.'
 			},
 			{
 				q: 'Can I hide a dish that has sold out?',
@@ -104,10 +110,10 @@ export const FAQ_GROUPS: FaqGroup[] = [
 				aAr: 'أكيد، بزر واحد بس. الصنف بيختفي من المنيو المباشر فورًا، وبيرجع يظهر لما تفعّله من جديد، وهيك ما حدا بيطلب شي ما بتقدر تقدّمه.'
 			},
 			{
-				q: 'Can I show calories, macros and allergens?',
-				a: 'Yes. Calories, carbs, fat and protein can be shown per item, and dietary and allergen tags attach to the item so they travel with it. Both are optional — switch them off for the whole menu if you would rather not display them.',
-				qAr: 'هل بقدر أعرض السعرات الحرارية والعناصر الغذائية ومسببات الحساسية؟',
-				aAr: 'أكيد. بتقدر تعرض السعرات الحرارية والكربوهيدرات والدهون والبروتين لكل صنف، وعلامات النظام الغذائي والحساسية بتترافق مع الصنف أينما ظهر. الاثنين اختياريين — بتقدر توقفهم للمنيو كامل إذا ما بدك تعرضهم.'
+				q: 'Can I show calories and macros?',
+				a: 'Yes. Calories, carbs, fat and protein can be shown per item, and they stay attached to the item wherever it appears. It is optional — switch it off for the whole menu if you would rather not display it.',
+				qAr: 'هل بقدر أعرض السعرات الحرارية والعناصر الغذائية؟',
+				aAr: 'أكيد. بتقدر تعرض السعرات الحرارية والكربوهيدرات والدهون والبروتين لكل صنف، وبتضل مربوطة بالصنف أينما ظهر. وهي اختيارية — بتقدر توقفها للمنيو كامل إذا ما بدك تعرضها.'
 			},
 			{
 				q: 'Can guests filter a long menu?',
@@ -118,7 +124,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
 			{
 				q: 'Does it work without an internet connection?',
 				a: 'The guest needs a connection to load the menu the first time, the same as opening any web page. Most venues put their Wi-Fi password on the menu page itself for exactly this reason.',
-				qAr: 'هل يشتغل من دون اتصال بالإنترنت؟',
+				qAr: 'هل بيشتغل استرو منيو من دون اتصال بالإنترنت؟',
 				aAr: 'الزبون محتاج اتصال ليحمّل المنيو أول مرة، تمامًا متل أي صفحة ويب عادية. لهيك بالضبط، معظم المطاعم بتحط كلمة سر الواي فاي على صفحة المنيو نفسها.'
 			}
 		]
@@ -142,20 +148,20 @@ export const FAQ_GROUPS: FaqGroup[] = [
 			{
 				q: 'Can I use it across several branches?',
 				a: `Each branch gets its own menu, its own QR code and its own venue page, so prices and availability can differ between them. Email ${SITE.email} for a multi-branch setup.`,
-				qAr: 'هل بقدر أستخدمه لعدة فروع؟',
+				qAr: 'هل بقدر أستخدم استرو منيو لعدة فروع؟',
 				aAr: `كل فرع بياخد منيو خاص فيه، ورمز QR خاص فيه، وصفحة خاصة فيه، وهيك ممكن تختلف الأسعار والتوفر بين فرع وفرع. راسلنا على ${SITE.email} لنجهزلك نظام متعدد الفروع.`
 			}
 		]
 	},
 	{
 		heading: 'What Astro-Menu is not',
-		headingAr: 'أشياء ما بتقدمها Astro-Menu',
+		headingAr: 'أشياء ما بتقدمها استرو منيو',
 		items: [
 			{
 				q: 'Is there a POS or till system?',
 				a: 'No. Astro-Menu is a digital menu and nothing else. Keep whatever till you already use — we do not replace it, integrate with it, or sit between you and your customer.',
 				qAr: 'هل في نظام نقاط بيع أو صندوق كاشير؟',
-				aAr: 'لا. Astro-Menu منيو رقمي، بس هيك، ولا شيء غيره. خلّي أي كاشير عندك زي ما هو — نحن ما منستبدله، ولا منتكامل معه، ولا منوقف بينك وبين زبونك.'
+				aAr: 'لا. استرو منيو مجرد منيو رقمي، ولا شيء غيره. خلّي أي كاشير عندك زي ما هو — نحن ما منستبدله، ولا منتكامل معه، ولا منوقف بينك وبين زبونك.'
 			},
 			{
 				q: 'Can customers order and pay from the menu?',

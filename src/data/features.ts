@@ -58,17 +58,23 @@ export const FEATURE_GROUPS = [
 		id: 'languages',
 		eyebrow: 'Reach',
 		title: 'Serve guests in their language',
-		lede: 'Add a language in the dashboard and the entire menu — sections, items, descriptions — comes back translated.',
+		lede: 'You tell us which languages your guests read when we set you up. The plan covers the language you write the menu in plus two more, and the whole thing — sections, items, descriptions — comes back translated.',
 		screen: 'language-switch.png',
 		eyebrowAr: 'الوصول',
 		titleAr: 'اعرض منيو مطعمك باللغة يلي بيفضّلها زباينك',
-		ledeAr: 'ضيف لغة من لوحة التحكم وترجع القائمة كلها — الأقسام والأصناف والأوصاف — مترجمة.',
+		ledeAr: 'إنت بتقلنا شو اللغات يلي بيقراها زبائنك وقت الإعداد. الاشتراك بيغطي اللغة يلي بتكتب فيها المنيو وتنتين غيرها، والمنيو كلو — الأقسام والأصناف والأوصاف — بيرجعلك مترجم.',
 		items: [
 			{
-				title: 'Automatic translation',
-				body: 'You write the menu once, in your language. Guests switch to theirs from the header.',
-				titleAr: 'ترجمة تلقائية',
-				bodyAr: 'تكتب المنيو مرة وحدة، بلغتك. وبيقدر الزبون يبدّل للغته من أعلى المنيو.'
+				title: 'Two extra languages in the price',
+				body: 'You write the menu once, in your language. Two more are translated for you at no extra cost, and guests switch between them from the header.',
+				titleAr: 'لغتين إضافيتين ضمن السعر',
+				bodyAr: 'بتكتب المنيو مرة وحدة، بلغتك. ومنترجملك لغتين كمان بلا أي تكلفة زيادة، والزبون بيبدّل بيناتهم من أعلى المنيو.'
+			},
+			{
+				title: 'You choose them at onboarding',
+				body: 'When we set your menu up you tell us which languages your guests actually read, and we build it in those. Changing your mind later is fine.',
+				titleAr: 'إنت بتختارهم وقت الإعداد',
+				bodyAr: 'وقت ما منجهّز منيوك بتقلنا شو اللغات يلي فعلًا بيقراها زبائنك، ومنبنيه فيهن. وإذا غيّرت رأيك بعدين، ما في مشكلة.'
 			},
 			{
 				title: 'Proper right-to-left Arabic',
@@ -81,33 +87,33 @@ export const FEATURE_GROUPS = [
 				body: 'Machine translation gets a dish name wrong now and then. Override it and the correction sticks.',
 				titleAr: 'عدّل أي ترجمة',
 				bodyAr: 'الترجمة الآلية ممكن تخطئ أحيانًا باسم طبق. عدّلها مرة، وبيضل تعديلك محفوظ.'
+			},
+			{
+				title: 'A fourth language, if you need one',
+				body: 'Beyond three, extra languages are a paid service rather than a different plan. Tell us what you need and we will quote it.',
+				titleAr: 'لغة رابعة، إذا احتجتها',
+				bodyAr: 'بعد التلاتة، اللغات الإضافية خدمة مدفوعة مش باقة تانية. قلنا شو بتحتاج ومنسعّرلك ياها.'
 			}
 		]
 	},
 	{
 		id: 'diet',
 		dash: 'dash-meal',
-		dashBrief: 'The meal editor: calories and macro fields, dietary labels, portions',
-		eyebrow: 'Diet & nutrition',
-		title: 'Answer the allergy question before it is asked',
-		lede: 'The information a guest needs to order confidently, attached to the item instead of a laminated sheet behind the till.',
+		dashBrief: 'The meal editor: calories and macro fields, portions and prices',
+		eyebrow: 'Nutrition',
+		title: 'Put the numbers on the dish itself',
+		lede: 'The numbers a guest needs to order confidently, attached to the item instead of a laminated sheet behind the till.',
 		screen: 'macros.png',
-		dashBriefAr: 'محرر الوجبة: حقول السعرات الحرارية والعناصر الغذائية، الوسوم الغذائية، الحصص',
-		eyebrowAr: 'النظام الغذائي والتغذية',
-		titleAr: 'جاوب عن سؤال الحساسية قبل ما يُسأل',
-		ledeAr: 'المعلومات يلي بيحتاجها الزبون ليطلب وهو مطمئن، ملصقة بالصنف نفسه بدل ورقة مغلفنة خلف الكاشير.',
+		dashBriefAr: 'محرر الوجبة: حقول السعرات الحرارية والعناصر الغذائية، الحصص والأسعار',
+		eyebrowAr: 'التغذية',
+		titleAr: 'حط الأرقام على الطبق نفسه',
+		ledeAr: 'الأرقام يلي بيحتاجها الزبون ليطلب وهو مطمئن، ملصقة بالصنف نفسه بدل ورقة مغلفنة خلف الكاشير.',
 		items: [
 			{
 				title: 'Calories and macros',
 				body: 'Calories, carbs, fat and protein per item. Optional — switch them off for the whole menu if you would rather not.',
 				titleAr: 'السعرات الحرارية والعناصر الغذائية',
 				bodyAr: 'سعرات حرارية، كربوهيدرات، دهون وبروتين لكل صنف. اختياري — تقدر توقفها للمنيو كله إذا حبيت.'
-			},
-			{
-				title: 'Allergen and dietary tags',
-				body: 'Vegan, vegetarian, gluten-free, nut-free, halal. Tag once and the tag travels with the item everywhere.',
-				titleAr: 'وسوم الحساسية والنظام الغذائي',
-				bodyAr: 'نباتي صرف، نباتي، خالي من الغلوتين، خالي من المكسرات، حلال. حط الوسم مرة وبيلحق الصنف وين ما راح.'
 			},
 			{
 				title: 'Meal-type filters',
@@ -217,7 +223,7 @@ export const FEATURE_GROUPS = [
 		title: 'Find out what the menu is actually doing',
 		titleAr: 'شوف شو عم يعمل المنيو فعليًا',
 		lede: 'A printed menu tells you nothing. This one tells you what got opened and what got scrolled past.',
-		ledeAr: 'المنيو المطبوعة ما بتحكيلك شي. هاي بتقلك شو انفتح وشو تم تجاوزه.',
+		ledeAr: 'المنيو المطبوعة ما بتحكيلك شي. استرو منيو بتقلك شو انفتح وشو تم تجاوزه.',
 		screen: null,
 		items: [
 			{

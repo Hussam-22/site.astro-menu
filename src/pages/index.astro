@@ -37,7 +37,7 @@ const screenshot = (file: string) =>
 	screenFiles[`../assets/screens/${file}`]?.default as ImageMetadata
 
 const title = 'QR Menu for Restaurants & Cafés'
-const description = `Turn your menu into a fast, photo-led QR menu you update in seconds. Every language, one QR that never needs reprinting. ${PRICE.monthly} a month, no commission.`
+const description = `Turn your menu into a fast, photo-led QR menu you update in seconds. Three menu languages, one QR that never needs reprinting. ${PRICE.monthly} a month, no commission.`
 
 const schema = [
 	{
@@ -52,8 +52,7 @@ const schema = [
 		featureList: [
 			'QR code menu',
 			'Unlimited menus, sections and items',
-			'Automatic translation including Arabic',
-			'Dietary and allergen tags',
+			'Menu in up to three languages, Arabic included',
 			'Meal-type filters',
 			'Calories and macros per item',
 			'Menu analytics'
@@ -95,8 +94,8 @@ const schema = [
 				<Sticker>No app to download</Sticker>
 			</div>
 
-			<h1 class="mt-7 text-[3.4rem] leading-[0.9] sm:text-8xl lg:text-[8.5rem]">
-				Show the{' '}<span
+			<h1 class="mt-7 text-[2.7rem] leading-[0.95] sm:text-[4.4rem] lg:text-[6.2rem]">
+				Let your customers see the{' '}<span
 					class="border-ink hidden h-[0.82em] w-[0.82em] shrink-0 -translate-y-[0.04em] place-items-center overflow-hidden rounded-full border-[3px] align-middle sm:inline-grid"
 				>
 					<FoodImage
@@ -108,7 +107,7 @@ const schema = [
 						widths={[200, 400]}
 						sizes="120px"
 					/>
-				</span>{' '}food,<br />not a list<span class="text-brand-text">.</span>
+				</span>{' '}food,<br />not just read it<span class="text-brand-text">.</span>
 			</h1>
 
 			<div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr]">
@@ -359,16 +358,16 @@ const schema = [
 					</caption>
 					<thead>
 						<tr class="border-ink border-b-[2.5px]">
-							<th scope="col" class="label w-1/4 px-6 py-5 text-sm">Situation</th>
-							<th scope="col" class="text-brand-text label w-[37.5%] px-6 py-5 text-sm">Astro-Menu</th>
-							<th scope="col" class="label w-[37.5%] px-6 py-5 text-sm">Printed or PDF menu</th>
+							<th scope="col" class="label !table-cell w-1/4 px-6 py-5 text-start text-sm">Situation</th>
+							<th scope="col" class="text-brand-text label !table-cell w-[37.5%] px-6 py-5 text-start text-sm">Astro-Menu</th>
+							<th scope="col" class="label !table-cell w-[37.5%] px-6 py-5 text-start text-sm">Printed or PDF menu</th>
 						</tr>
 					</thead>
 					<tbody>
 						{
 							VERSUS.map((row) => (
 								<tr class="border-line border-b-2 last:border-b-0">
-									<th scope="row" class="px-6 py-5 align-top text-lg font-bold">
+									<th scope="row" class="px-6 py-5 text-start align-top text-lg font-bold">
 										{row.point}
 									</th>
 									<td class="bg-brand/8 px-6 py-5 align-top text-lg font-semibold">
@@ -394,7 +393,7 @@ const schema = [
 
 	<!-- ================= USE CASES ================= -->
 	<Section tone="card" ruled id="use-cases">
-		<SectionHead eyebrow="Who it is for" title="If you serve food, it fits" />
+		<SectionHead eyebrow="Who it is for" title="If you serve food, Astro-Menu fits" />
 		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{
 				USE_CASES.map((u) => (
@@ -458,7 +457,7 @@ const schema = [
 	     body copy with no quotation marks, so nothing we wrote can be mistaken
 	     for something a customer said. -->
 	<Section tone="sunk" ruled id="customers">
-		<SectionHead eyebrow="Real venues" title="They already run on it" />
+		<SectionHead eyebrow="Real venues" title="They’re using Astro-Menu right now" />
 		<div class="mt-14 grid gap-7 lg:grid-cols-3">
 			{
 				VENUES.map((v) => {

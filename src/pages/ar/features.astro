@@ -21,7 +21,7 @@ const screenshot = (file: string) =>
 	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
 
 const title = 'المزايا — كل ما تقدر تعمله بقائمة QR'
-const description = `صورة لكل طبق، أحجام وأسعار، ترجمة تلقائية، وسوم الحساسية، فلاتر أنواع الوجبات، سعرات وتحليلات — كل هذا في باقة واحدة بسعر ${PRICE.monthly} شهريًا.`
+const description = `صورة لكل طبق، أحجام وأسعار، تلات لغات للمنيو، فلاتر أنواع الوجبات، سعرات وتحليلات — كل هذا في باقة واحدة بسعر ${PRICE.monthly} شهريًا.`
 ---
 
 <Layout
@@ -37,11 +37,11 @@ const description = `صورة لكل طبق، أحجام وأسعار، ترجم
 				as="h1"
 				eyebrow="المزايا"
 				title="كل شي بتعمله المنيو"
-				lede="بلا فئات، بلا إضافات مدفوعة، بلا صفحة ترقية. كل ميزة تحت هي جزء من الباقة الواحدة، والسعر ما بيتغيّر مهما استخدمتها."
+				lede="بلا فئات، بلا صفحة ترقية. كل ميزة تحت هي جزء من الباقة الواحدة. الشي الوحيد المدفوع زيادة هو اللغة الرابعة وما بعدها."
 			/>
 			<div class="flex flex-wrap gap-2.5 lg:justify-end lg:pt-10">
 				<Sticker tone="orange">أصناف غير محدودة</Sticker>
-				<Sticker tone="rose">كل لغة</Sticker>
+				<Sticker tone="rose">تلات لغات</Sticker>
 				<Sticker>رمز واحد للأبد</Sticker>
 				<Sticker tone="go">بلا عمولة</Sticker>
 			</div>
@@ -105,7 +105,7 @@ const description = `صورة لكل طبق، أحجام وأسعار، ترجم
 						<p class="label text-brand-text mb-4 text-sm">هيك بتشوفها بلوحة التحكم</p>
 						<DashboardImage
 							name={group.dash}
-							alt={`لوحة تحكم أسترو مينيو — ${group.dashBriefAr}`}
+							alt={`لوحة تحكم استرو منيو — ${group.dashBriefAr}`}
 							brief={group.dashBrief}
 							sizes="(min-width:1024px) 900px, 92vw"
 							widths={[600, 900, 1400]}

@@ -32,7 +32,8 @@ payment processing and no commission of any kind.
 - Yearly billing saves ${PRICE.annualSaving}, about ${PRICE.annualSavingPercent}%.
 - ${PRICE.trialDays}-day free trial, no card required.
 - No setup fee, no hardware cost, no contract, no commission.
-- One plan only. There are no tiers and no paid add-ons.
+- One plan only. There are no tiers. Three menu languages are included; a fourth
+  language and beyond is the one paid extra.
 
 ## What one subscription includes
 
