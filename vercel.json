@@ -44,11 +44,49 @@
 			"permanent": true
 		},
 
+		{
+			"source": "/blog/10-ways-qr-menu-cuts-costs",
+			"destination": "/blog/what-does-a-digital-menu-cost-uae",
+			"permanent": true
+		},
+		{
+			"source": "/blog/the-importance-of-an-easy-to-use-qr-menu-design-how-astro-menu-stands-out",
+			"destination": "/blog/how-to-structure-a-menu-that-sells",
+			"permanent": true
+		},
+		{ "source": "/blog/using-customer-data", "destination": "/features", "permanent": true },
+		{
+			"source": "/blog/why-forcing-customers-to-pay-through-qr-menus-can-backfire",
+			"destination": "/features",
+			"permanent": true
+		},
+
 		{ "source": "/blog/future-of-dining", "destination": "/blog", "permanent": true },
 		{ "source": "/blog/reinventing-the-drive-thru", "destination": "/blog", "permanent": true },
 		{ "source": "/blog/why-your-restaurant-needs-a-blog", "destination": "/blog", "permanent": true },
+		{
+			"source": "/blog/how-qr-menus-benefit-social-media-food-businesses",
+			"destination": "/blog",
+			"permanent": true
+		},
+		{
+			"source": "/blog/leveraging-qr-menus-for-social-media-business",
+			"destination": "/blog",
+			"permanent": true
+		},
+		{
+			"source": "/blog/the-benefits-of-a-cloud-pos-system-for-restaurants",
+			"destination": "/blog",
+			"permanent": true
+		},
+		{
+			"source": "/blog/the-importance-of-tagging-meals-to-enhance-dining-efficiency-and-boost-sales",
+			"destination": "/blog",
+			"permanent": true
+		},
 
 		{ "source": "/use-cases", "destination": "/features", "permanent": true },
-		{ "source": "/search", "destination": "/blog", "permanent": true }
+		{ "source": "/search", "destination": "/blog", "permanent": true },
+		{ "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true }
 	]
 }

@@ -115,9 +115,20 @@ the git clone may be shallow — so those stay blank.
 
 `vercel.json` carries the redirect map from the site that existed before the
 August 2026 rebuild. That rebuild dropped the `/docs` tree and replaced the old
-blog with new slugs, which left 22 indexed URLs returning a hard 404 — including
-the second and third best pages on the site by clicks. JSON cannot hold
-comments, so the map is documented here.
+blog with new slugs, which left 30 URLs returning a hard 404 — including the
+second and third best pages on the site by clicks. JSON cannot hold comments, so
+the map is documented here.
+
+The first pass was built from the Search Console Pages report, which only lists
+URLs that actually received impressions — so it missed eight old posts that had
+traffic but no ranking. The full set came from the Wayback Machine instead:
+
+```bash
+curl -s "http://web.archive.org/cdx/search/cdx?url=astro-menu.com*&output=text&fl=original&collapse=urlkey&limit=3000"
+```
+
+Worth re-running before any future restructure. Search Console alone will
+under-report what a rebuild is about to break.
 
 Most entries are `permanent: true` (a 308) to the closest surviving page. **Two
 are deliberately `permanent: false`** (a 307), and must stay that way:
