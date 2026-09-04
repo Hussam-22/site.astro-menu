@@ -1,0 +1,239 @@
+{
+  "venue": "Refill Coffee Roastery",
+  "source": "https://refillroastery.com/products.json (public Shopify feed)",
+  "note": "Names, Arabic names, prices and photos are all theirs, taken verbatim from their own Shopify store on 2026-09-01. Nothing is invented and nothing is machine-translated — the whole point is that they can check every line.",
+  "section": "Coffee Beans",
+  "meals": [
+    {
+      "en": "Refill Blend",
+      "ar": "ريفل بليند",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 41
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/capsule03_ef285829-66c3-4578-88f7-59f20dc0b9fb.png",
+      "sourceTitle": "Refill Blend  ریفل بلیند",
+      "desc": "Medium roast, smooth and balanced — the signature everyday capsule.",
+      "descAr": "تحميص متوسط، ناعم ومتوازن — كبسولة ريفل اليومية."
+    },
+    {
+      "en": "Costa Rica Los Robles",
+      "ar": "كوستاريكا لوس روبليس",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 68.25
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/COTARICAROBLES.jpg",
+      "sourceTitle": "Costa Rica Los Robles - كوستاريكا لوس روبليس",
+      "desc": "Milk chocolate, strawberry and red berry. Natural Reposado from the Robles Family farm in Tarrazú, 1720 masl.",
+      "descAr": "شوكولا بالحليب، فراولة، وتوت أحمر. معالجة طبيعية معتّقة من مزرعة عائلة روبليس في تاراسو، على ارتفاع ١٧٢٠ م."
+    },
+    {
+      "en": "Colombia La Joya (Omni Roast)",
+      "ar": "كولومبيا لا جويا",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 71.4
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/LAJOYA.jpg",
+      "sourceTitle": "Colombia La Joya – ( كولومبيا لا جويا ) Omni Roast",
+      "desc": "Natural anaerobic micro-lot from Jermy Pedraza, 2000 masl. Roasted omni — filter or espresso.",
+      "descAr": "دفعة صغيرة بمعالجة لاهوائية طبيعية من مزرعة جيرمي بيدرازا، على ارتفاع ٢٠٠٠ م. تحميص شامل — للفلتر أو الإسبرسو."
+    },
+    {
+      "en": "Ethiopia Sidama",
+      "ar": "إثيوبيا سيداما",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 89.25
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/ETHIOPIASIDAMA.png",
+      "sourceTitle": "Ethiopia Sidama - إثيوبيا سيداما",
+      "desc": "Heirloom varietals at 2000 masl. A vibrant single-origin filter roast.",
+      "descAr": "أصناف هيرلوم على ارتفاع ٢٠٠٠ م. تحميص فلتر أحادي المصدر، نابض بالحياة."
+    },
+    {
+      "en": "Indonesia Liberica Tobacco (Natural)",
+      "ar": "إندونيسيا توباكو ليبريكا",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 94.5
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/TOBACCO.jpg",
+      "sourceTitle": "Indonesia Liberica Tobacco – Filter Coffee (Natural) - إندونيسيا توباكو ليبريكا",
+      "desc": "Rare Liberica, naturally processed at the Bandhawa Family farm, 400 masl. Filter roast.",
+      "descAr": "ليبيريكا نادرة بمعالجة طبيعية من مزرعة عائلة بانداوا، على ارتفاع ٤٠٠ م. تحميص فلتر."
+    },
+    {
+      "en": "Colombia Milk Mango (Filter)",
+      "ar": "مانجو كولومبيا",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 111.3
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/MILKY_MANGO.jpg",
+      "sourceTitle": "Colombia Milk Mango - Filter Coffee (مانجو كولومبيا)",
+      "desc": "Co-fermented at La Pradera, 1500 masl. Caturra and Colombia varietals, filter roast.",
+      "descAr": "تخمير مشترك في مزرعة لا براديرا، على ارتفاع ١٥٠٠ م. كاتورا وكولومبيا، تحميص فلتر."
+    },
+    {
+      "en": "Colombia Coconut (Co-Fermented)",
+      "ar": "كولومبيا جوز الهند",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 120.75
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/COCONUT.jpg",
+      "sourceTitle": "Colombia Coconut– Filter Coffee (Co-Fermented) - كولومبيا جوز الهند",
+      "desc": "Castillo, co-fermented at La Pradera, 1500–1600 masl. Filter roast.",
+      "descAr": "كاستيو بتخمير مشترك في مزرعة لا براديرا، على ارتفاع ١٥٠٠–١٦٠٠ م. تحميص فلتر."
+    },
+    {
+      "en": "Yemen Haimi",
+      "ar": "اليمن هيمي",
+      "prices": [
+        {
+          "size": "200 g",
+          "aed": 153
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/YEMENHAIMI.png",
+      "sourceTitle": "Yemen Haimi - اليمن  هيمي",
+      "desc": "Green apple, apricot, clove and raisin. Ja’adi from Haima, natural anaerobic at 2100 masl. Cupping score 88.5.",
+      "descAr": "تفاح أخضر، مشمش، قرنفل، وزبيب. جعدي من منطقة هيمة، معالجة لاهوائية طبيعية على ارتفاع ٢١٠٠ م. تقييم ٨٨٫٥."
+    },
+    {
+      "en": "Ethiopia Hambela",
+      "ar": "اثيوبيا هامبيلا",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 56
+        },
+        {
+          "size": "500 g",
+          "aed": 99
+        },
+        {
+          "size": "1 kg",
+          "aed": 183
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/HAMBELA_35d78b39-6a19-493f-9f25-339eae0e3aa5.jpg",
+      "sourceTitle": "Ethiopia Hambela - اثيوبيا هامبيلا",
+      "desc": "Sugar cane, chocolate, orange and plum, with hints of floral.",
+      "descAr": "قصب السكر، شوكولا، برتقال، وخوخ، مع لمسات زهرية."
+    },
+    {
+      "en": "Brazil Fazenda",
+      "ar": "البرازيل فازيندا",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 56
+        },
+        {
+          "size": "500 g",
+          "aed": 100
+        },
+        {
+          "size": "1 kg",
+          "aed": 151
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/BRAZIL.jpg",
+      "sourceTitle": "Brazil Fazenda - البرازيل فازيندا",
+      "desc": "Roasted almond and raisin, mild body, medium-to-low acidity. Catuai from Minas Gerais, 1100 masl.",
+      "descAr": "لوز محمّص وزبيب، قوام خفيف وحموضة متوسطة إلى منخفضة. كاتواي من ميناس جيرايس، على ارتفاع ١١٠٠ م."
+    },
+    {
+      "en": "ACE Blend",
+      "ar": "خلطة أيس",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 60
+        },
+        {
+          "size": "500 g",
+          "aed": 110
+        },
+        {
+          "size": "1 kg",
+          "aed": 170
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/ACEBLEND.jpg",
+      "sourceTitle": "ACE Blend - خلطة أيس",
+      "desc": "Dark chocolate and caramelised peanut, round body, cacao nib finish. South American and South East Asian origins.",
+      "descAr": "شوكولا داكنة وفول سوداني مكرمل، قوام ممتلئ، ونهاية بحبيبات الكاكاو. أصول من أمريكا الجنوبية وجنوب شرق آسيا."
+    },
+    {
+      "en": "Indonesia Gayo Anaerobic",
+      "ar": "إندونيسيا جايو أنيروبك",
+      "prices": [
+        {
+          "size": "250 g",
+          "aed": 66.15
+        },
+        {
+          "size": "500 g",
+          "aed": 126
+        },
+        {
+          "size": "1 kg",
+          "aed": 241.5
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/ANAEROBIC.jpg",
+      "sourceTitle": "Indonesia Gayo Anaerobic - إندونيسيا جايو أنيروبك (تخمير لاهوائي)",
+      "desc": "Natural anaerobic from Aceh, Sumatra. Tim-Tim, Ateng Super and Abyssinia at 1500–1700 masl.",
+      "descAr": "معالجة لاهوائية طبيعية من آتشيه، سومطرة. تيم-تيم وأتينغ سوبر وأبيسينيا على ارتفاع ١٥٠٠–١٧٠٠ م."
+    },
+    {
+      "en": "Arabic Coffee",
+      "ar": "قهوة عربية مختصة",
+      "prices": [
+        {
+          "size": "500 g",
+          "aed": 72
+        },
+        {
+          "size": "1 kg",
+          "aed": 100
+        }
+      ],
+      "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/ARABIC_ROAST.jpg",
+      "sourceTitle": "Arabic Coffee - قهوة عربية مختصة",
+      "desc": "Sugar cane, chocolate, orange and plum. Heirloom varieties, sun-dried naturally on raised beds.",
+      "descAr": "قصب السكر، شوكولا، برتقال، وخوخ. أصناف هيرلوم مجففة طبيعياً على أسرّة مرتفعة تحت الشمس."
+    }
+  ],
+  "sectionAr": "حبوب القهوة",
+  "branch": {
+    "title": "Refill Coffee Roastery",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": "https://cdn.shopify.com/s/files/1/0014/5411/2834/files/capsule03_ef285829-66c3-4578-88f7-59f20dc0b9fb.png",
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/refill.roastery/",
+      "website": "https://refillroastery.com/"
+    }
+  },
+  "descriptionNote": "English descriptions are drawn from the venue’s own product copy (cupping notes, origin, process, elevation). The Arabic is our own careful translation of those facts — names and brands are never translated."
+}

@@ -23,3 +23,17 @@ pnpm-debug.log*
 # design review screenshots
 .design-shots/
 .shots/
+
+# outreach API request counter
+.outreach-usage.json
+
+# outreach lead media (not ours to commit)
+.outreach-media/
+
+# Firebase service-account key — never commit
+*service-account*.json
+firebase-key.json
+
+# scored leads cache — regenerate with source-venues.mjs
+.outreach-sourced.json
+.outreach-batch.json

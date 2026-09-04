@@ -1,0 +1,139 @@
+{
+  "venue": "Snow Boom Cafe",
+  "source": "https://www.talabat.com/uae/restaurant/717379/snow-boom-cafe-al-murabaa (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Desserts",
+  "sectionAr": "قهوة وحلويات",
+  "meals": [
+    {
+      "en": "Americano",
+      "desc": "Made with freshly brewed espresso and hot water",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 20
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "Foamed milk poured over a shot of espresso",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Spanish Latte",
+      "desc": "Made with espresso, steamed milk, and a touch of cinnamon",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 32
+        }
+      ]
+    },
+    {
+      "en": "Cortado",
+      "desc": "Rich coffee and creamy milk, freshly brewed espresso and steamed milk with foam",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Turkish Coffee",
+      "desc": "Expertly brewed using finely ground beans and a traditional cezve pot",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 20
+        }
+      ]
+    },
+    {
+      "en": "Matcha Latte",
+      "desc": "Latte made with matcha green tea powder.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 34
+        }
+      ]
+    },
+    {
+      "en": "Cold Brew",
+      "desc": "Finest quality coffee beans and served over ice",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 33
+        }
+      ]
+    },
+    {
+      "en": "Caramel Latte",
+      "desc": "Velvety and smooth blend of espresso and steamed milk, topped with caramel sauce",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 30
+        }
+      ]
+    },
+    {
+      "en": "Japanese Cheese Cake",
+      "desc": "Egg cream cheese, cornflour, lemon juice, whipped cream and sugar.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 30
+        }
+      ]
+    },
+    {
+      "en": "Chocolate Brownies",
+      "desc": "Chocolate, nuts, dark chocolate, butter, eggs, cocoa powder, baking powder",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 20
+        }
+      ]
+    },
+    {
+      "en": "Strawberry Mojito",
+      "desc": "Made with fresh strawberries, mint leaves, lime juice and a splash of soda",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 25
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "Snow Boom Cafe",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "website": "https://www.talabat.com/uae/restaurant/717379/snow-boom-cafe-al-murabaa"
+    }
+  }
+}

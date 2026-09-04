@@ -1,0 +1,120 @@
+{
+  "venue": "Como Lounge",
+  "source": "https://www.talabat.com/uae/restaurant/771443/como-lounge-al-zaafaran (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Matcha",
+  "sectionAr": "قهوة وماتشا",
+  "meals": [
+    {
+      "en": "Iced V60 Cherry",
+      "desc": "Colombia, cupping score of 89, flavor notes of cherry, gummy candies and honey",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 45
+        }
+      ]
+    },
+    {
+      "en": "Iced Red Wine V60",
+      "desc": "Fruit, with hints of bourbon, grape and berries",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 47.5
+        }
+      ]
+    },
+    {
+      "en": "Ice Spanish Latte",
+      "desc": "Chilled espresso meets sweetened milk for a silky, cool delight.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 30
+        }
+      ]
+    },
+    {
+      "en": "Salted Vanilla Matcha",
+      "desc": "Salted vanilla matcha, smooth, creamy, and perfectly balanced.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 36
+        }
+      ]
+    },
+    {
+      "en": "Ice Matcha",
+      "desc": "Iced matcha green tea with milk, smooth, earthy and refreshing.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 31
+        }
+      ]
+    },
+    {
+      "en": "Acai Smoothie",
+      "desc": "Creamy acai smoothie blended with fresh blueberries, peanut butter and coconut water.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 44
+        }
+      ]
+    },
+    {
+      "en": "Acai Bowl",
+      "desc": "Pure acai topped with blueberry, raspberry, strawberry, peanut butter and granola",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 55
+        }
+      ]
+    },
+    {
+      "en": "Sweet Chilli Halloumi Sandwich",
+      "desc": "House made brioche bun, golden grilled halloumi sautéed in honey and chili flakes, rocket, tomato.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 44
+        }
+      ]
+    },
+    {
+      "en": "Classic Tuna Sandwich",
+      "desc": "Soft house made brioche bun with creamy tuna mixture, topped with fresh sliced avocado.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 44
+        }
+      ]
+    },
+    {
+      "en": "Como Choco",
+      "desc": "Como choco cake",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 50
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "Como Lounge",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/como.lounge",
+      "website": "https://www.talabat.com/uae/restaurant/771443/como-lounge-al-zaafaran"
+    }
+  }
+}

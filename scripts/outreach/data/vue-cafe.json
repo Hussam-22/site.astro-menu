@@ -1,0 +1,120 @@
+{
+  "venue": "Vue Cafe",
+  "source": "https://www.talabat.com/uae/restaurant/706357/vue-cafe-al-jimi (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Kitchen",
+  "sectionAr": "قهوة ومطبخ",
+  "meals": [
+    {
+      "en": "V60",
+      "desc": "Brewed coffee made with your choice of beans",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 32
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 25
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "Hot coffee prepared with double shots of espresso and milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 25
+        }
+      ]
+    },
+    {
+      "en": "Cortado",
+      "desc": "Hot coffee prepared with double shots of espresso and milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 23
+        }
+      ]
+    },
+    {
+      "en": "Spanish Latte",
+      "desc": "Coffee prepared with double shots of espresso and our special Spanish mixture.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 32
+        }
+      ]
+    },
+    {
+      "en": "Affagato",
+      "desc": "Italian word for \"Drowned\". Gelato ice-cream drowned in coffee.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 28
+        }
+      ]
+    },
+    {
+      "en": "Salted Caramel Latte",
+      "desc": "Coffee prepared with double shots of espresso and special salted caramel sauce.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35
+        }
+      ]
+    },
+    {
+      "en": "Chicken Caesar Salad",
+      "desc": "Romaine lettuce tossed in Caesar dressing, grilled chicken, crispy croutons and parmesan.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 38
+        }
+      ]
+    },
+    {
+      "en": "San Sebastian Cheesecake",
+      "desc": "Traditional Spanish cheesecake, creamy and light filling, baked to caramelized perfection.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 46
+        }
+      ]
+    },
+    {
+      "en": "Cheese Burger",
+      "desc": "Angus beef in brioche bun, bbq ranch sauce, dynamite sauce, tomato, lettuce, mozzarella and cheddar.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 44
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "Vue Cafe",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/vuecafe",
+      "website": "https://www.talabat.com/uae/restaurant/706357/vue-cafe-al-jimi"
+    }
+  }
+}

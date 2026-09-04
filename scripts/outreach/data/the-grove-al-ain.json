@@ -1,0 +1,129 @@
+{
+  "venue": "The Grove Al Ain",
+  "source": "https://www.talabat.com/uae/restaurant/786162/the-grove-cafe-and-restaurant-al-jimi (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Matcha",
+  "sectionAr": "قهوة وماتشا",
+  "meals": [
+    {
+      "en": "V60",
+      "desc": "A choice of hot or cold filter coffee.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 36
+        }
+      ]
+    },
+    {
+      "en": "Spanish Latte",
+      "desc": "A choice of hot or cold sweet coffee.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 32
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "A foamy cup of coffee",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 29
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "A strong taste of coffee",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 26
+        }
+      ]
+    },
+    {
+      "en": "Cortado",
+      "desc": "A strong taste of coffee",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Americano",
+      "desc": "A choice of hot or cold coffee",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 22
+        }
+      ]
+    },
+    {
+      "en": "Cold Brew",
+      "desc": "A cold brewed coffee",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35
+        }
+      ]
+    },
+    {
+      "en": "Salted Espresso With Cinnamon And Maple",
+      "desc": "Milk based drink with a hint of cinnamon and maple sweetener.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 40
+        }
+      ]
+    },
+    {
+      "en": "Matcha Latte",
+      "desc": "A traditional original matcha taste with sweetness already",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35
+        }
+      ]
+    },
+    {
+      "en": "Salted Caramel Matcha",
+      "desc": "Premium matcha blended with rich salted caramel notes.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 40
+        }
+      ]
+    },
+    {
+      "en": "Chocolate Peanut Butter Crispies",
+      "desc": "Chocolate bar with a hint of peanut butter crispies",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 5
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "The Grove Al Ain",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "website": "https://www.talabat.com/uae/restaurant/786162/the-grove-cafe-and-restaurant-al-jimi"
+    }
+  }
+}

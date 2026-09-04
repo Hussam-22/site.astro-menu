@@ -1,0 +1,120 @@
+{
+  "venue": "Naz Specialty Cafe",
+  "source": "https://www.talabat.com/uae/restaurant/748850/naz-cafe-al-muwaiji (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Breakfast",
+  "sectionAr": "قهوة وإفطار",
+  "meals": [
+    {
+      "en": "Iced Spanish Latte",
+      "desc": "A chilled latte sweetened with condensed milk, inspired by Spanish flavors.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 27
+        }
+      ]
+    },
+    {
+      "en": "Halloumi Toast",
+      "desc": "Sourdough with labneh, zaatar powder, grilled halloumi, cherry tomatoes, grenadine molasses, microgreens.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 34
+        }
+      ]
+    },
+    {
+      "en": "Acai Smoothie",
+      "desc": "A refreshing smoothie featuring acai berries blended with other fruits and peanut butter",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35
+        }
+      ]
+    },
+    {
+      "en": "Avocado Bagel Toast",
+      "desc": "Avocado, chipotle hollandaise sauce, egg, sakura mix, labneh.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 39
+        }
+      ]
+    },
+    {
+      "en": "Acai Bowl",
+      "desc": "A bowl of blended acai berries topped with fresh fruits and granola.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 46
+        }
+      ]
+    },
+    {
+      "en": "Shakshuka",
+      "desc": "Poached eggs nestled in a vibrant tomato sauce infused with aromatic spices and fresh herbs.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 43
+        }
+      ]
+    },
+    {
+      "en": "Turkish Egg",
+      "desc": "Sourdough toast with labneh, poached egg, seasoned with salt, pepper, chili oil, microgreens.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 43
+        }
+      ]
+    },
+    {
+      "en": "NAZ Breakfast",
+      "desc": "A platter featuring a croissant, labneh, poached egg, hollandaise sauce, microgreens, mixed salad.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 48
+        }
+      ]
+    },
+    {
+      "en": "English Breakfast",
+      "desc": "Sausage, egg, sour bread, avocado, mushroom, and sliced tomato",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 56
+        }
+      ]
+    },
+    {
+      "en": "Greek Yogurt Berries",
+      "desc": "Creamy yogurt mixed with blueberries, strawberries, granola, and honey.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 39
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "Naz Specialty Cafe",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/nazcafe.ae",
+      "website": "https://www.talabat.com/uae/restaurant/748850/naz-cafe-al-muwaiji"
+    }
+  }
+}

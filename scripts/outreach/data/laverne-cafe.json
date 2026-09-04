@@ -1,0 +1,120 @@
+{
+  "venue": "Laverne Cafe",
+  "source": "https://www.talabat.com/uae/restaurant/696009/laverne-cafe-al-markaziyah (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Sweets",
+  "sectionAr": "قهوة وحلويات",
+  "meals": [
+    {
+      "en": "Espresso",
+      "desc": "Bold and intense flavor of our freshly brewed espresso.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 16
+        }
+      ]
+    },
+    {
+      "en": "Americano",
+      "desc": "Made with freshly brewed espresso and hot water.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 18
+        }
+      ]
+    },
+    {
+      "en": "Cortado",
+      "desc": "Rich coffee and creamy milk, freshly brewed espresso and steamed milk topped with delicate foam",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 23
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "A double shot of espresso and steamed milk, a perfect balance of strength and creaminess.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 23
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Spanish Latte",
+      "desc": "Made with espresso, steamed milk, and a touch of condensed milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Pistachio Latte",
+      "desc": "Espresso shots, steamed milk and pistachio syrup.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 27
+        }
+      ]
+    },
+    {
+      "en": "Biscoff Latte",
+      "desc": "Warm Biscoff dessert flavour, the iconic caramelized cookie melted to perfection.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 29
+        }
+      ]
+    },
+    {
+      "en": "Nutella Crepe",
+      "desc": "Our homemade crepe dough filled and topped with Nutella chocolate",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 29
+        }
+      ]
+    },
+    {
+      "en": "Fruit Waffle",
+      "desc": "Our homemade waffle dough topped with fruits and maple syrup",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 30
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "Laverne Cafe",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/lavernecafe971",
+      "website": "https://www.talabat.com/uae/restaurant/696009/laverne-cafe-al-markaziyah"
+    }
+  }
+}

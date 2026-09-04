@@ -1,0 +1,130 @@
+{
+  "venue": "78 Lounge",
+  "source": "https://www.talabat.com/uae/restaurant/773148/78-lounge-cafe-al-jimi (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Breakfast",
+  "sectionAr": "قهوة وإفطار",
+  "meals": [
+    {
+      "en": "Espresso",
+      "desc": "Small, concentrated coffee made by forcing hot water through finely ground beans under high pressure",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 23
+        }
+      ]
+    },
+    {
+      "en": "Long Black",
+      "desc": "A strong coffee created by pouring double shot of espresso over hot water, preserving the crema.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 25
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "Velvety smooth espresso blended with steamed milk and a thin layer of microfoam.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 27
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "Rich espresso and velvety steamed milk topped with smooth foam.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 28
+        }
+      ]
+    },
+    {
+      "en": "Cortado",
+      "desc": "Coffee and milk",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 26
+        }
+      ]
+    },
+    {
+      "en": "Cold Brew",
+      "desc": "Coarse coffee grounds steeped in cold water for 12 to 24 hours",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 39
+        }
+      ]
+    },
+    {
+      "en": "Chemex",
+      "desc": "Pour over coffee made by pouring hot water over ground coffee in a thick paper filter",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 39
+        }
+      ]
+    },
+    {
+      "en": "Affogato",
+      "desc": "Espresso shot with ice cream",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 29
+        }
+      ]
+    },
+    {
+      "en": "Saffron Latte",
+      "desc": "Creamy latte infused with aromatic saffron threads and warm spices.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 40
+        }
+      ]
+    },
+    {
+      "en": "Acai Bowl",
+      "desc": "Acai with strawberries, granola and peanut butter",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 47
+        }
+      ]
+    },
+    {
+      "en": "Avo Mushroom",
+      "desc": "Sourdough bread, avo mix, crumble egg, mushroom sauce, rocket leaves",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 41
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "78 Lounge",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/78lounge.uae",
+      "website": "https://www.talabat.com/uae/restaurant/773148/78-lounge-cafe-al-jimi"
+    }
+  }
+}

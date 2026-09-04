@@ -1,0 +1,149 @@
+{
+  "venue": "NAWA Cafe",
+  "source": "https://www.talabat.com/uae/restaurant/692474/nawa-cafe-al-towayya (public delivery listing, read via browser 2026-09-02)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. No cover photos could be pulled (Talabat lazy-loads images we could not resolve without further scraping) — flagged, not faked.",
+  "section": "Coffee & Brunch",
+  "sectionAr": "قهوة وإفطار",
+  "meals": [
+    {
+      "en": "Hot Americano",
+      "desc": "Espresso shot.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 21
+        }
+      ]
+    },
+    {
+      "en": "Cafe Latte",
+      "desc": "Made with espresso and steamed milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 31
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "Espresso and steamed milk, rich and velvety.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 31
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "Double shot of espresso and steamed milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 30
+        }
+      ]
+    },
+    {
+      "en": "Hot Spanish Latte",
+      "desc": "Espresso with warm spices, steamed milk and a sprinkle of cinnamon.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35
+        }
+      ]
+    },
+    {
+      "en": "Iced Americano",
+      "desc": "Dark espresso over ice.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 23.1
+        }
+      ]
+    },
+    {
+      "en": "Iced Spanish Latte",
+      "desc": "Espresso, milk and ice — built for hot days.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 29.4
+        }
+      ]
+    },
+    {
+      "en": "Affogato",
+      "desc": "Espresso poured over vanilla gelato.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35.7
+        }
+      ]
+    },
+    {
+      "en": "V60 Coffee",
+      "desc": "Pour-over coffee, brewed to order.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 35
+        }
+      ]
+    },
+    {
+      "en": "Aero Press Coffee",
+      "desc": "AeroPress method, smooth and clean cup.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 40
+        }
+      ]
+    },
+    {
+      "en": "Loaded Avocado Toast",
+      "desc": "Sourdough, avocado, sautéed spinach, scrambled egg, radish, beetroot mayo.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 52
+        }
+      ]
+    },
+    {
+      "en": "Halloumi Toast",
+      "desc": "Sourdough, tomato pesto, grilled halloumi, shakshuka, poached egg, molasses.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 45
+        }
+      ]
+    },
+    {
+      "en": "Nawa Signature French Toast",
+      "desc": "Brioche soaked in sweet egg batter, pan-fried, fresh berries and maple syrup.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 52.45
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "NAWA Cafe",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "website": "https://www.talabat.com/uae/restaurant/692474/nawa-cafe-al-towayya"
+    }
+  }
+}

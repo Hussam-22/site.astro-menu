@@ -1,0 +1,119 @@
+{
+  "venue": "The Seat Cafe",
+  "source": "https://www.talabat.com/uae/restaurant/759827/the-seat-cafe-al-heliow-2 (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Brunch",
+  "sectionAr": "قهوة وإفطار",
+  "meals": [
+    {
+      "en": "Double Espresso",
+      "desc": "A strong and intense dose of coffee prepared from finely ground beans.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 22.95
+        }
+      ]
+    },
+    {
+      "en": "Flat White",
+      "desc": "Creamy espresso drink with a smooth texture and steamed milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 27.5
+        }
+      ]
+    },
+    {
+      "en": "Cortado",
+      "desc": "Equal parts espresso and steamed milk for a balanced flavor.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 26.95
+        }
+      ]
+    },
+    {
+      "en": "Cappuccino",
+      "desc": "Espresso topped with steamed milk and a layer of frothy foam.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 27.5
+        }
+      ]
+    },
+    {
+      "en": "Hot Spanish Latte",
+      "desc": "A rich latte infused with cinnamon and a touch of sweetened condensed milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 34.8
+        }
+      ]
+    },
+    {
+      "en": "V60 Tobacco",
+      "desc": "Smooth and rich filter coffee brewed using the V60 pour-over method.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 45
+        }
+      ]
+    },
+    {
+      "en": "Iced Americano",
+      "desc": "A refreshing iced coffee made with espresso and chilled water.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 26
+        }
+      ]
+    },
+    {
+      "en": "Acai Bowl",
+      "desc": "Smooth acai berry puree bowl served with granola, fruits, and honey.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 43.5
+        }
+      ]
+    },
+    {
+      "en": "San Sebastian",
+      "desc": "Creamy basque cheesecake with a caramelized crust.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 47
+        }
+      ]
+    },
+    {
+      "en": "Avocado Toast",
+      "desc": "Toasted bread topped with creamy avocado and seasoning.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 36.86
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "The Seat Cafe",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "website": "https://www.talabat.com/uae/restaurant/759827/the-seat-cafe-al-heliow-2"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "venue": "Rain",
+  "source": "https://www.talabat.com/uae/restaurant/616807/rain-cafe-al-nahyan (public Talabat delivery listing, read via browser 2026-09-03)",
+  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
+  "section": "Coffee & Brunch",
+  "sectionAr": "قهوة وإفطار",
+  "meals": [
+    {
+      "en": "Iced Spanish Latte",
+      "desc": "Our branded coffee mixed with our special Spanish milk.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 34
+        }
+      ]
+    },
+    {
+      "en": "Iced Americano",
+      "desc": "Made with dark espresso and ice",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 24
+        }
+      ]
+    },
+    {
+      "en": "Salted Vanilla Matcha",
+      "desc": "Premium single origin matcha with creamy salted vanilla.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 40
+        }
+      ]
+    },
+    {
+      "en": "Avocado Toast With Eggs",
+      "desc": "Homemade oregano bread, guacamole, homemade mayonnaise, choice of egg, cherry tomatoes, coriander cress and chili flakes.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 59
+        }
+      ]
+    },
+    {
+      "en": "Egg Benedict",
+      "desc": "Two wheel croissants, Hejazi dacouse sauce, fresh avocado, two poached eggs, hollandaise sauce, smoked paprika.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 49
+        }
+      ]
+    },
+    {
+      "en": "Turkish Egg",
+      "desc": "Two poached eggs over marinated thick yoghurt with garlic chips and basil infusion, served with sourdough.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 62
+        }
+      ]
+    },
+    {
+      "en": "Cardamom French Toast",
+      "desc": "Caramelized brioche bread with cardamom spices topped with whipped cream",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 57
+        }
+      ]
+    },
+    {
+      "en": "Caesar Salad",
+      "desc": "Iceberg lettuce, grilled chicken and parmesan cheese, served with Caesar sauce.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 46
+        }
+      ]
+    },
+    {
+      "en": "Halloumi Wrap",
+      "desc": "Halloumi cheese with homemade rocket pesto, cream cheese, olive tapenade, fresh tomatoes in a wrap.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 46
+        }
+      ]
+    },
+    {
+      "en": "Sticky Date Cake",
+      "desc": "Moist sponge cake with finely chopped dates, toffee sauce, served warm with vanilla ice-cream and pecans.",
+      "prices": [
+        {
+          "size": "-",
+          "aed": 41
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "Rain",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {
+      "website": "https://www.talabat.com/uae/restaurant/616807/rain-cafe-al-nahyan"
+    }
+  }
+}
