@@ -4,14 +4,14 @@ import FoodImage from '../../components/ui/FoodImage.astro'
 import Section from '../../components/ui/Section.astro'
 import SectionHead from '../../components/ui/SectionHead.astro'
 import Sticker from '../../components/ui/Sticker.astro'
-import { CONTACT_FORM_KEY, PRICE, SITE } from '../../config/site'
+import { CONTACT_FORM_KEY, CONTACT_FORM_READY, PRICE, SITE } from '../../config/site'
 import Layout from '../../layouts/Layout.astro'
 import { crumbSchema } from '../../utils/schema'
 
 const title = 'تواصل معنا'
 const description = `ابعتلنا المنيو اللي عندك هلق ونحن منبني النسخة الأولى مجانًا. راسلنا على ${SITE.email} — بيردّ عليك شخص فعلي، عادة بنفس اليوم.`
 
-const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
+const formReady = CONTACT_FORM_READY
 ---
 
 <Layout
@@ -75,6 +75,7 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 						>
 							<input type="hidden" name="access_key" value={CONTACT_FORM_KEY} />
 							<input type="hidden" name="subject" value="New Astro-Menu enquiry (Arabic)" />
+							<input type="hidden" name="source" value="astro-menu.com/ar/contact" />
 							<input
 								type="checkbox"
 								name="botcheck"

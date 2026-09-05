@@ -1,0 +1,10 @@
+node_modules/
+package-lock.json
+
+# Real credentials, and anything derived from a live API.
+.env
+.env.local
+service-account.json
+
+# Per-run output: screenshots, QR codes, print sheets, exports.
+out/

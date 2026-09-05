@@ -99,8 +99,28 @@ export const FOOTER_NAV = [
 
 /**
  * Web3Forms access key for the /contact form. Get one free at
- * https://web3forms.com and paste it here. While this is the placeholder, the
- * contact page hides the form and leads with email instead, so a
- * visitor never fills in a form that quietly goes nowhere.
+ * https://web3forms.com.
+ *
+ * It comes from the environment rather than from this file, because a form
+ * that goes nowhere is the most expensive bug on the site: outreach drives
+ * people to /contact, and every enquiry that lands on a dead page is a lead
+ * paid for and thrown away. Set PUBLIC_WEB3FORMS_KEY in Vercel and the form
+ * appears on the next deploy, with no code change and no PR to wait on.
+ *
+ * The PUBLIC_ prefix is correct, not a leak. A Web3Forms access key is
+ * designed to sit in the form markup where any visitor can read it; it can
+ * only submit to the inbox it belongs to.
+ *
+ * Until the key is real, both contact pages hide the form and lead with email
+ * instead, so a visitor never fills in a form that quietly drops what they
+ * wrote.
  */
-export const CONTACT_FORM_KEY = 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY'
+export const CONTACT_FORM_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? ''
+
+/**
+ * Whether the form can actually deliver. Both /contact and /ar/contact read
+ * this rather than re-deriving it, so the two pages can never disagree about
+ * whether the form is safe to show.
+ */
+export const CONTACT_FORM_READY =
+	CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')

@@ -74,7 +74,11 @@ const siteSchema = {
 	inLanguage: localeTag
 }
 
-const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])]
+const graph = [
+	orgSchema,
+	siteSchema,
+	...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])
+]
 ---
 
 <!doctype html>
@@ -85,13 +89,24 @@ const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? sche
 		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
-		{/* Language-only, not en-AE/ar-AE. There is one English version and one
+		{
+			/* Language-only, not en-AE/ar-AE. There is one English version and one
 		    Arabic one, with no regional variants to disambiguate, so a regional
 		    tag would only narrow them to the UAE — and Search Console shows real
-		    impressions from over a hundred countries against USD pricing. */}
-		<link rel="alternate" hreflang="en" href={new URL(enPath, SITE.domain).href} />
-		<link rel="alternate" hreflang="ar" href={new URL(arPath, SITE.domain).href} />
-		<link rel="alternate" hreflang="x-default" href={new URL(enPath, SITE.domain).href} />
+		    impressions from over a hundred countries against USD pricing. */
+		}
+		{
+			/* A noindexed page has nothing to cluster with, so hreflang on it is
+			   noise at best — and on the prospect pages under /m it would point
+			   at Arabic URLs that do not exist. */
+			!noindex && (
+				<>
+					<link rel="alternate" hreflang="en" href={new URL(enPath, SITE.domain).href} />
+					<link rel="alternate" hreflang="ar" href={new URL(arPath, SITE.domain).href} />
+					<link rel="alternate" hreflang="x-default" href={new URL(enPath, SITE.domain).href} />
+				</>
+			)
+		}
 		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		{
 			!noindex && (
@@ -121,7 +136,7 @@ const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? sche
 	<body class="bg-paper text-ink antialiased">
 		<a
 			href="#main"
-			class="focus:bg-ink focus:text-white sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-[100] focus:rounded-full focus:px-5 focus:py-3 focus:font-bold"
+			class="focus:bg-ink sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[100] focus:rounded-full focus:px-5 focus:py-3 focus:font-bold focus:text-white"
 		>
 			{lang === 'ar' ? 'تخطَّ إلى المحتوى' : 'Skip to content'}
 		</a>

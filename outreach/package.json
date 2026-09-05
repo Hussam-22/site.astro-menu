@@ -1,0 +1,27 @@
+{
+	"name": "astro-menu-outreach",
+	"private": true,
+	"type": "module",
+	"version": "0.1.0",
+	"description": "Finds UAE venues without a digital menu, builds each one a real Astro-Menu menu, and hands it to them.",
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"source": "node bin/source.mjs",
+		"qualify": "node bin/qualify.mjs",
+		"find-menus": "node bin/find-menus.mjs",
+		"build-menus": "node bin/build.mjs",
+		"render": "node bin/render.mjs",
+		"export": "node bin/export.mjs",
+		"test": "node --test test/*.test.js"
+	},
+	"dependencies": {
+		"@anthropic-ai/sdk": "^0.124.0",
+		"firebase-admin": "^13.6.0",
+		"pg": "^8.16.3",
+		"playwright": "^1.62.1",
+		"qrcode": "^1.5.4",
+		"zod": "^4.5.4"
+	}
+}

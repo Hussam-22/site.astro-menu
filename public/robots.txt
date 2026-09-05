@@ -1,22 +1,33 @@
 # Astro-Menu — https://astro-menu.com
 
+# /m/ is the outreach pipeline's prospect pages: one private link per venue we
+# built a menu for, sent to one recipient. Each carries noindex as well — this
+# is the belt to that brace. Every group repeats the rule, because robots.txt
+# groups do not inherit from one another.
+
 User-agent: *
 Allow: /
+Disallow: /m/
 
 # AI answer engines are welcome; see /llms.txt for a plain-text brief.
 User-agent: GPTBot
 Allow: /
+Disallow: /m/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /m/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /m/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /m/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /m/
 
 Sitemap: https://astro-menu.com/sitemap-index.xml

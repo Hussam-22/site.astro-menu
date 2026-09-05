@@ -4,7 +4,7 @@ import FoodImage from '../components/ui/FoodImage.astro'
 import Section from '../components/ui/Section.astro'
 import SectionHead from '../components/ui/SectionHead.astro'
 import Sticker from '../components/ui/Sticker.astro'
-import { CONTACT_FORM_KEY, PRICE, SITE } from '../config/site'
+import { CONTACT_FORM_KEY, CONTACT_FORM_READY, PRICE, SITE } from '../config/site'
 import Layout from '../layouts/Layout.astro'
 import { crumbSchema } from '../utils/schema'
 
@@ -12,12 +12,12 @@ const title = 'Contact us'
 const description = `Send us the menu you have now and we build the first version free. Email ${SITE.email} — a person answers, usually the same day.`
 
 /**
- * The form only renders once a real Web3Forms access key is set in
- * src/config/site.ts. Shipping a form wired to a placeholder key would look
- * like it worked and quietly drop every enquiry, so until the key is real the
- * page leads with email, which always works.
+ * The form only renders once PUBLIC_WEB3FORMS_KEY is set in the environment.
+ * Shipping a form wired to a placeholder key would look like it worked and
+ * quietly drop every enquiry, so until the key is real the page leads with
+ * email, which always works.
  */
-const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('REPLACE_')
+const formReady = CONTACT_FORM_READY
 ---
 
 <Layout
@@ -81,6 +81,7 @@ const formReady = CONTACT_FORM_KEY.length > 0 && !CONTACT_FORM_KEY.startsWith('R
 						>
 							<input type="hidden" name="access_key" value={CONTACT_FORM_KEY} />
 							<input type="hidden" name="subject" value="New Astro-Menu enquiry" />
+							<input type="hidden" name="source" value="astro-menu.com/contact" />
 							{/* Honeypot: bots fill it, people never see it. */}
 							<input
 								type="checkbox"

@@ -1,0 +1,117 @@
+---
+/**
+ * The claim page for one prospect: "here is your menu, already built".
+ *
+ * One page per venue, generated from outreach/bin/export.mjs output. Every one
+ * of them is noindexed, disallowed in robots.txt and kept out of the sitemap.
+ * That is deliberate and load-bearing: thousands of thin, auto-generated pages
+ * about businesses that are not customers is exactly the pattern that undoes
+ * the SEO work the rest of this site depends on. These pages exist to be
+ * opened from a link in one email, by one person, and nowhere else.
+ *
+ * If prospects.json is empty — which it is until the pipeline has run — this
+ * route generates nothing at all and the site builds exactly as before.
+ */
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Button from '../../components/ui/Button.astro'
+import Sticker from '../../components/ui/Sticker.astro'
+import { PRICE, SITE } from '../../config/site'
+import { INCLUDED } from '../../data/plan'
+import prospects from '../../data/prospects.json'
+
+interface Prospect {
+	slug: string
+	name: string
+	city: string
+	menuUrl: string
+	itemCount: number
+	sectionCount: number
+}
+
+export function getStaticPaths() {
+	return (prospects as Prospect[]).map((prospect) => ({
+		params: { slug: prospect.slug },
+		props: { prospect }
+	}))
+}
+
+const { prospect } = Astro.props as { prospect: Prospect }
+
+const title = `${prospect.name} — your menu`
+const description = `We built ${prospect.name}'s menu on Astro-Menu. Open it, scan it, and keep it if you want it.`
+---
+
+<Layout title={title} description={description} path={`/m/${prospect.slug}`} noindex>
+	<Section tight>
+		<div class="grid items-start gap-14 lg:grid-cols-[1.1fr_1fr]">
+			<div>
+				<p class="text-brand-text text-lg font-bold tracking-wide uppercase">
+					Built for {prospect.name}{prospect.city ? `, ${prospect.city}` : ''}
+				</p>
+
+				<h1 class="mt-3 text-5xl leading-[1.05] sm:text-6xl">This is your menu.</h1>
+
+				<p class="text-ink-soft mt-6 text-xl">
+					We took the menu you already publish — {prospect.itemCount} items across {
+						prospect.sectionCount
+					} sections — and built it as an Astro-Menu QR menu. It opens on a phone in about a second.
+				</p>
+
+				<p class="text-ink-soft mt-4 text-xl">
+					Nobody has seen it but you. It is not live to your customers, and it will not be unless
+					you say so.
+				</p>
+
+				<div class="mt-9 flex flex-wrap gap-3">
+					<Button href={prospect.menuUrl} variant="primary" size="lg" external>
+						Open your menu
+					</Button>
+					<Button
+						href={`mailto:${SITE.email}?subject=${encodeURIComponent(`${prospect.name} — I want this menu`)}`}
+						variant="dark"
+						size="lg"
+					>
+						I want it
+					</Button>
+				</div>
+
+				<div class="mt-8 flex flex-wrap gap-2.5">
+					<Sticker tone="orange">{PRICE.monthlyAed} a month</Sticker>
+					<Sticker tone="rose">{PRICE.trialDays} days free</Sticker>
+					<Sticker>No commission, ever</Sticker>
+					<Sticker>No POS, no hardware</Sticker>
+				</div>
+
+				<p class="text-ink-faint mt-8 text-base">
+					Not interested? Reply to the email with "no thanks" and we will not write again — and we
+					will take this page down.
+				</p>
+			</div>
+
+			<div class="bg-card slab-lg rounded-[1.5rem] p-8">
+				<h2 class="text-3xl">What the subscription includes</h2>
+				<ul class="mt-6 space-y-3">
+					{
+						INCLUDED.slice(0, 10).map((item) => (
+							<li class="flex gap-3 text-lg">
+								<span class="text-brand-text font-bold" aria-hidden="true">
+									✓
+								</span>
+								<span>{item}</span>
+							</li>
+						))
+					}
+				</ul>
+				<p class="text-ink-soft mt-6 text-lg">
+					{PRICE.monthly} a month, or {PRICE.annualPerMonth} a month billed yearly ({
+						PRICE.annualTotal
+					} once). One flat price, whatever your menu does.
+				</p>
+				<div class="mt-7">
+					<Button href="/pricing" variant="outline" block>See the full plan</Button>
+				</div>
+			</div>
+		</div>
+	</Section>
+</Layout>

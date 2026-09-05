@@ -83,9 +83,15 @@ export default defineConfig({
 			// "excluded by noindex" error in the Pages report. Astro drops /404
 			// on its own but not /ar/404, so match both.
 			//
+			// /m/* is the outreach pipeline's prospect pages — one per venue we
+			// built a menu for, each noindexed and disallowed in robots.txt.
+			// They are private links sent to one recipient, not pages. Listing
+			// thousands of thin auto-generated pages in the sitemap is the
+			// fastest way to undo the SEO work the rest of this config does.
+			//
 			// /privacy and /terms used to be excluded here. They are ordinary
 			// indexable pages that a SaaS buyer goes looking for, so they stay in.
-			filter: (page) => !/\/404\/?$/.test(page),
+			filter: (page) => !/\/404\/?$/.test(page) && !/\/m\//.test(page),
 			serialize(item) {
 				const path = new URL(item.url).pathname.replace(/\/$/, '') || '/'
 
