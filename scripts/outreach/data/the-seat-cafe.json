@@ -1,107 +1,901 @@
 {
   "venue": "The Seat Cafe",
-  "source": "https://www.talabat.com/uae/restaurant/759827/the-seat-cafe-al-heliow-2 (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Brunch",
-  "sectionAr": "قهوة وإفطار",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/759827/the-seat-cafe-al-heliow-2 (prices/descriptions) + https://drivu.co/DriveThru/The_Seat_Cafe_KZEXx/Al_Heliow_1 (photos), both 2026-09-06",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
     {
-      "en": "Double Espresso",
-      "desc": "A strong and intense dose of coffee prepared from finely ground beans.",
-      "prices": [
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 22.95
+          "en": "Double Espresso",
+          "desc": "A strong and intense dose of coffee prepared from finely ground beans.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22.95
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248580/small_esspresso.98767779956b8a994788.jpg"
+        },
+        {
+          "en": "Cortado",
+          "desc": "Equal parts espresso and steamed milk for a balanced flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26.95
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248584/small_cortado.b0bc57d418832ff5402f.jpeg"
+        },
+        {
+          "en": "Flat White",
+          "desc": "Creamy espresso drink with a smooth texture and steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248585/small_flatwhite.547711fb5ee4977b4043.jpeg"
+        },
+        {
+          "en": "Cinamon Latte",
+          "desc": "A latte with a hint of cinnamon spice for a warming flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39.5
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Americano",
+          "desc": "Espresso diluted with hot water for a lighter coffee experience.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248587/small_HotA.2116bcfd286f34061d33.jpg"
+        },
+        {
+          "en": "Hot Latte",
+          "desc": "A smooth espresso latte drink with steamed milk and a light coffee flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27.55
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248589/small_latte.379a2a53d159c4250973.jpeg"
+        },
+        {
+          "en": "Hot Spanish Latte",
+          "desc": "A rich latte infused with cinnamon and a touch of sweetened condensed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34.8
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248590/small_hotSpanish.bcfee291473e46dcf9ab.jpeg"
+        },
+        {
+          "en": "Hot White Mocha",
+          "desc": "A smooth and creamy white mocha with white chocolate and steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35.9
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248592/small_latte.379a2a53d159c4250973.jpeg"
+        },
+        {
+          "en": "Hot Mocha",
+          "desc": "A rich espresso drink combined with chocolate and steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248593/small_latte.379a2a53d159c4250973.jpeg"
+        },
+        {
+          "en": "Spanish Cortado",
+          "desc": "A balanced espresso drink with equal parts of espresso and steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28.8
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248594/small_cortado.b0bc57d418832ff5402f.jpeg"
         }
       ]
     },
     {
-      "en": "Flat White",
-      "desc": "Creamy espresso drink with a smooth texture and steamed milk.",
-      "prices": [
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 27.5
+          "en": "Iced Americano",
+          "desc": "A refreshing iced coffee made with espresso and chilled water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248608/small_iceAm.6604322d0fc869bc01e2__1_.jpg"
+        },
+        {
+          "en": "Iced Latte",
+          "desc": "Iced espresso topped with cold milk, served over ice.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248609/small_icedCoffee.67004cdbf265a5032914.jpg"
+        },
+        {
+          "en": "Iced Spanish Latte",
+          "desc": "Iced latte with a touch of cinnamon and condensed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248610/small_icedCoffee.67004cdbf265a5032914.jpg"
+        },
+        {
+          "en": "Ice White Mocha",
+          "desc": "A cold version of white mocha with chocolate and ice.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 37.5
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Iced Matcha Latte",
+          "desc": "Iced matcha latte made with green tea powder and cold milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248606/small_IMatcha.ddf78df71f59d086af89.jpg"
+        },
+        {
+          "en": "Cold Brew",
+          "desc": "Coffee brewed slowly in cold water for a smooth, rich flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36.86
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248632/small_coldB.b4b5cdfe7f305a4d2d84.jpg"
         }
       ]
     },
     {
-      "en": "Cortado",
-      "desc": "Equal parts espresso and steamed milk for a balanced flavor.",
-      "prices": [
+      "title": "Manual Brew",
+      "titleAr": "قهوة مقطرة يدوياً",
+      "meals": [
         {
-          "size": "-",
-          "aed": 26.95
+          "en": "V60 Tobacco",
+          "desc": "Smooth and rich filter coffee brewed using the V60 pour-over method delivering a perfectly balanced cup with bright acidity and complex flavors",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Colombia Coffee",
+          "desc": "Premium Colombian coffee expertly brewed using the V60 pour over method delivering a smooth balanced cup with bright acidity and rich chocolate notes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Ethiopian Coffee",
+          "desc": "Smooth and aromatic Ethiopian coffee expertly brewed using the V60 pour-over method. Notes of floral and fruity undertones with a clean bright finish.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 blueberry Colombia coffee",
+          "desc": "Smooth Colombian single-origin coffee with delicate blueberry notes brewed using the V60 pour-over method for a clean crisp cup",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Coconut Colombia",
+          "desc": "Smooth Colombian coffee brewed with V60 method and infused with creamy coconut flavor for a delightful breakfast experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Yemen Coffee",
+          "desc": "Premium Yemeni coffee expertly brewed using the V60 pour-over method. This single-origin coffee delivers rich bold flavors with subtle fruity and floral notes creating a smooth and aromatic cup",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 56
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cappuccino",
-      "desc": "Espresso topped with steamed milk and a layer of frothy foam.",
-      "prices": [
+      "title": "Matcha",
+      "titleAr": "ماتشا",
+      "meals": [
         {
-          "size": "-",
-          "aed": 27.5
+          "en": "Foam Matcha",
+          "desc": "A smooth matcha green tea drink topped with a frothy layer of foam.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248605/small_foamM.9d60561368c3be3f046c.jpg"
         }
       ]
     },
     {
-      "en": "Hot Spanish Latte",
-      "desc": "A rich latte infused with cinnamon and a touch of sweetened condensed milk.",
-      "prices": [
+      "title": "Breakfast",
+      "titleAr": "إفطار",
+      "meals": [
         {
-          "size": "-",
-          "aed": 34.8
+          "en": "Acai Bowl",
+          "desc": "Smooth acai berry puree bowl served with granola, fruits, and honey.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248574/small_acai.88c601fd35ce7fb9e180.jpg"
+        },
+        {
+          "en": "Acai Smoothie Frappe",
+          "desc": "A refreshing smoothie made with acai berries, yogurt, and ice.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39.9
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248616/small_acaiSmmoth.89868a809b039624e38a.jpg"
+        },
+        {
+          "en": "Toast Scrambled",
+          "desc": "Toasted bread topped with creamy scrambled eggs.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Scrambled-Eggs-And-Tuna-On-Toast-2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Scrambled Eggs",
+          "desc": "Fluffy scrambled eggs made with fresh eggs and butter.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248671/small_IMG-20250909-WA0076.jpg"
+        },
+        {
+          "en": "Croissaint Eggs Benedict",
+          "desc": "A warm croissant topped with poached eggs, hollandaise sauce, and garnishes.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248668/small_EGGS_BENEDICT_33AED.JPG"
+        },
+        {
+          "en": "Eggs Benedict",
+          "desc": "Poached eggs on toasted english muffins with hollandaise sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44.95
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248668/small_EGGS_BENEDICT_33AED.JPG"
+        },
+        {
+          "en": "Avocado Toast",
+          "desc": "Toasted bread topped with creamy avocado and seasoning.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36.86
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248663/small_avocado_toast.jpg"
+        },
+        {
+          "en": "Nutella Toast",
+          "desc": "Toasted bread layered with smooth hazelnut spread.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35.44
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248661/small_IMG_3781.JPG"
+        },
+        {
+          "en": "Peanut Toast",
+          "desc": "Crunchy toast topped with creamy peanut butter.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35.44
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248662/small_PEANUT_TOAST_30.60AED.JPG"
+        },
+        {
+          "en": "Butter Omelette",
+          "desc": "Fluffy omelette cooked with a touch of butter for rich flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28.35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248672/small_IMG-20250809-WA0001.jpg"
+        },
+        {
+          "en": "Lotus French Toast",
+          "desc": "French toast topped with caramelized lotus biscuits and syrup.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49.99
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248670/small_IMG-20250909-WA0012.jpg"
+        },
+        {
+          "en": "French Toast",
+          "desc": "Golden french toasted bread soaked in egg, served with syrup or fruits.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248670/small_IMG-20250909-WA0012.jpg"
         }
       ]
     },
     {
-      "en": "V60 Tobacco",
-      "desc": "Smooth and rich filter coffee brewed using the V60 pour-over method.",
-      "prices": [
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 45
+          "en": "Kinder Cookie",
+          "desc": "Soft and chewy cookie with creamy kinder chocolate pieces.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248575/small_kinder.b6fb7957633e9a9d007d.jpeg"
+        },
+        {
+          "en": "Nutella Cookie Sweet",
+          "desc": "Delightful Nutella cookies with a soft center and crispy edges. Rich hazelnut chocolate flavor in every bite, perfect for breakfast or anytime indulgence",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21.92
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/85/Peanut_butter_nutella_cookies_%286316654485%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Nuttella Croissant",
+          "desc": "A buttery croissant filled with rich nutella chocolate spread.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/46/Nordfrankreich11-11-016_Thalys.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "New York Cookie",
+          "desc": "Thick and chewy cookie filled with chunks of chocolate and nuts.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.1
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248576/small_newyorkC.3509f9a584978fd72aa2.jpeg"
         }
       ]
     },
     {
-      "en": "Iced Americano",
-      "desc": "A refreshing iced coffee made with espresso and chilled water.",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 26
+          "en": "San Sebastian",
+          "desc": "Creamy basque cheesecake with a caramelized crust.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248578/small_san_sebasian.c2c1c41716beb3c13288.jpeg"
+        },
+        {
+          "en": "Matilda cake",
+          "desc": "Sweet",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/275596/small_IMG_6759__2_.JPEG"
+        },
+        {
+          "en": "Banana Pudding",
+          "desc": "Creamy banana pudding layered with vanilla wafers and fresh sliced bananas topped with whipped cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43.95
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248569/small_banana.381d04aaeadfec420fbe.jpg"
+        },
+        {
+          "en": "Vanilla Pudding",
+          "desc": "Smooth and creamy vanilla pudding made with pure vanilla extract and rich milk. A classic dessert with a delicate sweet flavor and silky texture perfect for any occasion",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39.9
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/20/Erdbeer-Pudding-Kuchen_2013-04-01-2678.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mango Pudding",
+          "desc": "Silky smooth mango pudding crafted with fresh ripe mangoes and creamy custard A delightful tropical dessert that melts on your palate with natural sweetness and refreshing flavor",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43.9
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mango_pudding_by_FotoosVanRobin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Brownie",
+          "desc": "Decadent, fudgy chocolate brownie with a soft center.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248571/small_rokkkyy.bb1a14a308a6b6989287.jpeg"
         }
       ]
     },
     {
-      "en": "Acai Bowl",
-      "desc": "Smooth acai berry puree bowl served with granola, fruits, and honey.",
-      "prices": [
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 43.5
+          "en": "Camomile Blossoms Tea",
+          "desc": "A calming herbal tea made from chamomile flowers.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.1
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "English Caramel Tea",
+          "desc": "Black tea blend with sweet caramel flavor notes.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.1
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/user/image/284621/logo_medium_279319616_475372737707669_7120750118059322475_n.jpg?1787884758?1787884758"
+        },
+        {
+          "en": "Lemon Grass And Ginger Tea",
+          "desc": "Refreshing herbal tea with lemongrass and a zing of ginger.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.1
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fa/LEMON_GRASS_Cymbopogon_citratus_as_HERBAL_TEA_PANGASINAN.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Organic Green Tea",
+          "desc": "Light and healthy green tea made from organic leaves.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.1
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/user/image/284621/logo_medium_279319616_475372737707669_7120750118059322475_n.jpg?1787884758?1787884758"
+        },
+        {
+          "en": "Hibiscus",
+          "desc": "A tangy, refreshing iced drink made with hibiscus flowers.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248633/small_spanishSummer.320f72cab0f854b2a697.jpg"
+        },
+        {
+          "en": "Strawberry Mojito",
+          "desc": "A sweet and tangy mojito made with fresh strawberries and mint.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248596/small_stawberryM.8559d65792a9f60d9dfb.jpeg"
+        },
+        {
+          "en": "Blueberry Mojito",
+          "desc": "A refreshing mojito with blueberries and mint, served cold.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248597/small_bluebberryM.b4b7ffe36abe3e610334.jpeg"
+        },
+        {
+          "en": "Passion Fruit Mojito",
+          "desc": "A tropical mojito made with passion fruit, mint, and soda.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248598/small_Passn.ad807d828bda4fde8640.jpeg"
+        },
+        {
+          "en": "Fresh Orange Juice",
+          "desc": "A fresh and tangy juice made from squeezed oranges.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248603/small_or.5d7c3d3c9eecd27044e2.jpg"
+        },
+        {
+          "en": "Mango Frappe",
+          "desc": "A tropical frappe made with fresh mango, ice, and milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248613/small_mangoF.55d524ce7b013bc84b18.jpg"
+        },
+        {
+          "en": "Voss Still Water",
+          "desc": "Pure, crisp still water in a sleek bottle.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 14.18
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248641/small_stillwater.436f26b0ca9226b19adf.jpg"
+        },
+        {
+          "en": "Sparkling Water",
+          "desc": "Refreshing sparkling water for a bubbly and refreshing experience.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 9.67
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248642/small_sparkling.5995e47f26ef4269dfa9.jpeg"
         }
       ]
     },
     {
-      "en": "San Sebastian",
-      "desc": "Creamy basque cheesecake with a caramelized crust.",
-      "prices": [
+      "title": "Main Dishes",
+      "titleAr": "أطباق رئيسية",
+      "meals": [
         {
-          "size": "-",
-          "aed": 47
+          "en": "Pene Chicken (White Sauce)",
+          "desc": "Penne pasta tossed with grilled chicken in creamy white sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 54.9
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Penne Chicken (Mixed Sauce)",
+          "desc": "Penne pasta with tender chicken in rich tomato-based sauce. A classic dinner favorite combining al dente pasta with succulent poultry in a savory aromatic sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 54.9
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
         }
       ]
     },
     {
-      "en": "Avocado Toast",
-      "desc": "Toasted bread topped with creamy avocado and seasoning.",
-      "prices": [
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
         {
-          "size": "-",
-          "aed": 36.86
+          "en": "Rocky Road",
+          "desc": "Decadent chocolate cake filled with marshmallows, nuts, and chocolate.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248579/small_rockyn.c9acdb9a42cbfebd65bd.jpeg"
+        },
+        {
+          "en": "Plain Croissaint",
+          "desc": "A flaky, buttery croissant perfect for a light snack or breakfast.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 14.18
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/06/Glass_fabric.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cheese Croissaint",
+          "desc": "A warm croissant filled with melted cheese for a savory treat.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 16
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/30/Ham_and_cheese_croissant_-_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Brochetta",
+          "desc": "A grilled skewer of seasoned meat or vegetables, perfect for a savory bite.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Mashed Avocado",
+          "desc": "Freshly mashed avocado served with a hint of lemon and herbs.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44.95
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248665/small_IMG_3096.JPG"
+        },
+        {
+          "en": "Organic English Breakfast",
+          "desc": "Full-bodied black tea with a smooth, rich taste.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24.1
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/user/image/284621/logo_medium_279319616_475372737707669_7120750118059322475_n.jpg?1787884758?1787884758"
+        },
+        {
+          "en": "ASEEDA",
+          "desc": "Arabic sweet",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 58
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/262678/small_ASEEDA_CAKE.jpg"
+        },
+        {
+          "en": "Single Espreso",
+          "desc": "A single shot of rich espresso coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 19.95
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Machiatto",
+          "desc": "Espresso topped with a small amount of steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25.9
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Espresso_machiato_%28LRM_20260212_142211%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Picollo",
+          "desc": "A small and smooth espresso drink with a touch of steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25.9
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Piccolo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Capuccino",
+          "desc": "Espresso topped with steamed milk and a layer of frothy foam.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27.5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cappuccino_at_ARS_Cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cascara",
+          "desc": "A unique coffee made from the dried husk of coffee cherries, served cold.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248599/small_iceAm.6604322d0fc869bc01e2.jpg"
+        },
+        {
+          "en": "Cold Drip",
+          "desc": "Coffee brewed slowly with cold water over an extended period for a smooth taste.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36.86
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248630/small_COLD-d.a8797dffa037ea2f4e68.jpeg"
+        },
+        {
+          "en": "Kalita",
+          "desc": "A coffee brewing method known for its consistency and balanced flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36.86
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248631/small_kalita.6c4f9685880d22418266.jpeg"
+        },
+        {
+          "en": "Pistachio Frappe",
+          "desc": "A refreshing blended iced drink made with pistachios, milk, and ice.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 37
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248612/small_pistachioF.144ff13862d4450fa66c.jpg"
+        },
+        {
+          "en": "Signature Frappe",
+          "desc": "A unique blended frappe drink made with a special combination of ingredients.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248614/small_signatureD.71b9e4210a414606932c.jpg"
+        },
+        {
+          "en": "Oreo Frappe",
+          "desc": "A sweet and creamy frappe made with oreo cookies, milk, and ice.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/248615/small_oreoFF.51db0010f3d75511c5fb.jpg"
         }
       ]
     }
@@ -112,8 +906,6 @@
     "defaultLanguage": "en",
     "taxValue": 0,
     "cover": null,
-    "socialLinks": {
-      "website": "https://www.talabat.com/uae/restaurant/759827/the-seat-cafe-al-heliow-2"
-    }
+    "socialLinks": {}
   }
 }

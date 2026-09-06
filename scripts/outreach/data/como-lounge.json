@@ -1,107 +1,1109 @@
 {
   "venue": "Como Lounge",
-  "source": "https://www.talabat.com/uae/restaurant/771443/como-lounge-al-zaafaran (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Matcha",
-  "sectionAr": "قهوة وماتشا",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/771443/como-lounge-al-zaafaran (prices, descriptions) + https://drivu.co/DriveThru/Como_Lounge_y8VvP/Al_Khubaisi (photos) — both read via browser 2026-09-04",
+  "note": "Full real menu, not a sample. Names, prices and descriptions from Talabat; photos from Como Lounge’s own Drivu drive-thru listing, matched by item name. A handful of items with no matching Drivu photo fall back to a Wikimedia Commons match.",
+  "sections": [
     {
-      "en": "Iced V60 Cherry",
-      "desc": "Colombia, cupping score of 89, flavor notes of cherry, gummy candies and honey",
-      "prices": [
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 45
+          "en": "Hot Espresso",
+          "desc": "Freshly brewed espresso",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260534/small_thumb_05C2D823-68B9-46FA-B071-AF421C7B27C0.jpeg"
+        },
+        {
+          "en": "Signature Latte",
+          "desc": "Rich espresso blended with steamed milk and aromatic Arabic spices",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Cappuccino_with_latte_art_on_Coffee_Right_in_Brno%2C_Brno-City_District.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Hot Matcha Latte",
+          "desc": "Japanese matcha served with milk of your choice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213420/small_hot_nat_copy.jpg"
+        },
+        {
+          "en": "Hot Latte",
+          "desc": "Smooth espresso blended with steamed milk, warm, creamy and comforting",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213441/small_9D00E567-F9D6-440D-8774-2107C845A7A1.jpeg"
+        },
+        {
+          "en": "Hot Flat White",
+          "desc": "A classic flat white",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260539/small_thumb_3E6CE036-A7BC-436E-A543-40421B841C3C.jpeg"
+        },
+        {
+          "en": "Hot Spanish Latte",
+          "desc": "Smooth espresso combined with steamed milk and rich condensed milk for a creamy, indulgent Spanish style latte.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260540/small_thumb_3E6CE036-A7BC-436E-A543-40421B841C3C.jpeg"
+        },
+        {
+          "en": "Hot Piccolo",
+          "desc": "A bold and concentrated shot of espresso topped with a touch of velvety steamed milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260536/small_thumb_4C24415B-4EE3-4CFC-BF74-BB8EBD657484.jpeg"
+        },
+        {
+          "en": "Hot Americano",
+          "desc": "Double espresso with hot water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260535/small_thumb_65C30969-CF15-46BB-B922-D62B4F4BB13C.jpeg"
+        },
+        {
+          "en": "Spanish Piccolo",
+          "desc": "A rich and bold espresso shot combined with a touch of sweetened condensed milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213712/small_38BB8712-B5F9-4963-A065-D7961CDA2D68.jpeg"
+        },
+        {
+          "en": "Hot Cortado",
+          "desc": "Equal parts espresso and warm milk, smooth, bold, and balanced.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213418/small_71490011-6530-441D-B08D-79CD1EE2B34F.jpeg"
+        },
+        {
+          "en": "Hot Spanish Cortado",
+          "desc": "Bold espresso with sweetened condensed milk, Spanish style cortado.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260538/small_thumb_4C24415B-4EE3-4CFC-BF74-BB8EBD657484.jpeg"
+        },
+        {
+          "en": "Hot Cappuccino",
+          "desc": "Bold espresso topped with silky foam, light, rich and classic.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260537/small_thumb_3E6CE036-A7BC-436E-A543-40421B841C3C.jpeg"
+        },
+        {
+          "en": "Signature Macchiato",
+          "desc": "Espresso, cream and white chocolate",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Latte_macchiato.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Foamy Americano",
+          "desc": "Smooth Americano espresso coffee topped with a delicate layer of velvety vanilla foam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/285587/small_IMG_7131.JPG.jpeg"
+        },
+        {
+          "en": "Hot V60 Ethiopia",
+          "desc": "Fresh V60",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213423/small_DSC06032_copy.jpeg"
         }
       ]
     },
     {
-      "en": "Iced Red Wine V60",
-      "desc": "Fruit, with hints of bourbon, grape and berries",
-      "prices": [
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 47.5
+          "en": "Ice Spanish Latte",
+          "desc": "Chilled espresso meets sweetened milk for a silky, cool delight.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Fruit_salad_and_an_iced_latte%2C_Starbucks_Coffee%2C_Singapore_-_20111225.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ice Matcha",
+          "desc": "Iced matcha green tea with milk is smooth, earthy and refreshing.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Iced_Matcha_Latte_from_McCafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Iced V60 Cherry",
+          "desc": "Our new coffee selection, Colombia, with a cupping score of 89, flavor notes of cherry, gummy candies and honey",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/291046/small_IMG_3689.PNG"
+        },
+        {
+          "en": "Iced CocoNut V60",
+          "desc": "Coconut V60",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47.5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Iced V60 Super Berries",
+          "desc": "A vibrant and fruity pour-over experience with natural berry notes, raspberry, blueberry and hint of hibiscus.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47.5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/291047/small_IMG_3689.PNG"
+        },
+        {
+          "en": "Iced Smokey V60",
+          "desc": "A refreshing coffee prepared with the V60 method featuring distinctive smokey notes and a smooth finish",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47.5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Iced Red Wine V60",
+          "desc": "Fruit, with hints of bourbon, grape and berries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47.5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Affogato",
+          "desc": "Velvety vanilla ice cream drowned in hot espresso, simple, bold and indulgent",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213716/small_3B3EDC72-2B01-48A9-AB4C-400238DCC6CD.jpeg"
+        },
+        {
+          "en": "Cold Brew",
+          "desc": "Iced cold brew",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213422/small_6_cold.JPG"
+        },
+        {
+          "en": "Ice Latte",
+          "desc": "Smooth espresso blended with chilled milk and poured over ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Fruit_salad_and_an_iced_latte%2C_Starbucks_Coffee%2C_Singapore_-_20111225.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ice Americano",
+          "desc": "Refreshing iced Americano made with bold espresso shots topped with chilled water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260541/small_DSC06016_copy.jpg"
+        },
+        {
+          "en": "Cream Espresso Small",
+          "desc": "Bold espresso mixed with house-made ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260534/small_thumb_05C2D823-68B9-46FA-B071-AF421C7B27C0.jpeg"
+        },
+        {
+          "en": "Cream Espresso Large",
+          "desc": "Bold espresso mixed with house made ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260534/small_thumb_05C2D823-68B9-46FA-B071-AF421C7B27C0.jpeg"
+        },
+        {
+          "en": "Ice Spanish Cortado",
+          "desc": "Short, bold and creamy with a cool finish",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213418/small_71490011-6530-441D-B08D-79CD1EE2B34F.jpeg"
+        },
+        {
+          "en": "Iced Signature Latte",
+          "desc": "Deep Arabic spiced iced latte with rich espresso",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Fruit_salad_and_an_iced_latte%2C_Starbucks_Coffee%2C_Singapore_-_20111225.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Salted Vanilla Latte",
+          "desc": "Smooth iced latte topped with a delicate layer of salted vanilla foam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/285588/small_IMG_7130.JPG.jpeg"
+        },
+        {
+          "en": "Espresso Cloud",
+          "desc": "Refreshing iced coffee blended with creamy coconut water and topped with a velvety layer of espresso foam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/287216/small_ESPRESSO_CLOUD_COCONUT.jpg__1_.jpeg"
+        },
+        {
+          "en": "Brown Sugar Latte",
+          "desc": "Smooth espresso blended with creamy milk and topped with a rich brown sugar foam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/285589/small_ICED_BROWN_SUGAR_LATTE.jpg.jpeg"
+        },
+        {
+          "en": "Iced White Mocha Latte",
+          "desc": "Smooth espresso blended with creamy white chocolate and chilled milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/295469/small_ChatGPT_Image_Aug_25__2026__12_40_44_PM.png"
+        },
+        {
+          "en": "Vanilla Bean Latte",
+          "desc": "Fresh vanilla bean milk and espresso",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/295468/small_ChatGPT_Image_Aug_25__2026__12_40_44_PM.png"
+        },
+        {
+          "en": "Iced Rose Latte",
+          "desc": "A delicate iced latte infused with aromatic rose essence and topped with silky milk foam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/296326/small_ChatGPT_Image_Aug_28__2026__01_19_09_PM.png"
+        },
+        {
+          "en": "Iced V60 Ethiopia",
+          "desc": "Our house iced Ethiopian V60 with notes of blueberry, chocolate and lavender",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213793/small_DSC06052_copy.jpeg"
+        },
+        {
+          "en": "Ice Mango Matcha",
+          "desc": "Fresh mango cream with our matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Matcha_Green_Tea_Latte_%2835487991553%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ice Hibiscus",
+          "desc": "A vibrant, ruby red herbal infusion with a tangy hint of hibiscus",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/238225/small_DSC06015_copy.jpeg"
         }
       ]
     },
     {
-      "en": "Ice Spanish Latte",
-      "desc": "Chilled espresso meets sweetened milk for a silky, cool delight.",
-      "prices": [
+      "title": "Matcha",
+      "titleAr": "ماتشا",
+      "meals": [
         {
-          "size": "-",
-          "aed": 30
+          "en": "Salted Vanilla Matcha",
+          "desc": "Salted Vanilla matcha with smooth, creamy, and perfectly balanced.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213428/small_1005056C-5DB4-4899-9462-03FEF9A57908.jpeg"
+        },
+        {
+          "en": "Cloudy Rutab",
+          "desc": "Delicate Rutab foam infused with refreshing coconut water, light and creamy with tropical notes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/287215/small_WhatsApp_Image_2026-06-20_at_4.09.27_PM.jpeg"
+        },
+        {
+          "en": "Rutab Foam Matcha",
+          "desc": "Luxurious Rutab foam infused with premium Matcha powder and your choice of milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/287213/small_WhatsApp_Image_2026-06-20_at_4.09.28_PM__1_.jpeg"
+        },
+        {
+          "en": "Rutab Latte",
+          "desc": "Smooth espresso blended with creamy Rutab foam and your choice of milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/287214/small_WhatsApp_Image_2026-06-20_at_4.09.28_PM.jpeg"
+        },
+        {
+          "en": "Cloudy Matcha",
+          "desc": "Creamy matcha topped on organic coconut water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Matcha_Scoop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Strawberry Matcha",
+          "desc": "Strawberry cream topped with our matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/240470/small_DSC05946_copy.jpg"
+        },
+        {
+          "en": "Rose Matcha Latte",
+          "desc": "A delicate blend of premium matcha and fragrant rose petals",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/296327/small_beanz_profile_photo.jpg"
         }
       ]
     },
     {
-      "en": "Salted Vanilla Matcha",
-      "desc": "Salted vanilla matcha, smooth, creamy, and perfectly balanced.",
-      "prices": [
+      "title": "Breakfast",
+      "titleAr": "إفطار",
+      "meals": [
         {
-          "size": "-",
-          "aed": 36
+          "en": "Acai Smoothie",
+          "desc": "Creamy acai smoothie blended with fresh blueberries peanut butter and coconut water for a nutritious and delicious refreshment.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213433/small_DSC06056_copy.jpeg"
+        },
+        {
+          "en": "Acai Bowl",
+          "desc": "Pure acai topped with blueberry, raspberry, strawberry, peanut butter and granola",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213436/small_DSC04151.JPG"
+        },
+        {
+          "en": "Croissant Poached Egg With Hollandaise",
+          "desc": "A rich, flaky croissant, split and lightly toasted, filled with velvety poached eggs, sauteed spinach and crispy beef bacon. Generously topped with silky hollandaise sauce for the perfect indulgent bite.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/cf/In_suite_breakfast_experience_%283119861609%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Avocado Toast With Beetroot Hollandaise",
+          "desc": "House made sourdough, toasted to perfection, topped with creamy labneh, smashed avocado and perfectly poached eggs. Finished with a duo of our signature hollandaise sauces: the rich, classic hollandaise and our famous vibrant beetroot hollandaise.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Avocado_toast_with_sesame_seeds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Egg Bun With Mushroom Creamy",
+          "desc": "A soft, house made brioche bun filled with fluffy scrambled eggs, generously topped with our rich and creamy mushroom sauce. Comforting, savory, and perfect for any time of day.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213703/small_DSC04143.JPG"
+        },
+        {
+          "en": "Greek Egg",
+          "desc": "Our signature smitten house-made bread, generously spread with creamy labneh, topped with perfectly poached eggs, and finished with a fragrant chili and parsley oil.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213702/small_DSC04124.JPG"
+        },
+        {
+          "en": "Avocado Toast",
+          "desc": "Sourdough with labneh mixture, smashed avocado, feta, roasted tomatoes, radish and pomegranate.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Avocado_toast_with_sesame_seeds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Basic Bun With Egg, cheese and caramelized onion",
+          "desc": "A soft, house made brioche bun filled with fluffy scrambled eggs, sweet caramelized onions and a melted slice of sharp cheddar cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6f/%22Breakfast_in_Bun%22_and_%22Mushrooms_Scrambled_Eggs%22_by_The_Old_Tram_Station%2C_Hull.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mushroom and Parmesan Toast with Scrambled Eggs",
+          "desc": "Toasted brioche with creamy scrambled eggs, mushroom sauce, Parmesan and chives.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Scrambled-Eggs-And-Tuna-On-Toast-2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Truffalo Egg",
+          "desc": "A thick slice of our homemade brioche loaf, layered with fluffy scrambled eggs and our signature creamy mushroom sauce, finished with delicate slices of imported Italian black truffle.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 87
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213695/small_DSC04142.JPG"
+        },
+        {
+          "en": "Egg Danish",
+          "desc": "Buttery vol-au-vent croissants filled with creamy cheese and topped with fluffy scrambled eggs.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Egg_Tarts_with_Puff_Pastry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Turkish Egg Croissant",
+          "desc": "Flaky vol au vent croissants filled with perfectly poached eggs, topped with creamy labneh, finished with a drizzle of chili, parsley oil.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276838/small_WhatsApp_Image_2026-04-07_at_3.17.38_PM__2_.jpeg"
+        },
+        {
+          "en": "Como Egg Benedict",
+          "desc": "Served with grilled spinach, perfectly poached eggs and our house made hollandaise and vibrant beetroot hollandaise",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213708/small_DSC04109.JPG"
+        },
+        {
+          "en": "Greek Yogurt Bowl",
+          "desc": "Yogurt bowl with fruits, granola and organic honey",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/254805/small_DSC04151.JPG"
+        },
+        {
+          "en": "Cheesy Egg Croissant",
+          "desc": "Toasted croissant filled with beef strips and cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276837/small_WhatsApp_Image_2026-04-07_at_3.17.35_PM__1_.jpeg"
+        },
+        {
+          "en": "Square Egg layered Croissant",
+          "desc": "Square croissant filled with egg",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c4/2020-05-11_06_20_00_A_Jimmy_Dean_Sausage%2C_Egg_and_Cheese_Croissant_after_heating_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Shakshuka",
+          "desc": "Shakshuka with 2 poached eggs served with focaccia bread.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276840/small_WhatsApp_Image_2026-04-07_at_3.17.37_PM.jpeg"
+        },
+        {
+          "en": "Egg Sando",
+          "desc": "Soft scrambled eggs layered with creamy mayonnaise and Parmesan cheese on toasted bread.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/290516/small_ChatGPT_Image_Jul_11__2026__05_47_43_PM.png"
+        },
+        {
+          "en": "Cheese and Egg Flatbread",
+          "desc": "A delicious flatbread topped with a blend of four premium cheeses and a savory egg mixture.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/79/Pide_and_ayran.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Shakshuka Flatbread",
+          "desc": "Warm flatbread topped with poached eggs in a rich tomato spice sauce with peppers and onions.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Bino_Gabso.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Turkish Egg Flatbread",
+          "desc": "Soft Turkish flatbread topped with perfectly poached egg, creamy labneh and spiced chilli oil.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276838/small_WhatsApp_Image_2026-04-07_at_3.17.38_PM__2_.jpeg"
+        },
+        {
+          "en": "Caramel French Toast",
+          "desc": "Our house made french toast topped with fresh fruit and our house made caramel sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213430/small_%D8%AF%D8%AF.jpg"
         }
       ]
     },
     {
-      "en": "Ice Matcha",
-      "desc": "Iced matcha green tea with milk, smooth, earthy and refreshing.",
-      "prices": [
+      "title": "Sandwiches & Flatbread",
+      "titleAr": "ساندويتشات وفطاير",
+      "meals": [
         {
-          "size": "-",
-          "aed": 31
+          "en": "Sweet Chilli Halloumi Sandwich",
+          "desc": "House made brioche bun filled with golden grilled halloumi sautéed in honey and chili flakes for the perfect sweet heat balance. Layered with fresh rocket leaves and ripe tomato slices.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Halloumi_%26_Roasted_Vegetables_sandwich_-_Sunbirds_2023-09-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Classic Tuna Sandwich",
+          "desc": "Soft house made brioche bun served with our creamy, flavorful tuna mixture and topped with fresh sliced avocado. A simple yet satisfying combination of richness and freshness",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Tuna_olive_and_avocado_sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Como Club Sandwich",
+          "desc": "Classic club sandwich layered with tender chicken tomato slices melted cheese cold meat and a perfectly cooked egg served without avocado",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/238766/small_magic_edit_TUFIT3J0SnRtWU0jMSM4YWYxMWRmM2Q1MmQzMjhhMDE1NTdhNWRmMjkzYWNmNyMzOTM2IyNUUkFOU0ZPUk1BVElPTl9SRVFVRVNU.jpg"
+        },
+        {
+          "en": "Grilled Turkey Cheese Sandwich",
+          "desc": "Grilled sandwich with Turkey and cheese on our house sourdough",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47.5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Kr%C5%AFt%C3%AD_prsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Beetroot Falafel With Tahini",
+          "desc": "Spiced brioche with tahini and falafel",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Falafel_Sandwich.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Croissants Scrambled Sandwich",
+          "desc": "Buttery croissant filled with fluffy scrambled eggs and creamy cream cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/288757/small_ChatGPT_Image_Jun_29__2026__11_01_54_AM.png"
+        },
+        {
+          "en": "Zatar And Cheese Flatbread",
+          "desc": "Crispy flatbread topped with aromatic zatar seasoning blend and melted cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/59/Zaatar_pizza_and_Cheese_pie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Acai Smoothie",
-      "desc": "Creamy acai smoothie blended with fresh blueberries, peanut butter and coconut water.",
-      "prices": [
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 44
+          "en": "Creamy mushroom Croissant",
+          "desc": "A buttery square croissant filled with fluffy scrambled eggs and rich, creamy mushroom sauce, finished with a sprinkle of parmigiano reggiano cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 51
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/240476/small_DSC04136.JPG"
+        },
+        {
+          "en": "Chicken Mushroom Croissant",
+          "desc": "Buttery square croissants filled with tender grilled chicken and topped with a rich, creamy mushroom sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 51
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/240477/small_DSC04113.JPG"
+        },
+        {
+          "en": "Cheese Croissant",
+          "desc": "Delicious cheese croissant.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252531/small_KASHKAVAL_CROISSANT.jpg.jpeg"
+        },
+        {
+          "en": "Plain Croissant",
+          "desc": "Our plain croissant freshly made daily in house",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213697/small_PLAIN_CROISSANT.jpg.jpeg"
+        },
+        {
+          "en": "Zatar Croissant",
+          "desc": "Croissants stuffed zatar",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/32/Croissant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Honey Kiri Cheese Croissant",
+          "desc": "Buttery croissant layered with creamy kiri cheese and drizzled with golden honey.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252531/small_KASHKAVAL_CROISSANT.jpg.jpeg"
+        },
+        {
+          "en": "Sourdough Loaf",
+          "desc": "Artisanal sourdough loaf with a crispy golden crust and tangy complex flavor with a soft chewy crumb",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/294162/small_ChatGPT_Image_Aug_10__2026__02_31_40_PM.png"
+        },
+        {
+          "en": "Brioche Loaf",
+          "desc": "A soft and buttery brioche loaf with a golden crust and tender crumb, perfect for toasting.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/294163/small_ChatGPT_Image_Aug_10__2026__02_36_14_PM.png"
         }
       ]
     },
     {
-      "en": "Acai Bowl",
-      "desc": "Pure acai topped with blueberry, raspberry, strawberry, peanut butter and granola",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 55
+          "en": "Como Choco",
+          "desc": "Como choco cake",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Vegan_chocolate_cake_with_sliced_strawberries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "San Sebastian",
+          "desc": "House made creamy San Sebastian cheesecake with chocolate sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213434/small_DSC04291_copy.jpeg"
+        },
+        {
+          "en": "Banana Pudding",
+          "desc": "Layered graham crackers with cream, filled with banana and topped with our house made peanut butter sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213431/small_DSC04074_copy.jpeg"
+        },
+        {
+          "en": "Tiramisu",
+          "desc": "Tiramisu cake layered finger biscuits with cream topped with cocoa powder",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213432/small_%D9%86%D8%AA%D8%A7%D9%86%D8%AA%D8%A7%D9%86.jpg"
+        },
+        {
+          "en": "Como Dulce",
+          "desc": "Layered chocolate mousse cake, served with chocolate sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 52
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/214190/small_NEW_DESSERT.jpeg"
+        },
+        {
+          "en": "Saffron Cake",
+          "desc": "Saffron milk cake layered with ice cream and served with homemade saffron cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 52
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/220718/small_DSC04370_2_copy.jpg"
+        },
+        {
+          "en": "Matilda Chocolate Cake",
+          "desc": "Layers of moist chocolate sponge drenched in velvety dark chocolate ganache, finished with glossy glaze.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46.25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252625/small_IMG_6437__1_.JPG"
         }
       ]
     },
     {
-      "en": "Sweet Chilli Halloumi Sandwich",
-      "desc": "House made brioche bun, golden grilled halloumi sautéed in honey and chili flakes, rocket, tomato.",
-      "prices": [
+      "title": "Cold Drinks & Mojitos",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 44
-        }
-      ]
-    },
-    {
-      "en": "Classic Tuna Sandwich",
-      "desc": "Soft house made brioche bun with creamy tuna mixture, topped with fresh sliced avocado.",
-      "prices": [
+          "en": "Eira Still Water",
+          "desc": "Radiating with the essence of Norways untamed natural wonders, Eira still water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213437/small_B7D04EBB-71CA-476D-88EE-9BD6558070BE.jpeg"
+        },
         {
-          "size": "-",
-          "aed": 44
-        }
-      ]
-    },
-    {
-      "en": "Como Choco",
-      "desc": "Como choco cake",
-      "prices": [
+          "en": "Eira Sparkling Water",
+          "desc": "Radiating with the essence of Norway's untamed natural wonders, Eira sparkling water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Sparkling-bottled-water.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 50
+          "en": "Orange Juice",
+          "desc": "Freshly squeezed oranges, bursting with bright citrus flavor",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213427/small_DSC06023_copy.jpeg"
+        },
+        {
+          "en": "Baby Mango",
+          "desc": "Creamy mango ice cream blended with sweet baby mango",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213692/small_DSC06041_copy.jpg"
+        },
+        {
+          "en": "Strawberry Mojito",
+          "desc": "A refreshing twist on the classic mojito, muddled strawberries, fresh lime and garden mint.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213425/small_DSC05999_copy.jpg"
+        },
+        {
+          "en": "Passion Fruit Mojito",
+          "desc": "Passion fruit mojito",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/213426/small_DSC06000_copy.jpg"
         }
       ]
     }
@@ -113,7 +1115,7 @@
     "taxValue": 0,
     "cover": null,
     "socialLinks": {
-      "instagram": "https://www.instagram.com/como.lounge",
+      "instagram": "https://instagram.com/como.lounge",
       "website": "https://www.talabat.com/uae/restaurant/771443/como-lounge-al-zaafaran"
     }
   }

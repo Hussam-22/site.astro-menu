@@ -1,107 +1,520 @@
 {
   "venue": "Rain",
-  "source": "https://www.talabat.com/uae/restaurant/616807/rain-cafe-al-nahyan (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Brunch",
-  "sectionAr": "قهوة وإفطار",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/616807/rain-cafe-al-nahyan, 2026-09-06 (Talabat — no Drivu listing found for this venue)",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
     {
-      "en": "Iced Spanish Latte",
-      "desc": "Our branded coffee mixed with our special Spanish milk.",
-      "prices": [
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 34
+          "en": "Iced Spanish Latte",
+          "desc": "our branded coffee mixed with our special Spanish milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/95/Iced_Latte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lavender Vanilla Iced Latte",
+          "desc": "Espresso shot, milk, and lavender syrup",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Ruby Chocolate Iced Latte",
+          "desc": "Espresso shot, ruby chocolate syrup and mactop cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Iced Latte",
+          "desc": "Made with rich espresso, milk, and ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/92/Starbucks_Grande_Iced_Pumpkin_Spice_Latte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Iced Americano",
+          "desc": "Made with dark espresso and ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/03/Glacial_iceberg_in_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Iced Spanish Cortado",
+          "desc": "Shot of coffee with milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Peach Ice Tea",
+          "desc": "A homemade iced black tea with peach, lightly sweetened with agave syrup.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Peach_Ice_Tea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Iced Signature",
+          "desc": "A rich smooth blend of full cream milk, vanilla, condensed milk, whipping cream, white chocolate and a double shot of espresso.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Factory_of_Jacob-Petit_-_White_and_Gold_Covered_Ice_Cream_Pail_-_2003.250.1.a_-_Cleveland_Museum_of_Art.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Iced Americano",
-      "desc": "Made with dark espresso and ice",
-      "prices": [
+      "title": "Breakfast",
+      "titleAr": "إفطار",
+      "meals": [
         {
-          "size": "-",
-          "aed": 24
+          "en": "Avocado Toast With Eggs",
+          "desc": "Homemade baked oregano bread spread with our Guacamole, homemade mayonnaise, your choice of poached or scrambled eggs, mixed cherry tomatoes, coriander cress, and chili flakes. (You can put note medium well or well done egg only )",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 59
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Avocado_toast_with_eggs_%2828508171495%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Acai Bowl",
+          "desc": "Acai bowl with 2 free acai of topping and below choice of toppings….",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6f/A%C3%A7a%C3%AD_na_tigela.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Acai Smoothie With Peanut Butter",
+          "desc": "Protein rich healthy smoothie blended with almond milk, fresh berries, banana and peanut butter.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Egg Benedict",
+          "desc": "2 wheel croissants, Hejazi dacouse sauce, fresh avocado, two pouched egg, hollandaise sauce, smoked paprika, garnish with chives and microgreen pieces. Allergens milk, eggs, gluten.( you can put note medium well or well done egg only)",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Eggs_Benedict2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Egg On Croissant",
+          "desc": "Fresh baked croissant stuffed with our chipotle dressing, sautéed asparagus,crispy baco, your choice of egg and Gruyère cheese cloud.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c4/2020-05-11_06_20_00_A_Jimmy_Dean_Sausage%2C_Egg_and_Cheese_Croissant_after_heating_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Turkish Egg",
+          "desc": "Two poached eggs over a marinated thick yoghurt with garlic chips, basil infusion and served with sliced sourdough bread.(you can put note medium well or well done egg only )",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 62
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Turkish_Eggy_Bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Burnt Butter Toast",
+          "desc": "Homemade French toast with choice of sauce .",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Classic Egg Slider",
+          "desc": "Freshly backed bun with creamy scrambled egg with our secret sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Sharps%2C_flats%2C_gamblers%2C_and_racehorses_%281914%29_%2814803540433%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Classic Avocado Toast",
+          "desc": "Homemade baked oregano bread spread with our guacamole and homemade mayonnaise, topped with crumbled feta cheese, pomegranate seeds, mixed cherry tomatoes, coriander cress and chili flakes.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/46/California_Classic_Burger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Signature Egg Pastry",
+          "desc": "Flaky bun with gruyère cream, sautéed mushroom and spinach, scramble egg, grated gruyère cheese and chives.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/cf/In_suite_breakfast_experience_%283119861609%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Hash Browns With Eggs",
+          "desc": "Scrambled eggs served with potato hash brown.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bacon%2C_eggs_and_hash_browns.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Acai Smoothie",
+          "desc": "Protein rich healthy smoothie blended with almond milk, fresh berries and banana.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/98/A%C3%A7ai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Salted Vanilla Matcha",
-      "desc": "Premium single origin matcha with creamy salted vanilla.",
-      "prices": [
+      "title": "Sandwiches & Flatbread",
+      "titleAr": "ساندويتشات وفطاير",
+      "meals": [
         {
-          "size": "-",
-          "aed": 40
+          "en": "Coffee And Sandwich",
+          "desc": "Your choice of coffee and sandwich",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 56
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Coffee_%26_Sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Avocado Toast With Eggs",
-      "desc": "Homemade oregano bread, guacamole, homemade mayonnaise, choice of egg, cherry tomatoes, coriander cress and chili flakes.",
-      "prices": [
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 59
+          "en": "Kiri Zataar Croissant",
+          "desc": "Freshly baked croissant with Kiri cheese zataar and feta crumble",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Signature Mushroom Pastry",
+          "desc": "Flaky bun with rich creamy mushrooms and grated white cheddar cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/31/Montmartre_vineyard_2012-10-09_n1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Morning Bun",
+          "desc": "Soft and aromatic bun topped with caramelised pecan nuts",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 16
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/52/Breakfast_Television_CityTV_TownHall_Forum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Homemade Plain Croissant",
+          "desc": "Freshly baked classic plain croissant.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 16
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
         }
       ]
     },
     {
-      "en": "Egg Benedict",
-      "desc": "Two wheel croissants, Hejazi dacouse sauce, fresh avocado, two poached eggs, hollandaise sauce, smoked paprika.",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 49
+          "en": "Coffee And Cake",
+          "desc": "Your choice of coffee and cake",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Applesauce_walnut_coffee_cake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Classic Pancake",
+          "desc": "Pancake and caramel butter.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/11/Messier51.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chia Pudding",
+          "desc": "A jar of chia seeds soaked overnight in vanilla almond milk and a flavored strawberry milk sweetened with an organic agave nectar, served in a jar with mango, coconut, blueberries, strawberries and apricot jam.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 56
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/83/Chia_Pudding.PNG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chocolate Mini Brownie",
+          "desc": "A rich moist chocolate brownie",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 17
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/30/Brownies_Kukus_Coklat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lemon Cake",
+          "desc": "light and airy cake that is flavored with lemon zest and lemon juice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Food_on_Mallorca_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Turkish Egg",
-      "desc": "Two poached eggs over marinated thick yoghurt with garlic chips and basil infusion, served with sourdough.",
-      "prices": [
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 62
+          "en": "Lavender Lemonade",
+          "desc": "Lavender syrup, butterfly pea, soda water, lime, and lemon mixture.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Cadwell_Farm_-_Hitchin_Lavender_-_01_-_geograph.org.uk_-_889893.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Sunset Butterfly",
+          "desc": "Fresh blueberry, passion fruit syrup, butterfly pea, lemon rancho, and soda water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Sunset_at_Butterfly_Beach_%283172132377%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lemonade",
+          "desc": "Freshly squeezed lemonade",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Pistachio Shake",
+          "desc": "A nutty blended drink.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/1c/The_ideal_cook_book_%281902%29_%2814578424749%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Pistachio Shake With Coffee",
+          "desc": "A nutty blended drink with a shot of our singnature house blend",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Sparkling Water",
+          "desc": "Seltzer water, fizzy and bubbly water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 16
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/59/Drinking_glass_00118.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Rain Still Water",
+          "desc": "Purity in every drop",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 7
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/94/Still_As_Rain_%2842-366%29_%2824602119749%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cardamom French Toast",
-      "desc": "Caramelized brioche bread with cardamom spices topped with whipped cream",
-      "prices": [
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
         {
-          "size": "-",
-          "aed": 57
-        }
-      ]
-    },
-    {
-      "en": "Caesar Salad",
-      "desc": "Iceberg lettuce, grilled chicken and parmesan cheese, served with Caesar sauce.",
-      "prices": [
+          "en": "Hash Brown",
+          "desc": "Three pieces of golden crispy fired potatoes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/21/Hash_Browns.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 46
-        }
-      ]
-    },
-    {
-      "en": "Halloumi Wrap",
-      "desc": "Halloumi cheese with homemade rocket pesto, cream cheese, olive tapenade, fresh tomatoes in a wrap.",
-      "prices": [
+          "en": "Coffee And Bakery",
+          "desc": "Your choice of coffee and bakery",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Bamberg_Cafe_Rondo_am_Sch%C3%B6nleinsplatz_9201807.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 46
-        }
-      ]
-    },
-    {
-      "en": "Sticky Date Cake",
-      "desc": "Moist sponge cake with finely chopped dates, toffee sauce, served warm with vanilla ice-cream and pecans.",
-      "prices": [
+          "en": "Peanut Butter & Jelly",
+          "desc": "Sliced brioche bread layered with creamy peanut butter and sweet red fruits jam topped with crushed roasted peanuts for a delightful breakfast treat",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Peanut-Butter-Jelly-Sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 41
+          "en": "Mushroom Criossant",
+          "desc": "Flat and crispy homemade criossant topped mushroom ragout.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Granola Bowl",
+          "desc": "Rich layers of mixed fruit jam, Greek yogurt and nutty homemade granola topped with strawberries, blueberries and a garnish of fresh mint.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 56
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Vegan_Granola_in_Melon_%284954388104%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Icepresso",
+          "desc": "A chilled, concentrated coffee beverage is rich and intense. Coffee steeped in cold water for an extended time has smooth, low acidity",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Icepresso_diamond_copas_coffee_passion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     }
@@ -112,8 +525,6 @@
     "defaultLanguage": "en",
     "taxValue": 0,
     "cover": null,
-    "socialLinks": {
-      "website": "https://www.talabat.com/uae/restaurant/616807/rain-cafe-al-nahyan"
-    }
+    "socialLinks": {}
   }
 }

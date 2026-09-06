@@ -1,117 +1,1171 @@
 {
   "venue": "78 Lounge",
-  "source": "https://www.talabat.com/uae/restaurant/773148/78-lounge-cafe-al-jimi (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Breakfast",
-  "sectionAr": "قهوة وإفطار",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/773148/78-lounge-cafe-al-jimi, 2026-09-06 (Talabat — no Drivu listing found for this venue)",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
     {
-      "en": "Espresso",
-      "desc": "Small, concentrated coffee made by forcing hot water through finely ground beans under high pressure",
-      "prices": [
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 23
+          "en": "Long Black",
+          "desc": "A strong coffee created by pouring double shot of espresso over hot water, which preserves the rich foam crema on top.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nero_Espresso_long_black_%283168418775%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Espresso",
+          "desc": "small, concentrated coffee made by forcing hot water through finely ground beans under high pressure",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/41/Espresso_BW_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cortado",
+          "desc": "Coffee and milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/16/Caf%C3%A9Cortado%28Tallat%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Espresso Macchiato",
+          "desc": "Rich espresso shots topped with velvety steamed milk foam creating a perfect balance of bold coffee flavor and creamy texture",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/61/Latte_macchiato_with_coffee_beans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Piccolo",
+          "desc": "Coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Cream_pitcher_MET_DP208410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Flat White",
+          "desc": "Velvety smooth espresso blended with steamed milk and a thin layer of microfoam creating a rich creamy coffee experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Flat_White_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cappuccino",
+          "desc": "Creamy cappuccino crafted with rich espresso and velvety steamed milk topped with a smooth foam layer for the perfect balance of strength and smoothness",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cappuccino_at_ARS_Cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Spanish Cortado",
+          "desc": "Coffee and sweetener",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Cortado-leche-y-leche.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Spanish Piccolo",
+          "desc": "A bold and intense Spanish-style piccolo espresso shot with rich crema and deep roasted flavor notes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Saffron Latte",
+          "desc": "Creamy latte infused with aromatic saffron threads and warm spices creating a luxurious golden beverage with delicate floral notes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Rasgulla_With_Rabdi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Dirty Latte",
+          "desc": "Rich espresso shots blended with creamy steamed milk and a shot of sweet caramel for a bold indulgent coffee experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/af/Dirty_Matcha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Strawberry Matcha Latte",
+          "desc": "A delightful fusion of vibrant matcha green tea and fresh strawberry flavors. Smooth creamy and perfectly balanced with a subtle sweetness that creates an unforgettable beverage experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/80/Cold_drinks_at_Granny%27s_Caf%C3%A9_2025-06-23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Banana Matcha Latte",
+          "desc": "Creamy banana matcha latte blending smooth matcha powder with fresh banana and steamed milk for a delightful green tea beverage with natural sweetness",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Cinnamon_Banana_and_Butterscotch_Cr%C3%AApe_-_Cr%C3%AApeaffaire%2C_Brighton_2024-03-19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "HOT CHOCOLATE",
+          "desc": "Hot chocolate drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/67/1998_hot_chocolate_cologne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Long Black",
-      "desc": "A strong coffee created by pouring double shot of espresso over hot water, preserving the crema.",
-      "prices": [
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 25
+          "en": "Cold Brew",
+          "desc": "Brewing method where coarse coffee grounds are steeped in cold water for a long period 12 to 24 hours",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Oji_Cold_Brew_System.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Affogato",
+          "desc": "Espresso shot with ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/19/Affogato.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ice Matcha",
+          "desc": "Matcha and milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Iced_Matcha_Latte_from_McCafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ice Cream Banana Pudding",
+          "desc": "Creamy ice cream blended with ripe banana and smooth pudding for creating a delightful frozen dessert with rich tropical flavors",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Ice_cream_from_Smithys_%283808420074%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Peach Lemon Ice Tea",
+          "desc": "Refreshing blend of chilled tea infused with sweet peach and tart lemon flavors served over ice for the perfect thirst quenching beverage",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/62/The_Boston_Cooking_School_magazine_of_culinary_science_and_domestic_economics_%281913%29_%2814777809375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Flat White",
-      "desc": "Velvety smooth espresso blended with steamed milk and a thin layer of microfoam.",
-      "prices": [
+      "title": "Manual Brew",
+      "titleAr": "قهوة مقطرة يدوياً",
+      "meals": [
         {
-          "size": "-",
-          "aed": 27
+          "en": "Chemex",
+          "desc": "A type of pour over coffee made by pouring hot water over ground coffee in a thick, proprietary paper filter",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Die_Chemex_6_Cup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Sweet Melon",
+          "desc": "Filtered coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Pinacolada",
+          "desc": "Filtered coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Tobacco",
+          "desc": "Filtered coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "V60 Peach And Mango",
+          "desc": "Filtered coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cappuccino",
-      "desc": "Rich espresso and velvety steamed milk topped with smooth foam.",
-      "prices": [
+      "title": "Matcha",
+      "titleAr": "ماتشا",
+      "meals": [
         {
-          "size": "-",
-          "aed": 28
+          "en": "Matcha Cloud",
+          "desc": "A velvety smooth matcha beverage with a delicate cloud-like foam top. Finely ground green tea powder blended to perfection creating a refreshing and energizing drink with a naturally sweet and earthy flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a1/ISS023-E-43315_-_View_of_Tajikistan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Matcha Bloom",
+          "desc": "Vibrant matcha bloom crafted from premium Japanese green tea powder whisked to silky perfection and served as an invigorating beverage",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/66/Four_cheese_%26_onion_toastie_and_vanilla_sea_salt_matcha_-_Bloom_Cafe%2C_Holy_Trinity_Brompton_2026-09-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Matcha Frappe",
+          "desc": "Matcha, vanilla and ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Vanilla_Matcha_Frapp%C3%A9_-_McDonald%27s_2026-06-23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cloudy Mango Matcha",
+          "desc": "A refreshing blend of premium matcha powder combined with creamy mango puree and a hint of tropical sweetness. This cloudy matcha beverage delivers a smooth velvety texture with vibrant fruity notes, perfect for any time of day.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Matcha_green_tea_latte_art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Sea salt Vanilla Matcha",
+          "desc": "Delicate matcha powder blended with creamy vanilla and finished with a subtle hint of sea salt for a perfectly balanced and refreshing beverage",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/66/Four_cheese_%26_onion_toastie_and_vanilla_sea_salt_matcha_-_Bloom_Cafe%2C_Holy_Trinity_Brompton_2026-09-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cloudy Ocean Breeze Matcha",
+          "desc": "A refreshing matcha beverage with a cloudy, creamy texture reminiscent of ocean mist. Smooth whisked matcha green tea blended with velvety milk and a hint of sweetness for a calming, invigorating drink.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Matcha_green_tea_latte_art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cortado",
-      "desc": "Coffee and milk",
-      "prices": [
+      "title": "Breakfast",
+      "titleAr": "إفطار",
+      "meals": [
         {
-          "size": "-",
-          "aed": 26
+          "en": "Acai Bowl",
+          "desc": "Acai with strawberries granula and peanut butter",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6f/A%C3%A7a%C3%AD_na_tigela.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Avocado Toast",
+          "desc": "Sourdough bread with labneh and avocado",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Avocado_toast_with_sesame_seeds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Acai Smoothie",
+          "desc": "Acai juice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/98/A%C3%A7ai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Turkish Egg",
+          "desc": "Greek Yoghurt with Chilli Oil",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Turkish_Eggy_Bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Shakshuka",
+          "desc": "spice shakshuka with pita bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "French Toast",
+          "desc": "Fluffy French toast slices dipped in egg batter and pan fried until golden brown topped with rich caramel sauce and fresh mixed berries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/42/FrenchToast.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Egg Benedict",
+          "desc": "Flaky croissant layered with fresh spinach and perfectly cooked eggs, topped with creamy hollandaise sauce for a classic breakfast delight",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Eggs_Benedict2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Poached Egg With Avocado Toast",
+          "desc": "Sourdough bread with avocado, labneh mix and eggs",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/64/Poached_With_Avo_and_Salmon_%286433842371%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Greek Egg",
+          "desc": "Traditional Greek style eggs cooked with fresh tomatoes feta cheese and aromatic herbs",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Avgolemono_Soup_and_Grilled_Chicken_and_Mango_Salad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cold Brew",
-      "desc": "Coarse coffee grounds steeped in cold water for 12 to 24 hours",
-      "prices": [
+      "title": "Sandwiches & Flatbread",
+      "titleAr": "ساندويتشات وفطاير",
+      "meals": [
         {
-          "size": "-",
-          "aed": 39
+          "en": "Halloumi Sandwich",
+          "desc": "grilled halloumi with tomato and bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Halloumi_%26_Roasted_Vegetables_sandwich_-_Sunbirds_2023-09-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Tuna Sandwich",
+          "desc": "tuna with vegetables and bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Club Sandwich",
+          "desc": "Chicken, egg and baked potato",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Club-sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Chemex",
-      "desc": "Pour over coffee made by pouring hot water over ground coffee in a thick paper filter",
-      "prices": [
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 39
+          "en": "Cheese Croissant",
+          "desc": "croissant with cheddar cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/30/Ham_and_cheese_croissant_-_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chocolate Croissant",
+          "desc": "Flaky and buttery pastry with a rich chocolate center.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Chocolate_croissant_at_Baker_and_Cook_-_09-03-2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Plain Croissant",
+          "desc": "Flaky and buttery pastry",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/06/Glass_fabric.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Almond Croissant",
+          "desc": "Buttery pastry filled and topped with sweet almonds.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b0/La_parisienne_almond_croissant.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Pita Bread",
+          "desc": "homemade bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Simit Bread",
+          "desc": "Extra Bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 10
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/07/Simit-2x.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Brioche bread",
+          "desc": "extra bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Brioche.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "sourdough bread",
+          "desc": "extra bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Home_made_sour_dough_bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Affogato",
-      "desc": "Espresso shot with ice cream",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 29
+          "en": "Chocolava",
+          "desc": "hot choco cake with hot chocolate sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/95/Chocolate_lava_cake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Saffron Cake",
+          "desc": "saffron milk cake with crunchy",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 54
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Saffron_bun_20051213_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Date Pudding",
+          "desc": "Date cake with toffee sauce 7 vanilla ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Sticky_toffee_pudding_%283293816894%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Banana Pudding",
+          "desc": "Banana pudding with peanut butter sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/46/Banana_pudding%2C_homemade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Alain Choco Ball",
+          "desc": "Soft brownie, fruit, ice cream and peanut butter",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/14/Rum_ball_cookies.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Tiramisu",
+          "desc": "Coffee biscuits with cream and choco powder",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Dessert_Tiramisu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Blue And Rose Cheesecake",
+          "desc": "Cheese cake served with berries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "London Cake",
+          "desc": "A delightful sponge cake layered with smooth cream and topped with a glossy chocolate coating. Light fluffy and perfectly balanced for any occasion.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Tottenham_cake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chocolate",
+          "desc": "Chocolate",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/7a/B%C3%BBche_de_No%C3%ABl_chocolat_framboise_maison.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mini cheesecake",
+          "desc": "Delicate mini cheesecake with a buttery graham cracker crust and creamy filling topped with fresh berries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chocolate Milkshake",
+          "desc": "Creamy chocolate milkshake blended with rich cocoa and smooth milk topped with whipped cream and a sprinkle of chocolate shavings",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Burger_King_Chocolate_Milkshake_%2843925151774%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Saffron Latte",
-      "desc": "Creamy latte infused with aromatic saffron threads and warm spices.",
-      "prices": [
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 40
+          "en": "Summer Mango Small",
+          "desc": "Refreshing blended smoothie made with fresh ripe mangoes delivering tropical sweetness and creamy texture in every sip",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/35/KERI_PANA_WITH_PUDINA_LEAVES.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Summer Mango Smoothie Large",
+          "desc": "Refreshing large smoothie blended with ripe sweet mango puree creamy yogurt and a splash of tropical coconut milk Perfect for hot summer days",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/09/Fresh-mango-smoothie_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Hibiscus",
+          "desc": "Hibiscus leaves blended with cold water and a hint of sugar",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/32/Hibiscus_rhodanthus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Orange Juice",
+          "desc": "Fresh squeezed orange juice bursting with natural citrus flavor and vibrant sweetness",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Orange_juice_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Fresh Watermelon Juice",
+          "desc": "Refreshing watermelon juice freshly extracted and served chilled. A naturally sweet and hydrating beverage bursting with tropical flavors perfect for hot days",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/32/Garuda_Indonesia_Meal_Business_Class.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Passion Fruit Orange Juice",
+          "desc": "Refreshing blend of passion fruit and orange juice bursting with tropical flavors and natural sweetness. A vibrant and invigorating drink perfect for any time of day.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/cf/In_suite_breakfast_experience_%283119861609%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ruby Hibiscus Fizz",
+          "desc": "Refreshing ruby hibiscus fizz bursting with tart floral notes and natural sweetness. A vibrant infused beverage perfect for any occasion.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/61/Homemade_sorrel_drink.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Sparkling Water",
+          "desc": "Water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/59/Drinking_glass_00118.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Still Water",
+          "desc": "Water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/40/Still_Water_sculpture%2C_Marble_Arch%2C_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Strawberry spark mojito",
+          "desc": "STRAWBERRY FIZZY DRINK",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/19/Pozole_at_La_Casa_Restaurant_-_November_2023_-_Sarah_Stierch_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Passion Wave Mojito",
+          "desc": "Passion fruit fizzy drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Black tea",
+          "desc": "A robust and aromatic black tea with rich flavor and deep amber color",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Black-tea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Berry Fusion Herbal Tea",
+          "desc": "herbal tea",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/13/Carmona_retusa_%281355456161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Tropical Harmony Green Tea",
+          "desc": "herbal tea",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cup_of_green_tea_and_tea_pot_on_table.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Pistachio Milkshake",
+          "desc": "Creamy pistachio milkshake blended with fresh milk and topped with whipped cream and crushed pistachios for a rich nutty flavor",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Pistachios_gelato_Milkshakes_-_domed_plastic_cup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "STRAWBERRY MILKSHAKE",
+          "desc": "Creamy strawberry milkshake blended with fresh ripe strawberries and smooth vanilla ice cream topped with whipped cream and a fresh strawberry garnish",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/42/Strawberry_milkshake_-_close-up_straw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "OREO MILKSHAKE",
+          "desc": "Creamy and indulgent milkshake blended with crushed OREO cookies and smooth vanilla ice cream topped with whipped cream and cookie crumbles",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Lotus Milkshake",
+          "desc": "Creamy Lotus milkshake blended with smooth Lotus biscuit pieces and chilled milk creating a delightful caramel flavored treat perfect for any time",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Biscoff_Shake_-_The_Vurger_Co.%2C_Brighton.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Strawberry Lemonade",
+          "desc": "Refreshing blend of fresh strawberries and tangy lemon juice served ice cold. A perfect thirst quencher with natural sweetness and bright citrus notes.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Four_ingredient_strawberry_lemonade_1_%289163342512%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ginger Lemonade",
+          "desc": "Refreshing ginger lemonade crafted with fresh squeezed lemons and zesty sour ginger root served ice cold for the perfect thirst quenching beverage",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/94/Medical_bills._Wellcome_L0027558.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lemon Mint Beverage",
+          "desc": "Refreshing lemon mint beverage crafted with fresh squeezed lemon juice aromatic mint leaves and a touch of sweetness served ice cold for the perfect thirst quenching experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Lemon_under_the_water.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Acai Bowl",
-      "desc": "Acai with strawberries, granola and peanut butter",
-      "prices": [
+      "title": "Main Dishes",
+      "titleAr": "أطباق رئيسية",
+      "meals": [
         {
-          "size": "-",
-          "aed": 47
+          "en": "78 Salad",
+          "desc": "Bread labneh with rocket leaves",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/cd/%22Onion_salad%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Avo Mushroom",
-      "desc": "Sourdough bread, avo mix, crumble egg, mushroom sauce, rocket leaves",
-      "prices": [
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
         {
-          "size": "-",
-          "aed": 41
+          "en": "Avo Mushroom",
+          "desc": "Sourdough bread Avo mix, Crumble egg, Mushroom sauce, Rocket leaves",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Club_Big_Breakfast%2C_The_Coffee_Club_Riverton%2C_2026_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Creamy espresso small",
+          "desc": "espresso shot with ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Huai_Nam_Dang_National_Park%2C_Espresso_coffee_cup%2C_Tree_stump%2C_Thailand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Creamy espresso large",
+          "desc": "espresso shot with ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Huai_Nam_Dang_National_Park%2C_Espresso_coffee_cup%2C_Tree_stump%2C_Thailand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Khabeesa",
+          "desc": "Semolina with homemade sauce and ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 52
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "soufflé",
+          "desc": "Delicate layers of sweet cream and rich vanilla flavors topped with fresh berries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Salzburger_Nockerln.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "78 Caramel Pecan Kunafa",
+          "desc": "Delicate shredded kunafa pastry layered with creamy caramel and roasted pecans then drizzled with gold leaf for an elegant finish",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Knafeh_From_Yaffa_Knafeh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Balkayma",
+          "desc": "Croissant filled with Crumble egg, honey and cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Knafeh_From_Yaffa_Knafeh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Turkish Omlette",
+          "desc": "White bread Turkish style omelette",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/93/FrenchMarketTurkeyOmlette.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "78 Breakfast",
+          "desc": "Fluffy eggs paired with warm grilled halloumi cheese, creamy labneh, and fresh warm bread for a satisfying breakfast",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Secretary_Kerry_Held_a_Working_Breakfast_With_German_Foreign_Minister_Steinmeier_at_the_Imperial_Hotel_%2819126633233%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Crossing Parmesan",
+          "desc": "Crossiant with scrambled egg mushroom sauce and parmesan cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "kiri cruffing",
+          "desc": "crossiant with kiri cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/72/LuneCruffinBox.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Extras",
+          "desc": "Peanut Butter",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Polydactyly_01_Lhand_AP.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Extra Cheese",
+          "desc": "Extra Cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Marmite_and_cheese_on_toast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Pistachio Tart",
+          "desc": "Pistachio Tart",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Grace_French_double_pistachio_thick_tart.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Strawberry Tart",
+          "desc": "Delicate strawberry tart featuring a buttery pastry shell filled with smooth vanilla cream and topped with fresh ripe strawberries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Strawberry_Pie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Summer Punch Drink",
+          "desc": "A refreshing tropical blend of fresh citrus fruits and berries served ice-cold with a splash of sparkling soda for the perfect summer refreshment",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Southern_Bourbon_Punch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Candy Bliss Delight",
+          "desc": "A delightful iced beverage bursting with vibrant candy flavors and sweet notes. Refreshingly smooth and perfectly chilled for a blissful treat enjoyable experience.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Raspberry_chocolate_truffle_from_Mary_Ann%27s_Chocolates_Dessert%2C_March_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     }
@@ -123,8 +1177,7 @@
     "taxValue": 0,
     "cover": null,
     "socialLinks": {
-      "instagram": "https://www.instagram.com/78lounge.uae",
-      "website": "https://www.talabat.com/uae/restaurant/773148/78-lounge-cafe-al-jimi"
+      "instagram": "https://instagram.com/78lounge.uae"
     }
   }
 }

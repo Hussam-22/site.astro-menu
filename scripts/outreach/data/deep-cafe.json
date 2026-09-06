@@ -1,0 +1,984 @@
+{
+  "venue": "DEEP Cafe & Roastery",
+  "source": "https://www.talabat.com/uae/restaurant/782812/deep-cafe-roastery-al-jimi (prices/descriptions) + https://drivu.co/DriveThru/Deep_Cafe_Ell8l/Al_Jimi (photos), both 2026-09-06",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
+    {
+      "title": "Retail & Beans",
+      "titleAr": "قهوة وبضائع للبيع",
+      "meals": [
+        {
+          "en": "NICARAGUA ARABIC COFFEE BEANS",
+          "desc": "ARABIC COFFEE 1 KG",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 180
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252554/small_Arabic_Coffee.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
+        {
+          "en": "Americano",
+          "desc": "Smooth espresso diluted with hot water, classic style.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/234406/small_Foamy_Ice_Americano.jpeg"
+        },
+        {
+          "en": "Espresso",
+          "desc": "Strong, bold shot of pure espresso for coffee lovers.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 17
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152788/small_Double_Espresso.jpeg"
+        },
+        {
+          "en": "Macchiato",
+          "desc": "Espresso topped with a small layer of foamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152782/small_Macchiato.jpeg"
+        },
+        {
+          "en": "Piccolo",
+          "desc": "Small, strong latte with rich espresso flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152780/small_Piccolo.jpeg"
+        },
+        {
+          "en": "Cortado",
+          "desc": "Equal parts espresso and warm milk for a balanced taste.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152790/small_Cortado.jpeg"
+        },
+        {
+          "en": "Flat White",
+          "desc": "Velvety steamed milk over rich espresso.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152787/small_Flat_White.jpeg"
+        },
+        {
+          "en": "Cappuccino",
+          "desc": "Classic cappuccino with creamy froth and espresso.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152791/small_Flat_White.jpeg"
+        },
+        {
+          "en": "Caffe Latte",
+          "desc": "Smooth espresso with a generous amount of steamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Caff%C3%A8_Latte_at_Sainsbury%27s_Low_Hall%2C_Chingford%2C_London_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Spanish Latte",
+          "desc": "Creamy latte with a rich, caramel-like sweetness.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152769/small_Ice_Spanish_Latte.jpeg"
+        },
+        {
+          "en": "Dirty Espresso",
+          "desc": "Bold espresso shots blended with smooth caramel and cream for a rich indulgent cold coffee experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/284633/small_WhatsApp_Image_2026-06-06_at_6.22.55_PM.jpeg"
+        },
+        {
+          "en": "Hot Matcha Latte",
+          "desc": "Warm, frothy green tea latte with matcha flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152783/small_Hot_Matcha.jpeg"
+        },
+        {
+          "en": "Hot V60",
+          "desc": "Hand-brewed V60 coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252550/small_ChatGPT_Image_Jan_15__2026__11_00_19_PM.png"
+        },
+        {
+          "en": "Hot Emirati V60",
+          "desc": "Specialty Emirati hand-brewed coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252552/small_ChatGPT_Image_Jan_15__2026__10_57_36_PM.png"
+        },
+        {
+          "en": "Hot Chemex",
+          "desc": "Smooth, clean coffee brewed with Chemex.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Hawksmoor%2C_Guildhall%2C_London_%286548176575%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Hot Aeropress",
+          "desc": "Rich, aromatic coffee brewed via Aeropress.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        }
+      ]
+    },
+    {
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
+        {
+          "en": "Iced Matcha Latte",
+          "desc": "Chilled matcha latte, refreshing and creamy.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152770/small_Ice_Matcha_Latte.jpeg"
+        },
+        {
+          "en": "Iced Spanish Latte",
+          "desc": "Sweetened iced latte with condensed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152769/small_Ice_Spanish_Latte.jpeg"
+        },
+        {
+          "en": "Iced Latte",
+          "desc": "Cold milk blended with espresso over ice.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152771/small_Ice_Spanish_Latte.jpeg"
+        },
+        {
+          "en": "Iced Americano",
+          "desc": "Chilled espresso with water, light and refreshing.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/234406/small_Foamy_Ice_Americano.jpeg"
+        },
+        {
+          "en": "Iced V60",
+          "desc": "Chilled hand-brewed V60 coffee,",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252551/small_Iced_V60_Peach.jpeg"
+        },
+        {
+          "en": "Foamy Iced Americano",
+          "desc": "Iced Americano with frothy milk topping.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/234406/small_Foamy_Ice_Americano.jpeg"
+        },
+        {
+          "en": "Peach Iced Tea",
+          "desc": "Chilled peach-flavored iced tea.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/239624/small_Peach_Ice_Tea.jpeg"
+        },
+        {
+          "en": "Hot or Iced Moka Pot",
+          "desc": "Classic stove-top brewed coffee, strong flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Iced Emirati V60",
+          "desc": "Cold-brewed Emirati specialty coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252553/small_Cascara_iced_tea.jpeg"
+        },
+        {
+          "en": "Iced Chemex",
+          "desc": "Smooth, cold Chemex-brewed coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Iced Aeropress",
+          "desc": "Cold-brewed Aeropress coffee, refreshing taste.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Cold Brew",
+          "desc": "Slow-steeped cold coffee, smooth and rich.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/203615/small_Ice_Americano.jpeg"
+        },
+        {
+          "en": "Iced Moka Pot",
+          "desc": "Chilled Moka Pot brewed coffee with strong flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Iced Hibiscus",
+          "desc": "Refreshing hibiscus tea served cold.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152751/small_Hibiscus.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Manual Brew",
+      "titleAr": "قهوة مقطرة يدوياً",
+      "meals": [
+        {
+          "en": "V60 Premium Blend",
+          "desc": "Deep rich notes with creamy caramel and a smooth taste",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        }
+      ]
+    },
+    {
+      "title": "Matcha",
+      "titleAr": "ماتشا",
+      "meals": [
+        {
+          "en": "Matcha Strawberry",
+          "desc": "Blended matcha with fresh strawberry flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/35/Green_Tea%2C_Strawberry_%285442102584%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Matcha Coconut Water",
+          "desc": "Refreshing matcha mixed with coconut water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Matcha Mango",
+          "desc": "Sweet and tropical mango matcha drink.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Postres_asi%C3%A1ticos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Oasis Matcha",
+          "desc": "Refreshing matcha beverage blended with sweet dates",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/284632/small_ChatGPT_Image_Jun_3__2026__07_18_11_PM.png"
+        }
+      ]
+    },
+    {
+      "title": "Breakfast",
+      "titleAr": "إفطار",
+      "meals": [
+        {
+          "en": "Honey Fruit Greek Yogurt",
+          "desc": "Greek yogurt topped with honey and fresh fruits.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/187159/small_Honey_fruit_greek_yogurt.jpeg"
+        },
+        {
+          "en": "Honey French Toast",
+          "desc": "Sweet French toast drizzled with honey.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 52
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/187524/small_Honey_french_toast.jpeg"
+        },
+        {
+          "en": "Mango French Toast",
+          "desc": "Golden brioche loaf topped with whipped cream and mango puree.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Acai Smoothie Peanut",
+          "desc": "Nutty acai smoothie with peanut flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        }
+      ]
+    },
+    {
+      "title": "Sandwiches & Flatbread",
+      "titleAr": "ساندويتشات وفطاير",
+      "meals": [
+        {
+          "en": "Katsu Burger",
+          "desc": "Crispy coated chicken served on a soft brioche bun with katsu and BBQ sauce layered with red cabbage cheddar cheese and garlic parmesan sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 39
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267453/small_KATSU_BURGER.jpeg"
+        },
+        {
+          "en": "Smashed Burger",
+          "desc": "Smashed beef patty with melted cheese served in a bun with confit and sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267449/small_SMASHED_BURGER.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
+        {
+          "en": "Triple Cheese Croissant",
+          "desc": "Croissant with three types of cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276909/small_ChatGPT_Image_Feb_7__2026__04_57_53_PM.png"
+        },
+        {
+          "en": "Plain Croissant",
+          "desc": "Classic buttery croissant.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/187161/small_Plain_Croissant.jpeg"
+        },
+        {
+          "en": "Banana Bread Loaf",
+          "desc": "Soft banana loaf, lightly sweet.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152812/small_Banana_bread_loaf.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
+        {
+          "en": "Banana Peanut Pudding",
+          "desc": "Banana pudding topped with peanut crunch.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/203591/small_Banana_Pudding.jpeg"
+        },
+        {
+          "en": "Chocolate Fondant",
+          "desc": "Rich molten chocolate cake, warm and gooey.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/158257/small_Chocolate_fondant.jpeg"
+        },
+        {
+          "en": "Chocolate Cake",
+          "desc": "Classic layered chocolate cake.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 62
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152810/small_Chocolate_cake.jpeg"
+        },
+        {
+          "en": "Date Pudding",
+          "desc": "Sweet sticky pudding with caramel sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/187523/small_Sticky_date_pudding.jpeg"
+        },
+        {
+          "en": "Cheesecake",
+          "desc": "Creamy cheesecake topped with a smooth caramel layer on a crunchy biscuit base served with vanilla ice cream biscuit crumbs and a drizzle of berry sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267441/small_CHEESECAKE.jpeg"
+        },
+        {
+          "en": "Mango Pudding",
+          "desc": "Delicate ladyfinger biscuits layered with kashta cream and topped with luscious mango and passion fruit puree for a tropical delight",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/284634/small_DSC05286__1_.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Snacks & Sides",
+      "titleAr": "سناكس وإضافات",
+      "meals": [
+        {
+          "en": "FRENCH FRIES",
+          "desc": "Classic golden French fries crispy on the outside and soft inside",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267463/small_ChatGPT_Image_Jan_17__2026__10_23_41_PM.png"
+        },
+        {
+          "en": "TRUFFLE FRIES",
+          "desc": "Crispy fries topped with sauce and parmesan cheese finished with shiitake mushrooms and a touch of truffle oil",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267456/small_TRUFFLE_FRIES.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
+        {
+          "en": "Oreo Milkshake",
+          "desc": "Classic milkshake blended with Oreo cookies.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Oreo_milkshake_for_dinner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Pink Lemonade",
+          "desc": "Sweet and tangy pink lemonade.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/203605/small_Pink_Lemonade.jpeg"
+        },
+        {
+          "en": "Emirati Tea",
+          "desc": "Traditional Emirati black tea, aromatic and smooth.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 17
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/92/Arabic_culture.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        }
+      ]
+    },
+    {
+      "title": "Main Dishes",
+      "titleAr": "أطباق رئيسية",
+      "meals": [
+        {
+          "en": "Creamy Pink Sauce Pasta",
+          "desc": "Creamy pink sauce tossed with pasta ,finished with parmesan cheese and basil leaves.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "TRUFFLE PASTA",
+          "desc": "Al dente pasta with sauteed mushrooms in truffle cream, oven finished and served with parmesan cheese",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267452/small_TRUFFLE_PASTA.jpeg"
+        },
+        {
+          "en": "Trio Grill Chicken",
+          "desc": "Grilled chicken served with baby broccoli and baby potatoes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/271033/small_1111.png"
+        },
+        {
+          "en": "FRESH GREEN SALAD",
+          "desc": "Fresh mixed greens with rocket, cucumber, kale, baby broccoli, asparagus, and sun-dried tomato tossed with yuzu mint dressing and a touch of salt",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267457/small_FRESH_GREEN_SALAD.jpeg"
+        },
+        {
+          "en": "CAESAR SALAD",
+          "desc": "Baby gem lettuce tossed with Caesar dressing croutons and parmesan cheese topped with grilled marinated chicken",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 47
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267458/small_CAESAR_SALAD.jpeg"
+        },
+        {
+          "en": "CORN SALAD",
+          "desc": "Grilled corn mixed with rocket kale red cabbage julienne avocado cubes red chili slices and tossed with togarashi dressing",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267459/small_CORN_SALAD.jpeg"
+        },
+        {
+          "en": "Spicy Frice",
+          "desc": "Crispy golden fries dusted with our signature spicy seasoning",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        }
+      ]
+    },
+    {
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
+        {
+          "en": "HONEY PEPPERONI PIZZA",
+          "desc": "Honey pepperoni pizza with melted cheese and a light honey drizzle",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 65
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267982/small_%D8%A8%D8%A8%D8%B1%D9%88%D9%86%D9%8A.jpeg"
+        },
+        {
+          "en": "MARGHERITA PIZZA",
+          "desc": "Classic pizza with tomato sauce topped with melted mozzarella and fresh basil leaves on a perfectly baked crust",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 57
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267983/small_DSC04861.jpeg"
+        },
+        {
+          "en": "Angus Donburi",
+          "desc": "Sauteed mushrooms with rice and sauce topped with grilled beef finished with unagi glaze",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 49
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267450/small_ANGUS_DONBURI.jpeg"
+        },
+        {
+          "en": "CHEESE POTATO CROQUETTES",
+          "desc": "Crispy potato croquettes filled with melted cheese served with garlic parmesan sauce and spicy mayo finished with fresh chives and green oil",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Crispy Fried Shrimp",
+          "desc": "Crispy coated shrimp served with spicy mayo and yuzu mint dressing finished with tobiko and spring onion",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267466/small_FRIED_SHRIMP.jpeg"
+        },
+        {
+          "en": "ANGUS SKEWERS",
+          "desc": "Grilled Angus beef seasoned with salt and pepper glazed with BBQ sauce oven finished with butter cut into squares and served with a glossy BBQ finish",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267455/small_ANGUS_SKEWERS.jpeg"
+        },
+        {
+          "en": "Babyccino",
+          "desc": "Frothy milk with a dash of cocoa, perfect for kids.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152793/small_Babyccino.jpeg"
+        },
+        {
+          "en": "Frappuccino",
+          "desc": "Blended ice cream with coffee and chocolate.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/152774/small_DSC04535_0025_DSC04554.jpg"
+        },
+        {
+          "en": "CLOUD 6",
+          "desc": "A dreamy cold coffee creation with six distinct layers of flavor and texture. Rich espresso blended with creamy milk and topped with a fluffy cloud of whipped cream for an indulgent treat",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267442/small_Cloud_6.jpeg"
+        },
+        {
+          "en": "Coffee Drip Bag",
+          "desc": "Box containing of 10 drip bag",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 100
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Coffee_of_Mucug%C3%AA_Latitude_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "BRAZIL BEANS BOX",
+          "desc": "25 grams x 6.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/77/Brazil_Product_Export_Treemap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "COLOMBIA BEANS BOX",
+          "desc": "25gm x 6",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 60
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "ETHIOPIA HAMASHO COFFEE",
+          "desc": "250 GM",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 90
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "COLOMBIA BEANS",
+          "desc": "نكهة زهرية، أناناس، حبوب الكاكاو 250 غرام",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 95
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Black_Beans_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Ethiopia Hamasho Beans Box",
+          "desc": "Premium Ethiopia Hamasho coffee beans packaged in convenient 25gm sachets with 6 per box Enjoy the distinct floral notes and bright acidity that Ethiopian coffee is renowned for",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 55
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Brazil Beans",
+          "desc": "Caramel orange, Chocolate and raisins 250 GM",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 60
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/24/Feijoada_%C3%A0_brasileira_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Arabic Coffee",
+          "desc": "Traditional Arabic coffee with cardamom aroma.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/252554/small_Arabic_Coffee.jpeg"
+        },
+        {
+          "en": "Sky on Fire",
+          "desc": "Colorful tropical fruit drink with a tangy kick.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/181366/small_Sky_On_Fire.jpeg"
+        },
+        {
+          "en": "PISTACHIO FRAPPE",
+          "desc": "Blended pistachio with milk and Smooth texture. Balanced sweetness.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/267443/small_Pistachio_Frappe.jpeg"
+        }
+      ]
+    }
+  ],
+  "branch": {
+    "title": "DEEP Cafe & Roastery",
+    "currency": "AED",
+    "defaultLanguage": "en",
+    "taxValue": 0,
+    "cover": null,
+    "socialLinks": {}
+  }
+}

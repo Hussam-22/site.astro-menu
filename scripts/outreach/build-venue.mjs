@@ -62,11 +62,18 @@ const mealsByTitle = new Map(
 		.filter((f) => f.sourceVenue === venue.venue)
 		.map((f) => [f.title, f])
 )
-const wanted = venue.meals.map((m) => {
-	const found = mealsByTitle.get(m.en)
-	if (!found) throw new Error(`Meal "${m.en}" not in Firestore — run build-menu.mjs first`)
-	return { docID: found.docID, isActive: true, isNew: false, portions: found.portions }
-})
+const toWanted = (meals) =>
+	meals.map((m) => {
+		const found = mealsByTitle.get(m.en)
+		if (!found) throw new Error(`Meal "${m.en}" not in Firestore — run build-menu.mjs first`)
+		return { docID: found.docID, isActive: true, isNew: false, portions: found.portions }
+	})
+
+// A real menu has categories (Coffee, Breakfast, Desserts...), not one flat
+// list — `sections` (plural) is the normal shape now. `section`/`sectionAr`
+// on the old single-category files still works unchanged.
+const sections = venue.sections ?? [{ title: venue.section, titleAr: venue.sectionAr, meals: venue.meals }]
+const totalMeals = sections.reduce((n, s) => n + s.meals.length, 0)
 
 /* --- 3. the branch and its social-QR table ------------------------------- */
 const b = venue.branch
@@ -74,8 +81,8 @@ let branchID = await byTitle(`${ROOT}/branches`, b.title)
 
 if (DRY) {
 	console.log(`  menu    ${menuID ? 'update' : 'create'}  "${menuTitle}"`)
-	console.log(`  section create  "${venue.section}" with ${wanted.length} meals`)
-	console.log(`  branch  ${branchID ? 'update' : 'create'}  "${b.title}"  ${b.currency}`)
+	for (const s of sections) console.log(`  section create  "${s.title}" with ${s.meals.length} meals`)
+	console.log(`  branch  ${branchID ? 'update' : 'create'}  "${b.title}"  ${b.currency}  (${totalMeals} meals total)`)
 	console.log('\n--dry: nothing written.')
 	process.exit(0)
 }
@@ -90,24 +97,28 @@ console.log(`  menu     ${menuID}  "${menuTitle}"`)
 // The section carries the meal list twice: `meals` for rendering and
 // `mealsQueryArray` for lookups. Both must agree or the menu renders short.
 const sectionsCol = `${ROOT}/menus/${menuID}/sections`
-let sectionID = await byTitle(sectionsCol, venue.section)
-const sectionDoc = {
-	title: venue.section,
-	order: 1,
-	isActive: true,
-	menuID,
-	businessProfileID: BP,
-	meals: wanted,
-	mealsQueryArray: wanted.map((m) => m.docID),
-	translation: { ar: { title: venue.sectionAr } },
-	translationEdited: { ar: { title: venue.sectionAr } }
+for (let i = 0; i < sections.length; i++) {
+	const s = sections[i]
+	const sWanted = toWanted(s.meals)
+	let sectionID = await byTitle(sectionsCol, s.title)
+	const sectionDoc = {
+		title: s.title,
+		order: i + 1,
+		isActive: true,
+		menuID,
+		businessProfileID: BP,
+		meals: sWanted,
+		mealsQueryArray: sWanted.map((m) => m.docID),
+		translation: { ar: { title: s.titleAr ?? s.title } },
+		translationEdited: { ar: { title: s.titleAr ?? s.title } }
+	}
+	if (sectionID) await updateDoc(`${sectionsCol}/${sectionID}`, put({ ...sectionDoc, docID: sectionID }))
+	else {
+		sectionID = autoId()
+		await createDoc(sectionsCol, put({ ...sectionDoc, docID: sectionID }), sectionID)
+	}
+	console.log(`  section  ${sectionID}  "${s.title}"  ${sWanted.length} meals`)
 }
-if (sectionID) await updateDoc(`${sectionsCol}/${sectionID}`, put({ ...sectionDoc, docID: sectionID }))
-else {
-	sectionID = autoId()
-	await createDoc(sectionsCol, put({ ...sectionDoc, docID: sectionID }), sectionID)
-}
-console.log(`  section  ${sectionID}  "${venue.section}"  ${wanted.length} meals`)
 
 const branchDoc = {
 	title: b.title,

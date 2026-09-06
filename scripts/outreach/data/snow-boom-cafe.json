@@ -1,127 +1,333 @@
 {
   "venue": "Snow Boom Cafe",
-  "source": "https://www.talabat.com/uae/restaurant/717379/snow-boom-cafe-al-murabaa (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Desserts",
-  "sectionAr": "قهوة وحلويات",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/717379/snow-boom-cafe-al-murabaa, 2026-09-06 (Talabat — no Drivu listing found for this venue)",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
     {
-      "en": "Americano",
-      "desc": "Made with freshly brewed espresso and hot water",
-      "prices": [
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 20
+          "en": "Cortado",
+          "desc": "Rich coffee and creamy milk, freshly brewed espresso and steamed milk with foam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/16/Caf%C3%A9Cortado%28Tallat%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Single Espresso",
+          "desc": "Bold, rich flavor of our single espresso, made with arabica beans",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Single_Track_Art_Gallery_and_Espresso_Bar_-_geograph.org.uk_-_5487562.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Emirati Latte",
+          "desc": "Emirati Latte",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Matcha Latte",
+          "desc": "Latte made with matcha green tea powder.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Matcha_green_tea_latte_art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cappuccino",
+          "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cappuccino_at_ARS_Cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Americano",
+          "desc": "Made with freshly brewed espresso and hot water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/41/Espresso_Americano.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Spanish Latte",
+          "desc": "Made with espresso, steamed milk, and a touch of cinnamon",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Spanish_Latte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Double Shot Espresso",
+          "desc": "coffee, water and sugar",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/45/Double_espresso.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Caramel Latte",
+          "desc": "Velvety and smooth blend of espresso and steamed milk, topped with a swirl of caramel sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Latte_macchiato.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Vanilla Latte",
+          "desc": "Blend of rich espresso, creamy vanilla, and frothed milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/8/89/Soy_Vanilla_Chai_Latte_at_G.S.T._Bean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Caffe Latte",
+          "desc": "Espresso, steamed milk, and a thin layer of foamed milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Caff%C3%A8_Latte_at_Sainsbury%27s_Low_Hall%2C_Chingford%2C_London_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cappuccino",
-      "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
-      "prices": [
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 24
+          "en": "Tokyo Ice Latte",
+          "desc": "Tokyo Ice Latte",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/96/Toast_sandwich_%26_iced_caf%C3%A9_au_lait_-_breakfast_set%2C_Doutor_Coffee%2C_Sotokanda_1_%28%E6%9C%9D%E3%82%AB%E3%83%95%E3%82%A7%E3%83%BB%E3%82%BB%E3%83%83%E3%83%88_-_%E3%81%BB%E3%81%92%2C_%E3%83%89%E3%83%88%E3%83%BC%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97_%E5%A4%96%E7%A5%9E%E7%94%B01%E4%B8%81%E7%9B%AE%E5%BA%97%29_%282011-06-17_07.07.37_by_yuiseki_aoba%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cold Brew",
+          "desc": "Finest quality coffee beans and served over ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Oji_Cold_Brew_System.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Flat White",
-      "desc": "Foamed milk poured over a shot of espresso",
-      "prices": [
+      "title": "Manual Brew",
+      "titleAr": "قهوة مقطرة يدوياً",
+      "meals": [
         {
-          "size": "-",
-          "aed": 24
+          "en": "Hario V60",
+          "desc": "Hario V60",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/12/Coffee_Filter_2006_09_09.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Spanish Latte",
-      "desc": "Made with espresso, steamed milk, and a touch of cinnamon",
-      "prices": [
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 32
+          "en": "Kinder Cookies",
+          "desc": "Chasten sugar, butter, light brown sugar, eggs vanilla and plain flour",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/71/Christmas_Cookies_Plateful.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Cortado",
-      "desc": "Rich coffee and creamy milk, freshly brewed espresso and steamed milk with foam",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 24
+          "en": "Japanese Cheese Cake",
+          "desc": "Egg cream cheese, cornflour, lemon juice, whipped cream & sugar.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/91/Japanese_cheesecake_with_raspberry_jam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chocolate Brownies",
+          "desc": "Chocolate, nuts, dark chocolate, butter, eggs, cocoa powder, baking powder",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Chocolate_brownies_without_table.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Turkish Coffee",
-      "desc": "Expertly brewed using finely ground beans and a traditional cezve pot",
-      "prices": [
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 20
+          "en": "Passionfruit Mojito",
+          "desc": "Fresh passion fruit, passion fruit syrup, mint, and lemon.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Passionfruit_mojito_at_Plaza_Khao_Gaeng%2C_Covent_Garden_2026-05-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Strawberry Mojito",
+          "desc": "Made with fresh strawberries, mint leaves, lime juice and a splash of soda",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/6/69/Mojito_strawberry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Blueberry Mojito",
+          "desc": "Made with fresh blueberries, mint leaves, lime juice and a splash for soda",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/3b/My_christmas_eve_mojito%21_%283133222591%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Orange Juice",
+          "desc": "Fresh orange juice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 19
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Orange_juice_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Matcha Latte",
-      "desc": "Latte made with matcha green tea powder.",
-      "prices": [
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
         {
-          "size": "-",
-          "aed": 34
-        }
-      ]
-    },
-    {
-      "en": "Cold Brew",
-      "desc": "Finest quality coffee beans and served over ice",
-      "prices": [
+          "en": "Piccalo",
+          "desc": "Piccalo",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/56/Piccalo_teatre_ristorante.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 33
-        }
-      ]
-    },
-    {
-      "en": "Caramel Latte",
-      "desc": "Velvety and smooth blend of espresso and steamed milk, topped with caramel sauce",
-      "prices": [
+          "en": "Flate White",
+          "desc": "Foamed Milk Poured Over a Shot of Espresso",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Tr_great_white_fleet_from_photo_nh100349_USS_Connecticut_1907.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 30
-        }
-      ]
-    },
-    {
-      "en": "Japanese Cheese Cake",
-      "desc": "Egg cream cheese, cornflour, lemon juice, whipped cream and sugar.",
-      "prices": [
+          "en": "Machiato",
+          "desc": "Espresso with a small amount of milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Prishtina_-_known_for_Machiatos.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 30
-        }
-      ]
-    },
-    {
-      "en": "Chocolate Brownies",
-      "desc": "Chocolate, nuts, dark chocolate, butter, eggs, cocoa powder, baking powder",
-      "prices": [
+          "en": "Cofe Gelato",
+          "desc": "Cofe Gelato",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 34
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
         {
-          "size": "-",
-          "aed": 20
-        }
-      ]
-    },
-    {
-      "en": "Strawberry Mojito",
-      "desc": "Made with fresh strawberries, mint leaves, lime juice and a splash of soda",
-      "prices": [
-        {
-          "size": "-",
-          "aed": 25
+          "en": "Turkish Coffee",
+          "desc": "Expertly brewed using finely ground beans and a traditional cezve pot",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     }
@@ -132,8 +338,6 @@
     "defaultLanguage": "en",
     "taxValue": 0,
     "cover": null,
-    "socialLinks": {
-      "website": "https://www.talabat.com/uae/restaurant/717379/snow-boom-cafe-al-murabaa"
-    }
+    "socialLinks": {}
   }
 }

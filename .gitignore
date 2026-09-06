@@ -37,3 +37,5 @@ firebase-key.json
 # scored leads cache — regenerate with source-venues.mjs
 .outreach-sourced.json
 .outreach-batch.json
+.outreach-titles.json
+.outreach-commons-cache.json

@@ -68,7 +68,30 @@ async function call(method, path, body) {
 }
 
 export const getDoc = (path) => call('GET', path)
-export const listDocs = (path, pageSize = 5) => call('GET', `${path}?pageSize=${pageSize}`)
+
+/**
+ * All documents in a collection, following nextPageToken until exhausted.
+ *
+ * A single-page version of this silently truncated once this business
+ * profile's meals collection passed 300 documents (this outreach batch's own
+ * volume crossed that line): the existing-meal lookup in build-menu.mjs and
+ * build-venue.mjs would miss anything past the first page and treat it as
+ * absent, creating duplicates and throwing "not in Firestore" for meals that
+ * were, in fact, already there. `pageSize` here is the per-request page size,
+ * not a cap on the total returned.
+ */
+export async function listDocs(path, pageSize = 300) {
+	const documents = []
+	let pageToken
+	do {
+		const qs = new URLSearchParams({ pageSize: String(pageSize) })
+		if (pageToken) qs.set('pageToken', pageToken)
+		const page = await call('GET', `${path}?${qs}`)
+		documents.push(...(page.documents ?? []))
+		pageToken = page.nextPageToken
+	} while (pageToken)
+	return { documents }
+}
 export const createDoc = (collection, fields, id) =>
 	call('POST', `${collection}${id ? `?documentId=${encodeURIComponent(id)}` : ''}`, { fields })
 

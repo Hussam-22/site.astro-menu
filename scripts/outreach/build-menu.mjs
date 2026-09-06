@@ -39,6 +39,10 @@ const LABEL = process.env.ASTRO_COFFEE_LABEL || 'DRkmW09qZ0pIMB5uOQWK'
 const COL = `/businessProfiles/${BP}/meals`
 
 const venue = JSON.parse(readFileSync(`scripts/outreach/data/${slug}.json`, 'utf8'))
+// A real menu has categories (Coffee, Breakfast, Desserts...) — `sections`
+// (plural) is the normal shape now. The old flat `venue.meals` still works
+// for single-category files.
+venue.meals = venue.sections ? venue.sections.flatMap((s) => s.meals) : venue.meals
 console.log(`${venue.venue} — ${venue.meals.length} meals\nSource: ${venue.source}\n`)
 
 // A bare name and a number reads like a spreadsheet. The description is what

@@ -1,117 +1,1958 @@
 {
   "venue": "The Grove Al Ain",
-  "source": "https://www.talabat.com/uae/restaurant/786162/the-grove-cafe-and-restaurant-al-jimi (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Matcha",
-  "sectionAr": "قهوة وماتشا",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/786162/the-grove-cafe-and-restaurant-al-jimi (prices/descriptions) + https://drivu.co/DriveThru/The_Grove_Al_Ain_kZVKK/AlKhibeesi (photos), both 2026-09-06",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
     {
-      "en": "V60",
-      "desc": "A choice of hot or cold filter coffee.",
-      "prices": [
+      "title": "Retail & Beans",
+      "titleAr": "قهوة وبضائع للبيع",
+      "meals": [
         {
-          "size": "-",
-          "aed": 36
+          "en": "Acqua Panna 500ml",
+          "desc": "Premium still water from the hills of Tuscany with a smooth taste and perfect mineral balance for a refreshing experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "San Pellegrino 250ml",
+          "desc": "Refreshing sparkling mineral water from Italy with delicate bubbles and a crisp clean taste Perfect for pairing with meals or enjoying on its own",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Original Coca-Cola 290ml",
+          "desc": "The classic refreshing soft drink with its signature taste that has been loved around the world for generations",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "San Pellegrino 750ml",
+          "desc": "Premium sparkling mineral water from Italy with delicate bubbles and a refreshing taste perfect for elevating any dining experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Coca-Cola Zero 290ml",
+          "desc": "Enjoy the refreshing taste of Coca-Cola with zero sugar - all the classic flavor without the calories Perfect for those seeking a guilt-free fizzy drink experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Sprite 250ml",
+          "desc": "Refresh yourself with a cold glass bottle of Sprite! This lemon-lime fizzy drink offers a crisp and clean taste that quenches thirst instantly",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "12 Gathering Box",
+          "desc": "A special collection featuring 12 cans of refreshing beverages perfect for sharing with family and guests",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 580
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gathering_wood_for_picnic%2C_Chandwa%2C_India%2C_1962_%2816946981361%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Coffee Drip Box",
+          "desc": "5 sachets of your favorite filter coffee choice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 145
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Granola Box 475g",
+          "desc": "Premium granola blend featuring wholesome oats nuts and honey baked to golden perfection A delicious and nutritious choice for breakfast or anytime snacking",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 95
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Colombian Coffee Beans With Guava And Banana 250 Grams",
+          "desc": "Premium Colombian coffee beans with delicious flavors of guava and banana. The bag weighs 250 grams offers a smooth medium roast with fruity glimpses.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 78
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257032/small_grove3.jpeg"
+        },
+        {
+          "en": "Ethiopian Panko Tarato Coffee 250g Beans",
+          "desc": "Premium Ethiopian Panko Tarato coffee beans offer a rich and complex flavor with bright acidity and fruity notes. Freshly roasted 250",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 78
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257031/small_grove3_3.jpeg"
+        },
+        {
+          "en": "Colombian Refreshing Grape Coffee 150g",
+          "desc": "Premium Colombian coffee beans with refreshing and zahia grape flavors, roasted to perfection. A rich and aromatic blend that delivers smooth and complex flavors.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 95
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257032/small_grove3.jpeg"
+        },
+        {
+          "en": "Colombia Pink Bourbon 250g Coffee Beans",
+          "desc": "Colombia Pink Bourbon premium coffee beans offer a delicate balance of floral and fruity notes with a subtle sweetness. Freshly roasted 250",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 89
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/293024/small_Screenshot_2026-08-23_170615.png"
+        },
+        {
+          "en": "Colombian Sidra Coffee Beans 250g",
+          "desc": "Colombian Sidra premium coffee beans offer a smooth, balanced taste with light fruity notes and a rich aromatic finish.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 105
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257032/small_grove3.jpeg"
         }
       ]
     },
     {
-      "en": "Spanish Latte",
-      "desc": "A choice of hot or cold sweet coffee.",
-      "prices": [
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 32
+          "en": "Spanish Latte",
+          "desc": "A choice of hot or cold sweet coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256899/small_spanish_latte.jpg"
+        },
+        {
+          "en": "Blueberry Matcha Latte",
+          "desc": "Addition of your favorite matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256905/small_IMG_5500.jpeg"
+        },
+        {
+          "en": "Matcha Latte",
+          "desc": "A traditional original matcha taste with sweetness already",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256885/small_MATCHA.jpeg"
+        },
+        {
+          "en": "Sweetened Matcha Latte",
+          "desc": "Sweet taste of matcha with your choice of sweetener option.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256884/small_MATCHA.jpeg"
+        },
+        {
+          "en": "Unsweetend Matcha Latte",
+          "desc": "A real taste of matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256905/small_IMG_5500.jpeg"
+        },
+        {
+          "en": "Strawberry Matcha Latte",
+          "desc": "Your favorite strawberry matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256888/small_WhatsApp_Image_2025-05-08_at_5.49.41_PM.jpeg"
+        },
+        {
+          "en": "Alain Cloudy Espresso",
+          "desc": "A delightful beverage featuring a distinctive purple foam layered atop rich espresso and smooth milk creating a unique and visually stunning coffee experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256913/small_IMG_5491.jpeg"
+        },
+        {
+          "en": "Salted Caramel Latte",
+          "desc": "A perfect treat featuring rich espresso blended with sweet caramel and a hint of sea salt topped with foamy milk for a balanced indulgence",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/270773/small_WhatsApp_Image_2026-02-18_at_9.19.39_PM.jpeg"
+        },
+        {
+          "en": "Milk Cloudy Espresso",
+          "desc": "The famous cloudy espresso with a choice of milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256903/small_WhatsApp_Image_2024-08-06_at_13.52.15.jpeg"
+        },
+        {
+          "en": "Cloudy Coconut Espresso",
+          "desc": "Foamy espresso cloud on refreshing coconut water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256912/small_WhatsApp_Image_2024-08-06_at_13.54.29.jpeg"
+        },
+        {
+          "en": "Piccolo",
+          "desc": "Short latte that comes with ristretto or single shot of espresso.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256911/small_IMG_5496.jpeg"
+        },
+        {
+          "en": "Cortado",
+          "desc": "A strong taste of coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256909/small_IMG_5497.jpeg"
+        },
+        {
+          "en": "Spanish Cortado",
+          "desc": "A strong sweet taste of coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256908/small_IMG_5499.jpeg"
+        },
+        {
+          "en": "Flat White",
+          "desc": "A strong taste of coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256907/small_IMG_5499.jpeg"
+        },
+        {
+          "en": "Cappuccino",
+          "desc": "A foamy cup of coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 29
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256906/small_IMG_5497.jpeg"
+        },
+        {
+          "en": "Café Latte",
+          "desc": "A choice of hot or cold coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256905/small_IMG_5500.jpeg"
+        },
+        {
+          "en": "Americano",
+          "desc": "A choice of hot or cold coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256902/small_americano.jpg"
+        },
+        {
+          "en": "Mini Cloudy Espresso",
+          "desc": "Your favorite sweet coconut espresso now is mini size",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256913/small_IMG_5491.jpeg"
+        },
+        {
+          "en": "Mini Salted Caramel Latte",
+          "desc": "Smooth espresso blended with velvety steamed milk and topped with a drizzle of salted caramel for a perfect balance of sweet and savory flavors.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/270773/small_WhatsApp_Image_2026-02-18_at_9.19.39_PM.jpeg"
+        },
+        {
+          "en": "Small Matcha Latte",
+          "desc": "Delicate matcha green tea powder whisked into velvety steamed milk creating a vibrant emerald beverage with a smooth creamy texture and subtle earthy sweetness.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256905/small_IMG_5500.jpeg"
+        },
+        {
+          "en": "Banana Latte",
+          "desc": "Creamy banana latte blending smooth banana puree with rich espresso and your choice of milk topped with caramel syrup sea salt and crumbled lotus biscuit.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276708/small_WhatsApp_Image_2026-04-14_at_8.15.40_PM.jpeg"
+        },
+        {
+          "en": "Mini Banana Latte",
+          "desc": "Creamy latte infused with banana puree and rich espresso topped with caramel syrup and a hint of sea salt your choice of milk perfectly complements the buttery lotus biscuit crumble.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276907/small_WhatsApp_Image_2026-04-16_at_1.09.05_PM__1_.jpeg"
         }
       ]
     },
     {
-      "en": "Cappuccino",
-      "desc": "A foamy cup of coffee",
-      "prices": [
+      "title": "Iced Coffee",
+      "titleAr": "قهوة مثلجة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 29
+          "en": "Mini Iced White Mocha Espresso",
+          "desc": "Delicious mini espresso blended with sweet white chocolate and topped with a rich, creamy foam for the ultimate treat.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256913/small_IMG_5491.jpeg"
+        },
+        {
+          "en": "Iced Flat White",
+          "desc": "A refreshing iced flat white featuring a smooth shot of espresso combined with your choice of chilled milk and served over ice for the perfect cold coffee experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256900/small_IMG_5498.jpeg"
+        },
+        {
+          "en": "Iced Latte",
+          "desc": "A cold version of your favourite coffee with milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256905/small_IMG_5500.jpeg"
+        },
+        {
+          "en": "Cold Brew",
+          "desc": "A cold brewed coffee",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256904/small_cold_brew.jpg"
+        },
+        {
+          "en": "Iced Chocolate",
+          "desc": "Classic Iced Hot Chocolate topped with cream and chocolate balls",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256943/small_iced_hot_chocolate.jpg"
+        },
+        {
+          "en": "Iced White Matcha Chocolate",
+          "desc": "Iced matcha chocolate tea with white chocolate base topped with cream and white chocolate balls.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Peach ice tea",
+          "desc": "Peach iced tea is a fusion of juicy peach flavor and refreshing tea, creating a harmonious balance of sweetness and depth",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256893/small_thegrove_sept_2024.jpeg"
+        },
+        {
+          "en": "Hibiscus ice tea",
+          "desc": "Hibiscus iced tea is a refreshing beverage that combines the tartness of hibiscus flowers with the crispness of chilled tea",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hibiscus_Popsicle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mini Peach Iced Tea",
+          "desc": "Mini Peach Iced Tea",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 15
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257018/small_peach.jpg"
+        },
+        {
+          "en": "Espresso On Iced",
+          "desc": "Espresso On Iced",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256913/small_IMG_5491.jpeg"
+        },
+        {
+          "en": "Mini Iced Chocolate",
+          "desc": "Mini Iced Chocolate",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256890/small_thegrove_sept_2024_20.jpeg"
+        },
+        {
+          "en": "Mini Iced White Chocolate Matcha",
+          "desc": "Mini Iced White Chocolate Matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
         }
       ]
     },
     {
-      "en": "Flat White",
-      "desc": "A strong taste of coffee",
-      "prices": [
+      "title": "Manual Brew",
+      "titleAr": "قهوة مقطرة يدوياً",
+      "meals": [
         {
-          "size": "-",
-          "aed": 26
+          "en": "V60",
+          "desc": "A choice of hot or cold filter coffee .",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256898/small_v60.jpg"
         }
       ]
     },
     {
-      "en": "Cortado",
-      "desc": "A strong taste of coffee",
-      "prices": [
+      "title": "Matcha",
+      "titleAr": "ماتشا",
+      "meals": [
         {
-          "size": "-",
-          "aed": 24
+          "en": "Cloudy coconut matcha",
+          "desc": "For those who loves coconut water paired with matcha cold foam.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256882/small_WhatsApp_Image_2024-08-08_at_4.17.52_PM.jpeg"
+        },
+        {
+          "en": "Milk Cloudy Matcha",
+          "desc": "The famous matcha with a choice of milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Alain Milky Cloudy",
+          "desc": "A delightful creamy beverage topped with vibrant purple foam for a unique taste experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Alain Cloudy Matcha",
+          "desc": "A soothing premium matcha. This refreshing Alain beverage offers a perfect balance of earthy flavors and subtle sweetness for a truly calming experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260276/small_cloudy_ube_.jpg"
+        },
+        {
+          "en": "Alain Cloudy",
+          "desc": "A refreshing coconut water with vibrant purple foam for a unique tropical experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260276/small_cloudy_ube_.jpg"
+        },
+        {
+          "en": "Salted Cinnamon Maple Matcha",
+          "desc": "A milk based drink touch with cinnamon and maple sweetener with your favorite matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Salted Caramel Matcha",
+          "desc": "A perfect treat featuring premium matcha blended with rich salted caramel notes creating a balanced sweet and savory experience that refreshes and delights",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/270770/small_WhatsApp_Image_2026-02-18_at_9.19.36_PM.jpeg"
+        },
+        {
+          "en": "Matcha Cookies and Cream",
+          "desc": "Foamy cookies with cream, choice of Spanish milk and latte milk with matcha",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256883/small_WhatsApp_Image_2025-07-14_at_1.56.47_PM.jpeg"
+        },
+        {
+          "en": "Mango Coconut Cloudy",
+          "desc": "Made with pure mango pieces and topped with cloudy mango foam.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Blue Spirulina Matcha",
+          "desc": "A matcha mix with spirulina",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256886/small_BLU_MATCHA.jpeg"
+        },
+        {
+          "en": "Matcha Coconut Crispies",
+          "desc": "Matcha crispies topped with coconut",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256968/small_matcha_bites.jpg"
+        },
+        {
+          "en": "Matcha White Chocolate Cookies",
+          "desc": "A sweet taste of matcha treats",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256954/small_WhatsApp_Image_2024-08-06_at_13.59.56.jpeg"
+        },
+        {
+          "en": "Matcha Yoghurt Bowl",
+          "desc": "Matcha Greek yoghurt, homemade granola, blueberry compote along with green apple on top.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257034/small_matcha_yoghurt_bowl.jpg"
+        },
+        {
+          "en": "Matcha Strawberry Chia Pudding",
+          "desc": "Matcha flavoured yoghurt with chia seeds top with fresh strawberries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257004/small_strawberry_pudding.jpg"
+        },
+        {
+          "en": "Matcha hot chocolate",
+          "desc": "Matcha Hot Chocolate with white chocolate base topped with cream and white chocolate balls.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256945/small_matcha_hot_chocolate.jpg"
+        },
+        {
+          "en": "Mini Cloudy Matcha",
+          "desc": "Your best matcha now in mini size",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Mini Salted Caramel Matcha",
+          "desc": "Delicate mini treat combining earthy matcha with sweet salted caramel notes. A perfect balance of flavors in one indulgent",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/270770/small_WhatsApp_Image_2026-02-18_at_9.19.36_PM.jpeg"
+        },
+        {
+          "en": "Mini Matcha De Leche",
+          "desc": "Matcha, dulce sauce and choice of milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/276908/small_WhatsApp_Image_2026-04-16_at_1.09.06_PM.jpeg"
+        },
+        {
+          "en": "Matcha Dulce De Leche",
+          "desc": "Creamy matcha blended with rich dulce de leche sauce and your choice of milk for a perfectly balanced sweet and earthy flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
         }
       ]
     },
     {
-      "en": "Americano",
-      "desc": "A choice of hot or cold coffee",
-      "prices": [
+      "title": "Breakfast",
+      "titleAr": "إفطار",
+      "meals": [
         {
-          "size": "-",
-          "aed": 22
+          "en": "Turkey Truffle Toasties",
+          "desc": "Your favorite turkey toast with truffle flavor and chips.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257006/small_Screenshot_2024-11-07_184623.png"
+        },
+        {
+          "en": "Turkey and Cheese Toasties",
+          "desc": "A turkey ham with boursin and gouda cheese and a side of chips with chive",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Tuna Melt Toastie",
+          "desc": "A tuna mix filled with cheese and a side of chips with chives.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257008/small_Tuna_Melt.jpg"
+        },
+        {
+          "en": "Chilly Pesto Toastie",
+          "desc": "A chilly pesto sandwich with a slice of fresh tomato and a side of chips with chives.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Grilled Cheese Toastie",
+          "desc": "Mix of mozzarella and cheddar cheese and a side of chips with chives.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257010/small_grove151.jpeg"
+        },
+        {
+          "en": "Regular Avocado Toast",
+          "desc": "A mashed avocado layer by labneh, sprinkled with sesame seeds and feta cheese. (choice of bread sourdough or brioche bread)",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256982/small_avo_toast.jpg"
+        },
+        {
+          "en": "Nut Butter, Jam Toastie",
+          "desc": "A choice of bread ( sourdough or brioche bread) spread with peanut butter and jam .",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Nut-Butter Banana Toastie",
+          "desc": "A choice of bread ( sourdough or brioche bread) spread with peanut butter and slices of banana, crushed nuts sprinkled on top.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256986/small_grove297.jpeg"
+        },
+        {
+          "en": "French Toast",
+          "desc": "A sweet toast bread with caramel sauce and mixed berries.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/42/FrenchToast.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Bagel French Toast",
+          "desc": "The sweet and savory aroma of round bread along with special sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Warteh%C3%A4uschen_Schubertring%2C_SEHEN..._sich_sehen_sehen_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Founders Yoghurt Bowl",
+          "desc": "Creamy vanilla bean Greek yoghurt topped with flax seeds, pumpkin seeds, pecan butter, chia seeds, and jam for a nutritious and satisfying breakfast",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257035/small_yoghurt_bowl.jpg"
+        },
+        {
+          "en": "Overnight Oats",
+          "desc": "Creamy overnight oats prepared with rolled oats fresh milk and yogurt infused with vanilla and topped with fresh berries granola and honey for a delicious grab and go breakfast",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 48
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/93/%22Staid_about_1-2_an_hour_when_Butler%2C_Aylsworth%2C_Murphy%2C_Welsh_and_my_self_left_the_shanty_and_went_down_the_creek_to_below_Welshes_Landing_all_hands_turned_back._Aylsworth_%26_I_went_a_hed_to_%283301222370%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Vanilla Yoghurt Bowl",
+          "desc": "Greek yoghurt, homemade granola, mixed berries along with peanut butter.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257035/small_yoghurt_bowl.jpg"
+        },
+        {
+          "en": "Acai Bowl",
+          "desc": "A bowl of acai with a choice of 3 toppings (granola, strawberry, blueberry, raspberry blackberry and peanut butter).Note (fruits & berries is drizzled with maple syrup).",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257033/small_Acai_Bowl.jpg"
+        },
+        {
+          "en": "2 N 1 Bagel",
+          "desc": "Your favorite bagel in 1 order",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/user/image/293146/logo_medium_IMG_4851.jpeg?1788402935?1788402935"
+        },
+        {
+          "en": "Bagel Cream Cheese with Blueberry",
+          "desc": "Toasted bagel with cream cheese and blueberry jam",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256988/small_6596c5e5-3fdd-40b5-bc2c-3365551dbeed.jpeg"
+        },
+        {
+          "en": "Bagel Zaatar Labneh",
+          "desc": "A toasted bagel bread, zaatar mix with Turkish labneh and sprinkle zaatar on top along with olive oil.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256990/small_86d79ca6-3c5c-4a7c-8d3a-b1e3153e6b58.jpeg"
+        },
+        {
+          "en": "Chicken Bagel",
+          "desc": "A well toasted bagel bread, basil pesto, gherkins, grilled chicken, romaine lettuce along with gouda cheese and truffle chips",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256991/small_c0c2690b-4334-4c26-9d95-13fbf3cd1994.jpeg"
+        },
+        {
+          "en": "Salmon Bagel",
+          "desc": "A well toasted bagel bread, cream cheese, smoked salmon, capers, onion julienne with dill leave.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256992/small_007c5742-7584-4bce-aae2-c1d5a5189274.jpeg"
+        },
+        {
+          "en": "Cream Cheese Bagel with Tomato",
+          "desc": "A well toasted bagel bread, cream cheese and cherry tomatoes.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256989/small_c8434785-ad4b-4eea-be65-372b58727655.jpeg"
+        },
+        {
+          "en": "Acai shake",
+          "desc": "Acai blended with peanut butter, banana, mixed berries and coconut water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256934/small_WhatsApp_Image_2024-07-04_at_11.34.36.jpeg"
         }
       ]
     },
     {
-      "en": "Cold Brew",
-      "desc": "A cold brewed coffee",
-      "prices": [
+      "title": "Bakery & Pastries",
+      "titleAr": "مخبوزات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 35
+          "en": "Espresso Cookies And Cream",
+          "desc": "A foamy cookies and cream with a choice of Spanish milk or Latte milk with espresso",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256913/small_IMG_5491.jpeg"
+        },
+        {
+          "en": "Banana Bread",
+          "desc": "A nutty banana bread",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256953/small_PHOTO-2025-01-26-13-04-19.jpg"
+        },
+        {
+          "en": "Victoria Sponge",
+          "desc": "Classic sponge cake with raspberry compote and vanilla cream.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256961/small_victoria.jpg"
+        },
+        {
+          "en": "Cookies And White Chocolate Crispies",
+          "desc": "Your favorite crunchy flavor now with a cookie flavor.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Blue Peanut Butter Cookies",
+          "desc": "A taste of creamy peanut butter cookie",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Peanut_butter_sandwich_cookies.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Sea Salt Nutella Cookie",
+          "desc": "A perfect nutella sweet",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Anzac Cookies",
+          "desc": "Buttery roll oats Anzac cookies.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256948/small_f00a8ffa-d74d-4c8b-9866-f0d6ea64b2ab.jpeg"
+        },
+        {
+          "en": "Almond Croissant",
+          "desc": "Sweet almond croissant.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256996/small_WhatsApp_Image_2024-10-02_at_12.09.46.jpeg"
+        },
+        {
+          "en": "Sausage Roll",
+          "desc": "A puff pastry with beef sausage roll ,choice of ( mayo or ketchup)",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256994/small_WhatsApp_Image_2024-10-02_at_12.10.24.jpeg"
+        },
+        {
+          "en": "Cardamon Bun",
+          "desc": "A fresh bun with sweet taste",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 37
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Dinner_at_Terre_%C3%A0_Terre_2023-07-30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Plain Croissant",
+          "desc": "Plain Croissant",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257000/small_Plain.jpg"
+        },
+        {
+          "en": "Pepito Chocolate Croissant",
+          "desc": "A sweet chocolate croissant",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256999/small_WhatsApp_Image_2024-10-02_at_12.10.11.jpeg"
+        },
+        {
+          "en": "Sticky Cinnabon Bun",
+          "desc": "A bun filled with sweetness",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Cinnamon Roll",
+          "desc": "A croissant wrap with sweet cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257002/small_cinnamon.jpg"
+        },
+        {
+          "en": "Zaatar and labneh Croissant",
+          "desc": "A cruffin with zaatar and filled inside with labneh",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Feta and Mint Danish",
+          "desc": "A savoury taste of mint and feta cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 36
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
         }
       ]
     },
     {
-      "en": "Salted Espresso With Cinnamon And Maple",
-      "desc": "Milk based drink with a hint of cinnamon and maple sweetener.",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 40
+          "en": "Chocolate Peanut Butter Crispies",
+          "desc": "Chocolate bar with hint of peanut butter crispies",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256966/small_choco_crispies.jpg"
+        },
+        {
+          "en": "Honey Cake",
+          "desc": "A delightfully sweet topping with berries.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256949/small_WhatsApp_Image_2025-05-08_at_5.48.26_PM.jpeg"
+        },
+        {
+          "en": "Coconut Cake",
+          "desc": "A sweet coconut cake with cream filling and a coconut flakes on top.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256976/small_IMG_0637.jpeg"
+        },
+        {
+          "en": "Cheesecake",
+          "desc": "A plain cheesecake with a mix berries jam on the side",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256979/small_IMG_0634.jpeg"
+        },
+        {
+          "en": "Chocolate Peanut Butter Tart",
+          "desc": "A nutty tart sprinkle with sea salt .",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256958/small_pb_choco_tart.jpg"
+        },
+        {
+          "en": "Carrot Cake",
+          "desc": "Classic carrot cake with pecan nut on top.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256975/small_IMG_0633.jpeg"
+        },
+        {
+          "en": "Banana Pudding",
+          "desc": "Fresh fluffy banana pudding",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256947/small_WhatsApp_Image_2025-08-05_at_4.25.57_PM.jpeg"
+        },
+        {
+          "en": "Dulce Crispies",
+          "desc": "Dulce caramel bar crispies.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/46/Pineapple_buns.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "London Cheesecake",
+          "desc": "A classic London Cheesecake with a buttery biscuit base topped with smooth creamy filling and garnished with fresh raspberry",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/261020/small_london_cheesecake.jpg"
+        },
+        {
+          "en": "Pancake",
+          "desc": "A flat tasteful round cake along with cube butter on top",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/98/Pancake_stack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mango Chia Pudding",
+          "desc": "A yoghurt chia top with fresh mango and sprinkle with coconut flakes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Alain Hot Chocolate",
+          "desc": "A rich hot chocolate infused with aromatic saffron and cardamom with milk and cream then sprinkled with sesame seeds for a delightful texture",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260279/small_Saffron_hot_chocolate_.jpg"
+        },
+        {
+          "en": "Classic Hot Chocolate",
+          "desc": "Classic Hot Chocolate topped with cream and dark chocolate balls.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Classic_Waffle_Ice_Cream_Sundae_-_Home_-_Goa_-_IMG-20201027-WA0008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Dark Hot Chocolate",
+          "desc": "Dark Hot Chocolate with cream and dark chocolate balls.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/22/Hot_Chocolate._%2815289565658%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mini Hot Chocolate",
+          "desc": "Mini Hot Chocolate",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256894/small_HOT_CHOCOLATE.jpeg"
+        },
+        {
+          "en": "Whole Carrot Cake",
+          "desc": "Nutty and taste of carrot cake",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 330
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256975/small_IMG_0633.jpeg"
+        },
+        {
+          "en": "Whole Coconut Cake",
+          "desc": "Your favorite coconut cake",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 340
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256976/small_IMG_0637.jpeg"
+        },
+        {
+          "en": "A Whole Victoria Cake",
+          "desc": "A sweet and sour taste of raspberry jam inside.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 355
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256977/small_IMG_0631.jpeg"
+        },
+        {
+          "en": "A Whole Chocolate Peanut Butter Tart",
+          "desc": "A nutty chocolatey tastes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 365
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256958/small_pb_choco_tart.jpg"
+        },
+        {
+          "en": "Whole Cheesecake",
+          "desc": "Famous cheesecake with mix berry compote on top",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 375
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256979/small_IMG_0634.jpeg"
         }
       ]
     },
     {
-      "en": "Matcha Latte",
-      "desc": "A traditional original matcha taste with sweetness already",
-      "prices": [
+      "title": "Snacks & Sides",
+      "titleAr": "سناكس وإضافات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 35
+          "en": "Al Ain Crispies",
+          "desc": "Deliciously crunchy Al Ain Crispies that provide the perfect snack experience Enjoy these light and flavorful bites anytime for a satisfying treat",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 5
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Truffle Fries",
+          "desc": "Golden crispy potato fries tossed with aromatic truffle oil and topped with grated parmesan cheese for a luxurious taste experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 30
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Duck_fat_French_fries_with_rosemary%2C_Maldon_salt%2C_and_truffle_oil_%284450613187%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Plain Fries",
+          "desc": "Golden crispy potato fries perfectly salted and served hot",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Kofte%2C_fries%2C_pide_etc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Salted Caramel Matcha",
-      "desc": "Premium matcha blended with rich salted caramel notes.",
-      "prices": [
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 40
+          "en": "Lemon Butter Chicken",
+          "desc": "A sour taste of lemon with a side of bowl of rice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 75
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/96/Chinese_fried_chicken_%286822571449%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lemon & Mint",
+          "desc": "A refreshing drink.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Laduree_mint%2C_lemon%2C_coffee%2C_and_chocolate_macarons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Just Apple",
+          "desc": "Freshly squeeze green apple.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/79/Not_just_apples_-_geograph.org.uk_-_5038.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Carrot Juice",
+          "desc": "A fresh carrots",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GlassOfJuice_and_carrots.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Just Orange",
+          "desc": "A fresh squeeze orange",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Narbonne_Cathedrale_Saint_Just_et_Saint_Pasteur.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Celery Juice",
+          "desc": "A glass of healthy fresh celery",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/07/Cucumber_celery_apple_juice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Just Watermelon",
+          "desc": "A fresh watermelon juice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/27/Dixie_Watermelon_Original_Strain_1896.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Grove Sunset",
+          "desc": "A refreshing blend of sweet mango puree combined with vibrant strawberry syrup creating a tropical sunset",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260274/small_038A2533.jpg"
+        },
+        {
+          "en": "Grove Sunrise",
+          "desc": "A refreshing blend of fresh mango and banana mixed with creamy milk and topped with sweet strawberry syrup",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260270/small_sunride_regular_.jpg"
+        },
+        {
+          "en": "Raspbanana Shake",
+          "desc": "Consists of raspberry and some banana with vanilla milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Mango Coconut Shake",
+          "desc": "Mango Coconut Shake",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Strawnana Shake",
+          "desc": "Strawberry with banana , apple and some vanilla milk",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256932/small_WhatsApp_Image_2024-07-04_at_11.33.53.jpeg"
+        },
+        {
+          "en": "Mango passion shake",
+          "desc": "Mango with passion and some oranges juice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Pineapple Hibiscus",
+          "desc": "A refreshing blend of hibiscus tea, blood orange, pineapple, and agave nectar.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257023/small_pineapple_hibiscus.jpg"
+        },
+        {
+          "en": "Camopassion",
+          "desc": "A soothing blend of passion fruit, chamomile tea, and Fentimans Rose Lemonade, served with a side of popcorn.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257019/small_comopassion.jpg"
+        },
+        {
+          "en": "Watermelon lychee",
+          "desc": "A refreshing blend of watermelon and lychee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257025/small_watermelon_lychee.jpg"
+        },
+        {
+          "en": "Berry-Fizz",
+          "desc": "A refreshing mix of blueberry vinegar, fresh blueberries, honey water, sugar-free blueberry syrup, lime, and sparkling water.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/72/Old_Time_Prairie_Berry_Fizz_%287218855646%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Golden Ginger",
+          "desc": "Ginger and caramel soda is a tantalizing blend of spicy warmth and sweet indulgence, creating a refreshingly unique beverage experience.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257024/small_golden_ginger.jpg"
+        },
+        {
+          "en": "Mini Grove Sunset",
+          "desc": "A refreshing blend of sweet mango puree combined with vibrant strawberry syrup creating a tropical sunset",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260275/small_038A2543.jpg"
+        },
+        {
+          "en": "Mini Grove Sunrise",
+          "desc": "A refreshing beverage blending sweet strawberry and creamy banana with tropical mango for a delightful fruity experience",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260273/small_sunsire_mini.jpg"
+        },
+        {
+          "en": "Mini Just Orange",
+          "desc": "Just squeeze a fresh orange",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 12
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/40/Mini-Moke_%286075905799%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mini Mango Coconut Shakes",
+          "desc": "Mini Mango Coconut Shakes",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Organic Chamomile Cooler tea",
+          "desc": "A refreshing peppermint and chamomile flowers",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257029/small_chamomile.jpg"
+        },
+        {
+          "en": "Organic English Breakfast tea",
+          "desc": "A sweet taste of plum and blend of assam and Yunnan tea",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257028/small_english_breakfast.jpg"
+        },
+        {
+          "en": "Moroccan Mint tea",
+          "desc": "A Moroccan nana mint with green gunpowder",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257027/small_moroccan_mint.jpg"
+        },
+        {
+          "en": "Fresh Mint Tea",
+          "desc": "Fresh Mint Tea",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 12
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257026/small_moroccan_mint.jpg"
         }
       ]
     },
     {
-      "en": "Chocolate Peanut Butter Crispies",
-      "desc": "Chocolate bar with a hint of peanut butter crispies",
-      "prices": [
+      "title": "Main Dishes",
+      "titleAr": "أطباق رئيسية",
+      "meals": [
         {
-          "size": "-",
-          "aed": 5
+          "en": "Chicken Tender",
+          "desc": "Juicy chicken strips fried to perfection A delightful treat that makes for an excellent snack or meal addition with fries",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260280/small_038A2401.jpg"
+        },
+        {
+          "en": "Pesto Chicken Pasta",
+          "desc": "Tender chicken tossed with al dente pasta in a rich basil pesto sauce topped with grated parmesan cheese for a delightful Italian-inspired meal.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 85
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260282/small_038A2414.jpg"
+        },
+        {
+          "en": "White Sauce Turkey Pasta",
+          "desc": "Tender turkey pieces in a rich creamy white sauce with perfectly cooked pasta A hearty and satisfying dish that combines savory flavors and smooth texture",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 85
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260283/small_038A2354.jpg"
+        },
+        {
+          "en": "Prawn Pasta",
+          "desc": "Delicious pasta with prawns and aromatic herbs in a rich and creamy sauce",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 85
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260281/small_038A2342.jpg"
+        },
+        {
+          "en": "Red Sauce Pasta",
+          "desc": "A delicious red sauce pasta dish served with grated parmesan cheese on the side for added flavor",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260285/small_038A2371.jpg"
+        },
+        {
+          "en": "White Sauce Pasta",
+          "desc": "Creamy pasta coated in a rich white sauce Topped with grated parmesan for a delightful flavor experience.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/260284/small_038A2383.jpg"
+        },
+        {
+          "en": "Edamame Spinach Katsu Salad",
+          "desc": "Baby spinach, edamame, sweet potato, katsu chicken along with katsu sauce sprinkled with sesame seeds",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Roasted Pomme Lentil Walnut Salad with Mustard Dressing",
+          "desc": "Fresh mix leaves, snow peas, crumbled feta cheese, roasted walnut along with the mustard dressing",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 50
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Kale Feta Raisin Salad with Balsamic Dressing",
+          "desc": "Fresh kale, golden raisins, feta cheese, sesame seeds along with balsamic dressing",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Jalapeno Shrimp With Rice",
+          "desc": "A spicy jalapeno sauté shrimp with side of rice bowl",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 75
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Petite Pomme de Terre, Salmon with Honey and Mustard Sauce",
+          "desc": "Delicate salmon fillet perfectly seared and served with creamy petite potatoes glazed in a harmonious blend of honey and Dijon mustard sauce with fresh herbs",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 70
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Chicken Katsu Bowl",
+          "desc": "A perfect furikake rice bowl with katsu chicken top with avocado, edamame, cucumber and sprinkles with sesame seeds and chef spicy sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 75
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257012/small_katsu.jpg"
+        },
+        {
+          "en": "Beef Broccoli Bowl",
+          "desc": "A meaty rice bowl with tenderloin beef, broccoli and soya sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 75
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257016/small_beef_broccoli.jpg"
+        },
+        {
+          "en": "Miso Chicken Bowl",
+          "desc": "A tasty bowl with miso grilled chicken, furikake rice and sliced cucumber sprinkles with sesame seeds and a chef special sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 65
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257014/small_miso_chicken.jpg"
+        },
+        {
+          "en": "Salmon Bowl",
+          "desc": "A perfect combination of Salmon with teriyaki sauce, cabbage pickles ,avocado, broccolini and sprinkles of sesame seeds and chili flakes.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 75
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Salmon_bowl_of_Nakau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Creamy Chicken Bearnaise Bowl",
+          "desc": "Steamed sushi rice, grilled chicken along with Bearnaise sauce and garnish with micro herbs.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 65
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/257011/small_creamy_lemon_chicken.jpg"
+        }
+      ]
+    },
+    {
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
+        {
+          "en": "Salted Espresso With Cinnamon And Maple",
+          "desc": "Milk based drink with a hint of cinnamon and maple sweetener.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 40
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/256913/small_IMG_5491.jpeg"
         }
       ]
     }
@@ -122,8 +1963,6 @@
     "defaultLanguage": "en",
     "taxValue": 0,
     "cover": null,
-    "socialLinks": {
-      "website": "https://www.talabat.com/uae/restaurant/786162/the-grove-cafe-and-restaurant-al-jimi"
-    }
+    "socialLinks": {}
   }
 }

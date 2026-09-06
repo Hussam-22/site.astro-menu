@@ -1,107 +1,488 @@
 {
   "venue": "Vue Cafe",
-  "source": "https://www.talabat.com/uae/restaurant/706357/vue-cafe-al-jimi (public Talabat delivery listing, read via browser 2026-09-03)",
-  "note": "Names, prices and descriptions are theirs, taken verbatim from their live Talabat listing. No Arabic available from that source, so Arabic is left blank rather than guessed or machine-translated. Cover photos were not pulled (Talabat lazy-loads them and we did not chase it) — flagged, not faked.",
-  "section": "Coffee & Kitchen",
-  "sectionAr": "قهوة ومطبخ",
-  "meals": [
+  "source": "https://www.talabat.com/uae/restaurant/706357/vue-cafe-al-jimi (prices/descriptions) + https://drivu.co/DriveThru/VUE_Cafe_oN6A/Falaj_Hazza (photos), both 2026-09-06",
+  "note": "Full real menu. Names, prices and descriptions from Talabat; photos matched from the venue’s own Drivu listing where available, Wikimedia Commons otherwise.",
+  "sections": [
     {
-      "en": "V60",
-      "desc": "Brewed coffee made with your choice of beans",
-      "prices": [
+      "title": "Hot Coffee",
+      "titleAr": "قهوة ساخنة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 32
+          "en": "Espresso",
+          "desc": "Double shots of our specialty Brazilian beans.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 18
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49728/small_Espresso.jpeg"
+        },
+        {
+          "en": "Cappuccino",
+          "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49732/small_Cappuccino.jpeg"
+        },
+        {
+          "en": "Caramel Latte",
+          "desc": "Coffee prepared with double shots of espresso and caramel mixture.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49726/small_Latte.jpg"
+        },
+        {
+          "en": "Cortado",
+          "desc": "Hot coffee prepared with double shots of espresso and milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49730/small_Piccolo.jpeg"
+        },
+        {
+          "en": "Flat White",
+          "desc": "Hot coffee prepared with double shots of espresso and milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 25
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49733/small_Flat_white.jpeg"
+        },
+        {
+          "en": "Piccolo",
+          "desc": "Hot coffee prepared with a single shot of espresso and milk.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 22
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49729/small_Piccolo.jpeg"
+        },
+        {
+          "en": "Salted Caramel Latte",
+          "desc": "Coffee prepared with double shots of espresso and special salted caramel sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 35
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/110654/small_Latte.jpg"
+        },
+        {
+          "en": "Spanish Latte",
+          "desc": "Coffee prepared with double shots of espresso and our special Spanish mixture.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49734/small_Latte.jpg"
         }
       ]
     },
     {
-      "en": "Cappuccino",
-      "desc": "Made with espresso and steamed milk creating rich, velvety taste.",
-      "prices": [
+      "title": "Manual Brew",
+      "titleAr": "قهوة مقطرة يدوياً",
+      "meals": [
         {
-          "size": "-",
-          "aed": 25
+          "en": "V60",
+          "desc": "Brewed coffee made with your choice of beans",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/43801/small_V60.jpeg"
         }
       ]
     },
     {
-      "en": "Flat White",
-      "desc": "Hot coffee prepared with double shots of espresso and milk.",
-      "prices": [
+      "title": "Matcha",
+      "titleAr": "ماتشا",
+      "meals": [
         {
-          "size": "-",
-          "aed": 25
+          "en": "Matcha",
+          "desc": "A Japanese latte",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 31
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/173154/small_Screen_Shot_2023-06-07_at_10.46.38_am.png"
         }
       ]
     },
     {
-      "en": "Cortado",
-      "desc": "Hot coffee prepared with double shots of espresso and milk.",
-      "prices": [
+      "title": "Sandwiches & Flatbread",
+      "titleAr": "ساندويتشات وفطاير",
+      "meals": [
         {
-          "size": "-",
-          "aed": 23
+          "en": "Cheese burger",
+          "desc": "Angus beef served in brioche bun topped with bbq ranch sauce, dynamite sauce, tomato, lettuce, mozzarella and cheddar cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cheeseburger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Mushroom Mozazarella Burger",
+          "desc": "Angus beef served in brioche bun topped with bbq ranch sauce, dynamite sauce, mushroom and caramelized onion.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
         }
       ]
     },
     {
-      "en": "Spanish Latte",
-      "desc": "Coffee prepared with double shots of espresso and our special Spanish mixture.",
-      "prices": [
+      "title": "Desserts",
+      "titleAr": "حلويات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 32
+          "en": "Chocolate Meringue",
+          "desc": "Warm chocolate brownie baked with chocolate crumble And served with vanilla English cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 42
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/7/76/Chocolate_Stump_de_Noel_with_meringue_mushrooms_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "San Sebastian Cheesecake",
+          "desc": "Traditional Spanish cheesecake with a creamy and light filling, baked to caramelized perfection, served with Belgium chocolate sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/127739/small_KOZ_8058_copy.jpg"
+        },
+        {
+          "en": "Tiramisu",
+          "desc": "Homemade lady finger sponge with mascarpone mousse topped with mascarpone english cream and chocolate garnish.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 46
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Dessert_Tiramisu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Dates Pudding",
+          "desc": "Date pudding topped with nuts, ice cream and sweet date syrup.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 41
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/10/Further_investigations_among_fruitarians_at_the_California_agricultural_experiment_station._1901-1902_%281903%29_%2814581321558%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lotus Crumb Cake",
+          "desc": "Sticky cake served with roasted and salted pecan nuts, topped with vanilla ice cream and lotus biscuit",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/127722/small_KOZ_7206_copy.jpg"
         }
       ]
     },
     {
-      "en": "Affagato",
-      "desc": "Italian word for \"Drowned\". Gelato ice-cream drowned in coffee.",
-      "prices": [
+      "title": "Snacks & Sides",
+      "titleAr": "سناكس وإضافات",
+      "meals": [
         {
-          "size": "-",
-          "aed": 28
+          "en": "French Fries",
+          "desc": "Classic potato French fries, tossed in salt and herbs served with ketchup.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 21
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/9/95/Plate_of_chips_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Loaded Fries",
+          "desc": "French fries loaded with cheese sauce, mayonnaise and signature cocktail sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 23
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/0/09/Loaded_fries_food.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Salted Caramel Latte",
-      "desc": "Coffee prepared with double shots of espresso and special salted caramel sauce.",
-      "prices": [
+      "title": "Cold Drinks & Juices",
+      "titleAr": "مشروبات باردة",
+      "meals": [
         {
-          "size": "-",
-          "aed": 35
+          "en": "Orange Juice",
+          "desc": "Made with freshly squeezed oranges, it's a great source of Vitamin C.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 24
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/127781/small_KOZ_8982.jpeg"
+        },
+        {
+          "en": "Passion Fruit",
+          "desc": "Refreshing cold drink consists of muddled mint and lemon mixed with carbonated water, passion fruit syrup, passion fruit puree and crushed ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49706/small_KOZ_3252.jpeg"
+        },
+        {
+          "en": "Strawberry Mojito",
+          "desc": "Refreshing cold drink consist of muddled mint And lemon mixed with carbonated water, strawberry syrup, strawberry puree and crushed ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49705/small_KOZ_3238.jpeg"
+        },
+        {
+          "en": "Lotus Milkshake",
+          "desc": "Combination of fresh milk, Lotus sauce and vanilla ice cream And topped with crushed lotus biscuit",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "Pistachio Milkshake",
+          "desc": "Combination of fresh milk, pistachio sauce and vanilla ice cream",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 33
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Pistachios_gelato_Milkshakes_-_domed_plastic_cup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Coca-Cola Zero",
+          "desc": "Soft Drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/2/21/Coca_Cola_zero_%28lattina%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "Chicken Caesar Salad",
-      "desc": "Romaine lettuce tossed in Caesar dressing, grilled chicken, crispy croutons and parmesan.",
-      "prices": [
+      "title": "Main Dishes",
+      "titleAr": "أطباق رئيسية",
+      "meals": [
         {
-          "size": "-",
-          "aed": 38
+          "en": "Chicken Caesar Salad",
+          "desc": "Romaine lettuce tossed in Caesar dressing, topped with grilled chicken, crispy croutons and Parmesan cheese.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 38
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/57/Chicken_fettuccine_alfredo.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Cobb Salad",
+          "desc": "A classic Cobb salad with marinated grilled chicken, turkey bacon, Avacado, cherry tomatoes, boiled eggs, onion and mixed lettuce drizzled with honey mustard dressing.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 45
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Cobb_salad%2C_9_May_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Dynamite Chicken",
+          "desc": "Crispy marinated chicken strips tossed in dynamite sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 32
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/1/14/Chicken_with_dynamite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Lime Corn Salad",
+          "desc": "Mixed lettuce and tossed corn in lime dressing topped with feta cheese, cherry tomatoes and Brazilian lime wedges.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 43
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/d/de/Food_at_Fort_Ross_State_Historic_Park_-_Jenner%2C_California_-_Sarah_Stierch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Chicken Sando",
+          "desc": "Marinated crispy chicken breast, served on a brioche bun with melted cheddar cheese and our in-house ranch sauce.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 44
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/5/51/Feeling%2B_teriyaki_chicken_sando_sandwich.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     },
     {
-      "en": "San Sebastian Cheesecake",
-      "desc": "Traditional Spanish cheesecake, creamy and light filling, baked to caramelized perfection.",
-      "prices": [
+      "title": "More",
+      "titleAr": "المزيد",
+      "meals": [
         {
-          "size": "-",
-          "aed": 46
-        }
-      ]
-    },
-    {
-      "en": "Cheese Burger",
-      "desc": "Angus beef in brioche bun, bbq ranch sauce, dynamite sauce, tomato, lettuce, mozzarella and cheddar.",
-      "prices": [
+          "en": "Egg Fast Sandwich",
+          "desc": "Egg Fast Sandwich",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 26
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Uitsmijter_bacon_kaas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
         {
-          "size": "-",
-          "aed": 44
+          "en": "Blue Sky",
+          "desc": "Refreshing cold drink consist of muddled mint and lemon mixed with carbonated water, blue curacao syrup and crushed ice",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/49707/small_KOZ_3255.jpeg"
+        },
+        {
+          "en": "7 Up",
+          "desc": "Soft Drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/68954/small_L-213313-1286891070.jpeg.jpg"
+        },
+        {
+          "en": "Diet 7 Up",
+          "desc": "Soft Drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/68954/small_L-213313-1286891070.jpeg.jpg"
+        },
+        {
+          "en": "Mountain Dew",
+          "desc": "Soft Drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/68955/small_download.png"
+        },
+        {
+          "en": "Pepsi",
+          "desc": "Soft drink",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 8
+            }
+          ],
+          "cover": "https://drivu.s3.eu-west-1.amazonaws.com/uploads/menu_item/image/68958/small_7396df9a990795e91f0d515a0a4b3c1d.jpg"
+        },
+        {
+          "en": "Long black",
+          "desc": "Coffee prepared with double shots of espresso extracted from our Brazilian beans, tapped with water",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 20
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nero_Espresso_long_black_%283168418775%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        },
+        {
+          "en": "Affagato",
+          "desc": "Italian word for \"Drowned\". Gelato ice-cream drowned in coffee.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 28
+            }
+          ],
+          "cover": "https://firebasestorage.googleapis.com/v0/b/menu-app-b268b.appspot.com/o/_outreach%2Fplaceholder.png?alt=media&token=867807f4-f78a-4741-a9dc-8225b0ebc27e"
+        },
+        {
+          "en": "White Mocha",
+          "desc": "Coffee prepared with double shots of espresso, milk and white chocolate syrup.",
+          "prices": [
+            {
+              "size": "-",
+              "aed": 27
+            }
+          ],
+          "cover": "https://upload.wikimedia.org/wikipedia/commons/c/c9/White_chocolate_mocha_coffee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
         }
       ]
     }
@@ -113,8 +494,7 @@
     "taxValue": 0,
     "cover": null,
     "socialLinks": {
-      "instagram": "https://www.instagram.com/vuecafe",
-      "website": "https://www.talabat.com/uae/restaurant/706357/vue-cafe-al-jimi"
+      "instagram": "https://instagram.com/vuecafe"
     }
   }
 }
