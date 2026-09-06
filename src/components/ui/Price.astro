@@ -1,0 +1,27 @@
+---
+/**
+ * Prints one figure from the price book, in both regions at once.
+ *
+ * Both spans ship in the HTML and the CSS in global.css paints exactly one of
+ * them, chosen by the html[data-region] the resolver in Layout.astro stamps
+ * before first paint. That is the whole mechanism: no hydration, no fetch, no
+ * flash of the wrong number, and the markup still says the standard rate when
+ * JavaScript never runs.
+ *
+ * The two spans below sit flush against each other on purpose. The hidden one
+ * is display:none rather than removed, so whitespace between them would land
+ * in the middle of a sentence — hence the `>` hanging on its own line, which
+ * is how Prettier wraps a whitespace-sensitive inline element.
+ */
+import { PRICES, type PriceField } from '../../config/site'
+
+interface Props {
+	/** Which figure to print, e.g. "monthly" or "annualTotal". */
+	field: PriceField
+}
+const { field } = Astro.props
+---
+
+<span data-region-for="global">{PRICES.global[field]}</span><span data-region-for="sy"
+	>{PRICES.sy[field]}</span
+>

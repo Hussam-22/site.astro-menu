@@ -1,8 +1,10 @@
 ---
-import { PRICE, SITE } from '../config/site'
+import { PRICE, PRICES, SITE } from '../config/site'
 import { INCLUDED, INCLUDED_AR } from '../data/plan'
 import Button from './ui/Button.astro'
 import Check from './ui/Check.astro'
+import Price from './ui/Price.astro'
+import Regional from './ui/Regional.astro'
 import { getLangFromUrl, localizePath } from '../i18n/ui'
 
 interface Props {
@@ -61,32 +63,53 @@ const list = compact ? fullList.slice(0, 8) : fullList
 				{isAr ? 'باقة واحدة. كل شيء فيها.' : 'One plan. Everything in it.'}
 			</Heading>
 
+			<!--
+				Two billing periods x two regions. The billing period swaps on
+				[data-bill] via the checkbox below; the region swaps on
+				[data-region-for] via html[data-region]. The two are independent, so
+				every combination is in the markup and exactly one is ever painted.
+			-->
 			<div class="mt-6 min-h-[9.5rem]">
 				<div data-bill="monthly" class="tabular">
 					<p class="flex items-baseline justify-center gap-1">
-						<span class="font-display text-7xl sm:text-8xl">{PRICE.monthly}</span>
+						<span class="font-display text-7xl sm:text-8xl"><Price field="monthly" /></span>
 						<span class="text-ink-soft text-xl font-semibold">{isAr ? '/شهريًا' : '/month'}</span>
 					</p>
-					<p class="text-ink-faint mt-2 text-lg">
-						{isAr
-							? `${PRICE.monthlyAed} شهريًا · فوترة شهرية`
-							: `${PRICE.monthlyAed} a month · billed monthly`}
-					</p>
+					<Regional region="global" as="p" class="text-ink-faint mt-2 text-lg">
+						{
+							isAr
+								? `${PRICES.global.monthlyAed} شهريًا · فوترة شهرية`
+								: `${PRICES.global.monthlyAed} a month · billed monthly`
+						}
+					</Regional>
+					<Regional region="sy" as="p" class="text-ink-faint mt-2 text-lg">
+						{isAr ? 'فوترة شهرية · بالدولار الأمريكي' : 'Billed monthly · in US dollars'}
+					</Regional>
 				</div>
 				<div data-bill="annual" class="tabular">
 					<p class="flex items-baseline justify-center gap-1">
-						<span class="font-display text-7xl sm:text-8xl">{PRICE.annualPerMonth}</span>
+						<span class="font-display text-7xl sm:text-8xl"><Price field="annualPerMonth" /></span>
 						<span class="text-ink-soft text-xl font-semibold">{isAr ? '/شهريًا' : '/month'}</span>
 					</p>
-					<p class="text-ink-faint mt-2 text-lg">
-						{isAr
-							? `${PRICE.annualTotal} تُفوتَر سنويًا · ${PRICE.annualTotalAed}`
-							: `${PRICE.annualTotal} billed yearly · ${PRICE.annualTotalAed}`}
-					</p>
+					<Regional region="global" as="p" class="text-ink-faint mt-2 text-lg">
+						{
+							isAr
+								? `${PRICES.global.annualTotal} تُفوتَر سنويًا · ${PRICES.global.annualTotalAed}`
+								: `${PRICES.global.annualTotal} billed yearly · ${PRICES.global.annualTotalAed}`
+						}
+					</Regional>
+					<Regional region="sy" as="p" class="text-ink-faint mt-2 text-lg">
+						{
+							isAr
+								? `${PRICES.sy.annualTotal} تُفوتَر سنويًا · بالدولار الأمريكي`
+								: `${PRICES.sy.annualTotal} billed yearly · in US dollars`
+						}
+					</Regional>
 					<p class="text-brand-text mt-1 text-lg font-bold">
-						{isAr
-							? `وفّر ${PRICE.annualSaving} سنويًا · خصم ${PRICE.annualSavingPercent}%`
-							: `Save ${PRICE.annualSaving} a year · ${PRICE.annualSavingPercent}% off`}
+						{isAr ? 'وفّر ' : 'Save '}<Price field="annualSaving" />{
+							isAr ? ' سنويًا · خصم ' : ' a year · '
+						}<Regional region="global">{PRICES.global.annualSavingPercent}</Regional><Regional
+							region="sy">{PRICES.sy.annualSavingPercent}</Regional>{isAr ? '%' : '% off'}
 					</p>
 				</div>
 			</div>

@@ -1,0 +1,21 @@
+---
+/**
+ * Shows its contents only to one region. For anything a <Price> cannot carry
+ * on its own — a whole sentence, a dirham line Syria does not have, a row of
+ * a table. Same mechanism as <Price>; see the note there.
+ *
+ * Every region MUST be covered wherever this is used. A block wrapped for
+ * "global" with no "sy" counterpart is simply missing for a visitor in Syria.
+ */
+import type { Region } from '../../config/site'
+
+interface Props {
+	region: Region
+	/** Defaults to a span so it can sit inside running text. */
+	as?: string
+	class?: string
+}
+const { region, as: Tag = 'span', class: klass } = Astro.props
+---
+
+<Tag data-region-for={region} class={klass}><slot /></Tag>

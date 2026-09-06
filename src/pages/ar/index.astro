@@ -12,8 +12,9 @@ import Cross from '../../components/ui/Cross.astro'
 import FaqList from '../../components/ui/FaqList.astro'
 import CtaBand from '../../components/ui/CtaBand.astro'
 import PricingCard from '../../components/PricingCard.astro'
+import RegionNote from '../../components/ui/RegionNote.astro'
 import { Image } from 'astro:assets'
-import { SITE, PRICE } from '../../config/site'
+import { SITE, PRICE, regionalText } from '../../config/site'
 import {
 	PILLARS,
 	VENUES,
@@ -35,7 +36,7 @@ const screenFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/s
 const screenshot = (file: string) =>
 	screenFiles[`../../assets/screens/${file}`]?.default as ImageMetadata
 
-const homeFaqsAr = HOME_FAQS.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
+const homeFaqsAr = HOME_FAQS.map((f) => ({ ...f, q: f.qAr, a: f.aAr, aSy: f.aArSy }))
 
 const title = 'قائمة QR للمطاعم والمقاهي'
 const description = `حوّل قائمة مطعمك إلى منيو QR بالصور، تعدّلها بنفسك خلال ثوانٍ وتظهر فورًا لزبائنك — بتلات لغات، من رمز واحد لا يحتاج إعادة طباعة. ${PRICE.monthly} شهريًا، بلا عمولة.`
@@ -124,9 +125,12 @@ const schema = [
 						<Button href={SITE.signupUrl} size="lg">ابدأ {PRICE.trialDays} يومًا مجانًا</Button>
 						<Button href="/ar/demo" variant="outline" size="lg">شاهد قائمة حقيقية</Button>
 					</div>
-					<p class="text-ink-faint mt-4 text-base">
-						بلا بطاقة مطلوبة · {PRICE.monthly} شهريًا بعدها · ألغِ في أي وقت
-					</p>
+					<p
+						class="text-ink-faint mt-4 text-base"
+						set:html={regionalText(
+							(p) => `بلا بطاقة مطلوبة · ${p.monthly} شهريًا بعدها · ألغِ في أي وقت`
+						)}
+					/>
 
 					<div class="border-line mt-10 flex flex-wrap items-center gap-x-10 gap-y-6 border-t pt-8">
 						<div>
@@ -421,11 +425,15 @@ const schema = [
 		<SectionHead
 			eyebrow="الأسعار"
 			title="باقة واحدة. كل شيء فيها."
-			lede={`${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا. كل منافس في هذا السوق يطلب منك طلب عرض سعر — إليك الرقم مباشرة.`}
+			lede={regionalText(
+				(p) =>
+					`${p.monthly} شهريًا، أو ${p.annualPerMonth} شهريًا عند الدفع سنويًا. كل منافس في هذا السوق يطلب منك طلب عرض سعر — إليك الرقم مباشرة.`
+			)}
 			align="center"
 		/>
 		<div class="mt-12">
 			<PricingCard compact />
+			<RegionNote />
 		</div>
 
 		<div class="mx-auto mt-16 max-w-4xl">

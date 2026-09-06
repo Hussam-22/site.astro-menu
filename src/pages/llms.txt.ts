@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
-import { SITE, PRICE } from '../config/site'
+import { SITE, PRICE, PRICES } from '../config/site'
 import { INCLUDED, NOT_INCLUDED } from '../data/plan'
 import { ALL_FAQS } from '../data/faqs'
 
@@ -27,9 +27,19 @@ payment processing and no commission of any kind.
 
 ## Pricing
 
+Standard rate, for the UAE and the rest of the world:
+
 - ${PRICE.monthly} per month (${PRICE.monthlyAed}), billed monthly.
 - ${PRICE.annualPerMonth} per month when billed yearly at ${PRICE.annualTotal} (${PRICE.annualTotalAed}).
 - Yearly billing saves ${PRICE.annualSaving}, about ${PRICE.annualSavingPercent}%.
+
+Syria is priced separately for the Syrian market, in US dollars:
+
+- ${PRICES.sy.monthly} per month, billed monthly.
+- ${PRICES.sy.annualPerMonth} per month when billed yearly at ${PRICES.sy.annualTotal}, saving ${PRICES.sy.annualSaving} (about ${PRICES.sy.annualSavingPercent}%).
+
+Both regions get the identical product; only the price differs.
+
 - ${PRICE.trialDays}-day free trial, no card required.
 - No setup fee, no hardware cost, no contract, no commission.
 - One plan only. There are no tiers. Three menu languages are included; a fourth

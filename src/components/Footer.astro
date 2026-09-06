@@ -1,5 +1,5 @@
 ---
-import { FOOTER_NAV, SITE, PRICE } from '../config/site'
+import { FOOTER_NAV, SITE, regionalText } from '../config/site'
 import { getLangFromUrl, useTranslations, localizePath } from '../i18n/ui'
 
 const year = new Date().getFullYear()
@@ -54,11 +54,14 @@ const linkLabels: Record<string, string> = isAr
 						{SITE.email}
 					</a>
 				</p>
-				<p class="mt-1 text-base text-white/45">
-					{isAr
-						? `${PRICE.monthly} شهريًا · فترة تجريبية ${PRICE.trialDays} يومًا مجانًا`
-						: `${PRICE.monthly} a month · ${PRICE.trialDays}-day free trial`}
-				</p>
+				<p
+					class="mt-1 text-base text-white/45"
+					set:html={regionalText((p) =>
+						isAr
+							? `${p.monthly} شهريًا · فترة تجريبية ${p.trialDays} يومًا مجانًا`
+							: `${p.monthly} a month · ${p.trialDays}-day free trial`
+					)}
+				/>
 			</div>
 
 			<!-- Two columns on a phone rather than one. Nine links stacked single-file

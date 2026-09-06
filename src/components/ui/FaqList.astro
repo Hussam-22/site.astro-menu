@@ -31,7 +31,30 @@ const { items, openFirst = false } = Astro.props
 						</svg>
 					</span>
 				</summary>
-				<p class="text-ink-soft max-w-3xl pb-6 text-lg leading-relaxed text-pretty">{item.a}</p>
+				{/*
+					An answer that quotes a price ships in both regions and the CSS in
+					global.css paints one. An answer that does not quote a price is
+					rendered plain — wrapping it for one region would leave the other
+					region with no answer at all.
+				*/}
+				{item.aSy ? (
+					<Fragment>
+						<p
+							data-region-for="global"
+							class="text-ink-soft max-w-3xl pb-6 text-lg leading-relaxed text-pretty"
+						>
+							{item.a}
+						</p>
+						<p
+							data-region-for="sy"
+							class="text-ink-soft max-w-3xl pb-6 text-lg leading-relaxed text-pretty"
+						>
+							{item.aSy}
+						</p>
+					</Fragment>
+				) : (
+					<p class="text-ink-soft max-w-3xl pb-6 text-lg leading-relaxed text-pretty">{item.a}</p>
+				)}
 			</details>
 		))
 	}

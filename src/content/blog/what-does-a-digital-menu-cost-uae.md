@@ -14,7 +14,7 @@ Digital menu pricing in this market is deliberately hard to compare. Here is how
 
 Almost every product you will look at uses one of these, sometimes two at once.
 
-**Flat subscription.** A fixed monthly or annual fee per venue. Easy to budget, no surprises. This is what we do, at 59 AED a month or 500 AED a year.
+**Flat subscription.** A fixed monthly or annual fee per venue. Easy to budget, no surprises. This is what we do, at 99 AED a month or 999 AED a year.
 
 **Tiered subscription.** Several plans where the cheap one is missing something you will need within a month. The advertised price is rarely the price you end up paying, because the feature you actually want — usually translation, analytics or more than a token number of items — lives two tiers up.
 
@@ -35,7 +35,7 @@ Add up last year's:
 - Replacement copies for damaged or missing menus
 - Separate printed versions in other languages
 
-For most independent venues that total is well into the hundreds of dirhams, and for anyone printing more than once a year it is comfortably over 500 AED — which is a whole year of a flat-fee digital menu.
+For most independent venues that total runs well into four figures, and for anyone printing more than once a year it comfortably clears a whole year of a flat-fee digital menu.
 
 We are not going to tell you what your number is. You have the invoices; go and look. The point is that the comparison is against a real cost you are already paying, not against zero.
 

@@ -1,10 +1,11 @@
 ---
 import Button from './Button.astro'
-import { SITE, PRICE } from '../../config/site'
+import { SITE, PRICE, regionalText } from '../../config/site'
 import { getLangFromUrl, localizePath } from '../../i18n/ui'
 
 interface Props {
 	title?: string
+	/** Rendered as HTML, so it can carry regionalText() spans. */
 	body?: string
 	/** Second, quieter action. Defaults to the live demo menu. */
 	secondaryHref?: string
@@ -37,16 +38,25 @@ const {
 			<h2 class="text-5xl text-balance text-white sm:text-6xl lg:text-7xl">
 				{title}
 			</h2>
-			<p class="mt-5 text-xl text-pretty text-white/70 sm:text-2xl">{body}</p>
+			<p class="mt-5 text-xl text-pretty text-white/70 sm:text-2xl" set:html={body} />
 			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 				<Button href={SITE.signupUrl} size="lg">
 					{isAr ? 'ابدأ فترتك التجريبية المجانية' : 'Start your free trial'}
 				</Button>
 				<Button href={secondaryHref} variant="light" size="lg">{secondaryLabel}</Button>
 			</div>
-			<p class="mt-6 text-base text-white/50">
-				{PRICE.monthly} a month after the trial · {PRICE.monthlyAed} · Cancel any time
-			</p>
+			<!-- Was English-only on the Arabic pages too; it has to be rebuilt per
+			     region anyway, so it is localised here at the same time. Syria has no
+			     dirham figure, so that clause drops rather than showing a currency
+			     nobody there is billed in. -->
+			<p
+				class="mt-6 text-base text-white/50"
+				set:html={regionalText((p) =>
+					isAr
+						? `${p.monthly} شهريًا بعد الفترة التجريبية${p.monthlyAed ? ` · ${p.monthlyAed}` : ''} · ألغِ في أي وقت`
+						: `${p.monthly} a month after the trial${p.monthlyAed ? ` · ${p.monthlyAed}` : ''} · Cancel any time`
+				)}
+			/>
 		</div>
 	</div>
 </section>

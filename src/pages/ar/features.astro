@@ -9,7 +9,7 @@ import CtaBand from '../../components/ui/CtaBand.astro'
 import Ribbon from '../../components/ui/Ribbon.astro'
 import DashboardImage from '../../components/ui/DashboardImage.astro'
 import { Image } from 'astro:assets'
-import { SITE, PRICE } from '../../config/site'
+import { SITE, PRICE, regionalText } from '../../config/site'
 import { FEATURE_GROUPS } from '../../data/features'
 import { RIBBON_AR } from '../../data/content'
 import { crumbSchema } from '../../utils/schema'
@@ -137,7 +137,10 @@ const description = `صورة لكل طبق، أحجام وأسعار، تلات
 
 	<CtaBand
 		title="كل هذا، بسعر ثابت واحد"
-		body={`${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا. ${PRICE.trialDays} يومًا مجانًا أولًا، بلا بطاقة.`}
+		body={regionalText(
+			(p) =>
+				`${p.monthly} شهريًا، أو ${p.annualPerMonth} شهريًا عند الدفع سنويًا. ${p.trialDays} يومًا مجانًا أولًا، بلا بطاقة.`
+		)}
 		secondaryHref="/ar/pricing"
 		secondaryLabel="شاهد الأسعار"
 	/>

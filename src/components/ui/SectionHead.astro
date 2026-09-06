@@ -2,6 +2,7 @@
 interface Props {
 	eyebrow?: string
 	title: string
+	/** Rendered as HTML, like `title` — so it can carry regionalText() spans. */
 	lede?: string
 	align?: 'left' | 'center'
 	/** h2 nearly always; h1 only where the section IS the page heading. */
@@ -49,9 +50,8 @@ const sizes = {
 					align === 'center' && 'mx-auto',
 					invert ? 'text-white/70' : 'text-ink-soft'
 				]}
-			>
-				{lede}
-			</p>
+				set:html={lede}
+			/>
 		)
 	}
 	<slot />

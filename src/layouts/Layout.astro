@@ -78,10 +78,38 @@ const graph = [orgSchema, siteSchema, ...(schema ? (Array.isArray(schema) ? sche
 ---
 
 <!doctype html>
-<html lang={lang} dir={dir}>
+<html lang={lang} dir={dir} data-region="global">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		{/*
+			Region resolver. Both price books are in the HTML of every page; this
+			decides which one gets painted, and it runs here — a blocking inline
+			script at the top of <head> — so the decision is made before first
+			paint and nobody sees the wrong number flash past.
+
+			The signal is the browser's timezone. It needs no network call, no IP
+			lookup, no third-party service and no consent banner, and it is stable
+			for someone actually sitting in the country. It is a proxy, not
+			geolocation, so ?region=sy and ?region=global override it and the answer
+			is remembered: that is what makes a sales link work, and what lets
+			anyone on a VPN correct us from the note under the pricing card.
+
+			Anything that throws — storage blocked, private mode, no Intl — leaves
+			the attribute at the "global" the markup already carries.
+		*/}
+		<script is:inline>
+			try {
+				var asked = new URLSearchParams(location.search).get('region')
+				if (asked === 'sy' || asked === 'global') localStorage.setItem('am-region', asked)
+				var chosen = localStorage.getItem('am-region')
+				if (chosen !== 'sy' && chosen !== 'global') {
+					chosen = Intl.DateTimeFormat().resolvedOptions().timeZone === 'Asia/Damascus' ? 'sy' : 'global'
+				}
+				document.documentElement.dataset.region = chosen
+			} catch (e) {}
+		</script>
 		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />

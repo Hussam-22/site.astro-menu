@@ -9,7 +9,10 @@ import Check from '../components/ui/Check.astro'
 import FaqList from '../components/ui/FaqList.astro'
 import CtaBand from '../components/ui/CtaBand.astro'
 import Sticker from '../components/ui/Sticker.astro'
-import { SITE, PRICE, PLAN } from '../config/site'
+import Price from '../components/ui/Price.astro'
+import Regional from '../components/ui/Regional.astro'
+import RegionNote from '../components/ui/RegionNote.astro'
+import { SITE, PRICE, PRICES } from '../config/site'
 import { NOT_INCLUDED } from '../data/plan'
 import { FAQ_GROUPS } from '../data/faqs'
 import { crumbSchema, faqSchema } from '../utils/schema'
@@ -45,14 +48,6 @@ const product = {
 	]
 }
 
-/**
- * The honest cost comparison. Print figures are a stated assumption, not a
- * claim about any particular venue — the point is the shape of the spend, and
- * the arithmetic is shown so a reader can substitute their own numbers.
- */
-const PRINT_RUNS_PER_YEAR = 3
-const PRINT_COST_PER_RUN = 90
-const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 ---
 
 <Layout
@@ -80,6 +75,7 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 		</div>
 		<div class="mt-12">
 			<PricingCard id="plan" as="h2" />
+			<RegionNote />
 		</div>
 	</Section>
 
@@ -117,11 +113,18 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 					title="Compare it to the<br />print bill, not to software"
 					lede="Most venues are not choosing between two apps. They are choosing between a subscription and a printer's invoice."
 				/>
+				{/*
+					The print figures are a stated assumption, not a claim about any
+					particular venue — the arithmetic is shown so a reader can substitute
+					their own. They live in the price book because they differ by region:
+					a print run in Damascus does not cost what one in Dubai costs.
+				*/}
 				<p class="text-ink-soft mt-6 text-lg text-pretty">
-					A venue that reprints its menu {PRINT_RUNS_PER_YEAR} times a year at around ${PRINT_COST_PER_RUN}
-					a run spends about ${printYear} on print alone — before anyone counts the evening a manager
-					lost to proofreading, or the month a wrong price stayed on the table because reprinting was
-					not worth it.
+					A venue that reprints its menu {PRICE.printRunsPerYear} times a year at around <Price
+						field="printCostPerRun"
+					/> a run spends about <Price field="printYear" /> on print alone — before anyone counts the
+					evening a manager lost to proofreading, or the month a wrong price stayed on the table because
+					reprinting was not worth it.
 				</p>
 				<p class="text-ink-soft mt-4 text-lg text-pretty">
 					Those figures are an illustration, not a quote. Put your own numbers in — the shape rarely
@@ -133,17 +136,19 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 				<dl class="tabular divide-line divide-y">
 					<div class="flex items-baseline justify-between gap-6 pb-5">
 						<dt class="text-lg font-bold">Astro-Menu, billed yearly</dt>
-						<dd class="font-display text-3xl">{PRICE.annualTotal}<span class="text-lg">/yr</span></dd>
+						<dd class="font-display text-3xl"><Price field="annualTotal" /><span class="text-lg">/yr</span></dd>
 					</div>
 					<div class="flex items-baseline justify-between gap-6 py-5">
 						<dt class="text-lg font-bold">Astro-Menu, billed monthly</dt>
 						<dd class="font-display text-3xl">
-							{PRICE.monthly}<span class="text-lg">/mo</span>
+							<Price field="monthly" /><span class="text-lg">/mo</span>
 						</dd>
 					</div>
 					<div class="flex items-baseline justify-between gap-6 py-5">
 						<dt class="text-ink-soft text-lg">Illustrative print spend</dt>
-						<dd class="font-display text-ink-soft text-3xl">${printYear}<span class="text-lg">/yr</span></dd>
+						<dd class="font-display text-ink-soft text-3xl">
+							<Price field="printYear" /><span class="text-lg">/yr</span>
+						</dd>
 					</div>
 					<div class="flex items-baseline justify-between gap-6 pt-5">
 						<dt class="text-lg font-bold">Commission we take</dt>
@@ -157,7 +162,10 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 					</li>
 					<li class="flex items-start gap-3 text-lg">
 						<Check class="text-go mt-1.5" />
-						<span>In dirhams: {PRICE.monthlyAed} a month, {PRICE.annualTotalAed} a year</span>
+						<Regional region="global">
+							In dirhams: {PRICES.global.monthlyAed} a month, {PRICES.global.annualTotalAed} a year
+						</Regional>
+						<Regional region="sy">Billed in US dollars, wherever your card is issued</Regional>
 					</li>
 				</ul>
 			</div>
@@ -179,7 +187,7 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 	</Section>
 
 	<CtaBand
-		title={`Try it for ${PLAN.trialDays} days first`}
+		title={`Try it for ${PRICE.trialDays} days first`}
 		body="No card, no setup fee, no contract. If it is not right, walk away and nothing has changed."
 		secondaryHref="/demo"
 		secondaryLabel="See a real menu"

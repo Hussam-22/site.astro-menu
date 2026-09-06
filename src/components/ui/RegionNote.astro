@@ -1,0 +1,53 @@
+---
+/**
+ * The line under the pricing card that says which region's prices are on
+ * screen, and lets a visitor correct us.
+ *
+ * The resolver in Layout.astro guesses from the browser's timezone, which is
+ * right for someone sitting in the country and wrong for someone on a VPN, on
+ * a laptop still set to the timezone they moved from, or being shown the page
+ * by a salesperson. So the guess is always visible and always reversible. The
+ * choice is remembered, which is also what makes a ?region=sy link work.
+ */
+import Regional from './Regional.astro'
+import { getLangFromUrl } from '../../i18n/ui'
+
+const isAr = getLangFromUrl(Astro.url) === 'ar'
+const link = 'text-brand-text font-bold underline underline-offset-4 hover:no-underline'
+---
+
+<p class="text-ink-faint mx-auto mt-6 max-w-xl text-center text-base text-pretty">
+	<Regional region="global">
+		{
+			isAr
+				? 'الأسعار المعروضة للإمارات وباقي العالم.'
+				: 'Prices shown for the UAE and the rest of the world.'
+		}{' '}
+		<button type="button" data-set-region="sy" class={link}>
+			{isAr ? 'في سوريا؟ شوف السعر السوري' : 'In Syria? See Syrian pricing'}
+		</button>
+	</Regional>
+	<Regional region="sy">
+		{isAr ? 'الأسعار المعروضة للسوق السوري.' : 'Prices shown for the Syrian market.'}{' '}
+		<button type="button" data-set-region="global" class={link}>
+			{isAr ? 'اعرض السعر القياسي' : 'Show standard pricing'}
+		</button>
+	</Regional>
+</p>
+
+<script>
+	// Flips the region for real and remembers it, so it survives the next page
+	// load and the resolver in Layout.astro picks it up instead of guessing.
+	document.querySelectorAll<HTMLElement>('[data-set-region]').forEach((button) => {
+		button.addEventListener('click', () => {
+			const region = button.dataset.setRegion
+			if (region !== 'sy' && region !== 'global') return
+			document.documentElement.dataset.region = region
+			try {
+				localStorage.setItem('am-region', region)
+			} catch {
+				// Storage blocked. The swap still holds for this page.
+			}
+		})
+	})
+</script>

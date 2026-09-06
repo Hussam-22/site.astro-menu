@@ -1,7 +1,21 @@
-import { PRICE, SITE } from '../config/site'
+import { PRICE, PRICES, SITE, type PriceBook } from '../config/site'
 
-export type Faq = { q: string; a: string; qAr: string; aAr: string }
+/**
+ * `a` and `aAr` are the standard-rate answers: they are what FaqList paints by
+ * default and, more importantly, what goes into the FAQPage JSON-LD, which has
+ * no region and no way to express one. Where an answer quotes a price, `aSy`
+ * and `aArSy` carry the Syrian wording alongside it and FaqList paints
+ * whichever the visitor's region calls for.
+ */
+export type Faq = { q: string; a: string; qAr: string; aAr: string; aSy?: string; aArSy?: string }
 export type FaqGroup = { heading: string; items: Faq[]; headingAr: string }
+
+/** One template, both price books — so the two answers can never drift apart. */
+const cost = (p: PriceBook) =>
+	`Astro-Menu is ${p.monthly} per month, or ${p.annualPerMonth} per month when you pay ${p.annualTotal} for the year — a saving of ${p.annualSaving}, about ${p.annualSavingPercent}%. That is one price for everything: unlimited menus, unlimited items, unlimited views, three menu languages and all updates.${p.monthlyAed ? ` In dirhams it is ${p.monthlyAed} a month or ${p.annualTotalAed} a year.` : ' Billing is in US dollars.'}`
+
+const costAr = (p: PriceBook) =>
+	`سعر استرو منيو ${p.monthly} بالشهر، أو ${p.annualPerMonth} بالشهر إذا دفعت ${p.annualTotal} سنويًا — يعني توفير ${p.annualSaving}، أي حوالي ${p.annualSavingPercent}٪. وهذا السعر يشمل كل شيء: قوائم غير محدودة، أصناف غير محدودة، مشاهدات غير محدودة، تلات لغات للمنيو وكل التحديثات.${p.monthlyAed ? ` بالدرهم، السعر ${p.monthlyAed} بالشهر أو ${p.annualTotalAed} بالسنة.` : ' الفوترة بالدولار الأمريكي.'}`
 
 /**
  * Grouped for /faq, and a subset is pulled onto the home page. Everything here
@@ -45,9 +59,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
 		items: [
 			{
 				q: 'How much does Astro-Menu cost?',
-				a: `Astro-Menu is ${PRICE.monthly} per month, or ${PRICE.annualPerMonth} per month when you pay ${PRICE.annualTotal} for the year — a saving of ${PRICE.annualSaving}, about ${PRICE.annualSavingPercent}%. That is one price for everything: unlimited menus, unlimited items, unlimited views, three menu languages and all updates. In dirhams it is ${PRICE.monthlyAed} a month or ${PRICE.annualTotalAed} a year.`,
+				a: cost(PRICES.global),
+				aSy: cost(PRICES.sy),
 				qAr: 'كم سعر اشتراك استرو منيو؟',
-				aAr: `سعر استرو منيو ${PRICE.monthly} بالشهر، أو ${PRICE.annualPerMonth} بالشهر إذا دفعت ${PRICE.annualTotal} سنويًا — يعني توفير ${PRICE.annualSaving}، أي حوالي ${PRICE.annualSavingPercent}٪. وهذا السعر يشمل كل شيء: قوائم غير محدودة، أصناف غير محدودة، مشاهدات غير محدودة، تلات لغات للمنيو وكل التحديثات. بالدرهم، السعر ${PRICE.monthlyAed} بالشهر أو ${PRICE.annualTotalAed} بالسنة.`
+				aAr: costAr(PRICES.global),
+				aArSy: costAr(PRICES.sy)
 			},
 			{
 				q: 'Do you take a commission on orders?',

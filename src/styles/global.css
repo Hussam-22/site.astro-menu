@@ -319,6 +319,23 @@ html[lang='ar'] .label {
 	animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* ---------------------------------------------------------------------------
+   Regional pricing.
+
+   Every page ships both price books — see src/config/site.ts. The resolver in
+   Layout.astro stamps html[data-region] from inside <head>, before first
+   paint, so only one book is ever painted and there is no flash of the wrong
+   number. The markup defaults to data-region="global", which is what a
+   crawler and a visitor with JavaScript off get.
+
+   Two attribute selectors deep, so this outranks any Tailwind display
+   utility sitting on the same element.
+--------------------------------------------------------------------------- */
+html[data-region='global'] [data-region-for='sy'],
+html[data-region='sy'] [data-region-for='global'] {
+	display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;

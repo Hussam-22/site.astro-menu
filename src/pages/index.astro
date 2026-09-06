@@ -12,8 +12,9 @@ import Cross from '../components/ui/Cross.astro'
 import FaqList from '../components/ui/FaqList.astro'
 import CtaBand from '../components/ui/CtaBand.astro'
 import PricingCard from '../components/PricingCard.astro'
+import RegionNote from '../components/ui/RegionNote.astro'
 import { Image } from 'astro:assets'
-import { SITE, PRICE } from '../config/site'
+import { SITE, PRICE, regionalText } from '../config/site'
 import {
 	PILLARS,
 	VENUES,
@@ -122,9 +123,12 @@ const schema = [
 						<Button href={SITE.signupUrl} size="lg">Start {PRICE.trialDays} days free</Button>
 						<Button href="/demo" variant="outline" size="lg">See a real menu</Button>
 					</div>
-					<p class="text-ink-faint mt-4 text-base">
-						No card required · {PRICE.monthly} a month after · Cancel any time
-					</p>
+					<p
+						class="text-ink-faint mt-4 text-base"
+						set:html={regionalText(
+							(p) => `No card required · ${p.monthly} a month after · Cancel any time`
+						)}
+					/>
 
 					<div class="border-line mt-10 flex flex-wrap items-center gap-x-10 gap-y-6 border-t pt-8">
 						<div>
@@ -421,11 +425,15 @@ const schema = [
 		<SectionHead
 			eyebrow="Pricing"
 			title="One plan. Everything in it."
-			lede={`${PRICE.monthly} a month, or ${PRICE.annualPerMonth} a month paid yearly. Every competitor in this market makes you ask for a quote — here is the number.`}
+			lede={regionalText(
+				(p) =>
+					`${p.monthly} a month, or ${p.annualPerMonth} a month paid yearly. Every competitor in this market makes you ask for a quote — here is the number.`
+			)}
 			align="center"
 		/>
 		<div class="mt-12">
 			<PricingCard compact />
+			<RegionNote />
 		</div>
 
 		<div class="mx-auto mt-16 max-w-4xl">

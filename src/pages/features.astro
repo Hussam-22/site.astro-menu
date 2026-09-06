@@ -9,7 +9,7 @@ import CtaBand from '../components/ui/CtaBand.astro'
 import Ribbon from '../components/ui/Ribbon.astro'
 import DashboardImage from '../components/ui/DashboardImage.astro'
 import { Image } from 'astro:assets'
-import { SITE, PRICE } from '../config/site'
+import { SITE, PRICE, regionalText } from '../config/site'
 import { FEATURE_GROUPS } from '../data/features'
 import { RIBBON } from '../data/content'
 import { crumbSchema } from '../utils/schema'
@@ -137,7 +137,10 @@ const description = `Photos on every dish, portions and prices, three menu langu
 
 	<CtaBand
 		title="All of it, for one flat price"
-		body={`${PRICE.monthly} a month, or ${PRICE.annualPerMonth} a month paid yearly. ${PRICE.trialDays} days free first, no card.`}
+		body={regionalText(
+			(p) =>
+				`${p.monthly} a month, or ${p.annualPerMonth} a month paid yearly. ${p.trialDays} days free first, no card.`
+		)}
 		secondaryHref="/pricing"
 		secondaryLabel="See pricing"
 	/>

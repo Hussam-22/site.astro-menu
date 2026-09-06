@@ -9,13 +9,16 @@ import Check from '../../components/ui/Check.astro'
 import FaqList from '../../components/ui/FaqList.astro'
 import CtaBand from '../../components/ui/CtaBand.astro'
 import Sticker from '../../components/ui/Sticker.astro'
-import { SITE, PRICE, PLAN } from '../../config/site'
+import Price from '../../components/ui/Price.astro'
+import Regional from '../../components/ui/Regional.astro'
+import RegionNote from '../../components/ui/RegionNote.astro'
+import { SITE, PRICE, PRICES } from '../../config/site'
 import { NOT_INCLUDED } from '../../data/plan'
 import { FAQ_GROUPS } from '../../data/faqs'
 import { crumbSchema, faqSchema } from '../../utils/schema'
 
 const pricingGroup = FAQ_GROUPS.find((g) => g.heading === 'Pricing')!
-const pricingFaqs = pricingGroup.items.map((f) => ({ ...f, q: f.qAr, a: f.aAr }))
+const pricingFaqs = pricingGroup.items.map((f) => ({ ...f, q: f.qAr, a: f.aAr, aSy: f.aArSy }))
 
 const title = `الأسعار — ${PRICE.monthly} شهريًا، باقة واحدة`
 const description = `${PRICE.monthly} شهريًا، أو ${PRICE.annualPerMonth} شهريًا عند الدفع سنويًا (${PRICE.annualTotal}). قوائم طعام وأصناف ومشاهدات غير محدودة. بلا رسوم إعداد، بلا عمولة، بلا عقد.`
@@ -47,9 +50,6 @@ const product = {
 	]
 }
 
-const PRINT_RUNS_PER_YEAR = 3
-const PRINT_COST_PER_RUN = 90
-const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 ---
 
 <Layout
@@ -81,6 +81,7 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 		</div>
 		<div class="mt-12">
 			<PricingCard id="plan" as="h2" />
+			<RegionNote />
 		</div>
 	</Section>
 
@@ -118,11 +119,13 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 					title="قارنها بفاتورة المطبعة،<br />مو بسعر برنامج"
 					lede="أغلب المطاعم ما بتختار بين تطبيقين. هي بتختار بين اشتراك وفاتورة مطبعة."
 				/>
+				{/* Print figures come from the price book — they differ by region. */}
 				<p class="text-ink-soft mt-6 text-lg text-pretty">
-					مطعم بيعيد طباعة منيوه {PRINT_RUNS_PER_YEAR} مرات بالسنة بحوالي ${PRINT_COST_PER_RUN}
-					{' '}للطبعة الواحدة بيصرف حوالي ${printYear} على الطباعة لحالها — قبل ما نحسب المسا يلي
-					ضيّعه المدير بمراجعة القائمة، أو الشهر يلي ضل فيه سعر غلط عالطاولة لأن إعادة الطباعة ما
-					كانت تستاهل التعب.
+					مطعم بيعيد طباعة منيوه {PRICE.printRunsPerYear} مرات بالسنة بحوالي <Price
+						field="printCostPerRun"
+					/>{' '}للطبعة الواحدة بيصرف حوالي <Price field="printYear" /> على الطباعة لحالها — قبل ما نحسب
+					المسا يلي ضيّعه المدير بمراجعة القائمة، أو الشهر يلي ضل فيه سعر غلط عالطاولة لأن إعادة الطباعة
+					ما كانت تستاهل التعب.
 				</p>
 				<p class="text-ink-soft mt-4 text-lg text-pretty">
 					هذه الأرقام للتوضيح فقط، مو عرض سعر رسمي. حط أرقامك إنت — الصورة العامة نادرًا ما بتتغيّر.
@@ -133,17 +136,21 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 				<dl class="tabular divide-line divide-y">
 					<div class="flex items-baseline justify-between gap-6 pb-5">
 						<dt class="text-lg font-bold">استرو منيو، فوترة سنوية</dt>
-						<dd class="font-display text-3xl">{PRICE.annualTotal}<span class="text-lg">/سنويًا</span></dd>
+						<dd class="font-display text-3xl">
+							<Price field="annualTotal" /><span class="text-lg">/سنويًا</span>
+						</dd>
 					</div>
 					<div class="flex items-baseline justify-between gap-6 py-5">
 						<dt class="text-lg font-bold">استرو منيو، فوترة شهرية</dt>
 						<dd class="font-display text-3xl">
-							{PRICE.monthly}<span class="text-lg">/شهريًا</span>
+							<Price field="monthly" /><span class="text-lg">/شهريًا</span>
 						</dd>
 					</div>
 					<div class="flex items-baseline justify-between gap-6 py-5">
 						<dt class="text-ink-soft text-lg">إنفاق طباعة توضيحي</dt>
-						<dd class="font-display text-ink-soft text-3xl">${printYear}<span class="text-lg">/سنويًا</span></dd>
+						<dd class="font-display text-ink-soft text-3xl">
+							<Price field="printYear" /><span class="text-lg">/سنويًا</span>
+						</dd>
 					</div>
 					<div class="flex items-baseline justify-between gap-6 pt-5">
 						<dt class="text-lg font-bold">العمولة التي نأخذها</dt>
@@ -157,7 +164,10 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 					</li>
 					<li class="flex items-start gap-3 text-lg">
 						<Check class="text-go mt-1.5" />
-						<span>بالدرهم: {PRICE.monthlyAed} شهريًا، {PRICE.annualTotalAed} سنويًا</span>
+						<Regional region="global">
+							بالدرهم: {PRICES.global.monthlyAed} شهريًا، {PRICES.global.annualTotalAed} سنويًا
+						</Regional>
+						<Regional region="sy">الفوترة بالدولار الأمريكي، مهما كانت بطاقتك</Regional>
 					</li>
 				</ul>
 			</div>
@@ -179,7 +189,7 @@ const printYear = PRINT_RUNS_PER_YEAR * PRINT_COST_PER_RUN
 	</Section>
 
 	<CtaBand
-		title={`جرّبها ${PLAN.trialDays} يومًا أول شي`}
+		title={`جرّبها ${PRICE.trialDays} يومًا أول شي`}
 		body="بلا بطاقة، بلا رسوم إعداد، بلا عقد. إذا ما ناسبتك، بتوقف عن استخدامها وما بيتغيّر شي."
 		secondaryHref="/ar/demo"
 		secondaryLabel="شاهد منيو حقيقية"
